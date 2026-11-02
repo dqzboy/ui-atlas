@@ -55,5 +55,5 @@ htmlcov/
 /*.zip
 /*.tar.gz
 /*.tgz
-
+graft/
 # Keep SKILL.md, agents/, references/, scripts/ and assets/{gifs,filmstrips}/
