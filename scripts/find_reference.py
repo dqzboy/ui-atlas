@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Search the bundled UI video reference index. Uses only the Python standard library."""
+"""Search the bundled UI reference index. Uses only the Python standard library."""
 import argparse,json,pathlib
 
 def main():
@@ -10,7 +10,6 @@ def main():
  if not items:p.exit(1,'未找到匹配条目，请换用分类或中英文名称。\n')
  for x in items:
   print(f"{x['id']} | {x['name']} / {x['english']}")
-  print(f"  视频: {x['source_video']} @ {x['start']:.1f}–{x['end']:.1f}s")
   print(f"  要点: {x['summary']}\n  例句: {x['prompt']}")
   print(f"  说明: {root}/references/{x['category']}.md#{x['slug']}")
   print(f"  GIF: {root/x['gif']}\n  六帧图: {root/x['filmstrip']}\n")

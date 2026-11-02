@@ -57,4 +57,3 @@ htmlcov/
 /*.tgz
 
 # Keep SKILL.md, agents/, references/, scripts/ and assets/{gifs,filmstrips}/
-# references/validation.json is a shared validation snapshot, not a cache.
