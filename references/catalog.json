@@ -29,6 +29,38 @@
     {
       "id": "buttons-controls",
       "title": "按钮、状态与选项"
+    },
+    {
+      "id": "mobile-scroll",
+      "title": "移动端滚动"
+    },
+    {
+      "id": "web-interactions",
+      "title": "Web 微交互"
+    },
+    {
+      "id": "mobile-interactions",
+      "title": "移动端交互"
+    },
+    {
+      "id": "mobile-layouts",
+      "title": "移动端页面布局"
+    },
+    {
+      "id": "dashboard-navigation",
+      "title": "Dashboard 与后台导航"
+    },
+    {
+      "id": "glass-materials",
+      "title": "玻璃材质与背景"
+    },
+    {
+      "id": "interface-details",
+      "title": "界面排版与细节"
+    },
+    {
+      "id": "dashboard-layouts",
+      "title": "Dashboard 布局与联动"
     }
   ],
   "items": [
@@ -1526,6 +1558,1291 @@
       "kind": "rule",
       "gif": "assets/gifs/buttons-controls/control-selection.gif",
       "filmstrip": "assets/filmstrips/buttons-controls/control-selection.jpg"
+    },
+    {
+      "id": "mobile-scroll/elastic-parallax-hero",
+      "category": "mobile-scroll",
+      "category_title": "移动端滚动",
+      "slug": "elastic-parallax-hero",
+      "name": "视差头图与下拉拉伸",
+      "english": "Elastic Parallax Hero",
+      "summary": "上滑时头图比正文移动慢；顶部下拉时头图放大，松手回到原尺寸。",
+      "prompt": "为详情页头图添加慢速视差和顶部下拉拉伸，松手平滑复位。",
+      "kind": "pattern",
+      "gif": "assets/gifs/mobile-scroll/elastic-parallax-hero.gif",
+      "filmstrip": "assets/filmstrips/mobile-scroll/elastic-parallax-hero.jpg",
+      "keywords": [
+        "滚动",
+        "回弹",
+        "头部",
+        "stretch",
+        "滚动交互",
+        "App滚动",
+        "小程序滚动"
+      ],
+      "related": [
+        "motion/parallax"
+      ]
+    },
+    {
+      "id": "mobile-scroll/sticky-category-tabs",
+      "category": "mobile-scroll",
+      "category_title": "移动端滚动",
+      "slug": "sticky-category-tabs",
+      "name": "吸顶分类与滚动联动",
+      "english": "Sticky Category Tabs",
+      "summary": "分类栏滚到顶部后固定，正文当前分类与标签选中态双向同步。",
+      "prompt": "分类栏吸顶，滚动时更新当前标签，点击标签定位到对应分区。",
+      "kind": "pattern",
+      "gif": "assets/gifs/mobile-scroll/sticky-category-tabs.gif",
+      "filmstrip": "assets/filmstrips/mobile-scroll/sticky-category-tabs.jpg",
+      "keywords": [
+        "锚点",
+        "scrollspy",
+        "分类",
+        "标签",
+        "滚动交互",
+        "App滚动",
+        "小程序滚动"
+      ],
+      "related": []
+    },
+    {
+      "id": "mobile-scroll/collapsing-cover-navbar",
+      "category": "mobile-scroll",
+      "category_title": "移动端滚动",
+      "slug": "collapsing-cover-navbar",
+      "name": "封面收进导航栏",
+      "english": "Collapsing Cover Navbar",
+      "summary": "大封面随上滑收起，头像缩小移向导航区，标题显现，导航背景转为模糊玻璃。",
+      "prompt": "让个人主页封面逐步收进导航栏，头像、标题和背景随同一滚动进度变化。",
+      "kind": "pattern",
+      "gif": "assets/gifs/mobile-scroll/collapsing-cover-navbar.gif",
+      "filmstrip": "assets/filmstrips/mobile-scroll/collapsing-cover-navbar.jpg",
+      "keywords": [
+        "折叠",
+        "头像",
+        "导航",
+        "header",
+        "滚动交互",
+        "App滚动",
+        "小程序滚动"
+      ],
+      "related": []
+    },
+    {
+      "id": "mobile-scroll/editorial-scroll-reveal",
+      "category": "mobile-scroll",
+      "category_title": "移动端滚动",
+      "slug": "editorial-scroll-reveal",
+      "name": "图文分层滚动渐显",
+      "english": "Editorial Scroll Reveal",
+      "summary": "图文分块进入视口，文字轻移入场，图片从模糊过渡到清晰，形成阅读节奏。",
+      "prompt": "文章按区块滚动渐显，文字轻移、图片逐步清晰，保持阅读位置稳定。",
+      "kind": "pattern",
+      "gif": "assets/gifs/mobile-scroll/editorial-scroll-reveal.gif",
+      "filmstrip": "assets/filmstrips/mobile-scroll/editorial-scroll-reveal.jpg",
+      "keywords": [
+        "滚动",
+        "杂志",
+        "模糊",
+        "reveal",
+        "滚动交互",
+        "App滚动",
+        "小程序滚动"
+      ],
+      "related": [
+        "motion/scroll-reveal",
+        "loading-errors/blur-up"
+      ]
+    },
+    {
+      "id": "mobile-scroll/pull-to-refresh-scene",
+      "category": "mobile-scroll",
+      "category_title": "移动端滚动",
+      "slug": "pull-to-refresh-scene",
+      "name": "下拉刷新场景反馈",
+      "english": "Pull to Refresh Scene",
+      "summary": "下拉距离驱动场景变化，例如太阳从地平线升起；达到阈值松手才开始刷新。",
+      "prompt": "下拉刷新时用场景进度反馈拖动幅度，达到阈值并松手后请求新数据。",
+      "kind": "pattern",
+      "gif": "assets/gifs/mobile-scroll/pull-to-refresh-scene.gif",
+      "filmstrip": "assets/filmstrips/mobile-scroll/pull-to-refresh-scene.jpg",
+      "keywords": [
+        "刷新",
+        "太阳",
+        "下拉",
+        "pull",
+        "滚动交互",
+        "App滚动",
+        "小程序滚动"
+      ],
+      "related": []
+    },
+    {
+      "id": "mobile-scroll/viewport-chart-growth",
+      "category": "mobile-scroll",
+      "category_title": "移动端滚动",
+      "slug": "viewport-chart-growth",
+      "name": "进入视口的数据生长",
+      "english": "Viewport Chart Growth",
+      "summary": "图表进入屏幕后柱高从零到真实值，配套数值同步变化。",
+      "prompt": "统计区进入视口后柱图与数字同步增长到真实数据，结束后稳定显示。",
+      "kind": "pattern",
+      "gif": "assets/gifs/mobile-scroll/viewport-chart-growth.gif",
+      "filmstrip": "assets/filmstrips/mobile-scroll/viewport-chart-growth.jpg",
+      "keywords": [
+        "滚动",
+        "柱状图",
+        "统计",
+        "count",
+        "滚动交互",
+        "App滚动",
+        "小程序滚动"
+      ],
+      "related": [
+        "motion/count-up"
+      ]
+    },
+    {
+      "id": "web-interactions/sticky-product-story",
+      "category": "web-interactions",
+      "category_title": "Web 微交互",
+      "slug": "sticky-product-story",
+      "name": "钉住主图的产品叙事",
+      "english": "Sticky Product Story",
+      "summary": "主图区域在滚动中固定，旁侧说明分段切换，并突出当前讲解的产品部位。",
+      "prompt": "产品介绍区钉住主图，滚动时切换说明和相应的局部强调。",
+      "kind": "pattern",
+      "gif": "assets/gifs/web-interactions/sticky-product-story.gif",
+      "filmstrip": "assets/filmstrips/web-interactions/sticky-product-story.jpg",
+      "keywords": [
+        "滚动",
+        "sticky",
+        "产品",
+        "pin",
+        "Web交互",
+        "网页交互"
+      ],
+      "related": [
+        "motion/scroll-storytelling"
+      ]
+    },
+    {
+      "id": "web-interactions/contextual-cursor",
+      "category": "web-interactions",
+      "category_title": "Web 微交互",
+      "slug": "contextual-cursor",
+      "name": "情境光标",
+      "english": "Contextual Cursor",
+      "summary": "指针进入可交互区域后从小点变为带动作文字的圆形提示，离开恢复。",
+      "prompt": "在作品卡片内将光标变为带动作说明的圆形，离开恢复普通指针。",
+      "kind": "pattern",
+      "gif": "assets/gifs/web-interactions/contextual-cursor.gif",
+      "filmstrip": "assets/filmstrips/web-interactions/contextual-cursor.jpg",
+      "keywords": [
+        "鼠标",
+        "cursor",
+        "圆形",
+        "指针",
+        "Web交互",
+        "网页交互"
+      ],
+      "related": []
+    },
+    {
+      "id": "web-interactions/magnetic-cta",
+      "category": "web-interactions",
+      "category_title": "Web 微交互",
+      "slug": "magnetic-cta",
+      "name": "磁吸主操作按钮",
+      "english": "Magnetic CTA",
+      "summary": "指针靠近时按钮向指针小幅偏移，离开后弹性复位，点击热区保持可靠。",
+      "prompt": "主操作按钮加入小幅磁吸和离开回弹，保留稳定的点击区域。",
+      "kind": "pattern",
+      "gif": "assets/gifs/web-interactions/magnetic-cta.gif",
+      "filmstrip": "assets/filmstrips/web-interactions/magnetic-cta.jpg",
+      "keywords": [
+        "磁吸",
+        "按钮",
+        "回弹",
+        "Web交互",
+        "网页交互"
+      ],
+      "related": [
+        "motion/magnetic"
+      ]
+    },
+    {
+      "id": "web-interactions/expanding-icon-label",
+      "category": "web-interactions",
+      "category_title": "Web 微交互",
+      "slug": "expanding-icon-label",
+      "name": "图标按钮展开标签",
+      "english": "Expanding Icon Label",
+      "summary": "紧凑图标按钮在悬停时展开为含文字的胶囊，离开后收回。",
+      "prompt": "工具栏图标悬停或聚焦时展开文字，图标始终可辨认。",
+      "kind": "pattern",
+      "gif": "assets/gifs/web-interactions/expanding-icon-label.gif",
+      "filmstrip": "assets/filmstrips/web-interactions/expanding-icon-label.jpg",
+      "keywords": [
+        "图标",
+        "按钮",
+        "标签",
+        "hover",
+        "Web交互",
+        "网页交互"
+      ],
+      "related": []
+    },
+    {
+      "id": "web-interactions/sliding-nav-highlight",
+      "category": "web-interactions",
+      "category_title": "Web 微交互",
+      "slug": "sliding-nav-highlight",
+      "name": "导航底色跟随",
+      "english": "Sliding Navigation Highlight",
+      "summary": "导航圆角底色平滑移动到目标项，同时适配各项文字的宽度。",
+      "prompt": "导航高亮底色随目标项移动和变宽，离开预览后恢复当前页面选中项。",
+      "kind": "pattern",
+      "gif": "assets/gifs/web-interactions/sliding-nav-highlight.gif",
+      "filmstrip": "assets/filmstrips/web-interactions/sliding-nav-highlight.jpg",
+      "keywords": [
+        "导航",
+        "底色",
+        "胶囊",
+        "滑动",
+        "Web交互",
+        "网页交互"
+      ],
+      "related": []
+    },
+    {
+      "id": "web-interactions/corner-fill-hover",
+      "category": "web-interactions",
+      "category_title": "Web 微交互",
+      "slug": "corner-fill-hover",
+      "name": "角落扩散填色",
+      "english": "Corner Fill Hover",
+      "summary": "功能卡片从一角扩散主题色，文字和图标同步换色，箭头转向。",
+      "prompt": "可点击统计卡悬停时从右上角扩散填色，并同步调整文字和箭头。",
+      "kind": "pattern",
+      "gif": "assets/gifs/web-interactions/corner-fill-hover.gif",
+      "filmstrip": "assets/filmstrips/web-interactions/corner-fill-hover.jpg",
+      "keywords": [
+        "悬停",
+        "hover",
+        "翻色",
+        "卡片",
+        "Web交互",
+        "网页交互"
+      ],
+      "related": []
+    },
+    {
+      "id": "web-interactions/snapping-level-slider",
+      "category": "web-interactions",
+      "category_title": "Web 微交互",
+      "slug": "snapping-level-slider",
+      "name": "分档吸附拖动条",
+      "english": "Snapping Level Slider",
+      "summary": "拖动条跨档时更新档位读数和填色，释放时吸附最近刻度。",
+      "prompt": "档位滑杆边拖边显示当前档位，松手吸附最近有效档。",
+      "kind": "pattern",
+      "gif": "assets/gifs/web-interactions/snapping-level-slider.gif",
+      "filmstrip": "assets/filmstrips/web-interactions/snapping-level-slider.jpg",
+      "keywords": [
+        "滑杆",
+        "档位",
+        "吸附",
+        "range",
+        "Web交互",
+        "网页交互"
+      ],
+      "related": [
+        "forms/slider"
+      ]
+    },
+    {
+      "id": "web-interactions/scrubbing-bar-chart",
+      "category": "web-interactions",
+      "category_title": "Web 微交互",
+      "slug": "scrubbing-bar-chart",
+      "name": "柱状图跟手读数",
+      "english": "Scrubbing Bar Chart",
+      "summary": "指针横扫柱图时，当前读数、标记和左右明暗区域跟随更新。",
+      "prompt": "柱状图支持横向跟手读取数据，标记、数值和高亮保持同步。",
+      "kind": "pattern",
+      "gif": "assets/gifs/web-interactions/scrubbing-bar-chart.gif",
+      "filmstrip": "assets/filmstrips/web-interactions/scrubbing-bar-chart.jpg",
+      "keywords": [
+        "图表",
+        "统计",
+        "scrub",
+        "hover",
+        "Web交互",
+        "网页交互"
+      ],
+      "related": []
+    },
+    {
+      "id": "web-interactions/hover-image-preview",
+      "category": "web-interactions",
+      "category_title": "Web 微交互",
+      "slug": "hover-image-preview",
+      "name": "列表悬停预览图",
+      "english": "Hover Image Preview",
+      "summary": "文字列表保持整齐，悬停不同条目时在附近显示相应图片，非当前条目弱化。",
+      "prompt": "案例列表悬停或聚焦时预览对应图片，列表本身不跳动。",
+      "kind": "pattern",
+      "gif": "assets/gifs/web-interactions/hover-image-preview.gif",
+      "filmstrip": "assets/filmstrips/web-interactions/hover-image-preview.jpg",
+      "keywords": [
+        "图片",
+        "预览",
+        "列表",
+        "作品",
+        "Web交互",
+        "网页交互"
+      ],
+      "related": []
+    },
+    {
+      "id": "web-interactions/circular-theme-reveal",
+      "category": "web-interactions",
+      "category_title": "Web 微交互",
+      "slug": "circular-theme-reveal",
+      "name": "圆形扩散换肤",
+      "english": "Circular Theme Reveal",
+      "summary": "从主题切换按钮位置扩散圆形遮罩，逐步露出另一套主题，内容布局保持不变。",
+      "prompt": "从主题按钮中心圆形扩散切换明暗主题，页面文字和布局保持稳定。",
+      "kind": "pattern",
+      "gif": "assets/gifs/web-interactions/circular-theme-reveal.gif",
+      "filmstrip": "assets/filmstrips/web-interactions/circular-theme-reveal.jpg",
+      "keywords": [
+        "主题",
+        "明暗",
+        "换肤",
+        "圆形",
+        "Web交互",
+        "网页交互"
+      ],
+      "related": [
+        "mobile-interactions/touch-origin-theme"
+      ]
+    },
+    {
+      "id": "mobile-interactions/touch-origin-theme",
+      "category": "mobile-interactions",
+      "category_title": "移动端交互",
+      "slug": "touch-origin-theme",
+      "name": "触点扩散主题切换",
+      "english": "Touch Origin Theme",
+      "summary": "从实际点击点向四周扩散另一主题，两层页面只裁剪，不拉伸文字、图标或布局。",
+      "prompt": "移动端从主题按钮触点扩散换肤，两套主题布局保持一致。",
+      "kind": "pattern",
+      "gif": "assets/gifs/mobile-interactions/touch-origin-theme.gif",
+      "filmstrip": "assets/filmstrips/mobile-interactions/touch-origin-theme.jpg",
+      "keywords": [
+        "明暗",
+        "主题",
+        "裁剪",
+        "圆形",
+        "App交互",
+        "小程序交互",
+        "手机交互"
+      ],
+      "related": [
+        "web-interactions/circular-theme-reveal"
+      ]
+    },
+    {
+      "id": "mobile-interactions/spring-reorder",
+      "category": "mobile-interactions",
+      "category_title": "移动端交互",
+      "slug": "spring-reorder",
+      "name": "拖拽排序与弹性让位",
+      "english": "Spring Reorder",
+      "summary": "被拖行浮起，其他行按当前插入位置连续让位，释放后落入新位置。",
+      "prompt": "列表长按拖拽排序，周围行弹性让位，落下后保存真实顺序。",
+      "kind": "pattern",
+      "gif": "assets/gifs/mobile-interactions/spring-reorder.gif",
+      "filmstrip": "assets/filmstrips/mobile-interactions/spring-reorder.jpg",
+      "keywords": [
+        "拖动",
+        "排序",
+        "reorder",
+        "列表",
+        "App交互",
+        "小程序交互",
+        "手机交互"
+      ],
+      "related": []
+    },
+    {
+      "id": "mobile-interactions/staggered-batch-check",
+      "category": "mobile-interactions",
+      "category_title": "移动端交互",
+      "slug": "staggered-batch-check",
+      "name": "批量勾选的顺序反馈",
+      "english": "Staggered Batch Check",
+      "summary": "全选后各行依次呈现勾选反馈，勾号轻微弹性放大。",
+      "prompt": "全选时立即更新真实选中集合，视觉勾号按列表顺序轻微错峰出现。",
+      "kind": "pattern",
+      "gif": "assets/gifs/mobile-interactions/staggered-batch-check.gif",
+      "filmstrip": "assets/filmstrips/mobile-interactions/staggered-batch-check.jpg",
+      "keywords": [
+        "全选",
+        "批量",
+        "checkbox",
+        "错峰",
+        "App交互",
+        "小程序交互",
+        "手机交互"
+      ],
+      "related": [
+        "buttons-controls/checkbox",
+        "motion/stagger"
+      ]
+    },
+    {
+      "id": "mobile-interactions/inertial-slider-snap",
+      "category": "mobile-interactions",
+      "category_title": "移动端交互",
+      "slug": "inertial-slider-snap",
+      "name": "滑杆惯性与回吸",
+      "english": "Inertial Slider Snap",
+      "summary": "释放滑块后短暂沿手势方向滑行，再吸回最近有效刻度，表现轻微重量感。",
+      "prompt": "配速滑杆松手后轻微惯性滑行，再回吸到最近有效刻度。",
+      "kind": "pattern",
+      "gif": "assets/gifs/mobile-interactions/inertial-slider-snap.gif",
+      "filmstrip": "assets/filmstrips/mobile-interactions/inertial-slider-snap.jpg",
+      "keywords": [
+        "滑杆",
+        "惯性",
+        "吸附",
+        "range",
+        "App交互",
+        "小程序交互",
+        "手机交互"
+      ],
+      "related": [
+        "web-interactions/snapping-level-slider"
+      ]
+    },
+    {
+      "id": "mobile-interactions/animated-text-expand",
+      "category": "mobile-interactions",
+      "category_title": "移动端交互",
+      "slug": "animated-text-expand",
+      "name": "文本展开与箭头同步",
+      "english": "Animated Text Expand",
+      "summary": "展开时容器高度连续增大，内容在原位打开，箭头同步旋转指示状态。",
+      "prompt": "说明卡片点击展开时平滑改变高度，箭头同步转动，收起恢复。",
+      "kind": "pattern",
+      "gif": "assets/gifs/mobile-interactions/animated-text-expand.gif",
+      "filmstrip": "assets/filmstrips/mobile-interactions/animated-text-expand.jpg",
+      "keywords": [
+        "折叠",
+        "展开",
+        "高度",
+        "accordion",
+        "App交互",
+        "小程序交互",
+        "手机交互"
+      ],
+      "related": [
+        "cards-tables/accordion"
+      ]
+    },
+    {
+      "id": "mobile-interactions/step-progress-settle",
+      "category": "mobile-interactions",
+      "category_title": "移动端交互",
+      "slug": "step-progress-settle",
+      "name": "步骤进度的轻微回弹",
+      "english": "Step Progress Settle",
+      "summary": "完成一步后进度线推进到新节点，可轻微越过再归位，已完成步骤同步高亮。",
+      "prompt": "完成步骤后进度推进到真实节点，用轻微回弹强调完成。",
+      "kind": "pattern",
+      "gif": "assets/gifs/mobile-interactions/step-progress-settle.gif",
+      "filmstrip": "assets/filmstrips/mobile-interactions/step-progress-settle.jpg",
+      "keywords": [
+        "进度",
+        "步骤",
+        "stepper",
+        "回弹",
+        "App交互",
+        "小程序交互",
+        "手机交互"
+      ],
+      "related": []
+    },
+    {
+      "id": "mobile-interactions/switch-group-ripple",
+      "category": "mobile-interactions",
+      "category_title": "移动端交互",
+      "slug": "switch-group-ripple",
+      "name": "开关组涟漪反馈",
+      "english": "Switch Group Ripple",
+      "summary": "切换当前开关时，同组附近开关依次轻微动一下，其值保持不变。",
+      "prompt": "当前开关切换时向同组扩散轻微视觉反馈，只修改被操作的设置。",
+      "kind": "pattern",
+      "gif": "assets/gifs/mobile-interactions/switch-group-ripple.gif",
+      "filmstrip": "assets/filmstrips/mobile-interactions/switch-group-ripple.jpg",
+      "keywords": [
+        "开关",
+        "连动",
+        "联动",
+        "涟漪",
+        "App交互",
+        "小程序交互",
+        "手机交互"
+      ],
+      "related": [
+        "buttons-controls/switch"
+      ]
+    },
+    {
+      "id": "mobile-interactions/card-delete-trajectory",
+      "category": "mobile-interactions",
+      "category_title": "移动端交互",
+      "slug": "card-delete-trajectory",
+      "name": "卡片沿轨迹离场",
+      "english": "Card Delete Trajectory",
+      "summary": "确认删除后的卡片沿曲线朝删除入口移动，同时缩小、旋转并淡出。",
+      "prompt": "删除确认完成后让卡片沿曲线缩小离场，再平滑收拢列表。",
+      "kind": "pattern",
+      "gif": "assets/gifs/mobile-interactions/card-delete-trajectory.gif",
+      "filmstrip": "assets/filmstrips/mobile-interactions/card-delete-trajectory.jpg",
+      "keywords": [
+        "删除",
+        "曲线",
+        "卡片",
+        "离场",
+        "App交互",
+        "小程序交互",
+        "手机交互"
+      ],
+      "related": []
+    },
+    {
+      "id": "mobile-interactions/sticky-compressing-stack",
+      "category": "mobile-interactions",
+      "category_title": "移动端交互",
+      "slug": "sticky-compressing-stack",
+      "name": "滚动吸顶压缩卡片栈",
+      "english": "Sticky Compressing Stack",
+      "summary": "已读卡片在顶部停留，并在后续卡片上来时缩小后退，形成层叠浏览记录。",
+      "prompt": "卡片列表滚动时让前序卡片吸顶并逐级压缩，向回滚动恢复。",
+      "kind": "pattern",
+      "gif": "assets/gifs/mobile-interactions/sticky-compressing-stack.gif",
+      "filmstrip": "assets/filmstrips/mobile-interactions/sticky-compressing-stack.jpg",
+      "keywords": [
+        "滚动",
+        "卡片",
+        "堆叠",
+        "sticky",
+        "App交互",
+        "小程序交互",
+        "手机交互"
+      ],
+      "related": []
+    },
+    {
+      "id": "mobile-interactions/reflowing-choice-tabs",
+      "category": "mobile-interactions",
+      "category_title": "移动端交互",
+      "slug": "reflowing-choice-tabs",
+      "name": "选中标签放大并让位",
+      "english": "Reflowing Choice Tabs",
+      "summary": "选中标签略微放大，其他标签平滑移开腾出空间，整行一起调整布局。",
+      "prompt": "分类标签选中时轻微放大，相邻标签让位，内容同步切换。",
+      "kind": "pattern",
+      "gif": "assets/gifs/mobile-interactions/reflowing-choice-tabs.gif",
+      "filmstrip": "assets/filmstrips/mobile-interactions/reflowing-choice-tabs.jpg",
+      "keywords": [
+        "标签",
+        "选择",
+        "chip",
+        "重排",
+        "App交互",
+        "小程序交互",
+        "手机交互"
+      ],
+      "related": [
+        "buttons-controls/segmented-control"
+      ]
+    },
+    {
+      "id": "mobile-layouts/wide-title-image-list",
+      "category": "mobile-layouts",
+      "category_title": "移动端页面布局",
+      "slug": "wide-title-image-list",
+      "name": "宽体标题与大图列表",
+      "english": "Wide Title Image List",
+      "summary": "大号两行标题建立主题，搜索与筛选紧随其后，下方是宽幅图片和单行参数信息。",
+      "prompt": "列表页用宽体大标题、搜索筛选、分类标签和宽幅大图卡，名称参数排在图下。",
+      "kind": "pattern",
+      "gif": "assets/gifs/mobile-layouts/wide-title-image-list.gif",
+      "filmstrip": "assets/filmstrips/mobile-layouts/wide-title-image-list.jpg",
+      "keywords": [
+        "列表",
+        "大图",
+        "搜索",
+        "标题",
+        "App布局",
+        "小程序布局",
+        "手机布局"
+      ],
+      "related": []
+    },
+    {
+      "id": "mobile-layouts/hero-information-overlay",
+      "category": "mobile-layouts",
+      "category_title": "移动端页面布局",
+      "slug": "hero-information-overlay",
+      "name": "大图头块叠信息",
+      "english": "Hero Information Overlay",
+      "summary": "头部大图承载目的地和主要操作，下方白底信息区展示日期、天气和趋势。",
+      "prompt": "详情页上部用大图叠标题与操作，下方展示日期选择和简洁趋势曲线。",
+      "kind": "pattern",
+      "gif": "assets/gifs/mobile-layouts/hero-information-overlay.gif",
+      "filmstrip": "assets/filmstrips/mobile-layouts/hero-information-overlay.jpg",
+      "keywords": [
+        "头图",
+        "详情",
+        "天气",
+        "overlay",
+        "App布局",
+        "小程序布局",
+        "手机布局"
+      ],
+      "related": []
+    },
+    {
+      "id": "mobile-layouts/monochrome-priority",
+      "category": "mobile-layouts",
+      "category_title": "移动端页面布局",
+      "slug": "monochrome-priority",
+      "name": "黑白分层主次布局",
+      "english": "Monochrome Priority",
+      "summary": "浅灰页面上以黑底白字突出主要卡片，其余用白色卡片承载次要内容。",
+      "prompt": "用灰底、黑色主卡和白色次卡组织页面，分类选中态与主卡呼应。",
+      "kind": "pattern",
+      "gif": "assets/gifs/mobile-layouts/monochrome-priority.gif",
+      "filmstrip": "assets/filmstrips/mobile-layouts/monochrome-priority.jpg",
+      "keywords": [
+        "黑白",
+        "主次",
+        "卡片",
+        "层级",
+        "App布局",
+        "小程序布局",
+        "手机布局"
+      ],
+      "related": []
+    },
+    {
+      "id": "mobile-layouts/color-block-bento",
+      "category": "mobile-layouts",
+      "category_title": "移动端页面布局",
+      "slug": "color-block-bento",
+      "name": "大色块与小格网格",
+      "english": "Color Block Bento",
+      "summary": "大色块汇总最重要数字与完成度，周围浅色小格分别承载次级任务或打卡项。",
+      "prompt": "首页用一张强调色大卡汇总核心指标，下方浅色小格分别执行单项任务。",
+      "kind": "pattern",
+      "gif": "assets/gifs/mobile-layouts/color-block-bento.gif",
+      "filmstrip": "assets/filmstrips/mobile-layouts/color-block-bento.jpg",
+      "keywords": [
+        "bento",
+        "网格",
+        "打卡",
+        "仪表盘",
+        "App布局",
+        "小程序布局",
+        "手机布局"
+      ],
+      "related": []
+    },
+    {
+      "id": "mobile-layouts/poster-semicircle-dial",
+      "category": "mobile-layouts",
+      "category_title": "移动端页面布局",
+      "slug": "poster-semicircle-dial",
+      "name": "海报大字与半圆转盘",
+      "english": "Poster Semicircle Dial",
+      "summary": "大字与强色块形成海报层级，中段半圆转盘围绕固定指针选择，底部大读数和主操作。",
+      "prompt": "专注页使用海报标题、半圆选项转盘、大号时长和单个主操作。",
+      "kind": "pattern",
+      "gif": "assets/gifs/mobile-layouts/poster-semicircle-dial.gif",
+      "filmstrip": "assets/filmstrips/mobile-layouts/poster-semicircle-dial.jpg",
+      "keywords": [
+        "转盘",
+        "海报",
+        "计时",
+        "半圆",
+        "App布局",
+        "小程序布局",
+        "手机布局"
+      ],
+      "related": []
+    },
+    {
+      "id": "mobile-layouts/swipe-deck-layout",
+      "category": "mobile-layouts",
+      "category_title": "移动端页面布局",
+      "slug": "swipe-deck-layout",
+      "name": "叠放卡片翻阅布局",
+      "english": "Swipe Deck Layout",
+      "summary": "中央大图卡作为主内容，后续卡露边表示数量；向上拖走前卡，后卡补位，页码同步。",
+      "prompt": "展示页用可上滑翻阅的大图卡组，后卡露边，当前页码跟随切换。",
+      "kind": "pattern",
+      "gif": "assets/gifs/mobile-layouts/swipe-deck-layout.gif",
+      "filmstrip": "assets/filmstrips/mobile-layouts/swipe-deck-layout.jpg",
+      "keywords": [
+        "卡组",
+        "翻页",
+        "堆叠",
+        "swipe",
+        "App布局",
+        "小程序布局",
+        "手机布局"
+      ],
+      "related": []
+    },
+    {
+      "id": "dashboard-navigation/icon-text-sidebar",
+      "category": "dashboard-navigation",
+      "category_title": "Dashboard 与后台导航",
+      "slug": "icon-text-sidebar",
+      "name": "图文侧栏与内容同步",
+      "english": "Icon Text Sidebar",
+      "summary": "左侧组合图标与文字，清楚标出当前入口；点击后右侧内容与菜单高亮同步切换。",
+      "prompt": "后台使用图文侧栏，当前路由高亮，并与右侧内容同步。",
+      "kind": "pattern",
+      "gif": "assets/gifs/dashboard-navigation/icon-text-sidebar.gif",
+      "filmstrip": "assets/filmstrips/dashboard-navigation/icon-text-sidebar.jpg",
+      "keywords": [
+        "后台",
+        "菜单",
+        "侧栏",
+        "路由",
+        "后台菜单",
+        "Dashboard菜单",
+        "后台导航",
+        "仪表盘菜单"
+      ],
+      "related": []
+    },
+    {
+      "id": "dashboard-navigation/grouped-content-sidebar",
+      "category": "dashboard-navigation",
+      "category_title": "Dashboard 与后台导航",
+      "slug": "grouped-content-sidebar",
+      "name": "内容分组导航",
+      "english": "Grouped Content Sidebar",
+      "summary": "相关内容入口在侧栏分组，通过分组层级与选中底色帮助切换列表和发现页。",
+      "prompt": "把内容入口按任务分组，侧栏层级和选中底色清晰，切页时同步更新。",
+      "kind": "pattern",
+      "gif": "assets/gifs/dashboard-navigation/grouped-content-sidebar.gif",
+      "filmstrip": "assets/filmstrips/dashboard-navigation/grouped-content-sidebar.jpg",
+      "keywords": [
+        "后台",
+        "菜单",
+        "内容",
+        "分组",
+        "后台菜单",
+        "Dashboard菜单",
+        "后台导航",
+        "仪表盘菜单"
+      ],
+      "related": []
+    },
+    {
+      "id": "dashboard-navigation/top-pill-navigation",
+      "category": "dashboard-navigation",
+      "category_title": "Dashboard 与后台导航",
+      "slug": "top-pill-navigation",
+      "name": "顶部胶囊菜单",
+      "english": "Top Pill Navigation",
+      "summary": "主要入口收进顶部圆角容器，用深浅底色区分当前项，让主体区域保持宽阔。",
+      "prompt": "后台用顶部胶囊导航组织少量主入口，选中态清晰且主体布局稳定。",
+      "kind": "pattern",
+      "gif": "assets/gifs/dashboard-navigation/top-pill-navigation.gif",
+      "filmstrip": "assets/filmstrips/dashboard-navigation/top-pill-navigation.jpg",
+      "keywords": [
+        "后台",
+        "菜单",
+        "胶囊",
+        "顶栏",
+        "后台菜单",
+        "Dashboard菜单",
+        "后台导航",
+        "仪表盘菜单"
+      ],
+      "related": []
+    },
+    {
+      "id": "dashboard-navigation/compact-icon-rail",
+      "category": "dashboard-navigation",
+      "category_title": "Dashboard 与后台导航",
+      "slug": "compact-icon-rail",
+      "name": "极简图标侧栏",
+      "english": "Compact Icon Rail",
+      "summary": "窄图标轨把更多空间留给正文，主要业务入口在上方，通知与账户固定在底部。",
+      "prompt": "工作台使用窄图标侧栏，上方业务、下方通知账户，当前入口高对比显示。",
+      "kind": "pattern",
+      "gif": "assets/gifs/dashboard-navigation/compact-icon-rail.gif",
+      "filmstrip": "assets/filmstrips/dashboard-navigation/compact-icon-rail.jpg",
+      "keywords": [
+        "后台",
+        "菜单",
+        "icon",
+        "窄侧栏",
+        "后台菜单",
+        "Dashboard菜单",
+        "后台导航",
+        "仪表盘菜单"
+      ],
+      "related": []
+    },
+    {
+      "id": "dashboard-navigation/brand-accent-sidebar",
+      "category": "dashboard-navigation",
+      "category_title": "Dashboard 与后台导航",
+      "slug": "brand-accent-sidebar",
+      "name": "品牌色高亮侧栏",
+      "english": "Brand Accent Sidebar",
+      "summary": "深色窄侧栏用品牌色集中突出当前入口，统一圆角与上下分区。",
+      "prompt": "深色后台用品牌色标记当前侧栏入口，主功能与底部工具分组。",
+      "kind": "pattern",
+      "gif": "assets/gifs/dashboard-navigation/brand-accent-sidebar.gif",
+      "filmstrip": "assets/filmstrips/dashboard-navigation/brand-accent-sidebar.jpg",
+      "keywords": [
+        "后台",
+        "菜单",
+        "品牌色",
+        "侧栏",
+        "后台菜单",
+        "Dashboard菜单",
+        "后台导航",
+        "仪表盘菜单"
+      ],
+      "related": []
+    },
+    {
+      "id": "dashboard-navigation/context-data-tabs",
+      "category": "dashboard-navigation",
+      "category_title": "Dashboard 与后台导航",
+      "slug": "context-data-tabs",
+      "name": "分组标签与数据联动",
+      "english": "Context Data Tabs",
+      "summary": "顶部分组标签选择当前业务对象，选中底色与标记同步，指标和列表更新为该对象数据。",
+      "prompt": "顶部对象标签切换时，同步更新该对象的指标、阶段和列表，并保留明确的选中态。",
+      "kind": "pattern",
+      "gif": "assets/gifs/dashboard-navigation/context-data-tabs.gif",
+      "filmstrip": "assets/filmstrips/dashboard-navigation/context-data-tabs.jpg",
+      "keywords": [
+        "后台",
+        "菜单",
+        "标签",
+        "数据",
+        "分组",
+        "后台菜单",
+        "Dashboard菜单",
+        "后台导航",
+        "仪表盘菜单"
+      ],
+      "related": []
+    },
+    {
+      "id": "glass-materials/frosted-glass-layer",
+      "category": "glass-materials",
+      "category_title": "玻璃材质与背景",
+      "slug": "frosted-glass-layer",
+      "name": "磨砂玻璃的基本层次",
+      "english": "Frosted Glass Layers",
+      "summary": "背景模糊透过低透明度表层呈现；面板仍应透出背景层次，而非实心灰块。",
+      "prompt": "玻璃面板组合背景模糊、低透明度表层和稳定前景内容，先保证文字清晰。",
+      "kind": "pattern",
+      "gif": "assets/gifs/glass-materials/frosted-glass-layer.gif",
+      "filmstrip": "assets/filmstrips/glass-materials/frosted-glass-layer.jpg",
+      "keywords": [
+        "玻璃",
+        "磨砂",
+        "glass",
+        "blur",
+        "玻璃界面",
+        "玻璃效果",
+        "毛玻璃"
+      ],
+      "related": []
+    },
+    {
+      "id": "glass-materials/saturation-tint",
+      "category": "glass-materials",
+      "category_title": "玻璃材质与背景",
+      "slug": "saturation-tint",
+      "name": "增色与透明叠白",
+      "english": "Saturation and Tint",
+      "summary": "适当提高背景饱和度并叠低透明度白层，避免模糊后颜色发灰。",
+      "prompt": "调整玻璃背后的饱和度与叠白强度，保留背景色相，避免灰雾感。",
+      "kind": "rule",
+      "gif": "assets/gifs/glass-materials/saturation-tint.gif",
+      "filmstrip": "assets/filmstrips/glass-materials/saturation-tint.jpg",
+      "keywords": [
+        "玻璃",
+        "饱和度",
+        "透明",
+        "白色",
+        "玻璃界面",
+        "玻璃效果",
+        "毛玻璃"
+      ],
+      "related": []
+    },
+    {
+      "id": "glass-materials/edge-highlight-refraction",
+      "category": "glass-materials",
+      "category_title": "玻璃材质与背景",
+      "slug": "edge-highlight-refraction",
+      "name": "亮边与边缘折射",
+      "english": "Edge Highlight and Refraction",
+      "summary": "细亮边表达厚度，局部边缘形变加强液态感，作用限于玻璃轮廓。",
+      "prompt": "为重点玻璃面板加细亮边，必要时只在边缘加入轻微折射。",
+      "kind": "rule",
+      "gif": "assets/gifs/glass-materials/edge-highlight-refraction.gif",
+      "filmstrip": "assets/filmstrips/glass-materials/edge-highlight-refraction.jpg",
+      "keywords": [
+        "玻璃",
+        "液态",
+        "折射",
+        "高光",
+        "玻璃界面",
+        "玻璃效果",
+        "毛玻璃"
+      ],
+      "related": []
+    },
+    {
+      "id": "glass-materials/large-soft-background",
+      "category": "glass-materials",
+      "category_title": "玻璃材质与背景",
+      "slug": "large-soft-background",
+      "name": "大块柔和背景选型",
+      "english": "Large Soft Background Shapes",
+      "summary": "细碎纹理被模糊成纯色，杂乱强色容易抢主体；大块柔和形状更容易显出玻璃层次。",
+      "prompt": "玻璃后使用大于模糊范围的柔和色块，主色控制在少量相近色。",
+      "kind": "rule",
+      "gif": "assets/gifs/glass-materials/large-soft-background.gif",
+      "filmstrip": "assets/filmstrips/glass-materials/large-soft-background.jpg",
+      "keywords": [
+        "玻璃",
+        "背景",
+        "纹理",
+        "色块",
+        "玻璃界面",
+        "玻璃效果",
+        "毛玻璃"
+      ],
+      "related": []
+    },
+    {
+      "id": "glass-materials/glass-text-contrast",
+      "category": "glass-materials",
+      "category_title": "玻璃材质与背景",
+      "slug": "glass-text-contrast",
+      "name": "玻璃前景的明暗控制",
+      "english": "Glass Foreground Contrast",
+      "summary": "背景主色少而有层次，文字后方避免过亮或明暗骤变，材质服务于内容。",
+      "prompt": "控制玻璃下方亮部位置，并给前景内容足够的明暗对比。",
+      "kind": "rule",
+      "gif": "assets/gifs/glass-materials/glass-text-contrast.gif",
+      "filmstrip": "assets/filmstrips/glass-materials/glass-text-contrast.jpg",
+      "keywords": [
+        "玻璃",
+        "文字",
+        "对比",
+        "明暗",
+        "玻璃界面",
+        "玻璃效果",
+        "毛玻璃"
+      ],
+      "related": []
+    },
+    {
+      "id": "interface-details/tabular-numerals",
+      "category": "interface-details",
+      "category_title": "界面排版与细节",
+      "slug": "tabular-numerals",
+      "name": "等宽数字防跳动",
+      "english": "Tabular Numerals",
+      "summary": "变化中的时间和数值使用等宽数字，让各位数字占宽稳定，减少左右跳动。",
+      "prompt": "为计时器和动态统计数字启用 tabular-nums，保留适当数值容器宽度。",
+      "kind": "rule",
+      "gif": "assets/gifs/interface-details/tabular-numerals.gif",
+      "filmstrip": "assets/filmstrips/interface-details/tabular-numerals.jpg",
+      "keywords": [
+        "数字",
+        "计时",
+        "排版",
+        "tabular-nums",
+        "界面细节",
+        "界面精修",
+        "排版细节"
+      ],
+      "related": []
+    },
+    {
+      "id": "interface-details/concentric-corners",
+      "category": "interface-details",
+      "category_title": "界面排版与细节",
+      "slug": "concentric-corners",
+      "name": "嵌套容器同心圆角",
+      "english": "Concentric Corners",
+      "summary": "内外容器转角保持接近同一圆心，避免外层与内层机械地使用同一圆角值。",
+      "prompt": "按内边距协调外卡与内图的圆角，让嵌套边缘保持均匀。",
+      "kind": "rule",
+      "gif": "assets/gifs/interface-details/concentric-corners.gif",
+      "filmstrip": "assets/filmstrips/interface-details/concentric-corners.jpg",
+      "keywords": [
+        "圆角",
+        "内边距",
+        "radius",
+        "嵌套",
+        "界面细节",
+        "界面精修",
+        "排版细节"
+      ],
+      "related": []
+    },
+    {
+      "id": "interface-details/section-stagger",
+      "category": "interface-details",
+      "category_title": "界面排版与细节",
+      "slug": "section-stagger",
+      "name": "内容分组错峰入场",
+      "english": "Section Stagger",
+      "summary": "标题、主图、统计和操作分组依次入场，避免整屏内容同时淡入而缺少节奏。",
+      "prompt": "把首屏按阅读顺序分组，轻微错峰入场，主操作无需等待动画才可用。",
+      "kind": "rule",
+      "gif": "assets/gifs/interface-details/section-stagger.gif",
+      "filmstrip": "assets/filmstrips/interface-details/section-stagger.jpg",
+      "keywords": [
+        "错峰",
+        "入场",
+        "分组",
+        "动画",
+        "界面细节",
+        "界面精修",
+        "排版细节"
+      ],
+      "related": [
+        "motion/stagger"
+      ]
+    },
+    {
+      "id": "interface-details/balanced-headings",
+      "category": "interface-details",
+      "category_title": "界面排版与细节",
+      "slug": "balanced-headings",
+      "name": "平衡标题换行",
+      "english": "Balanced Headings",
+      "summary": "标题多行长度更均衡，避免末行孤立一个短词，同时尊重容器宽度。",
+      "prompt": "为短标题采用平衡换行并设置合适的最大行宽，避免末行过短。",
+      "kind": "rule",
+      "gif": "assets/gifs/interface-details/balanced-headings.gif",
+      "filmstrip": "assets/filmstrips/interface-details/balanced-headings.jpg",
+      "keywords": [
+        "标题",
+        "换行",
+        "排版",
+        "text-wrap",
+        "界面细节",
+        "界面精修",
+        "排版细节"
+      ],
+      "related": []
+    },
+    {
+      "id": "interface-details/layered-soft-shadow",
+      "category": "interface-details",
+      "category_title": "界面排版与细节",
+      "slug": "layered-soft-shadow",
+      "name": "柔和多层阴影",
+      "english": "Layered Soft Shadow",
+      "summary": "在适合的卡片上用近处细阴影和远处柔阴影表达层次，减少僵硬外框感。",
+      "prompt": "用低强度多层阴影柔化普通内容卡，同时保持边界可辨认。",
+      "kind": "rule",
+      "gif": "assets/gifs/interface-details/layered-soft-shadow.gif",
+      "filmstrip": "assets/filmstrips/interface-details/layered-soft-shadow.jpg",
+      "keywords": [
+        "阴影",
+        "边框",
+        "shadow",
+        "卡片",
+        "界面细节",
+        "界面精修",
+        "排版细节"
+      ],
+      "related": []
+    },
+    {
+      "id": "dashboard-layouts/asymmetric-color-grid",
+      "category": "dashboard-layouts",
+      "category_title": "Dashboard 布局与联动",
+      "slug": "asymmetric-color-grid",
+      "name": "多彩错列主次网格",
+      "english": "Asymmetric Color Grid",
+      "summary": "深色底上由大主卡和多张不同色次卡组成非对称网格，选中日期时柱形、标签与容量读数联动。",
+      "prompt": "用非对称网格组织大主卡和次卡，选择日期时同步高亮柱图、标签与容量数据。",
+      "kind": "pattern",
+      "gif": "assets/gifs/dashboard-layouts/asymmetric-color-grid.gif",
+      "filmstrip": "assets/filmstrips/dashboard-layouts/asymmetric-color-grid.jpg",
+      "keywords": [
+        "仪表盘",
+        "dashboard",
+        "错列",
+        "网格",
+        "联动",
+        "Dashboard布局",
+        "仪表盘布局",
+        "后台布局",
+        "数据联动"
+      ],
+      "related": []
+    },
+    {
+      "id": "dashboard-layouts/inventory-action-workbench",
+      "category": "dashboard-layouts",
+      "category_title": "Dashboard 布局与联动",
+      "slug": "inventory-action-workbench",
+      "name": "工业分区与固定操作区",
+      "english": "Inventory Action Workbench",
+      "summary": "左侧状态与库存表承载筛选浏览，右侧固定操作卡跟随当前商品，形成选择到加入清单的连续流程。",
+      "prompt": "库存工作台按筛选、表格、操作区分栏；选中商品更新右卡，加入清单同步数量。",
+      "kind": "pattern",
+      "gif": "assets/gifs/dashboard-layouts/inventory-action-workbench.gif",
+      "filmstrip": "assets/filmstrips/dashboard-layouts/inventory-action-workbench.jpg",
+      "keywords": [
+        "仪表盘",
+        "dashboard",
+        "库存",
+        "表格",
+        "操作区",
+        "Dashboard布局",
+        "仪表盘布局",
+        "后台布局",
+        "数据联动"
+      ],
+      "related": []
+    },
+    {
+      "id": "dashboard-layouts/central-observation-timeline",
+      "category": "dashboard-layouts",
+      "category_title": "Dashboard 布局与联动",
+      "slug": "central-observation-timeline",
+      "name": "中轴观测与时间轴联动",
+      "english": "Central Observation Timeline",
+      "summary": "中央主视图占据重点，两侧收纳队列和读数，下方时间轴驱动全局时刻预览。",
+      "prompt": "中央放主观测图，两侧显示队列和读数；切换对象或拖动时间轴时全局联动。",
+      "kind": "pattern",
+      "gif": "assets/gifs/dashboard-layouts/central-observation-timeline.gif",
+      "filmstrip": "assets/filmstrips/dashboard-layouts/central-observation-timeline.jpg",
+      "keywords": [
+        "仪表盘",
+        "dashboard",
+        "时间轴",
+        "中轴",
+        "观测",
+        "Dashboard布局",
+        "仪表盘布局",
+        "后台布局",
+        "数据联动"
+      ],
+      "related": []
+    },
+    {
+      "id": "dashboard-layouts/glass-matrix-metrics",
+      "category": "dashboard-layouts",
+      "category_title": "Dashboard 布局与联动",
+      "slug": "glass-matrix-metrics",
+      "name": "玻璃点阵与月份指标",
+      "english": "Glass Matrix Metrics",
+      "summary": "浅色玻璃卡片承载点阵读数，月份带与指标选择共同决定当前值和趋势。",
+      "prompt": "浅色仪表盘用玻璃卡与点阵读数，切换月份更新指标，选择指标展示对应趋势。",
+      "kind": "pattern",
+      "gif": "assets/gifs/dashboard-layouts/glass-matrix-metrics.gif",
+      "filmstrip": "assets/filmstrips/dashboard-layouts/glass-matrix-metrics.jpg",
+      "keywords": [
+        "仪表盘",
+        "dashboard",
+        "月份",
+        "玻璃",
+        "点阵",
+        "Dashboard布局",
+        "仪表盘布局",
+        "后台布局",
+        "数据联动"
+      ],
+      "related": [
+        "glass-materials/frosted-glass-layer"
+      ]
+    },
+    {
+      "id": "dashboard-layouts/warm-three-column-console",
+      "category": "dashboard-layouts",
+      "category_title": "Dashboard 布局与联动",
+      "slug": "warm-three-column-console",
+      "name": "暖色三栏控制台",
+      "english": "Warm Three Column Console",
+      "summary": "深色导航、浅色控制区和设备列表构成三栏，房间、模式、数值与单位同步切换。",
+      "prompt": "设备控制台用三栏分区，切换房间同步照片和设定值，模式切换时同步数值与单位。",
+      "kind": "pattern",
+      "gif": "assets/gifs/dashboard-layouts/warm-three-column-console.gif",
+      "filmstrip": "assets/filmstrips/dashboard-layouts/warm-three-column-console.jpg",
+      "keywords": [
+        "仪表盘",
+        "dashboard",
+        "设备",
+        "三栏",
+        "控制台",
+        "Dashboard布局",
+        "仪表盘布局",
+        "后台布局",
+        "数据联动"
+      ],
+      "related": []
+    },
+    {
+      "id": "dashboard-layouts/dark-growth-dashboard",
+      "category": "dashboard-layouts",
+      "category_title": "Dashboard 布局与联动",
+      "slug": "dark-growth-dashboard",
+      "name": "暗色增长与图表递进入场",
+      "english": "Dark Growth Dashboard",
+      "summary": "暗色层级中横排指标在前，主趋势图与来源占比分区，数字、曲线、面积和环图按顺序进入。",
+      "prompt": "增长看板先展示核心指标，再依次绘制趋势曲线、面积和来源环图。",
+      "kind": "pattern",
+      "gif": "assets/gifs/dashboard-layouts/dark-growth-dashboard.gif",
+      "filmstrip": "assets/filmstrips/dashboard-layouts/dark-growth-dashboard.jpg",
+      "keywords": [
+        "仪表盘",
+        "dashboard",
+        "增长",
+        "图表",
+        "入场",
+        "Dashboard布局",
+        "仪表盘布局",
+        "后台布局",
+        "数据联动"
+      ],
+      "related": [
+        "mobile-scroll/viewport-chart-growth",
+        "motion/stagger"
+      ]
     }
   ],
   "media": {

@@ -1,4 +1,4 @@
 interface:
   display_name: "UI Atlas"
-  short_description: "UI 组件选型、交互实现与动效核对，附 115 组 GIF 和六帧对照图"
-  default_prompt: "使用 $ui-atlas 查找对应参考条目，先查看参考图和 GIF，再按其触发方式、状态和运动特征修改当前 UI。"
+  short_description: "组件、页面布局与交互核对，覆盖 Dashboard 和玻璃材质，附 169 组视觉参考"
+  default_prompt: "使用 $ui-atlas 筛选相关条目并按需查看参考，按其触发、状态和运动特征修改 UI，验证项目实际效果并汇报结果。"
