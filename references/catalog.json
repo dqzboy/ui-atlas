@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "language": "zh-CN",
   "categories": [
     {
@@ -61,6 +61,18 @@
     {
       "id": "dashboard-layouts",
       "title": "Dashboard 布局与联动"
+    },
+    {
+      "id": "enterprise-workbenches",
+      "title": "企业工作台与业务后台"
+    },
+    {
+      "id": "data-visualization",
+      "title": "数据可视化与数字孪生"
+    },
+    {
+      "id": "mobile-workbenches",
+      "title": "移动端工作台与服务门户"
     }
   ],
   "items": [
@@ -2843,6 +2855,1654 @@
         "mobile-scroll/viewport-chart-growth",
         "motion/stagger"
       ]
+    },
+    {
+      "id": "enterprise-workbenches/logistics-loading-workbench",
+      "category": "enterprise-workbenches",
+      "category_title": "企业工作台与业务后台",
+      "slug": "logistics-loading-workbench",
+      "name": "物流配载与车辆工作台",
+      "english": "Logistics Loading Workbench",
+      "summary": "车厢货位模型占据主区，司机、容量和活动日志列于侧边；另一页以车辆选择、装载状态和货物表组织配送任务。",
+      "prompt": "参考 enterprise-workbenches/logistics-loading-workbench，把货位、负载和清单保持在同一业务上下文；空货位、已装载和不可用应有可区分状态。",
+      "kind": "pattern",
+      "keywords": [
+        "物流",
+        "车辆",
+        "配载",
+        "车厢",
+        "容量",
+        "货位",
+        "运输"
+      ],
+      "implementation": "把货位、负载和清单保持在同一业务上下文；空货位、已装载和不可用应有可区分状态。",
+      "media_type": "gallery",
+      "images": [
+        "assets/images/enterprise-workbenches/logistics-loading-workbench-01.jpg",
+        "assets/images/enterprise-workbenches/logistics-loading-workbench-02.jpg"
+      ],
+      "preview": "assets/previews/enterprise-workbenches/logistics-loading-workbench.jpg",
+      "evidence": "static-design"
+    },
+    {
+      "id": "mobile-workbenches/public-service-task-homes",
+      "category": "mobile-workbenches",
+      "category_title": "移动端工作台与服务门户",
+      "slug": "public-service-task-homes",
+      "name": "政务缴费与工厂任务首页",
+      "english": "Public Service Task Homes",
+      "summary": "四个手机页面分别呈现农业政务服务、电费余额与缴费、工厂任务，以及需求立项指标；共同使用品牌色头部和分组入口。",
+      "prompt": "参考 mobile-workbenches/public-service-task-homes，先区分查询、缴费、执行任务和立项四种主目标，再决定首页主操作与工具入口层级。",
+      "kind": "pattern",
+      "keywords": [
+        "政务",
+        "农业",
+        "电费",
+        "缴费",
+        "工厂",
+        "任务",
+        "立项"
+      ],
+      "implementation": "先区分查询、缴费、执行任务和立项四种主目标，再决定首页主操作与工具入口层级。",
+      "media_type": "gallery",
+      "images": [
+        "assets/images/mobile-workbenches/public-service-task-homes-01.jpg",
+        "assets/images/mobile-workbenches/public-service-task-homes-02.jpg"
+      ],
+      "preview": "assets/previews/mobile-workbenches/public-service-task-homes.jpg",
+      "evidence": "static-design"
+    },
+    {
+      "id": "data-visualization/dark-industrial-twin-collection",
+      "category": "data-visualization",
+      "category_title": "数据可视化与数字孪生",
+      "slug": "dark-industrial-twin-collection",
+      "name": "深色工业设备与仓库孪生",
+      "english": "Dark Industrial Twin Collection",
+      "summary": "绿色设备、蓝色机组和仓库／园区模型位于深色主画布，周围分布指标、趋势和业务数据区。",
+      "prompt": "参考 data-visualization/dark-industrial-twin-collection，让设备状态与关键告警具有稳定的可读层级，压低模型装饰光对正文和图表的干扰。",
+      "kind": "pattern",
+      "keywords": [
+        "深色",
+        "后台",
+        "工业",
+        "数字孪生",
+        "仓库",
+        "园区",
+        "机组"
+      ],
+      "implementation": "让设备状态与关键告警具有稳定的可读层级，压低模型装饰光对正文和图表的干扰。",
+      "media_type": "gallery",
+      "images": [
+        "assets/images/data-visualization/dark-industrial-twin-collection-01.jpg",
+        "assets/images/data-visualization/dark-industrial-twin-collection-02.jpg"
+      ],
+      "preview": "assets/previews/data-visualization/dark-industrial-twin-collection.jpg",
+      "evidence": "static-design"
+    },
+    {
+      "id": "enterprise-workbenches/glass-welcome-service-portal",
+      "category": "enterprise-workbenches",
+      "category_title": "企业工作台与业务后台",
+      "slug": "glass-welcome-service-portal",
+      "name": "玻璃欢迎区与企业服务门户",
+      "english": "Glass Welcome Service Portal",
+      "summary": "大渐变欢迎区域结合半透明卡片、指标、日历和工具入口；另一页用企业蓝组织服务门户。",
+      "prompt": "参考 enterprise-workbenches/glass-welcome-service-portal，欢迎区保持简短，把高频入口、待办与日历安排在可快速扫描的位置。",
+      "kind": "pattern",
+      "keywords": [
+        "毛玻璃",
+        "渐变",
+        "欢迎",
+        "企业门户",
+        "日历",
+        "快捷入口"
+      ],
+      "implementation": "欢迎区保持简短，把高频入口、待办与日历安排在可快速扫描的位置。",
+      "media_type": "gallery",
+      "images": [
+        "assets/images/enterprise-workbenches/glass-welcome-service-portal-01.jpg",
+        "assets/images/enterprise-workbenches/glass-welcome-service-portal-02.jpg"
+      ],
+      "preview": "assets/previews/enterprise-workbenches/glass-welcome-service-portal.jpg",
+      "evidence": "static-design"
+    },
+    {
+      "id": "enterprise-workbenches/ai-assistant-productivity-hub",
+      "category": "enterprise-workbenches",
+      "category_title": "企业工作台与业务后台",
+      "slug": "ai-assistant-productivity-hub",
+      "name": "AI 助手与效率工具工作台",
+      "english": "AI Assistant Productivity Hub",
+      "summary": "工具卡、文档快捷创建和对话入口构成效率工作台；图集同时提供整页组合与独立设计稿。",
+      "prompt": "参考 enterprise-workbenches/ai-assistant-productivity-hub，区分新建文档、调用工具和开始对话，输入区的示例问题应能帮助用户发起具体任务。",
+      "kind": "pattern",
+      "keywords": [
+        "AI",
+        "助手",
+        "对话",
+        "工具",
+        "文档",
+        "效率",
+        "CueMe"
+      ],
+      "implementation": "区分新建文档、调用工具和开始对话，输入区的示例问题应能帮助用户发起具体任务。",
+      "media_type": "gallery",
+      "images": [
+        "assets/images/enterprise-workbenches/ai-assistant-productivity-hub-01.jpg",
+        "assets/images/enterprise-workbenches/ai-assistant-productivity-hub-02.jpg",
+        "assets/images/enterprise-workbenches/ai-assistant-productivity-hub-03.jpg",
+        "assets/images/enterprise-workbenches/ai-assistant-productivity-hub-04.jpg"
+      ],
+      "preview": "assets/previews/enterprise-workbenches/ai-assistant-productivity-hub.jpg",
+      "evidence": "static-design"
+    },
+    {
+      "id": "data-visualization/light-industrial-energy-scenarios",
+      "category": "data-visualization",
+      "category_title": "数据可视化与数字孪生",
+      "slug": "light-industrial-energy-scenarios",
+      "name": "浅色工业与能源组态",
+      "english": "Light Industrial Energy Scenarios",
+      "summary": "机械臂、电站和太阳能组态配合浅色指标、任务与数据卡，立体对象作为业务状态的视觉中心。",
+      "prompt": "参考 data-visualization/light-industrial-energy-scenarios，模型保留可识别结构，数值和状态说明放在稳定面板，避免只靠模型颜色表达故障。",
+      "kind": "pattern",
+      "keywords": [
+        "浅色",
+        "工业",
+        "机械臂",
+        "电站",
+        "太阳能",
+        "能源",
+        "组态"
+      ],
+      "implementation": "模型保留可识别结构，数值和状态说明放在稳定面板，避免只靠模型颜色表达故障。",
+      "media_type": "gallery",
+      "images": [
+        "assets/images/data-visualization/light-industrial-energy-scenarios-01.jpg",
+        "assets/images/data-visualization/light-industrial-energy-scenarios-02.jpg"
+      ],
+      "preview": "assets/previews/data-visualization/light-industrial-energy-scenarios.jpg",
+      "evidence": "static-design"
+    },
+    {
+      "id": "data-visualization/solar-building-energy-overview",
+      "category": "data-visualization",
+      "category_title": "数据可视化与数字孪生",
+      "slug": "solar-building-energy-overview",
+      "name": "光伏建筑与能源运营概览",
+      "english": "Solar Building Energy Overview",
+      "summary": "光伏房屋模型与能源统计卡并置；另一页以多彩指标卡和运营分区组织总览。",
+      "prompt": "参考 data-visualization/solar-building-energy-overview，把能耗、发电和运营指标分别命名，明确统计周期和单位，避免颜色替代指标含义。",
+      "kind": "pattern",
+      "keywords": [
+        "光伏",
+        "房屋",
+        "能源",
+        "发电",
+        "多彩",
+        "指标",
+        "运营"
+      ],
+      "implementation": "把能耗、发电和运营指标分别命名，明确统计周期和单位，避免颜色替代指标含义。",
+      "media_type": "gallery",
+      "images": [
+        "assets/images/data-visualization/solar-building-energy-overview-01.jpg",
+        "assets/images/data-visualization/solar-building-energy-overview-02.jpg"
+      ],
+      "preview": "assets/previews/data-visualization/solar-building-energy-overview.jpg",
+      "evidence": "static-design"
+    },
+    {
+      "id": "data-visualization/orange-process-data-console",
+      "category": "data-visualization",
+      "category_title": "数据可视化与数字孪生",
+      "slug": "orange-process-data-console",
+      "name": "橙色统计与设备流程控制台",
+      "english": "Orange Process Data Console",
+      "summary": "橙色柱图、趋势与设备流程连线构成主视觉，数据概览与流程状态区共同呈现运行情况。",
+      "prompt": "参考 data-visualization/orange-process-data-console，流程节点应说明当前阶段和异常位置，连线装饰不能遮挡设备名称与关键读数。",
+      "kind": "pattern",
+      "keywords": [
+        "橙色",
+        "柱状图",
+        "趋势",
+        "流程",
+        "连线",
+        "设备",
+        "状态"
+      ],
+      "implementation": "流程节点应说明当前阶段和异常位置，连线装饰不能遮挡设备名称与关键读数。",
+      "media_type": "gallery",
+      "images": [
+        "assets/images/data-visualization/orange-process-data-console-01.jpg",
+        "assets/images/data-visualization/orange-process-data-console-02.jpg"
+      ],
+      "preview": "assets/previews/data-visualization/orange-process-data-console.jpg",
+      "evidence": "static-design"
+    },
+    {
+      "id": "enterprise-workbenches/contrast-operations-task-overview",
+      "category": "enterprise-workbenches",
+      "category_title": "企业工作台与业务后台",
+      "slug": "contrast-operations-task-overview",
+      "name": "深浅运营卡与人员任务概览",
+      "english": "Contrast Operations Task Overview",
+      "summary": "深浅对照的运营卡、任务和人员列表，与浅蓝模型总览形成不同密度的工作台结构。",
+      "prompt": "参考 enterprise-workbenches/contrast-operations-task-overview，先决定主要任务是看指标还是处理列表，再分配模型和数据卡的面积。",
+      "kind": "pattern",
+      "keywords": [
+        "运营",
+        "人员",
+        "任务",
+        "列表",
+        "深浅",
+        "对照",
+        "浅蓝"
+      ],
+      "implementation": "先决定主要任务是看指标还是处理列表，再分配模型和数据卡的面积。",
+      "media_type": "gallery",
+      "images": [
+        "assets/images/enterprise-workbenches/contrast-operations-task-overview-01.jpg",
+        "assets/images/enterprise-workbenches/contrast-operations-task-overview-02.jpg"
+      ],
+      "preview": "assets/previews/enterprise-workbenches/contrast-operations-task-overview.jpg",
+      "evidence": "static-design"
+    },
+    {
+      "id": "enterprise-workbenches/heatmap-process-management",
+      "category": "enterprise-workbenches",
+      "category_title": "企业工作台与业务后台",
+      "slug": "heatmap-process-management",
+      "name": "热力统计与流程管理工作台",
+      "english": "Heatmap Process Management",
+      "summary": "指标和热力表、绿色折线组成数据概览；流程步骤及管理表补充具体业务进展。",
+      "prompt": "参考 enterprise-workbenches/heatmap-process-management，热力色阶保留图例，流程步骤区分已完成、当前和待处理，并给出下一步入口。",
+      "kind": "pattern",
+      "keywords": [
+        "热力图",
+        "绿色",
+        "折线",
+        "流程",
+        "步骤",
+        "管理表"
+      ],
+      "implementation": "热力色阶保留图例，流程步骤区分已完成、当前和待处理，并给出下一步入口。",
+      "media_type": "gallery",
+      "images": [
+        "assets/images/enterprise-workbenches/heatmap-process-management-01.jpg",
+        "assets/images/enterprise-workbenches/heatmap-process-management-02.jpg"
+      ],
+      "preview": "assets/previews/enterprise-workbenches/heatmap-process-management.jpg",
+      "evidence": "static-design"
+    },
+    {
+      "id": "data-visualization/wind-turbine-monitoring",
+      "category": "data-visualization",
+      "category_title": "数据可视化与数字孪生",
+      "slug": "wind-turbine-monitoring",
+      "name": "风电机组与侧栏统计",
+      "english": "Wind Turbine Monitoring",
+      "summary": "风电模型作为主要场景，关键机组指标靠近主对象；另一页以蓝色侧栏连接统计工作台。",
+      "prompt": "参考 data-visualization/wind-turbine-monitoring，把单机指标与全场统计分开，设备名称、状态和数据更新时间始终可定位。",
+      "kind": "pattern",
+      "keywords": [
+        "风电",
+        "风机",
+        "机组",
+        "模型",
+        "能源",
+        "监控"
+      ],
+      "implementation": "把单机指标与全场统计分开，设备名称、状态和数据更新时间始终可定位。",
+      "media_type": "gallery",
+      "images": [
+        "assets/images/data-visualization/wind-turbine-monitoring-01.jpg",
+        "assets/images/data-visualization/wind-turbine-monitoring-02.jpg"
+      ],
+      "preview": "assets/previews/data-visualization/wind-turbine-monitoring.jpg",
+      "evidence": "static-design"
+    },
+    {
+      "id": "data-visualization/blue-lit-building-equipment",
+      "category": "data-visualization",
+      "category_title": "数据可视化与数字孪生",
+      "slug": "blue-lit-building-equipment",
+      "name": "蓝光储能建筑与设备监测",
+      "english": "Blue Lit Building Equipment",
+      "summary": "深色蓝光储能建筑、机组和设备模型配合电量、运行参数、趋势、环形统计及监测表，强调中央场景与周边读数层级。",
+      "prompt": "参考 data-visualization/blue-lit-building-equipment，告警颜色与普通蓝色装饰分开，确保趋势线、刻度和小字在暗背景上可辨认。",
+      "kind": "pattern",
+      "keywords": [
+        "深色",
+        "蓝光",
+        "储能",
+        "建筑",
+        "电池",
+        "PCS",
+        "机组",
+        "监测"
+      ],
+      "implementation": "告警颜色与普通蓝色装饰分开，确保趋势线、刻度和小字在暗背景上可辨认。",
+      "media_type": "gallery",
+      "images": [
+        "assets/images/data-visualization/blue-lit-building-equipment-01.jpg",
+        "assets/images/data-visualization/blue-lit-building-equipment-02.jpg"
+      ],
+      "preview": "assets/previews/data-visualization/blue-lit-building-equipment.jpg",
+      "evidence": "static-design"
+    },
+    {
+      "id": "enterprise-workbenches/freight-model-service-workbench",
+      "category": "enterprise-workbenches",
+      "category_title": "企业工作台与业务后台",
+      "slug": "freight-model-service-workbench",
+      "name": "货运模型与企业应用门户",
+      "english": "Freight Model Service Workbench",
+      "summary": "货运车辆与集装箱模型和业务参数、列表同屏；另一页提供蓝色企业应用入口。",
+      "prompt": "参考 enterprise-workbenches/freight-model-service-workbench，配载任务与通用应用入口分别分组，当前车辆的参数和清单保持就近呈现。",
+      "kind": "pattern",
+      "keywords": [
+        "货运",
+        "集装箱",
+        "车辆",
+        "企业应用",
+        "参数",
+        "工作台"
+      ],
+      "implementation": "配载任务与通用应用入口分别分组，当前车辆的参数和清单保持就近呈现。",
+      "media_type": "gallery",
+      "images": [
+        "assets/images/enterprise-workbenches/freight-model-service-workbench-01.jpg",
+        "assets/images/enterprise-workbenches/freight-model-service-workbench-02.jpg"
+      ],
+      "preview": "assets/previews/enterprise-workbenches/freight-model-service-workbench.jpg",
+      "evidence": "static-design"
+    },
+    {
+      "id": "data-visualization/digital-assets-capacity-overview",
+      "category": "data-visualization",
+      "category_title": "数据可视化与数字孪生",
+      "slug": "digital-assets-capacity-overview",
+      "name": "客户仪表盘与意图规则工作台",
+      "english": "Digital Assets Capacity Overview",
+      "summary": "浅色客户仪表盘与运营概览用立体对象和图表突出指标；另一页呈现意图规则分类、规则表与智能服务入口，并补充工业能耗概览。",
+      "prompt": "参考 data-visualization/digital-assets-capacity-overview，按客户分析、规则管理和能耗监测分别组织工作区；规则表突出分类、启用状态与命中数据。",
+      "kind": "pattern",
+      "keywords": [
+        "客户",
+        "仪表盘",
+        "意图",
+        "规则",
+        "智能服务",
+        "能耗",
+        "运营"
+      ],
+      "implementation": "按客户分析、规则管理和能耗监测分别组织工作区；规则表突出分类、启用状态与命中数据。",
+      "media_type": "gallery",
+      "images": [
+        "assets/images/data-visualization/digital-assets-capacity-overview-01.jpg",
+        "assets/images/data-visualization/digital-assets-capacity-overview-02.jpg"
+      ],
+      "preview": "assets/previews/data-visualization/digital-assets-capacity-overview.jpg",
+      "evidence": "static-design"
+    },
+    {
+      "id": "enterprise-workbenches/organization-talent-analytics",
+      "category": "enterprise-workbenches",
+      "category_title": "企业工作台与业务后台",
+      "slug": "organization-talent-analytics",
+      "name": "客户日程与对象风险分析",
+      "english": "Organization Talent Analytics",
+      "summary": "浅蓝客户指标与日程工作台组织账户和会议；对象管理页面结合档案、风险分析、地图及统计形成另一类业务概览。",
+      "prompt": "参考 enterprise-workbenches/organization-talent-analytics，客户日程与对象风险分析采用各自的业务维度，地图、档案及统计范围应清楚标注。",
+      "kind": "pattern",
+      "keywords": [
+        "客户",
+        "日程",
+        "会议",
+        "对象管理",
+        "档案",
+        "风险分析",
+        "地图"
+      ],
+      "implementation": "客户日程与对象风险分析采用各自的业务维度，地图、档案及统计范围应清楚标注。",
+      "media_type": "gallery",
+      "images": [
+        "assets/images/enterprise-workbenches/organization-talent-analytics-01.jpg",
+        "assets/images/enterprise-workbenches/organization-talent-analytics-02.jpg"
+      ],
+      "preview": "assets/previews/enterprise-workbenches/organization-talent-analytics.jpg",
+      "evidence": "static-design"
+    },
+    {
+      "id": "enterprise-workbenches/cargo-status-task-dashboard",
+      "category": "enterprise-workbenches",
+      "category_title": "企业工作台与业务后台",
+      "slug": "cargo-status-task-dashboard",
+      "name": "货运状态与任务仪表盘",
+      "english": "Cargo Status Task Dashboard",
+      "summary": "车厢载货可视化、状态节点和任务进展并置，环形仪表与表格承接具体业务明细。",
+      "prompt": "参考 enterprise-workbenches/cargo-status-task-dashboard，状态节点对应可解释的任务阶段，进度读数应有分母或完成标准。",
+      "kind": "pattern",
+      "keywords": [
+        "物流",
+        "车厢",
+        "载货",
+        "状态",
+        "任务",
+        "仪表",
+        "表格"
+      ],
+      "implementation": "状态节点对应可解释的任务阶段，进度读数应有分母或完成标准。",
+      "media_type": "gallery",
+      "images": [
+        "assets/images/enterprise-workbenches/cargo-status-task-dashboard-01.jpg",
+        "assets/images/enterprise-workbenches/cargo-status-task-dashboard-02.jpg"
+      ],
+      "preview": "assets/previews/enterprise-workbenches/cargo-status-task-dashboard.jpg",
+      "evidence": "static-design"
+    },
+    {
+      "id": "mobile-workbenches/sales-crm-parcel-homes",
+      "category": "mobile-workbenches",
+      "category_title": "移动端工作台与服务门户",
+      "slug": "sales-crm-parcel-homes",
+      "name": "CRM、寄件与生活服务首页",
+      "english": "Sales CRM Parcel Homes",
+      "summary": "短视频展示销售拜访 CRM 的 KPI／进度、寄件、音频转写、校园工具、充电商城及借阅服务首页，可观察页面组合与镜头转场。",
+      "prompt": "参考 mobile-workbenches/sales-crm-parcel-homes，分别识别销售目标、寄件、转写、校园服务、充电和借阅的主要入口；参考原片布局，不把镜头切换当作产品导航。",
+      "kind": "pattern",
+      "keywords": [
+        "移动端",
+        "CRM",
+        "销售",
+        "拜访",
+        "KPI",
+        "寄件",
+        "转写",
+        "校园",
+        "充电",
+        "借阅"
+      ],
+      "implementation": "分别识别销售目标、寄件、转写、校园服务、充电和借阅的主要入口；参考原片布局，不把镜头切换当作产品导航。",
+      "media_type": "animation",
+      "gif": "assets/gifs/mobile-workbenches/sales-crm-parcel-homes.gif",
+      "filmstrip": "assets/filmstrips/mobile-workbenches/sales-crm-parcel-homes.jpg",
+      "evidence": "video-excerpt"
+    },
+    {
+      "id": "enterprise-workbenches/aircraft-device-service-console",
+      "category": "enterprise-workbenches",
+      "category_title": "企业工作台与业务后台",
+      "slug": "aircraft-device-service-console",
+      "name": "飞行设备参数与业务服务台",
+      "english": "Aircraft Device Service Console",
+      "summary": "飞机、无人机或设备模型与参数信息形成设备详情区；服务入口和业务表格提供任务支撑。",
+      "prompt": "参考 enterprise-workbenches/aircraft-device-service-console，设备识别、状态和任务操作需先于装饰展示，参数注明单位并能追溯当前设备。",
+      "kind": "pattern",
+      "keywords": [
+        "飞机",
+        "无人机",
+        "飞行",
+        "设备",
+        "参数",
+        "服务",
+        "表格"
+      ],
+      "implementation": "设备识别、状态和任务操作需先于装饰展示，参数注明单位并能追溯当前设备。",
+      "media_type": "gallery",
+      "images": [
+        "assets/images/enterprise-workbenches/aircraft-device-service-console-01.jpg",
+        "assets/images/enterprise-workbenches/aircraft-device-service-console-02.jpg"
+      ],
+      "preview": "assets/previews/enterprise-workbenches/aircraft-device-service-console.jpg",
+      "evidence": "static-design"
+    },
+    {
+      "id": "enterprise-workbenches/blue-welcome-operations-portal",
+      "category": "enterprise-workbenches",
+      "category_title": "企业工作台与业务后台",
+      "slug": "blue-welcome-operations-portal",
+      "name": "蓝色欢迎门户与运营概览",
+      "english": "Blue Welcome Operations Portal",
+      "summary": "企业蓝欢迎横幅、日历和快捷入口组成首页，另一页集中展示运营指标与趋势。",
+      "prompt": "参考 enterprise-workbenches/blue-welcome-operations-portal，欢迎区域让出高频任务空间，工具入口和统计分析使用清晰的分区标题。",
+      "kind": "pattern",
+      "keywords": [
+        "蓝色",
+        "企业",
+        "门户",
+        "欢迎",
+        "日历",
+        "运营",
+        "趋势"
+      ],
+      "implementation": "欢迎区域让出高频任务空间，工具入口和统计分析使用清晰的分区标题。",
+      "media_type": "gallery",
+      "images": [
+        "assets/images/enterprise-workbenches/blue-welcome-operations-portal-01.jpg",
+        "assets/images/enterprise-workbenches/blue-welcome-operations-portal-02.jpg"
+      ],
+      "preview": "assets/previews/enterprise-workbenches/blue-welcome-operations-portal.jpg",
+      "evidence": "static-design"
+    },
+    {
+      "id": "data-visualization/health-body-metrics-dashboard",
+      "category": "data-visualization",
+      "category_title": "数据可视化与数字孪生",
+      "slug": "health-body-metrics-dashboard",
+      "name": "人体模型与健康数据仪表盘",
+      "english": "Health Body Metrics Dashboard",
+      "summary": "浅色健康仪表盘结合人体模型、体征卡和心率柱图；预约管理与档案页面呈现业务记录。",
+      "prompt": "参考 data-visualization/health-body-metrics-dashboard，体征数据注明时间与单位，示意模型仅辅助定位，异常判断需按产品实际业务定义。",
+      "kind": "pattern",
+      "keywords": [
+        "健康",
+        "人体",
+        "体征",
+        "心率",
+        "预约",
+        "医疗",
+        "档案"
+      ],
+      "implementation": "体征数据注明时间与单位，示意模型仅辅助定位，异常判断需按产品实际业务定义。",
+      "media_type": "gallery",
+      "images": [
+        "assets/images/data-visualization/health-body-metrics-dashboard-01.jpg",
+        "assets/images/data-visualization/health-body-metrics-dashboard-02.jpg",
+        "assets/images/data-visualization/health-body-metrics-dashboard-03.jpg"
+      ],
+      "preview": "assets/previews/data-visualization/health-body-metrics-dashboard.jpg",
+      "evidence": "static-design"
+    },
+    {
+      "id": "enterprise-workbenches/green-energy-service-overview",
+      "category": "enterprise-workbenches",
+      "category_title": "企业工作台与业务后台",
+      "slug": "green-energy-service-overview",
+      "name": "浅绿能源运营与服务门户",
+      "english": "Green Energy Service Overview",
+      "summary": "浅绿色运营概览、太阳能组态和趋势表格并列，服务门户提供常用工具和业务入口。",
+      "prompt": "参考 enterprise-workbenches/green-energy-service-overview，把能源监测和业务服务分组，突出用户当前最需要处理的异常或待办。",
+      "kind": "pattern",
+      "keywords": [
+        "浅绿",
+        "能源",
+        "太阳能",
+        "运营",
+        "服务门户",
+        "趋势"
+      ],
+      "implementation": "把能源监测和业务服务分组，突出用户当前最需要处理的异常或待办。",
+      "media_type": "gallery",
+      "images": [
+        "assets/images/enterprise-workbenches/green-energy-service-overview-01.jpg",
+        "assets/images/enterprise-workbenches/green-energy-service-overview-02.jpg"
+      ],
+      "preview": "assets/previews/enterprise-workbenches/green-energy-service-overview.jpg",
+      "evidence": "static-design"
+    },
+    {
+      "id": "data-visualization/dark-infrastructure-twin-screens",
+      "category": "data-visualization",
+      "category_title": "数据可视化与数字孪生",
+      "slug": "dark-infrastructure-twin-screens",
+      "name": "深色基础设施孪生大屏",
+      "english": "Dark Infrastructure Twin Screens",
+      "summary": "水处理、发动机、地形和仓库模型位于深色监测画布，指标卡和业务表围绕主场景组织。",
+      "prompt": "参考 data-visualization/dark-infrastructure-twin-screens，每种场景先建立监测对象与数据关系，屏幕尺寸改变时保持关键指标可读。",
+      "kind": "pattern",
+      "keywords": [
+        "深色",
+        "水处理",
+        "发动机",
+        "地形",
+        "仓库",
+        "数字孪生",
+        "大屏"
+      ],
+      "implementation": "每种场景先建立监测对象与数据关系，屏幕尺寸改变时保持关键指标可读。",
+      "media_type": "gallery",
+      "images": [
+        "assets/images/data-visualization/dark-infrastructure-twin-screens-01.jpg",
+        "assets/images/data-visualization/dark-infrastructure-twin-screens-02.jpg"
+      ],
+      "preview": "assets/previews/data-visualization/dark-infrastructure-twin-screens.jpg",
+      "evidence": "static-design"
+    },
+    {
+      "id": "mobile-workbenches/device-service-tool-grid",
+      "category": "mobile-workbenches",
+      "category_title": "移动端工作台与服务门户",
+      "slug": "device-service-tool-grid",
+      "name": "移动设备与数字工具工作台",
+      "english": "Device Service Tool Grid",
+      "summary": "品牌色头部、仪表读数、设备／服务卡和数字工具网格形成多种移动端工作台。",
+      "prompt": "参考 mobile-workbenches/device-service-tool-grid，头部仅放当前关键读数，工具格按任务分组，长名称和大字号下仍能完整识别入口。",
+      "kind": "pattern",
+      "keywords": [
+        "移动端",
+        "设备",
+        "服务",
+        "仪表",
+        "工具",
+        "网格",
+        "工作台"
+      ],
+      "implementation": "头部仅放当前关键读数，工具格按任务分组，长名称和大字号下仍能完整识别入口。",
+      "media_type": "gallery",
+      "images": [
+        "assets/images/mobile-workbenches/device-service-tool-grid-01.jpg",
+        "assets/images/mobile-workbenches/device-service-tool-grid-02.jpg",
+        "assets/images/mobile-workbenches/device-service-tool-grid-03.jpg"
+      ],
+      "preview": "assets/previews/mobile-workbenches/device-service-tool-grid.jpg",
+      "evidence": "static-design"
+    },
+    {
+      "id": "data-visualization/regional-campus-map-overview",
+      "category": "data-visualization",
+      "category_title": "数据可视化与数字孪生",
+      "slug": "regional-campus-map-overview",
+      "name": "区域道路与校园空间总览",
+      "english": "Regional Campus Map Overview",
+      "summary": "浅色区域地图和道路网络配合校园／体育场模型，统计卡浮于空间场景周围。",
+      "prompt": "参考 data-visualization/regional-campus-map-overview，地图与模型承担空间定位，浮卡保持稳定的阅读顺序，避免覆盖重要点位。",
+      "kind": "pattern",
+      "keywords": [
+        "地图",
+        "区域",
+        "道路",
+        "校园",
+        "体育场",
+        "模型",
+        "点位"
+      ],
+      "implementation": "地图与模型承担空间定位，浮卡保持稳定的阅读顺序，避免覆盖重要点位。",
+      "media_type": "gallery",
+      "images": [
+        "assets/images/data-visualization/regional-campus-map-overview-01.jpg",
+        "assets/images/data-visualization/regional-campus-map-overview-02.jpg"
+      ],
+      "preview": "assets/previews/data-visualization/regional-campus-map-overview.jpg",
+      "evidence": "static-design"
+    },
+    {
+      "id": "enterprise-workbenches/factory-oa-task-portal",
+      "category": "enterprise-workbenches",
+      "category_title": "企业工作台与业务后台",
+      "slug": "factory-oa-task-portal",
+      "name": "工厂与 OA 任务门户",
+      "english": "Factory OA Task Portal",
+      "summary": "蓝色任务首页、图标快捷入口、工厂 MOM／OA 指标和待办构成企业业务门户。",
+      "prompt": "参考 enterprise-workbenches/factory-oa-task-portal，把待办处理入口与仅供查看的指标区分，工作流状态用明确文字说明。",
+      "kind": "pattern",
+      "keywords": [
+        "工厂",
+        "MOM",
+        "OA",
+        "门户",
+        "待办",
+        "任务",
+        "快捷入口"
+      ],
+      "implementation": "把待办处理入口与仅供查看的指标区分，工作流状态用明确文字说明。",
+      "media_type": "gallery",
+      "images": [
+        "assets/images/enterprise-workbenches/factory-oa-task-portal-01.jpg",
+        "assets/images/enterprise-workbenches/factory-oa-task-portal-02.jpg"
+      ],
+      "preview": "assets/previews/enterprise-workbenches/factory-oa-task-portal.jpg",
+      "evidence": "static-design"
+    },
+    {
+      "id": "data-visualization/agv-factory-robot-console",
+      "category": "data-visualization",
+      "category_title": "数据可视化与数字孪生",
+      "slug": "agv-factory-robot-console",
+      "name": "AGV 车间与机器人状态台",
+      "english": "Agv Factory Robot Console",
+      "summary": "深色车间模型配合任务状态、机器人电量和告警列表，图集包含独立设计稿与组合视图。",
+      "prompt": "参考 data-visualization/agv-factory-robot-console，电量、离线和故障应使用不同语义，告警表保留设备定位与时间信息。",
+      "kind": "pattern",
+      "keywords": [
+        "AGV",
+        "工厂",
+        "机器人",
+        "电量",
+        "告警",
+        "车间",
+        "深色"
+      ],
+      "implementation": "电量、离线和故障应使用不同语义，告警表保留设备定位与时间信息。",
+      "media_type": "gallery",
+      "images": [
+        "assets/images/data-visualization/agv-factory-robot-console-01.jpg",
+        "assets/images/data-visualization/agv-factory-robot-console-02.jpg",
+        "assets/images/data-visualization/agv-factory-robot-console-03.jpg"
+      ],
+      "preview": "assets/previews/data-visualization/agv-factory-robot-console.jpg",
+      "evidence": "static-design"
+    },
+    {
+      "id": "data-visualization/robotic-arm-pipeline-metrics",
+      "category": "data-visualization",
+      "category_title": "数据可视化与数字孪生",
+      "slug": "robotic-arm-pipeline-metrics",
+      "name": "机械臂监测与个人健康分析",
+      "english": "Robotic Arm Pipeline Metrics",
+      "summary": "浅色机械臂页面呈现运行时间、连接和电流／电压／温度／扭矩；个人测试页面结合分子结构模型、健康指标与日程。",
+      "prompt": "参考 data-visualization/robotic-arm-pipeline-metrics，机械臂参数注明单位与设备状态；健康测试突出记录日期与指标含义，模型只辅助理解对象。",
+      "kind": "pattern",
+      "keywords": [
+        "机械臂",
+        "运行",
+        "参数",
+        "电流",
+        "扭矩",
+        "个人测试",
+        "健康",
+        "分子结构"
+      ],
+      "implementation": "机械臂参数注明单位与设备状态；健康测试突出记录日期与指标含义，模型只辅助理解对象。",
+      "media_type": "gallery",
+      "images": [
+        "assets/images/data-visualization/robotic-arm-pipeline-metrics-01.jpg",
+        "assets/images/data-visualization/robotic-arm-pipeline-metrics-02.jpg",
+        "assets/images/data-visualization/robotic-arm-pipeline-metrics-03.jpg"
+      ],
+      "preview": "assets/previews/data-visualization/robotic-arm-pipeline-metrics.jpg",
+      "evidence": "static-design"
+    },
+    {
+      "id": "data-visualization/campus-light-dark-themes",
+      "category": "data-visualization",
+      "category_title": "数据可视化与数字孪生",
+      "slug": "campus-light-dark-themes",
+      "name": "园区建筑的深浅主题对照",
+      "english": "Campus Light Dark Themes",
+      "summary": "同类园区／建筑模型分别放在浅色与深色页面中，展示材质、光照和周边数据卡的主题差异。",
+      "prompt": "参考 data-visualization/campus-light-dark-themes，切换主题时保留指标层级与状态语义，对比文字、图表和模型在两套背景上的清晰度。",
+      "kind": "pattern",
+      "keywords": [
+        "园区",
+        "建筑",
+        "深浅",
+        "主题",
+        "对照",
+        "模型"
+      ],
+      "implementation": "切换主题时保留指标层级与状态语义，对比文字、图表和模型在两套背景上的清晰度。",
+      "media_type": "gallery",
+      "images": [
+        "assets/images/data-visualization/campus-light-dark-themes-01.jpg",
+        "assets/images/data-visualization/campus-light-dark-themes-02.jpg",
+        "assets/images/data-visualization/campus-light-dark-themes-03.jpg"
+      ],
+      "preview": "assets/previews/data-visualization/campus-light-dark-themes.jpg",
+      "evidence": "static-design"
+    },
+    {
+      "id": "mobile-workbenches/enterprise-service-mobile-hub",
+      "category": "mobile-workbenches",
+      "category_title": "移动端工作台与服务门户",
+      "slug": "enterprise-service-mobile-hub",
+      "name": "移动企业服务与工具首页",
+      "english": "Enterprise Service Mobile Hub",
+      "summary": "移动企业服务门户结合清新色头部、服务工具格和活动横幅，展示同类入口的不同分组方式。",
+      "prompt": "参考 mobile-workbenches/enterprise-service-mobile-hub，高频服务保持固定位置，活动内容的视觉权重不得压过主要业务入口。",
+      "kind": "pattern",
+      "keywords": [
+        "移动端",
+        "企业服务",
+        "工具格",
+        "横幅",
+        "清新",
+        "门户"
+      ],
+      "implementation": "高频服务保持固定位置，活动内容的视觉权重不得压过主要业务入口。",
+      "media_type": "gallery",
+      "images": [
+        "assets/images/mobile-workbenches/enterprise-service-mobile-hub-01.jpg",
+        "assets/images/mobile-workbenches/enterprise-service-mobile-hub-02.jpg"
+      ],
+      "preview": "assets/previews/mobile-workbenches/enterprise-service-mobile-hub.jpg",
+      "evidence": "static-design"
+    },
+    {
+      "id": "data-visualization/battery-swap-pasture-console",
+      "category": "data-visualization",
+      "category_title": "数据可视化与数字孪生",
+      "slug": "battery-swap-pasture-console",
+      "name": "换电控制台与牧场运营屏",
+      "english": "Battery Swap Pasture Console",
+      "summary": "深青色控制台呈现仓位、电池和操作日志；绿色牧场页面以自然场景及运营指标建立另一种监测风格。",
+      "prompt": "参考 data-visualization/battery-swap-pasture-console，控制设备时先标清仓位与可用状态；牧场数据则按实际对象与统计周期组织。",
+      "kind": "pattern",
+      "keywords": [
+        "换电",
+        "电池",
+        "仓位",
+        "控制台",
+        "日志",
+        "牧场",
+        "绿色"
+      ],
+      "implementation": "控制设备时先标清仓位与可用状态；牧场数据则按实际对象与统计周期组织。",
+      "media_type": "gallery",
+      "images": [
+        "assets/images/data-visualization/battery-swap-pasture-console-01.jpg",
+        "assets/images/data-visualization/battery-swap-pasture-console-02.jpg",
+        "assets/images/data-visualization/battery-swap-pasture-console-03.jpg"
+      ],
+      "preview": "assets/previews/data-visualization/battery-swap-pasture-console.jpg",
+      "evidence": "static-design"
+    },
+    {
+      "id": "enterprise-workbenches/asset-process-report-workbench",
+      "category": "enterprise-workbenches",
+      "category_title": "企业工作台与业务后台",
+      "slug": "asset-process-report-workbench",
+      "name": "资产流程与管理报表",
+      "english": "Asset Process Report Workbench",
+      "summary": "企业蓝工作台提供资产／流程阶段入口、柱状统计和管理表，独立稿便于观察整页排版。",
+      "prompt": "参考 enterprise-workbenches/asset-process-report-workbench，阶段入口对应明确业务范围，统计与列表维持一致的筛选条件。",
+      "kind": "pattern",
+      "keywords": [
+        "资产",
+        "流程",
+        "阶段",
+        "蓝色",
+        "柱图",
+        "报表",
+        "管理"
+      ],
+      "implementation": "阶段入口对应明确业务范围，统计与列表维持一致的筛选条件。",
+      "media_type": "gallery",
+      "images": [
+        "assets/images/enterprise-workbenches/asset-process-report-workbench-01.jpg",
+        "assets/images/enterprise-workbenches/asset-process-report-workbench-02.jpg",
+        "assets/images/enterprise-workbenches/asset-process-report-workbench-03.jpg"
+      ],
+      "preview": "assets/previews/enterprise-workbenches/asset-process-report-workbench.jpg",
+      "evidence": "static-design"
+    },
+    {
+      "id": "data-visualization/factory-section-floor-console",
+      "category": "data-visualization",
+      "category_title": "数据可视化与数字孪生",
+      "slug": "factory-section-floor-console",
+      "name": "厂房剖面与楼层组态",
+      "english": "Factory Section Floor Console",
+      "summary": "深色厂房剖面和楼宇俯视模型占据中央，监测指标沿边排列，形成可定位的空间组态画布。",
+      "prompt": "参考 data-visualization/factory-section-floor-console，楼层和区域需有可辨认标签，选中对象的信息就近呈现且不遮挡场景。",
+      "kind": "pattern",
+      "keywords": [
+        "厂房",
+        "剖面",
+        "楼层",
+        "俯视",
+        "组态",
+        "深色",
+        "空间"
+      ],
+      "implementation": "楼层和区域需有可辨认标签，选中对象的信息就近呈现且不遮挡场景。",
+      "media_type": "gallery",
+      "images": [
+        "assets/images/data-visualization/factory-section-floor-console-01.jpg",
+        "assets/images/data-visualization/factory-section-floor-console-02.jpg",
+        "assets/images/data-visualization/factory-section-floor-console-03.jpg"
+      ],
+      "preview": "assets/previews/data-visualization/factory-section-floor-console.jpg",
+      "evidence": "static-design"
+    },
+    {
+      "id": "mobile-workbenches/travel-learning-service-homes",
+      "category": "mobile-workbenches",
+      "category_title": "移动端工作台与服务门户",
+      "slug": "travel-learning-service-homes",
+      "name": "文旅山景与学习工具首页",
+      "english": "Travel Learning Service Homes",
+      "summary": "文旅手机首页使用山景大图和推荐内容；学习工具页面以分组入口和阅读内容组织信息。",
+      "prompt": "参考 mobile-workbenches/travel-learning-service-homes，文旅页突出地点与服务，学习页突出当前任务和阅读进度，各自控制大图与工具的比例。",
+      "kind": "pattern",
+      "keywords": [
+        "文旅",
+        "山景",
+        "学习",
+        "工具",
+        "阅读",
+        "手机",
+        "首页"
+      ],
+      "implementation": "文旅页突出地点与服务，学习页突出当前任务和阅读进度，各自控制大图与工具的比例。",
+      "media_type": "gallery",
+      "images": [
+        "assets/images/mobile-workbenches/travel-learning-service-homes-01.jpg",
+        "assets/images/mobile-workbenches/travel-learning-service-homes-02.jpg"
+      ],
+      "preview": "assets/previews/mobile-workbenches/travel-learning-service-homes.jpg",
+      "evidence": "static-design"
+    },
+    {
+      "id": "data-visualization/building-floor-parameter-view",
+      "category": "data-visualization",
+      "category_title": "数据可视化与数字孪生",
+      "slug": "building-floor-parameter-view",
+      "name": "楼宇分层与参数列表",
+      "english": "Building Floor Parameter View",
+      "summary": "浅色楼宇分层／建筑模型结合参数列表，独立稿补充模型与数据区的布局细节。",
+      "prompt": "参考 data-visualization/building-floor-parameter-view，分层结构与参数区建立明确对应，当前楼层及单位不能只靠颜色表达。",
+      "kind": "pattern",
+      "keywords": [
+        "楼宇",
+        "分层",
+        "建筑",
+        "模型",
+        "参数",
+        "浅色"
+      ],
+      "implementation": "分层结构与参数区建立明确对应，当前楼层及单位不能只靠颜色表达。",
+      "media_type": "gallery",
+      "images": [
+        "assets/images/data-visualization/building-floor-parameter-view-01.jpg",
+        "assets/images/data-visualization/building-floor-parameter-view-02.jpg"
+      ],
+      "preview": "assets/previews/data-visualization/building-floor-parameter-view.jpg",
+      "evidence": "static-design"
+    },
+    {
+      "id": "enterprise-workbenches/gradient-column-business-metrics",
+      "category": "enterprise-workbenches",
+      "category_title": "企业工作台与业务后台",
+      "slug": "gradient-column-business-metrics",
+      "name": "业务指标与渐变柱状统计",
+      "english": "Gradient Column Business Metrics",
+      "summary": "浅色业务概览组合指标卡、分布与趋势，竖向渐变柱状统计形成另一种聚焦数据的版式。",
+      "prompt": "参考 enterprise-workbenches/gradient-column-business-metrics，用标题、单位和图例解释渐变柱的数值含义，控制装饰色对比较效率的影响。",
+      "kind": "pattern",
+      "keywords": [
+        "业务",
+        "指标",
+        "渐变",
+        "柱状图",
+        "分布",
+        "趋势",
+        "统计"
+      ],
+      "implementation": "用标题、单位和图例解释渐变柱的数值含义，控制装饰色对比较效率的影响。",
+      "media_type": "gallery",
+      "images": [
+        "assets/images/enterprise-workbenches/gradient-column-business-metrics-01.jpg",
+        "assets/images/enterprise-workbenches/gradient-column-business-metrics-02.jpg"
+      ],
+      "preview": "assets/previews/enterprise-workbenches/gradient-column-business-metrics.jpg",
+      "evidence": "static-design"
+    },
+    {
+      "id": "enterprise-workbenches/warm-orange-management-home",
+      "category": "enterprise-workbenches",
+      "category_title": "企业工作台与业务后台",
+      "slug": "warm-orange-management-home",
+      "name": "暖橙欢迎区与管理首页",
+      "english": "Warm Orange Management Home",
+      "summary": "暖橙欢迎区搭配摘要指标、管理表和任务区域，图集包含整页和独立高清视图。",
+      "prompt": "参考 enterprise-workbenches/warm-orange-management-home，暖色集中在欢迎与重点数据，表格保持稳定对比和可扫描的行列节奏。",
+      "kind": "pattern",
+      "keywords": [
+        "暖橙",
+        "橙色",
+        "欢迎",
+        "管理",
+        "首页",
+        "指标",
+        "表格"
+      ],
+      "implementation": "暖色集中在欢迎与重点数据，表格保持稳定对比和可扫描的行列节奏。",
+      "media_type": "gallery",
+      "images": [
+        "assets/images/enterprise-workbenches/warm-orange-management-home-01.jpg",
+        "assets/images/enterprise-workbenches/warm-orange-management-home-02.jpg",
+        "assets/images/enterprise-workbenches/warm-orange-management-home-03.jpg"
+      ],
+      "preview": "assets/previews/enterprise-workbenches/warm-orange-management-home.jpg",
+      "evidence": "static-design"
+    },
+    {
+      "id": "enterprise-workbenches/factory-space-process-workbench",
+      "category": "enterprise-workbenches",
+      "category_title": "企业工作台与业务后台",
+      "slug": "factory-space-process-workbench",
+      "name": "工厂指标与空间流程节点",
+      "english": "Factory Space Process Workbench",
+      "summary": "浅蓝工厂管理指标和立体空间流程节点结合，首页总览与业务步骤形成连续的信息层级。",
+      "prompt": "参考 enterprise-workbenches/factory-space-process-workbench，节点名称和处理顺序应优先于立体造型，关键指标需能追溯对应业务阶段。",
+      "kind": "pattern",
+      "keywords": [
+        "工厂",
+        "浅蓝",
+        "流程",
+        "节点",
+        "立体",
+        "空间",
+        "指标"
+      ],
+      "implementation": "节点名称和处理顺序应优先于立体造型，关键指标需能追溯对应业务阶段。",
+      "media_type": "gallery",
+      "images": [
+        "assets/images/enterprise-workbenches/factory-space-process-workbench-01.jpg",
+        "assets/images/enterprise-workbenches/factory-space-process-workbench-02.jpg",
+        "assets/images/enterprise-workbenches/factory-space-process-workbench-03.jpg"
+      ],
+      "preview": "assets/previews/enterprise-workbenches/factory-space-process-workbench.jpg",
+      "evidence": "static-design"
+    },
+    {
+      "id": "enterprise-workbenches/blue-metrics-list-management",
+      "category": "enterprise-workbenches",
+      "category_title": "企业工作台与业务后台",
+      "slug": "blue-metrics-list-management",
+      "name": "蓝色指标总览与列表管理",
+      "english": "Blue Metrics List Management",
+      "summary": "蓝色指标、曲线和环形图构成工作台；列表页以筛选和业务表承接具体记录。",
+      "prompt": "参考 enterprise-workbenches/blue-metrics-list-management，总览负责发现问题，列表负责查找和处理记录，两个层级保持一致命名。",
+      "kind": "pattern",
+      "keywords": [
+        "蓝色",
+        "指标",
+        "曲线",
+        "环图",
+        "列表",
+        "管理",
+        "筛选"
+      ],
+      "implementation": "总览负责发现问题，列表负责查找和处理记录，两个层级保持一致命名。",
+      "media_type": "gallery",
+      "images": [
+        "assets/images/enterprise-workbenches/blue-metrics-list-management-01.jpg",
+        "assets/images/enterprise-workbenches/blue-metrics-list-management-02.jpg"
+      ],
+      "preview": "assets/previews/enterprise-workbenches/blue-metrics-list-management.jpg",
+      "evidence": "static-design"
+    },
+    {
+      "id": "data-visualization/regional-map-information-board",
+      "category": "data-visualization",
+      "category_title": "数据可视化与数字孪生",
+      "slug": "regional-map-information-board",
+      "name": "区域点位与数字信息看板",
+      "english": "Regional Map Information Board",
+      "summary": "浅色区域地图和点位配合右侧指标，另有数字滚牌／信息看板式排版；图集含地图独立稿。",
+      "prompt": "参考 data-visualization/regional-map-information-board，地图点位保持可辨认密度，数字展示需标明指标名称、单位和数据时间。",
+      "kind": "pattern",
+      "keywords": [
+        "区域",
+        "地图",
+        "点位",
+        "信息看板",
+        "数字",
+        "滚牌"
+      ],
+      "implementation": "地图点位保持可辨认密度，数字展示需标明指标名称、单位和数据时间。",
+      "media_type": "gallery",
+      "images": [
+        "assets/images/data-visualization/regional-map-information-board-01.jpg",
+        "assets/images/data-visualization/regional-map-information-board-02.jpg"
+      ],
+      "preview": "assets/previews/data-visualization/regional-map-information-board.jpg",
+      "evidence": "static-design"
+    },
+    {
+      "id": "enterprise-workbenches/recruitment-candidate-workbench",
+      "category": "enterprise-workbenches",
+      "category_title": "企业工作台与业务后台",
+      "slug": "recruitment-candidate-workbench",
+      "name": "招聘指标与候选人工作台",
+      "english": "Recruitment Candidate Workbench",
+      "summary": "候选人列表、招聘指标和工具分区构成招聘工作台，筛选列表承接人员信息浏览。",
+      "prompt": "参考 enterprise-workbenches/recruitment-candidate-workbench，指标与候选人状态使用一致定义，筛选条件和当前结果数应清楚可见。",
+      "kind": "pattern",
+      "keywords": [
+        "招聘",
+        "候选人",
+        "人才",
+        "招聘指标",
+        "筛选",
+        "列表"
+      ],
+      "implementation": "指标与候选人状态使用一致定义，筛选条件和当前结果数应清楚可见。",
+      "media_type": "gallery",
+      "images": [
+        "assets/images/enterprise-workbenches/recruitment-candidate-workbench-01.jpg",
+        "assets/images/enterprise-workbenches/recruitment-candidate-workbench-02.jpg"
+      ],
+      "preview": "assets/previews/enterprise-workbenches/recruitment-candidate-workbench.jpg",
+      "evidence": "static-design"
+    },
+    {
+      "id": "mobile-workbenches/campus-timetable-access-hub",
+      "category": "mobile-workbenches",
+      "category_title": "移动端工作台与服务门户",
+      "slug": "campus-timetable-access-hub",
+      "name": "学习工作台与校园通行权限",
+      "english": "Campus Timetable Access Hub",
+      "summary": "蓝色学习／工作台首页提供分组工具和业务卡；校园页展示院校工具、通行权限、授权对象和使用说明。",
+      "prompt": "参考 mobile-workbenches/campus-timetable-access-hub，学习与业务工具按任务分组；通行权限明确授权对象、有效范围和当前状态，并在实际操作中核对结果。",
+      "kind": "pattern",
+      "keywords": [
+        "学习",
+        "工作台",
+        "校园",
+        "院校",
+        "通行",
+        "权限",
+        "授权",
+        "移动"
+      ],
+      "implementation": "学习与业务工具按任务分组；通行权限明确授权对象、有效范围和当前状态，并在实际操作中核对结果。",
+      "media_type": "gallery",
+      "images": [
+        "assets/images/mobile-workbenches/campus-timetable-access-hub-01.jpg",
+        "assets/images/mobile-workbenches/campus-timetable-access-hub-02.jpg"
+      ],
+      "preview": "assets/previews/mobile-workbenches/campus-timetable-access-hub.jpg",
+      "evidence": "static-design"
+    },
+    {
+      "id": "enterprise-workbenches/compact-analytics-report-grid",
+      "category": "enterprise-workbenches",
+      "category_title": "企业工作台与业务后台",
+      "slug": "compact-analytics-report-grid",
+      "name": "简约统计报表与排行",
+      "english": "Compact Analytics Report Grid",
+      "summary": "浅蓝简约报表组合环图、柱图、折线、雷达和排行，强调规则网格中的数据分区。",
+      "prompt": "参考 enterprise-workbenches/compact-analytics-report-grid，每张图表对应一个清楚的问题，统一数值格式，避免在同一区域堆叠过多图种。",
+      "kind": "pattern",
+      "keywords": [
+        "报表",
+        "环图",
+        "柱图",
+        "折线",
+        "雷达",
+        "排行",
+        "浅蓝"
+      ],
+      "implementation": "每张图表对应一个清楚的问题，统一数值格式，避免在同一区域堆叠过多图种。",
+      "media_type": "gallery",
+      "images": [
+        "assets/images/enterprise-workbenches/compact-analytics-report-grid-01.jpg",
+        "assets/images/enterprise-workbenches/compact-analytics-report-grid-02.jpg",
+        "assets/images/enterprise-workbenches/compact-analytics-report-grid-03.jpg"
+      ],
+      "preview": "assets/previews/enterprise-workbenches/compact-analytics-report-grid.jpg",
+      "evidence": "static-design"
+    },
+    {
+      "id": "enterprise-workbenches/colorful-metrics-statistics-list",
+      "category": "enterprise-workbenches",
+      "category_title": "企业工作台与业务后台",
+      "slug": "colorful-metrics-statistics-list",
+      "name": "多彩指标与统计列表",
+      "english": "Colorful Metrics Statistics List",
+      "summary": "浅色多彩摘要卡、圆环、折线与统计列表组成数据工作台，图集含独立设计稿。",
+      "prompt": "参考 enterprise-workbenches/colorful-metrics-statistics-list，颜色用于稳定区分类别或状态，列表数值与摘要指标保持同一统计口径。",
+      "kind": "pattern",
+      "keywords": [
+        "多彩",
+        "指标",
+        "圆环",
+        "折线",
+        "统计",
+        "列表"
+      ],
+      "implementation": "颜色用于稳定区分类别或状态，列表数值与摘要指标保持同一统计口径。",
+      "media_type": "gallery",
+      "images": [
+        "assets/images/enterprise-workbenches/colorful-metrics-statistics-list-01.jpg",
+        "assets/images/enterprise-workbenches/colorful-metrics-statistics-list-02.jpg",
+        "assets/images/enterprise-workbenches/colorful-metrics-statistics-list-03.jpg"
+      ],
+      "preview": "assets/previews/enterprise-workbenches/colorful-metrics-statistics-list.jpg",
+      "evidence": "static-design"
+    },
+    {
+      "id": "data-visualization/green-campus-logistics-twin",
+      "category": "data-visualization",
+      "category_title": "数据可视化与数字孪生",
+      "slug": "green-campus-logistics-twin",
+      "name": "绿色园区物流孪生",
+      "english": "Green Campus Logistics Twin",
+      "summary": "自然绿色园区中，中央建筑模型与两侧告警、能耗及视频监控区域共同构成空间监测大屏。",
+      "prompt": "参考 data-visualization/green-campus-logistics-twin，控制中央场景与边栏的对比，视频和告警需要可辨认标题及清楚的更新状态。",
+      "kind": "pattern",
+      "keywords": [
+        "绿色",
+        "园区",
+        "物流",
+        "孪生",
+        "建筑",
+        "告警",
+        "能耗",
+        "监控"
+      ],
+      "implementation": "控制中央场景与边栏的对比，视频和告警需要可辨认标题及清楚的更新状态。",
+      "media_type": "gallery",
+      "images": [
+        "assets/images/data-visualization/green-campus-logistics-twin-01.jpg"
+      ],
+      "preview": "assets/previews/data-visualization/green-campus-logistics-twin.jpg",
+      "evidence": "static-design"
+    },
+    {
+      "id": "enterprise-workbenches/enterprise-subscription-report-portal",
+      "category": "enterprise-workbenches",
+      "category_title": "企业工作台与业务后台",
+      "slug": "enterprise-subscription-report-portal",
+      "name": "企业订阅与报告门户",
+      "english": "Enterprise Subscription Report Portal",
+      "summary": "蓝色大欢迎横幅、同排指标、功能订阅、报告排行和列表形成企业门户首页。",
+      "prompt": "参考 enterprise-workbenches/enterprise-subscription-report-portal，订阅功能与常用入口分组，报告排行说明维度，首屏优先呈现高频业务信息。",
+      "kind": "pattern",
+      "keywords": [
+        "企业",
+        "门户",
+        "蓝色",
+        "功能订阅",
+        "报告",
+        "排行",
+        "欢迎"
+      ],
+      "implementation": "订阅功能与常用入口分组，报告排行说明维度，首屏优先呈现高频业务信息。",
+      "media_type": "gallery",
+      "images": [
+        "assets/images/enterprise-workbenches/enterprise-subscription-report-portal-01.jpg"
+      ],
+      "preview": "assets/previews/enterprise-workbenches/enterprise-subscription-report-portal.jpg",
+      "evidence": "static-design"
+    },
+    {
+      "id": "mobile-workbenches/illustrated-travel-service-home",
+      "category": "mobile-workbenches",
+      "category_title": "移动端工作台与服务门户",
+      "slug": "illustrated-travel-service-home",
+      "name": "山景插画与文旅服务首页",
+      "english": "Illustrated Travel Service Home",
+      "summary": "山景、插画主题、圆形图标工具格、景点推荐和活动横幅构成文旅手机首页的多种方向。",
+      "prompt": "参考 mobile-workbenches/illustrated-travel-service-home，保持地点信息和预订／服务入口清晰，大图与插画为内容建立情境而非挤压主要任务。",
+      "kind": "pattern",
+      "keywords": [
+        "文旅",
+        "山景",
+        "插画",
+        "景点",
+        "活动",
+        "推荐",
+        "圆图标"
+      ],
+      "implementation": "保持地点信息和预订／服务入口清晰，大图与插画为内容建立情境而非挤压主要任务。",
+      "media_type": "gallery",
+      "images": [
+        "assets/images/mobile-workbenches/illustrated-travel-service-home-01.jpg",
+        "assets/images/mobile-workbenches/illustrated-travel-service-home-02.jpg",
+        "assets/images/mobile-workbenches/illustrated-travel-service-home-03.jpg"
+      ],
+      "preview": "assets/previews/mobile-workbenches/illustrated-travel-service-home.jpg",
+      "evidence": "static-design"
+    },
+    {
+      "id": "mobile-workbenches/parcel-orders-quick-services",
+      "category": "mobile-workbenches",
+      "category_title": "移动端工作台与服务门户",
+      "slug": "parcel-orders-quick-services",
+      "name": "快递订单与校园生活服务",
+      "english": "Parcel Orders Quick Services",
+      "summary": "快递首页用待办／订单入口连接寄件、扫码和服务工具；绿色校园生活页面呈现缴费、充值和生活服务卡。",
+      "prompt": "参考 mobile-workbenches/parcel-orders-quick-services，快递端突出寄件和订单状态，校园端突出缴费与充值信息，各自保留易辨认的主操作和结果反馈。",
+      "kind": "pattern",
+      "keywords": [
+        "快递",
+        "物流",
+        "寄件",
+        "订单",
+        "扫码",
+        "校园",
+        "缴费",
+        "充值",
+        "生活服务"
+      ],
+      "implementation": "快递端突出寄件和订单状态，校园端突出缴费与充值信息，各自保留易辨认的主操作和结果反馈。",
+      "media_type": "gallery",
+      "images": [
+        "assets/images/mobile-workbenches/parcel-orders-quick-services-01.jpg",
+        "assets/images/mobile-workbenches/parcel-orders-quick-services-02.jpg"
+      ],
+      "preview": "assets/previews/mobile-workbenches/parcel-orders-quick-services.jpg",
+      "evidence": "static-design"
+    },
+    {
+      "id": "data-visualization/furnace-floor-section-screen",
+      "category": "data-visualization",
+      "category_title": "数据可视化与数字孪生",
+      "slug": "furnace-floor-section-screen",
+      "name": "工业炉体与楼层剖面大屏",
+      "english": "Furnace Floor Section Screen",
+      "summary": "深色工业炉体、管线与楼层剖面作为中央模型，周边分布图表和设备读数。",
+      "prompt": "参考 data-visualization/furnace-floor-section-screen，设备层级与管线方向需能辨认，重点状态和读数避免被模型光效遮盖。",
+      "kind": "pattern",
+      "keywords": [
+        "工业",
+        "炉体",
+        "管线",
+        "楼层",
+        "剖面",
+        "深色",
+        "大屏"
+      ],
+      "implementation": "设备层级与管线方向需能辨认，重点状态和读数避免被模型光效遮盖。",
+      "media_type": "gallery",
+      "images": [
+        "assets/images/data-visualization/furnace-floor-section-screen-01.jpg"
+      ],
+      "preview": "assets/previews/data-visualization/furnace-floor-section-screen.jpg",
+      "evidence": "static-design"
+    },
+    {
+      "id": "enterprise-workbenches/mes-production-task-management",
+      "category": "enterprise-workbenches",
+      "category_title": "企业工作台与业务后台",
+      "slug": "mes-production-task-management",
+      "name": "MES 生产状态与任务列表",
+      "english": "Mes Production Task Management",
+      "summary": "浅色生产后台以状态摘要、进度条、业务表和通知组合生产管理视图。",
+      "prompt": "参考 enterprise-workbenches/mes-production-task-management，生产任务进度要有清楚完成标准，异常和通知区分优先级，并能定位具体记录。",
+      "kind": "pattern",
+      "keywords": [
+        "MES",
+        "生产",
+        "管理",
+        "进度",
+        "表格",
+        "通知",
+        "状态"
+      ],
+      "implementation": "生产任务进度要有清楚完成标准，异常和通知区分优先级，并能定位具体记录。",
+      "media_type": "gallery",
+      "images": [
+        "assets/images/enterprise-workbenches/mes-production-task-management-01.jpg"
+      ],
+      "preview": "assets/previews/enterprise-workbenches/mes-production-task-management.jpg",
+      "evidence": "static-design"
+    },
+    {
+      "id": "data-visualization/building-energy-equipment-topology",
+      "category": "data-visualization",
+      "category_title": "数据可视化与数字孪生",
+      "slug": "building-energy-equipment-topology",
+      "name": "建筑能耗与设备拓扑",
+      "english": "Building Energy Equipment Topology",
+      "summary": "深色蓝光建筑能耗页面和工业设备拓扑配合曲线统计，突出空间对象与监测指标。",
+      "prompt": "参考 data-visualization/building-energy-equipment-topology，能耗与设备状态分别标明统计范围，拓扑连线保持可追踪，曲线注明单位。",
+      "kind": "pattern",
+      "keywords": [
+        "建筑",
+        "能耗",
+        "设备",
+        "拓扑",
+        "深色",
+        "蓝光",
+        "曲线"
+      ],
+      "implementation": "能耗与设备状态分别标明统计范围，拓扑连线保持可追踪，曲线注明单位。",
+      "media_type": "gallery",
+      "images": [
+        "assets/images/data-visualization/building-energy-equipment-topology-01.jpg"
+      ],
+      "preview": "assets/previews/data-visualization/building-energy-equipment-topology.jpg",
+      "evidence": "static-design"
+    },
+    {
+      "id": "data-visualization/solar-factory-production-twin",
+      "category": "data-visualization",
+      "category_title": "数据可视化与数字孪生",
+      "slug": "solar-factory-production-twin",
+      "name": "光伏厂房与机加工产线",
+      "english": "Solar Factory Production Twin",
+      "summary": "厂房光伏和机加工产线数字孪生位于主场景，趋势与指标分布在周边监测区。",
+      "prompt": "参考 data-visualization/solar-factory-production-twin，按发电、设备和生产目标区分面板，避免把不同周期的数据放在同一比较尺度。",
+      "kind": "pattern",
+      "keywords": [
+        "光伏",
+        "厂房",
+        "机加工",
+        "产线",
+        "数字孪生",
+        "趋势"
+      ],
+      "implementation": "按发电、设备和生产目标区分面板，避免把不同周期的数据放在同一比较尺度。",
+      "media_type": "gallery",
+      "images": [
+        "assets/images/data-visualization/solar-factory-production-twin-01.jpg"
+      ],
+      "preview": "assets/previews/data-visualization/solar-factory-production-twin.jpg",
+      "evidence": "static-design"
+    },
+    {
+      "id": "data-visualization/security-shield-campus-space",
+      "category": "data-visualization",
+      "category_title": "数据可视化与数字孪生",
+      "slug": "security-shield-campus-space",
+      "name": "盾牌安全态势与园区空间",
+      "english": "Security Shield Campus Space",
+      "summary": "浅色盾牌安全态势以环形空间组织数据；深色园区用方体模型与周边监测卡形成对照。",
+      "prompt": "参考 data-visualization/security-shield-campus-space，安全态势的严重级别需明确，环形装饰与真实比例统计应从标题和标注上区分。",
+      "kind": "pattern",
+      "keywords": [
+        "安全",
+        "态势",
+        "盾牌",
+        "环形",
+        "园区",
+        "方体",
+        "模型"
+      ],
+      "implementation": "安全态势的严重级别需明确，环形装饰与真实比例统计应从标题和标注上区分。",
+      "media_type": "gallery",
+      "images": [
+        "assets/images/data-visualization/security-shield-campus-space-01.jpg"
+      ],
+      "preview": "assets/previews/data-visualization/security-shield-campus-space.jpg",
+      "evidence": "static-design"
+    },
+    {
+      "id": "data-visualization/smt-wafer-production-array",
+      "category": "data-visualization",
+      "category_title": "数据可视化与数字孪生",
+      "slug": "smt-wafer-production-array",
+      "name": "SMT 产线与晶圆设备阵列",
+      "english": "SMT Wafer Production Array",
+      "summary": "电子 SMT 生产线／晶圆车间以等距设备阵列形成主视觉，深色边栏呈现生产指标。",
+      "prompt": "参考 data-visualization/smt-wafer-production-array，用产线与设备编号建立可定位关系，阵列数量增加时保留分组和异常识别能力。",
+      "kind": "pattern",
+      "keywords": [
+        "SMT",
+        "电子",
+        "晶圆",
+        "车间",
+        "产线",
+        "设备",
+        "阵列"
+      ],
+      "implementation": "用产线与设备编号建立可定位关系，阵列数量增加时保留分组和异常识别能力。",
+      "media_type": "gallery",
+      "images": [
+        "assets/images/data-visualization/smt-wafer-production-array-01.jpg"
+      ],
+      "preview": "assets/previews/data-visualization/smt-wafer-production-array.jpg",
+      "evidence": "static-design"
+    },
+    {
+      "id": "enterprise-workbenches/outpatient-business-metrics",
+      "category": "enterprise-workbenches",
+      "category_title": "企业工作台与业务后台",
+      "slug": "outpatient-business-metrics",
+      "name": "门诊业务与仪表统计",
+      "english": "Outpatient Business Metrics",
+      "summary": "浅色门诊／业务指标、仪表和环图构成两种数据概览，强调卡片分区及主次指标。",
+      "prompt": "参考 enterprise-workbenches/outpatient-business-metrics，业务指标注明统计周期和适用对象，仪表刻度与目标值保持可解释。",
+      "kind": "pattern",
+      "keywords": [
+        "门诊",
+        "医疗",
+        "业务",
+        "指标",
+        "仪表",
+        "环图"
+      ],
+      "implementation": "业务指标注明统计周期和适用对象，仪表刻度与目标值保持可解释。",
+      "media_type": "gallery",
+      "images": [
+        "assets/images/enterprise-workbenches/outpatient-business-metrics-01.jpg"
+      ],
+      "preview": "assets/previews/enterprise-workbenches/outpatient-business-metrics.jpg",
+      "evidence": "static-design"
+    },
+    {
+      "id": "enterprise-workbenches/enterprise-funnel-mes-lists",
+      "category": "enterprise-workbenches",
+      "category_title": "企业工作台与业务后台",
+      "slug": "enterprise-funnel-mes-lists",
+      "name": "企业漏斗统计与 MES 列表",
+      "english": "Enterprise Funnel MES Lists",
+      "summary": "浅色企业统计组合漏斗、环图和趋势曲线，另一稿以 MES 管理列表组织生产记录。",
+      "prompt": "参考 enterprise-workbenches/enterprise-funnel-mes-lists，漏斗阶段和流失口径应一致，统计卡到列表的对应关系作为实现要求另行确认。",
+      "kind": "pattern",
+      "keywords": [
+        "漏斗",
+        "环图",
+        "趋势",
+        "企业",
+        "统计",
+        "MES",
+        "列表"
+      ],
+      "implementation": "漏斗阶段和流失口径应一致，统计卡到列表的对应关系作为实现要求另行确认。",
+      "media_type": "gallery",
+      "images": [
+        "assets/images/enterprise-workbenches/enterprise-funnel-mes-lists-01.jpg"
+      ],
+      "preview": "assets/previews/enterprise-workbenches/enterprise-funnel-mes-lists.jpg",
+      "evidence": "static-design"
+    },
+    {
+      "id": "enterprise-workbenches/touchscreen-catalog-device-tasks",
+      "category": "enterprise-workbenches",
+      "category_title": "企业工作台与业务后台",
+      "slug": "touchscreen-catalog-device-tasks",
+      "name": "触屏目录与设备任务管理",
+      "english": "Touchscreen Catalog Device Tasks",
+      "summary": "触摸屏／客户端用商品或课程卡片分类，设备管理页以任务列表和状态区呈现工作。",
+      "prompt": "参考 enterprise-workbenches/touchscreen-catalog-device-tasks，卡片分类适合浏览选择，设备任务适合快速处理；触屏入口要有足够可点面积。",
+      "kind": "pattern",
+      "keywords": [
+        "触摸屏",
+        "客户端",
+        "商品",
+        "课程",
+        "分类",
+        "设备",
+        "任务"
+      ],
+      "implementation": "卡片分类适合浏览选择，设备任务适合快速处理；触屏入口要有足够可点面积。",
+      "media_type": "gallery",
+      "images": [
+        "assets/images/enterprise-workbenches/touchscreen-catalog-device-tasks-01.jpg"
+      ],
+      "preview": "assets/previews/enterprise-workbenches/touchscreen-catalog-device-tasks.jpg",
+      "evidence": "static-design"
+    },
+    {
+      "id": "data-visualization/health-security-campus-monitor",
+      "category": "data-visualization",
+      "category_title": "数据可视化与数字孪生",
+      "slug": "health-security-campus-monitor",
+      "name": "健康安全与校园建筑监测",
+      "english": "Health Security Campus Monitor",
+      "summary": "深色医疗／健康盾牌安全大屏与绿色校园建筑孪生并列，使用中心场景和周边监测信息。",
+      "prompt": "参考 data-visualization/health-security-campus-monitor，健康、安全和校园数据分别定义对象与状态，装饰性模型不能替代关键读数和异常说明。",
+      "kind": "pattern",
+      "keywords": [
+        "医疗",
+        "健康",
+        "安全",
+        "盾牌",
+        "校园",
+        "建筑",
+        "孪生"
+      ],
+      "implementation": "健康、安全和校园数据分别定义对象与状态，装饰性模型不能替代关键读数和异常说明。",
+      "media_type": "gallery",
+      "images": [
+        "assets/images/data-visualization/health-security-campus-monitor-01.jpg"
+      ],
+      "preview": "assets/previews/data-visualization/health-security-campus-monitor.jpg",
+      "evidence": "static-design"
+    },
+    {
+      "id": "enterprise-workbenches/enterprise-progress-todo-management",
+      "category": "enterprise-workbenches",
+      "category_title": "企业工作台与业务后台",
+      "slug": "enterprise-progress-todo-management",
+      "name": "企业进度待办与表格管理",
+      "english": "Enterprise Progress Todo Management",
+      "summary": "浅色企业统计将环图、进度、待办与业务表格组合，展示摘要和执行区的分工。",
+      "prompt": "参考 enterprise-workbenches/enterprise-progress-todo-management，进度、待办数量和列表筛选使用同一业务范围，任务操作要有明确完成反馈。",
+      "kind": "pattern",
+      "keywords": [
+        "企业",
+        "进度",
+        "待办",
+        "表格",
+        "管理",
+        "环图",
+        "统计"
+      ],
+      "implementation": "进度、待办数量和列表筛选使用同一业务范围，任务操作要有明确完成反馈。",
+      "media_type": "gallery",
+      "images": [
+        "assets/images/enterprise-workbenches/enterprise-progress-todo-management-01.jpg",
+        "assets/images/enterprise-workbenches/enterprise-progress-todo-management-02.jpg"
+      ],
+      "preview": "assets/previews/enterprise-workbenches/enterprise-progress-todo-management.jpg",
+      "evidence": "static-design"
+    },
+    {
+      "id": "enterprise-workbenches/project-process-alert-workbench",
+      "category": "enterprise-workbenches",
+      "category_title": "企业工作台与业务后台",
+      "slug": "project-process-alert-workbench",
+      "name": "项目流程与告警任务工作台",
+      "english": "Project Process Alert Workbench",
+      "summary": "企业蓝立体流程入口与项目任务表结合，暗侧栏和浅内容区组织告警、列表及业务分区。",
+      "prompt": "参考 enterprise-workbenches/project-process-alert-workbench，当前导航、项目上下文和任务状态分开表达，立体入口仍需清楚文字名称。",
+      "kind": "pattern",
+      "keywords": [
+        "项目",
+        "流程",
+        "任务",
+        "告警",
+        "列表",
+        "暗侧栏",
+        "企业蓝"
+      ],
+      "implementation": "当前导航、项目上下文和任务状态分开表达，立体入口仍需清楚文字名称。",
+      "media_type": "gallery",
+      "images": [
+        "assets/images/enterprise-workbenches/project-process-alert-workbench-01.jpg",
+        "assets/images/enterprise-workbenches/project-process-alert-workbench-02.jpg"
+      ],
+      "preview": "assets/previews/enterprise-workbenches/project-process-alert-workbench.jpg",
+      "evidence": "static-design"
     }
   ],
   "media": {
@@ -2853,6 +4513,8 @@
     "gif_loop": 0,
     "gif_audio": false,
     "filmstrip_frames": 6,
-    "filmstrip_order": "left-to-right, then top-to-bottom"
+    "filmstrip_order": "left-to-right, then top-to-bottom",
+    "gallery_format": "JPEG; metadata removed; original dimensions except identity-frame cropping",
+    "gallery_preview_order": "numbered left-to-right, then top-to-bottom; static views, not animation frames"
   }
 }

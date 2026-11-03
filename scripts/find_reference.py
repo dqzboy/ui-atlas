@@ -41,7 +41,13 @@ def main():
         print(f"{entry['id']} | {entry['name']} / {entry['english']}")
         print(f"  要点: {entry['summary']}\n  例句: {entry['prompt']}")
         print(f"  说明: {root}/references/{entry['category']}.md#{entry['slug']}")
-        print(f"  GIF: {root / entry['gif']}\n  六帧图: {root / entry['filmstrip']}")
+        if entry.get('media_type', 'animation') == 'gallery':
+            print(f"  媒体: 静态图集（{len(entry['images'])} 张，不代表交互状态）")
+            print(f"  总览: {root / entry['preview']}")
+            for number, path in enumerate(entry['images'], 1):
+                print(f"  图片 {number:02}: {root / path}")
+        else:
+            print(f"  GIF: {root / entry['gif']}\n  六帧图: {root / entry['filmstrip']}")
         if entry.get('related'):
             print('  相关: ' + ', '.join(entry['related']))
         print()

@@ -1,4 +1,4 @@
 interface:
   display_name: "UI Atlas"
-  short_description: "组件、页面布局与交互核对，覆盖 Dashboard 和玻璃材质，附 169 组视觉参考"
+  short_description: "组件、企业工作台、移动门户与数字孪生设计，附 228 条动静态视觉参考"
   default_prompt: "使用 $ui-atlas 筛选相关条目并按需查看参考，按其触发、状态和运动特征修改 UI，验证项目实际效果并汇报结果。"
