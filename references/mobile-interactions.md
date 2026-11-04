@@ -2,12 +2,11 @@
 
 触控手势与真实状态分开验证。回弹、轨迹和错峰是视觉反馈，不能意外修改相邻设置、延迟真实选中或触发额外请求。
 
-GIF 看连续运动，六帧图按从左到右、从上到下查看。像素值、技术栈与缓动由当前项目决定。
+六帧图按从左到右、从上到下查看，仅表示抽样状态，不能证明连续运动和短暂状态。像素值、技术栈与缓动由当前项目决定。
 
 ## 目录
 
 - [触点扩散主题切换 / Touch Origin Theme](#touch-origin-theme)
-- [拖拽排序与弹性让位 / Spring Reorder](#spring-reorder)
 - [批量勾选的顺序反馈 / Staggered Batch Check](#staggered-batch-check)
 - [滑杆惯性与回吸 / Inertial Slider Snap](#inertial-slider-snap)
 - [文本展开与箭头同步 / Animated Text Expand](#animated-text-expand)
@@ -16,6 +15,7 @@ GIF 看连续运动，六帧图按从左到右、从上到下查看。像素值�
 - [卡片沿轨迹离场 / Card Delete Trajectory](#card-delete-trajectory)
 - [滚动吸顶压缩卡片栈 / Sticky Compressing Stack](#sticky-compressing-stack)
 - [选中标签放大并让位 / Reflowing Choice Tabs](#reflowing-choice-tabs)
+- [拖拽插入线与递减让位 / Ripple Drag Reorder](#ripple-reorder)
 
 <a id="touch-origin-theme"></a>
 ## 触点扩散主题切换 / Touch Origin Theme
@@ -26,21 +26,10 @@ GIF 看连续运动，六帧图按从左到右、从上到下查看。像素值�
 - 实现关注：覆盖半径取触点到最远角落的距离；用静态快照或等价过渡保持底层页面稳定，动画完成清理覆盖层。
 - 验证重点：不同屏幕和触点位置不漏角，快速重复触发后只有最终主题生效。
 - 相关条目：[web-interactions/circular-theme-reveal](web-interactions.md#circular-theme-reveal)。
-- 参考：[GIF 动图](../assets/gifs/mobile-interactions/touch-origin-theme.gif) · [六帧对照图](../assets/filmstrips/mobile-interactions/touch-origin-theme.jpg)。
+- 媒体取舍：保留 GIF＋JPG。需看主题从实际触点扩散且文字布局不被拉伸的过程。
+- 参考：[GIF 动图](https://raw.githubusercontent.com/dqzboy/ui-atlas/e6aa0d641c224a2cb4c8bd4262a4d18f5c7e1e22/assets/gifs/mobile-interactions/touch-origin-theme.gif) · [六帧对照图](https://raw.githubusercontent.com/dqzboy/ui-atlas/e6aa0d641c224a2cb4c8bd4262a4d18f5c7e1e22/assets/filmstrips/mobile-interactions/touch-origin-theme.jpg)。
 
-![触点扩散主题切换：按时间从左到右、从上到下阅读](../assets/filmstrips/mobile-interactions/touch-origin-theme.jpg)
-
-<a id="spring-reorder"></a>
-## 拖拽排序与弹性让位 / Spring Reorder
-
-- 标识：`mobile-interactions/spring-reorder`；类型：组件／效果。
-- 效果要点：被拖行浮起，其他行按当前插入位置连续让位，释放后落入新位置。
-- 指令例句：列表长按拖拽排序，周围行弹性让位，落下后保存真实顺序。
-- 实现关注：保持稳定条目 ID，按当前手指位置计算插入位；区分拖动预览与已提交顺序，靠边可滚动，提供上移下移替代操作。
-- 验证重点：跨多行、拖回原位、取消拖拽和保存失败后，数据顺序与视觉一致。
-- 参考：[GIF 动图](../assets/gifs/mobile-interactions/spring-reorder.gif) · [六帧对照图](../assets/filmstrips/mobile-interactions/spring-reorder.jpg)。
-
-![拖拽排序与弹性让位：按时间从左到右、从上到下阅读](../assets/filmstrips/mobile-interactions/spring-reorder.jpg)
+![触点扩散主题切换：按时间从左到右、从上到下阅读](https://raw.githubusercontent.com/dqzboy/ui-atlas/e6aa0d641c224a2cb4c8bd4262a4d18f5c7e1e22/assets/filmstrips/mobile-interactions/touch-origin-theme.jpg)
 
 <a id="staggered-batch-check"></a>
 ## 批量勾选的顺序反馈 / Staggered Batch Check
@@ -51,9 +40,10 @@ GIF 看连续运动，六帧图按从左到右、从上到下查看。像素值�
 - 实现关注：逻辑选择一次完成，动画仅呈现结果；不逐项发送重复请求，处理中再次点击应得到明确最终状态。
 - 验证重点：全选、取消、部分选中与减弱动态下，计数、按钮状态和真实选中项始终一致。
 - 相关条目：[buttons-controls/checkbox](buttons-controls.md#checkbox) · [motion/stagger](motion.md#stagger)。
-- 参考：[GIF 动图](../assets/gifs/mobile-interactions/staggered-batch-check.gif) · [六帧对照图](../assets/filmstrips/mobile-interactions/staggered-batch-check.jpg)。
+- 媒体取舍：保留 GIF＋JPG。依次勾选的节奏与局部弹性反馈是主体。
+- 参考：[GIF 动图](https://raw.githubusercontent.com/dqzboy/ui-atlas/e6aa0d641c224a2cb4c8bd4262a4d18f5c7e1e22/assets/gifs/mobile-interactions/staggered-batch-check.gif) · [六帧对照图](https://raw.githubusercontent.com/dqzboy/ui-atlas/e6aa0d641c224a2cb4c8bd4262a4d18f5c7e1e22/assets/filmstrips/mobile-interactions/staggered-batch-check.jpg)。
 
-![批量勾选的顺序反馈：按时间从左到右、从上到下阅读](../assets/filmstrips/mobile-interactions/staggered-batch-check.jpg)
+![批量勾选的顺序反馈：按时间从左到右、从上到下阅读](https://raw.githubusercontent.com/dqzboy/ui-atlas/e6aa0d641c224a2cb4c8bd4262a4d18f5c7e1e22/assets/filmstrips/mobile-interactions/staggered-batch-check.jpg)
 
 <a id="inertial-slider-snap"></a>
 ## 滑杆惯性与回吸 / Inertial Slider Snap
@@ -64,9 +54,10 @@ GIF 看连续运动，六帧图按从左到右、从上到下查看。像素值�
 - 实现关注：速度只影响装饰过渡，最终业务值限制在合法刻度；限制超调与边界，键盘操作直接逐档。
 - 验证重点：快慢拖动、两端释放、打断动画与减弱动态下，最终值准确且只按规则提交。
 - 相关条目：[web-interactions/snapping-level-slider](web-interactions.md#snapping-level-slider)。
-- 参考：[GIF 动图](../assets/gifs/mobile-interactions/inertial-slider-snap.gif) · [六帧对照图](../assets/filmstrips/mobile-interactions/inertial-slider-snap.jpg)。
+- 媒体取舍：保留 GIF＋JPG。松手后惯性滑行再吸附是主体，终态截图不能表达。
+- 参考：[GIF 动图](https://raw.githubusercontent.com/dqzboy/ui-atlas/e6aa0d641c224a2cb4c8bd4262a4d18f5c7e1e22/assets/gifs/mobile-interactions/inertial-slider-snap.gif) · [六帧对照图](https://raw.githubusercontent.com/dqzboy/ui-atlas/e6aa0d641c224a2cb4c8bd4262a4d18f5c7e1e22/assets/filmstrips/mobile-interactions/inertial-slider-snap.jpg)。
 
-![滑杆惯性与回吸：按时间从左到右、从上到下阅读](../assets/filmstrips/mobile-interactions/inertial-slider-snap.jpg)
+![滑杆惯性与回吸：按时间从左到右、从上到下阅读](https://raw.githubusercontent.com/dqzboy/ui-atlas/e6aa0d641c224a2cb4c8bd4262a4d18f5c7e1e22/assets/filmstrips/mobile-interactions/inertial-slider-snap.jpg)
 
 <a id="animated-text-expand"></a>
 ## 文本展开与箭头同步 / Animated Text Expand
@@ -77,9 +68,10 @@ GIF 看连续运动，六帧图按从左到右、从上到下查看。像素值�
 - 实现关注：测量动态内容高度；触发器暴露展开状态并关联内容，折叠区内部控件不可继续聚焦。
 - 验证重点：长短文本、图片晚加载、快速连续点击和收起后焦点都正确。
 - 相关条目：[cards-tables/accordion](cards-tables.md#accordion)。
-- 参考：[GIF 动图](../assets/gifs/mobile-interactions/animated-text-expand.gif) · [六帧对照图](../assets/filmstrips/mobile-interactions/animated-text-expand.jpg)。
+- 媒体取舍：保留 GIF＋JPG。需看容器高度连续变化与箭头旋转的同步关系。
+- 参考：[GIF 动图](https://raw.githubusercontent.com/dqzboy/ui-atlas/e6aa0d641c224a2cb4c8bd4262a4d18f5c7e1e22/assets/gifs/mobile-interactions/animated-text-expand.gif) · [六帧对照图](https://raw.githubusercontent.com/dqzboy/ui-atlas/e6aa0d641c224a2cb4c8bd4262a4d18f5c7e1e22/assets/filmstrips/mobile-interactions/animated-text-expand.jpg)。
 
-![文本展开与箭头同步：按时间从左到右、从上到下阅读](../assets/filmstrips/mobile-interactions/animated-text-expand.jpg)
+![文本展开与箭头同步：按时间从左到右、从上到下阅读](https://raw.githubusercontent.com/dqzboy/ui-atlas/e6aa0d641c224a2cb4c8bd4262a4d18f5c7e1e22/assets/filmstrips/mobile-interactions/animated-text-expand.jpg)
 
 <a id="step-progress-settle"></a>
 ## 步骤进度的轻微回弹 / Step Progress Settle
@@ -89,9 +81,10 @@ GIF 看连续运动，六帧图按从左到右、从上到下查看。像素值�
 - 指令例句：完成步骤后进度推进到真实节点，用轻微回弹强调完成。
 - 实现关注：完成状态来自实际结果；超调只在装饰层，不能跨亮下一节点或向辅助技术报出虚假进度。
 - 验证重点：成功、失败、返回修改和连续完成时，节点、百分比和步骤内容保持一致。
-- 参考：[GIF 动图](../assets/gifs/mobile-interactions/step-progress-settle.gif) · [六帧对照图](../assets/filmstrips/mobile-interactions/step-progress-settle.jpg)。
+- 媒体取舍：保留 GIF＋JPG。需看进度线推进、轻微越过与归位的过程。
+- 参考：[GIF 动图](https://raw.githubusercontent.com/dqzboy/ui-atlas/e6aa0d641c224a2cb4c8bd4262a4d18f5c7e1e22/assets/gifs/mobile-interactions/step-progress-settle.gif) · [六帧对照图](https://raw.githubusercontent.com/dqzboy/ui-atlas/e6aa0d641c224a2cb4c8bd4262a4d18f5c7e1e22/assets/filmstrips/mobile-interactions/step-progress-settle.jpg)。
 
-![步骤进度的轻微回弹：按时间从左到右、从上到下阅读](../assets/filmstrips/mobile-interactions/step-progress-settle.jpg)
+![步骤进度的轻微回弹：按时间从左到右、从上到下阅读](https://raw.githubusercontent.com/dqzboy/ui-atlas/e6aa0d641c224a2cb4c8bd4262a4d18f5c7e1e22/assets/filmstrips/mobile-interactions/step-progress-settle.jpg)
 
 <a id="switch-group-ripple"></a>
 ## 开关组涟漪反馈 / Switch Group Ripple
@@ -102,9 +95,10 @@ GIF 看连续运动，六帧图按从左到右、从上到下查看。像素值�
 - 实现关注：逻辑状态只更新目标项；相邻项用视觉层位移，不能切换 checked、触发保存或模拟点击。
 - 验证重点：逐项切换前后，其他项的值和网络请求都不改变；关闭动画后行为相同。
 - 相关条目：[buttons-controls/switch](buttons-controls.md#switch)。
-- 参考：[GIF 动图](../assets/gifs/mobile-interactions/switch-group-ripple.gif) · [六帧对照图](../assets/filmstrips/mobile-interactions/switch-group-ripple.jpg)。
+- 媒体取舍：保留 GIF＋JPG。需看相邻项反馈的传播顺序，并在项目中确认其值未被改变。
+- 参考：[GIF 动图](https://raw.githubusercontent.com/dqzboy/ui-atlas/e6aa0d641c224a2cb4c8bd4262a4d18f5c7e1e22/assets/gifs/mobile-interactions/switch-group-ripple.gif) · [六帧对照图](https://raw.githubusercontent.com/dqzboy/ui-atlas/e6aa0d641c224a2cb4c8bd4262a4d18f5c7e1e22/assets/filmstrips/mobile-interactions/switch-group-ripple.jpg)。
 
-![开关组涟漪反馈：按时间从左到右、从上到下阅读](../assets/filmstrips/mobile-interactions/switch-group-ripple.jpg)
+![开关组涟漪反馈：按时间从左到右、从上到下阅读](https://raw.githubusercontent.com/dqzboy/ui-atlas/e6aa0d641c224a2cb4c8bd4262a4d18f5c7e1e22/assets/filmstrips/mobile-interactions/switch-group-ripple.jpg)
 
 <a id="card-delete-trajectory"></a>
 ## 卡片沿轨迹离场 / Card Delete Trajectory
@@ -114,9 +108,10 @@ GIF 看连续运动，六帧图按从左到右、从上到下查看。像素值�
 - 指令例句：删除确认完成后让卡片沿曲线缩小离场，再平滑收拢列表。
 - 实现关注：仅将轨迹作为结果反馈；按产品规则先确认或提供撤销，失败恢复卡片和数据；列表以稳定 ID 关联。
 - 验证重点：取消删除无数据变化；失败、撤销、最后一项和连续删除后布局与数据正确。
-- 参考：[GIF 动图](../assets/gifs/mobile-interactions/card-delete-trajectory.gif) · [六帧对照图](../assets/filmstrips/mobile-interactions/card-delete-trajectory.jpg)。
+- 媒体取舍：保留 GIF＋JPG。删除后的曲线路径、缩放、旋转与淡出是主体。
+- 参考：[GIF 动图](https://raw.githubusercontent.com/dqzboy/ui-atlas/e6aa0d641c224a2cb4c8bd4262a4d18f5c7e1e22/assets/gifs/mobile-interactions/card-delete-trajectory.gif) · [六帧对照图](https://raw.githubusercontent.com/dqzboy/ui-atlas/e6aa0d641c224a2cb4c8bd4262a4d18f5c7e1e22/assets/filmstrips/mobile-interactions/card-delete-trajectory.jpg)。
 
-![卡片沿轨迹离场：按时间从左到右、从上到下阅读](../assets/filmstrips/mobile-interactions/card-delete-trajectory.jpg)
+![卡片沿轨迹离场：按时间从左到右、从上到下阅读](https://raw.githubusercontent.com/dqzboy/ui-atlas/e6aa0d641c224a2cb4c8bd4262a4d18f5c7e1e22/assets/filmstrips/mobile-interactions/card-delete-trajectory.jpg)
 
 <a id="sticky-compressing-stack"></a>
 ## 滚动吸顶压缩卡片栈 / Sticky Compressing Stack
@@ -126,9 +121,10 @@ GIF 看连续运动，六帧图按从左到右、从上到下查看。像素值�
 - 指令例句：卡片列表滚动时让前序卡片吸顶并逐级压缩，向回滚动恢复。
 - 实现关注：每层有明确吸顶偏移、缩放中心和堆叠顺序；留足滚动高度，避免不可见层拦截触摸。
 - 验证重点：首尾卡、反向滚动、长内容与动态插入后，文字和操作仍可访问。
-- 参考：[GIF 动图](../assets/gifs/mobile-interactions/sticky-compressing-stack.gif) · [六帧对照图](../assets/filmstrips/mobile-interactions/sticky-compressing-stack.jpg)。
+- 媒体取舍：保留 GIF＋JPG。需看卡片吸顶、缩小后退和后续卡片补位的连续层次。
+- 参考：[GIF 动图](https://raw.githubusercontent.com/dqzboy/ui-atlas/e6aa0d641c224a2cb4c8bd4262a4d18f5c7e1e22/assets/gifs/mobile-interactions/sticky-compressing-stack.gif) · [六帧对照图](https://raw.githubusercontent.com/dqzboy/ui-atlas/e6aa0d641c224a2cb4c8bd4262a4d18f5c7e1e22/assets/filmstrips/mobile-interactions/sticky-compressing-stack.jpg)。
 
-![滚动吸顶压缩卡片栈：按时间从左到右、从上到下阅读](../assets/filmstrips/mobile-interactions/sticky-compressing-stack.jpg)
+![滚动吸顶压缩卡片栈：按时间从左到右、从上到下阅读](https://raw.githubusercontent.com/dqzboy/ui-atlas/e6aa0d641c224a2cb4c8bd4262a4d18f5c7e1e22/assets/filmstrips/mobile-interactions/sticky-compressing-stack.jpg)
 
 <a id="reflowing-choice-tabs"></a>
 ## 选中标签放大并让位 / Reflowing Choice Tabs
@@ -139,6 +135,17 @@ GIF 看连续运动，六帧图按从左到右、从上到下查看。像素值�
 - 实现关注：明确单选语义，布局变化必须为视觉放大留空间；不能只用 transform 覆盖相邻命中区。
 - 验证重点：长标签、第一和最后一项、快速切换及键盘操作不重叠、不裁字。
 - 相关条目：[buttons-controls/segmented-control](buttons-controls.md#segmented-control)。
-- 参考：[GIF 动图](../assets/gifs/mobile-interactions/reflowing-choice-tabs.gif) · [六帧对照图](../assets/filmstrips/mobile-interactions/reflowing-choice-tabs.jpg)。
+- 媒体取舍：保留 GIF＋JPG。需看选中放大时其余标签如何让位和重新排布。
+- 参考：[GIF 动图](https://raw.githubusercontent.com/dqzboy/ui-atlas/e6aa0d641c224a2cb4c8bd4262a4d18f5c7e1e22/assets/gifs/mobile-interactions/reflowing-choice-tabs.gif) · [六帧对照图](https://raw.githubusercontent.com/dqzboy/ui-atlas/e6aa0d641c224a2cb4c8bd4262a4d18f5c7e1e22/assets/filmstrips/mobile-interactions/reflowing-choice-tabs.jpg)。
 
-![选中标签放大并让位：按时间从左到右、从上到下阅读](../assets/filmstrips/mobile-interactions/reflowing-choice-tabs.jpg)
+![选中标签放大并让位：按时间从左到右、从上到下阅读](https://raw.githubusercontent.com/dqzboy/ui-atlas/e6aa0d641c224a2cb4c8bd4262a4d18f5c7e1e22/assets/filmstrips/mobile-interactions/reflowing-choice-tabs.jpg)
+
+<a id="ripple-reorder"></a>
+## 拖拽插入线与递减让位 / Ripple Drag Reorder
+
+- 标识：`mobile-interactions/ripple-reorder`；类型：组件／效果。
+- 效果要点：横向或纵向拖拽时以插入线标明落点，两侧按距离递减位移并错峰让位；释放提交真实顺序，Esc 或落在外侧恢复。
+- 实现关注：可拖目标悬停为 pointer、拖动为 grabbing。被拖项浮起并避开落点；插入线从中心展开，在自身原位置不显示。邻项 n 从 0 计，位移 A × 0.7ⁿ，延迟 24ms × n；图标 A≈10px、卡片≈8px，回弹约 250ms 收敛。视觉位移用 transform，拖拽结束才提交数据；取消恢复拖前快照。
+- 验证重点：检查首尾与相邻换位、横竖布局、键盘重排、触摸滚动冲突、落在外部与 Esc 取消；保存失败回滚并显示原因；减弱动态时仅保留插入线。
+- 指令例句：参考 mobile-interactions/ripple-reorder，横向或纵向拖拽时以插入线标明落点，两侧按距离递减位移并错峰让位；释放提交真实顺序，Esc 或落在外侧恢复。
+- [完整实现配方与提示词](recipes/ripple-reorder.md)；证据类型：文字配方，未附动画。

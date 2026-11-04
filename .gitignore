@@ -37,7 +37,7 @@ htmlcov/
 # Local analysis cache; shared graft documentation may still be committed
 /graft/.cache/
 
-# Source footage is supplied separately; bundled GIF/JPG references are required
+# Source footage is supplied separately; reference media uses an external cache
 /source-videos/
 /raw/
 *.mp4
@@ -56,4 +56,5 @@ htmlcov/
 /*.tar.gz
 /*.tgz
 graft/
-# Keep SKILL.md, agents/, references/, scripts/ and assets/{gifs,filmstrips}/
+# Media remains available at the immutable revision in references/media-manifest.json.
+/assets/

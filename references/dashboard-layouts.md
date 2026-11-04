@@ -2,7 +2,7 @@
 
 按主任务分配主图、指标、表格和操作区。共享对象、时间或模式的区域使用同一上下文，布局与联动需一起验证。
 
-GIF 看连续运动，六帧图按从左到右、从上到下查看。像素值、技术栈与缓动由当前项目决定。
+六帧图按从左到右、从上到下查看，仅表示抽样状态，不能证明连续运动和短暂状态。像素值、技术栈与缓动由当前项目决定。
 
 ## 目录
 
@@ -21,9 +21,10 @@ GIF 看连续运动，六帧图按从左到右、从上到下查看。像素值�
 - 指令例句：用非对称网格组织大主卡和次卡，选择日期时同步高亮柱图、标签与容量数据。
 - 实现关注：网格比例按实际信息调整；颜色对应稳定语义，所有联动区共用日期状态，单独的容量选择保持清晰作用范围。
 - 验证重点：逐日选择、容量切换与窗口变窄后，重点层级和数据对应不丢失。
-- 参考：[GIF 动图](../assets/gifs/dashboard-layouts/asymmetric-color-grid.gif) · [六帧对照图](../assets/filmstrips/dashboard-layouts/asymmetric-color-grid.jpg)。
+- 媒体取舍：保留 GIF＋JPG。需看日期选择如何带动柱形、标签与容量读数同步变化。
+- 参考：[GIF 动图](https://raw.githubusercontent.com/dqzboy/ui-atlas/e6aa0d641c224a2cb4c8bd4262a4d18f5c7e1e22/assets/gifs/dashboard-layouts/asymmetric-color-grid.gif) · [六帧对照图](https://raw.githubusercontent.com/dqzboy/ui-atlas/e6aa0d641c224a2cb4c8bd4262a4d18f5c7e1e22/assets/filmstrips/dashboard-layouts/asymmetric-color-grid.jpg)。
 
-![多彩错列主次网格：按时间从左到右、从上到下阅读](../assets/filmstrips/dashboard-layouts/asymmetric-color-grid.jpg)
+![多彩错列主次网格：按时间从左到右、从上到下阅读](https://raw.githubusercontent.com/dqzboy/ui-atlas/e6aa0d641c224a2cb4c8bd4262a4d18f5c7e1e22/assets/filmstrips/dashboard-layouts/asymmetric-color-grid.jpg)
 
 <a id="inventory-action-workbench"></a>
 ## 工业分区与固定操作区 / Inventory Action Workbench
@@ -33,9 +34,10 @@ GIF 看连续运动，六帧图按从左到右、从上到下查看。像素值�
 - 指令例句：库存工作台按筛选、表格、操作区分栏；选中商品更新右卡，加入清单同步数量。
 - 实现关注：以商品 ID 共享表格选择与操作卡；筛选隐藏当前行时明确保留或清空策略，加入动作有加载和失败恢复。
 - 验证重点：过滤、切换商品、加入成功与失败后，商品名称、库存和清单数量一致。
-- 参考：[GIF 动图](../assets/gifs/dashboard-layouts/inventory-action-workbench.gif) · [六帧对照图](../assets/filmstrips/dashboard-layouts/inventory-action-workbench.jpg)。
+- 媒体取舍：保留 GIF＋JPG。需看筛选、选中商品、右侧操作卡切换和加入清单的连续关系。
+- 参考：[GIF 动图](https://raw.githubusercontent.com/dqzboy/ui-atlas/e6aa0d641c224a2cb4c8bd4262a4d18f5c7e1e22/assets/gifs/dashboard-layouts/inventory-action-workbench.gif) · [六帧对照图](https://raw.githubusercontent.com/dqzboy/ui-atlas/e6aa0d641c224a2cb4c8bd4262a4d18f5c7e1e22/assets/filmstrips/dashboard-layouts/inventory-action-workbench.jpg)。
 
-![工业分区与固定操作区：按时间从左到右、从上到下阅读](../assets/filmstrips/dashboard-layouts/inventory-action-workbench.jpg)
+![工业分区与固定操作区：按时间从左到右、从上到下阅读](https://raw.githubusercontent.com/dqzboy/ui-atlas/e6aa0d641c224a2cb4c8bd4262a4d18f5c7e1e22/assets/filmstrips/dashboard-layouts/inventory-action-workbench.jpg)
 
 <a id="central-observation-timeline"></a>
 ## 中轴观测与时间轴联动 / Central Observation Timeline
@@ -45,9 +47,10 @@ GIF 看连续运动，六帧图按从左到右、从上到下查看。像素值�
 - 指令例句：中央放主观测图，两侧显示队列和读数；切换对象或拖动时间轴时全局联动。
 - 实现关注：对象与时刻是共享状态，预览与提交按任务区分；主图、曲线、读数都标明同一上下文。
 - 验证重点：换对象、拖动时间轴、停止和返回当前时刻后，各面板没有混用不同对象或时点的数据。
-- 参考：[GIF 动图](../assets/gifs/dashboard-layouts/central-observation-timeline.gif) · [六帧对照图](../assets/filmstrips/dashboard-layouts/central-observation-timeline.jpg)。
+- 媒体取舍：保留 GIF＋JPG。需看拖动时间轴如何驱动中央视图与读数同步变化。
+- 参考：[GIF 动图](https://raw.githubusercontent.com/dqzboy/ui-atlas/e6aa0d641c224a2cb4c8bd4262a4d18f5c7e1e22/assets/gifs/dashboard-layouts/central-observation-timeline.gif) · [六帧对照图](https://raw.githubusercontent.com/dqzboy/ui-atlas/e6aa0d641c224a2cb4c8bd4262a4d18f5c7e1e22/assets/filmstrips/dashboard-layouts/central-observation-timeline.jpg)。
 
-![中轴观测与时间轴联动：按时间从左到右、从上到下阅读](../assets/filmstrips/dashboard-layouts/central-observation-timeline.jpg)
+![中轴观测与时间轴联动：按时间从左到右、从上到下阅读](https://raw.githubusercontent.com/dqzboy/ui-atlas/e6aa0d641c224a2cb4c8bd4262a4d18f5c7e1e22/assets/filmstrips/dashboard-layouts/central-observation-timeline.jpg)
 
 <a id="glass-matrix-metrics"></a>
 ## 玻璃点阵与月份指标 / Glass Matrix Metrics
@@ -57,10 +60,11 @@ GIF 看连续运动，六帧图按从左到右、从上到下查看。像素值�
 - 指令例句：浅色仪表盘用玻璃卡与点阵读数，切换月份更新指标，选择指标展示对应趋势。
 - 实现关注：月份和指标共同作为数据查询键；点阵数字同时提供可读文本，趋势标出时间范围与单位。
 - 验证重点：切换月份和指标、空月份及低对比背景下，数值、单位和趋势对应正确。
-- 相关条目：[glass-materials/frosted-glass-layer](glass-materials.md#frosted-glass-layer)。
-- 参考：[GIF 动图](../assets/gifs/dashboard-layouts/glass-matrix-metrics.gif) · [六帧对照图](../assets/filmstrips/dashboard-layouts/glass-matrix-metrics.jpg)。
+- 相关条目：[glass-materials/liquid-glass](glass-materials.md#liquid-glass)。
+- 媒体取舍：保留 GIF＋JPG。需看月份与指标切换如何更新点阵读数和趋势，材质本身看 JPG 即可。
+- 参考：[GIF 动图](https://raw.githubusercontent.com/dqzboy/ui-atlas/e6aa0d641c224a2cb4c8bd4262a4d18f5c7e1e22/assets/gifs/dashboard-layouts/glass-matrix-metrics.gif) · [六帧对照图](https://raw.githubusercontent.com/dqzboy/ui-atlas/e6aa0d641c224a2cb4c8bd4262a4d18f5c7e1e22/assets/filmstrips/dashboard-layouts/glass-matrix-metrics.jpg)。
 
-![玻璃点阵与月份指标：按时间从左到右、从上到下阅读](../assets/filmstrips/dashboard-layouts/glass-matrix-metrics.jpg)
+![玻璃点阵与月份指标：按时间从左到右、从上到下阅读](https://raw.githubusercontent.com/dqzboy/ui-atlas/e6aa0d641c224a2cb4c8bd4262a4d18f5c7e1e22/assets/filmstrips/dashboard-layouts/glass-matrix-metrics.jpg)
 
 <a id="warm-three-column-console"></a>
 ## 暖色三栏控制台 / Warm Three Column Console
@@ -70,9 +74,10 @@ GIF 看连续运动，六帧图按从左到右、从上到下查看。像素值�
 - 指令例句：设备控制台用三栏分区，切换房间同步照片和设定值，模式切换时同步数值与单位。
 - 实现关注：固定侧栏只在空间充足时使用，中栏自适应；区分温度与色温等模式的数据类型，设备请求绑定房间和模式。
 - 验证重点：换房间、换模式和点击预设后，照片、读数、单位与设备对象一致，旧响应不覆盖当前选择。
-- 参考：[GIF 动图](../assets/gifs/dashboard-layouts/warm-three-column-console.gif) · [六帧对照图](../assets/filmstrips/dashboard-layouts/warm-three-column-console.jpg)。
+- 媒体取舍：保留 GIF＋JPG。需看房间、模式、数值与单位的协调切换；三栏构图只需 JPG。
+- 参考：[GIF 动图](https://raw.githubusercontent.com/dqzboy/ui-atlas/e6aa0d641c224a2cb4c8bd4262a4d18f5c7e1e22/assets/gifs/dashboard-layouts/warm-three-column-console.gif) · [六帧对照图](https://raw.githubusercontent.com/dqzboy/ui-atlas/e6aa0d641c224a2cb4c8bd4262a4d18f5c7e1e22/assets/filmstrips/dashboard-layouts/warm-three-column-console.jpg)。
 
-![暖色三栏控制台：按时间从左到右、从上到下阅读](../assets/filmstrips/dashboard-layouts/warm-three-column-console.jpg)
+![暖色三栏控制台：按时间从左到右、从上到下阅读](https://raw.githubusercontent.com/dqzboy/ui-atlas/e6aa0d641c224a2cb4c8bd4262a4d18f5c7e1e22/assets/filmstrips/dashboard-layouts/warm-three-column-console.jpg)
 
 <a id="dark-growth-dashboard"></a>
 ## 暗色增长与图表递进入场 / Dark Growth Dashboard
@@ -83,6 +88,7 @@ GIF 看连续运动，六帧图按从左到右、从上到下查看。像素值�
 - 实现关注：所有图表共用真实数据与时间范围；入场仅表现加载完成结果，不能用虚构数值填动画，缩窄后重排指标。
 - 验证重点：数据加载失败、零值、切换范围和减弱动态时，都能读取完整且一致的指标与图表。
 - 相关条目：[mobile-scroll/viewport-chart-growth](mobile-scroll.md#viewport-chart-growth) · [motion/stagger](motion.md#stagger)。
-- 参考：[GIF 动图](../assets/gifs/dashboard-layouts/dark-growth-dashboard.gif) · [六帧对照图](../assets/filmstrips/dashboard-layouts/dark-growth-dashboard.jpg)。
+- 媒体取舍：保留 GIF＋JPG。需看数字、曲线、面积与环图按顺序进入的节奏。
+- 参考：[GIF 动图](https://raw.githubusercontent.com/dqzboy/ui-atlas/e6aa0d641c224a2cb4c8bd4262a4d18f5c7e1e22/assets/gifs/dashboard-layouts/dark-growth-dashboard.gif) · [六帧对照图](https://raw.githubusercontent.com/dqzboy/ui-atlas/e6aa0d641c224a2cb4c8bd4262a4d18f5c7e1e22/assets/filmstrips/dashboard-layouts/dark-growth-dashboard.jpg)。
 
-![暗色增长与图表递进入场：按时间从左到右、从上到下阅读](../assets/filmstrips/dashboard-layouts/dark-growth-dashboard.jpg)
+![暗色增长与图表递进入场：按时间从左到右、从上到下阅读](https://raw.githubusercontent.com/dqzboy/ui-atlas/e6aa0d641c224a2cb4c8bd4262a4d18f5c7e1e22/assets/filmstrips/dashboard-layouts/dark-growth-dashboard.jpg)

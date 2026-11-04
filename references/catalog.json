@@ -1,5 +1,5 @@
 {
-  "version": 2,
+  "version": 4,
   "language": "zh-CN",
   "categories": [
     {
@@ -73,6 +73,10 @@
     {
       "id": "mobile-workbenches",
       "title": "移动端工作台与服务门户"
+    },
+    {
+      "id": "documentation-layouts",
+      "title": "文档与帮助中心布局"
     }
   ],
   "items": [
@@ -86,8 +90,10 @@
       "summary": "屏幕中央弹出内容；背后有半透明遮罩 Overlay；示例支持右上角关闭和 Esc 关闭。用于当前需要集中处理的任务。",
       "prompt": "为这个任务使用 Modal，保留遮罩、关闭按钮和 Esc 关闭。",
       "kind": "pattern",
-      "gif": "assets/gifs/overlays/modal.gif",
-      "filmstrip": "assets/filmstrips/overlays/modal.jpg"
+      "filmstrip": "assets/filmstrips/overlays/modal.jpg",
+      "media_type": "filmstrip",
+      "evidence": "sampled-animation-frames",
+      "media_reason": "重点是中央面板、遮罩和关闭入口；现有 GIF 主要停留讲解，没有值得单独保留的开闭运动。"
     },
     {
       "id": "overlays/alert-dialog",
@@ -99,8 +105,10 @@
       "summary": "删除等操作前询问是否确定；与普通弹窗区别是必须明确作出选择，点击空白遮罩不直接关闭。",
       "prompt": "删除前显示确认弹窗，明确提供取消和删除，点击遮罩不确认也不关闭。",
       "kind": "pattern",
-      "gif": "assets/gifs/overlays/alert-dialog.gif",
-      "filmstrip": "assets/filmstrips/overlays/alert-dialog.jpg"
+      "filmstrip": "assets/filmstrips/overlays/alert-dialog.jpg",
+      "media_type": "filmstrip",
+      "evidence": "sampled-animation-frames",
+      "media_reason": "重点是确认语义、按钮与遮罩规则，图片加文字足够；行为仍需项目验证。"
     },
     {
       "id": "overlays/drawer",
@@ -112,8 +120,11 @@
       "summary": "从屏幕侧边滑出整块面板；适合内容较多、仍需对照原页面的筛选和详情。",
       "prompt": "把筛选条件放入侧边抽屉，保留对主页面的上下文。",
       "kind": "pattern",
+      "filmstrip": "assets/filmstrips/overlays/drawer.jpg",
+      "media_type": "animation",
+      "evidence": "animated-reference",
       "gif": "assets/gifs/overlays/drawer.gif",
-      "filmstrip": "assets/filmstrips/overlays/drawer.jpg"
+      "media_reason": "需看面板从侧边滑入的方向与遮罩配合，开闭截图不能表达滑入过程。"
     },
     {
       "id": "overlays/bottom-sheet",
@@ -125,21 +136,11 @@
       "summary": "从屏幕底部向上滑出，便于手机拇指操作；移动端承载弹出内容时可考虑使用。",
       "prompt": "移动端使用从底部滑出的 Bottom Sheet 呈现这些选项。",
       "kind": "pattern",
+      "filmstrip": "assets/filmstrips/overlays/bottom-sheet.jpg",
+      "media_type": "animation",
+      "evidence": "animated-reference",
       "gif": "assets/gifs/overlays/bottom-sheet.gif",
-      "filmstrip": "assets/filmstrips/overlays/bottom-sheet.jpg"
-    },
-    {
-      "id": "overlays/overlay-selection",
-      "category": "overlays",
-      "category_title": "弹窗与浮层",
-      "slug": "overlay-selection",
-      "name": "弹窗、抽屉与底部弹层选型",
-      "english": "Overlay selection",
-      "summary": "需立即处理用弹窗；内容多、需看上下文用抽屉；手机上优先考虑底部弹层。",
-      "prompt": "按任务紧迫性、内容量和终端选择对应浮层。",
-      "kind": "rule",
-      "gif": "assets/gifs/overlays/overlay-selection.gif",
-      "filmstrip": "assets/filmstrips/overlays/overlay-selection.jpg"
+      "media_reason": "需看底部面板向上滑出的过程及其与遮罩的关系。"
     },
     {
       "id": "overlays/toast",
@@ -151,8 +152,10 @@
       "summary": "保存成功等简短反馈在上方或下方出现，几秒后自动消失；部分组件库称 Snackbar，可带撤销。",
       "prompt": "保存成功后使用 Toast，3 秒后自动消失，无需用户再点确定。",
       "kind": "pattern",
-      "gif": "assets/gifs/overlays/toast.gif",
-      "filmstrip": "assets/filmstrips/overlays/toast.jpg"
+      "filmstrip": "assets/filmstrips/overlays/toast.jpg",
+      "media_type": "filmstrip",
+      "evidence": "sampled-animation-frames",
+      "media_reason": "位置、文案和撤销样式由图片表达；现有 GIF 未完整演示自动消失，不作为计时证据。"
     },
     {
       "id": "overlays/notification",
@@ -164,8 +167,10 @@
       "summary": "通常出现在右上角，比 Toast 大，有标题和正文；停留更久，通常带关闭按钮，如新订单提醒。",
       "prompt": "用有标题、正文和关闭按钮的通知显示新订单，停留时间长于普通轻提示。",
       "kind": "pattern",
-      "gif": "assets/gifs/overlays/notification.gif",
-      "filmstrip": "assets/filmstrips/overlays/notification.jpg"
+      "filmstrip": "assets/filmstrips/overlays/notification.jpg",
+      "media_type": "filmstrip",
+      "evidence": "sampled-animation-frames",
+      "media_reason": "标题、正文、关闭入口和位置是重点，普通出现过程没有独立参考价值。"
     },
     {
       "id": "overlays/toast-vs-notification",
@@ -177,8 +182,10 @@
       "summary": "只需看一眼的反馈用轻提示；希望用户注意并可持续查看的消息用通知。",
       "prompt": "将简短成功反馈与可持续查看的通知分开处理。",
       "kind": "rule",
-      "gif": "assets/gifs/overlays/toast-vs-notification.gif",
-      "filmstrip": "assets/filmstrips/overlays/toast-vs-notification.jpg"
+      "filmstrip": "assets/filmstrips/overlays/toast-vs-notification.jpg",
+      "media_type": "filmstrip",
+      "evidence": "sampled-animation-frames",
+      "media_reason": "属于消息语义与样式对比，图片和选型说明足够。"
     },
     {
       "id": "overlays/success-toast-correction",
@@ -190,8 +197,10 @@
       "summary": "将强制点确定的保存成功弹窗改为轻提示；建议 3 秒后自动消失。",
       "prompt": "把保存成功弹窗改成 Toast，3 秒后自动消失。",
       "kind": "rule",
-      "gif": "assets/gifs/overlays/success-toast-correction.gif",
-      "filmstrip": "assets/filmstrips/overlays/success-toast-correction.jpg"
+      "filmstrip": "assets/filmstrips/overlays/success-toast-correction.jpg",
+      "media_type": "filmstrip",
+      "evidence": "sampled-animation-frames",
+      "media_reason": "属于弹窗改轻提示的前后方案对比，无需保留讲解过程。"
     },
     {
       "id": "overlays/tooltip",
@@ -203,8 +212,10 @@
       "summary": "悬停时出现一句解释，移开消失，如导出图标说明；手机没有鼠标悬停，重要信息不能仅藏在这里。",
       "prompt": "给导出图标添加 Tooltip；关键说明同时保留可见或触摸可访问入口。",
       "kind": "pattern",
-      "gif": "assets/gifs/overlays/tooltip.gif",
-      "filmstrip": "assets/filmstrips/overlays/tooltip.jpg"
+      "filmstrip": "assets/filmstrips/overlays/tooltip.jpg",
+      "media_type": "filmstrip",
+      "evidence": "sampled-animation-frames",
+      "media_reason": "锚点位置与简短解释由图片表达，悬停与离开规则由文字描述。"
     },
     {
       "id": "overlays/popover",
@@ -216,8 +227,10 @@
       "summary": "点击触发，在锚点附近展示较丰富的内容甚至操作按钮；例子为点击头像展示客户信息。",
       "prompt": "点击客户头像打开带详情和操作的 Popover。",
       "kind": "pattern",
-      "gif": "assets/gifs/overlays/popover.gif",
-      "filmstrip": "assets/filmstrips/overlays/popover.jpg"
+      "filmstrip": "assets/filmstrips/overlays/popover.jpg",
+      "media_type": "filmstrip",
+      "evidence": "sampled-animation-frames",
+      "media_reason": "重点是锚定位置、内容与操作构成，图片加触发规则足够。"
     },
     {
       "id": "overlays/popconfirm",
@@ -229,8 +242,10 @@
       "summary": "在删除按钮旁用小气泡询问是否确定，视觉负担低于整页确认弹窗。",
       "prompt": "在这一行删除按钮旁显示 Popconfirm，提供取消和确认删除。",
       "kind": "pattern",
-      "gif": "assets/gifs/overlays/popconfirm.gif",
-      "filmstrip": "assets/filmstrips/overlays/popconfirm.jpg"
+      "filmstrip": "assets/filmstrips/overlays/popconfirm.jpg",
+      "media_type": "filmstrip",
+      "evidence": "sampled-animation-frames",
+      "media_reason": "重点是就地确认的位置与按钮，图片加确认规则足够。"
     },
     {
       "id": "overlays/dropdown-menu",
@@ -242,34 +257,10 @@
       "summary": "点击后向下展开一串操作选项，如头像菜单中的设置、退出登录。",
       "prompt": "点击头像展开 Dropdown Menu，包含设置和退出登录。",
       "kind": "pattern",
-      "gif": "assets/gifs/overlays/dropdown-menu.gif",
-      "filmstrip": "assets/filmstrips/overlays/dropdown-menu.jpg"
-    },
-    {
-      "id": "overlays/anchored-selection",
-      "category": "overlays",
-      "category_title": "弹窗与浮层",
-      "slug": "anchored-selection",
-      "name": "锚点浮层选型",
-      "english": "Anchored overlay selection",
-      "summary": "解释一句用 Tooltip；点开有内容和操作用 Popover；一串选项用 Dropdown Menu。",
-      "prompt": "先判断解释、详情还是菜单，再选择锚点浮层。",
-      "kind": "rule",
-      "gif": "assets/gifs/overlays/anchored-selection.gif",
-      "filmstrip": "assets/filmstrips/overlays/anchored-selection.jpg"
-    },
-    {
-      "id": "overlays/overlay-recap",
-      "category": "overlays",
-      "category_title": "弹窗与浮层",
-      "slug": "overlay-recap",
-      "name": "浮层选型速查",
-      "english": "Overlay recap",
-      "summary": "立即处理用弹窗；边看边操作用抽屉；看一眼就走用轻提示；一句解释用气泡提示。",
-      "prompt": "按这四种意图选组件，不把所有反馈都做成弹窗。",
-      "kind": "rule",
-      "gif": "assets/gifs/overlays/overlay-recap.gif",
-      "filmstrip": "assets/filmstrips/overlays/overlay-recap.jpg"
+      "filmstrip": "assets/filmstrips/overlays/dropdown-menu.jpg",
+      "media_type": "filmstrip",
+      "evidence": "sampled-animation-frames",
+      "media_reason": "重点是操作列表及触发入口，普通展开无需单独保留 GIF。"
     },
     {
       "id": "loading-errors/skeleton",
@@ -281,8 +272,11 @@
       "summary": "内容未返回时，用与真实内容同形的灰色块预占位置，并可加扫光；数据到达后在原位置替换，减少布局跳动。",
       "prompt": "列表加载时用与真实内容形状一致的骨架屏，内容到达后原位替换。",
       "kind": "pattern",
+      "filmstrip": "assets/filmstrips/loading-errors/skeleton.jpg",
+      "media_type": "animation",
+      "evidence": "animated-reference",
       "gif": "assets/gifs/loading-errors/skeleton.gif",
-      "filmstrip": "assets/filmstrips/loading-errors/skeleton.jpg"
+      "media_reason": "需看扫光循环和骨架被真实内容原位替换的过程。"
     },
     {
       "id": "loading-errors/blur-up",
@@ -294,8 +288,11 @@
       "summary": "先显示低清模糊小图，高清图下载完成后逐渐变清楚；适合相册和商品图片列表。",
       "prompt": "图片先展示低清占位图，高清加载完成后使用 Blur-up 渐显。",
       "kind": "pattern",
+      "filmstrip": "assets/filmstrips/loading-errors/blur-up.jpg",
+      "media_type": "animation",
+      "evidence": "animated-reference",
       "gif": "assets/gifs/loading-errors/blur-up.gif",
-      "filmstrip": "assets/filmstrips/loading-errors/blur-up.jpg"
+      "media_reason": "模糊到清晰的连续变化是目标，静态前后对比会丢失过渡观感。"
     },
     {
       "id": "loading-errors/optimistic-ui",
@@ -307,8 +304,11 @@
       "summary": "点赞、收藏等低风险操作先立即改变界面，再等待服务器；失败时恢复原状态并提示。",
       "prompt": "点赞立即变红，请求失败时回滚并提示失败。",
       "kind": "pattern",
+      "filmstrip": "assets/filmstrips/loading-errors/optimistic-ui.jpg",
+      "media_type": "animation",
+      "evidence": "animated-reference",
       "gif": "assets/gifs/loading-errors/optimistic-ui.gif",
-      "filmstrip": "assets/filmstrips/loading-errors/optimistic-ui.jpg"
+      "media_reason": "需看立即反馈、请求结果与失败回滚的先后；现有六帧未完整覆盖短暂失败提示。"
     },
     {
       "id": "loading-errors/pull-to-refresh",
@@ -320,8 +320,11 @@
       "summary": "手机列表向下拉时顶部出现刷新指示，松手触发刷新；适合消息、动态等会更新的列表。",
       "prompt": "为移动端动态列表加入下拉并松手刷新的交互。",
       "kind": "pattern",
+      "filmstrip": "assets/filmstrips/loading-errors/pull-to-refresh.jpg",
+      "media_type": "animation",
+      "evidence": "animated-reference",
       "gif": "assets/gifs/loading-errors/pull-to-refresh.gif",
-      "filmstrip": "assets/filmstrips/loading-errors/pull-to-refresh.jpg"
+      "media_reason": "需看下拉、松手、刷新指示和复位的连续关系。"
     },
     {
       "id": "loading-errors/progress-bar",
@@ -333,8 +336,10 @@
       "summary": "显示已完成比例；通常可按以下原则选择：短于约 1 秒不必额外放加载指示，几秒可用转圈，长任务用进度条并尽可能显示剩余时间。",
       "prompt": "上传大文件显示真实进度、已完成量，并在可估算时显示剩余时间。",
       "kind": "pattern",
-      "gif": "assets/gifs/loading-errors/progress-bar.gif",
-      "filmstrip": "assets/filmstrips/loading-errors/progress-bar.jpg"
+      "filmstrip": "assets/filmstrips/loading-errors/progress-bar.jpg",
+      "media_type": "filmstrip",
+      "evidence": "sampled-animation-frames",
+      "media_reason": "重点是比例、已完成量和时间信息的呈现，多个进度状态加文字足够。"
     },
     {
       "id": "loading-errors/loading-button",
@@ -346,8 +351,11 @@
       "summary": "提交后按钮内部出现加载指示，同时阻止重复点击，避免连点导致重复提交。",
       "prompt": "提交按钮显示加载中，直到请求结束前不能重复提交。",
       "kind": "pattern",
+      "filmstrip": "assets/filmstrips/loading-errors/loading-button.jpg",
+      "media_type": "animation",
+      "evidence": "animated-reference",
       "gif": "assets/gifs/loading-errors/loading-button.gif",
-      "filmstrip": "assets/filmstrips/loading-errors/loading-button.jpg"
+      "media_reason": "需看提交后转圈到完成的反馈顺序；防重复提交仍须操作实际项目验证。"
     },
     {
       "id": "loading-errors/empty-state",
@@ -359,8 +367,10 @@
       "summary": "列表没有内容时，给出插图、为空的原因和下一步按钮；例子为还没有订单、去逛逛。",
       "prompt": "订单为空时显示原因说明和去逛逛入口。",
       "kind": "pattern",
-      "gif": "assets/gifs/loading-errors/empty-state.gif",
-      "filmstrip": "assets/filmstrips/loading-errors/empty-state.jpg"
+      "filmstrip": "assets/filmstrips/loading-errors/empty-state.jpg",
+      "media_type": "filmstrip",
+      "evidence": "sampled-animation-frames",
+      "media_reason": "插图、原因与下一步入口属于静态结构。"
     },
     {
       "id": "loading-errors/not-found",
@@ -372,8 +382,10 @@
       "summary": "地址不存在；不要只放错误码，示例提供返回首页和搜索入口。",
       "prompt": "404 页面说明地址不存在，提供回首页和搜索入口。",
       "kind": "pattern",
-      "gif": "assets/gifs/loading-errors/not-found.gif",
-      "filmstrip": "assets/filmstrips/loading-errors/not-found.jpg"
+      "filmstrip": "assets/filmstrips/loading-errors/not-found.jpg",
+      "media_type": "filmstrip",
+      "evidence": "sampled-animation-frames",
+      "media_reason": "错误说明、回首页和搜索入口属于页面布局参考。"
     },
     {
       "id": "loading-errors/error-page",
@@ -385,8 +397,10 @@
       "summary": "服务器故障如 500；解释发生了什么，避免责怪用户，提供重试。",
       "prompt": "服务暂时出错时显示清楚的说明和重新试试按钮。",
       "kind": "pattern",
-      "gif": "assets/gifs/loading-errors/error-page.gif",
-      "filmstrip": "assets/filmstrips/loading-errors/error-page.jpg"
+      "filmstrip": "assets/filmstrips/loading-errors/error-page.jpg",
+      "media_type": "filmstrip",
+      "evidence": "sampled-animation-frames",
+      "media_reason": "原因文案与重试入口属于静态内容结构。"
     },
     {
       "id": "loading-errors/offline",
@@ -398,8 +412,11 @@
       "summary": "断网时顶部滑出网络已断开提示；恢复后变成已重新连接，然后收起。",
       "prompt": "监听网络状态，断网显示横幅，恢复连接后更新提示再收起。",
       "kind": "pattern",
+      "filmstrip": "assets/filmstrips/loading-errors/offline.jpg",
+      "media_type": "animation",
+      "evidence": "animated-reference",
       "gif": "assets/gifs/loading-errors/offline.gif",
-      "filmstrip": "assets/filmstrips/loading-errors/offline.jpg"
+      "media_reason": "需看断网横幅进入、恢复连接换色和最终收起的过程。"
     },
     {
       "id": "loading-errors/no-permission",
@@ -411,8 +428,10 @@
       "summary": "资源存在但无权访问，示例为 403；告知联系谁，并提供申请权限入口。",
       "prompt": "无权限时说明资源需要授权，提供联系管理员或申请权限入口。",
       "kind": "pattern",
-      "gif": "assets/gifs/loading-errors/no-permission.gif",
-      "filmstrip": "assets/filmstrips/loading-errors/no-permission.jpg"
+      "filmstrip": "assets/filmstrips/loading-errors/no-permission.jpg",
+      "media_type": "filmstrip",
+      "evidence": "sampled-animation-frames",
+      "media_reason": "无权限说明与申请入口属于静态内容结构。"
     },
     {
       "id": "loading-errors/result",
@@ -424,8 +443,10 @@
       "summary": "任务提交后明确成功或失败；成功展示对勾和下一步，失败写原因并提供返回修改。",
       "prompt": "提交结果页分别覆盖成功下一步和失败返回修改。",
       "kind": "pattern",
-      "gif": "assets/gifs/loading-errors/result.gif",
-      "filmstrip": "assets/filmstrips/loading-errors/result.jpg"
+      "filmstrip": "assets/filmstrips/loading-errors/result.jpg",
+      "media_type": "filmstrip",
+      "evidence": "sampled-animation-frames",
+      "media_reason": "成功、失败与下一步的对照图足够，不保留装饰性庆祝过程。"
     },
     {
       "id": "loading-errors/spinner",
@@ -437,8 +458,11 @@
       "summary": "圆形指示持续旋转，表达正在处理；适合无法提供精确进度的加载状态。",
       "prompt": "无法获知进度的短等待显示 Spinner。",
       "kind": "pattern",
+      "filmstrip": "assets/filmstrips/loading-errors/spinner.jpg",
+      "media_type": "animation",
+      "evidence": "animated-reference",
       "gif": "assets/gifs/loading-errors/spinner.gif",
-      "filmstrip": "assets/filmstrips/loading-errors/spinner.jpg"
+      "media_reason": "旋转、跳点与条形起伏依赖循环和节奏，单图不能表达。"
     },
     {
       "id": "backgrounds/aurora",
@@ -450,8 +474,11 @@
       "summary": "彩色光团缓慢漂浮并互相融合，呈现极光氛围；示例用于科技、AI 产品首屏。",
       "prompt": "首屏背景使用缓慢融合的 Aurora 极光，保持标题清晰。",
       "kind": "pattern",
+      "filmstrip": "assets/filmstrips/backgrounds/aurora.jpg",
+      "media_type": "animation",
+      "evidence": "animated-reference",
       "gif": "assets/gifs/backgrounds/aurora.gif",
-      "filmstrip": "assets/filmstrips/backgrounds/aurora.jpg"
+      "media_reason": "光团漂移与融合是效果主体，需保留连续变化。"
     },
     {
       "id": "backgrounds/mesh-gradient",
@@ -463,8 +490,11 @@
       "summary": "多种颜色如丝绸般揉合并缓慢流动；例子为支付、金融网站首屏。",
       "prompt": "用柔和缓慢流动的 Mesh Gradient 作为首屏背景。",
       "kind": "pattern",
+      "filmstrip": "assets/filmstrips/backgrounds/mesh-gradient.jpg",
+      "media_type": "animation",
+      "evidence": "animated-reference",
       "gif": "assets/gifs/backgrounds/mesh-gradient.gif",
-      "filmstrip": "assets/filmstrips/backgrounds/mesh-gradient.jpg"
+      "media_reason": "色块缓慢流动与混合是效果主体，区别于静态渐变。"
     },
     {
       "id": "backgrounds/particle-wave",
@@ -476,8 +506,11 @@
       "summary": "大量小点组成起伏网面，像波浪；鼠标经过时附近粒子被推开。",
       "prompt": "用起伏的粒子网面呈现 Particle Wave，鼠标附近粒子避让。",
       "kind": "pattern",
+      "filmstrip": "assets/filmstrips/backgrounds/particle-wave.jpg",
+      "media_type": "animation",
+      "evidence": "animated-reference",
       "gif": "assets/gifs/backgrounds/particle-wave.gif",
-      "filmstrip": "assets/filmstrips/backgrounds/particle-wave.jpg"
+      "media_reason": "需看粒子网面的起伏及指针附近的避让过程。"
     },
     {
       "id": "backgrounds/dotted-globe",
@@ -489,8 +522,11 @@
       "summary": "圆点组成的地球缓慢旋转，发光弧线连接城市；用于全球业务和数据展示。",
       "prompt": "在全球业务区域展示旋转点阵地球与城市连线。",
       "kind": "pattern",
+      "filmstrip": "assets/filmstrips/backgrounds/dotted-globe.jpg",
+      "media_type": "animation",
+      "evidence": "animated-reference",
       "gif": "assets/gifs/backgrounds/dotted-globe.gif",
-      "filmstrip": "assets/filmstrips/backgrounds/dotted-globe.jpg"
+      "media_reason": "需看地球旋转与城市连线变化，图片只显示某一角度。"
     },
     {
       "id": "backgrounds/fluid",
@@ -502,8 +538,11 @@
       "summary": "鼠标移动搅动彩色烟雾，随后缓慢消散；这类效果可使用 Shader 实现，具体技术由项目需求决定。",
       "prompt": "添加随鼠标搅动、离开后逐渐消散的 Fluid 背景。",
       "kind": "pattern",
+      "filmstrip": "assets/filmstrips/backgrounds/fluid.jpg",
+      "media_type": "animation",
+      "evidence": "animated-reference",
       "gif": "assets/gifs/backgrounds/fluid.gif",
-      "filmstrip": "assets/filmstrips/backgrounds/fluid.jpg"
+      "media_reason": "需看指针搅动后烟雾生成、扩散与消散的过程。"
     },
     {
       "id": "backgrounds/beams",
@@ -515,8 +554,11 @@
       "summary": "多道光从上方扫下或向外放射，像舞台追光；适合发布会风格首屏。",
       "prompt": "首屏背景加入有方向性的 Beams 光束扫动。",
       "kind": "pattern",
+      "filmstrip": "assets/filmstrips/backgrounds/beams.jpg",
+      "media_type": "animation",
+      "evidence": "animated-reference",
       "gif": "assets/gifs/backgrounds/beams.gif",
-      "filmstrip": "assets/filmstrips/backgrounds/beams.jpg"
+      "media_reason": "光束扫动的方向、轨迹与循环是参考重点。"
     },
     {
       "id": "backgrounds/matrix-rain",
@@ -528,21 +570,11 @@
       "summary": "绿色字符按竖列向下落，形成黑客帝国式效果；适合编程和安全主题。",
       "prompt": "背景使用竖列绿色字符向下落的 Matrix Rain。",
       "kind": "pattern",
+      "filmstrip": "assets/filmstrips/backgrounds/matrix-rain.jpg",
+      "media_type": "animation",
+      "evidence": "animated-reference",
       "gif": "assets/gifs/backgrounds/matrix-rain.gif",
-      "filmstrip": "assets/filmstrips/backgrounds/matrix-rain.jpg"
-    },
-    {
-      "id": "backgrounds/ascii-art",
-      "category": "backgrounds",
-      "category_title": "背景特效",
-      "slug": "ascii-art",
-      "name": "字母画",
-      "english": "ASCII Art",
-      "summary": "用字符矩阵拼出图像，鼠标经过时附近字符乱跳；与点阵网格相比，使用字符表现图像明暗和细节。",
-      "prompt": "用字符网格组成图像，指针附近字符产生扰动。",
-      "kind": "pattern",
-      "gif": "assets/gifs/backgrounds/ascii-art.gif",
-      "filmstrip": "assets/filmstrips/backgrounds/ascii-art.jpg"
+      "media_reason": "字符按竖列下落的方向与节奏依赖连续画面。"
     },
     {
       "id": "backgrounds/dot-grid",
@@ -554,8 +586,11 @@
       "summary": "规则小圆点铺满背景，鼠标附近的点变大、发光；整体较克制。",
       "prompt": "用规则 Dot Grid 背景，只有指针附近点轻微放大和提亮。",
       "kind": "pattern",
+      "filmstrip": "assets/filmstrips/backgrounds/dot-grid.jpg",
+      "media_type": "animation",
+      "evidence": "animated-reference",
       "gif": "assets/gifs/backgrounds/dot-grid.gif",
-      "filmstrip": "assets/filmstrips/backgrounds/dot-grid.jpg"
+      "media_reason": "需看局部提亮和放大如何跟随指针移动。"
     },
     {
       "id": "backgrounds/retro-grid",
@@ -567,8 +602,11 @@
       "summary": "地面发光网格向地平线延伸，具有复古赛博纵深；例子为音乐、游戏、潮牌页面。",
       "prompt": "加入朝地平线延伸的 Retro Grid 背景。",
       "kind": "pattern",
+      "filmstrip": "assets/filmstrips/backgrounds/retro-grid.jpg",
+      "media_type": "animation",
+      "evidence": "animated-reference",
       "gif": "assets/gifs/backgrounds/retro-grid.gif",
-      "filmstrip": "assets/filmstrips/backgrounds/retro-grid.jpg"
+      "media_reason": "需保留透视网格的流动观感；只参考网格构图时查看 JPG 即可。"
     },
     {
       "id": "backgrounds/starfield",
@@ -580,8 +618,11 @@
       "summary": "星点朝观察者飞来，形成太空穿越；示例建议用于开场或过渡。",
       "prompt": "过渡区域使用星点朝镜头飞来的 Starfield。",
       "kind": "pattern",
+      "filmstrip": "assets/filmstrips/backgrounds/starfield.jpg",
+      "media_type": "animation",
+      "evidence": "animated-reference",
       "gif": "assets/gifs/backgrounds/starfield.gif",
-      "filmstrip": "assets/filmstrips/backgrounds/starfield.jpg"
+      "media_reason": "星点迎面运动与透视速度差不能由单图表达。"
     },
     {
       "id": "backgrounds/grain",
@@ -593,8 +634,10 @@
       "summary": "铺一层细小颗粒增加老照片质感；建议一页选一种主背景效果，避免堆叠。",
       "prompt": "给背景增加低强度细颗粒，避免与其他强动态背景叠加。",
       "kind": "pattern",
-      "gif": "assets/gifs/backgrounds/grain.gif",
-      "filmstrip": "assets/filmstrips/backgrounds/grain.jpg"
+      "filmstrip": "assets/filmstrips/backgrounds/grain.jpg",
+      "media_type": "filmstrip",
+      "evidence": "sampled-animation-frames",
+      "media_reason": "重点是颗粒纹理的强弱与质感，图片足够，不要求动态噪点。"
     },
     {
       "id": "backgrounds/gradient",
@@ -606,8 +649,10 @@
       "summary": "从一种颜色过渡到另一种颜色；基础渐变可保持静态，不要求持续流动。",
       "prompt": "使用干净的基础渐变，不把静态渐变误做成流体。",
       "kind": "pattern",
-      "gif": "assets/gifs/backgrounds/gradient.gif",
-      "filmstrip": "assets/filmstrips/backgrounds/gradient.jpg"
+      "filmstrip": "assets/filmstrips/backgrounds/gradient.jpg",
+      "media_type": "filmstrip",
+      "evidence": "sampled-animation-frames",
+      "media_reason": "基础静态渐变只需颜色与构图参考，不引入持续流动。"
     },
     {
       "id": "cards-tables/carousel",
@@ -619,8 +664,11 @@
       "summary": "多张图或卡片左右切换；自动切换不宜过快，悬停暂停，保留左右箭头和指示圆点供手动切换。",
       "prompt": "轮播支持手动箭头和圆点，自动播放克制，悬停暂停。",
       "kind": "pattern",
+      "filmstrip": "assets/filmstrips/cards-tables/carousel.jpg",
+      "media_type": "animation",
+      "evidence": "animated-reference",
       "gif": "assets/gifs/cards-tables/carousel.gif",
-      "filmstrip": "assets/filmstrips/cards-tables/carousel.jpg"
+      "media_reason": "需看横向切换、过渡方向与连续轮播的衔接。"
     },
     {
       "id": "cards-tables/masonry",
@@ -632,8 +680,10 @@
       "summary": "卡片等宽而高度不同，按列紧凑排列；适合尺寸不一的大量图片，减少空白。",
       "prompt": "图片集合使用等宽、不等高的 Masonry 瀑布流。",
       "kind": "pattern",
-      "gif": "assets/gifs/cards-tables/masonry.gif",
-      "filmstrip": "assets/filmstrips/cards-tables/masonry.jpg"
+      "filmstrip": "assets/filmstrips/cards-tables/masonry.jpg",
+      "media_type": "filmstrip",
+      "evidence": "sampled-animation-frames",
+      "media_reason": "重点是等宽不等高的紧凑排布，不把讲解中的逐张出现当作布局要求。"
     },
     {
       "id": "cards-tables/flip-card",
@@ -645,8 +695,11 @@
       "summary": "鼠标进入时卡片像翻牌一样转到背面，展示更多说明；适合正面图片、背面权益说明。",
       "prompt": "会员卡正面展示图片，交互后翻到背面展示权益说明。",
       "kind": "pattern",
+      "filmstrip": "assets/filmstrips/cards-tables/flip-card.jpg",
+      "media_type": "animation",
+      "evidence": "animated-reference",
       "gif": "assets/gifs/cards-tables/flip-card.gif",
-      "filmstrip": "assets/filmstrips/cards-tables/flip-card.jpg"
+      "media_reason": "需看正面经过侧面转到背面的空间路径，不能只比对两面。"
     },
     {
       "id": "cards-tables/stat-card",
@@ -658,8 +711,10 @@
       "summary": "一张卡片突出一个大数字，并用趋势箭头表现涨跌；常用于后台首页订单和销售指标。",
       "prompt": "每张统计卡突出一个核心数字，附清楚的趋势和比较口径。",
       "kind": "pattern",
-      "gif": "assets/gifs/cards-tables/stat-card.gif",
-      "filmstrip": "assets/filmstrips/cards-tables/stat-card.jpg"
+      "filmstrip": "assets/filmstrips/cards-tables/stat-card.jpg",
+      "media_type": "filmstrip",
+      "evidence": "sampled-animation-frames",
+      "media_reason": "数字、趋势和比较口径的层级可由图片表达，计数动效另见 count-up。"
     },
     {
       "id": "cards-tables/timeline",
@@ -671,8 +726,10 @@
       "summary": "竖线与圆点按时间串联事件；用于物流、订单记录和公司历程。",
       "prompt": "物流记录按时间线排列，圆点对应事件。",
       "kind": "pattern",
-      "gif": "assets/gifs/cards-tables/timeline.gif",
-      "filmstrip": "assets/filmstrips/cards-tables/timeline.jpg"
+      "filmstrip": "assets/filmstrips/cards-tables/timeline.jpg",
+      "media_type": "filmstrip",
+      "evidence": "sampled-animation-frames",
+      "media_reason": "事件、竖线与节点的结构可由图片表达，不要求依次绘制。"
     },
     {
       "id": "cards-tables/avatar-group",
@@ -684,8 +741,10 @@
       "summary": "多个圆形头像重叠，末尾用 +N 表示未展示人数；用于参与者和协作者。",
       "prompt": "参与者用重叠头像组显示，超出部分显示 +N。",
       "kind": "pattern",
-      "gif": "assets/gifs/cards-tables/avatar-group.gif",
-      "filmstrip": "assets/filmstrips/cards-tables/avatar-group.jpg"
+      "filmstrip": "assets/filmstrips/cards-tables/avatar-group.jpg",
+      "media_type": "filmstrip",
+      "evidence": "sampled-animation-frames",
+      "media_reason": "重叠、间距与超出数量可由图片表达。"
     },
     {
       "id": "cards-tables/badge",
@@ -697,8 +756,10 @@
       "summary": "图标角落显示小红点或计数；较大数量显示 99+，避免数字撑大组件。",
       "prompt": "未读消息使用小徽标，超过上限显示 99+。",
       "kind": "pattern",
-      "gif": "assets/gifs/cards-tables/badge.gif",
-      "filmstrip": "assets/filmstrips/cards-tables/badge.jpg"
+      "filmstrip": "assets/filmstrips/cards-tables/badge.jpg",
+      "media_type": "filmstrip",
+      "evidence": "sampled-animation-frames",
+      "media_reason": "红点、数量与上限样式可由状态图片表达。"
     },
     {
       "id": "cards-tables/tag",
@@ -710,8 +771,10 @@
       "summary": "小圆角色块表达已付款、待发货等状态；建议控制颜色种类，避免过于杂乱。",
       "prompt": "订单状态用统一含义的标签表达，颜色克制且带文字。",
       "kind": "pattern",
-      "gif": "assets/gifs/cards-tables/tag.gif",
-      "filmstrip": "assets/filmstrips/cards-tables/tag.jpg"
+      "filmstrip": "assets/filmstrips/cards-tables/tag.jpg",
+      "media_type": "filmstrip",
+      "evidence": "sampled-animation-frames",
+      "media_reason": "状态文字、颜色与密度可由图片表达。"
     },
     {
       "id": "cards-tables/accordion",
@@ -723,8 +786,10 @@
       "summary": "点击标题展开内容，再点收起；适合 FAQ、设置和手机上的较长内容。",
       "prompt": "常见问题使用 Accordion，点击问题展开或收起答案。",
       "kind": "pattern",
-      "gif": "assets/gifs/cards-tables/accordion.gif",
-      "filmstrip": "assets/filmstrips/cards-tables/accordion.jpg"
+      "filmstrip": "assets/filmstrips/cards-tables/accordion.jpg",
+      "media_type": "filmstrip",
+      "evidence": "sampled-animation-frames",
+      "media_reason": "普通折叠与展开的两种结构由状态图表达；连续高度动效另见 animated-text-expand。"
     },
     {
       "id": "cards-tables/fixed-header",
@@ -736,8 +801,11 @@
       "summary": "滚动表格时表头保留；列较多时也可固定首列，以便持续辨认含义。",
       "prompt": "表格滚动时固定表头，需要横向滚动时固定标识列。",
       "kind": "pattern",
+      "filmstrip": "assets/filmstrips/cards-tables/fixed-header.jpg",
+      "media_type": "animation",
+      "evidence": "animated-reference",
       "gif": "assets/gifs/cards-tables/fixed-header.gif",
-      "filmstrip": "assets/filmstrips/cards-tables/fixed-header.jpg"
+      "media_reason": "需对照正文滚动与表头、首列保持固定的相对运动。"
     },
     {
       "id": "cards-tables/sort-filter",
@@ -749,8 +817,10 @@
       "summary": "列标题箭头改变排序，小漏斗按条件过滤行；示例只看待发货订单。",
       "prompt": "列标题支持排序，并允许按订单状态筛选。",
       "kind": "pattern",
-      "gif": "assets/gifs/cards-tables/sort-filter.gif",
-      "filmstrip": "assets/filmstrips/cards-tables/sort-filter.jpg"
+      "filmstrip": "assets/filmstrips/cards-tables/sort-filter.jpg",
+      "media_type": "filmstrip",
+      "evidence": "sampled-animation-frames",
+      "media_reason": "排序箭头、条件与结果列表可由状态图表达，数据正确性仍需项目验证。"
     },
     {
       "id": "cards-tables/row-actions",
@@ -762,8 +832,10 @@
       "summary": "悬停某一行时，在行尾出现编辑和删除操作，默认隐藏以减少视觉负担。",
       "prompt": "行尾操作在悬停和键盘聚焦时显示，触摸端提供可见操作入口。",
       "kind": "pattern",
-      "gif": "assets/gifs/cards-tables/row-actions.gif",
-      "filmstrip": "assets/filmstrips/cards-tables/row-actions.jpg"
+      "filmstrip": "assets/filmstrips/cards-tables/row-actions.jpg",
+      "media_type": "filmstrip",
+      "evidence": "sampled-animation-frames",
+      "media_reason": "默认与显露操作的状态图足够，触摸和键盘入口依照文字规则实现。"
     },
     {
       "id": "cards-tables/zebra-stripes",
@@ -775,8 +847,10 @@
       "summary": "行背景深浅交替，帮助阅读长列表；同时应注意金额等数字右对齐便于比较。",
       "prompt": "长表格使用轻微斑马纹，金额列右对齐。",
       "kind": "pattern",
-      "gif": "assets/gifs/cards-tables/zebra-stripes.gif",
-      "filmstrip": "assets/filmstrips/cards-tables/zebra-stripes.jpg"
+      "filmstrip": "assets/filmstrips/cards-tables/zebra-stripes.jpg",
+      "media_type": "filmstrip",
+      "evidence": "sampled-animation-frames",
+      "media_reason": "交替行底色和数字对齐是静态阅读细节。"
     },
     {
       "id": "cards-tables/card-list",
@@ -788,8 +862,10 @@
       "summary": "基础卡片和列表作为对照；不要求额外的特殊动画。",
       "prompt": "按内容结构使用基础卡片或列表，不附加未指定效果。",
       "kind": "pattern",
-      "gif": "assets/gifs/cards-tables/card-list.gif",
-      "filmstrip": "assets/filmstrips/cards-tables/card-list.jpg"
+      "filmstrip": "assets/filmstrips/cards-tables/card-list.jpg",
+      "media_type": "filmstrip",
+      "evidence": "sampled-animation-frames",
+      "media_reason": "卡片与列表的结构对照即可，不要求附加动效。"
     },
     {
       "id": "forms/floating-label",
@@ -801,8 +877,11 @@
       "summary": "聚焦后标签缩小并移到输入框上方，输入后仍保留；对比会消失的 Placeholder，强调字段名称应持续可辨。",
       "prompt": "输入框使用浮动标签，填写后仍能看到字段名称。",
       "kind": "pattern",
+      "filmstrip": "assets/filmstrips/forms/floating-label.jpg",
+      "media_type": "animation",
+      "evidence": "animated-reference",
       "gif": "assets/gifs/forms/floating-label.gif",
-      "filmstrip": "assets/filmstrips/forms/floating-label.jpg"
+      "media_reason": "需看聚焦后标签缩小上移并持续保留的过渡。"
     },
     {
       "id": "forms/otp-input",
@@ -814,8 +893,11 @@
       "summary": "示例六个格子；输入后自动前进，删除可回退，支持整串粘贴和设备可用的短信自动填充。",
       "prompt": "验证码支持自动跳格、退格、整串粘贴和短信自动填充。",
       "kind": "pattern",
+      "filmstrip": "assets/filmstrips/forms/otp-input.jpg",
+      "media_type": "animation",
+      "evidence": "animated-reference",
       "gif": "assets/gifs/forms/otp-input.gif",
-      "filmstrip": "assets/filmstrips/forms/otp-input.jpg"
+      "media_reason": "需看输入自动前进、删除退格和整串填入的焦点顺序。"
     },
     {
       "id": "forms/dropzone",
@@ -827,8 +909,10 @@
       "summary": "虚线区域接收拖入文件；每个文件显示上传进度并可删除；上传前清楚写明类型和大小限制。",
       "prompt": "拖拽上传区提前显示允许格式与大小，每个文件显示进度并可移除。",
       "kind": "pattern",
-      "gif": "assets/gifs/forms/dropzone.gif",
-      "filmstrip": "assets/filmstrips/forms/dropzone.jpg"
+      "filmstrip": "assets/filmstrips/forms/dropzone.jpg",
+      "media_type": "filmstrip",
+      "evidence": "sampled-animation-frames",
+      "media_reason": "区域、限制、进度、成功与失败状态均可由图片配合文字表达。"
     },
     {
       "id": "forms/date-picker",
@@ -840,8 +924,10 @@
       "summary": "日历适合近期预约；日期范围选中起止日并连接中间日期；生日等远期年份宜直接输入年月日。",
       "prompt": "预订用范围日历选入住离店，生日提供便捷年月日输入。",
       "kind": "pattern",
-      "gif": "assets/gifs/forms/date-picker.gif",
-      "filmstrip": "assets/filmstrips/forms/date-picker.jpg"
+      "filmstrip": "assets/filmstrips/forms/date-picker.jpg",
+      "media_type": "filmstrip",
+      "evidence": "sampled-animation-frames",
+      "media_reason": "单日、范围与直接输入的结构和状态由图片表达。"
     },
     {
       "id": "forms/slider",
@@ -853,8 +939,10 @@
       "summary": "单点选数，双端选择范围；适合价格等大概范围，精确值应有输入框或直接输入。",
       "prompt": "价格区间用双端范围滑块，并允许直接输入精确数值。",
       "kind": "pattern",
-      "gif": "assets/gifs/forms/slider.gif",
-      "filmstrip": "assets/filmstrips/forms/slider.jpg"
+      "filmstrip": "assets/filmstrips/forms/slider.jpg",
+      "media_type": "filmstrip",
+      "evidence": "sampled-animation-frames",
+      "media_reason": "单点、双端和精确输入的状态图足够；惯性、吸附另有动态条目。"
     },
     {
       "id": "forms/autocomplete",
@@ -866,8 +954,10 @@
       "summary": "输入少量文字后显示匹配选项；适合城市和学校等数量大、需要搜索的集合。",
       "prompt": "城市选择支持输入检索和匹配建议。",
       "kind": "pattern",
-      "gif": "assets/gifs/forms/autocomplete.gif",
-      "filmstrip": "assets/filmstrips/forms/autocomplete.jpg"
+      "filmstrip": "assets/filmstrips/forms/autocomplete.jpg",
+      "media_type": "filmstrip",
+      "evidence": "sampled-animation-frames",
+      "media_reason": "输入、候选和选中状态图足够，不把普通输入过程单独作为动效参考。"
     },
     {
       "id": "forms/cascader",
@@ -879,8 +969,10 @@
       "summary": "选择上一层后展开下一层；示例为省、市、区等层级数据。",
       "prompt": "地区用省市区级联选择，上一层变化时同步更新下一层。",
       "kind": "pattern",
-      "gif": "assets/gifs/forms/cascader.gif",
-      "filmstrip": "assets/filmstrips/forms/cascader.jpg"
+      "filmstrip": "assets/filmstrips/forms/cascader.jpg",
+      "media_type": "filmstrip",
+      "evidence": "sampled-animation-frames",
+      "media_reason": "层级结构与逐级选择规则由状态图和文字表达。"
     },
     {
       "id": "forms/tag-input",
@@ -892,8 +984,10 @@
       "summary": "输入词并按回车后形成标签，可以添加多个并逐项删除；用于兴趣、技能、关键词。",
       "prompt": "关键词输入回车生成标签，可添加多个并逐个移除。",
       "kind": "pattern",
-      "gif": "assets/gifs/forms/tag-input.gif",
-      "filmstrip": "assets/filmstrips/forms/tag-input.jpg"
+      "filmstrip": "assets/filmstrips/forms/tag-input.jpg",
+      "media_type": "filmstrip",
+      "evidence": "sampled-animation-frames",
+      "media_reason": "输入、成标签与移除的状态图足够，无独立运动要求。"
     },
     {
       "id": "forms/password-strength",
@@ -905,8 +999,10 @@
       "summary": "密码框下的强度条随输入由红到绿变化，眼睛按钮切换明文以便核对。",
       "prompt": "密码输入显示强度提示，并提供显示或隐藏密码按钮。",
       "kind": "pattern",
-      "gif": "assets/gifs/forms/password-strength.gif",
-      "filmstrip": "assets/filmstrips/forms/password-strength.jpg"
+      "filmstrip": "assets/filmstrips/forms/password-strength.jpg",
+      "media_type": "filmstrip",
+      "evidence": "sampled-animation-frames",
+      "media_reason": "强度分级、说明和明文开关由状态图片表达。"
     },
     {
       "id": "forms/select",
@@ -918,8 +1014,10 @@
       "summary": "列表中选一项；通常可按以下原则选择：少量选项直接用单选展示，较多用下拉，多到要搜索则用自动补全。",
       "prompt": "按选项数量和比较需求选择 Radio、Select 或 Autocomplete。",
       "kind": "pattern",
-      "gif": "assets/gifs/forms/select.gif",
-      "filmstrip": "assets/filmstrips/forms/select.jpg"
+      "filmstrip": "assets/filmstrips/forms/select.jpg",
+      "media_type": "filmstrip",
+      "evidence": "sampled-animation-frames",
+      "media_reason": "选项展开和选中结果由图片表达，重点是控件选型。"
     },
     {
       "id": "forms/validation",
@@ -931,8 +1029,10 @@
       "summary": "用户填完字段后再检查，避免初次输入中持续打断；错误放字段下方，明确说明怎么修改。",
       "prompt": "字段失焦后校验，错误说明写在下方，例如手机号需要 11 位。",
       "kind": "pattern",
-      "gif": "assets/gifs/forms/validation.gif",
-      "filmstrip": "assets/filmstrips/forms/validation.jpg"
+      "filmstrip": "assets/filmstrips/forms/validation.jpg",
+      "media_type": "filmstrip",
+      "evidence": "sampled-animation-frames",
+      "media_reason": "正常与报错状态由图片表达，失焦时机和校验结果仍需项目验证。"
     },
     {
       "id": "forms/helper-text",
@@ -944,8 +1044,10 @@
       "summary": "字段下方持续可见的说明，提前解释填写要求；不同于输入后消失的占位符。",
       "prompt": "把填写规则放在字段下方作为持续可见的帮助文字。",
       "kind": "pattern",
-      "gif": "assets/gifs/forms/helper-text.gif",
-      "filmstrip": "assets/filmstrips/forms/helper-text.jpg"
+      "filmstrip": "assets/filmstrips/forms/helper-text.jpg",
+      "media_type": "filmstrip",
+      "evidence": "sampled-animation-frames",
+      "media_reason": "持续可见的帮助文字是静态排版参考。"
     },
     {
       "id": "forms/required",
@@ -957,8 +1059,10 @@
       "summary": "用星号标识必填；如果多数都必填，可改为只标选填，减少重复标记。",
       "prompt": "统一说明必填规则，多数必填时明确标出选填字段。",
       "kind": "pattern",
-      "gif": "assets/gifs/forms/required.gif",
-      "filmstrip": "assets/filmstrips/forms/required.jpg"
+      "filmstrip": "assets/filmstrips/forms/required.jpg",
+      "media_type": "filmstrip",
+      "evidence": "sampled-animation-frames",
+      "media_reason": "必填与选填标记是静态信息表达。"
     },
     {
       "id": "forms/input-submit",
@@ -970,8 +1074,10 @@
       "summary": "基础输入与提交作为对照；不要求额外的特殊效果。",
       "prompt": "使用语义明确的基础输入框和提交按钮。",
       "kind": "pattern",
-      "gif": "assets/gifs/forms/input-submit.gif",
-      "filmstrip": "assets/filmstrips/forms/input-submit.jpg"
+      "filmstrip": "assets/filmstrips/forms/input-submit.jpg",
+      "media_type": "filmstrip",
+      "evidence": "sampled-animation-frames",
+      "media_reason": "基础输入框和提交按钮的结构即可，不要求额外效果。"
     },
     {
       "id": "motion/border-beam",
@@ -983,8 +1089,11 @@
       "summary": "光沿卡片边框循环移动，用于突出推荐套餐或新功能；运动路径在边缘，不是扫过整个表面。",
       "prompt": "只给推荐套餐卡片加沿边框环绕的 Border Beam。",
       "kind": "pattern",
+      "filmstrip": "assets/filmstrips/motion/border-beam.jpg",
+      "media_type": "animation",
+      "evidence": "animated-reference",
       "gif": "assets/gifs/motion/border-beam.gif",
-      "filmstrip": "assets/filmstrips/motion/border-beam.jpg"
+      "media_reason": "需确认光沿边框绕行而非扫过表面，路径与循环是主体。"
     },
     {
       "id": "motion/spotlight",
@@ -996,8 +1105,11 @@
       "summary": "卡片上有跟随鼠标的局部光斑，同时照亮表面和边框。",
       "prompt": "卡片内部添加跟随鼠标位置的 Spotlight。",
       "kind": "pattern",
+      "filmstrip": "assets/filmstrips/motion/spotlight.jpg",
+      "media_type": "animation",
+      "evidence": "animated-reference",
       "gif": "assets/gifs/motion/spotlight.gif",
-      "filmstrip": "assets/filmstrips/motion/spotlight.jpg"
+      "media_reason": "需看局部光斑如何跟随指针以及表面、边框的同步变化。"
     },
     {
       "id": "motion/tilt",
@@ -1009,8 +1121,11 @@
       "summary": "卡片随鼠标位置向不同方向轻微倾斜，体现拿在手里的空间感；用于产品卡或会员卡。",
       "prompt": "会员卡随鼠标微微 3D 倾斜，移开后恢复。",
       "kind": "pattern",
+      "filmstrip": "assets/filmstrips/motion/tilt.jpg",
+      "media_type": "animation",
+      "evidence": "animated-reference",
       "gif": "assets/gifs/motion/tilt.gif",
-      "filmstrip": "assets/filmstrips/motion/tilt.jpg"
+      "media_reason": "需看倾斜方向随指针改变以及离开后的复位。"
     },
     {
       "id": "motion/scroll-storytelling",
@@ -1022,8 +1137,11 @@
       "summary": "滚动时叙事区域保持固定，内部内容按进度逐步改变；示例指令是左侧文字切换、右侧图片同步变化。",
       "prompt": "这一段固定展示，随滚动切换左侧文字与右侧图片。",
       "kind": "pattern",
+      "filmstrip": "assets/filmstrips/motion/scroll-storytelling.jpg",
+      "media_type": "animation",
+      "evidence": "animated-reference",
       "gif": "assets/gifs/motion/scroll-storytelling.gif",
-      "filmstrip": "assets/filmstrips/motion/scroll-storytelling.jpg"
+      "media_reason": "需看固定叙事区内文字与图片随滚动进度切换的关系。"
     },
     {
       "id": "motion/scramble-text",
@@ -1035,8 +1153,11 @@
       "summary": "文字先以随机字符跳动，再逐字符稳定成目标文本；适合科技感标题和数字。",
       "prompt": "标题先短暂乱码扰动，再逐字符恢复为正确文字。",
       "kind": "pattern",
+      "filmstrip": "assets/filmstrips/motion/scramble-text.jpg",
+      "media_type": "animation",
+      "evidence": "animated-reference",
       "gif": "assets/gifs/motion/scramble-text.gif",
-      "filmstrip": "assets/filmstrips/motion/scramble-text.jpg"
+      "media_reason": "随机字符逐步稳定的先后与节奏是主体。"
     },
     {
       "id": "motion/parallax",
@@ -1048,8 +1169,11 @@
       "summary": "滚动时背景比前景移动更慢，产生纵深；区别于固定区域内切换内容的滚动叙事。",
       "prompt": "让背景以比前景更慢的速度移动，产生轻微视差。",
       "kind": "pattern",
+      "filmstrip": "assets/filmstrips/motion/parallax.jpg",
+      "media_type": "animation",
+      "evidence": "animated-reference",
       "gif": "assets/gifs/motion/parallax.gif",
-      "filmstrip": "assets/filmstrips/motion/parallax.jpg"
+      "media_reason": "需看前后层在同一滚动中的速度差。"
     },
     {
       "id": "motion/magnetic",
@@ -1061,8 +1185,11 @@
       "summary": "指针靠近按钮时，按钮向指针方向偏移一点；适用于重点 CTA。",
       "prompt": "主 CTA 在指针靠近时小幅偏移产生磁吸，离开恢复。",
       "kind": "pattern",
+      "filmstrip": "assets/filmstrips/motion/magnetic.jpg",
+      "media_type": "animation",
+      "evidence": "animated-reference",
       "gif": "assets/gifs/motion/magnetic.gif",
-      "filmstrip": "assets/filmstrips/motion/magnetic.jpg"
+      "media_reason": "需看靠近时偏移和离开后复位的连续响应。"
     },
     {
       "id": "motion/typewriter",
@@ -1074,8 +1201,11 @@
       "summary": "文字逐字出现，后面有闪烁光标；用于首页标题和 AI 回复表现。",
       "prompt": "标题逐字出现并跟随光标，完成后可稳定阅读。",
       "kind": "pattern",
+      "filmstrip": "assets/filmstrips/motion/typewriter.jpg",
+      "media_type": "animation",
+      "evidence": "animated-reference",
       "gif": "assets/gifs/motion/typewriter.gif",
-      "filmstrip": "assets/filmstrips/motion/typewriter.jpg"
+      "media_reason": "需看文字逐字出现和光标跟随的先后。"
     },
     {
       "id": "motion/marquee",
@@ -1087,8 +1217,11 @@
       "summary": "内容从右向左无限循环，常用于 Logo 或评价；这类运动应匀速，悬停最好暂停。",
       "prompt": "合作伙伴 Logo 用匀速无缝跑马灯，悬停时暂停。",
       "kind": "pattern",
+      "filmstrip": "assets/filmstrips/motion/marquee.jpg",
+      "media_type": "animation",
+      "evidence": "animated-reference",
       "gif": "assets/gifs/motion/marquee.gif",
-      "filmstrip": "assets/filmstrips/motion/marquee.jpg"
+      "media_reason": "需看匀速移动、首尾衔接和暂停；单图无法判断无缝循环。"
     },
     {
       "id": "motion/shimmer",
@@ -1100,8 +1233,11 @@
       "summary": "一道光扫过物体表面；用于骨架屏加载提示或按钮强调，区别于沿边框绕行的 Border Beam。",
       "prompt": "给加载骨架屏加入表面扫光 Shimmer。",
       "kind": "pattern",
+      "filmstrip": "assets/filmstrips/motion/shimmer.jpg",
+      "media_type": "animation",
+      "evidence": "animated-reference",
       "gif": "assets/gifs/motion/shimmer.gif",
-      "filmstrip": "assets/filmstrips/motion/shimmer.jpg"
+      "media_reason": "需看亮带扫过表面的方向与循环，区别于边框绕行。"
     },
     {
       "id": "motion/count-up",
@@ -1113,8 +1249,11 @@
       "summary": "数字从零快速递增到目标值，突出统计数字。",
       "prompt": "统计数字进入视口后从零递增到真实目标值。",
       "kind": "pattern",
+      "filmstrip": "assets/filmstrips/motion/count-up.jpg",
+      "media_type": "animation",
+      "evidence": "animated-reference",
       "gif": "assets/gifs/motion/count-up.gif",
-      "filmstrip": "assets/filmstrips/motion/count-up.jpg"
+      "media_reason": "需看数字递增到目标值的过程与稳定终态。"
     },
     {
       "id": "motion/scroll-reveal",
@@ -1126,8 +1265,11 @@
       "summary": "内容进入视口时淡入或滑入；适合长页面阅读节奏，非整页打开时同时播放。",
       "prompt": "内容进入视口时轻微淡入上移。",
       "kind": "pattern",
+      "filmstrip": "assets/filmstrips/motion/scroll-reveal.jpg",
+      "media_type": "animation",
+      "evidence": "animated-reference",
       "gif": "assets/gifs/motion/scroll-reveal.gif",
-      "filmstrip": "assets/filmstrips/motion/scroll-reveal.jpg"
+      "media_reason": "需看内容与视口边界的关系及入屏时的淡入位移。"
     },
     {
       "id": "motion/spring",
@@ -1139,8 +1281,11 @@
       "summary": "到终点后略微越过再回弹；用于少量趣味交互；建议弹窗从约 95% 到原尺寸，不从零缩放。",
       "prompt": "弹窗从 0.95 倍到 1 倍轻微回弹，避免大幅晃动。",
       "kind": "pattern",
+      "filmstrip": "assets/filmstrips/motion/spring.jpg",
+      "media_type": "animation",
+      "evidence": "animated-reference",
       "gif": "assets/gifs/motion/spring.gif",
-      "filmstrip": "assets/filmstrips/motion/spring.jpg"
+      "media_reason": "越过终点再回弹的过程是主体，终态截图无法表达。"
     },
     {
       "id": "motion/stagger",
@@ -1152,8 +1297,11 @@
       "summary": "一组元素按顺序依次出现，示例为每项间隔 0.05 秒。",
       "prompt": "列表项依次出现，相邻开始时间间隔 0.05 秒。",
       "kind": "pattern",
+      "filmstrip": "assets/filmstrips/motion/stagger.jpg",
+      "media_type": "animation",
+      "evidence": "animated-reference",
       "gif": "assets/gifs/motion/stagger.gif",
-      "filmstrip": "assets/filmstrips/motion/stagger.jpg"
+      "media_reason": "需看多个元素先后入场的相对节奏。"
     },
     {
       "id": "motion/hover-lift",
@@ -1165,8 +1313,11 @@
       "summary": "指针进入卡片时略微上浮并增强阴影，传达可点击性。",
       "prompt": "可点击卡片悬停时轻微上浮并加深阴影。",
       "kind": "pattern",
+      "filmstrip": "assets/filmstrips/motion/hover-lift.jpg",
+      "media_type": "animation",
+      "evidence": "animated-reference",
       "gif": "assets/gifs/motion/hover-lift.gif",
-      "filmstrip": "assets/filmstrips/motion/hover-lift.jpg"
+      "media_reason": "需看上浮、阴影变化和离开复位的配合。"
     },
     {
       "id": "motion/easing",
@@ -1178,8 +1329,11 @@
       "summary": "速度变化决定运动观感；建议进场使用先快后慢的 ease-out，离场比进场更快更轻，协同元素节奏一致；跑马灯另用匀速。",
       "prompt": "进场采用 ease-out，离场更快更轻，相关元素保持一致节奏。",
       "kind": "pattern",
+      "filmstrip": "assets/filmstrips/motion/easing.jpg",
+      "media_type": "animation",
+      "evidence": "animated-reference",
       "gif": "assets/gifs/motion/easing.gif",
-      "filmstrip": "assets/filmstrips/motion/easing.jpg"
+      "media_reason": "需比较同一路径的速度变化；GIF 仅作观感参考，不能反推出精确曲线。"
     },
     {
       "id": "motion/motion-rules",
@@ -1191,8 +1345,10 @@
       "summary": "常见节奏起点：小动作约 0.1–0.2 秒，弹窗与抽屉约 0.2–0.3 秒；尽量动画化位置、大小和透明度；尊重减弱动态效果设置。",
       "prompt": "按交互尺度设置时长，优先 transform 和 opacity，开启减弱动态时关闭非必要动画。",
       "kind": "rule",
-      "gif": "assets/gifs/motion/motion-rules.gif",
-      "filmstrip": "assets/filmstrips/motion/motion-rules.jpg"
+      "filmstrip": "assets/filmstrips/motion/motion-rules.jpg",
+      "media_type": "filmstrip",
+      "evidence": "sampled-animation-frames",
+      "media_reason": "这是时长、性能与减弱动态的文字规则，拼图讲解无须保留 GIF。"
     },
     {
       "id": "buttons-controls/button-hierarchy",
@@ -1204,8 +1360,10 @@
       "summary": "按钮要按动作重要程度建立主次，通过不同视觉权重区分。",
       "prompt": "先根据任务重要程度确定操作层级，再选择按钮样式。",
       "kind": "rule",
-      "gif": "assets/gifs/buttons-controls/button-hierarchy.gif",
-      "filmstrip": "assets/filmstrips/buttons-controls/button-hierarchy.jpg"
+      "filmstrip": "assets/filmstrips/buttons-controls/button-hierarchy.jpg",
+      "media_type": "filmstrip",
+      "evidence": "sampled-animation-frames",
+      "media_reason": "主次视觉权重与层级对照由图片表达。"
     },
     {
       "id": "buttons-controls/primary-button",
@@ -1217,8 +1375,10 @@
       "summary": "颜色最重最显眼，承载提交、付款等关键动作；建议一个操作区域突出一个主按钮。",
       "prompt": "提交用主按钮，同一区域只突出一个关键动作。",
       "kind": "pattern",
-      "gif": "assets/gifs/buttons-controls/primary-button.gif",
-      "filmstrip": "assets/filmstrips/buttons-controls/primary-button.jpg"
+      "filmstrip": "assets/filmstrips/buttons-controls/primary-button.jpg",
+      "media_type": "filmstrip",
+      "evidence": "sampled-animation-frames",
+      "media_reason": "重点是主操作的视觉权重与位置，图片足够。"
     },
     {
       "id": "buttons-controls/secondary-button",
@@ -1230,8 +1390,10 @@
       "summary": "视觉权重比主按钮轻，通常承载取消和返回。",
       "prompt": "取消和返回使用低于主操作权重的次按钮。",
       "kind": "pattern",
-      "gif": "assets/gifs/buttons-controls/secondary-button.gif",
-      "filmstrip": "assets/filmstrips/buttons-controls/secondary-button.jpg"
+      "filmstrip": "assets/filmstrips/buttons-controls/secondary-button.jpg",
+      "media_type": "filmstrip",
+      "evidence": "sampled-animation-frames",
+      "media_reason": "重点是次操作的视觉权重，图片足够。"
     },
     {
       "id": "buttons-controls/outline-button",
@@ -1243,8 +1405,10 @@
       "summary": "只有轮廓边框、内部留空，示例视觉较轻；具体层级应结合现有设计系统。",
       "prompt": "使用保留边框、无实色填充的线框按钮。",
       "kind": "pattern",
-      "gif": "assets/gifs/buttons-controls/outline-button.gif",
-      "filmstrip": "assets/filmstrips/buttons-controls/outline-button.jpg"
+      "filmstrip": "assets/filmstrips/buttons-controls/outline-button.jpg",
+      "media_type": "filmstrip",
+      "evidence": "sampled-animation-frames",
+      "media_reason": "边框与无填充形态属于静态样式。"
     },
     {
       "id": "buttons-controls/text-button",
@@ -1256,8 +1420,10 @@
       "summary": "像一行文字，视觉较弱；例子为登录表单的忘记密码入口。",
       "prompt": "忘记密码采用文字形式的轻量操作入口。",
       "kind": "pattern",
-      "gif": "assets/gifs/buttons-controls/text-button.gif",
-      "filmstrip": "assets/filmstrips/buttons-controls/text-button.jpg"
+      "filmstrip": "assets/filmstrips/buttons-controls/text-button.jpg",
+      "media_type": "filmstrip",
+      "evidence": "sampled-animation-frames",
+      "media_reason": "文字入口的视觉层级属于静态样式。"
     },
     {
       "id": "buttons-controls/danger-button",
@@ -1269,8 +1435,10 @@
       "summary": "红色表达删除、注销等有破坏性的动作，让用户辨认后果。",
       "prompt": "删除操作使用危险样式并配合明确的动作文字。",
       "kind": "pattern",
-      "gif": "assets/gifs/buttons-controls/danger-button.gif",
-      "filmstrip": "assets/filmstrips/buttons-controls/danger-button.jpg"
+      "filmstrip": "assets/filmstrips/buttons-controls/danger-button.jpg",
+      "media_type": "filmstrip",
+      "evidence": "sampled-animation-frames",
+      "media_reason": "危险色与动作文字属于静态语义表达。"
     },
     {
       "id": "buttons-controls/ghost-button",
@@ -1282,8 +1450,10 @@
       "summary": "示例无边框，平时背景很轻，悬停显现；用于图片或深色背景。命名在不同组件库可能有差异。",
       "prompt": "按参考使用轻背景、无边框的 Ghost 样式，悬停增强可见性。",
       "kind": "pattern",
-      "gif": "assets/gifs/buttons-controls/ghost-button.gif",
-      "filmstrip": "assets/filmstrips/buttons-controls/ghost-button.jpg"
+      "filmstrip": "assets/filmstrips/buttons-controls/ghost-button.jpg",
+      "media_type": "filmstrip",
+      "evidence": "sampled-animation-frames",
+      "media_reason": "默认与悬停外观对照足够，没有必须观察的独特轨迹。"
     },
     {
       "id": "buttons-controls/icon-button",
@@ -1295,8 +1465,10 @@
       "summary": "仅图标表达关闭、更多等操作；图标含义不清楚时增加文字。",
       "prompt": "明确操作可使用图标按钮，含义不直观时附可见文字。",
       "kind": "pattern",
-      "gif": "assets/gifs/buttons-controls/icon-button.gif",
-      "filmstrip": "assets/filmstrips/buttons-controls/icon-button.jpg"
+      "filmstrip": "assets/filmstrips/buttons-controls/icon-button.jpg",
+      "media_type": "filmstrip",
+      "evidence": "sampled-animation-frames",
+      "media_reason": "图标含义、尺寸和文字辅助属于静态可辨识性参考。"
     },
     {
       "id": "buttons-controls/pill-button",
@@ -1308,8 +1480,10 @@
       "summary": "两端完全圆润；这是一种形状，不代表主次级别，主按钮和次按钮都可采用。",
       "prompt": "将指定按钮改成胶囊形，保持原有主次层级。",
       "kind": "pattern",
-      "gif": "assets/gifs/buttons-controls/pill-button.gif",
-      "filmstrip": "assets/filmstrips/buttons-controls/pill-button.jpg"
+      "filmstrip": "assets/filmstrips/buttons-controls/pill-button.jpg",
+      "media_type": "filmstrip",
+      "evidence": "sampled-animation-frames",
+      "media_reason": "胶囊是形状，图片足够，不要求额外运动。"
     },
     {
       "id": "buttons-controls/button-group",
@@ -1321,8 +1495,10 @@
       "summary": "相关操作紧邻成组，如加粗、斜体、下划线；分组本身不决定是否单选。",
       "prompt": "把相关格式操作排成按钮组，保留各自独立状态。",
       "kind": "pattern",
-      "gif": "assets/gifs/buttons-controls/button-group.gif",
-      "filmstrip": "assets/filmstrips/buttons-controls/button-group.jpg"
+      "filmstrip": "assets/filmstrips/buttons-controls/button-group.jpg",
+      "media_type": "filmstrip",
+      "evidence": "sampled-animation-frames",
+      "media_reason": "分组排布与独立选中态由图片表达。"
     },
     {
       "id": "buttons-controls/split-button",
@@ -1334,8 +1510,10 @@
       "summary": "左侧直接执行常用动作，右侧箭头展开替代动作；示例保存与另存为。",
       "prompt": "保存按钮右侧分出菜单箭头，放入另存为选项。",
       "kind": "pattern",
-      "gif": "assets/gifs/buttons-controls/split-button.gif",
-      "filmstrip": "assets/filmstrips/buttons-controls/split-button.jpg"
+      "filmstrip": "assets/filmstrips/buttons-controls/split-button.jpg",
+      "media_type": "filmstrip",
+      "evidence": "sampled-animation-frames",
+      "media_reason": "主动作和菜单入口的分工由状态图表达。"
     },
     {
       "id": "buttons-controls/fab",
@@ -1347,8 +1525,10 @@
       "summary": "圆形按钮固定于视口右下，页面滚动时位置不变；用于页面高频核心动作如发帖。",
       "prompt": "移动列表右下固定一个发帖 FAB，避免遮挡正文和系统安全区。",
       "kind": "pattern",
-      "gif": "assets/gifs/buttons-controls/fab.gif",
-      "filmstrip": "assets/filmstrips/buttons-controls/fab.jpg"
+      "filmstrip": "assets/filmstrips/buttons-controls/fab.jpg",
+      "media_type": "filmstrip",
+      "evidence": "sampled-animation-frames",
+      "media_reason": "固定位置、尺寸与安全区由图片和文字表达，运行时仍需滚动核对。"
     },
     {
       "id": "buttons-controls/hierarchy-correction",
@@ -1360,8 +1540,10 @@
       "summary": "将全部长一样的按钮区分为提交主按钮、取消次按钮、删除危险按钮，并保持一个区域一个主要动作。",
       "prompt": "提交用主按钮，取消用次按钮，删除用危险按钮。",
       "kind": "rule",
-      "gif": "assets/gifs/buttons-controls/hierarchy-correction.gif",
-      "filmstrip": "assets/filmstrips/buttons-controls/hierarchy-correction.jpg"
+      "filmstrip": "assets/filmstrips/buttons-controls/hierarchy-correction.jpg",
+      "media_type": "filmstrip",
+      "evidence": "sampled-animation-frames",
+      "media_reason": "提交、取消和删除的前后层级对照由图片表达。"
     },
     {
       "id": "buttons-controls/hover",
@@ -1373,8 +1555,10 @@
       "summary": "默认状态在鼠标进入后变亮或轻微抬起，表达可点击。",
       "prompt": "按钮悬停时轻微提亮，保持层级和尺寸稳定。",
       "kind": "pattern",
-      "gif": "assets/gifs/buttons-controls/hover.gif",
-      "filmstrip": "assets/filmstrips/buttons-controls/hover.jpg"
+      "filmstrip": "assets/filmstrips/buttons-controls/hover.jpg",
+      "media_type": "filmstrip",
+      "evidence": "sampled-animation-frames",
+      "media_reason": "默认与提亮后的状态图足够；若需要上浮过程，选 hover-lift。"
     },
     {
       "id": "buttons-controls/pressed",
@@ -1386,8 +1570,11 @@
       "summary": "按住的一瞬间略微缩小或下压，表达收到输入。",
       "prompt": "按钮按下时短暂轻微缩小，松开恢复。",
       "kind": "pattern",
+      "filmstrip": "assets/filmstrips/buttons-controls/pressed.jpg",
+      "media_type": "animation",
+      "evidence": "animated-reference",
       "gif": "assets/gifs/buttons-controls/pressed.gif",
-      "filmstrip": "assets/filmstrips/buttons-controls/pressed.jpg"
+      "media_reason": "下压仅在 GIF 尾帧短暂出现，现有六帧图漏掉；保留 GIF，松开恢复仍需在项目中验证。"
     },
     {
       "id": "buttons-controls/focus",
@@ -1399,8 +1586,10 @@
       "summary": "用 Tab 选中按钮时出现外圈，帮助键盘用户判断当前位置。",
       "prompt": "保留清楚的键盘焦点环，并验证 Tab 顺序。",
       "kind": "pattern",
-      "gif": "assets/gifs/buttons-controls/focus.gif",
-      "filmstrip": "assets/filmstrips/buttons-controls/focus.jpg"
+      "filmstrip": "assets/filmstrips/buttons-controls/focus.jpg",
+      "media_type": "filmstrip",
+      "evidence": "sampled-animation-frames",
+      "media_reason": "焦点环外观由图片表达，Tab 顺序需在实际项目验证。"
     },
     {
       "id": "buttons-controls/loading",
@@ -1412,8 +1601,11 @@
       "summary": "提交后按钮出现转圈并阻止重复点击，表达任务处理中。",
       "prompt": "请求未结束时显示加载指示并阻止重复提交。",
       "kind": "pattern",
+      "filmstrip": "assets/filmstrips/buttons-controls/loading.jpg",
+      "media_type": "animation",
+      "evidence": "animated-reference",
       "gif": "assets/gifs/buttons-controls/loading.gif",
-      "filmstrip": "assets/filmstrips/buttons-controls/loading.jpg"
+      "media_reason": "旋转指示持续运动，需看加载期间的动态反馈。"
     },
     {
       "id": "buttons-controls/success",
@@ -1425,8 +1617,10 @@
       "summary": "加载结束后用对勾确认完成。",
       "prompt": "提交成功后将加载指示转成成功对勾。",
       "kind": "pattern",
-      "gif": "assets/gifs/buttons-controls/success.gif",
-      "filmstrip": "assets/filmstrips/buttons-controls/success.jpg"
+      "filmstrip": "assets/filmstrips/buttons-controls/success.jpg",
+      "media_type": "filmstrip",
+      "evidence": "sampled-animation-frames",
+      "media_reason": "加载与成功对勾两种状态足够，没有独立的变形动画要求。"
     },
     {
       "id": "buttons-controls/disabled",
@@ -1438,8 +1632,10 @@
       "summary": "不满足条件时按钮变灰且不可操作，例子为表单未填写完整。",
       "prompt": "条件未满足时使用实际禁用状态，并让用户可理解尚缺什么。",
       "kind": "pattern",
-      "gif": "assets/gifs/buttons-controls/disabled.gif",
-      "filmstrip": "assets/filmstrips/buttons-controls/disabled.jpg"
+      "filmstrip": "assets/filmstrips/buttons-controls/disabled.jpg",
+      "media_type": "filmstrip",
+      "evidence": "sampled-animation-frames",
+      "media_reason": "禁用外观及原因说明由图片和文字表达。"
     },
     {
       "id": "buttons-controls/state-correction",
@@ -1451,8 +1647,10 @@
       "summary": "缺少反馈会让操作结果不明确，应补充悬停、按下和提交加载防连点。",
       "prompt": "为现有按钮补上悬停、按下及提交加载状态，防止重复点击。",
       "kind": "rule",
-      "gif": "assets/gifs/buttons-controls/state-correction.gif",
-      "filmstrip": "assets/filmstrips/buttons-controls/state-correction.jpg"
+      "filmstrip": "assets/filmstrips/buttons-controls/state-correction.jpg",
+      "media_type": "filmstrip",
+      "evidence": "sampled-animation-frames",
+      "media_reason": "补全反馈的规则与前后对照由图片表达，按压和旋转分别路由至动态条目。"
     },
     {
       "id": "buttons-controls/switch",
@@ -1464,8 +1662,10 @@
       "summary": "二元开闭，一拨即生效；示例为深色模式。核心区别是即时应用。",
       "prompt": "深色模式使用开关，切换立即生效。",
       "kind": "pattern",
-      "gif": "assets/gifs/buttons-controls/switch.gif",
-      "filmstrip": "assets/filmstrips/buttons-controls/switch.jpg"
+      "filmstrip": "assets/filmstrips/buttons-controls/switch.jpg",
+      "media_type": "filmstrip",
+      "evidence": "sampled-animation-frames",
+      "media_reason": "核心是即时应用的开闭语义，状态图足够；特殊涟漪另见 switch-group-ripple。"
     },
     {
       "id": "buttons-controls/checkbox",
@@ -1477,8 +1677,10 @@
       "summary": "方形勾选，可同时选择多项；示例为先编辑偏好再保存，与即时开关区分。",
       "prompt": "多个通知偏好使用复选框，统一保存后生效。",
       "kind": "pattern",
-      "gif": "assets/gifs/buttons-controls/checkbox.gif",
-      "filmstrip": "assets/filmstrips/buttons-controls/checkbox.jpg"
+      "filmstrip": "assets/filmstrips/buttons-controls/checkbox.jpg",
+      "media_type": "filmstrip",
+      "evidence": "sampled-animation-frames",
+      "media_reason": "多选与统一保存的语义由状态图和文字表达。"
     },
     {
       "id": "buttons-controls/indeterminate",
@@ -1490,8 +1692,10 @@
       "summary": "子选项只选择部分时，父级全选框显示横线，表示混合状态。",
       "prompt": "全选框准确反映全选、全不选和部分选中的状态。",
       "kind": "pattern",
-      "gif": "assets/gifs/buttons-controls/indeterminate.gif",
-      "filmstrip": "assets/filmstrips/buttons-controls/indeterminate.jpg"
+      "filmstrip": "assets/filmstrips/buttons-controls/indeterminate.jpg",
+      "media_type": "filmstrip",
+      "evidence": "sampled-animation-frames",
+      "media_reason": "全选、半选和全不选可由状态图片表达。"
     },
     {
       "id": "buttons-controls/radio",
@@ -1503,8 +1707,10 @@
       "summary": "同组只能选一项，选择新项时自动取消旧项。",
       "prompt": "套餐选项使用同一组单选框，只允许选择一个。",
       "kind": "pattern",
-      "gif": "assets/gifs/buttons-controls/radio.gif",
-      "filmstrip": "assets/filmstrips/buttons-controls/radio.jpg"
+      "filmstrip": "assets/filmstrips/buttons-controls/radio.jpg",
+      "media_type": "filmstrip",
+      "evidence": "sampled-animation-frames",
+      "media_reason": "互斥选择关系可由状态图和文字表达。"
     },
     {
       "id": "buttons-controls/segmented-control",
@@ -1516,8 +1722,11 @@
       "summary": "少量选项横向连成一条，选中底块滑向新选项；示例日、周、月，这里为单选模式。",
       "prompt": "日周月切换使用单选分段控制器，选中底块平滑移动。",
       "kind": "pattern",
+      "filmstrip": "assets/filmstrips/buttons-controls/segmented-control.jpg",
+      "media_type": "animation",
+      "evidence": "animated-reference",
       "gif": "assets/gifs/buttons-controls/segmented-control.gif",
-      "filmstrip": "assets/filmstrips/buttons-controls/segmented-control.jpg"
+      "media_reason": "需看选中底块滑向另一项，而非只更换选中颜色。"
     },
     {
       "id": "buttons-controls/toggle-button",
@@ -1529,8 +1738,10 @@
       "summary": "点一次进入选中状态，再点取消；示例为点赞和收藏。",
       "prompt": "收藏按钮支持选中与取消选中两种状态。",
       "kind": "pattern",
-      "gif": "assets/gifs/buttons-controls/toggle-button.gif",
-      "filmstrip": "assets/filmstrips/buttons-controls/toggle-button.jpg"
+      "filmstrip": "assets/filmstrips/buttons-controls/toggle-button.jpg",
+      "media_type": "filmstrip",
+      "evidence": "sampled-animation-frames",
+      "media_reason": "选中和取消的外观对照足够，无特殊运动要求。"
     },
     {
       "id": "buttons-controls/chip",
@@ -1542,8 +1753,10 @@
       "summary": "可点击选择的圆角标签，示例为满减、免配送费等筛选项。",
       "prompt": "筛选条件采用可选 Chip，清楚区分选中和未选中。",
       "kind": "pattern",
-      "gif": "assets/gifs/buttons-controls/chip.gif",
-      "filmstrip": "assets/filmstrips/buttons-controls/chip.jpg"
+      "filmstrip": "assets/filmstrips/buttons-controls/chip.jpg",
+      "media_type": "filmstrip",
+      "evidence": "sampled-animation-frames",
+      "media_reason": "选中与未选中的筛选样式可由图片表达。"
     },
     {
       "id": "buttons-controls/stepper",
@@ -1555,8 +1768,10 @@
       "summary": "数字位于中间，左减右加，用于购物车数量；可采用带加减按钮的数字输入框。",
       "prompt": "数量使用带加减按钮的数字输入框。",
       "kind": "pattern",
-      "gif": "assets/gifs/buttons-controls/stepper.gif",
-      "filmstrip": "assets/filmstrips/buttons-controls/stepper.jpg"
+      "filmstrip": "assets/filmstrips/buttons-controls/stepper.jpg",
+      "media_type": "filmstrip",
+      "evidence": "sampled-animation-frames",
+      "media_reason": "加减入口、当前值和边界规则可由图片加文字表达。"
     },
     {
       "id": "buttons-controls/control-selection",
@@ -1568,8 +1783,10 @@
       "summary": "一个二元设置且立即生效用开关；可选多个用复选框；多选一时按选项数量和空间选分段控制器或单选框。",
       "prompt": "按即时生效、多选或单选的语义选择控件。",
       "kind": "rule",
-      "gif": "assets/gifs/buttons-controls/control-selection.gif",
-      "filmstrip": "assets/filmstrips/buttons-controls/control-selection.jpg"
+      "filmstrip": "assets/filmstrips/buttons-controls/control-selection.jpg",
+      "media_type": "filmstrip",
+      "evidence": "sampled-animation-frames",
+      "media_reason": "属于开关、多选和单选的语义选型，图片和规则足够。"
     },
     {
       "id": "mobile-scroll/elastic-parallax-hero",
@@ -1581,7 +1798,6 @@
       "summary": "上滑时头图比正文移动慢；顶部下拉时头图放大，松手回到原尺寸。",
       "prompt": "为详情页头图添加慢速视差和顶部下拉拉伸，松手平滑复位。",
       "kind": "pattern",
-      "gif": "assets/gifs/mobile-scroll/elastic-parallax-hero.gif",
       "filmstrip": "assets/filmstrips/mobile-scroll/elastic-parallax-hero.jpg",
       "keywords": [
         "滚动",
@@ -1594,7 +1810,11 @@
       ],
       "related": [
         "motion/parallax"
-      ]
+      ],
+      "media_type": "animation",
+      "evidence": "animated-reference",
+      "gif": "assets/gifs/mobile-scroll/elastic-parallax-hero.gif",
+      "media_reason": "需看头图与正文的速度差、下拉放大和松手回弹。"
     },
     {
       "id": "mobile-scroll/sticky-category-tabs",
@@ -1606,7 +1826,6 @@
       "summary": "分类栏滚到顶部后固定，正文当前分类与标签选中态双向同步。",
       "prompt": "分类栏吸顶，滚动时更新当前标签，点击标签定位到对应分区。",
       "kind": "pattern",
-      "gif": "assets/gifs/mobile-scroll/sticky-category-tabs.gif",
       "filmstrip": "assets/filmstrips/mobile-scroll/sticky-category-tabs.jpg",
       "keywords": [
         "锚点",
@@ -1617,7 +1836,11 @@
         "App滚动",
         "小程序滚动"
       ],
-      "related": []
+      "related": [],
+      "media_type": "animation",
+      "evidence": "animated-reference",
+      "gif": "assets/gifs/mobile-scroll/sticky-category-tabs.gif",
+      "media_reason": "需看滚动到阈值时吸顶及分类与正文的同步变化。"
     },
     {
       "id": "mobile-scroll/collapsing-cover-navbar",
@@ -1629,7 +1852,6 @@
       "summary": "大封面随上滑收起，头像缩小移向导航区，标题显现，导航背景转为模糊玻璃。",
       "prompt": "让个人主页封面逐步收进导航栏，头像、标题和背景随同一滚动进度变化。",
       "kind": "pattern",
-      "gif": "assets/gifs/mobile-scroll/collapsing-cover-navbar.gif",
       "filmstrip": "assets/filmstrips/mobile-scroll/collapsing-cover-navbar.jpg",
       "keywords": [
         "折叠",
@@ -1640,7 +1862,11 @@
         "App滚动",
         "小程序滚动"
       ],
-      "related": []
+      "related": [],
+      "media_type": "animation",
+      "evidence": "animated-reference",
+      "gif": "assets/gifs/mobile-scroll/collapsing-cover-navbar.gif",
+      "media_reason": "需看封面收缩、头像移动与导航背景变化如何随进度协同。"
     },
     {
       "id": "mobile-scroll/editorial-scroll-reveal",
@@ -1652,7 +1878,6 @@
       "summary": "图文分块进入视口，文字轻移入场，图片从模糊过渡到清晰，形成阅读节奏。",
       "prompt": "文章按区块滚动渐显，文字轻移、图片逐步清晰，保持阅读位置稳定。",
       "kind": "pattern",
-      "gif": "assets/gifs/mobile-scroll/editorial-scroll-reveal.gif",
       "filmstrip": "assets/filmstrips/mobile-scroll/editorial-scroll-reveal.jpg",
       "keywords": [
         "滚动",
@@ -1666,7 +1891,11 @@
       "related": [
         "motion/scroll-reveal",
         "loading-errors/blur-up"
-      ]
+      ],
+      "media_type": "animation",
+      "evidence": "animated-reference",
+      "gif": "assets/gifs/mobile-scroll/editorial-scroll-reveal.gif",
+      "media_reason": "图文错时入场和图片逐渐清晰依赖连续过程。"
     },
     {
       "id": "mobile-scroll/pull-to-refresh-scene",
@@ -1678,7 +1907,6 @@
       "summary": "下拉距离驱动场景变化，例如太阳从地平线升起；达到阈值松手才开始刷新。",
       "prompt": "下拉刷新时用场景进度反馈拖动幅度，达到阈值并松手后请求新数据。",
       "kind": "pattern",
-      "gif": "assets/gifs/mobile-scroll/pull-to-refresh-scene.gif",
       "filmstrip": "assets/filmstrips/mobile-scroll/pull-to-refresh-scene.jpg",
       "keywords": [
         "刷新",
@@ -1689,7 +1917,11 @@
         "App滚动",
         "小程序滚动"
       ],
-      "related": []
+      "related": [],
+      "media_type": "animation",
+      "evidence": "animated-reference",
+      "gif": "assets/gifs/mobile-scroll/pull-to-refresh-scene.gif",
+      "media_reason": "场景随下拉距离变化，达到阈值后松手刷新，需保留手势过程。"
     },
     {
       "id": "mobile-scroll/viewport-chart-growth",
@@ -1701,7 +1933,6 @@
       "summary": "图表进入屏幕后柱高从零到真实值，配套数值同步变化。",
       "prompt": "统计区进入视口后柱图与数字同步增长到真实数据，结束后稳定显示。",
       "kind": "pattern",
-      "gif": "assets/gifs/mobile-scroll/viewport-chart-growth.gif",
       "filmstrip": "assets/filmstrips/mobile-scroll/viewport-chart-growth.jpg",
       "keywords": [
         "滚动",
@@ -1714,7 +1945,11 @@
       ],
       "related": [
         "motion/count-up"
-      ]
+      ],
+      "media_type": "animation",
+      "evidence": "animated-reference",
+      "gif": "assets/gifs/mobile-scroll/viewport-chart-growth.gif",
+      "media_reason": "需看入屏触发柱高增长与数值同步变化。"
     },
     {
       "id": "web-interactions/sticky-product-story",
@@ -1726,7 +1961,6 @@
       "summary": "主图区域在滚动中固定，旁侧说明分段切换，并突出当前讲解的产品部位。",
       "prompt": "产品介绍区钉住主图，滚动时切换说明和相应的局部强调。",
       "kind": "pattern",
-      "gif": "assets/gifs/web-interactions/sticky-product-story.gif",
       "filmstrip": "assets/filmstrips/web-interactions/sticky-product-story.jpg",
       "keywords": [
         "滚动",
@@ -1738,7 +1972,11 @@
       ],
       "related": [
         "motion/scroll-storytelling"
-      ]
+      ],
+      "media_type": "animation",
+      "evidence": "animated-reference",
+      "gif": "assets/gifs/web-interactions/sticky-product-story.gif",
+      "media_reason": "需看固定主图、滚动讲解和部位强调之间的同步关系。"
     },
     {
       "id": "web-interactions/contextual-cursor",
@@ -1750,7 +1988,6 @@
       "summary": "指针进入可交互区域后从小点变为带动作文字的圆形提示，离开恢复。",
       "prompt": "在作品卡片内将光标变为带动作说明的圆形，离开恢复普通指针。",
       "kind": "pattern",
-      "gif": "assets/gifs/web-interactions/contextual-cursor.gif",
       "filmstrip": "assets/filmstrips/web-interactions/contextual-cursor.jpg",
       "keywords": [
         "鼠标",
@@ -1760,7 +1997,11 @@
         "Web交互",
         "网页交互"
       ],
-      "related": []
+      "related": [],
+      "media_type": "animation",
+      "evidence": "animated-reference",
+      "gif": "assets/gifs/web-interactions/contextual-cursor.gif",
+      "media_reason": "需看指针进入、形态变化、移动跟随与离开恢复。"
     },
     {
       "id": "web-interactions/magnetic-cta",
@@ -1772,7 +2013,6 @@
       "summary": "指针靠近时按钮向指针小幅偏移，离开后弹性复位，点击热区保持可靠。",
       "prompt": "主操作按钮加入小幅磁吸和离开回弹，保留稳定的点击区域。",
       "kind": "pattern",
-      "gif": "assets/gifs/web-interactions/magnetic-cta.gif",
       "filmstrip": "assets/filmstrips/web-interactions/magnetic-cta.jpg",
       "keywords": [
         "磁吸",
@@ -1783,7 +2023,11 @@
       ],
       "related": [
         "motion/magnetic"
-      ]
+      ],
+      "media_type": "animation",
+      "evidence": "animated-reference",
+      "gif": "assets/gifs/web-interactions/magnetic-cta.gif",
+      "media_reason": "需看靠近偏移、离开弹性复位及指针与按钮的相对运动。"
     },
     {
       "id": "web-interactions/expanding-icon-label",
@@ -1795,7 +2039,6 @@
       "summary": "紧凑图标按钮在悬停时展开为含文字的胶囊，离开后收回。",
       "prompt": "工具栏图标悬停或聚焦时展开文字，图标始终可辨认。",
       "kind": "pattern",
-      "gif": "assets/gifs/web-interactions/expanding-icon-label.gif",
       "filmstrip": "assets/filmstrips/web-interactions/expanding-icon-label.jpg",
       "keywords": [
         "图标",
@@ -1805,7 +2048,11 @@
         "Web交互",
         "网页交互"
       ],
-      "related": []
+      "related": [],
+      "media_type": "animation",
+      "evidence": "animated-reference",
+      "gif": "assets/gifs/web-interactions/expanding-icon-label.gif",
+      "media_reason": "需看图标按钮宽度展开、文字出现与收回的协同。"
     },
     {
       "id": "web-interactions/sliding-nav-highlight",
@@ -1817,7 +2064,6 @@
       "summary": "导航圆角底色平滑移动到目标项，同时适配各项文字的宽度。",
       "prompt": "导航高亮底色随目标项移动和变宽，离开预览后恢复当前页面选中项。",
       "kind": "pattern",
-      "gif": "assets/gifs/web-interactions/sliding-nav-highlight.gif",
       "filmstrip": "assets/filmstrips/web-interactions/sliding-nav-highlight.jpg",
       "keywords": [
         "导航",
@@ -1827,7 +2073,11 @@
         "Web交互",
         "网页交互"
       ],
-      "related": []
+      "related": [],
+      "media_type": "animation",
+      "evidence": "animated-reference",
+      "gif": "assets/gifs/web-interactions/sliding-nav-highlight.gif",
+      "media_reason": "需看底色平滑移动并适配文字宽度的过程。"
     },
     {
       "id": "web-interactions/corner-fill-hover",
@@ -1839,7 +2089,6 @@
       "summary": "功能卡片从一角扩散主题色，文字和图标同步换色，箭头转向。",
       "prompt": "可点击统计卡悬停时从右上角扩散填色，并同步调整文字和箭头。",
       "kind": "pattern",
-      "gif": "assets/gifs/web-interactions/corner-fill-hover.gif",
       "filmstrip": "assets/filmstrips/web-interactions/corner-fill-hover.jpg",
       "keywords": [
         "悬停",
@@ -1849,7 +2098,11 @@
         "Web交互",
         "网页交互"
       ],
-      "related": []
+      "related": [],
+      "media_type": "animation",
+      "evidence": "animated-reference",
+      "gif": "assets/gifs/web-interactions/corner-fill-hover.gif",
+      "media_reason": "需看主题色从角落扩散及图标、文字同步换色的过程。"
     },
     {
       "id": "web-interactions/snapping-level-slider",
@@ -1861,7 +2114,6 @@
       "summary": "拖动条跨档时更新档位读数和填色，释放时吸附最近刻度。",
       "prompt": "档位滑杆边拖边显示当前档位，松手吸附最近有效档。",
       "kind": "pattern",
-      "gif": "assets/gifs/web-interactions/snapping-level-slider.gif",
       "filmstrip": "assets/filmstrips/web-interactions/snapping-level-slider.jpg",
       "keywords": [
         "滑杆",
@@ -1873,7 +2125,11 @@
       ],
       "related": [
         "forms/slider"
-      ]
+      ],
+      "media_type": "animation",
+      "evidence": "animated-reference",
+      "gif": "assets/gifs/web-interactions/snapping-level-slider.gif",
+      "media_reason": "需看跨档反馈和释放后吸附刻度的行为。"
     },
     {
       "id": "web-interactions/scrubbing-bar-chart",
@@ -1885,7 +2141,6 @@
       "summary": "指针横扫柱图时，当前读数、标记和左右明暗区域跟随更新。",
       "prompt": "柱状图支持横向跟手读取数据，标记、数值和高亮保持同步。",
       "kind": "pattern",
-      "gif": "assets/gifs/web-interactions/scrubbing-bar-chart.gif",
       "filmstrip": "assets/filmstrips/web-interactions/scrubbing-bar-chart.jpg",
       "keywords": [
         "图表",
@@ -1895,7 +2150,11 @@
         "Web交互",
         "网页交互"
       ],
-      "related": []
+      "related": [],
+      "media_type": "animation",
+      "evidence": "animated-reference",
+      "gif": "assets/gifs/web-interactions/scrubbing-bar-chart.gif",
+      "media_reason": "需看指针、读数、标记与明暗范围的实时跟随。"
     },
     {
       "id": "web-interactions/hover-image-preview",
@@ -1907,7 +2166,6 @@
       "summary": "文字列表保持整齐，悬停不同条目时在附近显示相应图片，非当前条目弱化。",
       "prompt": "案例列表悬停或聚焦时预览对应图片，列表本身不跳动。",
       "kind": "pattern",
-      "gif": "assets/gifs/web-interactions/hover-image-preview.gif",
       "filmstrip": "assets/filmstrips/web-interactions/hover-image-preview.jpg",
       "keywords": [
         "图片",
@@ -1917,7 +2175,11 @@
         "Web交互",
         "网页交互"
       ],
-      "related": []
+      "related": [],
+      "media_type": "animation",
+      "evidence": "animated-reference",
+      "gif": "assets/gifs/web-interactions/hover-image-preview.gif",
+      "media_reason": "需看指针切换条目时图片预览的位置、显隐与跟随。"
     },
     {
       "id": "web-interactions/circular-theme-reveal",
@@ -1929,7 +2191,6 @@
       "summary": "从主题切换按钮位置扩散圆形遮罩，逐步露出另一套主题，内容布局保持不变。",
       "prompt": "从主题按钮中心圆形扩散切换明暗主题，页面文字和布局保持稳定。",
       "kind": "pattern",
-      "gif": "assets/gifs/web-interactions/circular-theme-reveal.gif",
       "filmstrip": "assets/filmstrips/web-interactions/circular-theme-reveal.jpg",
       "keywords": [
         "主题",
@@ -1941,7 +2202,11 @@
       ],
       "related": [
         "mobile-interactions/touch-origin-theme"
-      ]
+      ],
+      "media_type": "animation",
+      "evidence": "animated-reference",
+      "gif": "assets/gifs/web-interactions/circular-theme-reveal.gif",
+      "media_reason": "需看圆形遮罩从触发位置扩散，静态主题对比不足以表达。"
     },
     {
       "id": "mobile-interactions/touch-origin-theme",
@@ -1953,7 +2218,6 @@
       "summary": "从实际点击点向四周扩散另一主题，两层页面只裁剪，不拉伸文字、图标或布局。",
       "prompt": "移动端从主题按钮触点扩散换肤，两套主题布局保持一致。",
       "kind": "pattern",
-      "gif": "assets/gifs/mobile-interactions/touch-origin-theme.gif",
       "filmstrip": "assets/filmstrips/mobile-interactions/touch-origin-theme.jpg",
       "keywords": [
         "明暗",
@@ -1966,30 +2230,11 @@
       ],
       "related": [
         "web-interactions/circular-theme-reveal"
-      ]
-    },
-    {
-      "id": "mobile-interactions/spring-reorder",
-      "category": "mobile-interactions",
-      "category_title": "移动端交互",
-      "slug": "spring-reorder",
-      "name": "拖拽排序与弹性让位",
-      "english": "Spring Reorder",
-      "summary": "被拖行浮起，其他行按当前插入位置连续让位，释放后落入新位置。",
-      "prompt": "列表长按拖拽排序，周围行弹性让位，落下后保存真实顺序。",
-      "kind": "pattern",
-      "gif": "assets/gifs/mobile-interactions/spring-reorder.gif",
-      "filmstrip": "assets/filmstrips/mobile-interactions/spring-reorder.jpg",
-      "keywords": [
-        "拖动",
-        "排序",
-        "reorder",
-        "列表",
-        "App交互",
-        "小程序交互",
-        "手机交互"
       ],
-      "related": []
+      "media_type": "animation",
+      "evidence": "animated-reference",
+      "gif": "assets/gifs/mobile-interactions/touch-origin-theme.gif",
+      "media_reason": "需看主题从实际触点扩散且文字布局不被拉伸的过程。"
     },
     {
       "id": "mobile-interactions/staggered-batch-check",
@@ -2001,7 +2246,6 @@
       "summary": "全选后各行依次呈现勾选反馈，勾号轻微弹性放大。",
       "prompt": "全选时立即更新真实选中集合，视觉勾号按列表顺序轻微错峰出现。",
       "kind": "pattern",
-      "gif": "assets/gifs/mobile-interactions/staggered-batch-check.gif",
       "filmstrip": "assets/filmstrips/mobile-interactions/staggered-batch-check.jpg",
       "keywords": [
         "全选",
@@ -2015,7 +2259,11 @@
       "related": [
         "buttons-controls/checkbox",
         "motion/stagger"
-      ]
+      ],
+      "media_type": "animation",
+      "evidence": "animated-reference",
+      "gif": "assets/gifs/mobile-interactions/staggered-batch-check.gif",
+      "media_reason": "依次勾选的节奏与局部弹性反馈是主体。"
     },
     {
       "id": "mobile-interactions/inertial-slider-snap",
@@ -2027,7 +2275,6 @@
       "summary": "释放滑块后短暂沿手势方向滑行，再吸回最近有效刻度，表现轻微重量感。",
       "prompt": "配速滑杆松手后轻微惯性滑行，再回吸到最近有效刻度。",
       "kind": "pattern",
-      "gif": "assets/gifs/mobile-interactions/inertial-slider-snap.gif",
       "filmstrip": "assets/filmstrips/mobile-interactions/inertial-slider-snap.jpg",
       "keywords": [
         "滑杆",
@@ -2040,7 +2287,11 @@
       ],
       "related": [
         "web-interactions/snapping-level-slider"
-      ]
+      ],
+      "media_type": "animation",
+      "evidence": "animated-reference",
+      "gif": "assets/gifs/mobile-interactions/inertial-slider-snap.gif",
+      "media_reason": "松手后惯性滑行再吸附是主体，终态截图不能表达。"
     },
     {
       "id": "mobile-interactions/animated-text-expand",
@@ -2052,7 +2303,6 @@
       "summary": "展开时容器高度连续增大，内容在原位打开，箭头同步旋转指示状态。",
       "prompt": "说明卡片点击展开时平滑改变高度，箭头同步转动，收起恢复。",
       "kind": "pattern",
-      "gif": "assets/gifs/mobile-interactions/animated-text-expand.gif",
       "filmstrip": "assets/filmstrips/mobile-interactions/animated-text-expand.jpg",
       "keywords": [
         "折叠",
@@ -2065,7 +2315,11 @@
       ],
       "related": [
         "cards-tables/accordion"
-      ]
+      ],
+      "media_type": "animation",
+      "evidence": "animated-reference",
+      "gif": "assets/gifs/mobile-interactions/animated-text-expand.gif",
+      "media_reason": "需看容器高度连续变化与箭头旋转的同步关系。"
     },
     {
       "id": "mobile-interactions/step-progress-settle",
@@ -2077,7 +2331,6 @@
       "summary": "完成一步后进度线推进到新节点，可轻微越过再归位，已完成步骤同步高亮。",
       "prompt": "完成步骤后进度推进到真实节点，用轻微回弹强调完成。",
       "kind": "pattern",
-      "gif": "assets/gifs/mobile-interactions/step-progress-settle.gif",
       "filmstrip": "assets/filmstrips/mobile-interactions/step-progress-settle.jpg",
       "keywords": [
         "进度",
@@ -2088,7 +2341,11 @@
         "小程序交互",
         "手机交互"
       ],
-      "related": []
+      "related": [],
+      "media_type": "animation",
+      "evidence": "animated-reference",
+      "gif": "assets/gifs/mobile-interactions/step-progress-settle.gif",
+      "media_reason": "需看进度线推进、轻微越过与归位的过程。"
     },
     {
       "id": "mobile-interactions/switch-group-ripple",
@@ -2100,7 +2357,6 @@
       "summary": "切换当前开关时，同组附近开关依次轻微动一下，其值保持不变。",
       "prompt": "当前开关切换时向同组扩散轻微视觉反馈，只修改被操作的设置。",
       "kind": "pattern",
-      "gif": "assets/gifs/mobile-interactions/switch-group-ripple.gif",
       "filmstrip": "assets/filmstrips/mobile-interactions/switch-group-ripple.jpg",
       "keywords": [
         "开关",
@@ -2113,7 +2369,11 @@
       ],
       "related": [
         "buttons-controls/switch"
-      ]
+      ],
+      "media_type": "animation",
+      "evidence": "animated-reference",
+      "gif": "assets/gifs/mobile-interactions/switch-group-ripple.gif",
+      "media_reason": "需看相邻项反馈的传播顺序，并在项目中确认其值未被改变。"
     },
     {
       "id": "mobile-interactions/card-delete-trajectory",
@@ -2125,7 +2385,6 @@
       "summary": "确认删除后的卡片沿曲线朝删除入口移动，同时缩小、旋转并淡出。",
       "prompt": "删除确认完成后让卡片沿曲线缩小离场，再平滑收拢列表。",
       "kind": "pattern",
-      "gif": "assets/gifs/mobile-interactions/card-delete-trajectory.gif",
       "filmstrip": "assets/filmstrips/mobile-interactions/card-delete-trajectory.jpg",
       "keywords": [
         "删除",
@@ -2136,7 +2395,11 @@
         "小程序交互",
         "手机交互"
       ],
-      "related": []
+      "related": [],
+      "media_type": "animation",
+      "evidence": "animated-reference",
+      "gif": "assets/gifs/mobile-interactions/card-delete-trajectory.gif",
+      "media_reason": "删除后的曲线路径、缩放、旋转与淡出是主体。"
     },
     {
       "id": "mobile-interactions/sticky-compressing-stack",
@@ -2148,7 +2411,6 @@
       "summary": "已读卡片在顶部停留，并在后续卡片上来时缩小后退，形成层叠浏览记录。",
       "prompt": "卡片列表滚动时让前序卡片吸顶并逐级压缩，向回滚动恢复。",
       "kind": "pattern",
-      "gif": "assets/gifs/mobile-interactions/sticky-compressing-stack.gif",
       "filmstrip": "assets/filmstrips/mobile-interactions/sticky-compressing-stack.jpg",
       "keywords": [
         "滚动",
@@ -2159,7 +2421,11 @@
         "小程序交互",
         "手机交互"
       ],
-      "related": []
+      "related": [],
+      "media_type": "animation",
+      "evidence": "animated-reference",
+      "gif": "assets/gifs/mobile-interactions/sticky-compressing-stack.gif",
+      "media_reason": "需看卡片吸顶、缩小后退和后续卡片补位的连续层次。"
     },
     {
       "id": "mobile-interactions/reflowing-choice-tabs",
@@ -2171,7 +2437,6 @@
       "summary": "选中标签略微放大，其他标签平滑移开腾出空间，整行一起调整布局。",
       "prompt": "分类标签选中时轻微放大，相邻标签让位，内容同步切换。",
       "kind": "pattern",
-      "gif": "assets/gifs/mobile-interactions/reflowing-choice-tabs.gif",
       "filmstrip": "assets/filmstrips/mobile-interactions/reflowing-choice-tabs.jpg",
       "keywords": [
         "标签",
@@ -2184,7 +2449,11 @@
       ],
       "related": [
         "buttons-controls/segmented-control"
-      ]
+      ],
+      "media_type": "animation",
+      "evidence": "animated-reference",
+      "gif": "assets/gifs/mobile-interactions/reflowing-choice-tabs.gif",
+      "media_reason": "需看选中放大时其余标签如何让位和重新排布。"
     },
     {
       "id": "mobile-layouts/wide-title-image-list",
@@ -2196,7 +2465,6 @@
       "summary": "大号两行标题建立主题，搜索与筛选紧随其后，下方是宽幅图片和单行参数信息。",
       "prompt": "列表页用宽体大标题、搜索筛选、分类标签和宽幅大图卡，名称参数排在图下。",
       "kind": "pattern",
-      "gif": "assets/gifs/mobile-layouts/wide-title-image-list.gif",
       "filmstrip": "assets/filmstrips/mobile-layouts/wide-title-image-list.jpg",
       "keywords": [
         "列表",
@@ -2207,7 +2475,10 @@
         "小程序布局",
         "手机布局"
       ],
-      "related": []
+      "related": [],
+      "media_type": "filmstrip",
+      "evidence": "sampled-animation-frames",
+      "media_reason": "重点是标题、筛选、宽图和参数的静态布局，讲解遮罩无需保留。"
     },
     {
       "id": "mobile-layouts/hero-information-overlay",
@@ -2219,7 +2490,6 @@
       "summary": "头部大图承载目的地和主要操作，下方白底信息区展示日期、天气和趋势。",
       "prompt": "详情页上部用大图叠标题与操作，下方展示日期选择和简洁趋势曲线。",
       "kind": "pattern",
-      "gif": "assets/gifs/mobile-layouts/hero-information-overlay.gif",
       "filmstrip": "assets/filmstrips/mobile-layouts/hero-information-overlay.jpg",
       "keywords": [
         "头图",
@@ -2230,7 +2500,10 @@
         "小程序布局",
         "手机布局"
       ],
-      "related": []
+      "related": [],
+      "media_type": "filmstrip",
+      "evidence": "sampled-animation-frames",
+      "media_reason": "重点是大图上的信息叠放与下方信息区布局。"
     },
     {
       "id": "mobile-layouts/monochrome-priority",
@@ -2242,7 +2515,6 @@
       "summary": "浅灰页面上以黑底白字突出主要卡片，其余用白色卡片承载次要内容。",
       "prompt": "用灰底、黑色主卡和白色次卡组织页面，分类选中态与主卡呼应。",
       "kind": "pattern",
-      "gif": "assets/gifs/mobile-layouts/monochrome-priority.gif",
       "filmstrip": "assets/filmstrips/mobile-layouts/monochrome-priority.jpg",
       "keywords": [
         "黑白",
@@ -2253,7 +2525,10 @@
         "小程序布局",
         "手机布局"
       ],
-      "related": []
+      "related": [],
+      "media_type": "filmstrip",
+      "evidence": "sampled-animation-frames",
+      "media_reason": "重点是黑白卡片的主次权重，图片足够。"
     },
     {
       "id": "mobile-layouts/color-block-bento",
@@ -2265,7 +2540,6 @@
       "summary": "大色块汇总最重要数字与完成度，周围浅色小格分别承载次级任务或打卡项。",
       "prompt": "首页用一张强调色大卡汇总核心指标，下方浅色小格分别执行单项任务。",
       "kind": "pattern",
-      "gif": "assets/gifs/mobile-layouts/color-block-bento.gif",
       "filmstrip": "assets/filmstrips/mobile-layouts/color-block-bento.jpg",
       "keywords": [
         "bento",
@@ -2276,7 +2550,10 @@
         "小程序布局",
         "手机布局"
       ],
-      "related": []
+      "related": [],
+      "media_type": "filmstrip",
+      "evidence": "sampled-animation-frames",
+      "media_reason": "重点是大小色块和数据层级，讲解中的强调不是产品动效。"
     },
     {
       "id": "mobile-layouts/poster-semicircle-dial",
@@ -2288,7 +2565,6 @@
       "summary": "大字与强色块形成海报层级，中段半圆转盘围绕固定指针选择，底部大读数和主操作。",
       "prompt": "专注页使用海报标题、半圆选项转盘、大号时长和单个主操作。",
       "kind": "pattern",
-      "gif": "assets/gifs/mobile-layouts/poster-semicircle-dial.gif",
       "filmstrip": "assets/filmstrips/mobile-layouts/poster-semicircle-dial.jpg",
       "keywords": [
         "转盘",
@@ -2299,7 +2575,11 @@
         "小程序布局",
         "手机布局"
       ],
-      "related": []
+      "related": [],
+      "media_type": "animation",
+      "evidence": "animated-reference",
+      "gif": "assets/gifs/mobile-layouts/poster-semicircle-dial.gif",
+      "media_reason": "布局示例中包含真实转盘选择，需看转动与固定指针的关系。"
     },
     {
       "id": "mobile-layouts/swipe-deck-layout",
@@ -2311,7 +2591,6 @@
       "summary": "中央大图卡作为主内容，后续卡露边表示数量；向上拖走前卡，后卡补位，页码同步。",
       "prompt": "展示页用可上滑翻阅的大图卡组，后卡露边，当前页码跟随切换。",
       "kind": "pattern",
-      "gif": "assets/gifs/mobile-layouts/swipe-deck-layout.gif",
       "filmstrip": "assets/filmstrips/mobile-layouts/swipe-deck-layout.jpg",
       "keywords": [
         "卡组",
@@ -2322,7 +2601,11 @@
         "小程序布局",
         "手机布局"
       ],
-      "related": []
+      "related": [],
+      "media_type": "animation",
+      "evidence": "animated-reference",
+      "gif": "assets/gifs/mobile-layouts/swipe-deck-layout.gif",
+      "media_reason": "布局示例中包含前卡拖离、后卡补位与页码切换的连续行为。"
     },
     {
       "id": "dashboard-navigation/icon-text-sidebar",
@@ -2334,7 +2617,6 @@
       "summary": "左侧组合图标与文字，清楚标出当前入口；点击后右侧内容与菜单高亮同步切换。",
       "prompt": "后台使用图文侧栏，当前路由高亮，并与右侧内容同步。",
       "kind": "pattern",
-      "gif": "assets/gifs/dashboard-navigation/icon-text-sidebar.gif",
       "filmstrip": "assets/filmstrips/dashboard-navigation/icon-text-sidebar.jpg",
       "keywords": [
         "后台",
@@ -2346,7 +2628,10 @@
         "后台导航",
         "仪表盘菜单"
       ],
-      "related": []
+      "related": [],
+      "media_type": "filmstrip",
+      "evidence": "sampled-animation-frames",
+      "media_reason": "图标、文字、分区与选中态由图片表达，普通路由切换无需 GIF。"
     },
     {
       "id": "dashboard-navigation/grouped-content-sidebar",
@@ -2358,7 +2643,6 @@
       "summary": "相关内容入口在侧栏分组，通过分组层级与选中底色帮助切换列表和发现页。",
       "prompt": "把内容入口按任务分组，侧栏层级和选中底色清晰，切页时同步更新。",
       "kind": "pattern",
-      "gif": "assets/gifs/dashboard-navigation/grouped-content-sidebar.gif",
       "filmstrip": "assets/filmstrips/dashboard-navigation/grouped-content-sidebar.jpg",
       "keywords": [
         "后台",
@@ -2370,7 +2654,10 @@
         "后台导航",
         "仪表盘菜单"
       ],
-      "related": []
+      "related": [],
+      "media_type": "filmstrip",
+      "evidence": "sampled-animation-frames",
+      "media_reason": "分组结构、侧栏层级与选中样式由状态图表达。"
     },
     {
       "id": "dashboard-navigation/top-pill-navigation",
@@ -2382,7 +2669,6 @@
       "summary": "主要入口收进顶部圆角容器，用深浅底色区分当前项，让主体区域保持宽阔。",
       "prompt": "后台用顶部胶囊导航组织少量主入口，选中态清晰且主体布局稳定。",
       "kind": "pattern",
-      "gif": "assets/gifs/dashboard-navigation/top-pill-navigation.gif",
       "filmstrip": "assets/filmstrips/dashboard-navigation/top-pill-navigation.jpg",
       "keywords": [
         "后台",
@@ -2394,7 +2680,10 @@
         "后台导航",
         "仪表盘菜单"
       ],
-      "related": []
+      "related": [],
+      "media_type": "filmstrip",
+      "evidence": "sampled-animation-frames",
+      "media_reason": "顶部容器、入口密度与选中样式由图片表达。"
     },
     {
       "id": "dashboard-navigation/compact-icon-rail",
@@ -2406,7 +2695,6 @@
       "summary": "窄图标轨把更多空间留给正文，主要业务入口在上方，通知与账户固定在底部。",
       "prompt": "工作台使用窄图标侧栏，上方业务、下方通知账户，当前入口高对比显示。",
       "kind": "pattern",
-      "gif": "assets/gifs/dashboard-navigation/compact-icon-rail.gif",
       "filmstrip": "assets/filmstrips/dashboard-navigation/compact-icon-rail.jpg",
       "keywords": [
         "后台",
@@ -2418,7 +2706,10 @@
         "后台导航",
         "仪表盘菜单"
       ],
-      "related": []
+      "related": [],
+      "media_type": "filmstrip",
+      "evidence": "sampled-animation-frames",
+      "media_reason": "窄轨尺寸、图标分区及底部账户区属于静态布局。"
     },
     {
       "id": "dashboard-navigation/brand-accent-sidebar",
@@ -2430,7 +2721,6 @@
       "summary": "深色窄侧栏用品牌色集中突出当前入口，统一圆角与上下分区。",
       "prompt": "深色后台用品牌色标记当前侧栏入口，主功能与底部工具分组。",
       "kind": "pattern",
-      "gif": "assets/gifs/dashboard-navigation/brand-accent-sidebar.gif",
       "filmstrip": "assets/filmstrips/dashboard-navigation/brand-accent-sidebar.jpg",
       "keywords": [
         "后台",
@@ -2442,7 +2732,10 @@
         "后台导航",
         "仪表盘菜单"
       ],
-      "related": []
+      "related": [],
+      "media_type": "filmstrip",
+      "evidence": "sampled-animation-frames",
+      "media_reason": "品牌色、当前入口和上下分区属于静态视觉层级。"
     },
     {
       "id": "dashboard-navigation/context-data-tabs",
@@ -2454,7 +2747,6 @@
       "summary": "顶部分组标签选择当前业务对象，选中底色与标记同步，指标和列表更新为该对象数据。",
       "prompt": "顶部对象标签切换时，同步更新该对象的指标、阶段和列表，并保留明确的选中态。",
       "kind": "pattern",
-      "gif": "assets/gifs/dashboard-navigation/context-data-tabs.gif",
       "filmstrip": "assets/filmstrips/dashboard-navigation/context-data-tabs.jpg",
       "keywords": [
         "后台",
@@ -2467,168 +2759,11 @@
         "后台导航",
         "仪表盘菜单"
       ],
-      "related": []
-    },
-    {
-      "id": "glass-materials/frosted-glass-layer",
-      "category": "glass-materials",
-      "category_title": "玻璃材质与背景",
-      "slug": "frosted-glass-layer",
-      "name": "磨砂玻璃的基本层次",
-      "english": "Frosted Glass Layers",
-      "summary": "背景模糊透过低透明度表层呈现；面板仍应透出背景层次，而非实心灰块。",
-      "prompt": "玻璃面板组合背景模糊、低透明度表层和稳定前景内容，先保证文字清晰。",
-      "kind": "pattern",
-      "gif": "assets/gifs/glass-materials/frosted-glass-layer.gif",
-      "filmstrip": "assets/filmstrips/glass-materials/frosted-glass-layer.jpg",
-      "keywords": [
-        "玻璃",
-        "磨砂",
-        "glass",
-        "blur",
-        "玻璃界面",
-        "玻璃效果",
-        "毛玻璃"
-      ],
-      "related": []
-    },
-    {
-      "id": "glass-materials/saturation-tint",
-      "category": "glass-materials",
-      "category_title": "玻璃材质与背景",
-      "slug": "saturation-tint",
-      "name": "增色与透明叠白",
-      "english": "Saturation and Tint",
-      "summary": "适当提高背景饱和度并叠低透明度白层，避免模糊后颜色发灰。",
-      "prompt": "调整玻璃背后的饱和度与叠白强度，保留背景色相，避免灰雾感。",
-      "kind": "rule",
-      "gif": "assets/gifs/glass-materials/saturation-tint.gif",
-      "filmstrip": "assets/filmstrips/glass-materials/saturation-tint.jpg",
-      "keywords": [
-        "玻璃",
-        "饱和度",
-        "透明",
-        "白色",
-        "玻璃界面",
-        "玻璃效果",
-        "毛玻璃"
-      ],
-      "related": []
-    },
-    {
-      "id": "glass-materials/edge-highlight-refraction",
-      "category": "glass-materials",
-      "category_title": "玻璃材质与背景",
-      "slug": "edge-highlight-refraction",
-      "name": "亮边与边缘折射",
-      "english": "Edge Highlight and Refraction",
-      "summary": "细亮边表达厚度，局部边缘形变加强液态感，作用限于玻璃轮廓。",
-      "prompt": "为重点玻璃面板加细亮边，必要时只在边缘加入轻微折射。",
-      "kind": "rule",
-      "gif": "assets/gifs/glass-materials/edge-highlight-refraction.gif",
-      "filmstrip": "assets/filmstrips/glass-materials/edge-highlight-refraction.jpg",
-      "keywords": [
-        "玻璃",
-        "液态",
-        "折射",
-        "高光",
-        "玻璃界面",
-        "玻璃效果",
-        "毛玻璃"
-      ],
-      "related": []
-    },
-    {
-      "id": "glass-materials/large-soft-background",
-      "category": "glass-materials",
-      "category_title": "玻璃材质与背景",
-      "slug": "large-soft-background",
-      "name": "大块柔和背景选型",
-      "english": "Large Soft Background Shapes",
-      "summary": "细碎纹理被模糊成纯色，杂乱强色容易抢主体；大块柔和形状更容易显出玻璃层次。",
-      "prompt": "玻璃后使用大于模糊范围的柔和色块，主色控制在少量相近色。",
-      "kind": "rule",
-      "gif": "assets/gifs/glass-materials/large-soft-background.gif",
-      "filmstrip": "assets/filmstrips/glass-materials/large-soft-background.jpg",
-      "keywords": [
-        "玻璃",
-        "背景",
-        "纹理",
-        "色块",
-        "玻璃界面",
-        "玻璃效果",
-        "毛玻璃"
-      ],
-      "related": []
-    },
-    {
-      "id": "glass-materials/glass-text-contrast",
-      "category": "glass-materials",
-      "category_title": "玻璃材质与背景",
-      "slug": "glass-text-contrast",
-      "name": "玻璃前景的明暗控制",
-      "english": "Glass Foreground Contrast",
-      "summary": "背景主色少而有层次，文字后方避免过亮或明暗骤变，材质服务于内容。",
-      "prompt": "控制玻璃下方亮部位置，并给前景内容足够的明暗对比。",
-      "kind": "rule",
-      "gif": "assets/gifs/glass-materials/glass-text-contrast.gif",
-      "filmstrip": "assets/filmstrips/glass-materials/glass-text-contrast.jpg",
-      "keywords": [
-        "玻璃",
-        "文字",
-        "对比",
-        "明暗",
-        "玻璃界面",
-        "玻璃效果",
-        "毛玻璃"
-      ],
-      "related": []
-    },
-    {
-      "id": "interface-details/tabular-numerals",
-      "category": "interface-details",
-      "category_title": "界面排版与细节",
-      "slug": "tabular-numerals",
-      "name": "等宽数字防跳动",
-      "english": "Tabular Numerals",
-      "summary": "变化中的时间和数值使用等宽数字，让各位数字占宽稳定，减少左右跳动。",
-      "prompt": "为计时器和动态统计数字启用 tabular-nums，保留适当数值容器宽度。",
-      "kind": "rule",
-      "gif": "assets/gifs/interface-details/tabular-numerals.gif",
-      "filmstrip": "assets/filmstrips/interface-details/tabular-numerals.jpg",
-      "keywords": [
-        "数字",
-        "计时",
-        "排版",
-        "tabular-nums",
-        "界面细节",
-        "界面精修",
-        "排版细节"
-      ],
-      "related": []
-    },
-    {
-      "id": "interface-details/concentric-corners",
-      "category": "interface-details",
-      "category_title": "界面排版与细节",
-      "slug": "concentric-corners",
-      "name": "嵌套容器同心圆角",
-      "english": "Concentric Corners",
-      "summary": "内外容器转角保持接近同一圆心，避免外层与内层机械地使用同一圆角值。",
-      "prompt": "按内边距协调外卡与内图的圆角，让嵌套边缘保持均匀。",
-      "kind": "rule",
-      "gif": "assets/gifs/interface-details/concentric-corners.gif",
-      "filmstrip": "assets/filmstrips/interface-details/concentric-corners.jpg",
-      "keywords": [
-        "圆角",
-        "内边距",
-        "radius",
-        "嵌套",
-        "界面细节",
-        "界面精修",
-        "排版细节"
-      ],
-      "related": []
+      "related": [],
+      "media_type": "animation",
+      "evidence": "animated-reference",
+      "gif": "assets/gifs/dashboard-navigation/context-data-tabs.gif",
+      "media_reason": "需看对象标签切换后多处指标、曲线和列表的联动顺序。"
     },
     {
       "id": "interface-details/section-stagger",
@@ -2640,7 +2775,6 @@
       "summary": "标题、主图、统计和操作分组依次入场，避免整屏内容同时淡入而缺少节奏。",
       "prompt": "把首屏按阅读顺序分组，轻微错峰入场，主操作无需等待动画才可用。",
       "kind": "rule",
-      "gif": "assets/gifs/interface-details/section-stagger.gif",
       "filmstrip": "assets/filmstrips/interface-details/section-stagger.jpg",
       "keywords": [
         "错峰",
@@ -2653,30 +2787,11 @@
       ],
       "related": [
         "motion/stagger"
-      ]
-    },
-    {
-      "id": "interface-details/balanced-headings",
-      "category": "interface-details",
-      "category_title": "界面排版与细节",
-      "slug": "balanced-headings",
-      "name": "平衡标题换行",
-      "english": "Balanced Headings",
-      "summary": "标题多行长度更均衡，避免末行孤立一个短词，同时尊重容器宽度。",
-      "prompt": "为短标题采用平衡换行并设置合适的最大行宽，避免末行过短。",
-      "kind": "rule",
-      "gif": "assets/gifs/interface-details/balanced-headings.gif",
-      "filmstrip": "assets/filmstrips/interface-details/balanced-headings.jpg",
-      "keywords": [
-        "标题",
-        "换行",
-        "排版",
-        "text-wrap",
-        "界面细节",
-        "界面精修",
-        "排版细节"
       ],
-      "related": []
+      "media_type": "animation",
+      "evidence": "animated-reference",
+      "gif": "assets/gifs/interface-details/section-stagger.gif",
+      "media_reason": "标题、主图、数字与操作分组入场的先后是主体。"
     },
     {
       "id": "interface-details/layered-soft-shadow",
@@ -2688,7 +2803,6 @@
       "summary": "在适合的卡片上用近处细阴影和远处柔阴影表达层次，减少僵硬外框感。",
       "prompt": "用低强度多层阴影柔化普通内容卡，同时保持边界可辨认。",
       "kind": "rule",
-      "gif": "assets/gifs/interface-details/layered-soft-shadow.gif",
       "filmstrip": "assets/filmstrips/interface-details/layered-soft-shadow.jpg",
       "keywords": [
         "阴影",
@@ -2699,7 +2813,10 @@
         "界面精修",
         "排版细节"
       ],
-      "related": []
+      "related": [],
+      "media_type": "filmstrip",
+      "evidence": "sampled-animation-frames",
+      "media_reason": "近细远柔的投影层次及前后对照由图片表达。"
     },
     {
       "id": "dashboard-layouts/asymmetric-color-grid",
@@ -2711,7 +2828,6 @@
       "summary": "深色底上由大主卡和多张不同色次卡组成非对称网格，选中日期时柱形、标签与容量读数联动。",
       "prompt": "用非对称网格组织大主卡和次卡，选择日期时同步高亮柱图、标签与容量数据。",
       "kind": "pattern",
-      "gif": "assets/gifs/dashboard-layouts/asymmetric-color-grid.gif",
       "filmstrip": "assets/filmstrips/dashboard-layouts/asymmetric-color-grid.jpg",
       "keywords": [
         "仪表盘",
@@ -2724,7 +2840,11 @@
         "后台布局",
         "数据联动"
       ],
-      "related": []
+      "related": [],
+      "media_type": "animation",
+      "evidence": "animated-reference",
+      "gif": "assets/gifs/dashboard-layouts/asymmetric-color-grid.gif",
+      "media_reason": "需看日期选择如何带动柱形、标签与容量读数同步变化。"
     },
     {
       "id": "dashboard-layouts/inventory-action-workbench",
@@ -2736,7 +2856,6 @@
       "summary": "左侧状态与库存表承载筛选浏览，右侧固定操作卡跟随当前商品，形成选择到加入清单的连续流程。",
       "prompt": "库存工作台按筛选、表格、操作区分栏；选中商品更新右卡，加入清单同步数量。",
       "kind": "pattern",
-      "gif": "assets/gifs/dashboard-layouts/inventory-action-workbench.gif",
       "filmstrip": "assets/filmstrips/dashboard-layouts/inventory-action-workbench.jpg",
       "keywords": [
         "仪表盘",
@@ -2749,7 +2868,11 @@
         "后台布局",
         "数据联动"
       ],
-      "related": []
+      "related": [],
+      "media_type": "animation",
+      "evidence": "animated-reference",
+      "gif": "assets/gifs/dashboard-layouts/inventory-action-workbench.gif",
+      "media_reason": "需看筛选、选中商品、右侧操作卡切换和加入清单的连续关系。"
     },
     {
       "id": "dashboard-layouts/central-observation-timeline",
@@ -2761,7 +2884,6 @@
       "summary": "中央主视图占据重点，两侧收纳队列和读数，下方时间轴驱动全局时刻预览。",
       "prompt": "中央放主观测图，两侧显示队列和读数；切换对象或拖动时间轴时全局联动。",
       "kind": "pattern",
-      "gif": "assets/gifs/dashboard-layouts/central-observation-timeline.gif",
       "filmstrip": "assets/filmstrips/dashboard-layouts/central-observation-timeline.jpg",
       "keywords": [
         "仪表盘",
@@ -2774,7 +2896,11 @@
         "后台布局",
         "数据联动"
       ],
-      "related": []
+      "related": [],
+      "media_type": "animation",
+      "evidence": "animated-reference",
+      "gif": "assets/gifs/dashboard-layouts/central-observation-timeline.gif",
+      "media_reason": "需看拖动时间轴如何驱动中央视图与读数同步变化。"
     },
     {
       "id": "dashboard-layouts/glass-matrix-metrics",
@@ -2786,7 +2912,6 @@
       "summary": "浅色玻璃卡片承载点阵读数，月份带与指标选择共同决定当前值和趋势。",
       "prompt": "浅色仪表盘用玻璃卡与点阵读数，切换月份更新指标，选择指标展示对应趋势。",
       "kind": "pattern",
-      "gif": "assets/gifs/dashboard-layouts/glass-matrix-metrics.gif",
       "filmstrip": "assets/filmstrips/dashboard-layouts/glass-matrix-metrics.jpg",
       "keywords": [
         "仪表盘",
@@ -2800,8 +2925,12 @@
         "数据联动"
       ],
       "related": [
-        "glass-materials/frosted-glass-layer"
-      ]
+        "glass-materials/liquid-glass"
+      ],
+      "media_type": "animation",
+      "evidence": "animated-reference",
+      "gif": "assets/gifs/dashboard-layouts/glass-matrix-metrics.gif",
+      "media_reason": "需看月份与指标切换如何更新点阵读数和趋势，材质本身看 JPG 即可。"
     },
     {
       "id": "dashboard-layouts/warm-three-column-console",
@@ -2813,7 +2942,6 @@
       "summary": "深色导航、浅色控制区和设备列表构成三栏，房间、模式、数值与单位同步切换。",
       "prompt": "设备控制台用三栏分区，切换房间同步照片和设定值，模式切换时同步数值与单位。",
       "kind": "pattern",
-      "gif": "assets/gifs/dashboard-layouts/warm-three-column-console.gif",
       "filmstrip": "assets/filmstrips/dashboard-layouts/warm-three-column-console.jpg",
       "keywords": [
         "仪表盘",
@@ -2826,7 +2954,11 @@
         "后台布局",
         "数据联动"
       ],
-      "related": []
+      "related": [],
+      "media_type": "animation",
+      "evidence": "animated-reference",
+      "gif": "assets/gifs/dashboard-layouts/warm-three-column-console.gif",
+      "media_reason": "需看房间、模式、数值与单位的协调切换；三栏构图只需 JPG。"
     },
     {
       "id": "dashboard-layouts/dark-growth-dashboard",
@@ -2838,7 +2970,6 @@
       "summary": "暗色层级中横排指标在前，主趋势图与来源占比分区，数字、曲线、面积和环图按顺序进入。",
       "prompt": "增长看板先展示核心指标，再依次绘制趋势曲线、面积和来源环图。",
       "kind": "pattern",
-      "gif": "assets/gifs/dashboard-layouts/dark-growth-dashboard.gif",
       "filmstrip": "assets/filmstrips/dashboard-layouts/dark-growth-dashboard.jpg",
       "keywords": [
         "仪表盘",
@@ -2854,7 +2985,11 @@
       "related": [
         "mobile-scroll/viewport-chart-growth",
         "motion/stagger"
-      ]
+      ],
+      "media_type": "animation",
+      "evidence": "animated-reference",
+      "gif": "assets/gifs/dashboard-layouts/dark-growth-dashboard.gif",
+      "media_reason": "需看数字、曲线、面积与环图按顺序进入的节奏。"
     },
     {
       "id": "enterprise-workbenches/logistics-loading-workbench",
@@ -2882,7 +3017,8 @@
         "assets/images/enterprise-workbenches/logistics-loading-workbench-02.jpg"
       ],
       "preview": "assets/previews/enterprise-workbenches/logistics-loading-workbench.jpg",
-      "evidence": "static-design"
+      "evidence": "static-design",
+      "media_reason": "原始静态设计图；保留 JPG 总览与原尺寸单图，不代表已观察到交互行为。"
     },
     {
       "id": "mobile-workbenches/public-service-task-homes",
@@ -2910,7 +3046,8 @@
         "assets/images/mobile-workbenches/public-service-task-homes-02.jpg"
       ],
       "preview": "assets/previews/mobile-workbenches/public-service-task-homes.jpg",
-      "evidence": "static-design"
+      "evidence": "static-design",
+      "media_reason": "原始静态设计图；保留 JPG 总览与原尺寸单图，不代表已观察到交互行为。"
     },
     {
       "id": "data-visualization/dark-industrial-twin-collection",
@@ -2938,7 +3075,8 @@
         "assets/images/data-visualization/dark-industrial-twin-collection-02.jpg"
       ],
       "preview": "assets/previews/data-visualization/dark-industrial-twin-collection.jpg",
-      "evidence": "static-design"
+      "evidence": "static-design",
+      "media_reason": "原始静态设计图；保留 JPG 总览与原尺寸单图，不代表已观察到交互行为。"
     },
     {
       "id": "enterprise-workbenches/glass-welcome-service-portal",
@@ -2965,7 +3103,8 @@
         "assets/images/enterprise-workbenches/glass-welcome-service-portal-02.jpg"
       ],
       "preview": "assets/previews/enterprise-workbenches/glass-welcome-service-portal.jpg",
-      "evidence": "static-design"
+      "evidence": "static-design",
+      "media_reason": "原始静态设计图；保留 JPG 总览与原尺寸单图，不代表已观察到交互行为。"
     },
     {
       "id": "enterprise-workbenches/ai-assistant-productivity-hub",
@@ -2995,7 +3134,8 @@
         "assets/images/enterprise-workbenches/ai-assistant-productivity-hub-04.jpg"
       ],
       "preview": "assets/previews/enterprise-workbenches/ai-assistant-productivity-hub.jpg",
-      "evidence": "static-design"
+      "evidence": "static-design",
+      "media_reason": "原始静态设计图；保留 JPG 总览与原尺寸单图，不代表已观察到交互行为。"
     },
     {
       "id": "data-visualization/light-industrial-energy-scenarios",
@@ -3023,7 +3163,8 @@
         "assets/images/data-visualization/light-industrial-energy-scenarios-02.jpg"
       ],
       "preview": "assets/previews/data-visualization/light-industrial-energy-scenarios.jpg",
-      "evidence": "static-design"
+      "evidence": "static-design",
+      "media_reason": "原始静态设计图；保留 JPG 总览与原尺寸单图，不代表已观察到交互行为。"
     },
     {
       "id": "data-visualization/solar-building-energy-overview",
@@ -3051,7 +3192,8 @@
         "assets/images/data-visualization/solar-building-energy-overview-02.jpg"
       ],
       "preview": "assets/previews/data-visualization/solar-building-energy-overview.jpg",
-      "evidence": "static-design"
+      "evidence": "static-design",
+      "media_reason": "原始静态设计图；保留 JPG 总览与原尺寸单图，不代表已观察到交互行为。"
     },
     {
       "id": "data-visualization/orange-process-data-console",
@@ -3079,7 +3221,8 @@
         "assets/images/data-visualization/orange-process-data-console-02.jpg"
       ],
       "preview": "assets/previews/data-visualization/orange-process-data-console.jpg",
-      "evidence": "static-design"
+      "evidence": "static-design",
+      "media_reason": "原始静态设计图；保留 JPG 总览与原尺寸单图，不代表已观察到交互行为。"
     },
     {
       "id": "enterprise-workbenches/contrast-operations-task-overview",
@@ -3107,7 +3250,8 @@
         "assets/images/enterprise-workbenches/contrast-operations-task-overview-02.jpg"
       ],
       "preview": "assets/previews/enterprise-workbenches/contrast-operations-task-overview.jpg",
-      "evidence": "static-design"
+      "evidence": "static-design",
+      "media_reason": "原始静态设计图；保留 JPG 总览与原尺寸单图，不代表已观察到交互行为。"
     },
     {
       "id": "enterprise-workbenches/heatmap-process-management",
@@ -3134,7 +3278,8 @@
         "assets/images/enterprise-workbenches/heatmap-process-management-02.jpg"
       ],
       "preview": "assets/previews/enterprise-workbenches/heatmap-process-management.jpg",
-      "evidence": "static-design"
+      "evidence": "static-design",
+      "media_reason": "原始静态设计图；保留 JPG 总览与原尺寸单图，不代表已观察到交互行为。"
     },
     {
       "id": "data-visualization/wind-turbine-monitoring",
@@ -3161,7 +3306,8 @@
         "assets/images/data-visualization/wind-turbine-monitoring-02.jpg"
       ],
       "preview": "assets/previews/data-visualization/wind-turbine-monitoring.jpg",
-      "evidence": "static-design"
+      "evidence": "static-design",
+      "media_reason": "原始静态设计图；保留 JPG 总览与原尺寸单图，不代表已观察到交互行为。"
     },
     {
       "id": "data-visualization/blue-lit-building-equipment",
@@ -3190,7 +3336,8 @@
         "assets/images/data-visualization/blue-lit-building-equipment-02.jpg"
       ],
       "preview": "assets/previews/data-visualization/blue-lit-building-equipment.jpg",
-      "evidence": "static-design"
+      "evidence": "static-design",
+      "media_reason": "原始静态设计图；保留 JPG 总览与原尺寸单图，不代表已观察到交互行为。"
     },
     {
       "id": "enterprise-workbenches/freight-model-service-workbench",
@@ -3217,7 +3364,8 @@
         "assets/images/enterprise-workbenches/freight-model-service-workbench-02.jpg"
       ],
       "preview": "assets/previews/enterprise-workbenches/freight-model-service-workbench.jpg",
-      "evidence": "static-design"
+      "evidence": "static-design",
+      "media_reason": "原始静态设计图；保留 JPG 总览与原尺寸单图，不代表已观察到交互行为。"
     },
     {
       "id": "data-visualization/digital-assets-capacity-overview",
@@ -3245,7 +3393,8 @@
         "assets/images/data-visualization/digital-assets-capacity-overview-02.jpg"
       ],
       "preview": "assets/previews/data-visualization/digital-assets-capacity-overview.jpg",
-      "evidence": "static-design"
+      "evidence": "static-design",
+      "media_reason": "原始静态设计图；保留 JPG 总览与原尺寸单图，不代表已观察到交互行为。"
     },
     {
       "id": "enterprise-workbenches/organization-talent-analytics",
@@ -3273,7 +3422,8 @@
         "assets/images/enterprise-workbenches/organization-talent-analytics-02.jpg"
       ],
       "preview": "assets/previews/enterprise-workbenches/organization-talent-analytics.jpg",
-      "evidence": "static-design"
+      "evidence": "static-design",
+      "media_reason": "原始静态设计图；保留 JPG 总览与原尺寸单图，不代表已观察到交互行为。"
     },
     {
       "id": "enterprise-workbenches/cargo-status-task-dashboard",
@@ -3301,7 +3451,8 @@
         "assets/images/enterprise-workbenches/cargo-status-task-dashboard-02.jpg"
       ],
       "preview": "assets/previews/enterprise-workbenches/cargo-status-task-dashboard.jpg",
-      "evidence": "static-design"
+      "evidence": "static-design",
+      "media_reason": "原始静态设计图；保留 JPG 总览与原尺寸单图，不代表已观察到交互行为。"
     },
     {
       "id": "mobile-workbenches/sales-crm-parcel-homes",
@@ -3310,7 +3461,7 @@
       "slug": "sales-crm-parcel-homes",
       "name": "CRM、寄件与生活服务首页",
       "english": "Sales CRM Parcel Homes",
-      "summary": "短视频展示销售拜访 CRM 的 KPI／进度、寄件、音频转写、校园工具、充电商城及借阅服务首页，可观察页面组合与镜头转场。",
+      "summary": "销售拜访 CRM 的 KPI／进度、寄件、音频转写、校园工具、充电商城及借阅服务首页的页面组合；仅作静态布局参考。",
       "prompt": "参考 mobile-workbenches/sales-crm-parcel-homes，分别识别销售目标、寄件、转写、校园服务、充电和借阅的主要入口；参考原片布局，不把镜头切换当作产品导航。",
       "kind": "pattern",
       "keywords": [
@@ -3326,10 +3477,10 @@
         "借阅"
       ],
       "implementation": "分别识别销售目标、寄件、转写、校园服务、充电和借阅的主要入口；参考原片布局，不把镜头切换当作产品导航。",
-      "media_type": "animation",
-      "gif": "assets/gifs/mobile-workbenches/sales-crm-parcel-homes.gif",
+      "media_type": "filmstrip",
       "filmstrip": "assets/filmstrips/mobile-workbenches/sales-crm-parcel-homes.jpg",
-      "evidence": "video-excerpt"
+      "evidence": "sampled-animation-frames",
+      "media_reason": "原 GIF 展示多张静态页面与镜头转场，没有页面内交互；仅保留页面组合图片。"
     },
     {
       "id": "enterprise-workbenches/aircraft-device-service-console",
@@ -3357,7 +3508,8 @@
         "assets/images/enterprise-workbenches/aircraft-device-service-console-02.jpg"
       ],
       "preview": "assets/previews/enterprise-workbenches/aircraft-device-service-console.jpg",
-      "evidence": "static-design"
+      "evidence": "static-design",
+      "media_reason": "原始静态设计图；保留 JPG 总览与原尺寸单图，不代表已观察到交互行为。"
     },
     {
       "id": "enterprise-workbenches/blue-welcome-operations-portal",
@@ -3385,7 +3537,8 @@
         "assets/images/enterprise-workbenches/blue-welcome-operations-portal-02.jpg"
       ],
       "preview": "assets/previews/enterprise-workbenches/blue-welcome-operations-portal.jpg",
-      "evidence": "static-design"
+      "evidence": "static-design",
+      "media_reason": "原始静态设计图；保留 JPG 总览与原尺寸单图，不代表已观察到交互行为。"
     },
     {
       "id": "data-visualization/health-body-metrics-dashboard",
@@ -3414,7 +3567,8 @@
         "assets/images/data-visualization/health-body-metrics-dashboard-03.jpg"
       ],
       "preview": "assets/previews/data-visualization/health-body-metrics-dashboard.jpg",
-      "evidence": "static-design"
+      "evidence": "static-design",
+      "media_reason": "原始静态设计图；保留 JPG 总览与原尺寸单图，不代表已观察到交互行为。"
     },
     {
       "id": "enterprise-workbenches/green-energy-service-overview",
@@ -3441,7 +3595,8 @@
         "assets/images/enterprise-workbenches/green-energy-service-overview-02.jpg"
       ],
       "preview": "assets/previews/enterprise-workbenches/green-energy-service-overview.jpg",
-      "evidence": "static-design"
+      "evidence": "static-design",
+      "media_reason": "原始静态设计图；保留 JPG 总览与原尺寸单图，不代表已观察到交互行为。"
     },
     {
       "id": "data-visualization/dark-infrastructure-twin-screens",
@@ -3469,7 +3624,8 @@
         "assets/images/data-visualization/dark-infrastructure-twin-screens-02.jpg"
       ],
       "preview": "assets/previews/data-visualization/dark-infrastructure-twin-screens.jpg",
-      "evidence": "static-design"
+      "evidence": "static-design",
+      "media_reason": "原始静态设计图；保留 JPG 总览与原尺寸单图，不代表已观察到交互行为。"
     },
     {
       "id": "mobile-workbenches/device-service-tool-grid",
@@ -3498,7 +3654,8 @@
         "assets/images/mobile-workbenches/device-service-tool-grid-03.jpg"
       ],
       "preview": "assets/previews/mobile-workbenches/device-service-tool-grid.jpg",
-      "evidence": "static-design"
+      "evidence": "static-design",
+      "media_reason": "原始静态设计图；保留 JPG 总览与原尺寸单图，不代表已观察到交互行为。"
     },
     {
       "id": "data-visualization/regional-campus-map-overview",
@@ -3526,7 +3683,8 @@
         "assets/images/data-visualization/regional-campus-map-overview-02.jpg"
       ],
       "preview": "assets/previews/data-visualization/regional-campus-map-overview.jpg",
-      "evidence": "static-design"
+      "evidence": "static-design",
+      "media_reason": "原始静态设计图；保留 JPG 总览与原尺寸单图，不代表已观察到交互行为。"
     },
     {
       "id": "enterprise-workbenches/factory-oa-task-portal",
@@ -3554,7 +3712,8 @@
         "assets/images/enterprise-workbenches/factory-oa-task-portal-02.jpg"
       ],
       "preview": "assets/previews/enterprise-workbenches/factory-oa-task-portal.jpg",
-      "evidence": "static-design"
+      "evidence": "static-design",
+      "media_reason": "原始静态设计图；保留 JPG 总览与原尺寸单图，不代表已观察到交互行为。"
     },
     {
       "id": "data-visualization/agv-factory-robot-console",
@@ -3583,7 +3742,8 @@
         "assets/images/data-visualization/agv-factory-robot-console-03.jpg"
       ],
       "preview": "assets/previews/data-visualization/agv-factory-robot-console.jpg",
-      "evidence": "static-design"
+      "evidence": "static-design",
+      "media_reason": "原始静态设计图；保留 JPG 总览与原尺寸单图，不代表已观察到交互行为。"
     },
     {
       "id": "data-visualization/robotic-arm-pipeline-metrics",
@@ -3613,7 +3773,8 @@
         "assets/images/data-visualization/robotic-arm-pipeline-metrics-03.jpg"
       ],
       "preview": "assets/previews/data-visualization/robotic-arm-pipeline-metrics.jpg",
-      "evidence": "static-design"
+      "evidence": "static-design",
+      "media_reason": "原始静态设计图；保留 JPG 总览与原尺寸单图，不代表已观察到交互行为。"
     },
     {
       "id": "data-visualization/campus-light-dark-themes",
@@ -3641,7 +3802,8 @@
         "assets/images/data-visualization/campus-light-dark-themes-03.jpg"
       ],
       "preview": "assets/previews/data-visualization/campus-light-dark-themes.jpg",
-      "evidence": "static-design"
+      "evidence": "static-design",
+      "media_reason": "原始静态设计图；保留 JPG 总览与原尺寸单图，不代表已观察到交互行为。"
     },
     {
       "id": "mobile-workbenches/enterprise-service-mobile-hub",
@@ -3668,7 +3830,8 @@
         "assets/images/mobile-workbenches/enterprise-service-mobile-hub-02.jpg"
       ],
       "preview": "assets/previews/mobile-workbenches/enterprise-service-mobile-hub.jpg",
-      "evidence": "static-design"
+      "evidence": "static-design",
+      "media_reason": "原始静态设计图；保留 JPG 总览与原尺寸单图，不代表已观察到交互行为。"
     },
     {
       "id": "data-visualization/battery-swap-pasture-console",
@@ -3697,7 +3860,8 @@
         "assets/images/data-visualization/battery-swap-pasture-console-03.jpg"
       ],
       "preview": "assets/previews/data-visualization/battery-swap-pasture-console.jpg",
-      "evidence": "static-design"
+      "evidence": "static-design",
+      "media_reason": "原始静态设计图；保留 JPG 总览与原尺寸单图，不代表已观察到交互行为。"
     },
     {
       "id": "enterprise-workbenches/asset-process-report-workbench",
@@ -3726,7 +3890,8 @@
         "assets/images/enterprise-workbenches/asset-process-report-workbench-03.jpg"
       ],
       "preview": "assets/previews/enterprise-workbenches/asset-process-report-workbench.jpg",
-      "evidence": "static-design"
+      "evidence": "static-design",
+      "media_reason": "原始静态设计图；保留 JPG 总览与原尺寸单图，不代表已观察到交互行为。"
     },
     {
       "id": "data-visualization/factory-section-floor-console",
@@ -3755,7 +3920,8 @@
         "assets/images/data-visualization/factory-section-floor-console-03.jpg"
       ],
       "preview": "assets/previews/data-visualization/factory-section-floor-console.jpg",
-      "evidence": "static-design"
+      "evidence": "static-design",
+      "media_reason": "原始静态设计图；保留 JPG 总览与原尺寸单图，不代表已观察到交互行为。"
     },
     {
       "id": "mobile-workbenches/travel-learning-service-homes",
@@ -3783,7 +3949,8 @@
         "assets/images/mobile-workbenches/travel-learning-service-homes-02.jpg"
       ],
       "preview": "assets/previews/mobile-workbenches/travel-learning-service-homes.jpg",
-      "evidence": "static-design"
+      "evidence": "static-design",
+      "media_reason": "原始静态设计图；保留 JPG 总览与原尺寸单图，不代表已观察到交互行为。"
     },
     {
       "id": "data-visualization/building-floor-parameter-view",
@@ -3810,7 +3977,8 @@
         "assets/images/data-visualization/building-floor-parameter-view-02.jpg"
       ],
       "preview": "assets/previews/data-visualization/building-floor-parameter-view.jpg",
-      "evidence": "static-design"
+      "evidence": "static-design",
+      "media_reason": "原始静态设计图；保留 JPG 总览与原尺寸单图，不代表已观察到交互行为。"
     },
     {
       "id": "enterprise-workbenches/gradient-column-business-metrics",
@@ -3838,7 +4006,8 @@
         "assets/images/enterprise-workbenches/gradient-column-business-metrics-02.jpg"
       ],
       "preview": "assets/previews/enterprise-workbenches/gradient-column-business-metrics.jpg",
-      "evidence": "static-design"
+      "evidence": "static-design",
+      "media_reason": "原始静态设计图；保留 JPG 总览与原尺寸单图，不代表已观察到交互行为。"
     },
     {
       "id": "enterprise-workbenches/warm-orange-management-home",
@@ -3867,7 +4036,8 @@
         "assets/images/enterprise-workbenches/warm-orange-management-home-03.jpg"
       ],
       "preview": "assets/previews/enterprise-workbenches/warm-orange-management-home.jpg",
-      "evidence": "static-design"
+      "evidence": "static-design",
+      "media_reason": "原始静态设计图；保留 JPG 总览与原尺寸单图，不代表已观察到交互行为。"
     },
     {
       "id": "enterprise-workbenches/factory-space-process-workbench",
@@ -3896,7 +4066,8 @@
         "assets/images/enterprise-workbenches/factory-space-process-workbench-03.jpg"
       ],
       "preview": "assets/previews/enterprise-workbenches/factory-space-process-workbench.jpg",
-      "evidence": "static-design"
+      "evidence": "static-design",
+      "media_reason": "原始静态设计图；保留 JPG 总览与原尺寸单图，不代表已观察到交互行为。"
     },
     {
       "id": "enterprise-workbenches/blue-metrics-list-management",
@@ -3924,7 +4095,8 @@
         "assets/images/enterprise-workbenches/blue-metrics-list-management-02.jpg"
       ],
       "preview": "assets/previews/enterprise-workbenches/blue-metrics-list-management.jpg",
-      "evidence": "static-design"
+      "evidence": "static-design",
+      "media_reason": "原始静态设计图；保留 JPG 总览与原尺寸单图，不代表已观察到交互行为。"
     },
     {
       "id": "data-visualization/regional-map-information-board",
@@ -3951,7 +4123,8 @@
         "assets/images/data-visualization/regional-map-information-board-02.jpg"
       ],
       "preview": "assets/previews/data-visualization/regional-map-information-board.jpg",
-      "evidence": "static-design"
+      "evidence": "static-design",
+      "media_reason": "原始静态设计图；保留 JPG 总览与原尺寸单图，不代表已观察到交互行为。"
     },
     {
       "id": "enterprise-workbenches/recruitment-candidate-workbench",
@@ -3978,7 +4151,8 @@
         "assets/images/enterprise-workbenches/recruitment-candidate-workbench-02.jpg"
       ],
       "preview": "assets/previews/enterprise-workbenches/recruitment-candidate-workbench.jpg",
-      "evidence": "static-design"
+      "evidence": "static-design",
+      "media_reason": "原始静态设计图；保留 JPG 总览与原尺寸单图，不代表已观察到交互行为。"
     },
     {
       "id": "mobile-workbenches/campus-timetable-access-hub",
@@ -4007,7 +4181,8 @@
         "assets/images/mobile-workbenches/campus-timetable-access-hub-02.jpg"
       ],
       "preview": "assets/previews/mobile-workbenches/campus-timetable-access-hub.jpg",
-      "evidence": "static-design"
+      "evidence": "static-design",
+      "media_reason": "原始静态设计图；保留 JPG 总览与原尺寸单图，不代表已观察到交互行为。"
     },
     {
       "id": "enterprise-workbenches/compact-analytics-report-grid",
@@ -4036,7 +4211,8 @@
         "assets/images/enterprise-workbenches/compact-analytics-report-grid-03.jpg"
       ],
       "preview": "assets/previews/enterprise-workbenches/compact-analytics-report-grid.jpg",
-      "evidence": "static-design"
+      "evidence": "static-design",
+      "media_reason": "原始静态设计图；保留 JPG 总览与原尺寸单图，不代表已观察到交互行为。"
     },
     {
       "id": "enterprise-workbenches/colorful-metrics-statistics-list",
@@ -4064,7 +4240,8 @@
         "assets/images/enterprise-workbenches/colorful-metrics-statistics-list-03.jpg"
       ],
       "preview": "assets/previews/enterprise-workbenches/colorful-metrics-statistics-list.jpg",
-      "evidence": "static-design"
+      "evidence": "static-design",
+      "media_reason": "原始静态设计图；保留 JPG 总览与原尺寸单图，不代表已观察到交互行为。"
     },
     {
       "id": "data-visualization/green-campus-logistics-twin",
@@ -4092,7 +4269,8 @@
         "assets/images/data-visualization/green-campus-logistics-twin-01.jpg"
       ],
       "preview": "assets/previews/data-visualization/green-campus-logistics-twin.jpg",
-      "evidence": "static-design"
+      "evidence": "static-design",
+      "media_reason": "原始静态设计图；保留 JPG 总览与原尺寸单图，不代表已观察到交互行为。"
     },
     {
       "id": "enterprise-workbenches/enterprise-subscription-report-portal",
@@ -4119,7 +4297,8 @@
         "assets/images/enterprise-workbenches/enterprise-subscription-report-portal-01.jpg"
       ],
       "preview": "assets/previews/enterprise-workbenches/enterprise-subscription-report-portal.jpg",
-      "evidence": "static-design"
+      "evidence": "static-design",
+      "media_reason": "原始静态设计图；保留 JPG 总览与原尺寸单图，不代表已观察到交互行为。"
     },
     {
       "id": "mobile-workbenches/illustrated-travel-service-home",
@@ -4148,7 +4327,8 @@
         "assets/images/mobile-workbenches/illustrated-travel-service-home-03.jpg"
       ],
       "preview": "assets/previews/mobile-workbenches/illustrated-travel-service-home.jpg",
-      "evidence": "static-design"
+      "evidence": "static-design",
+      "media_reason": "原始静态设计图；保留 JPG 总览与原尺寸单图，不代表已观察到交互行为。"
     },
     {
       "id": "mobile-workbenches/parcel-orders-quick-services",
@@ -4178,7 +4358,8 @@
         "assets/images/mobile-workbenches/parcel-orders-quick-services-02.jpg"
       ],
       "preview": "assets/previews/mobile-workbenches/parcel-orders-quick-services.jpg",
-      "evidence": "static-design"
+      "evidence": "static-design",
+      "media_reason": "原始静态设计图；保留 JPG 总览与原尺寸单图，不代表已观察到交互行为。"
     },
     {
       "id": "data-visualization/furnace-floor-section-screen",
@@ -4205,7 +4386,8 @@
         "assets/images/data-visualization/furnace-floor-section-screen-01.jpg"
       ],
       "preview": "assets/previews/data-visualization/furnace-floor-section-screen.jpg",
-      "evidence": "static-design"
+      "evidence": "static-design",
+      "media_reason": "原始静态设计图；保留 JPG 总览与原尺寸单图，不代表已观察到交互行为。"
     },
     {
       "id": "enterprise-workbenches/mes-production-task-management",
@@ -4232,7 +4414,8 @@
         "assets/images/enterprise-workbenches/mes-production-task-management-01.jpg"
       ],
       "preview": "assets/previews/enterprise-workbenches/mes-production-task-management.jpg",
-      "evidence": "static-design"
+      "evidence": "static-design",
+      "media_reason": "原始静态设计图；保留 JPG 总览与原尺寸单图，不代表已观察到交互行为。"
     },
     {
       "id": "data-visualization/building-energy-equipment-topology",
@@ -4259,7 +4442,8 @@
         "assets/images/data-visualization/building-energy-equipment-topology-01.jpg"
       ],
       "preview": "assets/previews/data-visualization/building-energy-equipment-topology.jpg",
-      "evidence": "static-design"
+      "evidence": "static-design",
+      "media_reason": "原始静态设计图；保留 JPG 总览与原尺寸单图，不代表已观察到交互行为。"
     },
     {
       "id": "data-visualization/solar-factory-production-twin",
@@ -4285,7 +4469,8 @@
         "assets/images/data-visualization/solar-factory-production-twin-01.jpg"
       ],
       "preview": "assets/previews/data-visualization/solar-factory-production-twin.jpg",
-      "evidence": "static-design"
+      "evidence": "static-design",
+      "media_reason": "原始静态设计图；保留 JPG 总览与原尺寸单图，不代表已观察到交互行为。"
     },
     {
       "id": "data-visualization/security-shield-campus-space",
@@ -4312,7 +4497,8 @@
         "assets/images/data-visualization/security-shield-campus-space-01.jpg"
       ],
       "preview": "assets/previews/data-visualization/security-shield-campus-space.jpg",
-      "evidence": "static-design"
+      "evidence": "static-design",
+      "media_reason": "原始静态设计图；保留 JPG 总览与原尺寸单图，不代表已观察到交互行为。"
     },
     {
       "id": "data-visualization/smt-wafer-production-array",
@@ -4339,7 +4525,8 @@
         "assets/images/data-visualization/smt-wafer-production-array-01.jpg"
       ],
       "preview": "assets/previews/data-visualization/smt-wafer-production-array.jpg",
-      "evidence": "static-design"
+      "evidence": "static-design",
+      "media_reason": "原始静态设计图；保留 JPG 总览与原尺寸单图，不代表已观察到交互行为。"
     },
     {
       "id": "enterprise-workbenches/outpatient-business-metrics",
@@ -4365,7 +4552,8 @@
         "assets/images/enterprise-workbenches/outpatient-business-metrics-01.jpg"
       ],
       "preview": "assets/previews/enterprise-workbenches/outpatient-business-metrics.jpg",
-      "evidence": "static-design"
+      "evidence": "static-design",
+      "media_reason": "原始静态设计图；保留 JPG 总览与原尺寸单图，不代表已观察到交互行为。"
     },
     {
       "id": "enterprise-workbenches/enterprise-funnel-mes-lists",
@@ -4392,7 +4580,8 @@
         "assets/images/enterprise-workbenches/enterprise-funnel-mes-lists-01.jpg"
       ],
       "preview": "assets/previews/enterprise-workbenches/enterprise-funnel-mes-lists.jpg",
-      "evidence": "static-design"
+      "evidence": "static-design",
+      "media_reason": "原始静态设计图；保留 JPG 总览与原尺寸单图，不代表已观察到交互行为。"
     },
     {
       "id": "enterprise-workbenches/touchscreen-catalog-device-tasks",
@@ -4419,7 +4608,8 @@
         "assets/images/enterprise-workbenches/touchscreen-catalog-device-tasks-01.jpg"
       ],
       "preview": "assets/previews/enterprise-workbenches/touchscreen-catalog-device-tasks.jpg",
-      "evidence": "static-design"
+      "evidence": "static-design",
+      "media_reason": "原始静态设计图；保留 JPG 总览与原尺寸单图，不代表已观察到交互行为。"
     },
     {
       "id": "data-visualization/health-security-campus-monitor",
@@ -4446,7 +4636,8 @@
         "assets/images/data-visualization/health-security-campus-monitor-01.jpg"
       ],
       "preview": "assets/previews/data-visualization/health-security-campus-monitor.jpg",
-      "evidence": "static-design"
+      "evidence": "static-design",
+      "media_reason": "原始静态设计图；保留 JPG 总览与原尺寸单图，不代表已观察到交互行为。"
     },
     {
       "id": "enterprise-workbenches/enterprise-progress-todo-management",
@@ -4474,7 +4665,8 @@
         "assets/images/enterprise-workbenches/enterprise-progress-todo-management-02.jpg"
       ],
       "preview": "assets/previews/enterprise-workbenches/enterprise-progress-todo-management.jpg",
-      "evidence": "static-design"
+      "evidence": "static-design",
+      "media_reason": "原始静态设计图；保留 JPG 总览与原尺寸单图，不代表已观察到交互行为。"
     },
     {
       "id": "enterprise-workbenches/project-process-alert-workbench",
@@ -4502,19 +4694,280 @@
         "assets/images/enterprise-workbenches/project-process-alert-workbench-02.jpg"
       ],
       "preview": "assets/previews/enterprise-workbenches/project-process-alert-workbench.jpg",
-      "evidence": "static-design"
+      "evidence": "static-design",
+      "media_reason": "原始静态设计图；保留 JPG 总览与原尺寸单图，不代表已观察到交互行为。"
+    },
+    {
+      "id": "buttons-controls/tactile-button",
+      "category": "buttons-controls",
+      "category_title": "按钮、状态与选项",
+      "slug": "tactile-button",
+      "name": "有点击手感的拟物按钮",
+      "english": "Tactile Skeuomorphic Button",
+      "summary": "primary、secondary、tertiary、ghost、text 五种层级共享五层材质 token；按下时位移、渐变和阴影同步改变，尺寸随字号成比例缩放。",
+      "prompt": "参考 buttons-controls/tactile-button，primary、secondary、tertiary、ghost、text 五种层级共享五层材质 token；按下时位移、渐变和阴影同步改变，尺寸随字号成比例缩放。",
+      "kind": "pattern",
+      "keywords": [
+        "拟物",
+        "按钮",
+        "按压",
+        "primary",
+        "secondary",
+        "tertiary",
+        "ghost",
+        "text",
+        "skeuomorphic",
+        "Button",
+        "hover",
+        "pressed"
+      ],
+      "media_type": "recipe",
+      "recipe": "references/recipes/tactile-button.md",
+      "evidence": "implementation-recipe"
+    },
+    {
+      "id": "overlays/safe-cascade-menu",
+      "category": "overlays",
+      "category_title": "弹窗与浮层",
+      "slug": "safe-cascade-menu",
+      "name": "带安全三角区的级联菜单",
+      "english": "Safe Triangle Cascading Menu",
+      "summary": "用上一指针位置和子菜单近侧两角构造安全三角区，保护斜向移动；220ms 打开、360ms 关闭、1200ms 保护上限。",
+      "prompt": "参考 overlays/safe-cascade-menu，用上一指针位置和子菜单近侧两角构造安全三角区，保护斜向移动；220ms 打开、360ms 关闭、1200ms 保护上限。",
+      "kind": "pattern",
+      "keywords": [
+        "级联菜单",
+        "安全三角区",
+        "safe triangle",
+        "submenu",
+        "cascade",
+        "延时",
+        "菜单抖动"
+      ],
+      "media_type": "recipe",
+      "recipe": "references/recipes/safe-cascade-menu.md",
+      "evidence": "implementation-recipe"
+    },
+    {
+      "id": "backgrounds/ascii-dither",
+      "category": "backgrounds",
+      "category_title": "背景特效",
+      "slug": "ascii-dither",
+      "name": "可调 ASCII 与有序抖色",
+      "english": "Parametric ASCII and Ordered Dither",
+      "summary": "对指定图片或视频做 ASCII 字符取样或 4×4 Bayer 有序抖色，支持遮罩、调色板、取样方向、强度、大小和间距。",
+      "prompt": "参考 backgrounds/ascii-dither，对指定图片或视频做 ASCII 字符取样或 4×4 Bayer 有序抖色，支持遮罩、调色板、取样方向、强度、大小和间距。",
+      "kind": "pattern",
+      "keywords": [
+        "ASCII",
+        "Dither",
+        "字母画",
+        "字符画",
+        "Bayer",
+        "抖色",
+        "像素",
+        "图像",
+        "视频",
+        "参数化"
+      ],
+      "media_type": "recipe",
+      "recipe": "references/recipes/ascii-dither.md",
+      "evidence": "implementation-recipe"
+    },
+    {
+      "id": "interface-details/continuous-corners",
+      "category": "interface-details",
+      "category_title": "界面排版与细节",
+      "slug": "continuous-corners",
+      "name": "递进圆角与连续曲率",
+      "english": "Nested Radii and Continuous Corners",
+      "summary": "等距嵌套采用内圆角 = 外圆角 − 内缩距离，再以 corner-shape: superellipse(1.25) 渐进增强，胶囊与圆保持全圆。",
+      "prompt": "参考 interface-details/continuous-corners，等距嵌套采用内圆角 = 外圆角 − 内缩距离，再以 corner-shape: superellipse(1.25) 渐进增强，胶囊与圆保持全圆。",
+      "kind": "rule",
+      "keywords": [
+        "圆角",
+        "同心",
+        "嵌套",
+        "radius",
+        "superellipse",
+        "corner-shape",
+        "超椭圆",
+        "连续曲率"
+      ],
+      "media_type": "recipe",
+      "recipe": "references/recipes/continuous-corners.md",
+      "evidence": "implementation-recipe"
+    },
+    {
+      "id": "mobile-interactions/ripple-reorder",
+      "category": "mobile-interactions",
+      "category_title": "移动端交互",
+      "slug": "ripple-reorder",
+      "name": "拖拽插入线与递减让位",
+      "english": "Ripple Drag Reorder",
+      "summary": "横向或纵向拖拽时以插入线标明落点，两侧按距离递减位移并错峰让位；释放提交真实顺序，Esc 或落在外侧恢复。",
+      "prompt": "参考 mobile-interactions/ripple-reorder，横向或纵向拖拽时以插入线标明落点，两侧按距离递减位移并错峰让位；释放提交真实顺序，Esc 或落在外侧恢复。",
+      "kind": "pattern",
+      "keywords": [
+        "拖拽",
+        "拖动",
+        "排序",
+        "reorder",
+        "插入线",
+        "弹性让位",
+        "列表",
+        "dock",
+        "桌面",
+        "移动端"
+      ],
+      "media_type": "recipe",
+      "recipe": "references/recipes/ripple-reorder.md",
+      "evidence": "implementation-recipe"
+    },
+    {
+      "id": "cards-tables/book-open-card",
+      "category": "cards-tables",
+      "category_title": "卡片与表格",
+      "slug": "book-open-card",
+      "name": "像书一样翻开的卡片",
+      "english": "Book Opening Card",
+      "summary": "静止时保持原卡片，hover 或 focus 时封面和内页沿书脊逐层翻开；角度 42° × 0.7ⁿ，延迟 28ms × n，离开倒序合拢。",
+      "prompt": "参考 cards-tables/book-open-card，静止时保持原卡片，hover 或 focus 时封面和内页沿书脊逐层翻开；角度 42° × 0.7ⁿ，延迟 28ms × n，离开倒序合拢。",
+      "kind": "pattern",
+      "keywords": [
+        "书本",
+        "翻开",
+        "卡片",
+        "book",
+        "pages",
+        "3D",
+        "拟物",
+        "封面",
+        "文档册"
+      ],
+      "media_type": "recipe",
+      "recipe": "references/recipes/book-open-card.md",
+      "evidence": "implementation-recipe"
+    },
+    {
+      "id": "interface-details/cjk-latin-typesetting",
+      "category": "interface-details",
+      "category_title": "界面排版与细节",
+      "slug": "cjk-latin-typesetting",
+      "name": "中英文排版与稳定数字",
+      "english": "CJK Latin Typesetting",
+      "summary": "标题 balance、正文 pretty、动态数字 tabular-nums、flex 文本 min-width:0；中文按 lang 处理自动间距、标点避头尾及分词断行。",
+      "prompt": "参考 interface-details/cjk-latin-typesetting，标题 balance、正文 pretty、动态数字 tabular-nums、flex 文本 min-width:0；中文按 lang 处理自动间距、标点避头尾及分词断行。",
+      "kind": "rule",
+      "keywords": [
+        "中英文",
+        "排版",
+        "文字",
+        "i18n",
+        "等宽数字",
+        "tabular-nums",
+        "balance",
+        "pretty",
+        "截断",
+        "避头尾",
+        "text-autospace",
+        "BudouX"
+      ],
+      "media_type": "recipe",
+      "recipe": "references/recipes/cjk-latin-typesetting.md",
+      "evidence": "implementation-recipe"
+    },
+    {
+      "id": "documentation-layouts/wiki-layout",
+      "category": "documentation-layouts",
+      "category_title": "文档与帮助中心布局",
+      "slug": "wiki-layout",
+      "name": "Wiki 与帮助中心响应式框架",
+      "english": "Responsive Wiki Layout",
+      "summary": "正文与页脚随页面滚动，侧栏和大纲各自 sticky；超长导航有条件渐隐和滚动箭头，移动端用底部双入口打开章节与大纲。",
+      "prompt": "参考 documentation-layouts/wiki-layout，正文与页脚随页面滚动，侧栏和大纲各自 sticky；超长导航有条件渐隐和滚动箭头，移动端用底部双入口打开章节与大纲。",
+      "kind": "pattern",
+      "keywords": [
+        "Wiki",
+        "文档",
+        "帮助中心",
+        "docs",
+        "SEO",
+        "侧栏",
+        "大纲",
+        "目录",
+        "页脚",
+        "移动端",
+        "章节"
+      ],
+      "media_type": "recipe",
+      "recipe": "references/recipes/wiki-layout.md",
+      "evidence": "implementation-recipe"
+    },
+    {
+      "id": "overlays/overlay-decision",
+      "category": "overlays",
+      "category_title": "弹窗与浮层",
+      "slug": "overlay-decision",
+      "name": "提示、跟随气泡与浮层决策",
+      "english": "Floating UI Decision Guide",
+      "summary": "按解释对象、可逆性、影响范围、表单长度和是否需要对照页面，在 Tooltip、Cursor Tip、Popover、Popconfirm、Dialog、Drawer 与独立页之间选型。",
+      "prompt": "参考 overlays/overlay-decision，按解释对象、可逆性、影响范围、表单长度和是否需要对照页面，在 Tooltip、Cursor Tip、Popover、Popconfirm、Dialog、Drawer 与独立页之间选型。",
+      "kind": "rule",
+      "keywords": [
+        "Tooltip",
+        "Cursor tip",
+        "跟随气泡",
+        "Popover",
+        "Popconfirm",
+        "Dialog",
+        "Modal",
+        "Drawer",
+        "撤销",
+        "确认",
+        "浮层",
+        "表单"
+      ],
+      "media_type": "recipe",
+      "recipe": "references/recipes/overlay-decision.md",
+      "evidence": "implementation-recipe"
+    },
+    {
+      "id": "glass-materials/liquid-glass",
+      "category": "glass-materials",
+      "category_title": "玻璃材质与背景",
+      "slug": "liquid-glass",
+      "name": "自适应液态玻璃材质",
+      "english": "Adaptive Liquid Glass",
+      "summary": "将投影、背景模糊与提亮、边缘折射和色散、着色、边缘光与前景着色组合成共享 token，并按背景亮度与深浅主题适配。",
+      "prompt": "参考 glass-materials/liquid-glass，将投影、背景模糊与提亮、边缘折射和色散、着色、边缘光与前景着色组合成共享 token，并按背景亮度与深浅主题适配。",
+      "kind": "pattern",
+      "keywords": [
+        "玻璃",
+        "液态玻璃",
+        "磨砂",
+        "glass",
+        "blur",
+        "折射",
+        "高光",
+        "饱和度",
+        "背景",
+        "透明叠白",
+        "文字对比"
+      ],
+      "media_type": "recipe",
+      "recipe": "references/recipes/liquid-glass.md",
+      "evidence": "implementation-recipe"
     }
   ],
   "media": {
-    "gif_fps": 10,
-    "gif_width_landscape": 800,
-    "gif_width_portrait": 600,
-    "gif_palette_colors": 128,
-    "gif_loop": 0,
-    "gif_audio": false,
     "filmstrip_frames": 6,
     "filmstrip_order": "left-to-right, then top-to-bottom",
     "gallery_format": "JPEG; metadata removed; original dimensions except identity-frame cropping",
-    "gallery_preview_order": "numbered left-to-right, then top-to-bottom; static views, not animation frames"
+    "gallery_preview_order": "numbered left-to-right, then top-to-bottom; static views, not animation frames",
+    "delivery": "on-demand; immutable revision and SHA-256 in media-manifest.json; outside-skill cache",
+    "format": "JPEG previews for all visual entries; GIF retained only where temporal evidence adds value",
+    "gif_fps": 10,
+    "gif_policy": "per-entry media_reason; fetch GIF explicitly; sampled frames cannot prove continuous motion"
   }
 }

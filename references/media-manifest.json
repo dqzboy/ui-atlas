@@ -1,0 +1,1655 @@
+{
+  "version": 1,
+  "revision": "e6aa0d641c224a2cb4c8bd4262a4d18f5c7e1e22",
+  "base_url": "https://raw.githubusercontent.com/dqzboy/ui-atlas/e6aa0d641c224a2cb4c8bd4262a4d18f5c7e1e22",
+  "files": {
+    "assets/filmstrips/backgrounds/aurora.jpg": {
+      "bytes": 288972,
+      "sha256": "2c4f158c4ba6a3f82521fca1d02042ed745fd15bdf708ea601bff0ba8b8fbf8f"
+    },
+    "assets/filmstrips/backgrounds/beams.jpg": {
+      "bytes": 250982,
+      "sha256": "a7b2b16c8437816b7a13226e175900b62e9074813b95e6ee30c3e92fd22db548"
+    },
+    "assets/filmstrips/backgrounds/dot-grid.jpg": {
+      "bytes": 302675,
+      "sha256": "706ae0f2e96e148a759a0b19358875110a1d8b704b2692f545d5d2faf05663fa"
+    },
+    "assets/filmstrips/backgrounds/dotted-globe.jpg": {
+      "bytes": 322458,
+      "sha256": "cc343453fa5c3558042eaa69b38ea821afc0b6f011ee86eccb9b3b73e8c82795"
+    },
+    "assets/filmstrips/backgrounds/fluid.jpg": {
+      "bytes": 256469,
+      "sha256": "a92cee31d60ac688fb40538e2369939a28fad74ea070c89745a2772c8189e6fc"
+    },
+    "assets/filmstrips/backgrounds/gradient.jpg": {
+      "bytes": 250642,
+      "sha256": "331e6fdb92555f5016731a6103479327af5374e7d55d518e5de9615b3c4e80ac"
+    },
+    "assets/filmstrips/backgrounds/grain.jpg": {
+      "bytes": 249428,
+      "sha256": "56e4d166f1d96f60b862b5e6a94d1ba6dfd781396c681a1a221b20be8f9cd327"
+    },
+    "assets/filmstrips/backgrounds/matrix-rain.jpg": {
+      "bytes": 300683,
+      "sha256": "ce1a02052b841ab9e5dcecdf3d4ef7175f8b8a3829c31bad32d2bf18b2cb20e9"
+    },
+    "assets/filmstrips/backgrounds/mesh-gradient.jpg": {
+      "bytes": 276984,
+      "sha256": "8cf20387023d0a9d413b01ba6b2b39e43b2622a541dfdc058806a8a812d49a4d"
+    },
+    "assets/filmstrips/backgrounds/particle-wave.jpg": {
+      "bytes": 341911,
+      "sha256": "accc9c7976b845ff733ed1000b790af39babdf451589e5b153ef9a57f7e3f1f0"
+    },
+    "assets/filmstrips/backgrounds/retro-grid.jpg": {
+      "bytes": 380446,
+      "sha256": "46a64a2db1cb05672e865d27b1a3dac325cd2797db344caa5389280e5c2bede7"
+    },
+    "assets/filmstrips/backgrounds/starfield.jpg": {
+      "bytes": 330365,
+      "sha256": "d7f1bdde08b188747e18af362736edd86873a3a6e87aef3bc29514142be37725"
+    },
+    "assets/filmstrips/buttons-controls/button-group.jpg": {
+      "bytes": 211611,
+      "sha256": "69cee771f0e15cc1edfeb1c218388180d6f8363d1fb38d53a0fee598d121c5c8"
+    },
+    "assets/filmstrips/buttons-controls/button-hierarchy.jpg": {
+      "bytes": 160835,
+      "sha256": "f5247c540705f1e781e13b81e44f2ddeccd48dde74126eb751312ca514df6e20"
+    },
+    "assets/filmstrips/buttons-controls/checkbox.jpg": {
+      "bytes": 219287,
+      "sha256": "bb9ffe32fab54d279d2b7ec2fc95ad9b13beb4c6709d4494a2dbb789c050b735"
+    },
+    "assets/filmstrips/buttons-controls/chip.jpg": {
+      "bytes": 214823,
+      "sha256": "323bf725f80f6668324073ac9e398b28b051822b1010b6ff1ae366233585222d"
+    },
+    "assets/filmstrips/buttons-controls/control-selection.jpg": {
+      "bytes": 208464,
+      "sha256": "89ce52d0a3fae5d950825dcea3fd64ca4343a07af4bed1c1a6bfa076b7e6c650"
+    },
+    "assets/filmstrips/buttons-controls/danger-button.jpg": {
+      "bytes": 176265,
+      "sha256": "296cd86b3dc7658873038d963387ab05be2d7bb1d0a931112064ee3f5d7b8691"
+    },
+    "assets/filmstrips/buttons-controls/disabled.jpg": {
+      "bytes": 200298,
+      "sha256": "94987e2ad07b8861476e46fbf243415f48db7ff0f874f906fe0afd497ba7e2ab"
+    },
+    "assets/filmstrips/buttons-controls/fab.jpg": {
+      "bytes": 203007,
+      "sha256": "dd1f9e3b020db3989e838bbde8b63d9e350ef80f9d725b900cbcd42085bd350c"
+    },
+    "assets/filmstrips/buttons-controls/focus.jpg": {
+      "bytes": 204546,
+      "sha256": "becae4238b5a7b1dff9afe4a852f115f764f2559d84a35dcdc146ce327b6ba7c"
+    },
+    "assets/filmstrips/buttons-controls/ghost-button.jpg": {
+      "bytes": 210982,
+      "sha256": "fcb37863385173c40b68d4c7b6d90d726bf11aa64587c1b256cd6b33d4481587"
+    },
+    "assets/filmstrips/buttons-controls/hierarchy-correction.jpg": {
+      "bytes": 206959,
+      "sha256": "68aa6989272c59b987dc7a313fcef3ed75fc86e93946dcdf09d8f28592c9369d"
+    },
+    "assets/filmstrips/buttons-controls/hover.jpg": {
+      "bytes": 166627,
+      "sha256": "d78252cbf003766a607c9360af9ad5140111007ec4a299f17c58ffeab1c49c5b"
+    },
+    "assets/filmstrips/buttons-controls/icon-button.jpg": {
+      "bytes": 199782,
+      "sha256": "06f4e58ac602203b2e940eaef9dc18289d97b5241b2063f0fd28197cc6caef79"
+    },
+    "assets/filmstrips/buttons-controls/indeterminate.jpg": {
+      "bytes": 184079,
+      "sha256": "c20f1b0e5f6ccab03179a16fe809863ecc4ecde7c47bd598ce002dd9fdcdc41f"
+    },
+    "assets/filmstrips/buttons-controls/loading.jpg": {
+      "bytes": 174271,
+      "sha256": "357826c3438528f966178a7f7ca242742be93994f7df0fa0320cd31d2e53a643"
+    },
+    "assets/filmstrips/buttons-controls/outline-button.jpg": {
+      "bytes": 176423,
+      "sha256": "d514e84ffc2245c9a97e130fa671c1990bb68fcfc805e824db2f5d51149eabca"
+    },
+    "assets/filmstrips/buttons-controls/pill-button.jpg": {
+      "bytes": 179323,
+      "sha256": "22ea551a154044a54962f9941cb9ae9bb5d3d92c45fa145b9032c81c8e63866f"
+    },
+    "assets/filmstrips/buttons-controls/pressed.jpg": {
+      "bytes": 170097,
+      "sha256": "88d3f4009e048df2615d192e9bb797c35664ce8464918bd93ab0434cba6f6c63"
+    },
+    "assets/filmstrips/buttons-controls/primary-button.jpg": {
+      "bytes": 199839,
+      "sha256": "78c66a94fa7125cdb2c96f73ba3040eff37a197104f7b5d8235e3f046de83bc9"
+    },
+    "assets/filmstrips/buttons-controls/radio.jpg": {
+      "bytes": 212008,
+      "sha256": "ae0ff10956ccf7b63e88e2a0a76fc42ecdd6fb4b055763c30bb1dc3e03205703"
+    },
+    "assets/filmstrips/buttons-controls/secondary-button.jpg": {
+      "bytes": 180582,
+      "sha256": "f91ca4867a4819afd0c689167b8018f1fe0fbfb1a9f9637e60311387275874e4"
+    },
+    "assets/filmstrips/buttons-controls/segmented-control.jpg": {
+      "bytes": 219252,
+      "sha256": "f7b30bbb5b27bcdfa9a3b817b2b8d45263fcf99eebf95a2e62b8858745d9c8e3"
+    },
+    "assets/filmstrips/buttons-controls/split-button.jpg": {
+      "bytes": 199753,
+      "sha256": "923c21abd6ec83e13ab800001ecb16a4044ec7ed7d488a75335d146d81a5f08e"
+    },
+    "assets/filmstrips/buttons-controls/state-correction.jpg": {
+      "bytes": 194287,
+      "sha256": "ca151264ccc2a6085b6cc16f3dc2011312d3bbc526b86668ea082e38833407ac"
+    },
+    "assets/filmstrips/buttons-controls/stepper.jpg": {
+      "bytes": 208126,
+      "sha256": "f4997c4d8e2fa2c3f9a2df625618ec661def37e7e639b03cd2f0d802d1c07355"
+    },
+    "assets/filmstrips/buttons-controls/success.jpg": {
+      "bytes": 164783,
+      "sha256": "70760e003bb8e2308996324d1db1c6e458f6f8ce44113726ed035f3a88e77965"
+    },
+    "assets/filmstrips/buttons-controls/switch.jpg": {
+      "bytes": 185747,
+      "sha256": "66dab2605a63315159cad08b2c90accc2819cda64f5421d94d55af1f8606eb7a"
+    },
+    "assets/filmstrips/buttons-controls/text-button.jpg": {
+      "bytes": 201973,
+      "sha256": "febf8977165cdc597b651bc3c71c0dd5b13c159393fc5e795fe17908f34b1be1"
+    },
+    "assets/filmstrips/buttons-controls/toggle-button.jpg": {
+      "bytes": 174160,
+      "sha256": "092d54402f64ac7f1f1540c1e3924ac3a83d67b76c609062ff2e4f09ad42c5d4"
+    },
+    "assets/filmstrips/cards-tables/accordion.jpg": {
+      "bytes": 244353,
+      "sha256": "7bda417fcd56d0aacd695c720b3c8693af1d5a656330e0eba70d18d04dd151bf"
+    },
+    "assets/filmstrips/cards-tables/avatar-group.jpg": {
+      "bytes": 270973,
+      "sha256": "7d9bdbfb6a7b3dfd62f71879b32049c3593dd375c9c81b66a9b880ccd25558da"
+    },
+    "assets/filmstrips/cards-tables/badge.jpg": {
+      "bytes": 204829,
+      "sha256": "fcc964de6fa0d6b1f327d1fb3b932215a9ec6cdf40394a8f9ba21b97b61b0060"
+    },
+    "assets/filmstrips/cards-tables/card-list.jpg": {
+      "bytes": 272733,
+      "sha256": "ce6eed456154a4fe40dbe0c769ea6314317700050926711573c236ddfa0441ad"
+    },
+    "assets/filmstrips/cards-tables/carousel.jpg": {
+      "bytes": 253522,
+      "sha256": "b487a7c3814f57cb5656b4becc253e45550f7b16153818e2cfd5e5443e2764e8"
+    },
+    "assets/filmstrips/cards-tables/fixed-header.jpg": {
+      "bytes": 344700,
+      "sha256": "ec687290c6d86b3e6b794a377d237f6892f56c2427ae325038bbd376871e07a2"
+    },
+    "assets/filmstrips/cards-tables/flip-card.jpg": {
+      "bytes": 267638,
+      "sha256": "900f14ed7ce60ee51bd88efca7b48e8a4d93f6635d3b555f8af72e11e7efeac3"
+    },
+    "assets/filmstrips/cards-tables/masonry.jpg": {
+      "bytes": 294972,
+      "sha256": "7705be4494dc71747edd23184ff183544f277d56546ce48798ed3aef91e07063"
+    },
+    "assets/filmstrips/cards-tables/row-actions.jpg": {
+      "bytes": 297249,
+      "sha256": "3fe2e80456166b07db3c190eb14b194ad8191bb228114c3e1f976e593d07d6ec"
+    },
+    "assets/filmstrips/cards-tables/sort-filter.jpg": {
+      "bytes": 319759,
+      "sha256": "fbd13df94a66037dc6b942c7fafc58e30b9d7d9e6f97a8a06e2f2f64e33c3af7"
+    },
+    "assets/filmstrips/cards-tables/stat-card.jpg": {
+      "bytes": 277811,
+      "sha256": "a0d1d198b66500a882262a76bfc5c9c4af9c0d665b205af5e278554e86049b42"
+    },
+    "assets/filmstrips/cards-tables/tag.jpg": {
+      "bytes": 243348,
+      "sha256": "0009e4b298216747769a3be55e622239dcea0212f7df23956d15a31de1b16894"
+    },
+    "assets/filmstrips/cards-tables/timeline.jpg": {
+      "bytes": 240456,
+      "sha256": "9812b996c8b6e7dcd246edd118052185251aa6a70ee680a13ddf42ecbba546b2"
+    },
+    "assets/filmstrips/cards-tables/zebra-stripes.jpg": {
+      "bytes": 330339,
+      "sha256": "7348da253ac7ef8a0602817bca33529644cf0644cc3916e26dcfaf8d63bd5322"
+    },
+    "assets/filmstrips/dashboard-layouts/asymmetric-color-grid.jpg": {
+      "bytes": 126396,
+      "sha256": "b47bc32f92d3454c2594fce5069c82a4ef832fb36341b804ba45fd3463195f67"
+    },
+    "assets/filmstrips/dashboard-layouts/central-observation-timeline.jpg": {
+      "bytes": 97551,
+      "sha256": "5079955de2e1b8b45e67fdfcaa69c33b49cada73ea1cc6616b212079654597e0"
+    },
+    "assets/filmstrips/dashboard-layouts/dark-growth-dashboard.jpg": {
+      "bytes": 87935,
+      "sha256": "a63bd4e310105682f7f5adeee54a9eca19083c1587bbc919b196408e6c4735e3"
+    },
+    "assets/filmstrips/dashboard-layouts/glass-matrix-metrics.jpg": {
+      "bytes": 106224,
+      "sha256": "c2da5dc7698bf57647d0b011f3f5baef32bcf555e20351c9585cf072c7153a0f"
+    },
+    "assets/filmstrips/dashboard-layouts/inventory-action-workbench.jpg": {
+      "bytes": 115893,
+      "sha256": "9063605c5a05bc9d72efe40b78a3c92a9df4e8ddeab157fd7316070083d03c03"
+    },
+    "assets/filmstrips/dashboard-layouts/warm-three-column-console.jpg": {
+      "bytes": 103264,
+      "sha256": "a0c75042c8dd161ee4ba80375a17810d3b5cfa5b7874ea74a3e2cec55ea96624"
+    },
+    "assets/filmstrips/dashboard-navigation/brand-accent-sidebar.jpg": {
+      "bytes": 121761,
+      "sha256": "2f306a863cb7446763a81dfa1f7a98dfeb59ae1b20016c256c509a9fa2288b2c"
+    },
+    "assets/filmstrips/dashboard-navigation/compact-icon-rail.jpg": {
+      "bytes": 140940,
+      "sha256": "cbf77bfa326b58c35e35b3acf162639ca525e44fe637ebb8ae0022a08038733a"
+    },
+    "assets/filmstrips/dashboard-navigation/context-data-tabs.jpg": {
+      "bytes": 141663,
+      "sha256": "f1fefa2c6f16c1665d208faf56d45425f11c67e6ebe5a66492a63a469c7c10d3"
+    },
+    "assets/filmstrips/dashboard-navigation/grouped-content-sidebar.jpg": {
+      "bytes": 110457,
+      "sha256": "20b774176ccea6aa25778380aabd06b2765e310ce5d91d3548e5a90d7a91d27e"
+    },
+    "assets/filmstrips/dashboard-navigation/icon-text-sidebar.jpg": {
+      "bytes": 115947,
+      "sha256": "4c82e7b655fc13a719522a10758eefe5f023611e63941b7b28e424977d2e27fc"
+    },
+    "assets/filmstrips/dashboard-navigation/top-pill-navigation.jpg": {
+      "bytes": 145102,
+      "sha256": "c1ae02145347a6fc96e43084963ffbdb39358da3ce7c9566337b0be2e6fb4333"
+    },
+    "assets/filmstrips/forms/autocomplete.jpg": {
+      "bytes": 247192,
+      "sha256": "17843db3f379902cfca97bc3ce751f32abeb614aa68729f9eaab2897a038d99c"
+    },
+    "assets/filmstrips/forms/cascader.jpg": {
+      "bytes": 266909,
+      "sha256": "069ca20e73cc9e8efff7e5781a8ea247b0b924c868bb07dd8b3852a0d617955e"
+    },
+    "assets/filmstrips/forms/date-picker.jpg": {
+      "bytes": 265974,
+      "sha256": "883d5971a4267b1d59498b7c586d4ede5a85c47e4b76452f8381d726db741cf0"
+    },
+    "assets/filmstrips/forms/dropzone.jpg": {
+      "bytes": 275447,
+      "sha256": "5fb431a4ec50fc5f622299c9c0d095916dee931bece9744f1d700bb2bc9a5375"
+    },
+    "assets/filmstrips/forms/floating-label.jpg": {
+      "bytes": 252339,
+      "sha256": "0601b20018cd19cecc62316020d43958b2335e67b57adced3e83f6c563890041"
+    },
+    "assets/filmstrips/forms/helper-text.jpg": {
+      "bytes": 237293,
+      "sha256": "02f61b0dc347d427879db4af7c8d92b51c57a842cc7c4c70687992996f92b8af"
+    },
+    "assets/filmstrips/forms/input-submit.jpg": {
+      "bytes": 280996,
+      "sha256": "92eded1c4d03c69cb00f201261c867ba6187388e94a82b4edfc360c95b39a496"
+    },
+    "assets/filmstrips/forms/otp-input.jpg": {
+      "bytes": 238470,
+      "sha256": "9ae3fa31734268d40f39005d9661344532ebdd417dad1b7d10810db14a846847"
+    },
+    "assets/filmstrips/forms/password-strength.jpg": {
+      "bytes": 280182,
+      "sha256": "358e6e19350f3951f458603a983179217c3f408abed7143b306e6edc76b22fa4"
+    },
+    "assets/filmstrips/forms/required.jpg": {
+      "bytes": 241628,
+      "sha256": "a8245e439c2e63416a1be992f3271d8a3e2124a5e59b9b8b4649535de2a31568"
+    },
+    "assets/filmstrips/forms/select.jpg": {
+      "bytes": 281234,
+      "sha256": "b511e073fef2416892895c89ff871be094193c676a34ce40503d794f8e0a0b75"
+    },
+    "assets/filmstrips/forms/slider.jpg": {
+      "bytes": 231258,
+      "sha256": "b9818604b9425759a8d12c8a8bae1dc1782ab40a3128fea7a5eb229f873427fb"
+    },
+    "assets/filmstrips/forms/tag-input.jpg": {
+      "bytes": 254046,
+      "sha256": "e9a998f7b4853169165fb287bbf0a6414a92dfe182a23b3e7f9b91e16fa524a2"
+    },
+    "assets/filmstrips/forms/validation.jpg": {
+      "bytes": 243750,
+      "sha256": "1332d6bf4a7d32c9b823eae17e8759a923a5b738edf2aa4f8f83ee1af2349cec"
+    },
+    "assets/filmstrips/interface-details/layered-soft-shadow.jpg": {
+      "bytes": 109192,
+      "sha256": "470b063b5c49f5ce1468268e0f023ca27e66a44047db5486cebee377192ec87b"
+    },
+    "assets/filmstrips/interface-details/section-stagger.jpg": {
+      "bytes": 76312,
+      "sha256": "a675bc9400ade61c48147b563a6f823802bdadf1312b0755bd0b78712bcece4c"
+    },
+    "assets/filmstrips/loading-errors/blur-up.jpg": {
+      "bytes": 271401,
+      "sha256": "97fa50975d65bdc1a1870e6543613e3cc16268e05696bcfb58f5e8b0910aa50a"
+    },
+    "assets/filmstrips/loading-errors/empty-state.jpg": {
+      "bytes": 212946,
+      "sha256": "148911166f57892697cbb428f7d3443176d98c0a9be82f00d869acbd0acc2e3e"
+    },
+    "assets/filmstrips/loading-errors/error-page.jpg": {
+      "bytes": 219518,
+      "sha256": "1ffdb222a6c97ff974753deff7202ac61299723802453eecda2b5eb131e95611"
+    },
+    "assets/filmstrips/loading-errors/loading-button.jpg": {
+      "bytes": 272153,
+      "sha256": "fbc0979bf3b129827654ed50e28dd119be031995904c53c45f130826286b2981"
+    },
+    "assets/filmstrips/loading-errors/no-permission.jpg": {
+      "bytes": 241405,
+      "sha256": "38ed8a942159a8df414f5d832a70209e7cbd6f3881f0c73a878fa85227a52faf"
+    },
+    "assets/filmstrips/loading-errors/not-found.jpg": {
+      "bytes": 216567,
+      "sha256": "c1aa03afa7991ea07206c313cc152d83aaeb9a5b85bfbb9d6d55f6773d065ad6"
+    },
+    "assets/filmstrips/loading-errors/offline.jpg": {
+      "bytes": 251459,
+      "sha256": "7e3a55bbed559c8553a07351117d3aed0988cf0e7762af24d5b9bba179385176"
+    },
+    "assets/filmstrips/loading-errors/optimistic-ui.jpg": {
+      "bytes": 255448,
+      "sha256": "3f8e67ead6500818901bfb33dd6b1c2772d695635eb93cbfa686b469d408c4a5"
+    },
+    "assets/filmstrips/loading-errors/progress-bar.jpg": {
+      "bytes": 263047,
+      "sha256": "5169ee0c125993d510c030d0313c99fc0c03f2592bb59285f430293395bc355b"
+    },
+    "assets/filmstrips/loading-errors/pull-to-refresh.jpg": {
+      "bytes": 255978,
+      "sha256": "ff2b3c789c8c5f77af4b043eee4935262d71a23311e7c2d15cadd09c0722f3ed"
+    },
+    "assets/filmstrips/loading-errors/result.jpg": {
+      "bytes": 226896,
+      "sha256": "73c5cc34a87953b898387a0271907c36c6788d3dbcf77a9efbd81dcef4370d0f"
+    },
+    "assets/filmstrips/loading-errors/skeleton.jpg": {
+      "bytes": 242442,
+      "sha256": "8343c22d615668b270cf1326515603b2e9c3cb3b3bb2537a33af241b50c80003"
+    },
+    "assets/filmstrips/loading-errors/spinner.jpg": {
+      "bytes": 192701,
+      "sha256": "37d67b1b1f63a35c641c8d4565a3fc867ef2c2c596190e502e4d14a0cce89405"
+    },
+    "assets/filmstrips/mobile-interactions/animated-text-expand.jpg": {
+      "bytes": 145193,
+      "sha256": "a50a2878223c9abcf135dc49c78855d7a989a9bc65b183a2a5f167fb8478259b"
+    },
+    "assets/filmstrips/mobile-interactions/card-delete-trajectory.jpg": {
+      "bytes": 140753,
+      "sha256": "86d7161071b13b1676c365cb69b798a0dccc63b5330e0192a4c92ff5b1f42db3"
+    },
+    "assets/filmstrips/mobile-interactions/inertial-slider-snap.jpg": {
+      "bytes": 132621,
+      "sha256": "59b456bb5df6eac9e917fea9f5464dd4460dfbaa19c000b9d5d143cd8e3b3971"
+    },
+    "assets/filmstrips/mobile-interactions/reflowing-choice-tabs.jpg": {
+      "bytes": 127666,
+      "sha256": "88b32f99878cee93009830ca02dde9fa9523885ec8bc7f603f7b56ef73677ac2"
+    },
+    "assets/filmstrips/mobile-interactions/staggered-batch-check.jpg": {
+      "bytes": 130495,
+      "sha256": "a26ffa1ea8ead2c9fd9be8d12dcbb4f774fbf87fddbf8a6b417fa57715acdc42"
+    },
+    "assets/filmstrips/mobile-interactions/step-progress-settle.jpg": {
+      "bytes": 134371,
+      "sha256": "793dfe17a91eee5ff0df31711fb827b6e622265701ba3e929bf7f41fb5052405"
+    },
+    "assets/filmstrips/mobile-interactions/sticky-compressing-stack.jpg": {
+      "bytes": 134724,
+      "sha256": "e767c4daf275f56a13e3b777dc3d3ac62e59b932e2e9b7ed8e0c9b52ebb73568"
+    },
+    "assets/filmstrips/mobile-interactions/switch-group-ripple.jpg": {
+      "bytes": 130904,
+      "sha256": "9630f6fcbcb5d8beabb9a104b98ce5eae91e36ab0d0d199f9ba798959287e3de"
+    },
+    "assets/filmstrips/mobile-interactions/touch-origin-theme.jpg": {
+      "bytes": 158284,
+      "sha256": "06ef1006e88ed0dc8a621aee9f76620b36214cef67bc4a9c4799ed0eee02e099"
+    },
+    "assets/filmstrips/mobile-layouts/color-block-bento.jpg": {
+      "bytes": 154669,
+      "sha256": "661017bff024dc8a920fa25992becf70a61100ad4d591332e366b940ed9e1911"
+    },
+    "assets/filmstrips/mobile-layouts/hero-information-overlay.jpg": {
+      "bytes": 156035,
+      "sha256": "eeaecf0e6aa754d9a6c06f41dfc98d79f000ff55aa380dea2f16a289c6cff3e5"
+    },
+    "assets/filmstrips/mobile-layouts/monochrome-priority.jpg": {
+      "bytes": 131409,
+      "sha256": "396a07c540487e479980a0e0d694455b173cb1fbd145988aa9b6a76065ecf484"
+    },
+    "assets/filmstrips/mobile-layouts/poster-semicircle-dial.jpg": {
+      "bytes": 160453,
+      "sha256": "2234e3f4dde6fd3f1fc0257f60dd247e06bb09606c910f5282cc11c54e5c530c"
+    },
+    "assets/filmstrips/mobile-layouts/swipe-deck-layout.jpg": {
+      "bytes": 155873,
+      "sha256": "543474dba470fc7cb1d6814b84e34136c0454723d61580c7e90b6df6f1abc097"
+    },
+    "assets/filmstrips/mobile-layouts/wide-title-image-list.jpg": {
+      "bytes": 147790,
+      "sha256": "b056aa9325a51b604eb61ced38e48cee372fc4570aa6c72c97049c79e9a18960"
+    },
+    "assets/filmstrips/mobile-scroll/collapsing-cover-navbar.jpg": {
+      "bytes": 134381,
+      "sha256": "ed8894b0c4170b0aa73994ce2fe12d18081f619ecbc03d4ca644b0f588d069c5"
+    },
+    "assets/filmstrips/mobile-scroll/editorial-scroll-reveal.jpg": {
+      "bytes": 141343,
+      "sha256": "e0eaf6ad33cfd02e4d61c664291cdfd624ab36ecebd0043a17e6012e741c6c8c"
+    },
+    "assets/filmstrips/mobile-scroll/elastic-parallax-hero.jpg": {
+      "bytes": 161529,
+      "sha256": "5b46dbe1a7234282e11cdd28b351363de2b9f20c567bfb19437b41922f944fb0"
+    },
+    "assets/filmstrips/mobile-scroll/pull-to-refresh-scene.jpg": {
+      "bytes": 123731,
+      "sha256": "a1c3fb1954eddf86f04d7934f43ff1cc00d16a1a35d0b6eb0be7c0627a393e21"
+    },
+    "assets/filmstrips/mobile-scroll/sticky-category-tabs.jpg": {
+      "bytes": 157124,
+      "sha256": "c07843fa6b5d9f3d09a4c928c3806d07529aeb9452b5e442a30da669ced0dad4"
+    },
+    "assets/filmstrips/mobile-scroll/viewport-chart-growth.jpg": {
+      "bytes": 114145,
+      "sha256": "6c378a5f61ea63b205f55f8a4a50951c5b83d126838afd080fa97fad8757bf4a"
+    },
+    "assets/filmstrips/mobile-workbenches/sales-crm-parcel-homes.jpg": {
+      "bytes": 298425,
+      "sha256": "7bf15e4c63ad52073f641801d7ccc8e319ea68835640049cd510a25283f37ae8"
+    },
+    "assets/filmstrips/motion/border-beam.jpg": {
+      "bytes": 301952,
+      "sha256": "c49cdd94397466ffacc1208d92c28f890f5125e68b5fd3ceaf5348cd69cbd98c"
+    },
+    "assets/filmstrips/motion/count-up.jpg": {
+      "bytes": 271955,
+      "sha256": "e5f8dcdae088a68eda6b75cc49083107ab281778b2fc7288557cf8e427ad5708"
+    },
+    "assets/filmstrips/motion/easing.jpg": {
+      "bytes": 239928,
+      "sha256": "85572adfa8441b4184d8232a6532f2033224a914dee3aac24c926980f0d6c8a8"
+    },
+    "assets/filmstrips/motion/hover-lift.jpg": {
+      "bytes": 266746,
+      "sha256": "b83dd7c2d6d23d2cf275ac44808c16a584a34d468e8616a5577952b17d82a5b3"
+    },
+    "assets/filmstrips/motion/magnetic.jpg": {
+      "bytes": 230299,
+      "sha256": "129410257143996fba1445a35bba8d3392fa84be45302f40fda418bc43571958"
+    },
+    "assets/filmstrips/motion/marquee.jpg": {
+      "bytes": 258952,
+      "sha256": "72bc91c3f3f53766b0d50b8f419ab9134f751e88c56c1d4bfdfe2ae08bf022a2"
+    },
+    "assets/filmstrips/motion/motion-rules.jpg": {
+      "bytes": 354586,
+      "sha256": "a7f1166c4becdcfbb77fb556f075b41b38be933d11fb3641cff1e0251dda26f7"
+    },
+    "assets/filmstrips/motion/parallax.jpg": {
+      "bytes": 303450,
+      "sha256": "ee7e41730cb7c32400692bca2580dcfaedc0ba7be294527d46cbcdaa22a92b34"
+    },
+    "assets/filmstrips/motion/scramble-text.jpg": {
+      "bytes": 279024,
+      "sha256": "4b0df8f3b06fc7ca2ca85fb2210060f88667f6189f48e7f5cf289c92a4cb815f"
+    },
+    "assets/filmstrips/motion/scroll-reveal.jpg": {
+      "bytes": 275345,
+      "sha256": "852d756e3dc8e779573e1ca4170fa3351b391d8f54d7bd77076300c4cebbf599"
+    },
+    "assets/filmstrips/motion/scroll-storytelling.jpg": {
+      "bytes": 262508,
+      "sha256": "572471edcd1cad6cd4909d6d0331eff924f391e6e598ad4133e7b28d36592d44"
+    },
+    "assets/filmstrips/motion/shimmer.jpg": {
+      "bytes": 220525,
+      "sha256": "0a047c74436aa7db2b72e76758ece913d806272e7aa3a8cd120cb49832bc5ef6"
+    },
+    "assets/filmstrips/motion/spotlight.jpg": {
+      "bytes": 251307,
+      "sha256": "dbfe8e556655c3818d7a11efdf3ba44c7412e2d50a4c7b1d2df60da3f88a2356"
+    },
+    "assets/filmstrips/motion/spring.jpg": {
+      "bytes": 218398,
+      "sha256": "bc963552836fa419b5cca9c29a6fea289bf6bd279eca49e5f2ff9c80b0d6d5f9"
+    },
+    "assets/filmstrips/motion/stagger.jpg": {
+      "bytes": 249976,
+      "sha256": "1d7970ac31d12c45cbcac098655d55cce7872f5ef8833e1976db14eab0649b2f"
+    },
+    "assets/filmstrips/motion/tilt.jpg": {
+      "bytes": 239653,
+      "sha256": "c46030531494bdbb6e187d6eaffd9c6ecb044c083eb80a73d5c595581e82d95f"
+    },
+    "assets/filmstrips/motion/typewriter.jpg": {
+      "bytes": 257388,
+      "sha256": "6ab2a02d0d793f3342ca931ce4571b4401e642a16aabeb93f5286393f14841f6"
+    },
+    "assets/filmstrips/overlays/alert-dialog.jpg": {
+      "bytes": 228711,
+      "sha256": "96af36db2224db219c77851c45087e9a1809e7b026d994bf1804a34ec61baada"
+    },
+    "assets/filmstrips/overlays/bottom-sheet.jpg": {
+      "bytes": 208634,
+      "sha256": "751b94bcc88e37ee873711f2142185b17e870fe9730f5e86d5f174101d53ec7e"
+    },
+    "assets/filmstrips/overlays/drawer.jpg": {
+      "bytes": 225820,
+      "sha256": "df6bbfed142b2b510a8596d89405a618e0076f05df07864c656ffe317484a957"
+    },
+    "assets/filmstrips/overlays/dropdown-menu.jpg": {
+      "bytes": 240923,
+      "sha256": "ba053e8ff7016f26868e237f42614f321a31e84f135d4da5b82e36856a54bc8f"
+    },
+    "assets/filmstrips/overlays/modal.jpg": {
+      "bytes": 218343,
+      "sha256": "e9c903f7bd12d45c6876a300b47fbf9f568d35cc7e027272d1939250a988c764"
+    },
+    "assets/filmstrips/overlays/notification.jpg": {
+      "bytes": 231349,
+      "sha256": "561d0e3387be0cd38cca4d5dbfe553cbe5a7e75ab1b3e1983760efdcb3430751"
+    },
+    "assets/filmstrips/overlays/popconfirm.jpg": {
+      "bytes": 240286,
+      "sha256": "62f4d8b168ef62fa0b99e60137b9c79171fc601efbd142a20cd8bf331a0db191"
+    },
+    "assets/filmstrips/overlays/popover.jpg": {
+      "bytes": 245454,
+      "sha256": "4935a7c8309c082387f796deb34aadb3f07e17413ed362afd67ac9ff8a0ead1c"
+    },
+    "assets/filmstrips/overlays/success-toast-correction.jpg": {
+      "bytes": 225123,
+      "sha256": "39c16c588749d07c4b19ef1b46270f06601bb19ae6b41838445fae61c19ea291"
+    },
+    "assets/filmstrips/overlays/toast-vs-notification.jpg": {
+      "bytes": 263398,
+      "sha256": "7be8e37442f5c4a8d1e6390b7dd9bd711d0860d676a2387a9d80867cb04ed891"
+    },
+    "assets/filmstrips/overlays/toast.jpg": {
+      "bytes": 234260,
+      "sha256": "f06690835241a944111232a2113765bf8087e4fcdf8372f66c83bad9eabbf081"
+    },
+    "assets/filmstrips/overlays/tooltip.jpg": {
+      "bytes": 234520,
+      "sha256": "23c939d2b96300840eed84ba2c55edd36a7c382e6ef423b2b17b3af3563cf5c5"
+    },
+    "assets/filmstrips/web-interactions/circular-theme-reveal.jpg": {
+      "bytes": 122535,
+      "sha256": "7969cf83758dda4297269266fe775473b968986c95251ad3701d982bd4bbdc01"
+    },
+    "assets/filmstrips/web-interactions/contextual-cursor.jpg": {
+      "bytes": 138384,
+      "sha256": "5173aabe8ab8c4aec4d1a7f07611a19b0455169bb18769ffe89e8fed421febfe"
+    },
+    "assets/filmstrips/web-interactions/corner-fill-hover.jpg": {
+      "bytes": 107763,
+      "sha256": "c1364f8bcc4f9ac7d53482931227f02711e658dd3a7258fec126267e76d543a2"
+    },
+    "assets/filmstrips/web-interactions/expanding-icon-label.jpg": {
+      "bytes": 92318,
+      "sha256": "caefe39d93649f1c2a5a4ee1b7ba573a7fca61d1022ac58a10665efcc4c1df19"
+    },
+    "assets/filmstrips/web-interactions/hover-image-preview.jpg": {
+      "bytes": 82054,
+      "sha256": "aa3725d0542c71fe48cb5273cfa1d376155c4f626187e0e4a827196903211085"
+    },
+    "assets/filmstrips/web-interactions/magnetic-cta.jpg": {
+      "bytes": 75969,
+      "sha256": "01601754d0b90bdd685892565027d89de8bb366236dce192d68b4142095fa556"
+    },
+    "assets/filmstrips/web-interactions/scrubbing-bar-chart.jpg": {
+      "bytes": 87883,
+      "sha256": "1e30b7635b2c2b9aa98828b39a656c82fdddca91f459ec34374c739b4fe9e22b"
+    },
+    "assets/filmstrips/web-interactions/sliding-nav-highlight.jpg": {
+      "bytes": 111981,
+      "sha256": "d2913e7dfd44677434c318b7a8f5379a1ba0072607d0d892532a3afaafeafded"
+    },
+    "assets/filmstrips/web-interactions/snapping-level-slider.jpg": {
+      "bytes": 72675,
+      "sha256": "6abf7af540911559cab8f479de49e662c927ec30c5c0c7170c474527d90d310e"
+    },
+    "assets/filmstrips/web-interactions/sticky-product-story.jpg": {
+      "bytes": 87369,
+      "sha256": "1ff89ad57c39228ae53ca6e4c5c0a7b9a9cded11daccc8dd8a466d785c4eba9d"
+    },
+    "assets/gifs/backgrounds/aurora.gif": {
+      "bytes": 2629023,
+      "sha256": "e025dd764c2dbea7566371e9bbe38405e8edf2a865b0c6f077d47f69eaaf3ced"
+    },
+    "assets/gifs/backgrounds/beams.gif": {
+      "bytes": 2504581,
+      "sha256": "12da5c2bccb14ba3e2ebafad3886f376c04018d2bf7693dc84e50acaf3f3f6f7"
+    },
+    "assets/gifs/backgrounds/dot-grid.gif": {
+      "bytes": 2143597,
+      "sha256": "5f06ad76f565f518dd0923a0abd27a7320d750dbb7400f550f78bfc7385cb044"
+    },
+    "assets/gifs/backgrounds/dotted-globe.gif": {
+      "bytes": 4516128,
+      "sha256": "ea8af0e24a45464a32f2e027319c7d8065a7854b0ac6a397f75fcc6091085f5f"
+    },
+    "assets/gifs/backgrounds/fluid.gif": {
+      "bytes": 3725952,
+      "sha256": "8fd950c39c1c9a3f98a60d07460668e15ba90aaf646718f0310f7bf35eaf182d"
+    },
+    "assets/gifs/backgrounds/matrix-rain.gif": {
+      "bytes": 2228882,
+      "sha256": "f33f1316bbf249f0a8bcfa52ec50518149aec0484f195e341f56fb6d0ae7bf91"
+    },
+    "assets/gifs/backgrounds/mesh-gradient.gif": {
+      "bytes": 3100319,
+      "sha256": "d63a8b1ee5dc41b0719410c164dbe49326888a2f78435c9393eafb8c4c29ce3c"
+    },
+    "assets/gifs/backgrounds/particle-wave.gif": {
+      "bytes": 3261408,
+      "sha256": "17522139bea9e932e8909a97b6291f4a871372fa1439719df15efadb10569da8"
+    },
+    "assets/gifs/backgrounds/retro-grid.gif": {
+      "bytes": 3281579,
+      "sha256": "581a166e37f25f79723d11fc4757100fb7cc4c341b6ae75e943a45994546bdea"
+    },
+    "assets/gifs/backgrounds/starfield.gif": {
+      "bytes": 4185541,
+      "sha256": "e2411c8f98e8abb47b05af3771764a2d5cdf6de42e13f0a1d59cf0ee5519ec00"
+    },
+    "assets/gifs/buttons-controls/loading.gif": {
+      "bytes": 1785727,
+      "sha256": "6365054e97a3c1ccda1315740f2946613c87fcf66c81e5920694cba489736608"
+    },
+    "assets/gifs/buttons-controls/pressed.gif": {
+      "bytes": 1166332,
+      "sha256": "b8ce6bb3be171c75ca071bfb563aba3c77beb1ba548dc1c9d073ea8d82d25dc9"
+    },
+    "assets/gifs/buttons-controls/segmented-control.gif": {
+      "bytes": 5178426,
+      "sha256": "5eddd8ee345983e8f15414c41efc4fb877348d21edbf7b867e638750d1a27991"
+    },
+    "assets/gifs/cards-tables/carousel.gif": {
+      "bytes": 2537185,
+      "sha256": "2c627051688000f6e8ecf9d9b5010f8454c100ff5ee923a4a9f1fd8e345f48c3"
+    },
+    "assets/gifs/cards-tables/fixed-header.gif": {
+      "bytes": 3730247,
+      "sha256": "1b0c8b138c0ce629e1ecf037b2e94f5cd0fb574661ac28e7812202edaafddaa4"
+    },
+    "assets/gifs/cards-tables/flip-card.gif": {
+      "bytes": 2716996,
+      "sha256": "185675f648a9e9b28ff773361381d212bfba0011e8712c20a2041da6052ba023"
+    },
+    "assets/gifs/dashboard-layouts/asymmetric-color-grid.gif": {
+      "bytes": 2309512,
+      "sha256": "f2920fed9e0062469e9b98238b2f2554fa957aab44d82fbcfbb14023ea6d2f68"
+    },
+    "assets/gifs/dashboard-layouts/central-observation-timeline.gif": {
+      "bytes": 3907837,
+      "sha256": "401a0a0f14cab2a56f37e46fb33a1aa396501930afd0367583c3214bbbf5f3d4"
+    },
+    "assets/gifs/dashboard-layouts/dark-growth-dashboard.gif": {
+      "bytes": 1905990,
+      "sha256": "8d797f18a14057beda2113559782e5381cc86002c0e932dea4bc3d4ca09cc604"
+    },
+    "assets/gifs/dashboard-layouts/glass-matrix-metrics.gif": {
+      "bytes": 2470692,
+      "sha256": "96cbcec20425b6a255c7e8d12f8a9c9e31ac09d52102d5d5889b7ac37a5cd1d1"
+    },
+    "assets/gifs/dashboard-layouts/inventory-action-workbench.gif": {
+      "bytes": 3758907,
+      "sha256": "4503a170af1493197be1f16b6da5d4dc4a473ab562ec8146a16c388af7ed0a90"
+    },
+    "assets/gifs/dashboard-layouts/warm-three-column-console.gif": {
+      "bytes": 2298260,
+      "sha256": "7b6a06e094b54089841ad3f675b93eb76fd45d217e5e7be77483b431157dea1a"
+    },
+    "assets/gifs/dashboard-navigation/context-data-tabs.gif": {
+      "bytes": 3604171,
+      "sha256": "54270b7054d140509f70d226389b0fc769205103c10f4337045f92b1f2670953"
+    },
+    "assets/gifs/forms/floating-label.gif": {
+      "bytes": 2559133,
+      "sha256": "83f6e0c638bf8554c2195d140a60dbcd17aef67a60f7ce00c094e2088b061c25"
+    },
+    "assets/gifs/forms/otp-input.gif": {
+      "bytes": 2372468,
+      "sha256": "ba0ee86b1c57b9691a837d5c519b27468956e8d16807693be62592c297b98031"
+    },
+    "assets/gifs/interface-details/section-stagger.gif": {
+      "bytes": 1320216,
+      "sha256": "40bd1eaddb1ee87320e38aff3709e0e319673814466327e976aea01375f143ee"
+    },
+    "assets/gifs/loading-errors/blur-up.gif": {
+      "bytes": 2303130,
+      "sha256": "b34628fbf6be56a65151ec47adcd663163b8f9d81154eedf0d0c9c9acb5980a2"
+    },
+    "assets/gifs/loading-errors/loading-button.gif": {
+      "bytes": 2818004,
+      "sha256": "0e338c2d57699b5e0da803901166cc0ef6dc387bd2f494e5fda4d4cec467e9ca"
+    },
+    "assets/gifs/loading-errors/offline.gif": {
+      "bytes": 2638142,
+      "sha256": "2f0a084d29b947db578bb5c57a5bd0fb05a73ec40afa12a14f11acc14536b6a9"
+    },
+    "assets/gifs/loading-errors/optimistic-ui.gif": {
+      "bytes": 2082831,
+      "sha256": "9385cb6185514a4c094ec4ac81b48decaab2d44881ef3b640bb6d840107f69fc"
+    },
+    "assets/gifs/loading-errors/pull-to-refresh.gif": {
+      "bytes": 2681282,
+      "sha256": "21a92c92483ad7fcbcb75200c1197509a5065d62ebcb2954a721bab3d3e8d217"
+    },
+    "assets/gifs/loading-errors/skeleton.gif": {
+      "bytes": 2779709,
+      "sha256": "b1e57bdeb56379231525c1e3231ad7ae56d917096f58e5d63a0f744a14e0ba3c"
+    },
+    "assets/gifs/loading-errors/spinner.gif": {
+      "bytes": 1031349,
+      "sha256": "1906a3f47bfbaab190f8523c95cbd62ae845e666bead41b1ee41ca0ad1c6baa9"
+    },
+    "assets/gifs/mobile-interactions/animated-text-expand.gif": {
+      "bytes": 4326810,
+      "sha256": "b0adffd733e30bb8344e48c2a4643a484cc006cf248f6f5d7e4d1108e5c438ee"
+    },
+    "assets/gifs/mobile-interactions/card-delete-trajectory.gif": {
+      "bytes": 1678817,
+      "sha256": "383ad045a3c20965daa166e9e863bdb31c3bd4a8c5dfc79c5da96d71a7f7d79a"
+    },
+    "assets/gifs/mobile-interactions/inertial-slider-snap.gif": {
+      "bytes": 2252719,
+      "sha256": "fe81ba5c07f95eed809f5ea307e230671bc6200e5f89f5c0a8ee7ce132d4c764"
+    },
+    "assets/gifs/mobile-interactions/reflowing-choice-tabs.gif": {
+      "bytes": 806466,
+      "sha256": "273b69e2e2381f09887192be9d888409cf76dbeb196c48511c96ea8b34338004"
+    },
+    "assets/gifs/mobile-interactions/staggered-batch-check.gif": {
+      "bytes": 1844871,
+      "sha256": "6adcce0b921c36448f335d1b5e4c7f929421a6ddbfdb50711cdb4d5c717333e5"
+    },
+    "assets/gifs/mobile-interactions/step-progress-settle.gif": {
+      "bytes": 1179841,
+      "sha256": "3de644dd52835ae3237a542c016bada665356ee851eb658a836290c678a39080"
+    },
+    "assets/gifs/mobile-interactions/sticky-compressing-stack.gif": {
+      "bytes": 10556347,
+      "sha256": "48ddefc5d92e813e723465aada9e509e519c3bc3a8597938df919bc3db695758"
+    },
+    "assets/gifs/mobile-interactions/switch-group-ripple.gif": {
+      "bytes": 3112242,
+      "sha256": "dc0d7cef3afe718e535574b9cf6819d7f7c17a8a57d5460c2a11772accb549bf"
+    },
+    "assets/gifs/mobile-interactions/touch-origin-theme.gif": {
+      "bytes": 2312306,
+      "sha256": "c4cc7b4391c3e1438077e9068b915a6faf7b2db31acacb6c4e9a5aa5a503fb59"
+    },
+    "assets/gifs/mobile-layouts/poster-semicircle-dial.gif": {
+      "bytes": 1738571,
+      "sha256": "2940b035c5f5620015878d3860c768156f865e83c79c13496bbd9dca874b20e0"
+    },
+    "assets/gifs/mobile-layouts/swipe-deck-layout.gif": {
+      "bytes": 2831500,
+      "sha256": "7969909c2709389e67abd4270b3d3e58e817303d2acfec0d117c91873c00b993"
+    },
+    "assets/gifs/mobile-scroll/collapsing-cover-navbar.gif": {
+      "bytes": 2883199,
+      "sha256": "856bc89738f9a843206bc1512fcd88f88fef8f7a1b97c6eebe39299de5fd3838"
+    },
+    "assets/gifs/mobile-scroll/editorial-scroll-reveal.gif": {
+      "bytes": 2167892,
+      "sha256": "7d81bc903eafbbd7e87cfaefa9743b93b5eb7a22467f33b912dc842386324147"
+    },
+    "assets/gifs/mobile-scroll/elastic-parallax-hero.gif": {
+      "bytes": 2621910,
+      "sha256": "d4b95c2fd9de3b45558eba04d44e895584273a5f2f296c44e6ae39abf32414c2"
+    },
+    "assets/gifs/mobile-scroll/pull-to-refresh-scene.gif": {
+      "bytes": 1997248,
+      "sha256": "04e5d47a3e9cc5815c81fe346d9fba44ffa8342f13a10bca1f989be4c276f9f3"
+    },
+    "assets/gifs/mobile-scroll/sticky-category-tabs.gif": {
+      "bytes": 3450645,
+      "sha256": "feac3726c14259ad1737f80e4a6669bd3960bcbb783e50fd991d8dee2e35fdd9"
+    },
+    "assets/gifs/mobile-scroll/viewport-chart-growth.gif": {
+      "bytes": 1200346,
+      "sha256": "5507f8a940bd481f32d155d0b25894d22d58784d37fbe1f777386113135aa476"
+    },
+    "assets/gifs/motion/border-beam.gif": {
+      "bytes": 3500690,
+      "sha256": "f80a52047cb21b1e4e802bb1108bc72f9547ed19f7cdb956049348bfedb97857"
+    },
+    "assets/gifs/motion/count-up.gif": {
+      "bytes": 2414269,
+      "sha256": "5090fd3960569246bd24ecae2974b580e5479391883833bcbab60362f179fc6f"
+    },
+    "assets/gifs/motion/easing.gif": {
+      "bytes": 3341219,
+      "sha256": "a9f5f942f6a0a3734aeb7f05f1f72612337b248b9f9408df3e117aa3cb0e67d4"
+    },
+    "assets/gifs/motion/hover-lift.gif": {
+      "bytes": 3013037,
+      "sha256": "0c29bc075b3458c088685d1e56119fc04d6b94e713e3c74926180619688f8dff"
+    },
+    "assets/gifs/motion/magnetic.gif": {
+      "bytes": 2063113,
+      "sha256": "bed9bab07c61a058966641babd2dfe4acec47bb07f839c93fd873bd255152b5d"
+    },
+    "assets/gifs/motion/marquee.gif": {
+      "bytes": 4565747,
+      "sha256": "2eb22f100e6716db24e9ed4eacd82f9e6e56c1756198c890dfef28c7a7725b24"
+    },
+    "assets/gifs/motion/parallax.gif": {
+      "bytes": 3176243,
+      "sha256": "4fb3f98dadb8b60f0735d16366f3edb8fae645db7072023084aa25cd43ecf2e1"
+    },
+    "assets/gifs/motion/scramble-text.gif": {
+      "bytes": 2456608,
+      "sha256": "d04ede288f6939caa6b34c53a45be639d1d3766e316f3ace3674002f48fc41a0"
+    },
+    "assets/gifs/motion/scroll-reveal.gif": {
+      "bytes": 3643079,
+      "sha256": "10f5f3182be6eb8a84d6a1f2ca9dead56570dc41f2e96daac080c627f78dfc40"
+    },
+    "assets/gifs/motion/scroll-storytelling.gif": {
+      "bytes": 4107469,
+      "sha256": "dfc9e80ace4ef5219da002b4204335097afb3dccb061c6de12f153babca97670"
+    },
+    "assets/gifs/motion/shimmer.gif": {
+      "bytes": 1997171,
+      "sha256": "2ddf576612cb6e2140b7fd525417f15ecb2350e7d98acc92205b5e1abc732ead"
+    },
+    "assets/gifs/motion/spotlight.gif": {
+      "bytes": 2585025,
+      "sha256": "8e75096c785a7e8416b803fa191083a4934d47d675768042d8d878c8d1d64bff"
+    },
+    "assets/gifs/motion/spring.gif": {
+      "bytes": 2751223,
+      "sha256": "46564c36bd05a63d51fa71d2808365638a075b85801cdc58d1c817f6219f3c24"
+    },
+    "assets/gifs/motion/stagger.gif": {
+      "bytes": 3288271,
+      "sha256": "433a25a4d08f668c1fee2fa8c7ca09eafc7b138a67092fb1eaf0a1d803ff5bfd"
+    },
+    "assets/gifs/motion/tilt.gif": {
+      "bytes": 3543607,
+      "sha256": "91c1c5ca7792a9453355d613f6fc61216bb00e7771f0d93901b41b9fdb4bbdb3"
+    },
+    "assets/gifs/motion/typewriter.gif": {
+      "bytes": 1981196,
+      "sha256": "af3a897cb682b981be193e2a880c3ae9df95a9d5ad44be27b1d2a056e73d9de2"
+    },
+    "assets/gifs/overlays/bottom-sheet.gif": {
+      "bytes": 2109736,
+      "sha256": "cc696cba3855154ecbee7c5ce027c988edba58359852488cf41fba19d77bc488"
+    },
+    "assets/gifs/overlays/drawer.gif": {
+      "bytes": 2429811,
+      "sha256": "f70c50b06f31b0f35b455a3102a3ef069f4261ef2333e6631a69e07954edbce2"
+    },
+    "assets/gifs/web-interactions/circular-theme-reveal.gif": {
+      "bytes": 1265242,
+      "sha256": "faa6c812a2cfb064061e42223b1e06519805beb39a81b698f4d7c5ed0118a2f8"
+    },
+    "assets/gifs/web-interactions/contextual-cursor.gif": {
+      "bytes": 2563444,
+      "sha256": "0f6a845827a1156dd6741c401a79f529c52d6a17551e305fa67841758150d9c1"
+    },
+    "assets/gifs/web-interactions/corner-fill-hover.gif": {
+      "bytes": 1000222,
+      "sha256": "d4f3e5e5597cf17822815958d7f68dc0cf52ead2d6c9f72e1960e35aae2c9817"
+    },
+    "assets/gifs/web-interactions/expanding-icon-label.gif": {
+      "bytes": 1095077,
+      "sha256": "f1b7cc40d02b6630bbf089587798fc27b366fa4e99a4b1c650e43c3b58e63d10"
+    },
+    "assets/gifs/web-interactions/hover-image-preview.gif": {
+      "bytes": 2621554,
+      "sha256": "917134b8f8ff181cd34d576194aa5b30a58bc21897cfbf7e75a437dd5fb9eb03"
+    },
+    "assets/gifs/web-interactions/magnetic-cta.gif": {
+      "bytes": 953213,
+      "sha256": "82b3c1879c03df19dcc0ec2f5628833627d8c48094896ed67d2a07a1649ffaab"
+    },
+    "assets/gifs/web-interactions/scrubbing-bar-chart.gif": {
+      "bytes": 1846050,
+      "sha256": "4a4d252a0dd6fdddf963991742356416ad1e7f8dbd9fbed9e2ac323875961c33"
+    },
+    "assets/gifs/web-interactions/sliding-nav-highlight.gif": {
+      "bytes": 991316,
+      "sha256": "fb34d7fe204d38dabe31334fa7d07b787c0689873a0f2b3b8f3263861bc042fd"
+    },
+    "assets/gifs/web-interactions/snapping-level-slider.gif": {
+      "bytes": 1489913,
+      "sha256": "87b09084720f875b017a1a904a1a12acb4444637c767845def272ccc5ded7a13"
+    },
+    "assets/gifs/web-interactions/sticky-product-story.gif": {
+      "bytes": 4155474,
+      "sha256": "7d3a379802d8e042ea1a4e10cc15b976c3d4e6bcfec535b9da67d1fc7c1e3a80"
+    },
+    "assets/images/data-visualization/agv-factory-robot-console-01.jpg": {
+      "bytes": 756481,
+      "sha256": "a2fd3718d9007cca5e4af4240fcbad7f8d77ba1d14ad871e109fa9981a4b364e"
+    },
+    "assets/images/data-visualization/agv-factory-robot-console-02.jpg": {
+      "bytes": 374676,
+      "sha256": "a788064162dfda05bad9a8c7f41ddcfff7cb76609bffc3ada1c20da548cbcec7"
+    },
+    "assets/images/data-visualization/agv-factory-robot-console-03.jpg": {
+      "bytes": 396109,
+      "sha256": "ea0e765dc24117813a9d20e46df6f4416dbfa3367192be2974f782d40b6501c3"
+    },
+    "assets/images/data-visualization/battery-swap-pasture-console-01.jpg": {
+      "bytes": 315789,
+      "sha256": "02934d20027c24e268a269bbc3bef26ea8965b602d16e393e738efd48397b5c5"
+    },
+    "assets/images/data-visualization/battery-swap-pasture-console-02.jpg": {
+      "bytes": 391085,
+      "sha256": "fbe519336701878303718ee81c24c7bb0c6f7971f009156d984cee2edf245527"
+    },
+    "assets/images/data-visualization/battery-swap-pasture-console-03.jpg": {
+      "bytes": 697356,
+      "sha256": "c4fcd304ba010d8a28c6c35af78724e17108dd57c24808abb0c9dbb41d69870f"
+    },
+    "assets/images/data-visualization/blue-lit-building-equipment-01.jpg": {
+      "bytes": 562721,
+      "sha256": "0fb50861b8bcdc15759a54a7c3470ae11b63277a90dfab30c49ccbfba23d95c4"
+    },
+    "assets/images/data-visualization/blue-lit-building-equipment-02.jpg": {
+      "bytes": 575507,
+      "sha256": "e5aacda81cc8b3efb8019ab5ab619d6155530d6126d5bcdc9c3be44391868c2e"
+    },
+    "assets/images/data-visualization/building-energy-equipment-topology-01.jpg": {
+      "bytes": 628790,
+      "sha256": "74995140eb9a90f973520b33a2fb9f04de77f865df2df382fbb4d3f94824bd88"
+    },
+    "assets/images/data-visualization/building-floor-parameter-view-01.jpg": {
+      "bytes": 537913,
+      "sha256": "20e112bffcf26fa61bf8cf859146b1336f2ca6e72f36f075534885aeeb7dfcc9"
+    },
+    "assets/images/data-visualization/building-floor-parameter-view-02.jpg": {
+      "bytes": 147033,
+      "sha256": "a3d7c687d391816311101c0c904b96383a2969a0c150616f4eb2dc81959c7fbe"
+    },
+    "assets/images/data-visualization/campus-light-dark-themes-01.jpg": {
+      "bytes": 402112,
+      "sha256": "dec13d1aa17e8aa65a2cf747ab60405ab9cf7d0739ee306db205a01b93539d7e"
+    },
+    "assets/images/data-visualization/campus-light-dark-themes-02.jpg": {
+      "bytes": 773583,
+      "sha256": "e896cea57e55551474728b1e9bdf19f73dec0057ad2fa9e8aa51cf676976009d"
+    },
+    "assets/images/data-visualization/campus-light-dark-themes-03.jpg": {
+      "bytes": 390270,
+      "sha256": "c96d416b60b297f024f2bb77c463f0cfeccc9973d2879243ef7ae3a18f68f672"
+    },
+    "assets/images/data-visualization/dark-industrial-twin-collection-01.jpg": {
+      "bytes": 505748,
+      "sha256": "d9b3f3e95df159b2baa8676c9f0b695613a20ab3cab9fe5bc309d9847d9f1185"
+    },
+    "assets/images/data-visualization/dark-industrial-twin-collection-02.jpg": {
+      "bytes": 637945,
+      "sha256": "e9f00b3214ddba3cdae2967e5276843c5f5a0cec94cadaff1da2bf451d7d0d36"
+    },
+    "assets/images/data-visualization/dark-infrastructure-twin-screens-01.jpg": {
+      "bytes": 830248,
+      "sha256": "2d0559147e480e66ad8f6395eaa61629a82d1e0125d7d063e6c474a92e569372"
+    },
+    "assets/images/data-visualization/dark-infrastructure-twin-screens-02.jpg": {
+      "bytes": 701196,
+      "sha256": "c9f52c9d513b77b3648118c7bcacd03104213123dc9fb18a80cba976bd2a4113"
+    },
+    "assets/images/data-visualization/digital-assets-capacity-overview-01.jpg": {
+      "bytes": 382359,
+      "sha256": "9cfd776add668cd2e58a5ef671ce2622786885eade9c3a1d12a5cebf6b534e2a"
+    },
+    "assets/images/data-visualization/digital-assets-capacity-overview-02.jpg": {
+      "bytes": 480854,
+      "sha256": "8113a6d8a3af74003c589a2b42e7ff5fb4291d869eb673ce285e9b3530f73bee"
+    },
+    "assets/images/data-visualization/factory-section-floor-console-01.jpg": {
+      "bytes": 878590,
+      "sha256": "63f48190c5f6ebbc5d20ec4ec1a5d9ddc3ff6b01f28426628b92c03e1613d433"
+    },
+    "assets/images/data-visualization/factory-section-floor-console-02.jpg": {
+      "bytes": 720266,
+      "sha256": "9c67be7c73baa9aaee988cd74fc349ef2b8103f0d0b2b3e64c5b9566a239feff"
+    },
+    "assets/images/data-visualization/factory-section-floor-console-03.jpg": {
+      "bytes": 645735,
+      "sha256": "aa532294a426a26d671a610769b0d5ec89392175ca70de87996882eb90db666d"
+    },
+    "assets/images/data-visualization/furnace-floor-section-screen-01.jpg": {
+      "bytes": 807939,
+      "sha256": "85f2c39d7e9c800205e5f368bfac3813c8c30ca911f2416db93d1d2ee1c9917a"
+    },
+    "assets/images/data-visualization/green-campus-logistics-twin-01.jpg": {
+      "bytes": 490134,
+      "sha256": "364833400f2845538b7b6d06a97165f635933cfbe50ac47c665a456ff075ac08"
+    },
+    "assets/images/data-visualization/health-body-metrics-dashboard-01.jpg": {
+      "bytes": 205621,
+      "sha256": "2c05da138eb4a78683c860ebc9ca146561eed3e762f3b09df3b4cae60996d5b9"
+    },
+    "assets/images/data-visualization/health-body-metrics-dashboard-02.jpg": {
+      "bytes": 242090,
+      "sha256": "8bde331e8b692a9bf530b534f6581668ab9ca9fff66800a04bab93e4d8e13351"
+    },
+    "assets/images/data-visualization/health-body-metrics-dashboard-03.jpg": {
+      "bytes": 424807,
+      "sha256": "c85cd95bd87a01e0c0c33c2ac2d95152a2e113264cc415b1fbcf807225388d68"
+    },
+    "assets/images/data-visualization/health-security-campus-monitor-01.jpg": {
+      "bytes": 894903,
+      "sha256": "ab205f81fced8a7e0ccbab0df79bd6b2060a8e0273bfd32c8b78492ec6072204"
+    },
+    "assets/images/data-visualization/light-industrial-energy-scenarios-01.jpg": {
+      "bytes": 539846,
+      "sha256": "e1c300f80f3fdf63aae6d733873f195f29783ebc81cddd3cf56190fe4bc8d59b"
+    },
+    "assets/images/data-visualization/light-industrial-energy-scenarios-02.jpg": {
+      "bytes": 558923,
+      "sha256": "0036f5d169a950a491476d1c90f5ec29335079daa815374b6da21b32a2ae8dab"
+    },
+    "assets/images/data-visualization/orange-process-data-console-01.jpg": {
+      "bytes": 343338,
+      "sha256": "6ef680c361957fa87fd96b04b7140964455a3396a67b1d63746ddb6a7cfd5b91"
+    },
+    "assets/images/data-visualization/orange-process-data-console-02.jpg": {
+      "bytes": 385814,
+      "sha256": "972c8d5fc4cd80e7c99d0c3b4fd9121cf374058a4e202de472c4f5504606893d"
+    },
+    "assets/images/data-visualization/regional-campus-map-overview-01.jpg": {
+      "bytes": 780311,
+      "sha256": "b21a1ffeae5779d56eea6725864f365298a5bd6a511a557afce7e0e506584788"
+    },
+    "assets/images/data-visualization/regional-campus-map-overview-02.jpg": {
+      "bytes": 807873,
+      "sha256": "1178324c0b539e80c6cfd658eb3eb776aed72750b7816863f53de20c35e4e8af"
+    },
+    "assets/images/data-visualization/regional-map-information-board-01.jpg": {
+      "bytes": 601644,
+      "sha256": "8131776a48604c85078e75b7545bb161f1d6ce362e2d0105140b95c196557b97"
+    },
+    "assets/images/data-visualization/regional-map-information-board-02.jpg": {
+      "bytes": 933514,
+      "sha256": "3c0e31997ccba9a1ace1f6fa99c39344a0682ae9d280233841aad138979685fc"
+    },
+    "assets/images/data-visualization/robotic-arm-pipeline-metrics-01.jpg": {
+      "bytes": 221220,
+      "sha256": "dec314af50eec14fa6259eb8b0cf7b9d0b52a3d8e88eb0eeaaec4852c17c234d"
+    },
+    "assets/images/data-visualization/robotic-arm-pipeline-metrics-02.jpg": {
+      "bytes": 197412,
+      "sha256": "7003501034c98111bd9adc83c00c0e8f2bfa45584a79de22f75cfa0fd6fe6401"
+    },
+    "assets/images/data-visualization/robotic-arm-pipeline-metrics-03.jpg": {
+      "bytes": 402041,
+      "sha256": "595a51347bdad9a184e500169dcd8e6937e7c16555a676caccc9f31fe10b9786"
+    },
+    "assets/images/data-visualization/security-shield-campus-space-01.jpg": {
+      "bytes": 657743,
+      "sha256": "7c911d7dd570f2b8622b647c4995eb7333b8edc29e568e191cf11cac7d1f171e"
+    },
+    "assets/images/data-visualization/smt-wafer-production-array-01.jpg": {
+      "bytes": 729391,
+      "sha256": "59fe5499e9c3d72e7b96790097badc3c65f04b1bc0e28c8939fc28318f34f5da"
+    },
+    "assets/images/data-visualization/solar-building-energy-overview-01.jpg": {
+      "bytes": 430490,
+      "sha256": "188af83212fd6c3981f0a70460383801a1b79b5e33d9234676ab6ad8eeaf1e1f"
+    },
+    "assets/images/data-visualization/solar-building-energy-overview-02.jpg": {
+      "bytes": 529453,
+      "sha256": "758f9b7d8dc92081d2fcdf2b5ff06de36994aca47113e4cd01f2fd3351ae9041"
+    },
+    "assets/images/data-visualization/solar-factory-production-twin-01.jpg": {
+      "bytes": 726959,
+      "sha256": "5359662657d5d14a9e32dbd38d81c6ef35d8beed34a44649f5e045ffde149f8b"
+    },
+    "assets/images/data-visualization/wind-turbine-monitoring-01.jpg": {
+      "bytes": 403678,
+      "sha256": "9b8b720ffa5b0b305cf4df1e29322e9a5097adcefd985da270d038e2c3d9f60c"
+    },
+    "assets/images/data-visualization/wind-turbine-monitoring-02.jpg": {
+      "bytes": 551443,
+      "sha256": "efea8f990d19d9d03aa24d30a2d448e8e62bc826d67801eedbf5e814c0cbb494"
+    },
+    "assets/images/enterprise-workbenches/ai-assistant-productivity-hub-01.jpg": {
+      "bytes": 172931,
+      "sha256": "e8dd4aed999aa99d3974ea1ff212bf4b17da0c76f1c35a051af0b5c1bca7b4b2"
+    },
+    "assets/images/enterprise-workbenches/ai-assistant-productivity-hub-02.jpg": {
+      "bytes": 222422,
+      "sha256": "1800a269a01b300271d586accc85f8db82a686161515b5373853dd8c870ea0b0"
+    },
+    "assets/images/enterprise-workbenches/ai-assistant-productivity-hub-03.jpg": {
+      "bytes": 208863,
+      "sha256": "3b1cc9fd452b24d4b8acb2b8bc3f4c6d44eb15e4bc8b24097062609f6c6f1c30"
+    },
+    "assets/images/enterprise-workbenches/ai-assistant-productivity-hub-04.jpg": {
+      "bytes": 454837,
+      "sha256": "a3b2e9dc1178fe8c65286d9e1dcf6af3bc922c861e24baf58a8f71bd5c302285"
+    },
+    "assets/images/enterprise-workbenches/aircraft-device-service-console-01.jpg": {
+      "bytes": 579839,
+      "sha256": "fdcb4443b36571ede56ad6c9fb38e0e6a60dae14cca9e3ed2e9e51221cea58e3"
+    },
+    "assets/images/enterprise-workbenches/aircraft-device-service-console-02.jpg": {
+      "bytes": 529003,
+      "sha256": "609e3be4b244263b8d39af3ece6962b001679c7a819f0b94c2ae9b83e07cb84e"
+    },
+    "assets/images/enterprise-workbenches/asset-process-report-workbench-01.jpg": {
+      "bytes": 224983,
+      "sha256": "7784ebb6685de86686106967ac4882895948657e2d6edc06df13551951285125"
+    },
+    "assets/images/enterprise-workbenches/asset-process-report-workbench-02.jpg": {
+      "bytes": 520128,
+      "sha256": "96ccf0645b39e140828488f1dc2970d0157575620dafe031d36642a1bc4c4cfe"
+    },
+    "assets/images/enterprise-workbenches/asset-process-report-workbench-03.jpg": {
+      "bytes": 374844,
+      "sha256": "e17762cc907e8719fe8d36580dd2a9ed45d725a7cbdb7d15d15987f289b7d62f"
+    },
+    "assets/images/enterprise-workbenches/blue-metrics-list-management-01.jpg": {
+      "bytes": 475189,
+      "sha256": "15fde0ad71bba007c4b5f24d8a80b6274b3c0aa403b3370aa90e82eafff3783b"
+    },
+    "assets/images/enterprise-workbenches/blue-metrics-list-management-02.jpg": {
+      "bytes": 238428,
+      "sha256": "54aeb337075e00b68b0e962e2ab5b030449bcd8a9c11adc9c16ee24ba2699929"
+    },
+    "assets/images/enterprise-workbenches/blue-welcome-operations-portal-01.jpg": {
+      "bytes": 599404,
+      "sha256": "2ece73751cbaad874891bf644024ba79a4d81cf65c8fe1addb9e9aa078581f27"
+    },
+    "assets/images/enterprise-workbenches/blue-welcome-operations-portal-02.jpg": {
+      "bytes": 465608,
+      "sha256": "5cfbc2aa27a1a22dee4b4c13f332fa43bc47d021191478b618a2755d2a352b84"
+    },
+    "assets/images/enterprise-workbenches/cargo-status-task-dashboard-01.jpg": {
+      "bytes": 562498,
+      "sha256": "b273711905254ad17c1c0ce1126835b500c66661ca666ac81bd0a8330c423355"
+    },
+    "assets/images/enterprise-workbenches/cargo-status-task-dashboard-02.jpg": {
+      "bytes": 467069,
+      "sha256": "b81eaffc1b954f027446c8da5b80790cbb59be8658826fd97a070f8b994d232e"
+    },
+    "assets/images/enterprise-workbenches/colorful-metrics-statistics-list-01.jpg": {
+      "bytes": 524504,
+      "sha256": "2a81a79fe743b3219243b83c76859294d711c61098a69219e9a730a7040952c6"
+    },
+    "assets/images/enterprise-workbenches/colorful-metrics-statistics-list-02.jpg": {
+      "bytes": 287189,
+      "sha256": "527e1da0782ecfe8c7dee521d27fad9fdffef532fa075ae4ee67a04c316b9d0d"
+    },
+    "assets/images/enterprise-workbenches/colorful-metrics-statistics-list-03.jpg": {
+      "bytes": 248498,
+      "sha256": "93906b4b241be4d99580ebf46cd8c8ad0dbfcdd8a1d7fd0dd14368e49ba10f5a"
+    },
+    "assets/images/enterprise-workbenches/compact-analytics-report-grid-01.jpg": {
+      "bytes": 507728,
+      "sha256": "683f4f74c25178a3fdd82f461a681f1da4e9f8c32dffb8bf8d461bf4ce9cb814"
+    },
+    "assets/images/enterprise-workbenches/compact-analytics-report-grid-02.jpg": {
+      "bytes": 268961,
+      "sha256": "55cad9754bae79d712f18883e46dd9029e85bcd0ce51cde7972a4a37e7c293f7"
+    },
+    "assets/images/enterprise-workbenches/compact-analytics-report-grid-03.jpg": {
+      "bytes": 241221,
+      "sha256": "1bfca09c1712c128e432b4956f73a3ec1f7dcd09ca83fb4af2307b29eef77d34"
+    },
+    "assets/images/enterprise-workbenches/contrast-operations-task-overview-01.jpg": {
+      "bytes": 431707,
+      "sha256": "745fb1c49bf9a19352cb48353d9185b677b5f6dc2bf148d51acdac8d5c0171dc"
+    },
+    "assets/images/enterprise-workbenches/contrast-operations-task-overview-02.jpg": {
+      "bytes": 462459,
+      "sha256": "61fa8eeca755c50f020c3083989451ea08839c1bf5bb5e335932a36dbca4ab99"
+    },
+    "assets/images/enterprise-workbenches/enterprise-funnel-mes-lists-01.jpg": {
+      "bytes": 574222,
+      "sha256": "fff83d06a6f14185f2dae522c92d676b86342e0c6ba7e6feb1b512e2303ca2c9"
+    },
+    "assets/images/enterprise-workbenches/enterprise-progress-todo-management-01.jpg": {
+      "bytes": 467649,
+      "sha256": "56f62a4058fe962b274fd88c125dd3317fae3659359c2f624926c419d6fd979a"
+    },
+    "assets/images/enterprise-workbenches/enterprise-progress-todo-management-02.jpg": {
+      "bytes": 473009,
+      "sha256": "5de87e9caa086228803e6de7e54744497d64d3c0956b1a8cdf0717f43a93b869"
+    },
+    "assets/images/enterprise-workbenches/enterprise-subscription-report-portal-01.jpg": {
+      "bytes": 717964,
+      "sha256": "1a33d522661e05a83450a6e88d992759e81090192e88a96083eea78481c16f88"
+    },
+    "assets/images/enterprise-workbenches/factory-oa-task-portal-01.jpg": {
+      "bytes": 520754,
+      "sha256": "624a38105c5d09e02d4d3882bce5017d6138537f8e71df50d2d5593b34884fcf"
+    },
+    "assets/images/enterprise-workbenches/factory-oa-task-portal-02.jpg": {
+      "bytes": 543229,
+      "sha256": "ba341bb4ed7aae870a87e6a3938b4809a1761d5ba7681ba8cfe670f2539dcbc2"
+    },
+    "assets/images/enterprise-workbenches/factory-space-process-workbench-01.jpg": {
+      "bytes": 290177,
+      "sha256": "8cf0b9e141ab474ad1f5d1d427871349158732ee0ec32ad97e62fa209557a98a"
+    },
+    "assets/images/enterprise-workbenches/factory-space-process-workbench-02.jpg": {
+      "bytes": 132057,
+      "sha256": "b400c775d62f343897e4c024cab4e754d65a7f110187863b8b95f5cc895b1964"
+    },
+    "assets/images/enterprise-workbenches/factory-space-process-workbench-03.jpg": {
+      "bytes": 459137,
+      "sha256": "e97826eac3f9e5553ebfd7a67222fa9395f6d28f1856f05da5f4d26946218d2b"
+    },
+    "assets/images/enterprise-workbenches/freight-model-service-workbench-01.jpg": {
+      "bytes": 542894,
+      "sha256": "e3c43bceee0721976a38d2677b2259908171d2e68b4058468835e48e1c5ce877"
+    },
+    "assets/images/enterprise-workbenches/freight-model-service-workbench-02.jpg": {
+      "bytes": 458362,
+      "sha256": "a0e53a154fea60f0897d46a3c46ffa9ddfbc494e49d2d06d4672e04558ee84e8"
+    },
+    "assets/images/enterprise-workbenches/glass-welcome-service-portal-01.jpg": {
+      "bytes": 433587,
+      "sha256": "4514e0c14e9637d552a580e861ba46d5ae3cba2ae559e788d1db2ff26d414441"
+    },
+    "assets/images/enterprise-workbenches/glass-welcome-service-portal-02.jpg": {
+      "bytes": 616364,
+      "sha256": "ee815608cfda4596d32187fba39b9d2f6a1f7cbf34e6a1f681eb9a0841ffc0a1"
+    },
+    "assets/images/enterprise-workbenches/gradient-column-business-metrics-01.jpg": {
+      "bytes": 182411,
+      "sha256": "5d6a118e078da9b7473dd84e36dccc9d928d3ded0cb183ec1f326eeceec4f254"
+    },
+    "assets/images/enterprise-workbenches/gradient-column-business-metrics-02.jpg": {
+      "bytes": 212982,
+      "sha256": "359b44af9e4f37bd84aa18fece75d7e45fdd61169b889ca7168473ba05b3872a"
+    },
+    "assets/images/enterprise-workbenches/green-energy-service-overview-01.jpg": {
+      "bytes": 417212,
+      "sha256": "56e73373ea903d7a0120dce1ce5e936b19e48dd300620be6009f21db7d213075"
+    },
+    "assets/images/enterprise-workbenches/green-energy-service-overview-02.jpg": {
+      "bytes": 443288,
+      "sha256": "9d7d7ccc5e4ec265309ea7e75739cfd15f2beac8a32f514d323530d25dc87bb8"
+    },
+    "assets/images/enterprise-workbenches/heatmap-process-management-01.jpg": {
+      "bytes": 398925,
+      "sha256": "120464450da4762104c347eb42ad0e1a7d176b818fd68cec24edfe0eb1f73e1d"
+    },
+    "assets/images/enterprise-workbenches/heatmap-process-management-02.jpg": {
+      "bytes": 450724,
+      "sha256": "9400235ee431949fb4fabd8222e5be6c464bcdd4e9645ddb90d3ca16715184d2"
+    },
+    "assets/images/enterprise-workbenches/logistics-loading-workbench-01.jpg": {
+      "bytes": 512780,
+      "sha256": "23c5f608ff3576c704179db4e4b65f90da646d8d02fab793bc6f20a7e13ad6a9"
+    },
+    "assets/images/enterprise-workbenches/logistics-loading-workbench-02.jpg": {
+      "bytes": 464570,
+      "sha256": "0150895d49f74ec7f72e30ac3e4ea0164892060e6bfe3d3ca36baa1fab4bc592"
+    },
+    "assets/images/enterprise-workbenches/mes-production-task-management-01.jpg": {
+      "bytes": 619757,
+      "sha256": "79b41da2c96f714895eb21164695ff4afc1813d86141358fcce661b5423f2eab"
+    },
+    "assets/images/enterprise-workbenches/organization-talent-analytics-01.jpg": {
+      "bytes": 404150,
+      "sha256": "e4626ea90066aef80d6d96f84edd3eb1147812a64aedb466f3370f0c0268fc2c"
+    },
+    "assets/images/enterprise-workbenches/organization-talent-analytics-02.jpg": {
+      "bytes": 581298,
+      "sha256": "82ce5ec0b3dd5a64b5e26a5653aee4315a85be0d895af30a341e9ce519ba9949"
+    },
+    "assets/images/enterprise-workbenches/outpatient-business-metrics-01.jpg": {
+      "bytes": 464753,
+      "sha256": "905fddb3277bd7b13b8e6dadc580e7543db674efe024e8c98fcc0baf43361f96"
+    },
+    "assets/images/enterprise-workbenches/project-process-alert-workbench-01.jpg": {
+      "bytes": 404864,
+      "sha256": "2ff18da7e330fe0e582e3c0385a9e5fdbc55b76335f019abe292bd98c5832d66"
+    },
+    "assets/images/enterprise-workbenches/project-process-alert-workbench-02.jpg": {
+      "bytes": 412671,
+      "sha256": "74b4839a9dc415b5278c2ce04005b57d06b8917c12d424cdc0952afe79f1b94c"
+    },
+    "assets/images/enterprise-workbenches/recruitment-candidate-workbench-01.jpg": {
+      "bytes": 407038,
+      "sha256": "0c8b100e44f7ba51722ec9751b02f2d2b90d954ac14642f1a564d17b0b834d8c"
+    },
+    "assets/images/enterprise-workbenches/recruitment-candidate-workbench-02.jpg": {
+      "bytes": 419892,
+      "sha256": "9b64964008e39d1b9fde64ede3fe1c8a396f81925b7bd2b38cdcbe28ec303b07"
+    },
+    "assets/images/enterprise-workbenches/touchscreen-catalog-device-tasks-01.jpg": {
+      "bytes": 450692,
+      "sha256": "fff83cffc9ccb0e64fe5d8c0c6f69349d7e61129b144831e033b8e74bbbef948"
+    },
+    "assets/images/enterprise-workbenches/warm-orange-management-home-01.jpg": {
+      "bytes": 467137,
+      "sha256": "24f7e001ab17698bb898fe41c2fe18fd3f9de48e7ae88b8ca8337f1dd6d5e445"
+    },
+    "assets/images/enterprise-workbenches/warm-orange-management-home-02.jpg": {
+      "bytes": 213307,
+      "sha256": "d3ef2702378c216838ca4b9fc38f0dd18ef51970b60e0713e125525722ad833d"
+    },
+    "assets/images/enterprise-workbenches/warm-orange-management-home-03.jpg": {
+      "bytes": 242249,
+      "sha256": "e4f0eb25188f21cfbed6c76056d3ef3d27d8f0a470d9de69fb9126af98e28394"
+    },
+    "assets/images/mobile-workbenches/campus-timetable-access-hub-01.jpg": {
+      "bytes": 442246,
+      "sha256": "bb8b49eee682c9e92871bb96002f3a8419a3e4f16697a2f005a266a8e168621e"
+    },
+    "assets/images/mobile-workbenches/campus-timetable-access-hub-02.jpg": {
+      "bytes": 438736,
+      "sha256": "afe40e8cdf7469faaaf89edeb20ae2bced298065fea657b217738d0e61e7b19d"
+    },
+    "assets/images/mobile-workbenches/device-service-tool-grid-01.jpg": {
+      "bytes": 613077,
+      "sha256": "91509b81b6dbb2570ced02958ff95b774a43e9d9bc9de5cff1525eb26afb00c4"
+    },
+    "assets/images/mobile-workbenches/device-service-tool-grid-02.jpg": {
+      "bytes": 397485,
+      "sha256": "b3ca14c31ff182d50e8379ad3e6d62fea87eae96446e35609c8b0f1c6df0a937"
+    },
+    "assets/images/mobile-workbenches/device-service-tool-grid-03.jpg": {
+      "bytes": 421886,
+      "sha256": "5ee67ebd40c33ffeb081ac1e39efbced31c389136bb037f0489050de5e01e1de"
+    },
+    "assets/images/mobile-workbenches/enterprise-service-mobile-hub-01.jpg": {
+      "bytes": 470312,
+      "sha256": "74a3164ef528f3f4de10ba61d96326fe58d6221485a43834136d181a2d674c40"
+    },
+    "assets/images/mobile-workbenches/enterprise-service-mobile-hub-02.jpg": {
+      "bytes": 424724,
+      "sha256": "497256a970a9eebc83ee2a1c6ec812bc130c7e73c20bf20f674482e343016360"
+    },
+    "assets/images/mobile-workbenches/illustrated-travel-service-home-01.jpg": {
+      "bytes": 566529,
+      "sha256": "785834625048fbb3fde00a842e445572849417532f577e47c9b71ee674cd2561"
+    },
+    "assets/images/mobile-workbenches/illustrated-travel-service-home-02.jpg": {
+      "bytes": 541232,
+      "sha256": "3579b8d090c6101cd2b74634cd172e393ae752ff6ee37c9c77656edf3e3ef94b"
+    },
+    "assets/images/mobile-workbenches/illustrated-travel-service-home-03.jpg": {
+      "bytes": 555766,
+      "sha256": "b39795f1015312aa7392bbc68a06cfee59ff4764d1db2d41782dec6b9f6e27db"
+    },
+    "assets/images/mobile-workbenches/parcel-orders-quick-services-01.jpg": {
+      "bytes": 476755,
+      "sha256": "adf3b1b9d49b37bee395f36594421b675fe42c7b3ad0a45d7c484e9aa8500f15"
+    },
+    "assets/images/mobile-workbenches/parcel-orders-quick-services-02.jpg": {
+      "bytes": 401505,
+      "sha256": "cc9f77d408695c63281d2e021c98d78bd13d3ff86fa397d4767a13e79af8f8af"
+    },
+    "assets/images/mobile-workbenches/public-service-task-homes-01.jpg": {
+      "bytes": 473218,
+      "sha256": "9412a6b48d30edd01fe366ce68739112307dd4623efb708d04a77e8567191716"
+    },
+    "assets/images/mobile-workbenches/public-service-task-homes-02.jpg": {
+      "bytes": 432003,
+      "sha256": "3dfffa1edbfa59c07aecd7021f6886c98faaed9b1f4c3865dbc3352d46eb5104"
+    },
+    "assets/images/mobile-workbenches/travel-learning-service-homes-01.jpg": {
+      "bytes": 524273,
+      "sha256": "7b207e5ef1269808bff21b70500c93c2fc35df656837c75212929891564b8bc6"
+    },
+    "assets/images/mobile-workbenches/travel-learning-service-homes-02.jpg": {
+      "bytes": 481535,
+      "sha256": "7056ff23aff43b861559331f922f67600eaaffb4b466e77a04b3958f0b49485e"
+    },
+    "assets/previews/data-visualization/agv-factory-robot-console.jpg": {
+      "bytes": 320912,
+      "sha256": "19a8c80e0ee30ed1b8ebe1b79fe388c250966504870397cda97bb605606321c7"
+    },
+    "assets/previews/data-visualization/battery-swap-pasture-console.jpg": {
+      "bytes": 295072,
+      "sha256": "50c3d43db9285e9320dce018ea395b6e919c184461699381e88914ae64cf52cf"
+    },
+    "assets/previews/data-visualization/blue-lit-building-equipment.jpg": {
+      "bytes": 220943,
+      "sha256": "e444fcf15cbd60c96e5acc15914d449ca4229af5bf7b6a813b58a5e05b262173"
+    },
+    "assets/previews/data-visualization/building-energy-equipment-topology.jpg": {
+      "bytes": 110975,
+      "sha256": "a213ae4b3e1fedf98a91aba44046c65a40579d9e1dcae73b696629a86ea1e3a7"
+    },
+    "assets/previews/data-visualization/building-floor-parameter-view.jpg": {
+      "bytes": 154932,
+      "sha256": "4191b9553503a48e069c5ab7c240e323189a4ceee80192264cdd40a62e968b70"
+    },
+    "assets/previews/data-visualization/campus-light-dark-themes.jpg": {
+      "bytes": 321782,
+      "sha256": "8018d52754a988e9739eae5010435b50f92107e10d8b8fcaff7945dfcde821ec"
+    },
+    "assets/previews/data-visualization/dark-industrial-twin-collection.jpg": {
+      "bytes": 227430,
+      "sha256": "9242070a605de28a9bfe74f9d557c9de76ca506f0d6a6bc5a63818f1d68ad5b7"
+    },
+    "assets/previews/data-visualization/dark-infrastructure-twin-screens.jpg": {
+      "bytes": 283528,
+      "sha256": "51868a974d9b16bc1b5a7b001f4f9e4a88a720806065f495fbab39bae3a66ebc"
+    },
+    "assets/previews/data-visualization/digital-assets-capacity-overview.jpg": {
+      "bytes": 173399,
+      "sha256": "47b50089fe11b281e295000bb6a109127e3308b18d6a70e8949dcc9a3367b222"
+    },
+    "assets/previews/data-visualization/factory-section-floor-console.jpg": {
+      "bytes": 269417,
+      "sha256": "c8423b7eb926cca1e2ac28e146ddd029d5b921c99761861730821d7ce9cfee3e"
+    },
+    "assets/previews/data-visualization/furnace-floor-section-screen.jpg": {
+      "bytes": 133078,
+      "sha256": "4e42b9c7fb1deb9cba677f8087b6ce3eec6909a9ae311738889a43daed50a239"
+    },
+    "assets/previews/data-visualization/green-campus-logistics-twin.jpg": {
+      "bytes": 94188,
+      "sha256": "be123aa8b3a08bde4d7d173ed65c46d09a507a3733f150c41514874327fea35f"
+    },
+    "assets/previews/data-visualization/health-body-metrics-dashboard.jpg": {
+      "bytes": 204667,
+      "sha256": "ea7885736e5756695a36ff64d3d0c9d0265502f2e31a70fe096c14965c6bb6d4"
+    },
+    "assets/previews/data-visualization/health-security-campus-monitor.jpg": {
+      "bytes": 152298,
+      "sha256": "8819d149d8f33395b9ee42d307970c8aac30c6caaae09be55e72b7123fb32e3e"
+    },
+    "assets/previews/data-visualization/light-industrial-energy-scenarios.jpg": {
+      "bytes": 214694,
+      "sha256": "7cd31e4b80fa974053c883922f815f848c2245584a0b46536f0458cf49ae35e1"
+    },
+    "assets/previews/data-visualization/orange-process-data-console.jpg": {
+      "bytes": 161700,
+      "sha256": "5c34b1f89edb13614f7387c5367f7802c18a4cf13bd53086102cd66d484a253f"
+    },
+    "assets/previews/data-visualization/regional-campus-map-overview.jpg": {
+      "bytes": 270073,
+      "sha256": "9a421aff0254cc5f552974879e57e006b72b0cf95bee1104f8253679df189e5b"
+    },
+    "assets/previews/data-visualization/regional-map-information-board.jpg": {
+      "bytes": 166234,
+      "sha256": "cc5862fc2b350e5137451950a4862539769dc62e4194ca3232804b1638f0837e"
+    },
+    "assets/previews/data-visualization/robotic-arm-pipeline-metrics.jpg": {
+      "bytes": 196921,
+      "sha256": "649b573154e56a16f58fa37738ea31f348fdd26b74c590c0d3d4a2e55851c9ea"
+    },
+    "assets/previews/data-visualization/security-shield-campus-space.jpg": {
+      "bytes": 114101,
+      "sha256": "23431395236f67b2c5463548debb405613c962beb2c2f2e9106fdffe4f5baee1"
+    },
+    "assets/previews/data-visualization/smt-wafer-production-array.jpg": {
+      "bytes": 123546,
+      "sha256": "c92fd120303a176fcae964506fad46726d34791e6cf328f0dc2a68a51bf7bab5"
+    },
+    "assets/previews/data-visualization/solar-building-energy-overview.jpg": {
+      "bytes": 207314,
+      "sha256": "187f46590bab1662884962335507fb293743fee781c62c44460f1a1621a86990"
+    },
+    "assets/previews/data-visualization/solar-factory-production-twin.jpg": {
+      "bytes": 130097,
+      "sha256": "b022e89331097cca82f11f5c0b5908c60aacad1af2f11abbecaa9d86eb563deb"
+    },
+    "assets/previews/data-visualization/wind-turbine-monitoring.jpg": {
+      "bytes": 188040,
+      "sha256": "cf9269b94b9963f643ef765a711837b7b087db38df7294df89ad3196db3f8910"
+    },
+    "assets/previews/enterprise-workbenches/ai-assistant-productivity-hub.jpg": {
+      "bytes": 227927,
+      "sha256": "cc900f754e17d83860b20d9c85c1e1f19376d828a6edb1b83e1acde70aff906c"
+    },
+    "assets/previews/enterprise-workbenches/aircraft-device-service-console.jpg": {
+      "bytes": 207216,
+      "sha256": "96e92ac95637b999665bf7a6655c8fd85d525529b8fe2698b6b38a1ef859422d"
+    },
+    "assets/previews/enterprise-workbenches/asset-process-report-workbench.jpg": {
+      "bytes": 217022,
+      "sha256": "0887ae02f7845f1460cfa2ab7f4bb45e811d1b656ce51f07fa4db94391bbc5c3"
+    },
+    "assets/previews/enterprise-workbenches/blue-metrics-list-management.jpg": {
+      "bytes": 141992,
+      "sha256": "dc27c73d790385d0b990a0017f76539a206688927f6aef97961c3d0acbb61b4a"
+    },
+    "assets/previews/enterprise-workbenches/blue-welcome-operations-portal.jpg": {
+      "bytes": 204000,
+      "sha256": "387b71c4e5661edaf0ce3e33bc812089d3287360fbc40cc3fe98f1fd2a1dae2a"
+    },
+    "assets/previews/enterprise-workbenches/cargo-status-task-dashboard.jpg": {
+      "bytes": 194797,
+      "sha256": "93aba99e0f5ebfd08b5b42c8138726f8426e45818b9121337b4fc70da122ee9a"
+    },
+    "assets/previews/enterprise-workbenches/colorful-metrics-statistics-list.jpg": {
+      "bytes": 216511,
+      "sha256": "cf85638365d9cd97a911865bf3eedf392a2a156cce1dcc9552db4a9263eccd4e"
+    },
+    "assets/previews/enterprise-workbenches/compact-analytics-report-grid.jpg": {
+      "bytes": 203839,
+      "sha256": "bb652adda5ec3f71bf6f9d2cac2b8c6e21c0cb282bb8814bdddc1e6cb3f6c169"
+    },
+    "assets/previews/enterprise-workbenches/contrast-operations-task-overview.jpg": {
+      "bytes": 186317,
+      "sha256": "192863c849bff3e871ed4ba1ca2182eda72a044b50ef8119845f170b2a6118ab"
+    },
+    "assets/previews/enterprise-workbenches/enterprise-funnel-mes-lists.jpg": {
+      "bytes": 106382,
+      "sha256": "fe8b4b605694878d6ef2b5f3bbeec01e1f4781652212d80c05851c83c76c0ec1"
+    },
+    "assets/previews/enterprise-workbenches/enterprise-progress-todo-management.jpg": {
+      "bytes": 186122,
+      "sha256": "1c99069030b3cf6cec0a7e36a5f2942b6c23f14f71a1df7bc81fc4fd3635bc7f"
+    },
+    "assets/previews/enterprise-workbenches/enterprise-subscription-report-portal.jpg": {
+      "bytes": 65359,
+      "sha256": "879dc19eccfb9e4bff73ca3f531221b433ece8de7dac97f00018d983abd2e355"
+    },
+    "assets/previews/enterprise-workbenches/factory-oa-task-portal.jpg": {
+      "bytes": 220158,
+      "sha256": "f00ec40b142efd3387a3c9c092a089ac37ee0f3c8a65246ea495c1e50b32d5c2"
+    },
+    "assets/previews/enterprise-workbenches/factory-space-process-workbench.jpg": {
+      "bytes": 188457,
+      "sha256": "711e9ca56ad9be52fafab4b893167c734ad7444fa97c7efc18b657e0ca20f34d"
+    },
+    "assets/previews/enterprise-workbenches/freight-model-service-workbench.jpg": {
+      "bytes": 192371,
+      "sha256": "65f483441e68b37f35e0d1f86520f7c5affed1aa866be1e8fdf679b3898bc38a"
+    },
+    "assets/previews/enterprise-workbenches/glass-welcome-service-portal.jpg": {
+      "bytes": 201412,
+      "sha256": "18061f8e32d1132ad4edfcc3ad8509408c68ef0c41ec7e0d3a2ab13a91ee1538"
+    },
+    "assets/previews/enterprise-workbenches/gradient-column-business-metrics.jpg": {
+      "bytes": 104169,
+      "sha256": "59ab9db953748e11d94cee0f5938d060605a96b1679184e89429ba555e65cae1"
+    },
+    "assets/previews/enterprise-workbenches/green-energy-service-overview.jpg": {
+      "bytes": 178784,
+      "sha256": "fb3d97618f01a1dc67be037f0edeaac90191ef097308ad40b98b7dd6d20bd2ee"
+    },
+    "assets/previews/enterprise-workbenches/heatmap-process-management.jpg": {
+      "bytes": 184434,
+      "sha256": "dd96e5c877f77291a73aa839ca0ea52451b37e343bbd393a66bb735c8bf2e1d4"
+    },
+    "assets/previews/enterprise-workbenches/logistics-loading-workbench.jpg": {
+      "bytes": 194042,
+      "sha256": "e28dfd97467cbbb8b554b30a01e1fd9d33e03dd0b15e767c25e2cb49cd4cdd5a"
+    },
+    "assets/previews/enterprise-workbenches/mes-production-task-management.jpg": {
+      "bytes": 111214,
+      "sha256": "274dc8687770a577f0ad77fecdcb40e67b0d9683461e20d6e5bfacc1e33601c0"
+    },
+    "assets/previews/enterprise-workbenches/organization-talent-analytics.jpg": {
+      "bytes": 197891,
+      "sha256": "fcefd421b3736dea06f1ab347053fdf266aacf83506699e0ae5022bef341e503"
+    },
+    "assets/previews/enterprise-workbenches/outpatient-business-metrics.jpg": {
+      "bytes": 101667,
+      "sha256": "2febc046b18b0a04154b36b688dd23a459fa2fd45ef3ba80fc88005ec4e0b514"
+    },
+    "assets/previews/enterprise-workbenches/project-process-alert-workbench.jpg": {
+      "bytes": 170246,
+      "sha256": "65aa8eb9b1fbe646f07653e23b58def4a8f657f04660069c79b00b451a47273b"
+    },
+    "assets/previews/enterprise-workbenches/recruitment-candidate-workbench.jpg": {
+      "bytes": 156561,
+      "sha256": "1fcdfda1c1cbcc0eee4c39f1be2c7550101ee779928bb8af887ca7ce32e40e78"
+    },
+    "assets/previews/enterprise-workbenches/touchscreen-catalog-device-tasks.jpg": {
+      "bytes": 94846,
+      "sha256": "bdcb0b1c8c14f789156c434d6a98358779f32b5c9d66a3f71c5876c3c6343e17"
+    },
+    "assets/previews/enterprise-workbenches/warm-orange-management-home.jpg": {
+      "bytes": 193935,
+      "sha256": "f29ebc3ce69d08a594b3e99ae9409e6e53fc7486d89e2fece694ff9bdbc572e2"
+    },
+    "assets/previews/mobile-workbenches/campus-timetable-access-hub.jpg": {
+      "bytes": 186752,
+      "sha256": "3905f6536268c5666d09aa9e7b496a3a6a8c1de42e3a35ebfab4aeb54f604713"
+    },
+    "assets/previews/mobile-workbenches/device-service-tool-grid.jpg": {
+      "bytes": 301958,
+      "sha256": "de8e8957ecc4f5d95aeafbd06b9cae87d55d7bc3413554c2ea7846beebd06719"
+    },
+    "assets/previews/mobile-workbenches/enterprise-service-mobile-hub.jpg": {
+      "bytes": 197477,
+      "sha256": "f46e6a2ea538c4f94ac4cbb112bbd15d647fc08159983f1417e0d21f6b1bc0f9"
+    },
+    "assets/previews/mobile-workbenches/illustrated-travel-service-home.jpg": {
+      "bytes": 367189,
+      "sha256": "5fb98479ae0cad1c3e4f694b1d764a090fa76a133182f499aeeea0e63477dddf"
+    },
+    "assets/previews/mobile-workbenches/parcel-orders-quick-services.jpg": {
+      "bytes": 191833,
+      "sha256": "8663ed0c05c471feb4e8ca4ac7fb28a123b7de9a4732d23a7efaf3715a576cd3"
+    },
+    "assets/previews/mobile-workbenches/public-service-task-homes.jpg": {
+      "bytes": 186291,
+      "sha256": "d643105e2461ac8effd6aee814a2703279197f9e8414411c753938a0c870e5c9"
+    },
+    "assets/previews/mobile-workbenches/travel-learning-service-homes.jpg": {
+      "bytes": 211245,
+      "sha256": "3fe04815b084441cd2d89ab9f8cf29d10ab04da434e2a0be7bca276893215a8a"
+    }
+  }
+}

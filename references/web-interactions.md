@@ -2,7 +2,7 @@
 
 先确定悬停、聚焦、点击或滚动触发，再实现视觉变化。指针装饰不替代可访问名称；触摸端保留能完成同一任务的入口。
 
-GIF 看连续运动，六帧图按从左到右、从上到下查看。像素值、技术栈与缓动由当前项目决定。
+六帧图按从左到右、从上到下查看，仅表示抽样状态，不能证明连续运动和短暂状态。像素值、技术栈与缓动由当前项目决定。
 
 ## 目录
 
@@ -26,9 +26,10 @@ GIF 看连续运动，六帧图按从左到右、从上到下查看。像素值�
 - 实现关注：共享分段进度驱动说明与高亮；固定仅限该章节，章节结束恢复正常文档流。
 - 验证重点：向前和反向滚动时图文对应；窄屏采用顺序阅读且没有过长空白。
 - 相关条目：[motion/scroll-storytelling](motion.md#scroll-storytelling)。
-- 参考：[GIF 动图](../assets/gifs/web-interactions/sticky-product-story.gif) · [六帧对照图](../assets/filmstrips/web-interactions/sticky-product-story.jpg)。
+- 媒体取舍：保留 GIF＋JPG。需看固定主图、滚动讲解和部位强调之间的同步关系。
+- 参考：[GIF 动图](https://raw.githubusercontent.com/dqzboy/ui-atlas/e6aa0d641c224a2cb4c8bd4262a4d18f5c7e1e22/assets/gifs/web-interactions/sticky-product-story.gif) · [六帧对照图](https://raw.githubusercontent.com/dqzboy/ui-atlas/e6aa0d641c224a2cb4c8bd4262a4d18f5c7e1e22/assets/filmstrips/web-interactions/sticky-product-story.jpg)。
 
-![钉住主图的产品叙事：按时间从左到右、从上到下阅读](../assets/filmstrips/web-interactions/sticky-product-story.jpg)
+![钉住主图的产品叙事：按时间从左到右、从上到下阅读](https://raw.githubusercontent.com/dqzboy/ui-atlas/e6aa0d641c224a2cb4c8bd4262a4d18f5c7e1e22/assets/filmstrips/web-interactions/sticky-product-story.jpg)
 
 <a id="contextual-cursor"></a>
 ## 情境光标 / Contextual Cursor
@@ -38,9 +39,10 @@ GIF 看连续运动，六帧图按从左到右、从上到下查看。像素值�
 - 指令例句：在作品卡片内将光标变为带动作说明的圆形，离开恢复普通指针。
 - 实现关注：自定义光标不接收指针事件；交互元素保留原生语义、名称和焦点反馈，触摸端用常规可见入口。
 - 验证重点：跨多个目标、滚出区域和键盘操作不遗留圆形光标，不遮挡要读的文字。
-- 参考：[GIF 动图](../assets/gifs/web-interactions/contextual-cursor.gif) · [六帧对照图](../assets/filmstrips/web-interactions/contextual-cursor.jpg)。
+- 媒体取舍：保留 GIF＋JPG。需看指针进入、形态变化、移动跟随与离开恢复。
+- 参考：[GIF 动图](https://raw.githubusercontent.com/dqzboy/ui-atlas/e6aa0d641c224a2cb4c8bd4262a4d18f5c7e1e22/assets/gifs/web-interactions/contextual-cursor.gif) · [六帧对照图](https://raw.githubusercontent.com/dqzboy/ui-atlas/e6aa0d641c224a2cb4c8bd4262a4d18f5c7e1e22/assets/filmstrips/web-interactions/contextual-cursor.jpg)。
 
-![情境光标：按时间从左到右、从上到下阅读](../assets/filmstrips/web-interactions/contextual-cursor.jpg)
+![情境光标：按时间从左到右、从上到下阅读](https://raw.githubusercontent.com/dqzboy/ui-atlas/e6aa0d641c224a2cb4c8bd4262a4d18f5c7e1e22/assets/filmstrips/web-interactions/contextual-cursor.jpg)
 
 <a id="magnetic-cta"></a>
 ## 磁吸主操作按钮 / Magnetic CTA
@@ -51,9 +53,10 @@ GIF 看连续运动，六帧图按从左到右、从上到下查看。像素值�
 - 实现关注：位移放在内部视觉层，外层负责命中；幅度受按钮尺寸限制，不把其他按钮也默认磁吸。
 - 验证重点：边缘点击、快速掠过、离开和键盘激活均正常。
 - 相关条目：[motion/magnetic](motion.md#magnetic)。
-- 参考：[GIF 动图](../assets/gifs/web-interactions/magnetic-cta.gif) · [六帧对照图](../assets/filmstrips/web-interactions/magnetic-cta.jpg)。
+- 媒体取舍：保留 GIF＋JPG。需看靠近偏移、离开弹性复位及指针与按钮的相对运动。
+- 参考：[GIF 动图](https://raw.githubusercontent.com/dqzboy/ui-atlas/e6aa0d641c224a2cb4c8bd4262a4d18f5c7e1e22/assets/gifs/web-interactions/magnetic-cta.gif) · [六帧对照图](https://raw.githubusercontent.com/dqzboy/ui-atlas/e6aa0d641c224a2cb4c8bd4262a4d18f5c7e1e22/assets/filmstrips/web-interactions/magnetic-cta.jpg)。
 
-![磁吸主操作按钮：按时间从左到右、从上到下阅读](../assets/filmstrips/web-interactions/magnetic-cta.jpg)
+![磁吸主操作按钮：按时间从左到右、从上到下阅读](https://raw.githubusercontent.com/dqzboy/ui-atlas/e6aa0d641c224a2cb4c8bd4262a4d18f5c7e1e22/assets/filmstrips/web-interactions/magnetic-cta.jpg)
 
 <a id="expanding-icon-label"></a>
 ## 图标按钮展开标签 / Expanding Icon Label
@@ -63,9 +66,10 @@ GIF 看连续运动，六帧图按从左到右、从上到下查看。像素值�
 - 指令例句：工具栏图标悬停或聚焦时展开文字，图标始终可辨认。
 - 实现关注：预留或平滑分配展开宽度，避免挤压相邻命中区域；可访问名称始终存在。
 - 验证重点：最左与最右按钮、键盘聚焦和触摸端都能理解并执行操作。
-- 参考：[GIF 动图](../assets/gifs/web-interactions/expanding-icon-label.gif) · [六帧对照图](../assets/filmstrips/web-interactions/expanding-icon-label.jpg)。
+- 媒体取舍：保留 GIF＋JPG。需看图标按钮宽度展开、文字出现与收回的协同。
+- 参考：[GIF 动图](https://raw.githubusercontent.com/dqzboy/ui-atlas/e6aa0d641c224a2cb4c8bd4262a4d18f5c7e1e22/assets/gifs/web-interactions/expanding-icon-label.gif) · [六帧对照图](https://raw.githubusercontent.com/dqzboy/ui-atlas/e6aa0d641c224a2cb4c8bd4262a4d18f5c7e1e22/assets/filmstrips/web-interactions/expanding-icon-label.jpg)。
 
-![图标按钮展开标签：按时间从左到右、从上到下阅读](../assets/filmstrips/web-interactions/expanding-icon-label.jpg)
+![图标按钮展开标签：按时间从左到右、从上到下阅读](https://raw.githubusercontent.com/dqzboy/ui-atlas/e6aa0d641c224a2cb4c8bd4262a4d18f5c7e1e22/assets/filmstrips/web-interactions/expanding-icon-label.jpg)
 
 <a id="sliding-nav-highlight"></a>
 ## 导航底色跟随 / Sliding Navigation Highlight
@@ -75,9 +79,10 @@ GIF 看连续运动，六帧图按从左到右、从上到下查看。像素值�
 - 指令例句：导航高亮底色随目标项移动和变宽，离开预览后恢复当前页面选中项。
 - 实现关注：将实际选中与指针预览分开；底色不拦截点击，字体加载或窗口变化后重新测量目标。
 - 验证重点：不同宽度标签、键盘切换、页面刷新和返回后，底色与当前路由一致。
-- 参考：[GIF 动图](../assets/gifs/web-interactions/sliding-nav-highlight.gif) · [六帧对照图](../assets/filmstrips/web-interactions/sliding-nav-highlight.jpg)。
+- 媒体取舍：保留 GIF＋JPG。需看底色平滑移动并适配文字宽度的过程。
+- 参考：[GIF 动图](https://raw.githubusercontent.com/dqzboy/ui-atlas/e6aa0d641c224a2cb4c8bd4262a4d18f5c7e1e22/assets/gifs/web-interactions/sliding-nav-highlight.gif) · [六帧对照图](https://raw.githubusercontent.com/dqzboy/ui-atlas/e6aa0d641c224a2cb4c8bd4262a4d18f5c7e1e22/assets/filmstrips/web-interactions/sliding-nav-highlight.jpg)。
 
-![导航底色跟随：按时间从左到右、从上到下阅读](../assets/filmstrips/web-interactions/sliding-nav-highlight.jpg)
+![导航底色跟随：按时间从左到右、从上到下阅读](https://raw.githubusercontent.com/dqzboy/ui-atlas/e6aa0d641c224a2cb4c8bd4262a4d18f5c7e1e22/assets/filmstrips/web-interactions/sliding-nav-highlight.jpg)
 
 <a id="corner-fill-hover"></a>
 ## 角落扩散填色 / Corner Fill Hover
@@ -87,9 +92,10 @@ GIF 看连续运动，六帧图按从左到右、从上到下查看。像素值�
 - 指令例句：可点击统计卡悬停时从右上角扩散填色，并同步调整文字和箭头。
 - 实现关注：扩散层裁剪在卡内，内容层保持固定；文字切色与背景覆盖节奏配合，触摸和聚焦提供等价反馈。
 - 验证重点：快速进出和跨卡片移动无残留，过渡中数字和图标也清晰。
-- 参考：[GIF 动图](../assets/gifs/web-interactions/corner-fill-hover.gif) · [六帧对照图](../assets/filmstrips/web-interactions/corner-fill-hover.jpg)。
+- 媒体取舍：保留 GIF＋JPG。需看主题色从角落扩散及图标、文字同步换色的过程。
+- 参考：[GIF 动图](https://raw.githubusercontent.com/dqzboy/ui-atlas/e6aa0d641c224a2cb4c8bd4262a4d18f5c7e1e22/assets/gifs/web-interactions/corner-fill-hover.gif) · [六帧对照图](https://raw.githubusercontent.com/dqzboy/ui-atlas/e6aa0d641c224a2cb4c8bd4262a4d18f5c7e1e22/assets/filmstrips/web-interactions/corner-fill-hover.jpg)。
 
-![角落扩散填色：按时间从左到右、从上到下阅读](../assets/filmstrips/web-interactions/corner-fill-hover.jpg)
+![角落扩散填色：按时间从左到右、从上到下阅读](https://raw.githubusercontent.com/dqzboy/ui-atlas/e6aa0d641c224a2cb4c8bd4262a4d18f5c7e1e22/assets/filmstrips/web-interactions/corner-fill-hover.jpg)
 
 <a id="snapping-level-slider"></a>
 ## 分档吸附拖动条 / Snapping Level Slider
@@ -100,9 +106,10 @@ GIF 看连续运动，六帧图按从左到右、从上到下查看。像素值�
 - 实现关注：明确离散值集合与标签，指针位置映射为有效档位；键盘按档移动，视觉插值不产生非法业务值。
 - 验证重点：首尾档、跨多档快速拖动、点击轨道和方向键操作均到达准确值。
 - 相关条目：[forms/slider](forms.md#slider)。
-- 参考：[GIF 动图](../assets/gifs/web-interactions/snapping-level-slider.gif) · [六帧对照图](../assets/filmstrips/web-interactions/snapping-level-slider.jpg)。
+- 媒体取舍：保留 GIF＋JPG。需看跨档反馈和释放后吸附刻度的行为。
+- 参考：[GIF 动图](https://raw.githubusercontent.com/dqzboy/ui-atlas/e6aa0d641c224a2cb4c8bd4262a4d18f5c7e1e22/assets/gifs/web-interactions/snapping-level-slider.gif) · [六帧对照图](https://raw.githubusercontent.com/dqzboy/ui-atlas/e6aa0d641c224a2cb4c8bd4262a4d18f5c7e1e22/assets/filmstrips/web-interactions/snapping-level-slider.jpg)。
 
-![分档吸附拖动条：按时间从左到右、从上到下阅读](../assets/filmstrips/web-interactions/snapping-level-slider.jpg)
+![分档吸附拖动条：按时间从左到右、从上到下阅读](https://raw.githubusercontent.com/dqzboy/ui-atlas/e6aa0d641c224a2cb4c8bd4262a4d18f5c7e1e22/assets/filmstrips/web-interactions/snapping-level-slider.jpg)
 
 <a id="scrubbing-bar-chart"></a>
 ## 柱状图跟手读数 / Scrubbing Bar Chart
@@ -112,9 +119,10 @@ GIF 看连续运动，六帧图按从左到右、从上到下查看。像素值�
 - 指令例句：柱状图支持横向跟手读取数据，标记、数值和高亮保持同步。
 - 实现关注：以图表坐标找数据索引，提示用真实数据和单位；聚焦或触摸可选择数据点，离开后明确恢复策略。
 - 验证重点：边界柱、零值、密集数据和缩放后，读数不偏一列，纵轴尺度不漂移。
-- 参考：[GIF 动图](../assets/gifs/web-interactions/scrubbing-bar-chart.gif) · [六帧对照图](../assets/filmstrips/web-interactions/scrubbing-bar-chart.jpg)。
+- 媒体取舍：保留 GIF＋JPG。需看指针、读数、标记与明暗范围的实时跟随。
+- 参考：[GIF 动图](https://raw.githubusercontent.com/dqzboy/ui-atlas/e6aa0d641c224a2cb4c8bd4262a4d18f5c7e1e22/assets/gifs/web-interactions/scrubbing-bar-chart.gif) · [六帧对照图](https://raw.githubusercontent.com/dqzboy/ui-atlas/e6aa0d641c224a2cb4c8bd4262a4d18f5c7e1e22/assets/filmstrips/web-interactions/scrubbing-bar-chart.jpg)。
 
-![柱状图跟手读数：按时间从左到右、从上到下阅读](../assets/filmstrips/web-interactions/scrubbing-bar-chart.jpg)
+![柱状图跟手读数：按时间从左到右、从上到下阅读](https://raw.githubusercontent.com/dqzboy/ui-atlas/e6aa0d641c224a2cb4c8bd4262a4d18f5c7e1e22/assets/filmstrips/web-interactions/scrubbing-bar-chart.jpg)
 
 <a id="hover-image-preview"></a>
 ## 列表悬停预览图 / Hover Image Preview
@@ -124,9 +132,10 @@ GIF 看连续运动，六帧图按从左到右、从上到下查看。像素值�
 - 指令例句：案例列表悬停或聚焦时预览对应图片，列表本身不跳动。
 - 实现关注：图片浮层不参与列表排版且不挡点击；限制在可视区域内，触摸端用明确的预览入口。
 - 验证重点：跨行快速移动、图片未加载、视口边缘和键盘聚焦都显示正确对应项。
-- 参考：[GIF 动图](../assets/gifs/web-interactions/hover-image-preview.gif) · [六帧对照图](../assets/filmstrips/web-interactions/hover-image-preview.jpg)。
+- 媒体取舍：保留 GIF＋JPG。需看指针切换条目时图片预览的位置、显隐与跟随。
+- 参考：[GIF 动图](https://raw.githubusercontent.com/dqzboy/ui-atlas/e6aa0d641c224a2cb4c8bd4262a4d18f5c7e1e22/assets/gifs/web-interactions/hover-image-preview.gif) · [六帧对照图](https://raw.githubusercontent.com/dqzboy/ui-atlas/e6aa0d641c224a2cb4c8bd4262a4d18f5c7e1e22/assets/filmstrips/web-interactions/hover-image-preview.jpg)。
 
-![列表悬停预览图：按时间从左到右、从上到下阅读](../assets/filmstrips/web-interactions/hover-image-preview.jpg)
+![列表悬停预览图：按时间从左到右、从上到下阅读](https://raw.githubusercontent.com/dqzboy/ui-atlas/e6aa0d641c224a2cb4c8bd4262a4d18f5c7e1e22/assets/filmstrips/web-interactions/hover-image-preview.jpg)
 
 <a id="circular-theme-reveal"></a>
 ## 圆形扩散换肤 / Circular Theme Reveal
@@ -137,6 +146,7 @@ GIF 看连续运动，六帧图按从左到右、从上到下查看。像素值�
 - 实现关注：圆半径覆盖触点到最远角落；使用可靠的视图过渡或两层快照裁剪，不能整体缩放页面；无能力支持时直接切换。
 - 验证重点：四角均覆盖，连续切换和减弱动态下结果正确，偏好可按项目规则持久化。
 - 相关条目：[mobile-interactions/touch-origin-theme](mobile-interactions.md#touch-origin-theme)。
-- 参考：[GIF 动图](../assets/gifs/web-interactions/circular-theme-reveal.gif) · [六帧对照图](../assets/filmstrips/web-interactions/circular-theme-reveal.jpg)。
+- 媒体取舍：保留 GIF＋JPG。需看圆形遮罩从触发位置扩散，静态主题对比不足以表达。
+- 参考：[GIF 动图](https://raw.githubusercontent.com/dqzboy/ui-atlas/e6aa0d641c224a2cb4c8bd4262a4d18f5c7e1e22/assets/gifs/web-interactions/circular-theme-reveal.gif) · [六帧对照图](https://raw.githubusercontent.com/dqzboy/ui-atlas/e6aa0d641c224a2cb4c8bd4262a4d18f5c7e1e22/assets/filmstrips/web-interactions/circular-theme-reveal.jpg)。
 
-![圆形扩散换肤：按时间从左到右、从上到下阅读](../assets/filmstrips/web-interactions/circular-theme-reveal.jpg)
+![圆形扩散换肤：按时间从左到右、从上到下阅读](https://raw.githubusercontent.com/dqzboy/ui-atlas/e6aa0d641c224a2cb4c8bd4262a4d18f5c7e1e22/assets/filmstrips/web-interactions/circular-theme-reveal.jpg)
