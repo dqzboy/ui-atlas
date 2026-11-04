@@ -1650,6 +1650,81 @@
     "assets/previews/mobile-workbenches/travel-learning-service-homes.jpg": {
       "bytes": 211245,
       "sha256": "3fe04815b084441cd2d89ab9f8cf29d10ab04da434e2a0be7bca276893215a8a"
+    },
+    "assets/recipes/ascii-dither.jpg": {
+      "bytes": 469249,
+      "sha256": "909be30fce7b6aba09ea05fb7ee8f16e997fa46d2f7476646f0d47baec26e1a9",
+      "bundled": true
+    },
+    "assets/recipes/book-open-card.gif": {
+      "bytes": 796175,
+      "sha256": "5102ffbdc2fe0a19444ed8cd9683b75c4d979b30fb07ac9759319a34b360493d",
+      "bundled": true
+    },
+    "assets/recipes/book-open-card.jpg": {
+      "bytes": 193875,
+      "sha256": "5500c00f5f193a78759be401f9b2de9bc7a192618de7f56d444c0c810c0d6d21",
+      "bundled": true
+    },
+    "assets/recipes/cjk-latin-typesetting.jpg": {
+      "bytes": 503489,
+      "sha256": "71bf2a67179dcae7cebd2f9233934f287ca20ff26804d63ab15469e299fabb0e",
+      "bundled": true
+    },
+    "assets/recipes/continuous-corners.jpg": {
+      "bytes": 825636,
+      "sha256": "337c4b8839ca4a109c69ea5dfd2b3d762b5badb36b3dc03608896aa390e898b1",
+      "bundled": true
+    },
+    "assets/recipes/liquid-glass.gif": {
+      "bytes": 1758808,
+      "sha256": "3322d4614ae34a693b8ef1b8fc26ef16cc664a2c6cd8f28dc63b889995915048",
+      "bundled": true
+    },
+    "assets/recipes/liquid-glass.jpg": {
+      "bytes": 408318,
+      "sha256": "b8952df5b3cee6f6d1643d1845121ba80c2e535f6889be2c5439135bb80bf481",
+      "bundled": true
+    },
+    "assets/recipes/overlay-decision.gif": {
+      "bytes": 767388,
+      "sha256": "59d9abe4e147ec7708a25432113f60da05f2998b5a8379f5f5a078942ddb904b",
+      "bundled": true
+    },
+    "assets/recipes/overlay-decision.jpg": {
+      "bytes": 396747,
+      "sha256": "9b3e8e85af8b9bfac97eceeb6d09a8bb0f1fc08292a6083f3b40bc746a607486",
+      "bundled": true
+    },
+    "assets/recipes/ripple-reorder.gif": {
+      "bytes": 593451,
+      "sha256": "5321e41dbe83867ae1e5f5b120058682e7f3f1173499d63c67860db61b31ec35",
+      "bundled": true
+    },
+    "assets/recipes/ripple-reorder.jpg": {
+      "bytes": 185673,
+      "sha256": "eb0ed7b049483d92a1fe6e7d86d79346487ff824d397c00fe7dd2e6ada97465f",
+      "bundled": true
+    },
+    "assets/recipes/safe-cascade-menu.jpg": {
+      "bytes": 161758,
+      "sha256": "6cacc3f5a58c074bf23b888f77b70714878aad986466c010ecdac46cfbacb561",
+      "bundled": true
+    },
+    "assets/recipes/tactile-button.jpg": {
+      "bytes": 48211,
+      "sha256": "f19b75e40aab21f7f75da6bea36652b5b0de53de77b7450969c90bdf35e4ee9b",
+      "bundled": true
+    },
+    "assets/recipes/wiki-layout.gif": {
+      "bytes": 814710,
+      "sha256": "7f8715e190e9ad8b996a8ea1529e57a6cd1fce8bbdc7fea8177732bdd6182ca5",
+      "bundled": true
+    },
+    "assets/recipes/wiki-layout.jpg": {
+      "bytes": 415567,
+      "sha256": "2755dda47db3d08fe93ac163202d769c90a8462527cc958237ea36ea70244d8d",
+      "bundled": true
     }
   }
 }

@@ -1,6 +1,20 @@
 # 提示、跟随气泡与浮层决策 / Floating UI Decision Guide
 
-这是实现配方，未附视觉媒体；参数是可调起点，不代表已验证的动画或浏览器能力。
+实现配方附高清演示截图与精选动图片段；参数是可调起点，仍需在目标项目与浏览器中验证。
+
+## 效果参考
+
+![提示、跟随气泡与浮层决策：效果参考](../../assets/recipes/overlay-decision.jpg)
+
+图片对照 Drawer 与 Dialog；动图仅展示 Drawer 打开，不证明 Cursor Tip 跟随、确认提交或焦点管理。
+
+![提示、跟随气泡与浮层决策：交互片段](../../assets/details/overlays/overlay-decision.gif)
+
+精简动图帧率见索引，大尺寸版为 15 fps；循环接缝不代表产品行为，也不能据此测定精确时长或缓动。
+
+媒体取舍：保留未遮挡抽屉主体的打开片段，用于观察覆盖层、侧向入场和表单的关系。
+
+[精简动图](../../assets/recipes/overlay-decision.gif)用于轻量安装；完整媒体版优先查看上方大尺寸动图。
 
 ## 适用与边界
 

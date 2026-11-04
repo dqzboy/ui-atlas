@@ -1,0 +1,3776 @@
+{
+  "version": 1,
+  "base_revision": "e6aa0d641c224a2cb4c8bd4262a4d18f5c7e1e22",
+  "entries": {
+    "overlays/modal": {
+      "source": "retained-gif-frames",
+      "limitation": "从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。",
+      "images": [
+        "assets/details/overlays/modal.png"
+      ],
+      "poster": "assets/details/overlays/modal.png",
+      "image_reason": "同一结构仅保留一张内容完整的代表图，删除重复讲解帧。"
+    },
+    "overlays/alert-dialog": {
+      "source": "retained-gif-frames",
+      "limitation": "从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。",
+      "images": [
+        "assets/details/overlays/alert-dialog.png"
+      ],
+      "poster": "assets/details/overlays/alert-dialog.png",
+      "image_reason": "同一结构仅保留一张内容完整的代表图，删除重复讲解帧。"
+    },
+    "overlays/drawer": {
+      "source": "retained-gif-frames",
+      "limitation": "从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。",
+      "images": [
+        "assets/details/overlays/drawer.png"
+      ],
+      "poster": "assets/details/overlays/drawer.png",
+      "image_reason": "同一效果仅保留一张内容完整的代表图；连续过程由 GIF 展示。"
+    },
+    "overlays/bottom-sheet": {
+      "source": "retained-gif-frames",
+      "limitation": "从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。",
+      "images": [
+        "assets/details/overlays/bottom-sheet.png"
+      ],
+      "poster": "assets/details/overlays/bottom-sheet.png",
+      "image_reason": "同一效果仅保留一张内容完整的代表图；连续过程由 GIF 展示。"
+    },
+    "overlays/toast": {
+      "source": "retained-gif-frames",
+      "limitation": "从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。",
+      "images": [
+        "assets/details/overlays/toast.png"
+      ],
+      "poster": "assets/details/overlays/toast.png",
+      "image_reason": "同一结构仅保留一张内容完整的代表图，删除重复讲解帧。"
+    },
+    "overlays/notification": {
+      "source": "retained-gif-frames",
+      "limitation": "从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。",
+      "images": [
+        "assets/details/overlays/notification.png"
+      ],
+      "poster": "assets/details/overlays/notification.png",
+      "image_reason": "同一结构仅保留一张内容完整的代表图，删除重复讲解帧。"
+    },
+    "overlays/toast-vs-notification": {
+      "source": "retained-gif-frames",
+      "limitation": "从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。",
+      "images": [
+        "assets/details/overlays/toast-vs-notification.png"
+      ],
+      "poster": "assets/details/overlays/toast-vs-notification.png",
+      "image_reason": "同一结构仅保留一张内容完整的代表图，删除重复讲解帧。"
+    },
+    "overlays/success-toast-correction": {
+      "source": "retained-gif-frames",
+      "limitation": "从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。",
+      "images": [
+        "assets/details/overlays/success-toast-correction-01.png",
+        "assets/details/overlays/success-toast-correction-02.png"
+      ],
+      "poster": "assets/details/overlays/success-toast-correction-01.png",
+      "image_reason": "保留原来的阻断弹窗与轻提示纠正说明，删除同一方案的重复讲解帧。"
+    },
+    "overlays/tooltip": {
+      "source": "retained-gif-frames",
+      "limitation": "从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。",
+      "images": [
+        "assets/details/overlays/tooltip.png"
+      ],
+      "poster": "assets/details/overlays/tooltip.png",
+      "image_reason": "同一结构仅保留一张内容完整的代表图，删除重复讲解帧。"
+    },
+    "overlays/popover": {
+      "source": "retained-gif-frames",
+      "limitation": "从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。",
+      "images": [
+        "assets/details/overlays/popover.png"
+      ],
+      "poster": "assets/details/overlays/popover.png",
+      "image_reason": "同一结构仅保留一张内容完整的代表图，删除重复讲解帧。"
+    },
+    "overlays/popconfirm": {
+      "source": "retained-gif-frames",
+      "limitation": "从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。",
+      "images": [
+        "assets/details/overlays/popconfirm.png"
+      ],
+      "poster": "assets/details/overlays/popconfirm.png",
+      "image_reason": "同一结构仅保留一张内容完整的代表图，删除重复讲解帧。"
+    },
+    "overlays/dropdown-menu": {
+      "source": "retained-gif-frames",
+      "limitation": "从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。",
+      "images": [
+        "assets/details/overlays/dropdown-menu.png"
+      ],
+      "poster": "assets/details/overlays/dropdown-menu.png",
+      "image_reason": "同一结构仅保留一张内容完整的代表图，删除重复讲解帧。"
+    },
+    "loading-errors/skeleton": {
+      "source": "retained-gif-frames",
+      "limitation": "从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。",
+      "images": [
+        "assets/details/loading-errors/skeleton.png"
+      ],
+      "poster": "assets/details/loading-errors/skeleton.png",
+      "image_reason": "同一效果仅保留一张内容完整的代表图；连续过程由 GIF 展示。"
+    },
+    "loading-errors/blur-up": {
+      "source": "retained-gif-frames",
+      "limitation": "从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。",
+      "images": [
+        "assets/details/loading-errors/blur-up.png"
+      ],
+      "poster": "assets/details/loading-errors/blur-up.png",
+      "image_reason": "同一效果仅保留一张内容完整的代表图；连续过程由 GIF 展示。"
+    },
+    "loading-errors/optimistic-ui": {
+      "source": "retained-gif-frames",
+      "limitation": "从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。",
+      "images": [
+        "assets/details/loading-errors/optimistic-ui.png"
+      ],
+      "poster": "assets/details/loading-errors/optimistic-ui.png",
+      "image_reason": "同一效果仅保留一张内容完整的代表图；连续过程由 GIF 展示。"
+    },
+    "loading-errors/pull-to-refresh": {
+      "source": "retained-gif-frames",
+      "limitation": "从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。",
+      "images": [
+        "assets/details/loading-errors/pull-to-refresh.png"
+      ],
+      "poster": "assets/details/loading-errors/pull-to-refresh.png",
+      "image_reason": "同一效果仅保留一张内容完整的代表图；连续过程由 GIF 展示。"
+    },
+    "loading-errors/progress-bar": {
+      "source": "retained-gif-frames",
+      "limitation": "从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。",
+      "images": [
+        "assets/details/loading-errors/progress-bar.png"
+      ],
+      "poster": "assets/details/loading-errors/progress-bar.png",
+      "image_reason": "同一结构仅保留一张内容完整的代表图，删除重复讲解帧。"
+    },
+    "loading-errors/loading-button": {
+      "source": "retained-gif-frames",
+      "limitation": "从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。",
+      "images": [
+        "assets/details/loading-errors/loading-button.png"
+      ],
+      "poster": "assets/details/loading-errors/loading-button.png",
+      "image_reason": "同一效果仅保留一张内容完整的代表图；连续过程由 GIF 展示。"
+    },
+    "loading-errors/empty-state": {
+      "source": "retained-gif-frames",
+      "limitation": "从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。",
+      "images": [
+        "assets/details/loading-errors/empty-state.png"
+      ],
+      "poster": "assets/details/loading-errors/empty-state.png",
+      "image_reason": "同一结构仅保留一张内容完整的代表图，删除重复讲解帧。"
+    },
+    "loading-errors/not-found": {
+      "source": "retained-gif-frames",
+      "limitation": "从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。",
+      "images": [
+        "assets/details/loading-errors/not-found.png"
+      ],
+      "poster": "assets/details/loading-errors/not-found.png",
+      "image_reason": "同一结构仅保留一张内容完整的代表图，删除重复讲解帧。"
+    },
+    "loading-errors/error-page": {
+      "source": "retained-gif-frames",
+      "limitation": "从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。",
+      "images": [
+        "assets/details/loading-errors/error-page.png"
+      ],
+      "poster": "assets/details/loading-errors/error-page.png",
+      "image_reason": "同一结构仅保留一张内容完整的代表图，删除重复讲解帧。"
+    },
+    "loading-errors/offline": {
+      "source": "retained-gif-frames",
+      "limitation": "从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。",
+      "images": [
+        "assets/details/loading-errors/offline.png"
+      ],
+      "poster": "assets/details/loading-errors/offline.png",
+      "image_reason": "同一效果仅保留一张内容完整的代表图；连续过程由 GIF 展示。"
+    },
+    "loading-errors/no-permission": {
+      "source": "retained-gif-frames",
+      "limitation": "从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。",
+      "images": [
+        "assets/details/loading-errors/no-permission.png"
+      ],
+      "poster": "assets/details/loading-errors/no-permission.png",
+      "image_reason": "同一结构仅保留一张内容完整的代表图，删除重复讲解帧。"
+    },
+    "loading-errors/result": {
+      "source": "retained-gif-frames",
+      "limitation": "从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。",
+      "images": [
+        "assets/details/loading-errors/result.png"
+      ],
+      "poster": "assets/details/loading-errors/result.png",
+      "image_reason": "同一结构仅保留一张内容完整的代表图，删除重复讲解帧。"
+    },
+    "loading-errors/spinner": {
+      "source": "retained-gif-frames",
+      "limitation": "从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。",
+      "images": [
+        "assets/details/loading-errors/spinner.png"
+      ],
+      "poster": "assets/details/loading-errors/spinner.png",
+      "image_reason": "同一效果仅保留一张内容完整的代表图；连续过程由 GIF 展示。"
+    },
+    "backgrounds/aurora": {
+      "source": "retained-gif-frames",
+      "limitation": "从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。",
+      "images": [
+        "assets/details/backgrounds/aurora.png"
+      ],
+      "poster": "assets/details/backgrounds/aurora.png",
+      "image_reason": "同一效果仅保留一张内容完整的代表图；连续过程由 GIF 展示。"
+    },
+    "backgrounds/mesh-gradient": {
+      "source": "retained-gif-frames",
+      "limitation": "从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。",
+      "images": [
+        "assets/details/backgrounds/mesh-gradient.png"
+      ],
+      "poster": "assets/details/backgrounds/mesh-gradient.png",
+      "image_reason": "同一效果仅保留一张内容完整的代表图；连续过程由 GIF 展示。"
+    },
+    "backgrounds/particle-wave": {
+      "source": "retained-gif-frames",
+      "limitation": "从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。",
+      "images": [
+        "assets/details/backgrounds/particle-wave.png"
+      ],
+      "poster": "assets/details/backgrounds/particle-wave.png",
+      "image_reason": "同一效果仅保留一张内容完整的代表图；连续过程由 GIF 展示。"
+    },
+    "backgrounds/dotted-globe": {
+      "source": "retained-gif-frames",
+      "limitation": "从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。",
+      "images": [
+        "assets/details/backgrounds/dotted-globe.png"
+      ],
+      "poster": "assets/details/backgrounds/dotted-globe.png",
+      "image_reason": "同一效果仅保留一张内容完整的代表图；连续过程由 GIF 展示。"
+    },
+    "backgrounds/fluid": {
+      "source": "retained-gif-frames",
+      "limitation": "从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。",
+      "images": [
+        "assets/details/backgrounds/fluid.png"
+      ],
+      "poster": "assets/details/backgrounds/fluid.png",
+      "image_reason": "同一效果仅保留一张内容完整的代表图；连续过程由 GIF 展示。"
+    },
+    "backgrounds/beams": {
+      "source": "retained-gif-frames",
+      "limitation": "从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。",
+      "images": [
+        "assets/details/backgrounds/beams.png"
+      ],
+      "poster": "assets/details/backgrounds/beams.png",
+      "image_reason": "同一效果仅保留一张内容完整的代表图；连续过程由 GIF 展示。"
+    },
+    "backgrounds/matrix-rain": {
+      "source": "retained-gif-frames",
+      "limitation": "从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。",
+      "images": [
+        "assets/details/backgrounds/matrix-rain.png"
+      ],
+      "poster": "assets/details/backgrounds/matrix-rain.png",
+      "image_reason": "同一效果仅保留一张内容完整的代表图；连续过程由 GIF 展示。"
+    },
+    "backgrounds/dot-grid": {
+      "source": "retained-gif-frames",
+      "limitation": "从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。",
+      "images": [
+        "assets/details/backgrounds/dot-grid.png"
+      ],
+      "poster": "assets/details/backgrounds/dot-grid.png",
+      "image_reason": "同一效果仅保留一张内容完整的代表图；连续过程由 GIF 展示。"
+    },
+    "backgrounds/retro-grid": {
+      "source": "retained-gif-frames",
+      "limitation": "从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。",
+      "images": [
+        "assets/details/backgrounds/retro-grid.png"
+      ],
+      "poster": "assets/details/backgrounds/retro-grid.png",
+      "image_reason": "同一效果仅保留一张内容完整的代表图；连续过程由 GIF 展示。"
+    },
+    "backgrounds/starfield": {
+      "source": "retained-gif-frames",
+      "limitation": "从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。",
+      "images": [
+        "assets/details/backgrounds/starfield.png"
+      ],
+      "poster": "assets/details/backgrounds/starfield.png",
+      "image_reason": "同一效果仅保留一张内容完整的代表图；连续过程由 GIF 展示。"
+    },
+    "backgrounds/grain": {
+      "source": "retained-gif-frames",
+      "limitation": "从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。",
+      "images": [
+        "assets/details/backgrounds/grain.png"
+      ],
+      "poster": "assets/details/backgrounds/grain.png",
+      "image_reason": "同一结构仅保留一张内容完整的代表图，删除重复讲解帧。"
+    },
+    "backgrounds/gradient": {
+      "source": "retained-gif-frames",
+      "limitation": "从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。",
+      "images": [
+        "assets/details/backgrounds/gradient.png"
+      ],
+      "poster": "assets/details/backgrounds/gradient.png",
+      "image_reason": "同一结构仅保留一张内容完整的代表图，删除重复讲解帧。"
+    },
+    "cards-tables/carousel": {
+      "source": "retained-gif-frames",
+      "limitation": "从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。",
+      "images": [
+        "assets/details/cards-tables/carousel.png"
+      ],
+      "poster": "assets/details/cards-tables/carousel.png",
+      "image_reason": "同一效果仅保留一张内容完整的代表图；连续过程由 GIF 展示。"
+    },
+    "cards-tables/masonry": {
+      "source": "retained-gif-frames",
+      "limitation": "从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。",
+      "images": [
+        "assets/details/cards-tables/masonry.png"
+      ],
+      "poster": "assets/details/cards-tables/masonry.png",
+      "image_reason": "同一结构仅保留一张内容完整的代表图，删除重复讲解帧。"
+    },
+    "cards-tables/flip-card": {
+      "source": "retained-gif-frames",
+      "limitation": "从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。",
+      "images": [
+        "assets/details/cards-tables/flip-card.png"
+      ],
+      "poster": "assets/details/cards-tables/flip-card.png",
+      "image_reason": "同一效果仅保留一张内容完整的代表图；连续过程由 GIF 展示。"
+    },
+    "cards-tables/stat-card": {
+      "source": "retained-gif-frames",
+      "limitation": "从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。",
+      "images": [
+        "assets/details/cards-tables/stat-card.png"
+      ],
+      "poster": "assets/details/cards-tables/stat-card.png",
+      "image_reason": "同一结构仅保留一张内容完整的代表图，删除重复讲解帧。"
+    },
+    "cards-tables/timeline": {
+      "source": "retained-gif-frames",
+      "limitation": "从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。",
+      "images": [
+        "assets/details/cards-tables/timeline.png"
+      ],
+      "poster": "assets/details/cards-tables/timeline.png",
+      "image_reason": "同一结构仅保留一张内容完整的代表图，删除重复讲解帧。"
+    },
+    "cards-tables/avatar-group": {
+      "source": "retained-gif-frames",
+      "limitation": "从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。",
+      "images": [
+        "assets/details/cards-tables/avatar-group.png"
+      ],
+      "poster": "assets/details/cards-tables/avatar-group.png",
+      "image_reason": "同一结构仅保留一张内容完整的代表图，删除重复讲解帧。"
+    },
+    "cards-tables/badge": {
+      "source": "retained-gif-frames",
+      "limitation": "从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。",
+      "images": [
+        "assets/details/cards-tables/badge.png"
+      ],
+      "poster": "assets/details/cards-tables/badge.png",
+      "image_reason": "同一结构仅保留一张内容完整的代表图，删除重复讲解帧。"
+    },
+    "cards-tables/tag": {
+      "source": "retained-gif-frames",
+      "limitation": "从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。",
+      "images": [
+        "assets/details/cards-tables/tag.png"
+      ],
+      "poster": "assets/details/cards-tables/tag.png",
+      "image_reason": "同一结构仅保留一张内容完整的代表图，删除重复讲解帧。"
+    },
+    "cards-tables/accordion": {
+      "source": "retained-gif-frames",
+      "limitation": "从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。",
+      "images": [
+        "assets/details/cards-tables/accordion-01.png",
+        "assets/details/cards-tables/accordion-02.png"
+      ],
+      "poster": "assets/details/cards-tables/accordion-01.png",
+      "image_reason": "分别展示折叠与展开结构。"
+    },
+    "cards-tables/fixed-header": {
+      "source": "retained-gif-frames",
+      "limitation": "从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。",
+      "images": [
+        "assets/details/cards-tables/fixed-header.png"
+      ],
+      "poster": "assets/details/cards-tables/fixed-header.png",
+      "image_reason": "同一效果仅保留一张内容完整的代表图；连续过程由 GIF 展示。"
+    },
+    "cards-tables/sort-filter": {
+      "source": "retained-gif-frames",
+      "limitation": "从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。",
+      "images": [
+        "assets/details/cards-tables/sort-filter-01.png",
+        "assets/details/cards-tables/sort-filter-02.png"
+      ],
+      "poster": "assets/details/cards-tables/sort-filter-01.png",
+      "image_reason": "分别展示排序列表与筛选条件状态。"
+    },
+    "cards-tables/row-actions": {
+      "source": "retained-gif-frames",
+      "limitation": "从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。",
+      "images": [
+        "assets/details/cards-tables/row-actions-01.png",
+        "assets/details/cards-tables/row-actions-02.png"
+      ],
+      "poster": "assets/details/cards-tables/row-actions-02.png",
+      "image_reason": "分别展示默认行与操作显露后的状态。"
+    },
+    "cards-tables/zebra-stripes": {
+      "source": "retained-gif-frames",
+      "limitation": "从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。",
+      "images": [
+        "assets/details/cards-tables/zebra-stripes.png"
+      ],
+      "poster": "assets/details/cards-tables/zebra-stripes.png",
+      "image_reason": "同一结构仅保留一张内容完整的代表图，删除重复讲解帧。"
+    },
+    "cards-tables/card-list": {
+      "source": "retained-gif-frames",
+      "limitation": "从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。",
+      "images": [
+        "assets/details/cards-tables/card-list.png"
+      ],
+      "poster": "assets/details/cards-tables/card-list.png",
+      "image_reason": "同一结构仅保留一张内容完整的代表图，删除重复讲解帧。"
+    },
+    "forms/floating-label": {
+      "source": "retained-gif-frames",
+      "limitation": "从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。",
+      "images": [
+        "assets/details/forms/floating-label.png"
+      ],
+      "poster": "assets/details/forms/floating-label.png",
+      "image_reason": "同一效果仅保留一张内容完整的代表图；连续过程由 GIF 展示。"
+    },
+    "forms/otp-input": {
+      "source": "retained-gif-frames",
+      "limitation": "从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。",
+      "images": [
+        "assets/details/forms/otp-input.png"
+      ],
+      "poster": "assets/details/forms/otp-input.png",
+      "image_reason": "同一效果仅保留一张内容完整的代表图；连续过程由 GIF 展示。"
+    },
+    "forms/dropzone": {
+      "source": "retained-gif-frames",
+      "limitation": "从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。",
+      "images": [
+        "assets/details/forms/dropzone.png"
+      ],
+      "poster": "assets/details/forms/dropzone.png",
+      "image_reason": "同一结构仅保留一张内容完整的代表图，删除重复讲解帧。"
+    },
+    "forms/date-picker": {
+      "source": "retained-gif-frames",
+      "limitation": "从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。",
+      "images": [
+        "assets/details/forms/date-picker.png"
+      ],
+      "poster": "assets/details/forms/date-picker.png",
+      "image_reason": "同一结构仅保留一张内容完整的代表图，删除重复讲解帧。"
+    },
+    "forms/slider": {
+      "source": "retained-gif-frames",
+      "limitation": "从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。",
+      "images": [
+        "assets/details/forms/slider.png"
+      ],
+      "poster": "assets/details/forms/slider.png",
+      "image_reason": "同一结构仅保留一张内容完整的代表图，删除重复讲解帧。"
+    },
+    "forms/autocomplete": {
+      "source": "retained-gif-frames",
+      "limitation": "从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。",
+      "images": [
+        "assets/details/forms/autocomplete-01.png",
+        "assets/details/forms/autocomplete-02.png"
+      ],
+      "poster": "assets/details/forms/autocomplete-01.png",
+      "image_reason": "分别展示候选列表与选中结果／再次输入的状态。"
+    },
+    "forms/cascader": {
+      "source": "retained-gif-frames",
+      "limitation": "从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。",
+      "images": [
+        "assets/details/forms/cascader.png"
+      ],
+      "poster": "assets/details/forms/cascader.png",
+      "image_reason": "同一结构仅保留一张内容完整的代表图，删除重复讲解帧。"
+    },
+    "forms/tag-input": {
+      "source": "retained-gif-frames",
+      "limitation": "从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。",
+      "images": [
+        "assets/details/forms/tag-input.png"
+      ],
+      "poster": "assets/details/forms/tag-input.png",
+      "image_reason": "同一结构仅保留一张内容完整的代表图，删除重复讲解帧。"
+    },
+    "forms/password-strength": {
+      "source": "retained-gif-frames",
+      "limitation": "从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。",
+      "images": [
+        "assets/details/forms/password-strength-01.png",
+        "assets/details/forms/password-strength-02.png"
+      ],
+      "poster": "assets/details/forms/password-strength-01.png",
+      "image_reason": "分别展示较弱与较强密码的分级反馈。"
+    },
+    "forms/select": {
+      "source": "retained-gif-frames",
+      "limitation": "从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。",
+      "images": [
+        "assets/details/forms/select.png"
+      ],
+      "poster": "assets/details/forms/select.png",
+      "image_reason": "同一结构仅保留一张内容完整的代表图，删除重复讲解帧。"
+    },
+    "forms/validation": {
+      "source": "retained-gif-frames",
+      "limitation": "从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。",
+      "images": [
+        "assets/details/forms/validation-01.png",
+        "assets/details/forms/validation-02.png"
+      ],
+      "poster": "assets/details/forms/validation-01.png",
+      "image_reason": "分别展示正常表单与字段报错状态。"
+    },
+    "forms/helper-text": {
+      "source": "retained-gif-frames",
+      "limitation": "从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。",
+      "images": [
+        "assets/details/forms/helper-text.png"
+      ],
+      "poster": "assets/details/forms/helper-text.png",
+      "image_reason": "同一结构仅保留一张内容完整的代表图，删除重复讲解帧。"
+    },
+    "forms/required": {
+      "source": "retained-gif-frames",
+      "limitation": "从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。",
+      "images": [
+        "assets/details/forms/required.png"
+      ],
+      "poster": "assets/details/forms/required.png",
+      "image_reason": "同一结构仅保留一张内容完整的代表图，删除重复讲解帧。"
+    },
+    "forms/input-submit": {
+      "source": "retained-gif-frames",
+      "limitation": "从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。",
+      "images": [
+        "assets/details/forms/input-submit.png"
+      ],
+      "poster": "assets/details/forms/input-submit.png",
+      "image_reason": "同一结构仅保留一张内容完整的代表图，删除重复讲解帧。"
+    },
+    "motion/border-beam": {
+      "source": "retained-gif-frames",
+      "limitation": "从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。",
+      "images": [
+        "assets/details/motion/border-beam.png"
+      ],
+      "poster": "assets/details/motion/border-beam.png",
+      "image_reason": "同一效果仅保留一张内容完整的代表图；连续过程由 GIF 展示。"
+    },
+    "motion/spotlight": {
+      "source": "retained-gif-frames",
+      "limitation": "从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。",
+      "images": [
+        "assets/details/motion/spotlight.png"
+      ],
+      "poster": "assets/details/motion/spotlight.png",
+      "image_reason": "同一效果仅保留一张内容完整的代表图；连续过程由 GIF 展示。"
+    },
+    "motion/tilt": {
+      "source": "retained-gif-frames",
+      "limitation": "从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。",
+      "images": [
+        "assets/details/motion/tilt.png"
+      ],
+      "poster": "assets/details/motion/tilt.png",
+      "image_reason": "同一效果仅保留一张内容完整的代表图；连续过程由 GIF 展示。"
+    },
+    "motion/scroll-storytelling": {
+      "source": "retained-gif-frames",
+      "limitation": "从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。",
+      "images": [
+        "assets/details/motion/scroll-storytelling.png"
+      ],
+      "poster": "assets/details/motion/scroll-storytelling.png",
+      "image_reason": "同一效果仅保留一张内容完整的代表图；连续过程由 GIF 展示。"
+    },
+    "motion/scramble-text": {
+      "source": "retained-gif-frames",
+      "limitation": "从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。",
+      "images": [
+        "assets/details/motion/scramble-text.png"
+      ],
+      "poster": "assets/details/motion/scramble-text.png",
+      "image_reason": "同一效果仅保留一张内容完整的代表图；连续过程由 GIF 展示。"
+    },
+    "motion/parallax": {
+      "source": "retained-gif-frames",
+      "limitation": "从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。",
+      "images": [
+        "assets/details/motion/parallax.png"
+      ],
+      "poster": "assets/details/motion/parallax.png",
+      "image_reason": "同一效果仅保留一张内容完整的代表图；连续过程由 GIF 展示。"
+    },
+    "motion/magnetic": {
+      "source": "retained-gif-frames",
+      "limitation": "从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。",
+      "images": [
+        "assets/details/motion/magnetic.png"
+      ],
+      "poster": "assets/details/motion/magnetic.png",
+      "image_reason": "同一效果仅保留一张内容完整的代表图；连续过程由 GIF 展示。"
+    },
+    "motion/typewriter": {
+      "source": "retained-gif-frames",
+      "limitation": "从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。",
+      "images": [
+        "assets/details/motion/typewriter.png"
+      ],
+      "poster": "assets/details/motion/typewriter.png",
+      "image_reason": "同一效果仅保留一张内容完整的代表图；连续过程由 GIF 展示。"
+    },
+    "motion/marquee": {
+      "source": "retained-gif-frames",
+      "limitation": "从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。",
+      "images": [
+        "assets/details/motion/marquee.png"
+      ],
+      "poster": "assets/details/motion/marquee.png",
+      "image_reason": "同一效果仅保留一张内容完整的代表图；连续过程由 GIF 展示。"
+    },
+    "motion/shimmer": {
+      "source": "retained-gif-frames",
+      "limitation": "从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。",
+      "images": [
+        "assets/details/motion/shimmer.png"
+      ],
+      "poster": "assets/details/motion/shimmer.png",
+      "image_reason": "同一效果仅保留一张内容完整的代表图；连续过程由 GIF 展示。"
+    },
+    "motion/count-up": {
+      "source": "retained-gif-frames",
+      "limitation": "从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。",
+      "images": [
+        "assets/details/motion/count-up.png"
+      ],
+      "poster": "assets/details/motion/count-up.png",
+      "image_reason": "同一效果仅保留一张内容完整的代表图；连续过程由 GIF 展示。"
+    },
+    "motion/scroll-reveal": {
+      "source": "retained-gif-frames",
+      "limitation": "从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。",
+      "images": [
+        "assets/details/motion/scroll-reveal.png"
+      ],
+      "poster": "assets/details/motion/scroll-reveal.png",
+      "image_reason": "同一效果仅保留一张内容完整的代表图；连续过程由 GIF 展示。"
+    },
+    "motion/spring": {
+      "source": "retained-gif-frames",
+      "limitation": "从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。",
+      "images": [
+        "assets/details/motion/spring.png"
+      ],
+      "poster": "assets/details/motion/spring.png",
+      "image_reason": "同一效果仅保留一张内容完整的代表图；连续过程由 GIF 展示。"
+    },
+    "motion/stagger": {
+      "source": "retained-gif-frames",
+      "limitation": "从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。",
+      "images": [
+        "assets/details/motion/stagger.png"
+      ],
+      "poster": "assets/details/motion/stagger.png",
+      "image_reason": "同一效果仅保留一张内容完整的代表图；连续过程由 GIF 展示。"
+    },
+    "motion/hover-lift": {
+      "source": "retained-gif-frames",
+      "limitation": "从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。",
+      "images": [
+        "assets/details/motion/hover-lift.png"
+      ],
+      "poster": "assets/details/motion/hover-lift.png",
+      "image_reason": "同一效果仅保留一张内容完整的代表图；连续过程由 GIF 展示。"
+    },
+    "motion/easing": {
+      "source": "retained-gif-frames",
+      "limitation": "从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。",
+      "images": [
+        "assets/details/motion/easing.png"
+      ],
+      "poster": "assets/details/motion/easing.png",
+      "image_reason": "同一效果仅保留一张内容完整的代表图；连续过程由 GIF 展示。"
+    },
+    "motion/motion-rules": {
+      "source": "retained-gif-frames",
+      "limitation": "从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。",
+      "images": [
+        "assets/details/motion/motion-rules.png"
+      ],
+      "poster": "assets/details/motion/motion-rules.png",
+      "image_reason": "同一结构仅保留一张内容完整的代表图，删除重复讲解帧。"
+    },
+    "buttons-controls/button-hierarchy": {
+      "source": "retained-gif-frames",
+      "limitation": "从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。",
+      "images": [
+        "assets/details/buttons-controls/button-hierarchy.png"
+      ],
+      "poster": "assets/details/buttons-controls/button-hierarchy.png",
+      "image_reason": "同一结构仅保留一张内容完整的代表图，删除重复讲解帧。"
+    },
+    "buttons-controls/primary-button": {
+      "source": "retained-gif-frames",
+      "limitation": "从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。",
+      "images": [
+        "assets/details/buttons-controls/primary-button.png"
+      ],
+      "poster": "assets/details/buttons-controls/primary-button.png",
+      "image_reason": "同一结构仅保留一张内容完整的代表图，删除重复讲解帧。"
+    },
+    "buttons-controls/secondary-button": {
+      "source": "retained-gif-frames",
+      "limitation": "从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。",
+      "images": [
+        "assets/details/buttons-controls/secondary-button.png"
+      ],
+      "poster": "assets/details/buttons-controls/secondary-button.png",
+      "image_reason": "同一结构仅保留一张内容完整的代表图，删除重复讲解帧。"
+    },
+    "buttons-controls/outline-button": {
+      "source": "retained-gif-frames",
+      "limitation": "从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。",
+      "images": [
+        "assets/details/buttons-controls/outline-button.png"
+      ],
+      "poster": "assets/details/buttons-controls/outline-button.png",
+      "image_reason": "同一结构仅保留一张内容完整的代表图，删除重复讲解帧。"
+    },
+    "buttons-controls/text-button": {
+      "source": "retained-gif-frames",
+      "limitation": "从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。",
+      "images": [
+        "assets/details/buttons-controls/text-button.png"
+      ],
+      "poster": "assets/details/buttons-controls/text-button.png",
+      "image_reason": "同一结构仅保留一张内容完整的代表图，删除重复讲解帧。"
+    },
+    "buttons-controls/danger-button": {
+      "source": "retained-gif-frames",
+      "limitation": "从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。",
+      "images": [
+        "assets/details/buttons-controls/danger-button.png"
+      ],
+      "poster": "assets/details/buttons-controls/danger-button.png",
+      "image_reason": "同一结构仅保留一张内容完整的代表图，删除重复讲解帧。"
+    },
+    "buttons-controls/ghost-button": {
+      "source": "retained-gif-frames",
+      "limitation": "从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。",
+      "images": [
+        "assets/details/buttons-controls/ghost-button-01.png",
+        "assets/details/buttons-controls/ghost-button-02.png"
+      ],
+      "poster": "assets/details/buttons-controls/ghost-button-01.png",
+      "image_reason": "分别展示默认与悬停外观。"
+    },
+    "buttons-controls/icon-button": {
+      "source": "retained-gif-frames",
+      "limitation": "从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。",
+      "images": [
+        "assets/details/buttons-controls/icon-button.png"
+      ],
+      "poster": "assets/details/buttons-controls/icon-button.png",
+      "image_reason": "同一结构仅保留一张内容完整的代表图，删除重复讲解帧。"
+    },
+    "buttons-controls/pill-button": {
+      "source": "retained-gif-frames",
+      "limitation": "从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。",
+      "images": [
+        "assets/details/buttons-controls/pill-button.png"
+      ],
+      "poster": "assets/details/buttons-controls/pill-button.png",
+      "image_reason": "同一结构仅保留一张内容完整的代表图，删除重复讲解帧。"
+    },
+    "buttons-controls/button-group": {
+      "source": "retained-gif-frames",
+      "limitation": "从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。",
+      "images": [
+        "assets/details/buttons-controls/button-group.png"
+      ],
+      "poster": "assets/details/buttons-controls/button-group.png",
+      "image_reason": "同一结构仅保留一张内容完整的代表图，删除重复讲解帧。"
+    },
+    "buttons-controls/split-button": {
+      "source": "retained-gif-frames",
+      "limitation": "从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。",
+      "images": [
+        "assets/details/buttons-controls/split-button.png"
+      ],
+      "poster": "assets/details/buttons-controls/split-button.png",
+      "image_reason": "同一结构仅保留一张内容完整的代表图，删除重复讲解帧。"
+    },
+    "buttons-controls/fab": {
+      "source": "retained-gif-frames",
+      "limitation": "从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。",
+      "images": [
+        "assets/details/buttons-controls/fab.png"
+      ],
+      "poster": "assets/details/buttons-controls/fab.png",
+      "image_reason": "同一结构仅保留一张内容完整的代表图，删除重复讲解帧。"
+    },
+    "buttons-controls/hierarchy-correction": {
+      "source": "retained-gif-frames",
+      "limitation": "从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。",
+      "images": [
+        "assets/details/buttons-controls/hierarchy-correction.png"
+      ],
+      "poster": "assets/details/buttons-controls/hierarchy-correction.png",
+      "image_reason": "同一结构仅保留一张内容完整的代表图，删除重复讲解帧。"
+    },
+    "buttons-controls/hover": {
+      "source": "retained-gif-frames",
+      "limitation": "从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。",
+      "images": [
+        "assets/details/buttons-controls/hover-01.png",
+        "assets/details/buttons-controls/hover-02.png"
+      ],
+      "poster": "assets/details/buttons-controls/hover-02.png",
+      "image_reason": "分别展示默认与悬停提亮状态。"
+    },
+    "buttons-controls/pressed": {
+      "source": "retained-gif-frames",
+      "limitation": "从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。 最后一张独立图补充原 GIF 尾部的短暂按下状态；松开恢复仍需在项目中验证。",
+      "images": [
+        "assets/details/buttons-controls/pressed.png"
+      ],
+      "poster": "assets/details/buttons-controls/pressed.png",
+      "image_reason": "同一效果仅保留一张内容完整的代表图；连续过程由 GIF 展示。"
+    },
+    "buttons-controls/focus": {
+      "source": "retained-gif-frames",
+      "limitation": "从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。",
+      "images": [
+        "assets/details/buttons-controls/focus-01.png",
+        "assets/details/buttons-controls/focus-02.png"
+      ],
+      "poster": "assets/details/buttons-controls/focus-02.png",
+      "image_reason": "分别展示输入框与按钮上的焦点环。"
+    },
+    "buttons-controls/loading": {
+      "source": "retained-gif-frames",
+      "limitation": "从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。",
+      "images": [
+        "assets/details/buttons-controls/loading.png"
+      ],
+      "poster": "assets/details/buttons-controls/loading.png",
+      "image_reason": "同一效果仅保留一张内容完整的代表图；连续过程由 GIF 展示。"
+    },
+    "buttons-controls/success": {
+      "source": "retained-gif-frames",
+      "limitation": "从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。",
+      "images": [
+        "assets/details/buttons-controls/success-01.png",
+        "assets/details/buttons-controls/success-02.png"
+      ],
+      "poster": "assets/details/buttons-controls/success-02.png",
+      "image_reason": "分别展示加载中与提交成功状态。"
+    },
+    "buttons-controls/disabled": {
+      "source": "retained-gif-frames",
+      "limitation": "从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。",
+      "images": [
+        "assets/details/buttons-controls/disabled.png"
+      ],
+      "poster": "assets/details/buttons-controls/disabled.png",
+      "image_reason": "同一结构仅保留一张内容完整的代表图，删除重复讲解帧。"
+    },
+    "buttons-controls/state-correction": {
+      "source": "retained-gif-frames",
+      "limitation": "从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。",
+      "images": [
+        "assets/details/buttons-controls/state-correction.png"
+      ],
+      "poster": "assets/details/buttons-controls/state-correction.png",
+      "image_reason": "同一结构仅保留一张内容完整的代表图，删除重复讲解帧。"
+    },
+    "buttons-controls/switch": {
+      "source": "retained-gif-frames",
+      "limitation": "从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。",
+      "images": [
+        "assets/details/buttons-controls/switch-01.png",
+        "assets/details/buttons-controls/switch-02.png"
+      ],
+      "poster": "assets/details/buttons-controls/switch-01.png",
+      "image_reason": "分别展示关闭与开启后的外观及主题变化。"
+    },
+    "buttons-controls/checkbox": {
+      "source": "retained-gif-frames",
+      "limitation": "从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。",
+      "images": [
+        "assets/details/buttons-controls/checkbox.png"
+      ],
+      "poster": "assets/details/buttons-controls/checkbox.png",
+      "image_reason": "同一结构仅保留一张内容完整的代表图，删除重复讲解帧。"
+    },
+    "buttons-controls/indeterminate": {
+      "source": "retained-gif-frames",
+      "limitation": "从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。",
+      "images": [
+        "assets/details/buttons-controls/indeterminate-01.png",
+        "assets/details/buttons-controls/indeterminate-02.png",
+        "assets/details/buttons-controls/indeterminate-03.png"
+      ],
+      "poster": "assets/details/buttons-controls/indeterminate-01.png",
+      "image_reason": "分别展示全不选、半选与全选状态。"
+    },
+    "buttons-controls/radio": {
+      "source": "retained-gif-frames",
+      "limitation": "从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。",
+      "images": [
+        "assets/details/buttons-controls/radio.png"
+      ],
+      "poster": "assets/details/buttons-controls/radio.png",
+      "image_reason": "同一结构仅保留一张内容完整的代表图，删除重复讲解帧。"
+    },
+    "buttons-controls/segmented-control": {
+      "source": "retained-gif-frames",
+      "limitation": "从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。",
+      "images": [
+        "assets/details/buttons-controls/segmented-control.png"
+      ],
+      "poster": "assets/details/buttons-controls/segmented-control.png",
+      "image_reason": "同一效果仅保留一张内容完整的代表图；连续过程由 GIF 展示。"
+    },
+    "buttons-controls/toggle-button": {
+      "source": "retained-gif-frames",
+      "limitation": "从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。",
+      "images": [
+        "assets/details/buttons-controls/toggle-button.png"
+      ],
+      "poster": "assets/details/buttons-controls/toggle-button.png",
+      "image_reason": "同一结构仅保留一张内容完整的代表图，删除重复讲解帧。"
+    },
+    "buttons-controls/chip": {
+      "source": "retained-gif-frames",
+      "limitation": "从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。",
+      "images": [
+        "assets/details/buttons-controls/chip.png"
+      ],
+      "poster": "assets/details/buttons-controls/chip.png",
+      "image_reason": "同一结构仅保留一张内容完整的代表图，删除重复讲解帧。"
+    },
+    "buttons-controls/stepper": {
+      "source": "retained-gif-frames",
+      "limitation": "从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。",
+      "images": [
+        "assets/details/buttons-controls/stepper.png"
+      ],
+      "poster": "assets/details/buttons-controls/stepper.png",
+      "image_reason": "同一结构仅保留一张内容完整的代表图，删除重复讲解帧。"
+    },
+    "buttons-controls/control-selection": {
+      "source": "retained-gif-frames",
+      "limitation": "从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。",
+      "images": [
+        "assets/details/buttons-controls/control-selection.png"
+      ],
+      "poster": "assets/details/buttons-controls/control-selection.png",
+      "image_reason": "同一结构仅保留一张内容完整的代表图，删除重复讲解帧。"
+    },
+    "mobile-scroll/elastic-parallax-hero": {
+      "source": "retained-export-frames",
+      "limitation": "保留总览合成前的独立 PNG 帧；这些帧已在旧导出时缩到 300–720 像素宽，缺少更高分辨率原片。",
+      "images": [
+        "assets/details/mobile-scroll/elastic-parallax-hero.png"
+      ],
+      "poster": "assets/details/mobile-scroll/elastic-parallax-hero.png",
+      "image_reason": "同一效果仅保留一张内容完整的代表图；连续过程由 GIF 展示。"
+    },
+    "mobile-scroll/sticky-category-tabs": {
+      "source": "retained-export-frames",
+      "limitation": "保留总览合成前的独立 PNG 帧；这些帧已在旧导出时缩到 300–720 像素宽，缺少更高分辨率原片。",
+      "images": [
+        "assets/details/mobile-scroll/sticky-category-tabs.png"
+      ],
+      "poster": "assets/details/mobile-scroll/sticky-category-tabs.png",
+      "image_reason": "同一效果仅保留一张内容完整的代表图；连续过程由 GIF 展示。"
+    },
+    "mobile-scroll/collapsing-cover-navbar": {
+      "source": "retained-export-frames",
+      "limitation": "保留总览合成前的独立 PNG 帧；这些帧已在旧导出时缩到 300–720 像素宽，缺少更高分辨率原片。",
+      "images": [
+        "assets/details/mobile-scroll/collapsing-cover-navbar.png"
+      ],
+      "poster": "assets/details/mobile-scroll/collapsing-cover-navbar.png",
+      "image_reason": "同一效果仅保留一张内容完整的代表图；连续过程由 GIF 展示。"
+    },
+    "mobile-scroll/editorial-scroll-reveal": {
+      "source": "retained-export-frames",
+      "limitation": "保留总览合成前的独立 PNG 帧；这些帧已在旧导出时缩到 300–720 像素宽，缺少更高分辨率原片。",
+      "images": [
+        "assets/details/mobile-scroll/editorial-scroll-reveal.png"
+      ],
+      "poster": "assets/details/mobile-scroll/editorial-scroll-reveal.png",
+      "image_reason": "同一效果仅保留一张内容完整的代表图；连续过程由 GIF 展示。"
+    },
+    "mobile-scroll/pull-to-refresh-scene": {
+      "source": "retained-export-frames",
+      "limitation": "保留总览合成前的独立 PNG 帧；这些帧已在旧导出时缩到 300–720 像素宽，缺少更高分辨率原片。",
+      "images": [
+        "assets/details/mobile-scroll/pull-to-refresh-scene.png"
+      ],
+      "poster": "assets/details/mobile-scroll/pull-to-refresh-scene.png",
+      "image_reason": "同一效果仅保留一张内容完整的代表图；连续过程由 GIF 展示。"
+    },
+    "mobile-scroll/viewport-chart-growth": {
+      "source": "retained-export-frames",
+      "limitation": "保留总览合成前的独立 PNG 帧；这些帧已在旧导出时缩到 300–720 像素宽，缺少更高分辨率原片。",
+      "images": [
+        "assets/details/mobile-scroll/viewport-chart-growth.png"
+      ],
+      "poster": "assets/details/mobile-scroll/viewport-chart-growth.png",
+      "image_reason": "同一效果仅保留一张内容完整的代表图；连续过程由 GIF 展示。"
+    },
+    "web-interactions/sticky-product-story": {
+      "source": "retained-export-frames",
+      "limitation": "保留总览合成前的独立 PNG 帧；这些帧已在旧导出时缩到 300–720 像素宽，缺少更高分辨率原片。",
+      "images": [
+        "assets/details/web-interactions/sticky-product-story.png"
+      ],
+      "poster": "assets/details/web-interactions/sticky-product-story.png",
+      "image_reason": "同一效果仅保留一张内容完整的代表图；连续过程由 GIF 展示。"
+    },
+    "web-interactions/contextual-cursor": {
+      "source": "retained-export-frames",
+      "limitation": "保留总览合成前的独立 PNG 帧；这些帧已在旧导出时缩到 300–720 像素宽，缺少更高分辨率原片。",
+      "images": [
+        "assets/details/web-interactions/contextual-cursor.png"
+      ],
+      "poster": "assets/details/web-interactions/contextual-cursor.png",
+      "image_reason": "同一效果仅保留一张内容完整的代表图；连续过程由 GIF 展示。"
+    },
+    "web-interactions/magnetic-cta": {
+      "source": "retained-export-frames",
+      "limitation": "保留总览合成前的独立 PNG 帧；这些帧已在旧导出时缩到 300–720 像素宽，缺少更高分辨率原片。",
+      "images": [
+        "assets/details/web-interactions/magnetic-cta.png"
+      ],
+      "poster": "assets/details/web-interactions/magnetic-cta.png",
+      "image_reason": "同一效果仅保留一张内容完整的代表图；连续过程由 GIF 展示。"
+    },
+    "web-interactions/expanding-icon-label": {
+      "source": "retained-export-frames",
+      "limitation": "保留总览合成前的独立 PNG 帧；这些帧已在旧导出时缩到 300–720 像素宽，缺少更高分辨率原片。",
+      "images": [
+        "assets/details/web-interactions/expanding-icon-label.png"
+      ],
+      "poster": "assets/details/web-interactions/expanding-icon-label.png",
+      "image_reason": "同一效果仅保留一张内容完整的代表图；连续过程由 GIF 展示。"
+    },
+    "web-interactions/sliding-nav-highlight": {
+      "source": "retained-export-frames",
+      "limitation": "保留总览合成前的独立 PNG 帧；这些帧已在旧导出时缩到 300–720 像素宽，缺少更高分辨率原片。",
+      "images": [
+        "assets/details/web-interactions/sliding-nav-highlight.png"
+      ],
+      "poster": "assets/details/web-interactions/sliding-nav-highlight.png",
+      "image_reason": "同一效果仅保留一张内容完整的代表图；连续过程由 GIF 展示。"
+    },
+    "web-interactions/corner-fill-hover": {
+      "source": "retained-export-frames",
+      "limitation": "保留总览合成前的独立 PNG 帧；这些帧已在旧导出时缩到 300–720 像素宽，缺少更高分辨率原片。",
+      "images": [
+        "assets/details/web-interactions/corner-fill-hover.png"
+      ],
+      "poster": "assets/details/web-interactions/corner-fill-hover.png",
+      "image_reason": "同一效果仅保留一张内容完整的代表图；连续过程由 GIF 展示。"
+    },
+    "web-interactions/snapping-level-slider": {
+      "source": "retained-export-frames",
+      "limitation": "保留总览合成前的独立 PNG 帧；这些帧已在旧导出时缩到 300–720 像素宽，缺少更高分辨率原片。",
+      "images": [
+        "assets/details/web-interactions/snapping-level-slider.png"
+      ],
+      "poster": "assets/details/web-interactions/snapping-level-slider.png",
+      "image_reason": "同一效果仅保留一张内容完整的代表图；连续过程由 GIF 展示。"
+    },
+    "web-interactions/scrubbing-bar-chart": {
+      "source": "retained-export-frames",
+      "limitation": "保留总览合成前的独立 PNG 帧；这些帧已在旧导出时缩到 300–720 像素宽，缺少更高分辨率原片。",
+      "images": [
+        "assets/details/web-interactions/scrubbing-bar-chart.png"
+      ],
+      "poster": "assets/details/web-interactions/scrubbing-bar-chart.png",
+      "image_reason": "同一效果仅保留一张内容完整的代表图；连续过程由 GIF 展示。"
+    },
+    "web-interactions/hover-image-preview": {
+      "source": "retained-export-frames",
+      "limitation": "保留总览合成前的独立 PNG 帧；这些帧已在旧导出时缩到 300–720 像素宽，缺少更高分辨率原片。",
+      "images": [
+        "assets/details/web-interactions/hover-image-preview.png"
+      ],
+      "poster": "assets/details/web-interactions/hover-image-preview.png",
+      "image_reason": "同一效果仅保留一张内容完整的代表图；连续过程由 GIF 展示。"
+    },
+    "web-interactions/circular-theme-reveal": {
+      "source": "retained-export-frames",
+      "limitation": "保留总览合成前的独立 PNG 帧；这些帧已在旧导出时缩到 300–720 像素宽，缺少更高分辨率原片。",
+      "images": [
+        "assets/details/web-interactions/circular-theme-reveal.png"
+      ],
+      "poster": "assets/details/web-interactions/circular-theme-reveal.png",
+      "image_reason": "同一效果仅保留一张内容完整的代表图；连续过程由 GIF 展示。"
+    },
+    "mobile-interactions/touch-origin-theme": {
+      "source": "retained-export-frames",
+      "limitation": "保留总览合成前的独立 PNG 帧；这些帧已在旧导出时缩到 300–720 像素宽，缺少更高分辨率原片。",
+      "images": [
+        "assets/details/mobile-interactions/touch-origin-theme.png"
+      ],
+      "poster": "assets/details/mobile-interactions/touch-origin-theme.png",
+      "image_reason": "同一效果仅保留一张内容完整的代表图；连续过程由 GIF 展示。"
+    },
+    "mobile-interactions/staggered-batch-check": {
+      "source": "retained-export-frames",
+      "limitation": "保留总览合成前的独立 PNG 帧；这些帧已在旧导出时缩到 300–720 像素宽，缺少更高分辨率原片。",
+      "images": [
+        "assets/details/mobile-interactions/staggered-batch-check.png"
+      ],
+      "poster": "assets/details/mobile-interactions/staggered-batch-check.png",
+      "image_reason": "同一效果仅保留一张内容完整的代表图；连续过程由 GIF 展示。"
+    },
+    "mobile-interactions/inertial-slider-snap": {
+      "source": "retained-export-frames",
+      "limitation": "保留总览合成前的独立 PNG 帧；这些帧已在旧导出时缩到 300–720 像素宽，缺少更高分辨率原片。",
+      "images": [
+        "assets/details/mobile-interactions/inertial-slider-snap.png"
+      ],
+      "poster": "assets/details/mobile-interactions/inertial-slider-snap.png",
+      "image_reason": "同一效果仅保留一张内容完整的代表图；连续过程由 GIF 展示。"
+    },
+    "mobile-interactions/animated-text-expand": {
+      "source": "retained-export-frames",
+      "limitation": "保留总览合成前的独立 PNG 帧；这些帧已在旧导出时缩到 300–720 像素宽，缺少更高分辨率原片。",
+      "images": [
+        "assets/details/mobile-interactions/animated-text-expand.png"
+      ],
+      "poster": "assets/details/mobile-interactions/animated-text-expand.png",
+      "image_reason": "同一效果仅保留一张内容完整的代表图；连续过程由 GIF 展示。"
+    },
+    "mobile-interactions/step-progress-settle": {
+      "source": "retained-export-frames",
+      "limitation": "保留总览合成前的独立 PNG 帧；这些帧已在旧导出时缩到 300–720 像素宽，缺少更高分辨率原片。",
+      "images": [
+        "assets/details/mobile-interactions/step-progress-settle.png"
+      ],
+      "poster": "assets/details/mobile-interactions/step-progress-settle.png",
+      "image_reason": "同一效果仅保留一张内容完整的代表图；连续过程由 GIF 展示。"
+    },
+    "mobile-interactions/switch-group-ripple": {
+      "source": "retained-export-frames",
+      "limitation": "保留总览合成前的独立 PNG 帧；这些帧已在旧导出时缩到 300–720 像素宽，缺少更高分辨率原片。",
+      "images": [
+        "assets/details/mobile-interactions/switch-group-ripple.png"
+      ],
+      "poster": "assets/details/mobile-interactions/switch-group-ripple.png",
+      "image_reason": "同一效果仅保留一张内容完整的代表图；连续过程由 GIF 展示。"
+    },
+    "mobile-interactions/card-delete-trajectory": {
+      "source": "retained-export-frames",
+      "limitation": "保留总览合成前的独立 PNG 帧；这些帧已在旧导出时缩到 300–720 像素宽，缺少更高分辨率原片。",
+      "images": [
+        "assets/details/mobile-interactions/card-delete-trajectory.png"
+      ],
+      "poster": "assets/details/mobile-interactions/card-delete-trajectory.png",
+      "image_reason": "同一效果仅保留一张内容完整的代表图；连续过程由 GIF 展示。"
+    },
+    "mobile-interactions/sticky-compressing-stack": {
+      "source": "retained-export-frames",
+      "limitation": "保留总览合成前的独立 PNG 帧；这些帧已在旧导出时缩到 300–720 像素宽，缺少更高分辨率原片。",
+      "images": [
+        "assets/details/mobile-interactions/sticky-compressing-stack.png"
+      ],
+      "poster": "assets/details/mobile-interactions/sticky-compressing-stack.png",
+      "image_reason": "同一效果仅保留一张内容完整的代表图；连续过程由 GIF 展示。"
+    },
+    "mobile-interactions/reflowing-choice-tabs": {
+      "source": "retained-export-frames",
+      "limitation": "保留总览合成前的独立 PNG 帧；这些帧已在旧导出时缩到 300–720 像素宽，缺少更高分辨率原片。",
+      "images": [
+        "assets/details/mobile-interactions/reflowing-choice-tabs.png"
+      ],
+      "poster": "assets/details/mobile-interactions/reflowing-choice-tabs.png",
+      "image_reason": "同一效果仅保留一张内容完整的代表图；连续过程由 GIF 展示。"
+    },
+    "mobile-layouts/wide-title-image-list": {
+      "source": "retained-export-frames",
+      "limitation": "保留总览合成前的独立 PNG 帧；这些帧已在旧导出时缩到 300–720 像素宽，缺少更高分辨率原片。",
+      "images": [
+        "assets/details/mobile-layouts/wide-title-image-list.png"
+      ],
+      "poster": "assets/details/mobile-layouts/wide-title-image-list.png",
+      "image_reason": "同一结构仅保留一张内容完整的代表图，删除重复讲解帧。"
+    },
+    "mobile-layouts/hero-information-overlay": {
+      "source": "retained-export-frames",
+      "limitation": "保留总览合成前的独立 PNG 帧；这些帧已在旧导出时缩到 300–720 像素宽，缺少更高分辨率原片。",
+      "images": [
+        "assets/details/mobile-layouts/hero-information-overlay.png"
+      ],
+      "poster": "assets/details/mobile-layouts/hero-information-overlay.png",
+      "image_reason": "同一结构仅保留一张内容完整的代表图，删除重复讲解帧。"
+    },
+    "mobile-layouts/monochrome-priority": {
+      "source": "retained-export-frames",
+      "limitation": "保留总览合成前的独立 PNG 帧；这些帧已在旧导出时缩到 300–720 像素宽，缺少更高分辨率原片。",
+      "images": [
+        "assets/details/mobile-layouts/monochrome-priority.png"
+      ],
+      "poster": "assets/details/mobile-layouts/monochrome-priority.png",
+      "image_reason": "同一结构仅保留一张内容完整的代表图，删除重复讲解帧。"
+    },
+    "mobile-layouts/color-block-bento": {
+      "source": "retained-export-frames",
+      "limitation": "保留总览合成前的独立 PNG 帧；这些帧已在旧导出时缩到 300–720 像素宽，缺少更高分辨率原片。",
+      "images": [
+        "assets/details/mobile-layouts/color-block-bento.png"
+      ],
+      "poster": "assets/details/mobile-layouts/color-block-bento.png",
+      "image_reason": "同一结构仅保留一张内容完整的代表图，删除重复讲解帧。"
+    },
+    "mobile-layouts/poster-semicircle-dial": {
+      "source": "retained-export-frames",
+      "limitation": "保留总览合成前的独立 PNG 帧；这些帧已在旧导出时缩到 300–720 像素宽，缺少更高分辨率原片。",
+      "images": [
+        "assets/details/mobile-layouts/poster-semicircle-dial.png"
+      ],
+      "poster": "assets/details/mobile-layouts/poster-semicircle-dial.png",
+      "image_reason": "同一效果仅保留一张内容完整的代表图；连续过程由 GIF 展示。"
+    },
+    "mobile-layouts/swipe-deck-layout": {
+      "source": "retained-export-frames",
+      "limitation": "保留总览合成前的独立 PNG 帧；这些帧已在旧导出时缩到 300–720 像素宽，缺少更高分辨率原片。",
+      "images": [
+        "assets/details/mobile-layouts/swipe-deck-layout.png"
+      ],
+      "poster": "assets/details/mobile-layouts/swipe-deck-layout.png",
+      "image_reason": "同一效果仅保留一张内容完整的代表图；连续过程由 GIF 展示。"
+    },
+    "dashboard-navigation/icon-text-sidebar": {
+      "source": "retained-export-frames",
+      "limitation": "保留总览合成前的独立 PNG 帧；这些帧已在旧导出时缩到 300–720 像素宽，缺少更高分辨率原片。",
+      "images": [
+        "assets/details/dashboard-navigation/icon-text-sidebar-01.png",
+        "assets/details/dashboard-navigation/icon-text-sidebar-02.png"
+      ],
+      "poster": "assets/details/dashboard-navigation/icon-text-sidebar-01.png",
+      "image_reason": "分别展示工作台首页与项目列表，保留导航和内容的对应关系。"
+    },
+    "dashboard-navigation/grouped-content-sidebar": {
+      "source": "retained-export-frames",
+      "limitation": "保留总览合成前的独立 PNG 帧；这些帧已在旧导出时缩到 300–720 像素宽，缺少更高分辨率原片。",
+      "images": [
+        "assets/details/dashboard-navigation/grouped-content-sidebar-01.png",
+        "assets/details/dashboard-navigation/grouped-content-sidebar-02.png"
+      ],
+      "poster": "assets/details/dashboard-navigation/grouped-content-sidebar-01.png",
+      "image_reason": "分别展示分组首页与资源列表两种内容布局。"
+    },
+    "dashboard-navigation/top-pill-navigation": {
+      "source": "retained-export-frames",
+      "limitation": "保留总览合成前的独立 PNG 帧；这些帧已在旧导出时缩到 300–720 像素宽，缺少更高分辨率原片。",
+      "images": [
+        "assets/details/dashboard-navigation/top-pill-navigation.png"
+      ],
+      "poster": "assets/details/dashboard-navigation/top-pill-navigation.png",
+      "image_reason": "同一结构仅保留一张内容完整的代表图，删除重复讲解帧。"
+    },
+    "dashboard-navigation/compact-icon-rail": {
+      "source": "retained-export-frames",
+      "limitation": "保留总览合成前的独立 PNG 帧；这些帧已在旧导出时缩到 300–720 像素宽，缺少更高分辨率原片。",
+      "images": [
+        "assets/details/dashboard-navigation/compact-icon-rail.png"
+      ],
+      "poster": "assets/details/dashboard-navigation/compact-icon-rail.png",
+      "image_reason": "同一结构仅保留一张内容完整的代表图，删除重复讲解帧。"
+    },
+    "dashboard-navigation/brand-accent-sidebar": {
+      "source": "retained-export-frames",
+      "limitation": "保留总览合成前的独立 PNG 帧；这些帧已在旧导出时缩到 300–720 像素宽，缺少更高分辨率原片。",
+      "images": [
+        "assets/details/dashboard-navigation/brand-accent-sidebar.png"
+      ],
+      "poster": "assets/details/dashboard-navigation/brand-accent-sidebar.png",
+      "image_reason": "同一结构仅保留一张内容完整的代表图，删除重复讲解帧。"
+    },
+    "dashboard-navigation/context-data-tabs": {
+      "source": "retained-export-frames",
+      "limitation": "保留总览合成前的独立 PNG 帧；这些帧已在旧导出时缩到 300–720 像素宽，缺少更高分辨率原片。",
+      "images": [
+        "assets/details/dashboard-navigation/context-data-tabs.png"
+      ],
+      "poster": "assets/details/dashboard-navigation/context-data-tabs.png",
+      "image_reason": "同一效果仅保留一张内容完整的代表图；连续过程由 GIF 展示。"
+    },
+    "interface-details/section-stagger": {
+      "source": "retained-export-frames",
+      "limitation": "保留总览合成前的独立 PNG 帧；这些帧已在旧导出时缩到 300–720 像素宽，缺少更高分辨率原片。",
+      "images": [
+        "assets/details/interface-details/section-stagger.png"
+      ],
+      "poster": "assets/details/interface-details/section-stagger.png",
+      "image_reason": "同一效果仅保留一张内容完整的代表图；连续过程由 GIF 展示。"
+    },
+    "interface-details/layered-soft-shadow": {
+      "source": "retained-export-frames",
+      "limitation": "保留总览合成前的独立 PNG 帧；这些帧已在旧导出时缩到 300–720 像素宽，缺少更高分辨率原片。",
+      "images": [
+        "assets/details/interface-details/layered-soft-shadow.png"
+      ],
+      "poster": "assets/details/interface-details/layered-soft-shadow.png",
+      "image_reason": "同一结构仅保留一张内容完整的代表图，删除重复讲解帧。"
+    },
+    "dashboard-layouts/asymmetric-color-grid": {
+      "source": "retained-export-frames",
+      "limitation": "保留总览合成前的独立 PNG 帧；这些帧已在旧导出时缩到 300–720 像素宽，缺少更高分辨率原片。",
+      "images": [
+        "assets/details/dashboard-layouts/asymmetric-color-grid.png"
+      ],
+      "poster": "assets/details/dashboard-layouts/asymmetric-color-grid.png",
+      "image_reason": "同一效果仅保留一张内容完整的代表图；连续过程由 GIF 展示。"
+    },
+    "dashboard-layouts/inventory-action-workbench": {
+      "source": "retained-export-frames",
+      "limitation": "保留总览合成前的独立 PNG 帧；这些帧已在旧导出时缩到 300–720 像素宽，缺少更高分辨率原片。",
+      "images": [
+        "assets/details/dashboard-layouts/inventory-action-workbench.png"
+      ],
+      "poster": "assets/details/dashboard-layouts/inventory-action-workbench.png",
+      "image_reason": "同一效果仅保留一张内容完整的代表图；连续过程由 GIF 展示。"
+    },
+    "dashboard-layouts/central-observation-timeline": {
+      "source": "retained-export-frames",
+      "limitation": "保留总览合成前的独立 PNG 帧；这些帧已在旧导出时缩到 300–720 像素宽，缺少更高分辨率原片。",
+      "images": [
+        "assets/details/dashboard-layouts/central-observation-timeline.png"
+      ],
+      "poster": "assets/details/dashboard-layouts/central-observation-timeline.png",
+      "image_reason": "同一效果仅保留一张内容完整的代表图；连续过程由 GIF 展示。"
+    },
+    "dashboard-layouts/glass-matrix-metrics": {
+      "source": "retained-export-frames",
+      "limitation": "保留总览合成前的独立 PNG 帧；这些帧已在旧导出时缩到 300–720 像素宽，缺少更高分辨率原片。",
+      "images": [
+        "assets/details/dashboard-layouts/glass-matrix-metrics.png"
+      ],
+      "poster": "assets/details/dashboard-layouts/glass-matrix-metrics.png",
+      "image_reason": "同一效果仅保留一张内容完整的代表图；连续过程由 GIF 展示。"
+    },
+    "dashboard-layouts/warm-three-column-console": {
+      "source": "retained-export-frames",
+      "limitation": "保留总览合成前的独立 PNG 帧；这些帧已在旧导出时缩到 300–720 像素宽，缺少更高分辨率原片。",
+      "images": [
+        "assets/details/dashboard-layouts/warm-three-column-console.png"
+      ],
+      "poster": "assets/details/dashboard-layouts/warm-three-column-console.png",
+      "image_reason": "同一效果仅保留一张内容完整的代表图；连续过程由 GIF 展示。"
+    },
+    "dashboard-layouts/dark-growth-dashboard": {
+      "source": "retained-export-frames",
+      "limitation": "保留总览合成前的独立 PNG 帧；这些帧已在旧导出时缩到 300–720 像素宽，缺少更高分辨率原片。",
+      "images": [
+        "assets/details/dashboard-layouts/dark-growth-dashboard.png"
+      ],
+      "poster": "assets/details/dashboard-layouts/dark-growth-dashboard.png",
+      "image_reason": "同一效果仅保留一张内容完整的代表图；连续过程由 GIF 展示。"
+    },
+    "enterprise-workbenches/logistics-loading-workbench": {
+      "source": "retained-static-original",
+      "limitation": "保留原尺寸与既有裁切，以无损 PNG 避免再次 JPEG 压缩；不能恢复源图已丢失的细节。",
+      "images": [
+        "assets/details/enterprise-workbenches/logistics-loading-workbench-01.png",
+        "assets/details/enterprise-workbenches/logistics-loading-workbench-02.png"
+      ],
+      "poster": "assets/details/enterprise-workbenches/logistics-loading-workbench-01.png",
+      "image_reason": "不同页面或布局方案各自保留，不按连续抽帧处理。"
+    },
+    "mobile-workbenches/public-service-task-homes": {
+      "source": "retained-static-original",
+      "limitation": "保留原尺寸与既有裁切，以无损 PNG 避免再次 JPEG 压缩；不能恢复源图已丢失的细节。",
+      "images": [
+        "assets/details/mobile-workbenches/public-service-task-homes-01.png",
+        "assets/details/mobile-workbenches/public-service-task-homes-02.png"
+      ],
+      "poster": "assets/details/mobile-workbenches/public-service-task-homes-01.png",
+      "image_reason": "不同页面或布局方案各自保留，不按连续抽帧处理。"
+    },
+    "data-visualization/dark-industrial-twin-collection": {
+      "source": "retained-static-original",
+      "limitation": "保留原尺寸与既有裁切，以无损 PNG 避免再次 JPEG 压缩；不能恢复源图已丢失的细节。",
+      "images": [
+        "assets/details/data-visualization/dark-industrial-twin-collection-01.png",
+        "assets/details/data-visualization/dark-industrial-twin-collection-02.png"
+      ],
+      "poster": "assets/details/data-visualization/dark-industrial-twin-collection-01.png",
+      "image_reason": "不同页面或布局方案各自保留，不按连续抽帧处理。"
+    },
+    "enterprise-workbenches/glass-welcome-service-portal": {
+      "source": "retained-static-original",
+      "limitation": "保留原尺寸与既有裁切，以无损 PNG 避免再次 JPEG 压缩；不能恢复源图已丢失的细节。",
+      "images": [
+        "assets/details/enterprise-workbenches/glass-welcome-service-portal-01.png",
+        "assets/details/enterprise-workbenches/glass-welcome-service-portal-02.png"
+      ],
+      "poster": "assets/details/enterprise-workbenches/glass-welcome-service-portal-01.png",
+      "image_reason": "不同页面或布局方案各自保留，不按连续抽帧处理。"
+    },
+    "enterprise-workbenches/ai-assistant-productivity-hub": {
+      "source": "retained-static-original",
+      "limitation": "保留原尺寸与既有裁切，以无损 PNG 避免再次 JPEG 压缩；不能恢复源图已丢失的细节。",
+      "images": [
+        "assets/details/enterprise-workbenches/ai-assistant-productivity-hub-01.png",
+        "assets/details/enterprise-workbenches/ai-assistant-productivity-hub-02.png",
+        "assets/details/enterprise-workbenches/ai-assistant-productivity-hub-03.png"
+      ],
+      "poster": "assets/details/enterprise-workbenches/ai-assistant-productivity-hub-01.png",
+      "image_reason": "保留不同页面的独立稿，移除重复包含这些页面的组合图。"
+    },
+    "data-visualization/light-industrial-energy-scenarios": {
+      "source": "retained-static-original",
+      "limitation": "保留原尺寸与既有裁切，以无损 PNG 避免再次 JPEG 压缩；不能恢复源图已丢失的细节。",
+      "images": [
+        "assets/details/data-visualization/light-industrial-energy-scenarios-01.png",
+        "assets/details/data-visualization/light-industrial-energy-scenarios-02.png"
+      ],
+      "poster": "assets/details/data-visualization/light-industrial-energy-scenarios-01.png",
+      "image_reason": "不同页面或布局方案各自保留，不按连续抽帧处理。"
+    },
+    "data-visualization/solar-building-energy-overview": {
+      "source": "retained-static-original",
+      "limitation": "保留原尺寸与既有裁切，以无损 PNG 避免再次 JPEG 压缩；不能恢复源图已丢失的细节。",
+      "images": [
+        "assets/details/data-visualization/solar-building-energy-overview-01.png",
+        "assets/details/data-visualization/solar-building-energy-overview-02.png"
+      ],
+      "poster": "assets/details/data-visualization/solar-building-energy-overview-01.png",
+      "image_reason": "不同页面或布局方案各自保留，不按连续抽帧处理。"
+    },
+    "data-visualization/orange-process-data-console": {
+      "source": "retained-static-original",
+      "limitation": "保留原尺寸与既有裁切，以无损 PNG 避免再次 JPEG 压缩；不能恢复源图已丢失的细节。",
+      "images": [
+        "assets/details/data-visualization/orange-process-data-console-01.png",
+        "assets/details/data-visualization/orange-process-data-console-02.png"
+      ],
+      "poster": "assets/details/data-visualization/orange-process-data-console-01.png",
+      "image_reason": "不同页面或布局方案各自保留，不按连续抽帧处理。"
+    },
+    "enterprise-workbenches/contrast-operations-task-overview": {
+      "source": "retained-static-original",
+      "limitation": "保留原尺寸与既有裁切，以无损 PNG 避免再次 JPEG 压缩；不能恢复源图已丢失的细节。",
+      "images": [
+        "assets/details/enterprise-workbenches/contrast-operations-task-overview-01.png",
+        "assets/details/enterprise-workbenches/contrast-operations-task-overview-02.png"
+      ],
+      "poster": "assets/details/enterprise-workbenches/contrast-operations-task-overview-01.png",
+      "image_reason": "不同页面或布局方案各自保留，不按连续抽帧处理。"
+    },
+    "enterprise-workbenches/heatmap-process-management": {
+      "source": "retained-static-original",
+      "limitation": "保留原尺寸与既有裁切，以无损 PNG 避免再次 JPEG 压缩；不能恢复源图已丢失的细节。",
+      "images": [
+        "assets/details/enterprise-workbenches/heatmap-process-management-01.png",
+        "assets/details/enterprise-workbenches/heatmap-process-management-02.png"
+      ],
+      "poster": "assets/details/enterprise-workbenches/heatmap-process-management-01.png",
+      "image_reason": "不同页面或布局方案各自保留，不按连续抽帧处理。"
+    },
+    "data-visualization/wind-turbine-monitoring": {
+      "source": "retained-static-original",
+      "limitation": "保留原尺寸与既有裁切，以无损 PNG 避免再次 JPEG 压缩；不能恢复源图已丢失的细节。",
+      "images": [
+        "assets/details/data-visualization/wind-turbine-monitoring-01.png",
+        "assets/details/data-visualization/wind-turbine-monitoring-02.png"
+      ],
+      "poster": "assets/details/data-visualization/wind-turbine-monitoring-01.png",
+      "image_reason": "不同页面或布局方案各自保留，不按连续抽帧处理。"
+    },
+    "data-visualization/blue-lit-building-equipment": {
+      "source": "retained-static-original",
+      "limitation": "保留原尺寸与既有裁切，以无损 PNG 避免再次 JPEG 压缩；不能恢复源图已丢失的细节。",
+      "images": [
+        "assets/details/data-visualization/blue-lit-building-equipment-01.png",
+        "assets/details/data-visualization/blue-lit-building-equipment-02.png"
+      ],
+      "poster": "assets/details/data-visualization/blue-lit-building-equipment-01.png",
+      "image_reason": "不同页面或布局方案各自保留，不按连续抽帧处理。"
+    },
+    "enterprise-workbenches/freight-model-service-workbench": {
+      "source": "retained-static-original",
+      "limitation": "保留原尺寸与既有裁切，以无损 PNG 避免再次 JPEG 压缩；不能恢复源图已丢失的细节。",
+      "images": [
+        "assets/details/enterprise-workbenches/freight-model-service-workbench-01.png",
+        "assets/details/enterprise-workbenches/freight-model-service-workbench-02.png"
+      ],
+      "poster": "assets/details/enterprise-workbenches/freight-model-service-workbench-01.png",
+      "image_reason": "不同页面或布局方案各自保留，不按连续抽帧处理。"
+    },
+    "data-visualization/digital-assets-capacity-overview": {
+      "source": "retained-static-original",
+      "limitation": "保留原尺寸与既有裁切，以无损 PNG 避免再次 JPEG 压缩；不能恢复源图已丢失的细节。",
+      "images": [
+        "assets/details/data-visualization/digital-assets-capacity-overview-01.png",
+        "assets/details/data-visualization/digital-assets-capacity-overview-02.png"
+      ],
+      "poster": "assets/details/data-visualization/digital-assets-capacity-overview-01.png",
+      "image_reason": "不同页面或布局方案各自保留，不按连续抽帧处理。"
+    },
+    "enterprise-workbenches/organization-talent-analytics": {
+      "source": "retained-static-original",
+      "limitation": "保留原尺寸与既有裁切，以无损 PNG 避免再次 JPEG 压缩；不能恢复源图已丢失的细节。",
+      "images": [
+        "assets/details/enterprise-workbenches/organization-talent-analytics-01.png",
+        "assets/details/enterprise-workbenches/organization-talent-analytics-02.png"
+      ],
+      "poster": "assets/details/enterprise-workbenches/organization-talent-analytics-01.png",
+      "image_reason": "不同页面或布局方案各自保留，不按连续抽帧处理。"
+    },
+    "enterprise-workbenches/cargo-status-task-dashboard": {
+      "source": "retained-static-original",
+      "limitation": "保留原尺寸与既有裁切，以无损 PNG 避免再次 JPEG 压缩；不能恢复源图已丢失的细节。",
+      "images": [
+        "assets/details/enterprise-workbenches/cargo-status-task-dashboard-01.png",
+        "assets/details/enterprise-workbenches/cargo-status-task-dashboard-02.png"
+      ],
+      "poster": "assets/details/enterprise-workbenches/cargo-status-task-dashboard-01.png",
+      "image_reason": "不同页面或布局方案各自保留，不按连续抽帧处理。"
+    },
+    "mobile-workbenches/sales-crm-parcel-homes": {
+      "source": "retained-video-original",
+      "limitation": "从保留原视频按既有时间与裁切重新抽帧，720 像素宽；原片镜头运动和页面透视仍保留。",
+      "images": [
+        "assets/details/mobile-workbenches/sales-crm-parcel-homes-01.png",
+        "assets/details/mobile-workbenches/sales-crm-parcel-homes-02.png",
+        "assets/details/mobile-workbenches/sales-crm-parcel-homes-03.png",
+        "assets/details/mobile-workbenches/sales-crm-parcel-homes-04.png"
+      ],
+      "poster": "assets/details/mobile-workbenches/sales-crm-parcel-homes-01.png",
+      "image_reason": "四张图片展示不同服务页面；移除重复的页面总览和镜头转场帧。"
+    },
+    "enterprise-workbenches/aircraft-device-service-console": {
+      "source": "retained-static-original",
+      "limitation": "保留原尺寸与既有裁切，以无损 PNG 避免再次 JPEG 压缩；不能恢复源图已丢失的细节。",
+      "images": [
+        "assets/details/enterprise-workbenches/aircraft-device-service-console-01.png",
+        "assets/details/enterprise-workbenches/aircraft-device-service-console-02.png"
+      ],
+      "poster": "assets/details/enterprise-workbenches/aircraft-device-service-console-01.png",
+      "image_reason": "不同页面或布局方案各自保留，不按连续抽帧处理。"
+    },
+    "enterprise-workbenches/blue-welcome-operations-portal": {
+      "source": "retained-static-original",
+      "limitation": "保留原尺寸与既有裁切，以无损 PNG 避免再次 JPEG 压缩；不能恢复源图已丢失的细节。",
+      "images": [
+        "assets/details/enterprise-workbenches/blue-welcome-operations-portal-01.png",
+        "assets/details/enterprise-workbenches/blue-welcome-operations-portal-02.png"
+      ],
+      "poster": "assets/details/enterprise-workbenches/blue-welcome-operations-portal-01.png",
+      "image_reason": "不同页面或布局方案各自保留，不按连续抽帧处理。"
+    },
+    "data-visualization/health-body-metrics-dashboard": {
+      "source": "retained-static-original",
+      "limitation": "保留原尺寸与既有裁切，以无损 PNG 避免再次 JPEG 压缩；不能恢复源图已丢失的细节。",
+      "images": [
+        "assets/details/data-visualization/health-body-metrics-dashboard-01.png",
+        "assets/details/data-visualization/health-body-metrics-dashboard-02.png"
+      ],
+      "poster": "assets/details/data-visualization/health-body-metrics-dashboard-01.png",
+      "image_reason": "保留不同页面的独立稿，移除重复包含这些页面的组合图。"
+    },
+    "enterprise-workbenches/green-energy-service-overview": {
+      "source": "retained-static-original",
+      "limitation": "保留原尺寸与既有裁切，以无损 PNG 避免再次 JPEG 压缩；不能恢复源图已丢失的细节。",
+      "images": [
+        "assets/details/enterprise-workbenches/green-energy-service-overview-01.png",
+        "assets/details/enterprise-workbenches/green-energy-service-overview-02.png"
+      ],
+      "poster": "assets/details/enterprise-workbenches/green-energy-service-overview-01.png",
+      "image_reason": "不同页面或布局方案各自保留，不按连续抽帧处理。"
+    },
+    "data-visualization/dark-infrastructure-twin-screens": {
+      "source": "retained-static-original",
+      "limitation": "保留原尺寸与既有裁切，以无损 PNG 避免再次 JPEG 压缩；不能恢复源图已丢失的细节。",
+      "images": [
+        "assets/details/data-visualization/dark-infrastructure-twin-screens-01.png",
+        "assets/details/data-visualization/dark-infrastructure-twin-screens-02.png"
+      ],
+      "poster": "assets/details/data-visualization/dark-infrastructure-twin-screens-01.png",
+      "image_reason": "不同页面或布局方案各自保留，不按连续抽帧处理。"
+    },
+    "mobile-workbenches/device-service-tool-grid": {
+      "source": "retained-static-original",
+      "limitation": "保留原尺寸与既有裁切，以无损 PNG 避免再次 JPEG 压缩；不能恢复源图已丢失的细节。",
+      "images": [
+        "assets/details/mobile-workbenches/device-service-tool-grid-01.png",
+        "assets/details/mobile-workbenches/device-service-tool-grid-02.png",
+        "assets/details/mobile-workbenches/device-service-tool-grid-03.png"
+      ],
+      "poster": "assets/details/mobile-workbenches/device-service-tool-grid-01.png",
+      "image_reason": "不同页面或布局方案各自保留，不按连续抽帧处理。"
+    },
+    "data-visualization/regional-campus-map-overview": {
+      "source": "retained-static-original",
+      "limitation": "保留原尺寸与既有裁切，以无损 PNG 避免再次 JPEG 压缩；不能恢复源图已丢失的细节。",
+      "images": [
+        "assets/details/data-visualization/regional-campus-map-overview-01.png",
+        "assets/details/data-visualization/regional-campus-map-overview-02.png"
+      ],
+      "poster": "assets/details/data-visualization/regional-campus-map-overview-01.png",
+      "image_reason": "不同页面或布局方案各自保留，不按连续抽帧处理。"
+    },
+    "enterprise-workbenches/factory-oa-task-portal": {
+      "source": "retained-static-original",
+      "limitation": "保留原尺寸与既有裁切，以无损 PNG 避免再次 JPEG 压缩；不能恢复源图已丢失的细节。",
+      "images": [
+        "assets/details/enterprise-workbenches/factory-oa-task-portal-01.png",
+        "assets/details/enterprise-workbenches/factory-oa-task-portal-02.png"
+      ],
+      "poster": "assets/details/enterprise-workbenches/factory-oa-task-portal-01.png",
+      "image_reason": "不同页面或布局方案各自保留，不按连续抽帧处理。"
+    },
+    "data-visualization/agv-factory-robot-console": {
+      "source": "retained-static-original",
+      "limitation": "保留原尺寸与既有裁切，以无损 PNG 避免再次 JPEG 压缩；不能恢复源图已丢失的细节。",
+      "images": [
+        "assets/details/data-visualization/agv-factory-robot-console-01.png",
+        "assets/details/data-visualization/agv-factory-robot-console-02.png"
+      ],
+      "poster": "assets/details/data-visualization/agv-factory-robot-console-01.png",
+      "image_reason": "保留不同页面的独立稿，移除重复包含这些页面的组合图。"
+    },
+    "data-visualization/robotic-arm-pipeline-metrics": {
+      "source": "retained-static-original",
+      "limitation": "保留原尺寸与既有裁切，以无损 PNG 避免再次 JPEG 压缩；不能恢复源图已丢失的细节。",
+      "images": [
+        "assets/details/data-visualization/robotic-arm-pipeline-metrics-01.png",
+        "assets/details/data-visualization/robotic-arm-pipeline-metrics-02.png"
+      ],
+      "poster": "assets/details/data-visualization/robotic-arm-pipeline-metrics-01.png",
+      "image_reason": "保留不同页面的独立稿，移除重复包含这些页面的组合图。"
+    },
+    "data-visualization/campus-light-dark-themes": {
+      "source": "retained-static-original",
+      "limitation": "保留原尺寸与既有裁切，以无损 PNG 避免再次 JPEG 压缩；不能恢复源图已丢失的细节。",
+      "images": [
+        "assets/details/data-visualization/campus-light-dark-themes-01.png",
+        "assets/details/data-visualization/campus-light-dark-themes-02.png"
+      ],
+      "poster": "assets/details/data-visualization/campus-light-dark-themes-01.png",
+      "image_reason": "保留不同页面的独立稿，移除重复包含这些页面的组合图。"
+    },
+    "mobile-workbenches/enterprise-service-mobile-hub": {
+      "source": "retained-static-original",
+      "limitation": "保留原尺寸与既有裁切，以无损 PNG 避免再次 JPEG 压缩；不能恢复源图已丢失的细节。",
+      "images": [
+        "assets/details/mobile-workbenches/enterprise-service-mobile-hub-01.png",
+        "assets/details/mobile-workbenches/enterprise-service-mobile-hub-02.png"
+      ],
+      "poster": "assets/details/mobile-workbenches/enterprise-service-mobile-hub-01.png",
+      "image_reason": "不同页面或布局方案各自保留，不按连续抽帧处理。"
+    },
+    "data-visualization/battery-swap-pasture-console": {
+      "source": "retained-static-original",
+      "limitation": "保留原尺寸与既有裁切，以无损 PNG 避免再次 JPEG 压缩；不能恢复源图已丢失的细节。",
+      "images": [
+        "assets/details/data-visualization/battery-swap-pasture-console-01.png",
+        "assets/details/data-visualization/battery-swap-pasture-console-02.png"
+      ],
+      "poster": "assets/details/data-visualization/battery-swap-pasture-console-01.png",
+      "image_reason": "保留不同页面的独立稿，移除重复包含这些页面的组合图。"
+    },
+    "enterprise-workbenches/asset-process-report-workbench": {
+      "source": "retained-static-original",
+      "limitation": "保留原尺寸与既有裁切，以无损 PNG 避免再次 JPEG 压缩；不能恢复源图已丢失的细节。",
+      "images": [
+        "assets/details/enterprise-workbenches/asset-process-report-workbench-01.png",
+        "assets/details/enterprise-workbenches/asset-process-report-workbench-02.png"
+      ],
+      "poster": "assets/details/enterprise-workbenches/asset-process-report-workbench-01.png",
+      "image_reason": "保留不同页面的独立稿，移除重复包含这些页面的组合图。"
+    },
+    "data-visualization/factory-section-floor-console": {
+      "source": "retained-static-original",
+      "limitation": "保留原尺寸与既有裁切，以无损 PNG 避免再次 JPEG 压缩；不能恢复源图已丢失的细节。",
+      "images": [
+        "assets/details/data-visualization/factory-section-floor-console-01.png",
+        "assets/details/data-visualization/factory-section-floor-console-02.png"
+      ],
+      "poster": "assets/details/data-visualization/factory-section-floor-console-01.png",
+      "image_reason": "保留不同页面的独立稿，移除重复包含这些页面的组合图。"
+    },
+    "mobile-workbenches/travel-learning-service-homes": {
+      "source": "retained-static-original",
+      "limitation": "保留原尺寸与既有裁切，以无损 PNG 避免再次 JPEG 压缩；不能恢复源图已丢失的细节。",
+      "images": [
+        "assets/details/mobile-workbenches/travel-learning-service-homes-01.png",
+        "assets/details/mobile-workbenches/travel-learning-service-homes-02.png"
+      ],
+      "poster": "assets/details/mobile-workbenches/travel-learning-service-homes-01.png",
+      "image_reason": "不同页面或布局方案各自保留，不按连续抽帧处理。"
+    },
+    "data-visualization/building-floor-parameter-view": {
+      "source": "retained-static-original",
+      "limitation": "保留原尺寸与既有裁切，以无损 PNG 避免再次 JPEG 压缩；不能恢复源图已丢失的细节。",
+      "images": [
+        "assets/details/data-visualization/building-floor-parameter-view-01.png",
+        "assets/details/data-visualization/building-floor-parameter-view-02.png"
+      ],
+      "poster": "assets/details/data-visualization/building-floor-parameter-view-01.png",
+      "image_reason": "不同页面或布局方案各自保留，不按连续抽帧处理。"
+    },
+    "enterprise-workbenches/gradient-column-business-metrics": {
+      "source": "retained-static-original",
+      "limitation": "保留原尺寸与既有裁切，以无损 PNG 避免再次 JPEG 压缩；不能恢复源图已丢失的细节。",
+      "images": [
+        "assets/details/enterprise-workbenches/gradient-column-business-metrics-01.png",
+        "assets/details/enterprise-workbenches/gradient-column-business-metrics-02.png"
+      ],
+      "poster": "assets/details/enterprise-workbenches/gradient-column-business-metrics-01.png",
+      "image_reason": "不同页面或布局方案各自保留，不按连续抽帧处理。"
+    },
+    "enterprise-workbenches/warm-orange-management-home": {
+      "source": "retained-static-original",
+      "limitation": "保留原尺寸与既有裁切，以无损 PNG 避免再次 JPEG 压缩；不能恢复源图已丢失的细节。",
+      "images": [
+        "assets/details/enterprise-workbenches/warm-orange-management-home-01.png",
+        "assets/details/enterprise-workbenches/warm-orange-management-home-02.png"
+      ],
+      "poster": "assets/details/enterprise-workbenches/warm-orange-management-home-01.png",
+      "image_reason": "保留不同页面的独立稿，移除重复包含这些页面的组合图。"
+    },
+    "enterprise-workbenches/factory-space-process-workbench": {
+      "source": "retained-static-original",
+      "limitation": "保留原尺寸与既有裁切，以无损 PNG 避免再次 JPEG 压缩；不能恢复源图已丢失的细节。",
+      "images": [
+        "assets/details/enterprise-workbenches/factory-space-process-workbench-01.png",
+        "assets/details/enterprise-workbenches/factory-space-process-workbench-02.png"
+      ],
+      "poster": "assets/details/enterprise-workbenches/factory-space-process-workbench-01.png",
+      "image_reason": "保留不同页面的独立稿，移除重复包含这些页面的组合图。"
+    },
+    "enterprise-workbenches/blue-metrics-list-management": {
+      "source": "retained-static-original",
+      "limitation": "保留原尺寸与既有裁切，以无损 PNG 避免再次 JPEG 压缩；不能恢复源图已丢失的细节。",
+      "images": [
+        "assets/details/enterprise-workbenches/blue-metrics-list-management-01.png",
+        "assets/details/enterprise-workbenches/blue-metrics-list-management-02.png"
+      ],
+      "poster": "assets/details/enterprise-workbenches/blue-metrics-list-management-01.png",
+      "image_reason": "不同页面或布局方案各自保留，不按连续抽帧处理。"
+    },
+    "data-visualization/regional-map-information-board": {
+      "source": "retained-static-original",
+      "limitation": "保留原尺寸与既有裁切，以无损 PNG 避免再次 JPEG 压缩；不能恢复源图已丢失的细节。",
+      "images": [
+        "assets/details/data-visualization/regional-map-information-board-01.png",
+        "assets/details/data-visualization/regional-map-information-board-02.png"
+      ],
+      "poster": "assets/details/data-visualization/regional-map-information-board-01.png",
+      "image_reason": "不同页面或布局方案各自保留，不按连续抽帧处理。"
+    },
+    "enterprise-workbenches/recruitment-candidate-workbench": {
+      "source": "retained-static-original",
+      "limitation": "保留原尺寸与既有裁切，以无损 PNG 避免再次 JPEG 压缩；不能恢复源图已丢失的细节。",
+      "images": [
+        "assets/details/enterprise-workbenches/recruitment-candidate-workbench-01.png",
+        "assets/details/enterprise-workbenches/recruitment-candidate-workbench-02.png"
+      ],
+      "poster": "assets/details/enterprise-workbenches/recruitment-candidate-workbench-01.png",
+      "image_reason": "不同页面或布局方案各自保留，不按连续抽帧处理。"
+    },
+    "mobile-workbenches/campus-timetable-access-hub": {
+      "source": "retained-static-original",
+      "limitation": "保留原尺寸与既有裁切，以无损 PNG 避免再次 JPEG 压缩；不能恢复源图已丢失的细节。",
+      "images": [
+        "assets/details/mobile-workbenches/campus-timetable-access-hub-01.png",
+        "assets/details/mobile-workbenches/campus-timetable-access-hub-02.png"
+      ],
+      "poster": "assets/details/mobile-workbenches/campus-timetable-access-hub-01.png",
+      "image_reason": "不同页面或布局方案各自保留，不按连续抽帧处理。"
+    },
+    "enterprise-workbenches/compact-analytics-report-grid": {
+      "source": "retained-static-original",
+      "limitation": "保留原尺寸与既有裁切，以无损 PNG 避免再次 JPEG 压缩；不能恢复源图已丢失的细节。",
+      "images": [
+        "assets/details/enterprise-workbenches/compact-analytics-report-grid-01.png",
+        "assets/details/enterprise-workbenches/compact-analytics-report-grid-02.png"
+      ],
+      "poster": "assets/details/enterprise-workbenches/compact-analytics-report-grid-01.png",
+      "image_reason": "保留不同页面的独立稿，移除重复包含这些页面的组合图。"
+    },
+    "enterprise-workbenches/colorful-metrics-statistics-list": {
+      "source": "retained-static-original",
+      "limitation": "保留原尺寸与既有裁切，以无损 PNG 避免再次 JPEG 压缩；不能恢复源图已丢失的细节。",
+      "images": [
+        "assets/details/enterprise-workbenches/colorful-metrics-statistics-list-01.png",
+        "assets/details/enterprise-workbenches/colorful-metrics-statistics-list-02.png",
+        "assets/details/enterprise-workbenches/colorful-metrics-statistics-list-03.png"
+      ],
+      "poster": "assets/details/enterprise-workbenches/colorful-metrics-statistics-list-01.png",
+      "image_reason": "不同页面或布局方案各自保留，不按连续抽帧处理。"
+    },
+    "data-visualization/green-campus-logistics-twin": {
+      "source": "retained-static-original",
+      "limitation": "保留原尺寸与既有裁切，以无损 PNG 避免再次 JPEG 压缩；不能恢复源图已丢失的细节。",
+      "images": [
+        "assets/details/data-visualization/green-campus-logistics-twin.png"
+      ],
+      "poster": "assets/details/data-visualization/green-campus-logistics-twin.png",
+      "image_reason": "不同页面或布局方案各自保留，不按连续抽帧处理。"
+    },
+    "enterprise-workbenches/enterprise-subscription-report-portal": {
+      "source": "retained-static-original",
+      "limitation": "保留原尺寸与既有裁切，以无损 PNG 避免再次 JPEG 压缩；不能恢复源图已丢失的细节。",
+      "images": [
+        "assets/details/enterprise-workbenches/enterprise-subscription-report-portal.png"
+      ],
+      "poster": "assets/details/enterprise-workbenches/enterprise-subscription-report-portal.png",
+      "image_reason": "不同页面或布局方案各自保留，不按连续抽帧处理。"
+    },
+    "mobile-workbenches/illustrated-travel-service-home": {
+      "source": "retained-static-original",
+      "limitation": "保留原尺寸与既有裁切，以无损 PNG 避免再次 JPEG 压缩；不能恢复源图已丢失的细节。",
+      "images": [
+        "assets/details/mobile-workbenches/illustrated-travel-service-home-01.png",
+        "assets/details/mobile-workbenches/illustrated-travel-service-home-02.png",
+        "assets/details/mobile-workbenches/illustrated-travel-service-home-03.png"
+      ],
+      "poster": "assets/details/mobile-workbenches/illustrated-travel-service-home-01.png",
+      "image_reason": "不同页面或布局方案各自保留，不按连续抽帧处理。"
+    },
+    "mobile-workbenches/parcel-orders-quick-services": {
+      "source": "retained-static-original",
+      "limitation": "保留原尺寸与既有裁切，以无损 PNG 避免再次 JPEG 压缩；不能恢复源图已丢失的细节。",
+      "images": [
+        "assets/details/mobile-workbenches/parcel-orders-quick-services-01.png",
+        "assets/details/mobile-workbenches/parcel-orders-quick-services-02.png"
+      ],
+      "poster": "assets/details/mobile-workbenches/parcel-orders-quick-services-01.png",
+      "image_reason": "不同页面或布局方案各自保留，不按连续抽帧处理。"
+    },
+    "data-visualization/furnace-floor-section-screen": {
+      "source": "retained-static-original",
+      "limitation": "保留原尺寸与既有裁切，以无损 PNG 避免再次 JPEG 压缩；不能恢复源图已丢失的细节。",
+      "images": [
+        "assets/details/data-visualization/furnace-floor-section-screen.png"
+      ],
+      "poster": "assets/details/data-visualization/furnace-floor-section-screen.png",
+      "image_reason": "不同页面或布局方案各自保留，不按连续抽帧处理。"
+    },
+    "enterprise-workbenches/mes-production-task-management": {
+      "source": "retained-static-original",
+      "limitation": "保留原尺寸与既有裁切，以无损 PNG 避免再次 JPEG 压缩；不能恢复源图已丢失的细节。",
+      "images": [
+        "assets/details/enterprise-workbenches/mes-production-task-management.png"
+      ],
+      "poster": "assets/details/enterprise-workbenches/mes-production-task-management.png",
+      "image_reason": "不同页面或布局方案各自保留，不按连续抽帧处理。"
+    },
+    "data-visualization/building-energy-equipment-topology": {
+      "source": "retained-static-original",
+      "limitation": "保留原尺寸与既有裁切，以无损 PNG 避免再次 JPEG 压缩；不能恢复源图已丢失的细节。",
+      "images": [
+        "assets/details/data-visualization/building-energy-equipment-topology.png"
+      ],
+      "poster": "assets/details/data-visualization/building-energy-equipment-topology.png",
+      "image_reason": "不同页面或布局方案各自保留，不按连续抽帧处理。"
+    },
+    "data-visualization/solar-factory-production-twin": {
+      "source": "retained-static-original",
+      "limitation": "保留原尺寸与既有裁切，以无损 PNG 避免再次 JPEG 压缩；不能恢复源图已丢失的细节。",
+      "images": [
+        "assets/details/data-visualization/solar-factory-production-twin.png"
+      ],
+      "poster": "assets/details/data-visualization/solar-factory-production-twin.png",
+      "image_reason": "不同页面或布局方案各自保留，不按连续抽帧处理。"
+    },
+    "data-visualization/security-shield-campus-space": {
+      "source": "retained-static-original",
+      "limitation": "保留原尺寸与既有裁切，以无损 PNG 避免再次 JPEG 压缩；不能恢复源图已丢失的细节。",
+      "images": [
+        "assets/details/data-visualization/security-shield-campus-space.png"
+      ],
+      "poster": "assets/details/data-visualization/security-shield-campus-space.png",
+      "image_reason": "不同页面或布局方案各自保留，不按连续抽帧处理。"
+    },
+    "data-visualization/smt-wafer-production-array": {
+      "source": "retained-static-original",
+      "limitation": "保留原尺寸与既有裁切，以无损 PNG 避免再次 JPEG 压缩；不能恢复源图已丢失的细节。",
+      "images": [
+        "assets/details/data-visualization/smt-wafer-production-array.png"
+      ],
+      "poster": "assets/details/data-visualization/smt-wafer-production-array.png",
+      "image_reason": "不同页面或布局方案各自保留，不按连续抽帧处理。"
+    },
+    "enterprise-workbenches/outpatient-business-metrics": {
+      "source": "retained-static-original",
+      "limitation": "保留原尺寸与既有裁切，以无损 PNG 避免再次 JPEG 压缩；不能恢复源图已丢失的细节。",
+      "images": [
+        "assets/details/enterprise-workbenches/outpatient-business-metrics.png"
+      ],
+      "poster": "assets/details/enterprise-workbenches/outpatient-business-metrics.png",
+      "image_reason": "不同页面或布局方案各自保留，不按连续抽帧处理。"
+    },
+    "enterprise-workbenches/enterprise-funnel-mes-lists": {
+      "source": "retained-static-original",
+      "limitation": "保留原尺寸与既有裁切，以无损 PNG 避免再次 JPEG 压缩；不能恢复源图已丢失的细节。",
+      "images": [
+        "assets/details/enterprise-workbenches/enterprise-funnel-mes-lists.png"
+      ],
+      "poster": "assets/details/enterprise-workbenches/enterprise-funnel-mes-lists.png",
+      "image_reason": "不同页面或布局方案各自保留，不按连续抽帧处理。"
+    },
+    "enterprise-workbenches/touchscreen-catalog-device-tasks": {
+      "source": "retained-static-original",
+      "limitation": "保留原尺寸与既有裁切，以无损 PNG 避免再次 JPEG 压缩；不能恢复源图已丢失的细节。",
+      "images": [
+        "assets/details/enterprise-workbenches/touchscreen-catalog-device-tasks.png"
+      ],
+      "poster": "assets/details/enterprise-workbenches/touchscreen-catalog-device-tasks.png",
+      "image_reason": "不同页面或布局方案各自保留，不按连续抽帧处理。"
+    },
+    "data-visualization/health-security-campus-monitor": {
+      "source": "retained-static-original",
+      "limitation": "保留原尺寸与既有裁切，以无损 PNG 避免再次 JPEG 压缩；不能恢复源图已丢失的细节。",
+      "images": [
+        "assets/details/data-visualization/health-security-campus-monitor.png"
+      ],
+      "poster": "assets/details/data-visualization/health-security-campus-monitor.png",
+      "image_reason": "不同页面或布局方案各自保留，不按连续抽帧处理。"
+    },
+    "enterprise-workbenches/enterprise-progress-todo-management": {
+      "source": "retained-static-original",
+      "limitation": "保留原尺寸与既有裁切，以无损 PNG 避免再次 JPEG 压缩；不能恢复源图已丢失的细节。",
+      "images": [
+        "assets/details/enterprise-workbenches/enterprise-progress-todo-management-01.png",
+        "assets/details/enterprise-workbenches/enterprise-progress-todo-management-02.png"
+      ],
+      "poster": "assets/details/enterprise-workbenches/enterprise-progress-todo-management-01.png",
+      "image_reason": "不同页面或布局方案各自保留，不按连续抽帧处理。"
+    },
+    "enterprise-workbenches/project-process-alert-workbench": {
+      "source": "retained-static-original",
+      "limitation": "保留原尺寸与既有裁切，以无损 PNG 避免再次 JPEG 压缩；不能恢复源图已丢失的细节。",
+      "images": [
+        "assets/details/enterprise-workbenches/project-process-alert-workbench-01.png",
+        "assets/details/enterprise-workbenches/project-process-alert-workbench-02.png"
+      ],
+      "poster": "assets/details/enterprise-workbenches/project-process-alert-workbench-01.png",
+      "image_reason": "不同页面或布局方案各自保留，不按连续抽帧处理。"
+    },
+    "mobile-interactions/ripple-reorder": {
+      "source": "retained-video-original",
+      "gif": "assets/details/mobile-interactions/ripple-reorder.gif",
+      "gif_fps": 15,
+      "limitation": "从 2160×2880 原片重新导出，使用已确认的精选片段和裁切；GIF 仍受 256 色限制，静态细节查看随包 JPG。"
+    },
+    "cards-tables/book-open-card": {
+      "source": "retained-video-original",
+      "gif": "assets/details/cards-tables/book-open-card.gif",
+      "gif_fps": 15,
+      "limitation": "从 2160×2880 原片重新导出，使用已确认的精选片段和裁切；GIF 仍受 256 色限制，静态细节查看随包 JPG。"
+    },
+    "documentation-layouts/wiki-layout": {
+      "source": "retained-video-original",
+      "gif": "assets/details/documentation-layouts/wiki-layout.gif",
+      "gif_fps": 15,
+      "limitation": "从 2160×2880 原片重新导出，使用已确认的精选片段和裁切；GIF 仍受 256 色限制，静态细节查看随包 JPG。"
+    },
+    "overlays/overlay-decision": {
+      "source": "retained-video-original",
+      "gif": "assets/details/overlays/overlay-decision.gif",
+      "gif_fps": 15,
+      "limitation": "从 2160×2880 原片重新导出，使用已确认的精选片段和裁切；GIF 仍受 256 色限制，静态细节查看随包 JPG。"
+    },
+    "glass-materials/liquid-glass": {
+      "source": "retained-video-original",
+      "gif": "assets/details/glass-materials/liquid-glass.gif",
+      "gif_fps": 15,
+      "limitation": "从 2160×2880 原片重新导出，使用已确认的精选片段和裁切；GIF 仍受 256 色限制，静态细节查看随包 JPG。"
+    }
+  },
+  "files": {
+    "assets/details/overlays/modal.png": {
+      "bytes": 109966,
+      "sha256": "fccaa01b50d0a7ea08ec5f7a82d8d7a91aa4efa2da5765306369d454c1b1f908",
+      "width": 800,
+      "height": 600
+    },
+    "assets/details/overlays/alert-dialog.png": {
+      "bytes": 119620,
+      "sha256": "6bb713eccb17243c12856cbbefe977265355fe2af9e1b9c9662425cb47848c52",
+      "width": 800,
+      "height": 600
+    },
+    "assets/details/overlays/drawer.png": {
+      "bytes": 127379,
+      "sha256": "35b76601c723e038f5c16f21f9fa7a7dcdcff46bd4625b58de0399639be4b07b",
+      "width": 800,
+      "height": 600
+    },
+    "assets/details/overlays/bottom-sheet.png": {
+      "bytes": 130726,
+      "sha256": "d123cfb9effc97d378f88009755ca413e99bc34da24c5df0c408c932ef4bba39",
+      "width": 800,
+      "height": 600
+    },
+    "assets/details/overlays/toast.png": {
+      "bytes": 108637,
+      "sha256": "e8ebda09388b912ddcb193899ae2f252d8c8b7ff72689217a39dd51b4b754421",
+      "width": 800,
+      "height": 600
+    },
+    "assets/details/overlays/notification.png": {
+      "bytes": 115846,
+      "sha256": "cd8f867a733b962f2c9fe0a8205bc4de2aa9054a2dd851410c035a6fa66929a8",
+      "width": 800,
+      "height": 600
+    },
+    "assets/details/overlays/toast-vs-notification.png": {
+      "bytes": 144425,
+      "sha256": "60ccdd97d9da8a74724ac90db7109a5efea7ae8cd06361ca3c83d3f0a7fc1646",
+      "width": 800,
+      "height": 600
+    },
+    "assets/details/overlays/success-toast-correction-01.png": {
+      "bytes": 130165,
+      "sha256": "522fcb3cff49bc7b4485f9c9973bfe283beb8135aa8099f119f03f623cb337d2",
+      "width": 800,
+      "height": 600
+    },
+    "assets/details/overlays/success-toast-correction-02.png": {
+      "bytes": 127630,
+      "sha256": "b94cb3d9cdb55033a7d607fb1ff55a771bf76ea09805d4f31e8cd350652570c2",
+      "width": 800,
+      "height": 600
+    },
+    "assets/details/overlays/tooltip.png": {
+      "bytes": 106802,
+      "sha256": "30a60eaca2fa9b131e036b99f0c9cdcb5b29afccb32816512c9b8df11a22e982",
+      "width": 800,
+      "height": 600
+    },
+    "assets/details/overlays/popover.png": {
+      "bytes": 121092,
+      "sha256": "39e59b88556b4b45dd2f8c76e7e5f6315e2aaf2e51443752eb1a4687526d36bc",
+      "width": 800,
+      "height": 600
+    },
+    "assets/details/overlays/popconfirm.png": {
+      "bytes": 135304,
+      "sha256": "50caeab93814f46db2bf9d6c57f097e9e11420fa1f243536b249dda4c7c0e60b",
+      "width": 800,
+      "height": 600
+    },
+    "assets/details/overlays/dropdown-menu.png": {
+      "bytes": 126996,
+      "sha256": "c107e4f7806c373c0418a6bd374363279334422979a5bac17d50d3916eaf6773",
+      "width": 800,
+      "height": 600
+    },
+    "assets/details/loading-errors/skeleton.png": {
+      "bytes": 83867,
+      "sha256": "e7e6bcc552cfa66a444a571662bcf93dacbc06ebe016e8992e9e03632878fcc3",
+      "width": 600,
+      "height": 900
+    },
+    "assets/details/loading-errors/blur-up.png": {
+      "bytes": 93510,
+      "sha256": "51042cacd8db8a0455e166e09b70ceeed68957bf5f6d8c58f2ddca55954b8048",
+      "width": 600,
+      "height": 900
+    },
+    "assets/details/loading-errors/optimistic-ui.png": {
+      "bytes": 100818,
+      "sha256": "c46784026b392eb0b69c59e551c07cd232749168a540064c51a4a30303b6bcb8",
+      "width": 600,
+      "height": 900
+    },
+    "assets/details/loading-errors/pull-to-refresh.png": {
+      "bytes": 131775,
+      "sha256": "69126a61dc3eace18966ddb171d3a49d30b6dc9c59c888246661c27d65718fb7",
+      "width": 600,
+      "height": 900
+    },
+    "assets/details/loading-errors/progress-bar.png": {
+      "bytes": 112535,
+      "sha256": "b6181f668ba93bd215615ccf2446c8c54accee7ac0a3c19edb662e3f9c099d88",
+      "width": 600,
+      "height": 900
+    },
+    "assets/details/loading-errors/loading-button.png": {
+      "bytes": 119943,
+      "sha256": "2475dda2856cbbddef55269d83c027fbe7872a9ab0d615906ece994d4c2ade32",
+      "width": 600,
+      "height": 900
+    },
+    "assets/details/loading-errors/empty-state.png": {
+      "bytes": 111057,
+      "sha256": "57618320eb9ea9e4167c2933ad478133db6753999c79d644ed21847204539755",
+      "width": 600,
+      "height": 900
+    },
+    "assets/details/loading-errors/not-found.png": {
+      "bytes": 113543,
+      "sha256": "8495b24e3fe3c03878d131f2dd62f8b136e7b603c7b8b6fadd867f0d6bf3ff4f",
+      "width": 600,
+      "height": 900
+    },
+    "assets/details/loading-errors/error-page.png": {
+      "bytes": 107611,
+      "sha256": "397ae3dbb32489985c2098aef6a72584480cad615c372d61839a7b6d410e6e0f",
+      "width": 600,
+      "height": 900
+    },
+    "assets/details/loading-errors/offline.png": {
+      "bytes": 130404,
+      "sha256": "541116037af11a6951c1aaa22306e3102ccc72c34135ac1796c490a92a9ba8af",
+      "width": 600,
+      "height": 900
+    },
+    "assets/details/loading-errors/no-permission.png": {
+      "bytes": 118865,
+      "sha256": "301c3213903da3246c6e69bf4661d4a2bad7dcc27e35e57f344601146caef299",
+      "width": 600,
+      "height": 900
+    },
+    "assets/details/loading-errors/result.png": {
+      "bytes": 134518,
+      "sha256": "82b5b4ff965baabcc90333e12cf74cd8c0a1c7dd4475a73ce557714e5a180ae8",
+      "width": 600,
+      "height": 900
+    },
+    "assets/details/loading-errors/spinner.png": {
+      "bytes": 90269,
+      "sha256": "fe9ced2a5bc76d9363eae4e18b184f157260dd76aba2e42a7ab099a91a422818",
+      "width": 600,
+      "height": 900
+    },
+    "assets/details/backgrounds/aurora.png": {
+      "bytes": 118568,
+      "sha256": "3dc01e75d9109a2236a8beba1c89d67f8ac676911626801d5dd4371e1908e4b0",
+      "width": 600,
+      "height": 900
+    },
+    "assets/details/backgrounds/mesh-gradient.png": {
+      "bytes": 129244,
+      "sha256": "50badcf118a29d43cac341dc20eda0b130bf551517fec4b13b48e341601e4f7d",
+      "width": 600,
+      "height": 900
+    },
+    "assets/details/backgrounds/particle-wave.png": {
+      "bytes": 153288,
+      "sha256": "87f7ac6af04599898751a785cfad6eb92fe314c879ca2665a789105b484db9b3",
+      "width": 600,
+      "height": 900
+    },
+    "assets/details/backgrounds/dotted-globe.png": {
+      "bytes": 171081,
+      "sha256": "356e45567625178412c55b5dd8168f6979636edc1aa0f4dff443155eb2d04e39",
+      "width": 600,
+      "height": 900
+    },
+    "assets/details/backgrounds/fluid.png": {
+      "bytes": 109911,
+      "sha256": "fea8ca65d0886b5fe7732892d71456c2f909b99462db8f2d5be5b9e4f81528d5",
+      "width": 600,
+      "height": 900
+    },
+    "assets/details/backgrounds/beams.png": {
+      "bytes": 125204,
+      "sha256": "f82ee70625928f44399bc955f1e518568fa20d7fda340eda65c15a85610c2c99",
+      "width": 600,
+      "height": 900
+    },
+    "assets/details/backgrounds/matrix-rain.png": {
+      "bytes": 124329,
+      "sha256": "f3dd47ff2928514c5c8ec01d1582407774097699296886d6eb26e45864c22c90",
+      "width": 600,
+      "height": 900
+    },
+    "assets/details/backgrounds/dot-grid.png": {
+      "bytes": 124767,
+      "sha256": "10d9f1bf22d131a9dd853ed9b332b3ecd18a6725c93e00844b744b7454d124aa",
+      "width": 600,
+      "height": 900
+    },
+    "assets/details/backgrounds/retro-grid.png": {
+      "bytes": 157493,
+      "sha256": "e248ea732afa814bc982feb34b12f8f39312a9d50fd9c99aa869d694295e0a5c",
+      "width": 600,
+      "height": 900
+    },
+    "assets/details/backgrounds/starfield.png": {
+      "bytes": 160662,
+      "sha256": "f9845ea237adf8412d890b803aafd3fe2a252aef134922de722f758413ff0d04",
+      "width": 600,
+      "height": 900
+    },
+    "assets/details/backgrounds/grain.png": {
+      "bytes": 85354,
+      "sha256": "244b0901a1702ecdc7d620ca1b2206b247805575510cb5ff974442699c5afbb4",
+      "width": 600,
+      "height": 900
+    },
+    "assets/details/backgrounds/gradient.png": {
+      "bytes": 103469,
+      "sha256": "51811e345e6c7134f2b41f30be5b27d66c8b5f8dcd90b9e887c6ad2e1d4ff3ab",
+      "width": 600,
+      "height": 900
+    },
+    "assets/details/cards-tables/carousel.png": {
+      "bytes": 101574,
+      "sha256": "ee94178437dc8b9288869572c534657cac8081a42f71f0844edd7274a1d41b4e",
+      "width": 600,
+      "height": 900
+    },
+    "assets/details/cards-tables/masonry.png": {
+      "bytes": 139469,
+      "sha256": "61bba6be54e19532d61521667b31208081aea9565e5da5791d60b810d5256f19",
+      "width": 600,
+      "height": 900
+    },
+    "assets/details/cards-tables/flip-card.png": {
+      "bytes": 120786,
+      "sha256": "ac38716b9cdb0db0a36b4b5f0337fe0e6db0b15d1b8b2e8e6297a79584047e0a",
+      "width": 600,
+      "height": 900
+    },
+    "assets/details/cards-tables/stat-card.png": {
+      "bytes": 115575,
+      "sha256": "d4cc110036fa67f6727d6d13a0c9ff79d34c8794083d73d11e6aac9db57eb16e",
+      "width": 600,
+      "height": 900
+    },
+    "assets/details/cards-tables/timeline.png": {
+      "bytes": 126574,
+      "sha256": "79153a67713013c9574b9cfde4b623d38580e0a63cfd23585b257924293eef17",
+      "width": 600,
+      "height": 900
+    },
+    "assets/details/cards-tables/avatar-group.png": {
+      "bytes": 121420,
+      "sha256": "349e802e337f874a923142c4d650ae57eeb9c927c0b24d712015a6ade543c5bc",
+      "width": 600,
+      "height": 900
+    },
+    "assets/details/cards-tables/badge.png": {
+      "bytes": 89996,
+      "sha256": "b3cc1ed5eed494eba8c0ca16228c70d823bd983bcd0fa1e13e3507c19ef50006",
+      "width": 600,
+      "height": 900
+    },
+    "assets/details/cards-tables/tag.png": {
+      "bytes": 124921,
+      "sha256": "de1d8be6de232d7ecd7b37548c242ac801f04021cffd5b1c5f25aca025b9be8d",
+      "width": 600,
+      "height": 900
+    },
+    "assets/details/cards-tables/accordion-01.png": {
+      "bytes": 101696,
+      "sha256": "bde105caebd4139313752a8fb03d8b629ba00931333b1359a676530f45cd78e3",
+      "width": 600,
+      "height": 900
+    },
+    "assets/details/cards-tables/accordion-02.png": {
+      "bytes": 119633,
+      "sha256": "20dcb3c2c67d736f1c801bd050e4ddc22c614a23783a610e777b18c0153bf6d5",
+      "width": 600,
+      "height": 900
+    },
+    "assets/details/cards-tables/fixed-header.png": {
+      "bytes": 150875,
+      "sha256": "d9911173f8153370dc091cbf459aca95e2c47faba7f037bce54fc91d0dfc38d1",
+      "width": 600,
+      "height": 900
+    },
+    "assets/details/cards-tables/sort-filter-01.png": {
+      "bytes": 157954,
+      "sha256": "25522c255ab6eb2b7e5d822e5ebb48b64bf0f7aebe14a2a2aabfb066fc0f3c85",
+      "width": 600,
+      "height": 900
+    },
+    "assets/details/cards-tables/sort-filter-02.png": {
+      "bytes": 174345,
+      "sha256": "8e3d453049cf1428c4a5ff3966568ddf81c4f3c0423254307336ad644a96da14",
+      "width": 600,
+      "height": 900
+    },
+    "assets/details/cards-tables/row-actions-01.png": {
+      "bytes": 157936,
+      "sha256": "d3e0730562ebe115817ecdf8e748f2ef5bcb220ca5f135d0461e6831e8010c2f",
+      "width": 600,
+      "height": 900
+    },
+    "assets/details/cards-tables/row-actions-02.png": {
+      "bytes": 153687,
+      "sha256": "8fc69dc2e2e73019eff54ae290f009524449b27478417f21f8eec76b6ef9772a",
+      "width": 600,
+      "height": 900
+    },
+    "assets/details/cards-tables/zebra-stripes.png": {
+      "bytes": 143399,
+      "sha256": "d97da58d9c2e10b613556007f10fbf1b2a6c117756dd4d4c4c7eb87ba4dcba1d",
+      "width": 600,
+      "height": 900
+    },
+    "assets/details/cards-tables/card-list.png": {
+      "bytes": 118930,
+      "sha256": "5fc35a3b6fac16891112f1e9e0a27a689267472b82ddb7368692f2758ba7759a",
+      "width": 600,
+      "height": 900
+    },
+    "assets/details/forms/floating-label.png": {
+      "bytes": 109518,
+      "sha256": "e88e1d38019e43f7583937d70498dc8b77ef06cf51dded502fc1befc2d7fce74",
+      "width": 600,
+      "height": 900
+    },
+    "assets/details/forms/otp-input.png": {
+      "bytes": 112838,
+      "sha256": "a12ebb0eb016ee5d4537ceb33041c3383b299132346745827462bea11a1d5691",
+      "width": 600,
+      "height": 900
+    },
+    "assets/details/forms/dropzone.png": {
+      "bytes": 125171,
+      "sha256": "d53fa14a24c3af9b7960838b9e0b81dbd1e36460c0a75d2457da7641d227690b",
+      "width": 600,
+      "height": 900
+    },
+    "assets/details/forms/date-picker.png": {
+      "bytes": 122001,
+      "sha256": "450f65bc50dd5d4d095141448383155604886b8ef41621bf747463e34f03780d",
+      "width": 600,
+      "height": 900
+    },
+    "assets/details/forms/slider.png": {
+      "bytes": 90658,
+      "sha256": "d5bed5945637d8df68c65e48d6359d758314c5f541cc50d72ffa1f1f6af74198",
+      "width": 600,
+      "height": 900
+    },
+    "assets/details/forms/autocomplete-01.png": {
+      "bytes": 106798,
+      "sha256": "3cfe02a3aea27cd6b4d6a82ea03040a932790d21fab844edd1028c31b205b1d2",
+      "width": 600,
+      "height": 900
+    },
+    "assets/details/forms/autocomplete-02.png": {
+      "bytes": 108775,
+      "sha256": "d5cb23bfda28f5795525ec940042f471c3fe243fccaed22ce379de6984e67256",
+      "width": 600,
+      "height": 900
+    },
+    "assets/details/forms/cascader.png": {
+      "bytes": 133518,
+      "sha256": "0f140c4d55029de894f68f680c6038ad0751bd9bc4a48b5e1aca48b36503d20f",
+      "width": 600,
+      "height": 900
+    },
+    "assets/details/forms/tag-input.png": {
+      "bytes": 120198,
+      "sha256": "59b9b76e047157ad64cbba899242d10218a94b138d681136d3ce5c0adb41b876",
+      "width": 600,
+      "height": 900
+    },
+    "assets/details/forms/password-strength-01.png": {
+      "bytes": 106777,
+      "sha256": "f8ee4e1bd28d50eaacb3851da411bfd9531248e5b74bbc95469da0b83819e7d6",
+      "width": 600,
+      "height": 900
+    },
+    "assets/details/forms/password-strength-02.png": {
+      "bytes": 116292,
+      "sha256": "f172802d9888c0cb74c7a1e9b5e344b283f2b5ee46e41f9b4291dad2d97022b0",
+      "width": 600,
+      "height": 900
+    },
+    "assets/details/forms/select.png": {
+      "bytes": 119811,
+      "sha256": "00b0394ec15a28cc58b7d5609d4173a33a26e6405c0f6b27aafd42b0bfa272bf",
+      "width": 600,
+      "height": 900
+    },
+    "assets/details/forms/validation-01.png": {
+      "bytes": 96651,
+      "sha256": "fdfb54bf2144c08effea43b9e1a7caed34f68a097a1e00566b2d8e9f9d256f78",
+      "width": 600,
+      "height": 900
+    },
+    "assets/details/forms/validation-02.png": {
+      "bytes": 101778,
+      "sha256": "605a1349d6dbe9df670c84b781c2724f3bfc6fedca832870d5e19d31990d5a8d",
+      "width": 600,
+      "height": 900
+    },
+    "assets/details/forms/helper-text.png": {
+      "bytes": 105883,
+      "sha256": "6374e817ed02caff9b1649ecdd3dcc232abffefdb9242ca84fb23c3a6f94b928",
+      "width": 600,
+      "height": 900
+    },
+    "assets/details/forms/required.png": {
+      "bytes": 95596,
+      "sha256": "168b8ac48f12cd61fac11a9f786e5927fe0665d7a66f889a7690ee9159b8dd5f",
+      "width": 600,
+      "height": 900
+    },
+    "assets/details/forms/input-submit.png": {
+      "bytes": 129500,
+      "sha256": "d7968d75b4fa09eebf0231c7cabfcbc5c2f413780cf1847167d7ad77ae0f4fe0",
+      "width": 600,
+      "height": 900
+    },
+    "assets/details/motion/border-beam.png": {
+      "bytes": 143546,
+      "sha256": "f1f0ead5a5e2e3f15a8ca454c52a9e036887442107255385b01111e54f81fafb",
+      "width": 600,
+      "height": 900
+    },
+    "assets/details/motion/spotlight.png": {
+      "bytes": 127707,
+      "sha256": "83c4c7d73a1344475263b622fc1668f9f5ba8d8a919bd871322c4beb7eb123fe",
+      "width": 600,
+      "height": 900
+    },
+    "assets/details/motion/tilt.png": {
+      "bytes": 124034,
+      "sha256": "f216f6266069ea59952b6ee47fde956db4832c82b6dd5a1c23812a8011212c8f",
+      "width": 600,
+      "height": 900
+    },
+    "assets/details/motion/scroll-storytelling.png": {
+      "bytes": 148223,
+      "sha256": "dc4a4afacc25ab2874453212c55ab22a36e11ae848029d6ffbeaa79d11eff8f8",
+      "width": 600,
+      "height": 900
+    },
+    "assets/details/motion/scramble-text.png": {
+      "bytes": 135828,
+      "sha256": "8f41fa10d05f1d7b9ca64108db7746dfb30b21d3aa26b4376da2b4f699672bdb",
+      "width": 600,
+      "height": 900
+    },
+    "assets/details/motion/parallax.png": {
+      "bytes": 145864,
+      "sha256": "8a8a02de00a9501ab34bb476622801cf2587159dbd785015de9eb341c5d6ddc9",
+      "width": 600,
+      "height": 900
+    },
+    "assets/details/motion/magnetic.png": {
+      "bytes": 130058,
+      "sha256": "e3de38be74e063f147c936f0304b310f7690b20dca9e7b0d02de1617333c2034",
+      "width": 600,
+      "height": 900
+    },
+    "assets/details/motion/typewriter.png": {
+      "bytes": 133036,
+      "sha256": "a03e5fd41339c113f4291201f159d07e5ff375364e9b55df357b8400b7b03ca6",
+      "width": 600,
+      "height": 900
+    },
+    "assets/details/motion/marquee.png": {
+      "bytes": 129404,
+      "sha256": "44fcb16532a0b58034fb470b4a42cf8aac65e1709ada9c3dabc26fc13b83d09a",
+      "width": 600,
+      "height": 900
+    },
+    "assets/details/motion/shimmer.png": {
+      "bytes": 101218,
+      "sha256": "c4a744c65793c8a61441f1b2264970a674b5615df4a49992e3970154cd5c971e",
+      "width": 600,
+      "height": 900
+    },
+    "assets/details/motion/count-up.png": {
+      "bytes": 136879,
+      "sha256": "c9ef2a10175edcf9e28623c3436c69051456882987d59a26da68a13117d88944",
+      "width": 600,
+      "height": 900
+    },
+    "assets/details/motion/scroll-reveal.png": {
+      "bytes": 154869,
+      "sha256": "d47b40d270e59f3e9b9ce135c94cbdcffc2073a769c8ba5800251e6ce43837b3",
+      "width": 600,
+      "height": 900
+    },
+    "assets/details/motion/spring.png": {
+      "bytes": 91657,
+      "sha256": "a28103aaaa3139c16bd9874fbe16ddf63f7298e3ea11665a4625c6b4986230f4",
+      "width": 600,
+      "height": 900
+    },
+    "assets/details/motion/stagger.png": {
+      "bytes": 119898,
+      "sha256": "af28c8f0295b276b8ab7fbf28fdb5db67384af40d0ed37ca453fcff31bbf248a",
+      "width": 600,
+      "height": 900
+    },
+    "assets/details/motion/hover-lift.png": {
+      "bytes": 136315,
+      "sha256": "28cc152ee60cc4d148d805309eadebc2f098af617c1110a0e37c642e791eb4cf",
+      "width": 600,
+      "height": 900
+    },
+    "assets/details/motion/easing.png": {
+      "bytes": 94196,
+      "sha256": "a47dd7eb72bb7feeb1be979eabfa0310e802f87eb7e98a8c25472a653d39d1c9",
+      "width": 600,
+      "height": 900
+    },
+    "assets/details/motion/motion-rules.png": {
+      "bytes": 220523,
+      "sha256": "909cf2e4228adcdd39d59af001ad12a511ddde4bc5569fcbd4ec873ec13044ba",
+      "width": 600,
+      "height": 756
+    },
+    "assets/details/buttons-controls/button-hierarchy.png": {
+      "bytes": 90323,
+      "sha256": "7eafa13eddcb82b89a686338d174bf79a23b9ed5c28596c334b5499d92583627",
+      "width": 800,
+      "height": 600
+    },
+    "assets/details/buttons-controls/primary-button.png": {
+      "bytes": 118975,
+      "sha256": "796eb3fd8d869b3099da7e8da38c02d08c9f2e11a9a00ab4456c8f49503845b6",
+      "width": 800,
+      "height": 600
+    },
+    "assets/details/buttons-controls/secondary-button.png": {
+      "bytes": 90050,
+      "sha256": "5e5198ca4c57ac9d10ae0fb6cb4e5e245d338a3030fd43c81fdcfc38c8ac2f57",
+      "width": 800,
+      "height": 600
+    },
+    "assets/details/buttons-controls/outline-button.png": {
+      "bytes": 94041,
+      "sha256": "f9adb08c41722581c7024cae27d0d5fa8126036d29bec8fac9721c53315f80ee",
+      "width": 800,
+      "height": 600
+    },
+    "assets/details/buttons-controls/text-button.png": {
+      "bytes": 131362,
+      "sha256": "78de3420f814c77db3660442ad751182a5555c742931775f8a5cdb8be81c9070",
+      "width": 800,
+      "height": 600
+    },
+    "assets/details/buttons-controls/danger-button.png": {
+      "bytes": 115581,
+      "sha256": "7de5daab7a92e76e67f1b3a9dc7032ef16acfb18caf85fe1ee275758c6064717",
+      "width": 800,
+      "height": 600
+    },
+    "assets/details/buttons-controls/ghost-button-01.png": {
+      "bytes": 113292,
+      "sha256": "d0dcc144238d4967dc405a67cd17ccdaba8850f4078d4efdd870f2abf476859b",
+      "width": 800,
+      "height": 600
+    },
+    "assets/details/buttons-controls/ghost-button-02.png": {
+      "bytes": 107698,
+      "sha256": "e3ce2021187dbc4f13b19550f70cdea9c38d2765e818e8f73dba87409b2cfa58",
+      "width": 800,
+      "height": 600
+    },
+    "assets/details/buttons-controls/icon-button.png": {
+      "bytes": 112567,
+      "sha256": "b1a8cb089536faa370550c6b1d386cf4274828493a0d755358770bf190fab1e1",
+      "width": 800,
+      "height": 600
+    },
+    "assets/details/buttons-controls/pill-button.png": {
+      "bytes": 86964,
+      "sha256": "ed4c4eada1dd073e8fc33ddd8b0dfe7d9a15ac589341d3409a271021b524eaf6",
+      "width": 800,
+      "height": 600
+    },
+    "assets/details/buttons-controls/button-group.png": {
+      "bytes": 128951,
+      "sha256": "4eb5e34e0680484b2b5a417ba0b5e3209758a2bb4fc66ecb9b40e79319deb868",
+      "width": 800,
+      "height": 600
+    },
+    "assets/details/buttons-controls/split-button.png": {
+      "bytes": 125852,
+      "sha256": "bb12a1dacccbb9d22f2b5c5a5e4a846bb061fd7d61e19e9dd4b8207c5fdd2739",
+      "width": 800,
+      "height": 600
+    },
+    "assets/details/buttons-controls/fab.png": {
+      "bytes": 130073,
+      "sha256": "d7cd699c450028af26cc8b1f53d358fc9122fa55413b8abda4af4eeec3fc9f6b",
+      "width": 800,
+      "height": 600
+    },
+    "assets/details/buttons-controls/hierarchy-correction.png": {
+      "bytes": 147043,
+      "sha256": "e3f21551dabace1ae77f666f24cadc6559ce49fd3f05a4862b460f075aaeb042",
+      "width": 800,
+      "height": 600
+    },
+    "assets/details/buttons-controls/hover-01.png": {
+      "bytes": 89184,
+      "sha256": "d042816b134844ef19062101e2a8ee7ebcac462c0d7c18c281094f8341767bb2",
+      "width": 800,
+      "height": 600
+    },
+    "assets/details/buttons-controls/hover-02.png": {
+      "bytes": 76163,
+      "sha256": "b480cdad2922f6f720a401be18af6836b632e8e18578e0145eda0ef2adae340b",
+      "width": 800,
+      "height": 600
+    },
+    "assets/details/buttons-controls/pressed.png": {
+      "bytes": 80740,
+      "sha256": "8c22dd3fdcbc9ecb268213ed6a8496a4668512879ae5b548996b619f539829a9",
+      "width": 800,
+      "height": 600
+    },
+    "assets/details/buttons-controls/focus-01.png": {
+      "bytes": 120082,
+      "sha256": "290fdcca357a8c6b2de97326c0ee89b3a60541ccc081e171206dd72583f67a11",
+      "width": 800,
+      "height": 600
+    },
+    "assets/details/buttons-controls/focus-02.png": {
+      "bytes": 114939,
+      "sha256": "e2936c629c933e4b4ef4c4afabc153ededdbd578749a9a20dc9f9e2d1a368b32",
+      "width": 800,
+      "height": 600
+    },
+    "assets/details/buttons-controls/loading.png": {
+      "bytes": 84065,
+      "sha256": "2e1a26c0416053a67e79c7bfc0a0ea5d24ece205a4bc08f56fdee2775713a113",
+      "width": 800,
+      "height": 600
+    },
+    "assets/details/buttons-controls/success-01.png": {
+      "bytes": 84013,
+      "sha256": "edbecae393717fd76ea3586291b40a512cdd5bb3d48467a8a40c762abe5b1a74",
+      "width": 800,
+      "height": 600
+    },
+    "assets/details/buttons-controls/success-02.png": {
+      "bytes": 77401,
+      "sha256": "ee771dcfc45eedbb46f2475359f8f6dc32fe5fa1a7a97f17a6f159fc56ec369f",
+      "width": 800,
+      "height": 600
+    },
+    "assets/details/buttons-controls/disabled.png": {
+      "bytes": 126784,
+      "sha256": "dca975866bb7dd96f17282b9c00d672d930f58f59da2bbae499160730884ef25",
+      "width": 800,
+      "height": 600
+    },
+    "assets/details/buttons-controls/state-correction.png": {
+      "bytes": 142164,
+      "sha256": "6c436ad64f68adc51a0b28eeae6e392f44ccdc5d67e497392d4161fbc2c51cf4",
+      "width": 800,
+      "height": 600
+    },
+    "assets/details/buttons-controls/switch-01.png": {
+      "bytes": 131090,
+      "sha256": "9e0677aa45087ede649f8ab72bb949ae9dc9f20bcd054ccd8c2aba4fff18d25f",
+      "width": 800,
+      "height": 600
+    },
+    "assets/details/buttons-controls/switch-02.png": {
+      "bytes": 120100,
+      "sha256": "43fc0bdb26a88a662ffbac122d7b37548e6c159459bf87b19b7326a0b7a4c593",
+      "width": 800,
+      "height": 600
+    },
+    "assets/details/buttons-controls/checkbox.png": {
+      "bytes": 142160,
+      "sha256": "41ff5eda24d5e72bd9b752c39853e3cb017c4fb61f3778dd41158707dba7bf7b",
+      "width": 800,
+      "height": 600
+    },
+    "assets/details/buttons-controls/indeterminate-01.png": {
+      "bytes": 123068,
+      "sha256": "ccd61dcb0a48dbb842426e637dce93aa536e1bad1227358f900b6cfda6a59052",
+      "width": 800,
+      "height": 600
+    },
+    "assets/details/buttons-controls/indeterminate-02.png": {
+      "bytes": 128059,
+      "sha256": "a911707340528f4b2af98e26e368d83ea5efa32eee83c56cd66a7e7dc6b207eb",
+      "width": 800,
+      "height": 600
+    },
+    "assets/details/buttons-controls/indeterminate-03.png": {
+      "bytes": 105516,
+      "sha256": "13c5425c16c97de197186a82005571a411a3721af99c04c1326bde94e5eb4b66",
+      "width": 800,
+      "height": 600
+    },
+    "assets/details/buttons-controls/radio.png": {
+      "bytes": 98941,
+      "sha256": "3c8594f240f4513fdeff401d6606a8ef569e1a161ec16fa2e9f241228fa9f6a3",
+      "width": 800,
+      "height": 600
+    },
+    "assets/details/buttons-controls/segmented-control.png": {
+      "bytes": 125279,
+      "sha256": "027136a829c03e604d8b6a154d5ba3d6292d01005a703b4513b12368530564b5",
+      "width": 800,
+      "height": 600
+    },
+    "assets/details/buttons-controls/toggle-button.png": {
+      "bytes": 110311,
+      "sha256": "4694334404b1f763dfda6a52e81a3fb8b86da55181bd1c381aa8bba29b70281f",
+      "width": 800,
+      "height": 600
+    },
+    "assets/details/buttons-controls/chip.png": {
+      "bytes": 132103,
+      "sha256": "d34d7702cb91f90463824a15fe1030be8883456bb50bc10ef9a28179d99932ec",
+      "width": 800,
+      "height": 600
+    },
+    "assets/details/buttons-controls/stepper.png": {
+      "bytes": 110178,
+      "sha256": "677aa4caeb471ae3a6430cf1eef513a877a091ff4b3175f5de48e4af2b2aab31",
+      "width": 800,
+      "height": 600
+    },
+    "assets/details/buttons-controls/control-selection.png": {
+      "bytes": 102100,
+      "sha256": "4e2a75b9a71e6492b58ffe37435520528ac83f3be09ac7071306f688a1c0fbfa",
+      "width": 800,
+      "height": 600
+    },
+    "assets/details/mobile-scroll/elastic-parallax-hero.png": {
+      "bytes": 178344,
+      "sha256": "32a5c0771a71f695968799741a674523ed7c1a48521baa72c00d38f61a7c3471",
+      "width": 300,
+      "height": 626
+    },
+    "assets/details/mobile-scroll/sticky-category-tabs.png": {
+      "bytes": 165029,
+      "sha256": "f882787f56bf6007ad636bace60ab9cb704a18ebee6cb0caf37f9c55005e986f",
+      "width": 300,
+      "height": 626
+    },
+    "assets/details/mobile-scroll/collapsing-cover-navbar.png": {
+      "bytes": 150778,
+      "sha256": "bf10e6da2486eeeb752243a310be9a30a2b24a3625f85ce96d501b14cbb866c8",
+      "width": 300,
+      "height": 626
+    },
+    "assets/details/mobile-scroll/editorial-scroll-reveal.png": {
+      "bytes": 140613,
+      "sha256": "d7dcc526d13a653e60f294eee3c581756f36a242b0510ea7ebf38c6e405fc252",
+      "width": 300,
+      "height": 626
+    },
+    "assets/details/mobile-scroll/pull-to-refresh-scene.png": {
+      "bytes": 104638,
+      "sha256": "8e00f2f3656e945623700c0efdeb837dbb78f13384cfb7eaa873140d620f80df",
+      "width": 300,
+      "height": 626
+    },
+    "assets/details/mobile-scroll/viewport-chart-growth.png": {
+      "bytes": 81554,
+      "sha256": "2164e339e2c9221ab690339e70f830219455288dcb748abcedb0a1ec36542f31",
+      "width": 300,
+      "height": 626
+    },
+    "assets/details/web-interactions/sticky-product-story.png": {
+      "bytes": 119262,
+      "sha256": "c7114a061dfb1c634ceef9788598dbed479c18c8c782dc63f820377e83709f87",
+      "width": 720,
+      "height": 422
+    },
+    "assets/details/web-interactions/contextual-cursor.png": {
+      "bytes": 301562,
+      "sha256": "f82b36945179e489cfa79478395cb2e8cc5bec6fd5d4878ca2dcaf877cd69ceb",
+      "width": 720,
+      "height": 422
+    },
+    "assets/details/web-interactions/magnetic-cta.png": {
+      "bytes": 78272,
+      "sha256": "aa27dfb2c8988fce072a7ad364ebf2eee0bd8a3915a0ec5a403e94a081b9c28d",
+      "width": 720,
+      "height": 422
+    },
+    "assets/details/web-interactions/expanding-icon-label.png": {
+      "bytes": 90868,
+      "sha256": "522cf7fc8c71f017944191b5230cbf4cf62f87d32053ed5d2991517d6bb70b6a",
+      "width": 720,
+      "height": 422
+    },
+    "assets/details/web-interactions/sliding-nav-highlight.png": {
+      "bytes": 216704,
+      "sha256": "bf73679311a44bdd7da60f6730b6a0662ab88739b28ec1bec24e2160f9f6d95a",
+      "width": 720,
+      "height": 422
+    },
+    "assets/details/web-interactions/corner-fill-hover.png": {
+      "bytes": 123787,
+      "sha256": "6d590d3a8d6e6f11ff14a0a31af810c83a294518cd0d262b1fbdb98ab59d261c",
+      "width": 720,
+      "height": 422
+    },
+    "assets/details/web-interactions/snapping-level-slider.png": {
+      "bytes": 95731,
+      "sha256": "08acd5f0a9d58fe7fb21e8962b9b3f7e84380690b326d719c4a486611ae873df",
+      "width": 720,
+      "height": 422
+    },
+    "assets/details/web-interactions/scrubbing-bar-chart.png": {
+      "bytes": 73811,
+      "sha256": "20177a3675e9c9e2152acc26591905dabe609939b3b4636608e1b3e4a4a44c56",
+      "width": 720,
+      "height": 422
+    },
+    "assets/details/web-interactions/hover-image-preview.png": {
+      "bytes": 109763,
+      "sha256": "e887aaba0ccd0e7687c605e7decd7c6c0db3b94a3a4ee993e7c698ef4ded038c",
+      "width": 720,
+      "height": 422
+    },
+    "assets/details/web-interactions/circular-theme-reveal.png": {
+      "bytes": 180874,
+      "sha256": "78bab65f7ad98a51afeebd196be639b48386e7ed2a73a0d761d085864be5396e",
+      "width": 720,
+      "height": 422
+    },
+    "assets/details/mobile-interactions/touch-origin-theme.png": {
+      "bytes": 136579,
+      "sha256": "8f5e26186c24d7a54926eb813ef3a3d2c781426f98eb904f06b227e91b521021",
+      "width": 480,
+      "height": 540
+    },
+    "assets/details/mobile-interactions/staggered-batch-check.png": {
+      "bytes": 92997,
+      "sha256": "4aff2ae9a9f58eec3cd1d33bf7b2a1ec99f34dac17602f7badc15adc5da4ad56",
+      "width": 480,
+      "height": 540
+    },
+    "assets/details/mobile-interactions/inertial-slider-snap.png": {
+      "bytes": 86580,
+      "sha256": "a47cf120c6fc064a4f79c7f894c5b7031e0edf7a0ec81be559fdef1e2e54f7df",
+      "width": 480,
+      "height": 540
+    },
+    "assets/details/mobile-interactions/animated-text-expand.png": {
+      "bytes": 107572,
+      "sha256": "260778b1bcef9098e3070889f42f03ae4b69684918148a0f1898caee1a38650b",
+      "width": 480,
+      "height": 540
+    },
+    "assets/details/mobile-interactions/step-progress-settle.png": {
+      "bytes": 92523,
+      "sha256": "b6e77a9a2675722800dd1a0e338d0f736ab1bd334d07bdb106ec98b0c0849dd8",
+      "width": 480,
+      "height": 540
+    },
+    "assets/details/mobile-interactions/switch-group-ripple.png": {
+      "bytes": 83248,
+      "sha256": "86b7abade817c30964767704667fef143aada6c88ff7380519783fec2b36db88",
+      "width": 480,
+      "height": 540
+    },
+    "assets/details/mobile-interactions/card-delete-trajectory.png": {
+      "bytes": 118649,
+      "sha256": "f1e61cbad3189fd228b7d781cd50ae3271a112a5dad91d63c927442e72eb5868",
+      "width": 480,
+      "height": 540
+    },
+    "assets/details/mobile-interactions/sticky-compressing-stack.png": {
+      "bytes": 109343,
+      "sha256": "86b77765d6e83e241614a86e23d449ebbb9e05c191fac1d95dcdebdb70a26bad",
+      "width": 480,
+      "height": 540
+    },
+    "assets/details/mobile-interactions/reflowing-choice-tabs.png": {
+      "bytes": 97506,
+      "sha256": "9d25a43bcb70ea2d58e84959cf364dee864222fc2ae2cc7731ad638bc35942dd",
+      "width": 480,
+      "height": 540
+    },
+    "assets/details/mobile-layouts/wide-title-image-list.png": {
+      "bytes": 166886,
+      "sha256": "a65ea87cbcd5f936f332f084ac68af1c57d52248aa0d6baf1883f06d16aae67b",
+      "width": 300,
+      "height": 653
+    },
+    "assets/details/mobile-layouts/hero-information-overlay.png": {
+      "bytes": 199401,
+      "sha256": "9b42a76593e6fe0f6719c7c468c4c2d1ed6548976e1134fde515acf1af144a53",
+      "width": 300,
+      "height": 653
+    },
+    "assets/details/mobile-layouts/monochrome-priority.png": {
+      "bytes": 117930,
+      "sha256": "f79535249dbedbaae37ab64192d2b79d21d1f12561eb727c8423d69b8688eac5",
+      "width": 300,
+      "height": 653
+    },
+    "assets/details/mobile-layouts/color-block-bento.png": {
+      "bytes": 180977,
+      "sha256": "aba4a850cdb08bd636346190f76738cb3c1aaa394f95ff88ba506b3104584c33",
+      "width": 300,
+      "height": 653
+    },
+    "assets/details/mobile-layouts/poster-semicircle-dial.png": {
+      "bytes": 157819,
+      "sha256": "85451d71d8e65e3347afea39204bc438356e50889812f761cae00664f0e3bcd6",
+      "width": 300,
+      "height": 653
+    },
+    "assets/details/mobile-layouts/swipe-deck-layout.png": {
+      "bytes": 202180,
+      "sha256": "db040b98830383c50dced71d3bccc24b215096a40d34a0fa24e0874e36653349",
+      "width": 300,
+      "height": 653
+    },
+    "assets/details/dashboard-navigation/icon-text-sidebar-01.png": {
+      "bytes": 180903,
+      "sha256": "bdf9f04a0d751eb17b014a1d41a9ca4116205a56e5f02dd2a85ec3c8c1033dd8",
+      "width": 720,
+      "height": 524
+    },
+    "assets/details/dashboard-navigation/icon-text-sidebar-02.png": {
+      "bytes": 107193,
+      "sha256": "66426ffb7a07b2588ff0a9278a88ab37565116771f8c46a4239b129b8bf92640",
+      "width": 720,
+      "height": 524
+    },
+    "assets/details/dashboard-navigation/grouped-content-sidebar-01.png": {
+      "bytes": 204784,
+      "sha256": "04ff8a5b90e36d622a69148042e5d805e026a6c88b1a9b8b441ff7f75ee392b0",
+      "width": 720,
+      "height": 524
+    },
+    "assets/details/dashboard-navigation/grouped-content-sidebar-02.png": {
+      "bytes": 109042,
+      "sha256": "0303a85218315ae03efb663e669e8c167e3b25db41eadc69b9808ea1892da596",
+      "width": 720,
+      "height": 524
+    },
+    "assets/details/dashboard-navigation/top-pill-navigation.png": {
+      "bytes": 207517,
+      "sha256": "0f24db77b0d79c18955c1b74df34f8612904d8655ea60b9c7e16520f70caa4e3",
+      "width": 720,
+      "height": 524
+    },
+    "assets/details/dashboard-navigation/compact-icon-rail.png": {
+      "bytes": 241015,
+      "sha256": "3293570ed07538a982ed8acee4d93dd937fe8cc315b0cc9cdc62c77502557c15",
+      "width": 720,
+      "height": 524
+    },
+    "assets/details/dashboard-navigation/brand-accent-sidebar.png": {
+      "bytes": 186029,
+      "sha256": "081386aa647760692299080675abf9a14452cebf89e8ad47d41a31f3878663c8",
+      "width": 720,
+      "height": 524
+    },
+    "assets/details/dashboard-navigation/context-data-tabs.png": {
+      "bytes": 197768,
+      "sha256": "c61b66e77ab2026169d707e001627c011c3cf8d3a32c58eea33e0a97ae5fba27",
+      "width": 720,
+      "height": 524
+    },
+    "assets/details/interface-details/section-stagger.png": {
+      "bytes": 154693,
+      "sha256": "46167ddc837c2b07f1884aa925252291a39afb02dbe4b413452e79be77af7770",
+      "width": 480,
+      "height": 488
+    },
+    "assets/details/interface-details/layered-soft-shadow.png": {
+      "bytes": 88822,
+      "sha256": "9b582207441d78032595569bc616a60177bef78cccba165b3f54ca8125c5b14b",
+      "width": 480,
+      "height": 488
+    },
+    "assets/details/dashboard-layouts/asymmetric-color-grid.png": {
+      "bytes": 206560,
+      "sha256": "abdfdc02cf9eef930107f3a044e3a47130f0727f7e139248ae6002a0d9f0e208",
+      "width": 720,
+      "height": 509
+    },
+    "assets/details/dashboard-layouts/inventory-action-workbench.png": {
+      "bytes": 198072,
+      "sha256": "3651b0db4899ecac4a207b34e8446f7a1e7520c99ede8b8b1aa129b8a652dca6",
+      "width": 720,
+      "height": 509
+    },
+    "assets/details/dashboard-layouts/central-observation-timeline.png": {
+      "bytes": 200539,
+      "sha256": "67cfc0d022d11879ae73a176f348a6c357ab24f05a929f7e103774572e8132d0",
+      "width": 720,
+      "height": 509
+    },
+    "assets/details/dashboard-layouts/glass-matrix-metrics.png": {
+      "bytes": 223174,
+      "sha256": "8997dab6039f99995040bde762090961ee8be605bff55cff1b1702f703ab83ce",
+      "width": 720,
+      "height": 509
+    },
+    "assets/details/dashboard-layouts/warm-three-column-console.png": {
+      "bytes": 156370,
+      "sha256": "67e12e96b9157371a1acbf6ce225c40e8ec640e03b3dfe281d198c6c3ba058d3",
+      "width": 720,
+      "height": 509
+    },
+    "assets/details/dashboard-layouts/dark-growth-dashboard.png": {
+      "bytes": 157810,
+      "sha256": "6016c50145b6b3998e629431abcad72f95cbb0964ebda74d8d7d283c75eb502c",
+      "width": 720,
+      "height": 509
+    },
+    "assets/details/enterprise-workbenches/logistics-loading-workbench-01.png": {
+      "bytes": 1511698,
+      "sha256": "6de0fb69d8f63ca071de6cc98d2c8bc60220c0b61a432011722724a29b2641a0",
+      "width": 1920,
+      "height": 2110
+    },
+    "assets/details/enterprise-workbenches/logistics-loading-workbench-02.png": {
+      "bytes": 1723209,
+      "sha256": "b7803705029dabd677e64f6f68c929332b60d7144ce0f7d02d17d9e44e694f56",
+      "width": 1920,
+      "height": 2110
+    },
+    "assets/details/mobile-workbenches/public-service-task-homes-01.png": {
+      "bytes": 1427423,
+      "sha256": "8e531b7a95230b58089c5c15ad00598995def2f10995f8a8d80ce083936322b6",
+      "width": 1920,
+      "height": 2110
+    },
+    "assets/details/mobile-workbenches/public-service-task-homes-02.png": {
+      "bytes": 1337291,
+      "sha256": "ebee0de7142f221d87b3cebf9fc9a917faa07ad31219b21e83f892f12c75e0f8",
+      "width": 1920,
+      "height": 2110
+    },
+    "assets/details/data-visualization/dark-industrial-twin-collection-01.png": {
+      "bytes": 2069698,
+      "sha256": "0cc1ebffdcc61dba1c26d572353c1997039fdd1eec55c66fc05bb3b1aac26490",
+      "width": 1920,
+      "height": 2110
+    },
+    "assets/details/data-visualization/dark-industrial-twin-collection-02.png": {
+      "bytes": 2430486,
+      "sha256": "8c2d2d938f0bd0cecc4f31db68c5eb93da72de11be4dbc465e8dac3512626bab",
+      "width": 1920,
+      "height": 2110
+    },
+    "assets/details/enterprise-workbenches/glass-welcome-service-portal-01.png": {
+      "bytes": 1648389,
+      "sha256": "4da35e16f2b1ceabc4bf2aed134663a8045d068c67fc20dcd976caa391df7326",
+      "width": 1920,
+      "height": 2110
+    },
+    "assets/details/enterprise-workbenches/glass-welcome-service-portal-02.png": {
+      "bytes": 1881671,
+      "sha256": "bb3d4d4c4f989db6514671bf8d894f84bcc59f55065fca3da10ab7fb8f2a7f59",
+      "width": 1920,
+      "height": 2110
+    },
+    "assets/details/enterprise-workbenches/ai-assistant-productivity-hub-01.png": {
+      "bytes": 645616,
+      "sha256": "63b39a4463e4bd7e215597d6a5796b4aacb12978577fc5f101de563d67e63b37",
+      "width": 1672,
+      "height": 942
+    },
+    "assets/details/enterprise-workbenches/ai-assistant-productivity-hub-02.png": {
+      "bytes": 791016,
+      "sha256": "ccd634cbd0b3e1ae6e7d9a67e8d949645674392acafa67caba1642088281c4b3",
+      "width": 1920,
+      "height": 1080
+    },
+    "assets/details/enterprise-workbenches/ai-assistant-productivity-hub-03.png": {
+      "bytes": 769148,
+      "sha256": "82f8b545447e642af48de10df0536aba0b3abcf59e1d0c88fc0928878c9d3b25",
+      "width": 1920,
+      "height": 1080
+    },
+    "assets/details/data-visualization/light-industrial-energy-scenarios-01.png": {
+      "bytes": 1938440,
+      "sha256": "a84d679a3ab40db0b80df07f3d4363e6182e28119dc41093fdf0b9d530508c8e",
+      "width": 1920,
+      "height": 2110
+    },
+    "assets/details/data-visualization/light-industrial-energy-scenarios-02.png": {
+      "bytes": 2063984,
+      "sha256": "7f40b0167c80f53814912c39d55291b811d4a759b2846921cdd51ce1af5464d2",
+      "width": 1920,
+      "height": 2110
+    },
+    "assets/details/data-visualization/solar-building-energy-overview-01.png": {
+      "bytes": 1557829,
+      "sha256": "a54abeb2385cbde391ae0dc28b8a156db858a4c1b0836a6fbdaf9a9f91b10d2b",
+      "width": 1920,
+      "height": 2110
+    },
+    "assets/details/data-visualization/solar-building-energy-overview-02.png": {
+      "bytes": 2048438,
+      "sha256": "acacc75263959ff30bc2d5bb927d69b41d2f81423570fee6d053d7a6f161cac4",
+      "width": 1920,
+      "height": 2110
+    },
+    "assets/details/data-visualization/orange-process-data-console-01.png": {
+      "bytes": 1156626,
+      "sha256": "64ad637619ec424f5211a184d5b817190eef923719a8f86b79f0577050768f85",
+      "width": 1920,
+      "height": 2110
+    },
+    "assets/details/data-visualization/orange-process-data-console-02.png": {
+      "bytes": 1312515,
+      "sha256": "8c7a18670bd239c61898c56b293a08209e1ff29c53ddc734c5bf66cc74f3b63d",
+      "width": 1920,
+      "height": 2110
+    },
+    "assets/details/enterprise-workbenches/contrast-operations-task-overview-01.png": {
+      "bytes": 1505566,
+      "sha256": "e7d9a6c9b0a364d18e0ffae200932406baa39313f3cfca5689792f155b4518b0",
+      "width": 1920,
+      "height": 2110
+    },
+    "assets/details/enterprise-workbenches/contrast-operations-task-overview-02.png": {
+      "bytes": 1559825,
+      "sha256": "588f20a6fac753a989dd981e197f8dc996ad9d31919448eeb425383a28caa83c",
+      "width": 1920,
+      "height": 2110
+    },
+    "assets/details/enterprise-workbenches/heatmap-process-management-01.png": {
+      "bytes": 1383024,
+      "sha256": "f3232ac5c28e34df407674a049651921fc077c9810b0ff6b7091570f746a1a43",
+      "width": 1920,
+      "height": 2110
+    },
+    "assets/details/enterprise-workbenches/heatmap-process-management-02.png": {
+      "bytes": 1419594,
+      "sha256": "61848627d1c7cbb9944f14192a99e58740794374b24d0a8faefad403b593e3b8",
+      "width": 1920,
+      "height": 2110
+    },
+    "assets/details/data-visualization/wind-turbine-monitoring-01.png": {
+      "bytes": 1444664,
+      "sha256": "5b0e2b66f3369b6cedcc27111b001d69d72119a43f9bd180aa1c3866cf966529",
+      "width": 1920,
+      "height": 2110
+    },
+    "assets/details/data-visualization/wind-turbine-monitoring-02.png": {
+      "bytes": 1868471,
+      "sha256": "2872d0fbc167c8e95118d83b7729988d0a2dd6323303de1e7d417dd38fa68d98",
+      "width": 1920,
+      "height": 2110
+    },
+    "assets/details/data-visualization/blue-lit-building-equipment-01.png": {
+      "bytes": 2330795,
+      "sha256": "f45ff81801e08096e831278dba2f11d470543dda4f046eb460764b1062852c8f",
+      "width": 1920,
+      "height": 2110
+    },
+    "assets/details/data-visualization/blue-lit-building-equipment-02.png": {
+      "bytes": 2190408,
+      "sha256": "2ac7441a21b421ef10fbad80667beedd5ae2a5f363354c925b982bd39875e19b",
+      "width": 1920,
+      "height": 2110
+    },
+    "assets/details/enterprise-workbenches/freight-model-service-workbench-01.png": {
+      "bytes": 1700407,
+      "sha256": "51ae36f83e897006c82db7404eeed77730b54b78e2b096cd10b28ae7af1f89be",
+      "width": 1920,
+      "height": 2110
+    },
+    "assets/details/enterprise-workbenches/freight-model-service-workbench-02.png": {
+      "bytes": 1325718,
+      "sha256": "d143e256ceb3da37897aded00245f8152544d3de71cc173a4b16941057adc3a4",
+      "width": 1920,
+      "height": 2110
+    },
+    "assets/details/data-visualization/digital-assets-capacity-overview-01.png": {
+      "bytes": 1280880,
+      "sha256": "d7e61e291707f8b09cf82ebdb55de5f82b96b66a0bc882e200256941c189235e",
+      "width": 1920,
+      "height": 2110
+    },
+    "assets/details/data-visualization/digital-assets-capacity-overview-02.png": {
+      "bytes": 1578019,
+      "sha256": "5fe8d199d42d72be51b1788f18dcf7548a1e123a293630e03b68fff70f854a94",
+      "width": 1920,
+      "height": 2110
+    },
+    "assets/details/enterprise-workbenches/organization-talent-analytics-01.png": {
+      "bytes": 1307628,
+      "sha256": "ab15c11a8b8511a0a27a8bd95a8a67f1798c6de6f0157b87293116182976a1dd",
+      "width": 1920,
+      "height": 2110
+    },
+    "assets/details/enterprise-workbenches/organization-talent-analytics-02.png": {
+      "bytes": 2247289,
+      "sha256": "3ec74676b581857c9717923be57716b4d5a163b9731de251cc142b260a392a82",
+      "width": 1920,
+      "height": 2110
+    },
+    "assets/details/enterprise-workbenches/cargo-status-task-dashboard-01.png": {
+      "bytes": 1805391,
+      "sha256": "a36aa6c097bbb7b010519f4e320a6760881bed512b9f1df238da99d681d81282",
+      "width": 1920,
+      "height": 2110
+    },
+    "assets/details/enterprise-workbenches/cargo-status-task-dashboard-02.png": {
+      "bytes": 1501804,
+      "sha256": "b626d376ea334502555ac46667c19e22c39061ee1b395fcb886fbb8e479375da",
+      "width": 1920,
+      "height": 2110
+    },
+    "assets/details/mobile-workbenches/sales-crm-parcel-homes-01.png": {
+      "bytes": 279423,
+      "sha256": "735b6877b689459ade04adcfcc49e4ca7044a6003bd353c7464bdb8771a3edb8",
+      "width": 720,
+      "height": 800
+    },
+    "assets/details/mobile-workbenches/sales-crm-parcel-homes-02.png": {
+      "bytes": 284004,
+      "sha256": "6fb3cb7830f0c5830379ffc46ab45a4fbf395cf4894e795e10b7340e37d934bb",
+      "width": 720,
+      "height": 800
+    },
+    "assets/details/mobile-workbenches/sales-crm-parcel-homes-03.png": {
+      "bytes": 287939,
+      "sha256": "944e4ae637d30e6b12bce2f349d86f47e12e38268621d77a53e8271182cfa76d",
+      "width": 720,
+      "height": 800
+    },
+    "assets/details/mobile-workbenches/sales-crm-parcel-homes-04.png": {
+      "bytes": 357257,
+      "sha256": "6e74aac2a196a4210a7d920fa89f08224bb22d9fb1b5d6fdc677f9facc78566a",
+      "width": 720,
+      "height": 800
+    },
+    "assets/details/enterprise-workbenches/aircraft-device-service-console-01.png": {
+      "bytes": 2192263,
+      "sha256": "e40acc6f6675c527b038dba6ca689f8949944e73dacbf1b42bee3425f4ab8685",
+      "width": 1920,
+      "height": 2110
+    },
+    "assets/details/enterprise-workbenches/aircraft-device-service-console-02.png": {
+      "bytes": 1596257,
+      "sha256": "45c4a1509da10b252a2d2d1bc07b341dd7e5cbadae069d7a298bca9bee7eb404",
+      "width": 1920,
+      "height": 2110
+    },
+    "assets/details/enterprise-workbenches/blue-welcome-operations-portal-01.png": {
+      "bytes": 1888463,
+      "sha256": "9bff4e6279f16fae179bd5b8bbff889ff085df448f07e1cc247ab39fa0eca56b",
+      "width": 1920,
+      "height": 2110
+    },
+    "assets/details/enterprise-workbenches/blue-welcome-operations-portal-02.png": {
+      "bytes": 1177506,
+      "sha256": "6e325d74fa13b833dd5e60a302146c8dd12eff3771f4b8e237ab4d07928388d3",
+      "width": 1920,
+      "height": 2110
+    },
+    "assets/details/data-visualization/health-body-metrics-dashboard-01.png": {
+      "bytes": 749036,
+      "sha256": "4cbf61094a12ed47b4164336293f9ad27c24f9f9ab8094ea1470e765d4ff1a84",
+      "width": 1740,
+      "height": 1110
+    },
+    "assets/details/data-visualization/health-body-metrics-dashboard-02.png": {
+      "bytes": 794230,
+      "sha256": "5ccc8ff098a5ff6e8810d38278f87e4330abb9d7ff1c407313cfd47b0b063e10",
+      "width": 1740,
+      "height": 1110
+    },
+    "assets/details/enterprise-workbenches/green-energy-service-overview-01.png": {
+      "bytes": 1229600,
+      "sha256": "2c63d1744179f0fab262fd8a4d03c9a098d22355f572fe11cf92adce061a52a2",
+      "width": 1920,
+      "height": 2110
+    },
+    "assets/details/enterprise-workbenches/green-energy-service-overview-02.png": {
+      "bytes": 1527139,
+      "sha256": "45901a74954ff3b890845d47f65555c95b47176d84bd2b552a8f064d7ae25fe3",
+      "width": 1920,
+      "height": 2110
+    },
+    "assets/details/data-visualization/dark-infrastructure-twin-screens-01.png": {
+      "bytes": 3584756,
+      "sha256": "b7c1df0bbadc9b6774b4064b61dc4590114c08a2f0e40c3fef2263249dc186cb",
+      "width": 1920,
+      "height": 2110
+    },
+    "assets/details/data-visualization/dark-infrastructure-twin-screens-02.png": {
+      "bytes": 3125317,
+      "sha256": "a1952a60f72a2e40edb46f58aeda206ce9a566d64be3486fbae7fdda5b1f4271",
+      "width": 1920,
+      "height": 2110
+    },
+    "assets/details/mobile-workbenches/device-service-tool-grid-01.png": {
+      "bytes": 1934552,
+      "sha256": "0f5a7e7959345f4521abd5bc98c1b1fcc8d2210b43fdb6c759f714511e11f787",
+      "width": 1920,
+      "height": 2110
+    },
+    "assets/details/mobile-workbenches/device-service-tool-grid-02.png": {
+      "bytes": 1258744,
+      "sha256": "bb967056415bec02b25f6d318e2da137cdb12cb467bf7df93c2d71c7302c3e57",
+      "width": 1920,
+      "height": 2110
+    },
+    "assets/details/mobile-workbenches/device-service-tool-grid-03.png": {
+      "bytes": 1306461,
+      "sha256": "9dc32d4490157016197260f260d576fdf0de2767f63ffb239226a4936936fe51",
+      "width": 1920,
+      "height": 2110
+    },
+    "assets/details/data-visualization/regional-campus-map-overview-01.png": {
+      "bytes": 3377312,
+      "sha256": "95267580a2d1c39cc62efa9a7710929e5c831dfc1ecc6d03de3985b18c5a47bb",
+      "width": 1920,
+      "height": 2110
+    },
+    "assets/details/data-visualization/regional-campus-map-overview-02.png": {
+      "bytes": 3235294,
+      "sha256": "29599b37378432ab0f1b9ba254cc80e04951fde529f524af3f65b4f3bdcfb429",
+      "width": 1920,
+      "height": 2110
+    },
+    "assets/details/enterprise-workbenches/factory-oa-task-portal-01.png": {
+      "bytes": 1936289,
+      "sha256": "46f108227a3d02814e52c41c488d42d3b38485e9884175b29b41f8ce725ca661",
+      "width": 1920,
+      "height": 2110
+    },
+    "assets/details/enterprise-workbenches/factory-oa-task-portal-02.png": {
+      "bytes": 2093975,
+      "sha256": "b728cbee2911727585a84c3ecdbf44a725781d01a0bdba7bef3de410b4316d38",
+      "width": 1920,
+      "height": 2110
+    },
+    "assets/details/data-visualization/agv-factory-robot-console-01.png": {
+      "bytes": 1431204,
+      "sha256": "79ebd2a307b4258a0ee2ed8c1a17ac0387245eb72d834535c2a722c73b2bc11e",
+      "width": 1740,
+      "height": 1110
+    },
+    "assets/details/data-visualization/agv-factory-robot-console-02.png": {
+      "bytes": 1665582,
+      "sha256": "c01b52bbdd25096287700310fc4b2746a6d56d68f49b4b5fd13324b3d0945ca2",
+      "width": 1740,
+      "height": 1110
+    },
+    "assets/details/data-visualization/robotic-arm-pipeline-metrics-01.png": {
+      "bytes": 751898,
+      "sha256": "c31ec6f7985be1882f89149e450a7028ce02802ae9489ffbc83dbde674eeda87",
+      "width": 1740,
+      "height": 1110
+    },
+    "assets/details/data-visualization/robotic-arm-pipeline-metrics-02.png": {
+      "bytes": 546284,
+      "sha256": "d285e25eb295f5a6394340c5f4df47e0b63587675fb54028711378850950beff",
+      "width": 1740,
+      "height": 1110
+    },
+    "assets/details/data-visualization/campus-light-dark-themes-01.png": {
+      "bytes": 1702597,
+      "sha256": "b59f80aebd3141a70ebba6f1a8509614ea8964de3d1da2d533b9ed1a1cdf6e31",
+      "width": 1740,
+      "height": 1110
+    },
+    "assets/details/data-visualization/campus-light-dark-themes-02.png": {
+      "bytes": 1623162,
+      "sha256": "2a059bc15fce4029118562bca249a2164adad9d07210ebba0fa5f0d93b494af8",
+      "width": 1740,
+      "height": 1110
+    },
+    "assets/details/mobile-workbenches/enterprise-service-mobile-hub-01.png": {
+      "bytes": 1489389,
+      "sha256": "d402eeece7ce2ba9d10f043644bca33fb091ca576141fdfa8fb89bbe593769c5",
+      "width": 1920,
+      "height": 2110
+    },
+    "assets/details/mobile-workbenches/enterprise-service-mobile-hub-02.png": {
+      "bytes": 1515935,
+      "sha256": "502733c9c443921740756548711263d771bbaf18b8041aae149b7d8ac1822af9",
+      "width": 1920,
+      "height": 2110
+    },
+    "assets/details/data-visualization/battery-swap-pasture-console-01.png": {
+      "bytes": 948459,
+      "sha256": "7a275912abb3ecd65537a7482b2fda2552b345235a6844b12fdf4aeb26658e08",
+      "width": 1740,
+      "height": 1110
+    },
+    "assets/details/data-visualization/battery-swap-pasture-console-02.png": {
+      "bytes": 1301248,
+      "sha256": "97844879aef725793606d809fefa7c74edade200b261c9b624afaf73de719100",
+      "width": 1740,
+      "height": 1110
+    },
+    "assets/details/enterprise-workbenches/asset-process-report-workbench-01.png": {
+      "bytes": 844535,
+      "sha256": "b16dc010151f30e406f87d9ad15704e2071eed0103ff192aa7673b7c58af80fc",
+      "width": 1920,
+      "height": 1080
+    },
+    "assets/details/enterprise-workbenches/asset-process-report-workbench-02.png": {
+      "bytes": 1041508,
+      "sha256": "42117b15354e4e0244644a7b4ee99ce34b7bb1b03a4e760341f231d7e8e70960",
+      "width": 2160,
+      "height": 1256
+    },
+    "assets/details/data-visualization/factory-section-floor-console-01.png": {
+      "bytes": 4153647,
+      "sha256": "efb56b89bc9f9cb68eb4fbecb29781be9109099ff6bba9aa869caedfc763bb5f",
+      "width": 2750,
+      "height": 1560
+    },
+    "assets/details/data-visualization/factory-section-floor-console-02.png": {
+      "bytes": 2631330,
+      "sha256": "bf0c18ee03e856b486881aa9ecd95b382c2a183ba1c8ecb018bf743c778fc2c9",
+      "width": 3328,
+      "height": 1832
+    },
+    "assets/details/mobile-workbenches/travel-learning-service-homes-01.png": {
+      "bytes": 1979778,
+      "sha256": "453e6ba4e5896c0a1c642b7691482b99eedb8b385b2a39b051dc0fc400122ddb",
+      "width": 1920,
+      "height": 2110
+    },
+    "assets/details/mobile-workbenches/travel-learning-service-homes-02.png": {
+      "bytes": 1769031,
+      "sha256": "6e76553d4f45ef07534db59670b9f6afacf3fd0c42b0eb5784ff1c4e08fa4336",
+      "width": 1920,
+      "height": 2110
+    },
+    "assets/details/data-visualization/building-floor-parameter-view-01.png": {
+      "bytes": 2007639,
+      "sha256": "25dde6dd6cc40116438d2bb6323cf004d57cc1a39c3b40aad2b8b5b6be169123",
+      "width": 1920,
+      "height": 2110
+    },
+    "assets/details/data-visualization/building-floor-parameter-view-02.png": {
+      "bytes": 620674,
+      "sha256": "7558d84c505a68b3f1f541aa3cc8785c68e5c6d9c42ebc164b110385494b5a54",
+      "width": 1218,
+      "height": 602
+    },
+    "assets/details/enterprise-workbenches/gradient-column-business-metrics-01.png": {
+      "bytes": 533496,
+      "sha256": "cc3ed0265f1ed0665b47a29dc1f6d3fff3a272e23463ab35c1cc5fbf592b649c",
+      "width": 1440,
+      "height": 1080
+    },
+    "assets/details/enterprise-workbenches/gradient-column-business-metrics-02.png": {
+      "bytes": 735740,
+      "sha256": "9ce746515b0d8127b455863f359288a690d5901c768f439ee7260f70815c9f55",
+      "width": 1920,
+      "height": 1080
+    },
+    "assets/details/enterprise-workbenches/warm-orange-management-home-01.png": {
+      "bytes": 613606,
+      "sha256": "50b78a738b103545f57b815f26f01895fdac793290f07efb9cb91bade6f876d3",
+      "width": 1780,
+      "height": 974
+    },
+    "assets/details/enterprise-workbenches/warm-orange-management-home-02.png": {
+      "bytes": 692698,
+      "sha256": "eb815a255a9ff400ff55ff633ebd509a9258ddd8dfdebbd194eb83086f9074c1",
+      "width": 1984,
+      "height": 1182
+    },
+    "assets/details/enterprise-workbenches/factory-space-process-workbench-01.png": {
+      "bytes": 1120668,
+      "sha256": "c0c8057a871d44cfe93df25cb9f2357447d864d0d597d7757339d7f4e7904dc4",
+      "width": 2384,
+      "height": 1330
+    },
+    "assets/details/enterprise-workbenches/factory-space-process-workbench-02.png": {
+      "bytes": 492501,
+      "sha256": "5df990e0afdc33bd54ff7b3229432386f39b5d55912a48440ff77a5010f87aca",
+      "width": 1200,
+      "height": 676
+    },
+    "assets/details/enterprise-workbenches/blue-metrics-list-management-01.png": {
+      "bytes": 1379923,
+      "sha256": "d99062de6393538840092a4bc68cc4309d32b6adee8daa3ecd8084fe0d94518a",
+      "width": 1920,
+      "height": 2110
+    },
+    "assets/details/enterprise-workbenches/blue-metrics-list-management-02.png": {
+      "bytes": 834680,
+      "sha256": "3464d76e2125c22847a50dc0174ff8c77de7884d3adb297c03c42c44149c0542",
+      "width": 1920,
+      "height": 1080
+    },
+    "assets/details/data-visualization/regional-map-information-board-01.png": {
+      "bytes": 2194547,
+      "sha256": "38968b30c81809fc65b26597fd5d2b5345449416a6873a3f78498b04c5736cb7",
+      "width": 1920,
+      "height": 2110
+    },
+    "assets/details/data-visualization/regional-map-information-board-02.png": {
+      "bytes": 3549145,
+      "sha256": "c4723ae1d8861f7d24dfd09217141d6eb197bbf42800872beb597a66478be93c",
+      "width": 3840,
+      "height": 2160
+    },
+    "assets/details/enterprise-workbenches/recruitment-candidate-workbench-01.png": {
+      "bytes": 969564,
+      "sha256": "e89dd56eb7fc4f9e17637bc19f9ee760396627f9dbacc142da812cd8ab66874a",
+      "width": 1920,
+      "height": 2110
+    },
+    "assets/details/enterprise-workbenches/recruitment-candidate-workbench-02.png": {
+      "bytes": 1064532,
+      "sha256": "1851ee05e483a65ee3be134001388b135669274b9279ad2bcacbb7f01ed2a03e",
+      "width": 1920,
+      "height": 2110
+    },
+    "assets/details/mobile-workbenches/campus-timetable-access-hub-01.png": {
+      "bytes": 1486293,
+      "sha256": "cfb5b528f924fbf6c1cc6c9557f9e9c66c72beb7a85387afc5f4c30f476971b1",
+      "width": 1920,
+      "height": 2110
+    },
+    "assets/details/mobile-workbenches/campus-timetable-access-hub-02.png": {
+      "bytes": 1325862,
+      "sha256": "b276e9ca64baadd9eb9f924c3e1375e564fb1fc3526e11e64a3433daa3ed1aad",
+      "width": 1920,
+      "height": 2110
+    },
+    "assets/details/enterprise-workbenches/compact-analytics-report-grid-01.png": {
+      "bytes": 802198,
+      "sha256": "44e7d29b392781748fff059c8b83d22666f5c712a0e9cc2d3181a7d10076d9d4",
+      "width": 1920,
+      "height": 1080
+    },
+    "assets/details/enterprise-workbenches/compact-analytics-report-grid-02.png": {
+      "bytes": 652866,
+      "sha256": "37901002e23e527e9c300568bab6904f6e56bf4cc5eb7ee152c6b2575fd72a91",
+      "width": 1920,
+      "height": 1080
+    },
+    "assets/details/enterprise-workbenches/colorful-metrics-statistics-list-01.png": {
+      "bytes": 1576411,
+      "sha256": "85226c5ace4d5d7546aaefc57cc1d8415767bdedafbf73b1e8409101fdc70a26",
+      "width": 1920,
+      "height": 2110
+    },
+    "assets/details/enterprise-workbenches/colorful-metrics-statistics-list-02.png": {
+      "bytes": 838534,
+      "sha256": "5d3c2ee2b309a9774398e6da7457e31b94a3e3a00744e856ffb7e6002d2b576a",
+      "width": 1920,
+      "height": 1080
+    },
+    "assets/details/enterprise-workbenches/colorful-metrics-statistics-list-03.png": {
+      "bytes": 776211,
+      "sha256": "5f69ab778ecf0346ec46bfe6fe63e1adc65edc48d47e39e9bd70042df1f22dbc",
+      "width": 1920,
+      "height": 1204
+    },
+    "assets/details/data-visualization/green-campus-logistics-twin.png": {
+      "bytes": 2246463,
+      "sha256": "499c0e4ce00c983decfc3c440ba4c4fbec7502f253e002b56c9b896dc15a62fb",
+      "width": 1920,
+      "height": 1080
+    },
+    "assets/details/enterprise-workbenches/enterprise-subscription-report-portal.png": {
+      "bytes": 2224737,
+      "sha256": "95f929d6cde1fb7dbd46492a4cf7a606e7f75bb71173b467620acf9aece4383c",
+      "width": 3198,
+      "height": 2160
+    },
+    "assets/details/mobile-workbenches/illustrated-travel-service-home-01.png": {
+      "bytes": 2411230,
+      "sha256": "8fba41765e02392faa87d5f4345b0b07784fcab8bdd40d36a17edd0e1874f3ca",
+      "width": 1920,
+      "height": 2110
+    },
+    "assets/details/mobile-workbenches/illustrated-travel-service-home-02.png": {
+      "bytes": 2433622,
+      "sha256": "de46f177f355315e63150bf2ca755f8120600343c1aaa16eaf0594c57df612eb",
+      "width": 1920,
+      "height": 2110
+    },
+    "assets/details/mobile-workbenches/illustrated-travel-service-home-03.png": {
+      "bytes": 2508259,
+      "sha256": "d5053e5d8e5735bfc0592913a8173f2fe0a3300a628b5294883f82c242a25f7a",
+      "width": 1920,
+      "height": 2110
+    },
+    "assets/details/mobile-workbenches/parcel-orders-quick-services-01.png": {
+      "bytes": 1768973,
+      "sha256": "dccf08ed9f19e671f2192d76a3fe113e8c460040a5fc3178eaa74dbe9d9dbe75",
+      "width": 1920,
+      "height": 2110
+    },
+    "assets/details/mobile-workbenches/parcel-orders-quick-services-02.png": {
+      "bytes": 1430663,
+      "sha256": "8d664220efdb9bd434eb0d82f22b84e414810ac103d141fef1398cb5507b22ca",
+      "width": 1920,
+      "height": 2110
+    },
+    "assets/details/data-visualization/furnace-floor-section-screen.png": {
+      "bytes": 3234874,
+      "sha256": "989b8f977202003cedea50b1d0b75d9ea1d43729931f510d983d53144ba5c0ae",
+      "width": 1920,
+      "height": 2110
+    },
+    "assets/details/enterprise-workbenches/mes-production-task-management.png": {
+      "bytes": 1661333,
+      "sha256": "79c3c00017dbbf0b67d599667aa94ca589fbb3976e0e050215da78999eeb5908",
+      "width": 1920,
+      "height": 2110
+    },
+    "assets/details/data-visualization/building-energy-equipment-topology.png": {
+      "bytes": 2747217,
+      "sha256": "91f20bb1e048c3228397150f82a9f84b658096bd9d50bf5a9a8f2a69820055e1",
+      "width": 1920,
+      "height": 2110
+    },
+    "assets/details/data-visualization/solar-factory-production-twin.png": {
+      "bytes": 2894283,
+      "sha256": "b6d3c862de04e314b3effa7bcc29a2e583b06d77653d0e52ca88b154565aa195",
+      "width": 1920,
+      "height": 2110
+    },
+    "assets/details/data-visualization/security-shield-campus-space.png": {
+      "bytes": 2600497,
+      "sha256": "c9288cd92f6aaea6dffecd7df2f9a18595ae0c547d098d35834e415177709a2d",
+      "width": 1920,
+      "height": 2110
+    },
+    "assets/details/data-visualization/smt-wafer-production-array.png": {
+      "bytes": 2924729,
+      "sha256": "5510ba0bf01e075cdae09430a872e01d3f971ba445d85315d6c83a7d24750bd2",
+      "width": 1920,
+      "height": 2000
+    },
+    "assets/details/enterprise-workbenches/outpatient-business-metrics.png": {
+      "bytes": 1581008,
+      "sha256": "28bb8ed547e7c563fc246a738aab0f8ae9a4aca811c0cb8c5b1381e9619095c1",
+      "width": 1920,
+      "height": 2110
+    },
+    "assets/details/enterprise-workbenches/enterprise-funnel-mes-lists.png": {
+      "bytes": 1579384,
+      "sha256": "6f59a9f0d7d406f660a3e29aaa9683533d01b1159daa1d0a51d434780c607d24",
+      "width": 1920,
+      "height": 2110
+    },
+    "assets/details/enterprise-workbenches/touchscreen-catalog-device-tasks.png": {
+      "bytes": 1450690,
+      "sha256": "f66c6045d3640ec457d06bda8929ef5ed771693ca3bc6271c5dc55096c03ee7c",
+      "width": 1920,
+      "height": 2110
+    },
+    "assets/details/data-visualization/health-security-campus-monitor.png": {
+      "bytes": 3852537,
+      "sha256": "fb975e4eb98a797e6b1bde37db572cd426aea908078c6938bec939670416816c",
+      "width": 1920,
+      "height": 2110
+    },
+    "assets/details/enterprise-workbenches/enterprise-progress-todo-management-01.png": {
+      "bytes": 1374013,
+      "sha256": "01f9e23fe76e3acc954d1437d1c98738c8383f00807e171dfed3fee2b1209a27",
+      "width": 1920,
+      "height": 2110
+    },
+    "assets/details/enterprise-workbenches/enterprise-progress-todo-management-02.png": {
+      "bytes": 1245429,
+      "sha256": "3282283b8f685ffa93718f474f00b5fb3f529f0e90b6b47c6eb86bf5300a9cbb",
+      "width": 1920,
+      "height": 2110
+    },
+    "assets/details/enterprise-workbenches/project-process-alert-workbench-01.png": {
+      "bytes": 1442968,
+      "sha256": "d37b91b4ed782899cec1933ce5b005ed1bccd1c4aba5a3097bb92236a388ec70",
+      "width": 1920,
+      "height": 2110
+    },
+    "assets/details/enterprise-workbenches/project-process-alert-workbench-02.png": {
+      "bytes": 1124095,
+      "sha256": "a00f14ad3b1959fa9f56c7969020de66a495e386086e9317d202d0af659ed152",
+      "width": 1920,
+      "height": 2110
+    },
+    "assets/details/mobile-interactions/ripple-reorder.gif": {
+      "bytes": 2127555,
+      "sha256": "acba9f4254a622a8ddec41cc1866691b8fb83ff50a245c44a06b61d18f3fc53f",
+      "width": 1080,
+      "height": 1017
+    },
+    "assets/details/cards-tables/book-open-card.gif": {
+      "bytes": 2280980,
+      "sha256": "6d5ef115e10fc2eba2c25f88993bfcf124b3c56ce8e621e996bb52b49bec6464",
+      "width": 690,
+      "height": 780
+    },
+    "assets/details/documentation-layouts/wiki-layout.gif": {
+      "bytes": 7832024,
+      "sha256": "dd248ab8145ff9bcb1d56b4d9ea0b9153e382e45fd578bbf1fe4154262ede4de",
+      "width": 1080,
+      "height": 1991
+    },
+    "assets/details/overlays/overlay-decision.gif": {
+      "bytes": 4693619,
+      "sha256": "07d430e439a35390d77d03006dd48a8702d279cbc2cadd660c1ff27aea93390c",
+      "width": 1080,
+      "height": 2160
+    },
+    "assets/details/glass-materials/liquid-glass.gif": {
+      "bytes": 27305682,
+      "sha256": "00f6a696b7af1b416277d8b07489160370217feb93a34bab34c1728671700115",
+      "width": 1080,
+      "height": 926
+    }
+  }
+}

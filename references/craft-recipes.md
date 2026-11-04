@@ -1,18 +1,18 @@
 # 产品质感技巧配方
 
-本组包含 10 份文字实现配方。按所需行为选用，完整参数和实现提示词仅在选中后读取；没有配套视觉证据时不声称看过原始动画。提示词已去除来源署名、账号、推广内容和外部链接，并限定为用户当前任务范围。
+本组包含 10 份实现配方，每份附演示画面的高清效果图，其中 5 份另附精简交互 GIF。图片与动图随技能提供，可离线查看。按所需行为选用，再读取对应的完整参数和实现提示词。
 
-| 编号 | 技巧 | 检索 ID | 完整配方 |
-|---|---|---|---|
-| 001 | 有点击手感的拟物按钮 | `buttons-controls/tactile-button` | [Tactile Skeuomorphic Button](recipes/tactile-button.md) |
-| 002 | 带安全三角区的级联菜单 | `overlays/safe-cascade-menu` | [Safe Triangle Cascading Menu](recipes/safe-cascade-menu.md) |
-| 003 | 可调 ASCII 与有序抖色 | `backgrounds/ascii-dither` | [Parametric ASCII and Ordered Dither](recipes/ascii-dither.md) |
-| 004 | 递进圆角与连续曲率 | `interface-details/continuous-corners` | [Nested Radii and Continuous Corners](recipes/continuous-corners.md) |
-| 005 | 拖拽插入线与递减让位 | `mobile-interactions/ripple-reorder` | [Ripple Drag Reorder](recipes/ripple-reorder.md) |
-| 006 | 像书一样翻开的卡片 | `cards-tables/book-open-card` | [Book Opening Card](recipes/book-open-card.md) |
-| 007 | 中英文排版与稳定数字 | `interface-details/cjk-latin-typesetting` | [CJK Latin Typesetting](recipes/cjk-latin-typesetting.md) |
-| 008 | Wiki 与帮助中心响应式框架 | `documentation-layouts/wiki-layout` | [Responsive Wiki Layout](recipes/wiki-layout.md) |
-| 009 | 提示、跟随气泡与浮层决策 | `overlays/overlay-decision` | [Floating UI Decision Guide](recipes/overlay-decision.md) |
-| 010 | 自适应液态玻璃材质 | `glass-materials/liquid-glass` | [Adaptive Liquid Glass](recipes/liquid-glass.md) |
+| 编号 | 技巧 | 检索 ID | 完整配方 | 效果参考 |
+|---|---|---|---|---|
+| 001 | 有点击手感的拟物按钮 | `buttons-controls/tactile-button` | [配方](recipes/tactile-button.md) | [JPG](../assets/recipes/tactile-button.jpg) |
+| 002 | 带安全三角区的级联菜单 | `overlays/safe-cascade-menu` | [配方](recipes/safe-cascade-menu.md) | [JPG](../assets/recipes/safe-cascade-menu.jpg) |
+| 003 | 可调 ASCII 与有序抖色 | `backgrounds/ascii-dither` | [配方](recipes/ascii-dither.md) | [JPG](../assets/recipes/ascii-dither.jpg) |
+| 004 | 递进圆角与连续曲率 | `interface-details/continuous-corners` | [配方](recipes/continuous-corners.md) | [JPG](../assets/recipes/continuous-corners.jpg) |
+| 005 | 拖拽插入线与递减让位 | `mobile-interactions/ripple-reorder` | [配方](recipes/ripple-reorder.md) | [JPG](../assets/recipes/ripple-reorder.jpg) · [GIF](../assets/recipes/ripple-reorder.gif) |
+| 006 | 像书一样翻开的卡片 | `cards-tables/book-open-card` | [配方](recipes/book-open-card.md) | [JPG](../assets/recipes/book-open-card.jpg) · [GIF](../assets/recipes/book-open-card.gif) |
+| 007 | 中英文排版与稳定数字 | `interface-details/cjk-latin-typesetting` | [配方](recipes/cjk-latin-typesetting.md) | [JPG](../assets/recipes/cjk-latin-typesetting.jpg) |
+| 008 | Wiki 与帮助中心响应式框架 | `documentation-layouts/wiki-layout` | [配方](recipes/wiki-layout.md) | [JPG](../assets/recipes/wiki-layout.jpg) · [GIF](../assets/recipes/wiki-layout.gif) |
+| 009 | 提示、跟随气泡与浮层决策 | `overlays/overlay-decision` | [配方](recipes/overlay-decision.md) | [JPG](../assets/recipes/overlay-decision.jpg) · [GIF](../assets/recipes/overlay-decision.gif) |
+| 010 | 自适应液态玻璃材质 | `glass-materials/liquid-glass` | [配方](recipes/liquid-glass.md) | [JPG](../assets/recipes/liquid-glass.jpg) · [GIF](../assets/recipes/liquid-glass.gif) |
 
 参数是实现起点，按现有组件、主题、字号与设备调整。浮层选型先遵循产品的真实可逆性和保存语义；玻璃与连续圆角在目标浏览器中验证并保留回退。所有效果都需在项目实际状态中核对。

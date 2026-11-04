@@ -22,10 +22,16 @@
 - 实现关注：区分正常滚动和顶部过量下拉；放大以覆盖图框为前提，限制幅度，正文保持原尺寸。
 - 验证重点：上滑、拉伸、松手及快速反向拖动均不露空白；底部操作区稳定。
 - 相关条目：[motion/parallax](motion.md#parallax)。
-- 媒体取舍：保留 GIF＋JPG。需看头图与正文的速度差、下拉放大和松手回弹。
-- 参考：[GIF 动图](https://raw.githubusercontent.com/dqzboy/ui-atlas/e6aa0d641c224a2cb4c8bd4262a4d18f5c7e1e22/assets/gifs/mobile-scroll/elastic-parallax-hero.gif) · [六帧对照图](https://raw.githubusercontent.com/dqzboy/ui-atlas/e6aa0d641c224a2cb4c8bd4262a4d18f5c7e1e22/assets/filmstrips/mobile-scroll/elastic-parallax-hero.jpg)。
+- 媒体取舍：保留 GIF＋静态图片。需看头图与正文的速度差、下拉放大和松手回弹。
+- 参考：[GIF 动图](../assets/gifs/mobile-scroll/elastic-parallax-hero.gif) · [六帧对照图](../assets/filmstrips/mobile-scroll/elastic-parallax-hero.jpg)。
 
-![视差头图与下拉拉伸：按时间从左到右、从上到下阅读](https://raw.githubusercontent.com/dqzboy/ui-atlas/e6aa0d641c224a2cb4c8bd4262a4d18f5c7e1e22/assets/filmstrips/mobile-scroll/elastic-parallax-hero.jpg)
+<!-- ui-atlas:details mobile-scroll/elastic-parallax-hero -->
+- 原尺寸图片：[01 · 300×626](../assets/details/mobile-scroll/elastic-parallax-hero.png)。
+- 连续效果：[GIF · 300×626](../assets/gifs/mobile-scroll/elastic-parallax-hero.gif)。
+- 清晰度边界：保留总览合成前的独立 PNG 帧；这些帧已在旧导出时缩到 300–720 像素宽，缺少更高分辨率原片。
+
+![视差头图与下拉拉伸：原尺寸独立参考](../assets/details/mobile-scroll/elastic-parallax-hero.png)
+<!-- /ui-atlas:details -->
 
 <a id="sticky-category-tabs"></a>
 ## 吸顶分类与滚动联动 / Sticky Category Tabs
@@ -35,10 +41,16 @@
 - 指令例句：分类栏吸顶，滚动时更新当前标签，点击标签定位到对应分区。
 - 实现关注：以实际滚动容器计算阈值；定位偏移需包含固定导航和分类栏高度，避免程序定位与观察器相互抢选中态。
 - 验证重点：逐段滚动、点击远处分类、返回上一分类和窗口变化后，目标标题可见且高亮正确。
-- 媒体取舍：保留 GIF＋JPG。需看滚动到阈值时吸顶及分类与正文的同步变化。
-- 参考：[GIF 动图](https://raw.githubusercontent.com/dqzboy/ui-atlas/e6aa0d641c224a2cb4c8bd4262a4d18f5c7e1e22/assets/gifs/mobile-scroll/sticky-category-tabs.gif) · [六帧对照图](https://raw.githubusercontent.com/dqzboy/ui-atlas/e6aa0d641c224a2cb4c8bd4262a4d18f5c7e1e22/assets/filmstrips/mobile-scroll/sticky-category-tabs.jpg)。
+- 媒体取舍：保留 GIF＋静态图片。需看滚动到阈值时吸顶及分类与正文的同步变化。
+- 参考：[GIF 动图](../assets/gifs/mobile-scroll/sticky-category-tabs.gif) · [六帧对照图](../assets/filmstrips/mobile-scroll/sticky-category-tabs.jpg)。
 
-![吸顶分类与滚动联动：按时间从左到右、从上到下阅读](https://raw.githubusercontent.com/dqzboy/ui-atlas/e6aa0d641c224a2cb4c8bd4262a4d18f5c7e1e22/assets/filmstrips/mobile-scroll/sticky-category-tabs.jpg)
+<!-- ui-atlas:details mobile-scroll/sticky-category-tabs -->
+- 原尺寸图片：[01 · 300×626](../assets/details/mobile-scroll/sticky-category-tabs.png)。
+- 连续效果：[GIF · 300×626](../assets/gifs/mobile-scroll/sticky-category-tabs.gif)。
+- 清晰度边界：保留总览合成前的独立 PNG 帧；这些帧已在旧导出时缩到 300–720 像素宽，缺少更高分辨率原片。
+
+![吸顶分类与滚动联动：原尺寸独立参考](../assets/details/mobile-scroll/sticky-category-tabs.png)
+<!-- /ui-atlas:details -->
 
 <a id="collapsing-cover-navbar"></a>
 ## 封面收进导航栏 / Collapsing Cover Navbar
@@ -48,10 +60,16 @@
 - 指令例句：让个人主页封面逐步收进导航栏，头像、标题和背景随同一滚动进度变化。
 - 实现关注：用同一归一化进度协调位置、缩放、透明度和背景；折叠后的标题仍有稳定布局位置。
 - 验证重点：缓慢往返、快速滚动和停在半途时无跳帧，返回顶部后状态复原。
-- 媒体取舍：保留 GIF＋JPG。需看封面收缩、头像移动与导航背景变化如何随进度协同。
-- 参考：[GIF 动图](https://raw.githubusercontent.com/dqzboy/ui-atlas/e6aa0d641c224a2cb4c8bd4262a4d18f5c7e1e22/assets/gifs/mobile-scroll/collapsing-cover-navbar.gif) · [六帧对照图](https://raw.githubusercontent.com/dqzboy/ui-atlas/e6aa0d641c224a2cb4c8bd4262a4d18f5c7e1e22/assets/filmstrips/mobile-scroll/collapsing-cover-navbar.jpg)。
+- 媒体取舍：保留 GIF＋静态图片。需看封面收缩、头像移动与导航背景变化如何随进度协同。
+- 参考：[GIF 动图](../assets/gifs/mobile-scroll/collapsing-cover-navbar.gif) · [六帧对照图](../assets/filmstrips/mobile-scroll/collapsing-cover-navbar.jpg)。
 
-![封面收进导航栏：按时间从左到右、从上到下阅读](https://raw.githubusercontent.com/dqzboy/ui-atlas/e6aa0d641c224a2cb4c8bd4262a4d18f5c7e1e22/assets/filmstrips/mobile-scroll/collapsing-cover-navbar.jpg)
+<!-- ui-atlas:details mobile-scroll/collapsing-cover-navbar -->
+- 原尺寸图片：[01 · 300×626](../assets/details/mobile-scroll/collapsing-cover-navbar.png)。
+- 连续效果：[GIF · 300×626](../assets/gifs/mobile-scroll/collapsing-cover-navbar.gif)。
+- 清晰度边界：保留总览合成前的独立 PNG 帧；这些帧已在旧导出时缩到 300–720 像素宽，缺少更高分辨率原片。
+
+![封面收进导航栏：原尺寸独立参考](../assets/details/mobile-scroll/collapsing-cover-navbar.png)
+<!-- /ui-atlas:details -->
 
 <a id="editorial-scroll-reveal"></a>
 ## 图文分层滚动渐显 / Editorial Scroll Reveal
@@ -62,10 +80,16 @@
 - 实现关注：以区块可见性触发，预留真实内容尺寸；模糊仅用于装饰过渡，文字保持可读，减弱动态时直接展示。
 - 验证重点：首屏、快速跳到中段、向回滚动及关闭动画后，内容都可访问且不改排版。
 - 相关条目：[motion/scroll-reveal](motion.md#scroll-reveal) · [loading-errors/blur-up](loading-errors.md#blur-up)。
-- 媒体取舍：保留 GIF＋JPG。图文错时入场和图片逐渐清晰依赖连续过程。
-- 参考：[GIF 动图](https://raw.githubusercontent.com/dqzboy/ui-atlas/e6aa0d641c224a2cb4c8bd4262a4d18f5c7e1e22/assets/gifs/mobile-scroll/editorial-scroll-reveal.gif) · [六帧对照图](https://raw.githubusercontent.com/dqzboy/ui-atlas/e6aa0d641c224a2cb4c8bd4262a4d18f5c7e1e22/assets/filmstrips/mobile-scroll/editorial-scroll-reveal.jpg)。
+- 媒体取舍：保留 GIF＋静态图片。图文错时入场和图片逐渐清晰依赖连续过程。
+- 参考：[GIF 动图](../assets/gifs/mobile-scroll/editorial-scroll-reveal.gif) · [六帧对照图](../assets/filmstrips/mobile-scroll/editorial-scroll-reveal.jpg)。
 
-![图文分层滚动渐显：按时间从左到右、从上到下阅读](https://raw.githubusercontent.com/dqzboy/ui-atlas/e6aa0d641c224a2cb4c8bd4262a4d18f5c7e1e22/assets/filmstrips/mobile-scroll/editorial-scroll-reveal.jpg)
+<!-- ui-atlas:details mobile-scroll/editorial-scroll-reveal -->
+- 原尺寸图片：[01 · 300×626](../assets/details/mobile-scroll/editorial-scroll-reveal.png)。
+- 连续效果：[GIF · 300×626](../assets/gifs/mobile-scroll/editorial-scroll-reveal.gif)。
+- 清晰度边界：保留总览合成前的独立 PNG 帧；这些帧已在旧导出时缩到 300–720 像素宽，缺少更高分辨率原片。
+
+![图文分层滚动渐显：原尺寸独立参考](../assets/details/mobile-scroll/editorial-scroll-reveal.png)
+<!-- /ui-atlas:details -->
 
 <a id="pull-to-refresh-scene"></a>
 ## 下拉刷新场景反馈 / Pull to Refresh Scene
@@ -75,10 +99,16 @@
 - 指令例句：下拉刷新时用场景进度反馈拖动幅度，达到阈值并松手后请求新数据。
 - 实现关注：分开空闲、拉动、可释放、刷新中和完成状态；拉动进度与网络进度不能混用。
 - 验证重点：未到阈值松手不请求；达到阈值只请求一次，成功和失败均恢复并显示真实结果。
-- 媒体取舍：保留 GIF＋JPG。场景随下拉距离变化，达到阈值后松手刷新，需保留手势过程。
-- 参考：[GIF 动图](https://raw.githubusercontent.com/dqzboy/ui-atlas/e6aa0d641c224a2cb4c8bd4262a4d18f5c7e1e22/assets/gifs/mobile-scroll/pull-to-refresh-scene.gif) · [六帧对照图](https://raw.githubusercontent.com/dqzboy/ui-atlas/e6aa0d641c224a2cb4c8bd4262a4d18f5c7e1e22/assets/filmstrips/mobile-scroll/pull-to-refresh-scene.jpg)。
+- 媒体取舍：保留 GIF＋静态图片。场景随下拉距离变化，达到阈值后松手刷新，需保留手势过程。
+- 参考：[GIF 动图](../assets/gifs/mobile-scroll/pull-to-refresh-scene.gif) · [六帧对照图](../assets/filmstrips/mobile-scroll/pull-to-refresh-scene.jpg)。
 
-![下拉刷新场景反馈：按时间从左到右、从上到下阅读](https://raw.githubusercontent.com/dqzboy/ui-atlas/e6aa0d641c224a2cb4c8bd4262a4d18f5c7e1e22/assets/filmstrips/mobile-scroll/pull-to-refresh-scene.jpg)
+<!-- ui-atlas:details mobile-scroll/pull-to-refresh-scene -->
+- 原尺寸图片：[01 · 300×626](../assets/details/mobile-scroll/pull-to-refresh-scene.png)。
+- 连续效果：[GIF · 300×626](../assets/gifs/mobile-scroll/pull-to-refresh-scene.gif)。
+- 清晰度边界：保留总览合成前的独立 PNG 帧；这些帧已在旧导出时缩到 300–720 像素宽，缺少更高分辨率原片。
+
+![下拉刷新场景反馈：原尺寸独立参考](../assets/details/mobile-scroll/pull-to-refresh-scene.png)
+<!-- /ui-atlas:details -->
 
 <a id="viewport-chart-growth"></a>
 ## 进入视口的数据生长 / Viewport Chart Growth
@@ -89,7 +119,13 @@
 - 实现关注：终值来自同一份数据；动画不改变坐标刻度，是否重播按业务选择，减弱动态时直接显示终值。
 - 验证重点：终值、零值与大数正确；图表标签可读，离开再进入时不会无故重复。
 - 相关条目：[motion/count-up](motion.md#count-up)。
-- 媒体取舍：保留 GIF＋JPG。需看入屏触发柱高增长与数值同步变化。
-- 参考：[GIF 动图](https://raw.githubusercontent.com/dqzboy/ui-atlas/e6aa0d641c224a2cb4c8bd4262a4d18f5c7e1e22/assets/gifs/mobile-scroll/viewport-chart-growth.gif) · [六帧对照图](https://raw.githubusercontent.com/dqzboy/ui-atlas/e6aa0d641c224a2cb4c8bd4262a4d18f5c7e1e22/assets/filmstrips/mobile-scroll/viewport-chart-growth.jpg)。
+- 媒体取舍：保留 GIF＋静态图片。需看入屏触发柱高增长与数值同步变化。
+- 参考：[GIF 动图](../assets/gifs/mobile-scroll/viewport-chart-growth.gif) · [六帧对照图](../assets/filmstrips/mobile-scroll/viewport-chart-growth.jpg)。
 
-![进入视口的数据生长：按时间从左到右、从上到下阅读](https://raw.githubusercontent.com/dqzboy/ui-atlas/e6aa0d641c224a2cb4c8bd4262a4d18f5c7e1e22/assets/filmstrips/mobile-scroll/viewport-chart-growth.jpg)
+<!-- ui-atlas:details mobile-scroll/viewport-chart-growth -->
+- 原尺寸图片：[01 · 300×626](../assets/details/mobile-scroll/viewport-chart-growth.png)。
+- 连续效果：[GIF · 300×626](../assets/gifs/mobile-scroll/viewport-chart-growth.gif)。
+- 清晰度边界：保留总览合成前的独立 PNG 帧；这些帧已在旧导出时缩到 300–720 像素宽，缺少更高分辨率原片。
+
+![进入视口的数据生长：原尺寸独立参考](../assets/details/mobile-scroll/viewport-chart-growth.png)
+<!-- /ui-atlas:details -->

@@ -21,10 +21,15 @@
 - 指令例句：列表页用宽体大标题、搜索筛选、分类标签和宽幅大图卡，名称参数排在图下。
 - 实现关注：标题换行按实际内容控制；图片保留一致比例，筛选可触达；名称过长时优先保留识别信息。
 - 验证重点：窄屏、长标题、无图片和筛选后空结果仍能浏览与操作。
-- 媒体取舍：仅保留 JPG。重点是标题、筛选、宽图和参数的静态布局，讲解遮罩无需保留。
-- 参考：[六帧对照图](https://raw.githubusercontent.com/dqzboy/ui-atlas/e6aa0d641c224a2cb4c8bd4262a4d18f5c7e1e22/assets/filmstrips/mobile-layouts/wide-title-image-list.jpg)。
+- 媒体取舍：仅保留静态图片（JPG／PNG）。重点是标题、筛选、宽图和参数的静态布局，讲解遮罩无需保留。
+- 参考：[六帧对照图](../assets/filmstrips/mobile-layouts/wide-title-image-list.jpg)。
 
-![宽体标题与大图列表：按时间从左到右、从上到下阅读](https://raw.githubusercontent.com/dqzboy/ui-atlas/e6aa0d641c224a2cb4c8bd4262a4d18f5c7e1e22/assets/filmstrips/mobile-layouts/wide-title-image-list.jpg)
+<!-- ui-atlas:details mobile-layouts/wide-title-image-list -->
+- 原尺寸图片：[01 · 300×653](../assets/details/mobile-layouts/wide-title-image-list.png)。
+- 清晰度边界：保留总览合成前的独立 PNG 帧；这些帧已在旧导出时缩到 300–720 像素宽，缺少更高分辨率原片。
+
+![宽体标题与大图列表：原尺寸独立参考](../assets/details/mobile-layouts/wide-title-image-list.png)
+<!-- /ui-atlas:details -->
 
 <a id="hero-information-overlay"></a>
 ## 大图头块叠信息 / Hero Information Overlay
@@ -34,10 +39,15 @@
 - 指令例句：详情页上部用大图叠标题与操作，下方展示日期选择和简洁趋势曲线。
 - 实现关注：图上信息需有局部遮罩保证对比；重要操作不依赖背景明暗，下方信息块遵守同一对齐线。
 - 验证重点：不同照片、标题长度、日期选中和数据为空时信息不丢失。
-- 媒体取舍：仅保留 JPG。重点是大图上的信息叠放与下方信息区布局。
-- 参考：[六帧对照图](https://raw.githubusercontent.com/dqzboy/ui-atlas/e6aa0d641c224a2cb4c8bd4262a4d18f5c7e1e22/assets/filmstrips/mobile-layouts/hero-information-overlay.jpg)。
+- 媒体取舍：仅保留静态图片（JPG／PNG）。重点是大图上的信息叠放与下方信息区布局。
+- 参考：[六帧对照图](../assets/filmstrips/mobile-layouts/hero-information-overlay.jpg)。
 
-![大图头块叠信息：按时间从左到右、从上到下阅读](https://raw.githubusercontent.com/dqzboy/ui-atlas/e6aa0d641c224a2cb4c8bd4262a4d18f5c7e1e22/assets/filmstrips/mobile-layouts/hero-information-overlay.jpg)
+<!-- ui-atlas:details mobile-layouts/hero-information-overlay -->
+- 原尺寸图片：[01 · 300×653](../assets/details/mobile-layouts/hero-information-overlay.png)。
+- 清晰度边界：保留总览合成前的独立 PNG 帧；这些帧已在旧导出时缩到 300–720 像素宽，缺少更高分辨率原片。
+
+![大图头块叠信息：原尺寸独立参考](../assets/details/mobile-layouts/hero-information-overlay.png)
+<!-- /ui-atlas:details -->
 
 <a id="monochrome-priority"></a>
 ## 黑白分层主次布局 / Monochrome Priority
@@ -47,10 +57,15 @@
 - 指令例句：用灰底、黑色主卡和白色次卡组织页面，分类选中态与主卡呼应。
 - 实现关注：用面积、字重和留白共同建立层级；深色块保留给当前重点，不让所有卡片争抢注意。
 - 验证重点：只看灰阶也能辨认主次，长内容和禁用状态仍有区别。
-- 媒体取舍：仅保留 JPG。重点是黑白卡片的主次权重，图片足够。
-- 参考：[六帧对照图](https://raw.githubusercontent.com/dqzboy/ui-atlas/e6aa0d641c224a2cb4c8bd4262a4d18f5c7e1e22/assets/filmstrips/mobile-layouts/monochrome-priority.jpg)。
+- 媒体取舍：仅保留静态图片（JPG／PNG）。重点是黑白卡片的主次权重，图片足够。
+- 参考：[六帧对照图](../assets/filmstrips/mobile-layouts/monochrome-priority.jpg)。
 
-![黑白分层主次布局：按时间从左到右、从上到下阅读](https://raw.githubusercontent.com/dqzboy/ui-atlas/e6aa0d641c224a2cb4c8bd4262a4d18f5c7e1e22/assets/filmstrips/mobile-layouts/monochrome-priority.jpg)
+<!-- ui-atlas:details mobile-layouts/monochrome-priority -->
+- 原尺寸图片：[01 · 300×653](../assets/details/mobile-layouts/monochrome-priority.png)。
+- 清晰度边界：保留总览合成前的独立 PNG 帧；这些帧已在旧导出时缩到 300–720 像素宽，缺少更高分辨率原片。
+
+![黑白分层主次布局：原尺寸独立参考](../assets/details/mobile-layouts/monochrome-priority.png)
+<!-- /ui-atlas:details -->
 
 <a id="color-block-bento"></a>
 ## 大色块与小格网格 / Color Block Bento
@@ -60,10 +75,15 @@
 - 指令例句：首页用一张强调色大卡汇总核心指标，下方浅色小格分别执行单项任务。
 - 实现关注：大卡与小卡使用一致网格；颜色只强化重点，完成度用真实数据，点击整格有明确反馈。
 - 验证重点：不同屏宽、数据变化和长标签下网格不溢出，打卡后状态准确。
-- 媒体取舍：仅保留 JPG。重点是大小色块和数据层级，讲解中的强调不是产品动效。
-- 参考：[六帧对照图](https://raw.githubusercontent.com/dqzboy/ui-atlas/e6aa0d641c224a2cb4c8bd4262a4d18f5c7e1e22/assets/filmstrips/mobile-layouts/color-block-bento.jpg)。
+- 媒体取舍：仅保留静态图片（JPG／PNG）。重点是大小色块和数据层级，讲解中的强调不是产品动效。
+- 参考：[六帧对照图](../assets/filmstrips/mobile-layouts/color-block-bento.jpg)。
 
-![大色块与小格网格：按时间从左到右、从上到下阅读](https://raw.githubusercontent.com/dqzboy/ui-atlas/e6aa0d641c224a2cb4c8bd4262a4d18f5c7e1e22/assets/filmstrips/mobile-layouts/color-block-bento.jpg)
+<!-- ui-atlas:details mobile-layouts/color-block-bento -->
+- 原尺寸图片：[01 · 300×653](../assets/details/mobile-layouts/color-block-bento.png)。
+- 清晰度边界：保留总览合成前的独立 PNG 帧；这些帧已在旧导出时缩到 300–720 像素宽，缺少更高分辨率原片。
+
+![大色块与小格网格：原尺寸独立参考](../assets/details/mobile-layouts/color-block-bento.png)
+<!-- /ui-atlas:details -->
 
 <a id="poster-semicircle-dial"></a>
 ## 海报大字与半圆转盘 / Poster Semicircle Dial
@@ -73,10 +93,16 @@
 - 指令例句：专注页使用海报标题、半圆选项转盘、大号时长和单个主操作。
 - 实现关注：转盘当前项对准固定指针；同时提供点击或按钮选择，保持标签可读，时长与实际任务一致。
 - 验证重点：转盘边界、长名称、减少动态和非拖动操作都能完成选择。
-- 媒体取舍：保留 GIF＋JPG。布局示例中包含真实转盘选择，需看转动与固定指针的关系。
-- 参考：[GIF 动图](https://raw.githubusercontent.com/dqzboy/ui-atlas/e6aa0d641c224a2cb4c8bd4262a4d18f5c7e1e22/assets/gifs/mobile-layouts/poster-semicircle-dial.gif) · [六帧对照图](https://raw.githubusercontent.com/dqzboy/ui-atlas/e6aa0d641c224a2cb4c8bd4262a4d18f5c7e1e22/assets/filmstrips/mobile-layouts/poster-semicircle-dial.jpg)。
+- 媒体取舍：保留 GIF＋静态图片。布局示例中包含真实转盘选择，需看转动与固定指针的关系。
+- 参考：[GIF 动图](../assets/gifs/mobile-layouts/poster-semicircle-dial.gif) · [六帧对照图](../assets/filmstrips/mobile-layouts/poster-semicircle-dial.jpg)。
 
-![海报大字与半圆转盘：按时间从左到右、从上到下阅读](https://raw.githubusercontent.com/dqzboy/ui-atlas/e6aa0d641c224a2cb4c8bd4262a4d18f5c7e1e22/assets/filmstrips/mobile-layouts/poster-semicircle-dial.jpg)
+<!-- ui-atlas:details mobile-layouts/poster-semicircle-dial -->
+- 原尺寸图片：[01 · 300×653](../assets/details/mobile-layouts/poster-semicircle-dial.png)。
+- 连续效果：[GIF · 300×653](../assets/gifs/mobile-layouts/poster-semicircle-dial.gif)。
+- 清晰度边界：保留总览合成前的独立 PNG 帧；这些帧已在旧导出时缩到 300–720 像素宽，缺少更高分辨率原片。
+
+![海报大字与半圆转盘：原尺寸独立参考](../assets/details/mobile-layouts/poster-semicircle-dial.png)
+<!-- /ui-atlas:details -->
 
 <a id="swipe-deck-layout"></a>
 ## 叠放卡片翻阅布局 / Swipe Deck Layout
@@ -86,7 +112,13 @@
 - 指令例句：展示页用可上滑翻阅的大图卡组，后卡露边，当前页码跟随切换。
 - 实现关注：卡片宽度与留边响应视口；明确拖动阈值、取消复位和末页行为，并提供按钮翻页。
 - 验证重点：轻拖取消、成功翻页、反向返回、末页和键盘替代入口均符合预期。
-- 媒体取舍：保留 GIF＋JPG。布局示例中包含前卡拖离、后卡补位与页码切换的连续行为。
-- 参考：[GIF 动图](https://raw.githubusercontent.com/dqzboy/ui-atlas/e6aa0d641c224a2cb4c8bd4262a4d18f5c7e1e22/assets/gifs/mobile-layouts/swipe-deck-layout.gif) · [六帧对照图](https://raw.githubusercontent.com/dqzboy/ui-atlas/e6aa0d641c224a2cb4c8bd4262a4d18f5c7e1e22/assets/filmstrips/mobile-layouts/swipe-deck-layout.jpg)。
+- 媒体取舍：保留 GIF＋静态图片。布局示例中包含前卡拖离、后卡补位与页码切换的连续行为。
+- 参考：[GIF 动图](../assets/gifs/mobile-layouts/swipe-deck-layout.gif) · [六帧对照图](../assets/filmstrips/mobile-layouts/swipe-deck-layout.jpg)。
 
-![叠放卡片翻阅布局：按时间从左到右、从上到下阅读](https://raw.githubusercontent.com/dqzboy/ui-atlas/e6aa0d641c224a2cb4c8bd4262a4d18f5c7e1e22/assets/filmstrips/mobile-layouts/swipe-deck-layout.jpg)
+<!-- ui-atlas:details mobile-layouts/swipe-deck-layout -->
+- 原尺寸图片：[01 · 300×653](../assets/details/mobile-layouts/swipe-deck-layout.png)。
+- 连续效果：[GIF · 300×653](../assets/gifs/mobile-layouts/swipe-deck-layout.gif)。
+- 清晰度边界：保留总览合成前的独立 PNG 帧；这些帧已在旧导出时缩到 300–720 像素宽，缺少更高分辨率原片。
+
+![叠放卡片翻阅布局：原尺寸独立参考](../assets/details/mobile-layouts/swipe-deck-layout.png)
+<!-- /ui-atlas:details -->

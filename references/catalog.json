@@ -4723,7 +4723,10 @@
       ],
       "media_type": "recipe",
       "recipe": "references/recipes/tactile-button.md",
-      "evidence": "implementation-recipe"
+      "evidence": "implementation-recipe",
+      "media_reason": "高清图片用于观察五种按钮的层级、边缘和阴影；按压过程按配方在实际项目中核对。",
+      "preview": "assets/recipes/tactile-button.jpg",
+      "visual_evidence": "sampled-demo-frames"
     },
     {
       "id": "overlays/safe-cascade-menu",
@@ -4746,7 +4749,10 @@
       ],
       "media_type": "recipe",
       "recipe": "references/recipes/safe-cascade-menu.md",
-      "evidence": "implementation-recipe"
+      "evidence": "implementation-recipe",
+      "media_reason": "高清图片用于观察父子菜单的层级与间距；安全区的指针轨迹和延时仍需在项目中验证。",
+      "preview": "assets/recipes/safe-cascade-menu.jpg",
+      "visual_evidence": "sampled-demo-frames"
     },
     {
       "id": "backgrounds/ascii-dither",
@@ -4772,7 +4778,10 @@
       ],
       "media_type": "recipe",
       "recipe": "references/recipes/ascii-dither.md",
-      "evidence": "implementation-recipe"
+      "evidence": "implementation-recipe",
+      "media_reason": "重点是 ASCII 与 Dither 的纹理结果，高清状态对照即可；背景视频运动不作为该技巧的必需动效。",
+      "preview": "assets/recipes/ascii-dither.jpg",
+      "visual_evidence": "sampled-demo-frames"
     },
     {
       "id": "interface-details/continuous-corners",
@@ -4796,7 +4805,10 @@
       ],
       "media_type": "recipe",
       "recipe": "references/recipes/continuous-corners.md",
-      "evidence": "implementation-recipe"
+      "evidence": "implementation-recipe",
+      "media_reason": "重点是嵌套间距、曲率和圆角连接，高清示意图及状态对照足够；讲解镜头不需保留 GIF。",
+      "preview": "assets/recipes/continuous-corners.jpg",
+      "visual_evidence": "sampled-demo-frames"
     },
     {
       "id": "mobile-interactions/ripple-reorder",
@@ -4822,7 +4834,12 @@
       ],
       "media_type": "recipe",
       "recipe": "references/recipes/ripple-reorder.md",
-      "evidence": "implementation-recipe"
+      "evidence": "implementation-recipe",
+      "media_reason": "需看拖拽中的落点变化与邻项让位，保留未遮挡列表主体的连续片段。",
+      "preview": "assets/recipes/ripple-reorder.jpg",
+      "visual_evidence": "sampled-demo-frames-and-clip",
+      "gif": "assets/recipes/ripple-reorder.gif",
+      "gif_fps": 12
     },
     {
       "id": "cards-tables/book-open-card",
@@ -4847,7 +4864,12 @@
       ],
       "media_type": "recipe",
       "recipe": "references/recipes/book-open-card.md",
-      "evidence": "implementation-recipe"
+      "evidence": "implementation-recipe",
+      "media_reason": "保留指针离开后的清晰合拢片段，以观察书页轮廓与收拢过程；不将该片段当作完整展开演示。",
+      "preview": "assets/recipes/book-open-card.jpg",
+      "visual_evidence": "sampled-demo-frames-and-clip",
+      "gif": "assets/recipes/book-open-card.gif",
+      "gif_fps": 15
     },
     {
       "id": "interface-details/cjk-latin-typesetting",
@@ -4875,7 +4897,10 @@
       ],
       "media_type": "recipe",
       "recipe": "references/recipes/cjk-latin-typesetting.md",
-      "evidence": "implementation-recipe"
+      "evidence": "implementation-recipe",
+      "media_reason": "重点是换行、字距、标点与文本边界，清晰的中英文排版状态图足够。",
+      "preview": "assets/recipes/cjk-latin-typesetting.jpg",
+      "visual_evidence": "sampled-demo-frames"
     },
     {
       "id": "documentation-layouts/wiki-layout",
@@ -4902,7 +4927,12 @@
       ],
       "media_type": "recipe",
       "recipe": "references/recipes/wiki-layout.md",
-      "evidence": "implementation-recipe"
+      "evidence": "implementation-recipe",
+      "media_reason": "需看移动目录浮层打开、关闭与正文的关系，保留未被指针遮挡的移动片段。",
+      "preview": "assets/recipes/wiki-layout.jpg",
+      "visual_evidence": "sampled-demo-frames-and-clip",
+      "gif": "assets/recipes/wiki-layout.gif",
+      "gif_fps": 10
     },
     {
       "id": "overlays/overlay-decision",
@@ -4930,7 +4960,12 @@
       ],
       "media_type": "recipe",
       "recipe": "references/recipes/overlay-decision.md",
-      "evidence": "implementation-recipe"
+      "evidence": "implementation-recipe",
+      "media_reason": "保留未遮挡抽屉主体的打开片段，用于观察覆盖层、侧向入场和表单的关系。",
+      "preview": "assets/recipes/overlay-decision.jpg",
+      "visual_evidence": "sampled-demo-frames-and-clip",
+      "gif": "assets/recipes/overlay-decision.gif",
+      "gif_fps": 10
     },
     {
       "id": "glass-materials/liquid-glass",
@@ -4957,7 +4992,12 @@
       ],
       "media_type": "recipe",
       "recipe": "references/recipes/liquid-glass.md",
-      "evidence": "implementation-recipe"
+      "evidence": "implementation-recipe",
+      "media_reason": "需看背景变化与主题切换时玻璃的透射、折射和前景对比，保留播放器主体的连续片段。",
+      "preview": "assets/recipes/liquid-glass.jpg",
+      "visual_evidence": "sampled-demo-frames-and-clip",
+      "gif": "assets/recipes/liquid-glass.gif",
+      "gif_fps": 10
     }
   ],
   "media": {

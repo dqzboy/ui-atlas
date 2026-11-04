@@ -3,16 +3,20 @@ import hashlib
 import io
 import json
 import os
+import subprocess
 from pathlib import Path
 import sys
 import tempfile
 import unittest
 from unittest.mock import patch
 import urllib.error
+import zipfile
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'scripts'))
 import media_store
 from validate_library import validate
+from detail_media import detail_paths, validate_quality
+from reference_docs import lightweight_document
 
 
 class MediaStoreTests(unittest.TestCase):
@@ -80,7 +84,31 @@ class MediaStoreTests(unittest.TestCase):
             media_store.entry_media(gallery, 'gif')
         self.assertEqual(media_store.entry_media(gallery), ['p.jpg'])
         self.assertEqual(media_store.entry_media(gallery, 'images'), ['1.jpg', '2.jpg'])
-        self.assertEqual(media_store.entry_media({'media_type': 'recipe'}), [])
+        recipe = {'media_type': 'recipe', 'preview': 'p.jpg', 'gif': 'clip.gif'}
+        self.assertEqual(media_store.entry_media(recipe), ['p.jpg'])
+        self.assertEqual(media_store.entry_media(recipe, 'all'), ['p.jpg', 'clip.gif'])
+        self.assertEqual(media_store.entry_media(recipe, 'gif'), ['clip.gif'])
+        with self.assertRaisesRegex(ValueError, '没有 GIF'):
+            media_store.entry_media({'media_type': 'recipe', 'preview': 'p.jpg'}, 'gif')
+
+    def test_bundled_media_never_uses_remote_origin_or_cache(self):
+        record = self.manifest['files'][self.value]
+        record['bundled'] = True
+        cached = media_store.cache_root(self.manifest) / self.value
+        cached.parent.mkdir(parents=True)
+        cached.write_bytes(self.payload)
+        with patch('urllib.request.urlopen', side_effect=AssertionError('bundled media used network')):
+            with self.assertRaises(FileNotFoundError):
+                media_store.fetch(self.manifest, self.value, self.root)
+            local = self.root / self.value
+            local.parent.mkdir(parents=True)
+            local.write_bytes(self.payload)
+            self.assertEqual(media_store.fetch(self.manifest, self.value, self.root), local)
+            local.write_bytes(b'corrupt')
+            with self.assertRaises(FileNotFoundError):
+                media_store.fetch(self.manifest, self.value, self.root)
+        with self.assertRaisesRegex(ValueError, 'no remote URL'):
+            media_store.media_url(self.manifest, self.value)
 
     def test_core_library_validates_with_no_cache_and_no_network(self):
         with patch('urllib.request.urlopen', side_effect=AssertionError('validation used network')):
@@ -92,9 +120,109 @@ class MediaStoreTests(unittest.TestCase):
         previews = [p for e in data['items'] for p in media_store.entry_media(e)]
         self.assertTrue(all(Path(p).suffix == '.jpg' for p in previews))
         self.assertEqual({p for p in manifest['files'] if p.endswith('.gif')},
-                         {e['gif'] for e in data['items'] if e['media_type'] == 'animation'})
+                         {e['gif'] for e in data['items'] if e.get('gif')})
         paths = [p for e in data['items'] for p in media_store.entry_media(e, 'all')]
         self.assertEqual(set(paths), set(manifest['files']))
+
+    def test_release_contains_working_recipe_visuals_without_cache(self):
+        subprocess.run([sys.executable, str(media_store.ROOT / 'scripts/build_skill.py')],
+                       check=True, capture_output=True)
+        with zipfile.ZipFile(media_store.ROOT / 'dist/ui-atlas.zip') as archive:
+            archive.extractall(self.root)
+        installed = self.root / 'ui-atlas'
+        manifest = media_store.load_manifest(installed)
+        data, errors = validate(installed)
+        self.assertFalse(errors, errors)
+        recipes = [e for e in data['items'] if e['media_type'] == 'recipe']
+        self.assertEqual(len(recipes), 10)
+        self.assertEqual(sum(bool(e.get('gif')) for e in recipes), 5)
+        with patch('urllib.request.urlopen', side_effect=AssertionError('offline recipe used network')):
+            for entry in recipes:
+                for value in media_store.entry_media(entry, 'all'):
+                    self.assertEqual(media_store.fetch(manifest, value, installed), installed / value)
+        bundled = {p for p, r in manifest['files'].items() if r.get('bundled')}
+        self.assertEqual({p.relative_to(installed).as_posix()
+                          for p in (installed / 'assets').rglob('*') if p.is_file()}, bundled)
+
+    def test_detail_selection_requires_every_image_to_be_verified(self):
+        first = 'assets/details/motion/example-01.png'
+        second = 'assets/details/motion/example-02.png'
+        record = {'bytes': len(self.payload), 'sha256': hashlib.sha256(self.payload).hexdigest()}
+        quality = {'entries': {'motion/example': {'images': [first, second]}},
+                   'files': {first: record, second: record}}
+        for value in (first, second):
+            path = self.root / value
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_bytes(self.payload)
+        self.assertEqual(detail_paths('motion/example', 'images', self.root, quality),
+                         [self.root / first, self.root / second])
+        (self.root / second).write_bytes(b'corrupt')
+        self.assertEqual(detail_paths('motion/example', 'images', self.root, quality), [])
+        self.assertEqual(detail_paths('motion/example', 'gif', self.root, quality), [])
+        self.assertEqual(detail_paths('motion/example', 'preview', self.root, quality), [])
+
+    def test_optional_details_do_not_require_network_or_installation(self):
+        with patch('urllib.request.urlopen', side_effect=AssertionError('details used network')):
+            self.assertEqual(detail_paths('motion/example', 'images', self.root), [])
+            self.assertEqual(validate_quality(media_store.ROOT), [])
+            # The lightweight release contains the detail index, but no large assets.
+            subprocess.run([sys.executable, str(media_store.ROOT / 'scripts/build_skill.py')],
+                           check=True, capture_output=True)
+            with zipfile.ZipFile(media_store.ROOT / 'dist/ui-atlas.zip') as archive:
+                self.assertIn('ui-atlas/references/media-quality.json', archive.namelist())
+                self.assertFalse(any('/assets/details/' in name for name in archive.namelist()))
+
+    def test_details_reject_paths_outside_detail_directory(self):
+        for value in ('assets/../../outside.png', 'assets/recipes/example.png', '/tmp/example.png'):
+            quality = {'entries': {'motion/example': {'images': [value]}}, 'files': {value: {}}}
+            with self.assertRaises(ValueError):
+                detail_paths('motion/example', 'images', self.root, quality)
+
+    def test_complete_references_attach_every_independent_image_and_clip(self):
+        self.assertFalse(validate_quality(media_store.ROOT))
+        quality = json.loads((media_store.ROOT / 'references/media-quality.json').read_text())
+        self.assertEqual(len([e for e in quality['entries'].values() if e.get('poster')]), 215)
+        for entry_id, entry in quality['entries'].items():
+            if entry.get('poster'):
+                result = detail_paths(entry_id, 'preview')
+                self.assertEqual(result, [media_store.ROOT / entry['poster']])
+
+    def test_lightweight_docs_keep_references_without_missing_detail_links(self):
+        catalog = json.loads((media_store.ROOT / 'references/catalog.json').read_text())
+        quality = json.loads((media_store.ROOT / 'references/media-quality.json').read_text())
+        manifest = media_store.load_manifest()
+        document = (media_store.ROOT / 'references/overlays.md').read_text()
+        rendered = lightweight_document(document, catalog['items'], manifest, quality)
+        self.assertNotIn('assets/details/', rendered)
+        self.assertIn(media_store.media_url(manifest, 'assets/filmstrips/overlays/drawer.jpg'), rendered)
+        self.assertIn(media_store.media_url(manifest, 'assets/gifs/overlays/drawer.gif'), rendered)
+        recipe = (media_store.ROOT / 'references/recipes/wiki-layout.md').read_text()
+        rendered = lightweight_document(recipe, catalog['items'], manifest, quality)
+        self.assertNotIn('assets/details/', rendered)
+        self.assertIn('](../../assets/recipes/wiki-layout.gif)', rendered)
+
+    def test_representative_images_avoid_temporal_duplicates(self):
+        quality = json.loads((media_store.ROOT / 'references/media-quality.json').read_text())
+        for entry_id in ('backgrounds/aurora', 'backgrounds/beams'):
+            entry = quality['entries'][entry_id]
+            self.assertEqual(entry['images'], [entry['poster']])
+            self.assertEqual(detail_paths(entry_id, 'images'), detail_paths(entry_id, 'preview'))
+        # Distinct states and different pages still have their own references.
+        self.assertEqual(len(quality['entries']['buttons-controls/indeterminate']['images']), 3)
+        self.assertEqual(len(quality['entries']['mobile-workbenches/sales-crm-parcel-homes']['images']), 4)
+
+    def test_quality_validation_detects_leftover_media_on_disk(self):
+        references = self.root / 'references'
+        references.mkdir()
+        (references / 'catalog.json').write_text(json.dumps({'items': []}))
+        (references / 'media-manifest.json').write_text(json.dumps({'revision': 'a' * 40}))
+        (references / 'media-quality.json').write_text(json.dumps(
+            {'base_revision': 'a' * 40, 'entries': {}, 'files': {}}))
+        leftover = self.root / 'assets/details/leftover.png'
+        leftover.parent.mkdir(parents=True)
+        leftover.write_bytes(self.payload)
+        self.assertEqual(validate_quality(self.root, check_files=True, check_links=False),
+                         ['Unlisted detail file: assets/details/leftover.png'])
 
 
 if __name__ == '__main__':

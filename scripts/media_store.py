@@ -1,4 +1,4 @@
-"""Resolve immutable reference media without bundling it in the skill."""
+"""Resolve verified bundled previews and immutable cached reference media."""
 import hashlib
 import json
 import os
@@ -33,6 +33,8 @@ def checked_path(value):
 
 def media_url(manifest, value):
     checked_path(value)
+    if manifest['files'][value].get('bundled'):
+        raise ValueError(f'Bundled media has no remote URL: {value}')
     return manifest['base_url'].rstrip('/') + '/' + value
 
 
@@ -44,7 +46,10 @@ def matches(path, record):
 def local_media(manifest, value, root=ROOT):
     checked_path(value)
     record = manifest['files'][value]
-    for path in (root / value, cache_root(manifest) / value):
+    paths = [root / value]
+    if not record.get('bundled'):
+        paths.append(cache_root(manifest) / value)
+    for path in paths:
         if matches(path, record):
             return path
     return None
@@ -55,6 +60,8 @@ def fetch(manifest, value, root=ROOT):
     if existing:
         return existing
     record = manifest['files'][value]
+    if record.get('bundled'):
+        raise FileNotFoundError(f'随技能提供的媒体缺失或损坏，请重新安装：{value}')
     destination = cache_root(manifest) / checked_path(value)
     destination.parent.mkdir(parents=True, exist_ok=True)
     url = media_url(manifest, value)
@@ -83,7 +90,13 @@ def fetch(manifest, value, root=ROOT):
 def entry_media(entry, selection='preview'):
     kind = entry.get('media_type')
     if kind == 'recipe':
-        return []
+        if selection in {'preview', 'images'}:
+            return [entry['preview']]
+        if selection == 'all':
+            return [entry['preview']] + ([entry['gif']] if entry.get('gif') else [])
+        if selection == 'gif' and entry.get('gif'):
+            return [entry['gif']]
+        raise ValueError('该配方仅保留 JPG，没有 GIF；请使用 --media preview 或 images')
     if kind == 'gallery':
         if selection == 'preview':
             return [entry['preview']]

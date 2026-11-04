@@ -56,5 +56,11 @@ htmlcov/
 /*.tar.gz
 /*.tgz
 graft/
-# Media remains available at the immutable revision in references/media-manifest.json.
-/assets/
+# Reviewed reference media belongs to the skill; raw footage remains excluded.
+/assets/*
+!/assets/recipes/
+!/assets/details/
+!/assets/gifs/
+!/assets/filmstrips/
+!/assets/images/
+!/assets/previews/

@@ -8,6 +8,7 @@ from pathlib import Path
 import sys
 
 from media_store import checked_path, load_manifest, local_media, media_url
+from detail_media import validate_quality
 
 
 def validate(root, check_media=False):
@@ -51,12 +52,19 @@ def validate(root, check_media=False):
         if (not isinstance(record.get('bytes'), int) or record['bytes'] <= 0
                 or not re.fullmatch(r'[0-9a-f]{64}', record.get('sha256', ''))):
             errors.append(f'{label}: invalid media size/hash {value}')
-        if media_url(manifest, value) not in doc:
-            errors.append(f'{label}: missing remote {key} document link')
-        if check_media:
+        bundled = record.get('bundled', False)
+        if bundled and not value.startswith('assets/recipes/'):
+            errors.append(f'{label}: bundled media must be a recipe visual')
+        links = ['../' + value]
+        if not bundled:
+            links.append(media_url(manifest, value))
+        if not any(link in doc for link in links):
+            errors.append(f'{label}: missing {key} document link')
+        if check_media or bundled:
             path = local_media(manifest, value, root)
             if not path:
-                errors.append(f'{label}: uncached or corrupt {value}; run fetch_media.py --all')
+                recovery = ('reinstall the skill' if bundled else 'run fetch_media.py --all')
+                errors.append(f'{label}: uncached or corrupt {value}; {recovery}')
             else:
                 with path.open('rb') as media:
                     header = media.read(6)
@@ -86,7 +94,7 @@ def validate(root, check_media=False):
         if f'`{label}`' not in doc:
             errors.append(f'{label}: missing document entry')
         media_type = entry.get('media_type')
-        if media_type != 'recipe' and not entry.get('media_reason'):
+        if not entry.get('media_reason'):
             errors.append(f'{label}: missing per-entry media decision reason')
         if media_type == 'recipe':
             expected = f'references/recipes/{slug}.md'
@@ -100,8 +108,25 @@ def validate(root, check_media=False):
                     errors.append(f'{label}: source identity or external link in recipe')
             if entry.get('evidence') != 'implementation-recipe':
                 errors.append(f'{label}: recipe evidence type missing')
-            if any(entry.get(k) for k in ('gif', 'filmstrip', 'preview', 'images')):
-                errors.append(f'{label}: recipe cannot declare visual media')
+            expected_visual = ('sampled-demo-frames-and-clip' if entry.get('gif')
+                               else 'sampled-demo-frames')
+            if entry.get('visual_evidence') != expected_visual:
+                errors.append(f'{label}: missing or incorrect recipe visual evidence')
+            for key in ('preview', 'gif'):
+                value = entry.get(key)
+                if key == 'preview' and not value:
+                    errors.append(f'{label}: missing recipe preview')
+                if not value:
+                    continue
+                suffix = '.jpg' if key == 'preview' else '.gif'
+                check_asset(label, key, value, f'assets/recipes/{slug}{suffix}',
+                            (b'\xff\xd8\xff',) if key == 'preview' else (b'GIF87a', b'GIF89a'), doc)
+                if not manifest['files'].get(value, {}).get('bundled'):
+                    errors.append(f'{label}: recipe visual must be bundled')
+                if (root / expected).is_file() and '../../' + value not in (root / expected).read_text():
+                    errors.append(f'{label}: missing recipe visual link')
+            if entry.get('filmstrip') or entry.get('images'):
+                errors.append(f'{label}: unexpected recipe visual fields')
         elif media_type == 'gallery':
             images = entry.get('images')
             if not isinstance(images, list) or not images:
@@ -149,6 +174,7 @@ def validate(root, check_media=False):
                 errors.append(f'{label}: unknown related entry {related}')
     for value in set(manifest['files']) - used_media:
         errors.append(f'Unreferenced media record: {value}')
+    errors.extend(validate_quality(root))
     # Validate Markdown file links and explicit catalog anchors, outside code fences.
     for path in [root / 'SKILL.md', root / 'README.md', *(root / 'references').rglob('*.md')]:
         text = re.sub(r'```.*?```', '', path.read_text(), flags=re.S)
@@ -168,10 +194,13 @@ def validate(root, check_media=False):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--check-media', action='store_true', help='校验完整离线缓存的文件头、大小和 SHA-256')
+    parser.add_argument('--check-quality', action='store_true', help='额外校验可选原尺寸细节库')
     args = parser.parse_args()
     root = Path(__file__).resolve().parent.parent
     try:
         data, errors = validate(root, args.check_media)
+        if args.check_quality:
+            errors.extend(validate_quality(root, check_files=True))
     except (OSError, ValueError, KeyError, TypeError) as error:
         print(f'Invalid library: {error}', file=sys.stderr)
         raise SystemExit(1)
