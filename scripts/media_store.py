@@ -97,12 +97,12 @@ def entry_media(entry, selection='preview'):
         if selection == 'gif' and entry.get('gif'):
             return [entry['gif']]
         raise ValueError('该配方仅保留 JPG，没有 GIF；请使用 --media preview 或 images')
-    if kind == 'gallery':
+    if kind in {'image', 'gallery'}:
         if selection == 'preview':
             return [entry['preview']]
         if selection in {'images', 'all'}:
-            return ([entry['preview']] if selection == 'all' else []) + entry['images']
-        raise ValueError('Gallery media accepts preview, images or all')
+            return list(dict.fromkeys(([entry['preview']] if selection == 'all' else []) + entry['images']))
+        raise ValueError('该条目仅保留静态图片；请使用 preview、images 或 all')
     if kind in {'animation', 'filmstrip'}:
         if selection in {'preview', 'images'}:
             return [entry['filmstrip']]

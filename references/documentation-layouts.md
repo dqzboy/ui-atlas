@@ -4,8 +4,7 @@
 
 ## 目录
 
-- [Wiki 与帮助中心响应式框架 / Responsive Wiki Layout](#wiki-layout)
-
+- [Wiki 与帮助中心响应式框架](#wiki-layout)
 
 <a id="wiki-layout"></a>
 ## Wiki 与帮助中心响应式框架 / Responsive Wiki Layout
@@ -15,10 +14,7 @@
 - 实现关注：页首导航先随开场区滚走，banner 离屏后再出现悬浮导航。侧栏独立滚动，只有溢出方向显示渐隐与箭头；保存导航滚动位置并定位当前页。大纲以视口 20% 参考线标记阅读章节，aria-current=location。文末按帮助入口、上一篇／下一篇、页脚排序；页脚高度随真实内容，半屏以上仅是展示型方案的可选起点。手机底栏分为页面列表和当前章节，点击打开 dialog sheet，照顾底部安全区和正文留白。
 - 验证重点：检查页首、页中、页尾、手机宽度及短文；锚点不被吸顶遮住，侧栏能到底，底栏不盖正文；抽屉焦点闭环、Esc 关闭和减弱动态有效。
 - 指令例句：参考 documentation-layouts/wiki-layout，正文与页脚随页面滚动，侧栏和大纲各自 sticky；超长导航有条件渐隐和滚动箭头，移动端用底部双入口打开章节与大纲。
-- [完整配方与效果参考](recipes/wiki-layout.md) · [效果图](../assets/recipes/wiki-layout.jpg) · [交互片段](../assets/recipes/wiki-layout.gif)。
+- [完整配方与效果参考](recipes/wiki-layout.md) · [效果图](../assets/recipes/wiki-layout.jpg)。
 - 媒体取舍：需看移动目录浮层打开、关闭与正文的关系，保留未被指针遮挡的移动片段。
 
-<!-- ui-atlas:details documentation-layouts/wiki-layout -->
-- 连续效果：[GIF · 1080×1991](../assets/details/documentation-layouts/wiki-layout.gif)。
-- 清晰度边界：从 2160×2880 原片重新导出，使用已确认的精选片段和裁切；GIF 仍受 256 色限制，静态细节查看随包 JPG。
-<!-- /ui-atlas:details -->
+- 连续动效：[GIF 片段](../assets/recipes/wiki-layout.gif)。

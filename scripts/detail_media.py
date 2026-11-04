@@ -3,7 +3,7 @@ import json
 import re
 import struct
 
-from media_store import ROOT, checked_path, matches
+from media_store import ROOT, checked_path, local_media, media_url
 
 
 def load_quality(root=ROOT):
@@ -11,9 +11,26 @@ def load_quality(root=ROOT):
     return json.loads(path.read_text()) if path.is_file() else {'entries': {}, 'files': {}}
 
 
-def detail_paths(entry_id, selection, root=ROOT, quality=None):
-    """Return a complete, verified local selection, or nothing for a fallback."""
-    quality = load_quality(root) if quality is None else quality
+def image_dimensions(header):
+    """Read dimensions from supported still headers without imaging dependencies."""
+    if header.startswith(b'\x89PNG\r\n\x1a\n') and len(header) >= 24:
+        return struct.unpack('>II', header[16:24])
+    if header.startswith((b'GIF87a', b'GIF89a')) and len(header) >= 10:
+        return struct.unpack('<HH', header[6:10])
+    if len(header) >= 30 and header[:4] == b'RIFF' and header[8:12] == b'WEBP':
+        kind = header[12:16]
+        if kind == b'VP8X':
+            return tuple(1 + int.from_bytes(header[p:p+3], 'little') for p in (24, 27))
+        if kind == b'VP8 ' and header[23:26] == b'\x9d\x01\x2a':
+            return tuple(n & 0x3fff for n in struct.unpack('<HH', header[26:30]))
+        if kind == b'VP8L' and header[20] == 0x2f:
+            bits = int.from_bytes(header[21:25], 'little')
+            return (1 + (bits & 0x3fff), 1 + ((bits >> 14) & 0x3fff))
+    raise ValueError('invalid or unsupported image header')
+
+
+def detail_values(entry_id, selection, quality):
+    """Select reference paths without reading or downloading any media."""
     entry = quality['entries'].get(entry_id, {})
     if selection == 'preview':
         values = [entry['poster']] if entry.get('poster') else []
@@ -25,13 +42,20 @@ def detail_paths(entry_id, selection, root=ROOT, quality=None):
         values = entry.get('images', []) + ([entry['gif']] if entry.get('gif') else [])
     else:
         return []
-    paths = []
     for value in values:
         relative = checked_path(value)
         if not relative.as_posix().startswith('assets/details/'):
             raise ValueError(f'Invalid detail media path: {value}')
-        path = root / relative
-        if not matches(path, quality['files'][value]):
+    return values
+
+
+def detail_paths(entry_id, selection, root=ROOT, quality=None):
+    """Return a verified selection from the install or external cache."""
+    quality = load_quality(root) if quality is None else quality
+    paths = []
+    for value in detail_values(entry_id, selection, quality):
+        path = local_media(quality, value, root)
+        if path is None:
             return []
         paths.append(path)
     return paths
@@ -45,6 +69,10 @@ def validate_quality(root=ROOT, check_files=False, check_links=True):
     base = json.loads((root / 'references/media-manifest.json').read_text())
     if quality.get('base_revision') != base['revision']:
         errors.append('Detail media base revision mismatch')
+    revision = quality.get('revision', '')
+    if (not re.fullmatch(r'[0-9a-f]{40}', revision)
+            or quality.get('base_url') != 'https://raw.githubusercontent.com/dqzboy/ui-atlas/' + revision):
+        errors.append('Detail media origin must use an immutable published revision')
     for entry_id, entry in quality['entries'].items():
         if entry_id not in entries:
             errors.append(f'Unknown detail entry: {entry_id}')
@@ -62,7 +90,7 @@ def validate_quality(root=ROOT, check_files=False, check_links=True):
             try:
                 path = checked_path(value)
                 record = quality['files'][value]
-                if not value.startswith('assets/details/') or path.suffix not in {'.png', '.gif'}:
+                if not value.startswith('assets/details/') or path.suffix not in {'.png', '.gif', '.webp'}:
                     raise ValueError('unsupported path or format')
                 if not all(isinstance(record.get(k), int) and record[k] > 0
                            for k in ('bytes', 'width', 'height')):
@@ -71,17 +99,12 @@ def validate_quality(root=ROOT, check_files=False, check_links=True):
                     raise ValueError('invalid hash')
                 used.add(value)
                 if check_files:
-                    local = root / path
-                    if not matches(local, record):
+                    local = local_media(quality, value, root)
+                    if local is None:
                         raise ValueError('missing or corrupt local file')
                     with local.open('rb') as media:
-                        header = media.read(24)
-                    signatures = (b'\x89PNG\r\n\x1a\n',) if path.suffix == '.png' else (b'GIF87a', b'GIF89a')
-                    minimum = 24 if path.suffix == '.png' else 10
-                    if len(header) < minimum or not header.startswith(signatures):
-                        raise ValueError('invalid file header')
-                    size = (struct.unpack('>II', header[16:24]) if path.suffix == '.png'
-                            else struct.unpack('<HH', header[6:10]))
+                        header = media.read(32)
+                    size = image_dimensions(header)
                     if size != (record['width'], record['height']):
                         raise ValueError('pixel dimensions mismatch')
             except (OSError, ValueError, KeyError) as error:
@@ -91,12 +114,11 @@ def validate_quality(root=ROOT, check_files=False, check_links=True):
     if check_files:
         installed = {p.relative_to(root).as_posix()
                      for p in (root / 'assets/details').rglob('*')
-                     if p.is_file() and p.suffix in {'.png', '.gif'}}
+                     if p.is_file() and p.suffix in {'.png', '.gif', '.webp'}}
         for value in sorted(installed - set(quality['files'])):
             errors.append(f'Unlisted detail file: {value}')
-    # Complete editions must actually attach the media to its matching section;
-    # lightweight editions intentionally omit the detail directory and blocks.
-    if check_links and (root / 'assets/details').is_dir():
+    # Both editions retain the full references; only the link location differs.
+    if check_links:
         for entry_id, detail in quality['entries'].items():
             if entry_id not in entries:
                 continue
@@ -111,9 +133,17 @@ def validate_quality(root=ROOT, check_files=False, check_links=True):
                 continue
             gif = detail.get('gif') or entries[entry_id].get('gif')
             for value in detail.get('images', []) + ([gif] if gif else []):
-                if f'](../{value})' not in block[1]:
+                source = quality if value in quality['files'] else base
+                targets = ['../' + value]
+                if not source['files'][value].get('bundled'):
+                    targets.append(media_url(source, value))
+                if not any(f']({target})' in block[1] for target in targets):
                     errors.append(f'Missing matching detail link: {entry_id}: {value}')
             poster = detail.get('poster')
-            if poster and not re.search(r'!\[[^\n]*\]\(\.\./' + re.escape(poster) + r'\)', block[1]):
+            targets = ['../' + poster] if poster else []
+            if poster and not quality['files'][poster].get('bundled'):
+                targets.append(media_url(quality, poster))
+            if poster and not any(re.search(r'!\[[^\n]*\]\(' + re.escape(target) + r'\)', block[1])
+                                  for target in targets):
                 errors.append(f'Missing full-size inline reference: {entry_id}')
     return errors

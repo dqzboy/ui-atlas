@@ -7,15 +7,26 @@ import sys
 import subprocess
 
 from media_store import ROOT, entry_media, fetch, load_manifest, media_url
-from detail_media import detail_paths, load_quality
+from detail_media import detail_values, load_quality
+
+
+def selected_media(entry, selection, manifest, quality):
+    """Prefer native references in every edition; select before downloading."""
+    details = detail_values(entry['id'], selection, quality)
+    if details and selection != 'all':
+        return [(quality, value) for value in details]
+    originals = entry_media(entry, selection)
+    sources = {value: source for source, value in
+               [(manifest, value) for value in originals] + [(quality, value) for value in details]}
+    return [(source, value) for value, source in sources.items()]
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('entry_id', nargs='?', help='例如 motion/border-beam')
     parser.add_argument('--media', choices=['preview', 'images', 'gif', 'all'], default='preview',
-                        help='preview 优先取原尺寸代表图；images 取独立图片；gif 优先取清晰版本')
-    parser.add_argument('--all', action='store_true', help='获取全部原有公开媒体；独立细节图随完整版本提供')
+                        help='preview 取一张原尺寸代表图；images 取精选独立图片；all 取条目全部图片')
+    parser.add_argument('--all', action='store_true', help='获取当前参考库全部图片并缓存，包括原尺寸参考')
     parser.add_argument('--urls', action='store_true', help='只列出地址，不下载')
     args = parser.parse_args()
     data = json.loads((ROOT / 'references/catalog.json').read_text())
@@ -29,27 +40,11 @@ def main():
         quality = load_quality()
         for entry in entries:
             selection = 'all' if args.all else args.media
-            details = [] if args.urls else detail_paths(entry['id'], selection, quality=quality)
-            if details and selection in {'preview', 'images', 'gif'}:
-                for path in details:
-                    print(path)
-                continue
-            paths = entry_media(entry, selection)
-            if (not args.urls and selection == 'images' and not details
-                    and entry['media_type'] in {'animation', 'filmstrip'}):
-                print('原尺寸独立帧尚未安装，以下为六帧总览；细节判断请使用完整媒体包。', file=sys.stderr)
-            if (not args.urls and selection == 'gif' and not details
-                    and quality['entries'].get(entry['id'], {}).get('gif')):
-                print('大尺寸动图尚未安装，以下为精简动图；清晰版本见完整媒体包。', file=sys.stderr)
-            if not paths:
-                print(f"{entry['id']}: 文字配方，见 {ROOT / entry['recipe']}")
-            for value in paths:
-                if args.urls and not manifest['files'][value].get('bundled'):
-                    print(media_url(manifest, value))
+            for source, value in selected_media(entry, selection, manifest, quality):
+                if args.urls and not source['files'][value].get('bundled'):
+                    print(media_url(source, value))
                 else:
-                    print(fetch(manifest, value))
-            for path in details:
-                print(path)
+                    print(fetch(source, value))
     except (OSError, ValueError, KeyError, RuntimeError, subprocess.SubprocessError) as error:
         print(f'媒体获取失败：{error}；文字索引仍可使用，请稍后重试。', file=sys.stderr)
         raise SystemExit(1)

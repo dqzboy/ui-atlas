@@ -15,7 +15,8 @@ import zipfile
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'scripts'))
 import media_store
 from validate_library import validate
-from detail_media import detail_paths, validate_quality
+from detail_media import detail_paths, detail_values, validate_quality, image_dimensions
+from fetch_media import selected_media
 from reference_docs import lightweight_document
 
 
@@ -118,7 +119,7 @@ class MediaStoreTests(unittest.TestCase):
         manifest = media_store.load_manifest()
         # All default previews stay lightweight, including references retaining a GIF.
         previews = [p for e in data['items'] for p in media_store.entry_media(e)]
-        self.assertTrue(all(Path(p).suffix == '.jpg' for p in previews))
+        self.assertTrue(all(Path(p).suffix in {'.jpg', '.png', '.webp'} for p in previews))
         self.assertEqual({p for p in manifest['files'] if p.endswith('.gif')},
                          {e['gif'] for e in data['items'] if e.get('gif')})
         paths = [p for e in data['items'] for p in media_store.entry_media(e, 'all')]
@@ -136,6 +137,7 @@ class MediaStoreTests(unittest.TestCase):
         recipes = [e for e in data['items'] if e['media_type'] == 'recipe']
         self.assertEqual(len(recipes), 10)
         self.assertEqual(sum(bool(e.get('gif')) for e in recipes), 5)
+        self.assertTrue(all(not e.get('gif') for e in data['items'] if e['media_type'] != 'recipe'))
         with patch('urllib.request.urlopen', side_effect=AssertionError('offline recipe used network')):
             for entry in recipes:
                 for value in media_store.entry_media(entry, 'all'):
@@ -148,7 +150,7 @@ class MediaStoreTests(unittest.TestCase):
         first = 'assets/details/motion/example-01.png'
         second = 'assets/details/motion/example-02.png'
         record = {'bytes': len(self.payload), 'sha256': hashlib.sha256(self.payload).hexdigest()}
-        quality = {'entries': {'motion/example': {'images': [first, second]}},
+        quality = {'revision': 'b' * 40, 'entries': {'motion/example': {'images': [first, second]}},
                    'files': {first: record, second: record}}
         for value in (first, second):
             path = self.root / value
@@ -165,12 +167,17 @@ class MediaStoreTests(unittest.TestCase):
         with patch('urllib.request.urlopen', side_effect=AssertionError('details used network')):
             self.assertEqual(detail_paths('motion/example', 'images', self.root), [])
             self.assertEqual(validate_quality(media_store.ROOT), [])
-            # The lightweight release contains the detail index, but no large assets.
+            # Unpublished native screenshots are bundled; remote page images stay optional.
             subprocess.run([sys.executable, str(media_store.ROOT / 'scripts/build_skill.py')],
                            check=True, capture_output=True)
             with zipfile.ZipFile(media_store.ROOT / 'dist/ui-atlas.zip') as archive:
                 self.assertIn('ui-atlas/references/media-quality.json', archive.namelist())
-                self.assertFalse(any('/assets/details/' in name for name in archive.namelist()))
+                manifest = media_store.load_manifest()
+                actual = {name.removeprefix('ui-atlas/') for name in archive.namelist()
+                          if '/assets/details/' in name}
+                expected = {p for p, r in manifest['files'].items()
+                            if p.startswith('assets/details/') and r.get('bundled')}
+                self.assertEqual(actual, expected)
 
     def test_details_reject_paths_outside_detail_directory(self):
         for value in ('assets/../../outside.png', 'assets/recipes/example.png', '/tmp/example.png'):
@@ -178,14 +185,15 @@ class MediaStoreTests(unittest.TestCase):
             with self.assertRaises(ValueError):
                 detail_paths('motion/example', 'images', self.root, quality)
 
-    def test_complete_references_attach_every_independent_image_and_clip(self):
+    def test_documents_attach_every_selected_independent_image(self):
         self.assertFalse(validate_quality(media_store.ROOT))
         quality = json.loads((media_store.ROOT / 'references/media-quality.json').read_text())
-        self.assertEqual(len([e for e in quality['entries'].values() if e.get('poster')]), 215)
+        catalog = json.loads((media_store.ROOT / 'references/catalog.json').read_text())
+        self.assertEqual(set(quality['entries']),
+                         {e['id'] for e in catalog['items'] if e['media_type'] != 'recipe'})
         for entry_id, entry in quality['entries'].items():
             if entry.get('poster'):
-                result = detail_paths(entry_id, 'preview')
-                self.assertEqual(result, [media_store.ROOT / entry['poster']])
+                self.assertEqual(detail_values(entry_id, 'preview', quality), [entry['poster']])
 
     def test_lightweight_docs_keep_references_without_missing_detail_links(self):
         catalog = json.loads((media_store.ROOT / 'references/catalog.json').read_text())
@@ -193,22 +201,24 @@ class MediaStoreTests(unittest.TestCase):
         manifest = media_store.load_manifest()
         document = (media_store.ROOT / 'references/overlays.md').read_text()
         rendered = lightweight_document(document, catalog['items'], manifest, quality)
-        self.assertNotIn('assets/details/', rendered)
-        self.assertIn(media_store.media_url(manifest, 'assets/filmstrips/overlays/drawer.jpg'), rendered)
-        self.assertIn(media_store.media_url(manifest, 'assets/gifs/overlays/drawer.gif'), rendered)
+        poster = quality['entries']['overlays/drawer']['poster']
+        self.assertIn('](../' + poster + ')', rendered)
+        self.assertNotIn('assets/filmstrips/', rendered)
+        self.assertIn('](../assets/recipes/overlay-decision.gif)', rendered)
         recipe = (media_store.ROOT / 'references/recipes/wiki-layout.md').read_text()
         rendered = lightweight_document(recipe, catalog['items'], manifest, quality)
-        self.assertNotIn('assets/details/', rendered)
         self.assertIn('](../../assets/recipes/wiki-layout.gif)', rendered)
+        self.assertIn('](../../assets/recipes/wiki-layout.jpg)', rendered)
 
     def test_representative_images_avoid_temporal_duplicates(self):
         quality = json.loads((media_store.ROOT / 'references/media-quality.json').read_text())
         for entry_id in ('backgrounds/aurora', 'backgrounds/beams'):
             entry = quality['entries'][entry_id]
             self.assertEqual(entry['images'], [entry['poster']])
-            self.assertEqual(detail_paths(entry_id, 'images'), detail_paths(entry_id, 'preview'))
+            self.assertEqual(detail_values(entry_id, 'images', quality),
+                             detail_values(entry_id, 'preview', quality))
         # Distinct states and different pages still have their own references.
-        self.assertEqual(len(quality['entries']['buttons-controls/indeterminate']['images']), 3)
+        self.assertEqual(len(quality['entries']['loading-errors/loading-button']['images']), 3)
         self.assertEqual(len(quality['entries']['mobile-workbenches/sales-crm-parcel-homes']['images']), 4)
 
     def test_quality_validation_detects_leftover_media_on_disk(self):
@@ -217,12 +227,59 @@ class MediaStoreTests(unittest.TestCase):
         (references / 'catalog.json').write_text(json.dumps({'items': []}))
         (references / 'media-manifest.json').write_text(json.dumps({'revision': 'a' * 40}))
         (references / 'media-quality.json').write_text(json.dumps(
-            {'base_revision': 'a' * 40, 'entries': {}, 'files': {}}))
+            {'base_revision': 'a' * 40, 'revision': 'b' * 40,
+             'base_url': 'https://raw.githubusercontent.com/dqzboy/ui-atlas/' + 'b' * 40,
+             'entries': {}, 'files': {}}))
         leftover = self.root / 'assets/details/leftover.png'
         leftover.parent.mkdir(parents=True)
         leftover.write_bytes(self.payload)
         self.assertEqual(validate_quality(self.root, check_files=True, check_links=False),
                          ['Unlisted detail file: assets/details/leftover.png'])
+
+    def test_native_preview_downloads_on_demand_and_reuses_external_cache(self):
+        value = 'assets/details/backgrounds/example.png'
+        quality = {'revision': 'b' * 40, 'base_url': 'https://example.test/native-revision',
+                   'entries': {'backgrounds/example': {'images': [value], 'poster': value}},
+                   'files': {value: self.manifest['files'][self.value]}}
+        entry = {'id': 'backgrounds/example', 'media_type': 'filmstrip', 'filmstrip': self.value}
+        selection = selected_media(entry, 'preview', self.manifest, quality)
+        self.assertEqual(selection, [(quality, value)])
+        self.assertEqual(detail_paths(entry['id'], 'preview', self.root, quality), [])
+        with patch('urllib.request.urlopen', return_value=io.BytesIO(self.payload)) as request:
+            path = media_store.fetch(*selection[0], self.root)
+        request.assert_called_once()
+        self.assertFalse(path.is_relative_to(self.root))
+        with patch('urllib.request.urlopen', side_effect=AssertionError('cache hit used network')):
+            self.assertEqual(media_store.fetch(quality, value, self.root), path)
+            self.assertEqual(detail_paths(entry['id'], 'preview', self.root, quality), [path])
+
+    def test_current_library_is_static_and_only_selected_panels_remain(self):
+        catalog = json.loads((media_store.ROOT / 'references/catalog.json').read_text())
+        quality = json.loads((media_store.ROOT / 'references/media-quality.json').read_text())
+        self.assertEqual(sum(e['media_type'] == 'gallery' for e in catalog['items']), 12)
+        self.assertTrue(all(not e.get('gif') and e['media_type'] != 'animation'
+                            for e in catalog['items'] if e['media_type'] != 'recipe'))
+        self.assertTrue(all(Path(value).suffix in {'.png', '.webp'} for value in quality['files']))
+        self.assertNotIn('enterprise-workbenches/blue-welcome-operations-portal',
+                         {e['id'] for e in catalog['items']})
+
+    def test_all_selection_deduplicates_preview_and_detail_records(self):
+        value = 'assets/details/motion/example.png'
+        entry = {'id': 'motion/example', 'media_type': 'image', 'preview': value,
+                 'images': [value]}
+        quality = {'entries': {'motion/example': {'poster': value, 'images': [value]}}}
+        self.assertEqual(media_store.entry_media(entry, 'all'), [value])
+        self.assertEqual(selected_media(entry, 'all', self.manifest, quality), [(quality, value)])
+
+    def test_bundled_webp_dimensions_match_the_actual_file_header(self):
+        quality = json.loads((media_store.ROOT / 'references/media-quality.json').read_text())
+        for value, record in quality['files'].items():
+            if value.endswith('.webp') and record.get('bundled'):
+                with (media_store.ROOT / value).open('rb') as media:
+                    dimensions = image_dimensions(media.read(32))
+                self.assertEqual(dimensions, (record['width'], record['height']))
+        with self.assertRaises(ValueError):
+            image_dimensions(b'RIFFinvalid image')
 
 
 if __name__ == '__main__':

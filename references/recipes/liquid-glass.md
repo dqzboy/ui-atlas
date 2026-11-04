@@ -1,20 +1,12 @@
 # 自适应液态玻璃材质 / Adaptive Liquid Glass
 
-实现配方附高清演示截图与精选动图片段；参数是可调起点，仍需在目标项目与浏览器中验证。
+实现配方附高清演示截图；参数是可调起点，仍需在目标项目与浏览器中验证。
 
 ## 效果参考
 
 ![自适应液态玻璃材质：效果参考](../../assets/recipes/liquid-glass.jpg)
 
-图片对照明暗主题；动图展示背景和主题变化，不证明所有浏览器均支持折射。
-
-![自适应液态玻璃材质：交互片段](../../assets/details/glass-materials/liquid-glass.gif)
-
-精简动图帧率见索引，大尺寸版为 15 fps；循环接缝不代表产品行为，也不能据此测定精确时长或缓动。
-
-媒体取舍：需看背景变化与主题切换时玻璃的透射、折射和前景对比，保留播放器主体的连续片段。
-
-[精简动图](../../assets/recipes/liquid-glass.gif)用于轻量安装；完整媒体版优先查看上方大尺寸动图。
+静态图用于核对构图、材质与可见状态；触发、连续运动和焦点管理需在实际项目中验证。
 
 ## 适用与边界
 
@@ -92,3 +84,5 @@ Hover brightens the tint by about 14% instead of lifting a shadow.
 - Then add the tokens, the lens helper and the two settings, switch the surfaces over, and list every file you touched.
 - Don't change layout, fonts, radii or copy. If a surface would need a new component to work as glass, explain the necessary component change and keep it within the requested scope.
 ```
+
+参考片段：[连续动效片段](../../assets/recipes/liquid-glass.gif)。

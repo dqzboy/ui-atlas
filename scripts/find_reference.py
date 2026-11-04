@@ -5,7 +5,7 @@ import json
 from pathlib import Path
 
 from media_store import load_manifest, local_media, media_url
-from detail_media import load_quality, detail_paths
+from detail_media import load_quality, detail_paths, detail_values
 
 
 def main():
@@ -52,8 +52,8 @@ def main():
             if entry.get('gif'):
                 print(f"  动图: {local_media(manifest, entry['gif'], root) or root / entry['gif']}")
             print('  证据: 演示画面抽帧与精选片段；配方参数仍需在实际项目中验证。')
-        elif entry.get('media_type') == 'gallery':
-            print(f"  媒体: 静态图集（{len(entry['images'])} 张，不代表交互状态）")
+        elif entry.get('media_type') in {'image', 'gallery'}:
+            print(f"  媒体: 精选静态图片（{len(entry['images'])} 张，状态范围见条目说明）")
             poster = detail_paths(entry['id'], 'preview', root, quality)
             if poster:
                 print(f"  原尺寸效果图: {poster[0]}")
@@ -79,6 +79,9 @@ def main():
                 paths = detail_paths(entry['id'], selection, root, quality)
                 if paths:
                     print(f"  {label}: " + '\n    '.join(str(p) for p in paths))
+                else:
+                    for value in detail_values(entry['id'], selection, quality):
+                        print(f"  {label}: {media_url(quality, value)}")
             if detail.get('images'):
                 print(f"  读取独立图: python3 scripts/fetch_media.py {entry['id']} --media images")
         if entry.get('media_type') != 'recipe':

@@ -2,52 +2,12 @@
 
 用于精修已有界面的数字、圆角、标题、入场和阴影。保留任务所需的输入边界、焦点与真实状态，避免把局部技巧推广为整站硬规则。
 
-六帧图按从左到右、从上到下查看，仅表示抽样状态，不能证明连续运动和短暂状态。像素值、技术栈与缓动由当前项目决定。
+参考图用于核对构图与可见状态；连续动作在实际项目中验证。像素值、技术栈与缓动由当前项目决定。
 
 ## 目录
 
-- [内容分组错峰入场 / Section Stagger](#section-stagger)
-- [柔和多层阴影 / Layered Soft Shadow](#layered-soft-shadow)
-- [递进圆角与连续曲率 / Nested Radii and Continuous Corners](#continuous-corners)
-- [中英文排版与稳定数字 / CJK Latin Typesetting](#cjk-latin-typesetting)
-
-<a id="section-stagger"></a>
-## 内容分组错峰入场 / Section Stagger
-
-- 标识：`interface-details/section-stagger`；类型：选型／纠错。
-- 效果要点：标题、主图、统计和操作分组依次入场，避免整屏内容同时淡入而缺少节奏。
-- 指令例句：把首屏按阅读顺序分组，轻微错峰入场，主操作无需等待动画才可用。
-- 实现关注：延迟随组数受控，不逐字或无限延后；最终布局预先占位，减弱动态时直接显示。
-- 验证重点：首屏可立即理解与操作，快速离开再返回不会隐藏内容或无限重播。
-- 相关条目：[motion/stagger](motion.md#stagger)。
-- 媒体取舍：保留 GIF＋静态图片。标题、主图、数字与操作分组入场的先后是主体。
-- 参考：[GIF 动图](../assets/gifs/interface-details/section-stagger.gif) · [六帧对照图](../assets/filmstrips/interface-details/section-stagger.jpg)。
-
-<!-- ui-atlas:details interface-details/section-stagger -->
-- 原尺寸图片：[01 · 480×488](../assets/details/interface-details/section-stagger.png)。
-- 连续效果：[GIF · 480×488](../assets/gifs/interface-details/section-stagger.gif)。
-- 清晰度边界：保留总览合成前的独立 PNG 帧；这些帧已在旧导出时缩到 300–720 像素宽，缺少更高分辨率原片。
-
-![内容分组错峰入场：原尺寸独立参考](../assets/details/interface-details/section-stagger.png)
-<!-- /ui-atlas:details -->
-
-<a id="layered-soft-shadow"></a>
-## 柔和多层阴影 / Layered Soft Shadow
-
-- 标识：`interface-details/layered-soft-shadow`；类型：选型／纠错。
-- 效果要点：在适合的卡片上用近处细阴影和远处柔阴影表达层次，减少僵硬外框感。
-- 指令例句：用低强度多层阴影柔化普通内容卡，同时保持边界可辨认。
-- 实现关注：近层定义边缘、远层表达抬升；按背景调整透明度，输入框、焦点和必须清楚的分区保留所需边界。
-- 验证重点：白底、灰底、深色主题和卡片密集排列时，不糊成脏边，不把焦点提示一起移除。
-- 媒体取舍：仅保留静态图片（JPG／PNG）。近细远柔的投影层次及前后对照由图片表达。
-- 参考：[六帧对照图](../assets/filmstrips/interface-details/layered-soft-shadow.jpg)。
-
-<!-- ui-atlas:details interface-details/layered-soft-shadow -->
-- 原尺寸图片：[01 · 480×488](../assets/details/interface-details/layered-soft-shadow.png)。
-- 清晰度边界：保留总览合成前的独立 PNG 帧；这些帧已在旧导出时缩到 300–720 像素宽，缺少更高分辨率原片。
-
-![柔和多层阴影：原尺寸独立参考](../assets/details/interface-details/layered-soft-shadow.png)
-<!-- /ui-atlas:details -->
+- [递进圆角与连续曲率](#continuous-corners)
+- [中英文排版与稳定数字](#cjk-latin-typesetting)
 
 <a id="continuous-corners"></a>
 ## 递进圆角与连续曲率 / Nested Radii and Continuous Corners

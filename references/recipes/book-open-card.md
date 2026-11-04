@@ -1,20 +1,12 @@
 # 像书一样翻开的卡片 / Book Opening Card
 
-实现配方附高清演示截图与精选动图片段；参数是可调起点，仍需在目标项目与浏览器中验证。
+实现配方附高清演示截图；参数是可调起点，仍需在目标项目与浏览器中验证。
 
 ## 效果参考
 
 ![像书一样翻开的卡片：效果参考](../../assets/recipes/book-open-card.jpg)
 
-图片展示收拢前的书页层次；动图仅展示指针离开后的合拢过程，不涵盖触发和完整展开。
-
-![像书一样翻开的卡片：交互片段](../../assets/details/cards-tables/book-open-card.gif)
-
-精简动图帧率见索引，大尺寸版为 15 fps；循环接缝不代表产品行为，也不能据此测定精确时长或缓动。
-
-媒体取舍：保留指针离开后的清晰合拢片段，以观察书页轮廓与收拢过程；不将该片段当作完整展开演示。
-
-[精简动图](../../assets/recipes/book-open-card.gif)用于轻量安装；完整媒体版优先查看上方大尺寸动图。
+静态图用于核对构图、材质与可见状态；触发、连续运动和焦点管理需在实际项目中验证。
 
 ## 适用与边界
 
@@ -225,3 +217,5 @@ tokens, and keep the cover exactly as the card is today.
   defaults.
 - Note anything that no longer looks identical at rest.
 ```
+
+参考片段：[连续动效片段](../../assets/recipes/book-open-card.gif)。

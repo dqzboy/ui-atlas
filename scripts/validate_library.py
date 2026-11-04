@@ -22,7 +22,9 @@ def validate(root, check_media=False):
     if manifest.get('base_url') != 'https://raw.githubusercontent.com/dqzboy/ui-atlas/' + revision:
         errors.append('Unexpected media origin or revision')
     for value in manifest['files']:
-        if Path(value).suffix not in {'.jpg', '.gif'}:
+        if Path(value).suffix not in {'.jpg', '.png', '.webp'} and not (
+                value.startswith('assets/recipes/') and value.endswith('.gif')
+                and manifest['files'][value].get('bundled')):
             errors.append(f'Unsupported reference format: {value}')
     category_ids = [category['id'] for category in data['categories']]
     ids = [entry['id'] for entry in data['items']]
@@ -53,8 +55,8 @@ def validate(root, check_media=False):
                 or not re.fullmatch(r'[0-9a-f]{64}', record.get('sha256', ''))):
             errors.append(f'{label}: invalid media size/hash {value}')
         bundled = record.get('bundled', False)
-        if bundled and not value.startswith('assets/recipes/'):
-            errors.append(f'{label}: bundled media must be a recipe visual')
+        if bundled and not value.startswith(('assets/recipes/', 'assets/details/')):
+            errors.append(f'{label}: bundled media must be a declared reference visual')
         links = ['../' + value]
         if not bundled:
             links.append(media_url(manifest, value))
@@ -127,7 +129,7 @@ def validate(root, check_media=False):
                     errors.append(f'{label}: missing recipe visual link')
             if entry.get('filmstrip') or entry.get('images'):
                 errors.append(f'{label}: unexpected recipe visual fields')
-        elif media_type == 'gallery':
+        elif media_type in {'image', 'gallery'}:
             images = entry.get('images')
             if not isinstance(images, list) or not images:
                 errors.append(f'{label}: gallery needs a nonempty images list')
@@ -135,13 +137,15 @@ def validate(root, check_media=False):
                 if len(set(images)) != len(images):
                     errors.append(f'{label}: duplicate gallery image')
                 for number, value in enumerate(images, 1):
-                    check_asset(label, f'image {number}', value,
-                                f'assets/images/{category}/{slug}-{number:02}.jpg',
-                                (b'\xff\xd8\xff',), doc)
+                    if not value.startswith(f'assets/details/{category}/') or Path(value).suffix not in {'.png', '.webp'}:
+                        errors.append(f'{label}: invalid selected image path')
+                    check_asset(label, f'image {number}', value, value,
+                                (b'RIFF',) if value.endswith('.webp') else (b'\x89PNG\r\n',), doc)
             if entry.get('preview'):
-                check_asset(label, 'preview', entry['preview'],
-                            f'assets/previews/{category}/{slug}.jpg',
-                            (b'\xff\xd8\xff',), doc)
+                if entry['preview'] not in (images or []):
+                    errors.append(f'{label}: preview must be one of the selected images')
+                check_asset(label, 'preview', entry['preview'], entry['preview'],
+                            (b'RIFF',) if entry['preview'].endswith('.webp') else (b'\x89PNG\r\n',), doc)
             else:
                 errors.append(f'{label}: missing gallery preview')
             if entry.get('gif') or entry.get('filmstrip'):
@@ -209,7 +213,7 @@ def main():
         raise SystemExit(1)
     kinds = Counter(e.get('media_type') for e in data['items'])
     print(f"Validated {len(data['items'])} entries / {len(data['categories'])} categories: "
-          f"{kinds['animation']} animations, {kinds['filmstrip']} image-only filmstrips, "
+          f"{kinds['image']} image references, {kinds['animation']} animations, "
           f"{kinds['gallery']} galleries, {kinds['recipe']} recipes; "
           + ('offline cache verified.' if args.check_media else 'manifest and links valid (no download).'))
 

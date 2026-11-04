@@ -1,20 +1,12 @@
 # Wiki 与帮助中心响应式框架 / Responsive Wiki Layout
 
-实现配方附高清演示截图与精选动图片段；参数是可调起点，仍需在目标项目与浏览器中验证。
+实现配方附高清演示截图；参数是可调起点，仍需在目标项目与浏览器中验证。
 
 ## 效果参考
 
 ![Wiki 与帮助中心响应式框架：效果参考](../../assets/recipes/wiki-layout.jpg)
 
-图片对照桌面正文与移动目录；动图展示移动目录的打开和关闭，不涵盖桌面全部行为。
-
-![Wiki 与帮助中心响应式框架：交互片段](../../assets/details/documentation-layouts/wiki-layout.gif)
-
-精简动图帧率见索引，大尺寸版为 15 fps；循环接缝不代表产品行为，也不能据此测定精确时长或缓动。
-
-媒体取舍：需看移动目录浮层打开、关闭与正文的关系，保留未被指针遮挡的移动片段。
-
-[精简动图](../../assets/recipes/wiki-layout.gif)用于轻量安装；完整媒体版优先查看上方大尺寸动图。
+静态图用于核对构图、材质与可见状态；触发、连续运动和焦点管理需在实际项目中验证。
 
 ## 适用与边界
 
@@ -80,3 +72,5 @@ Polish the layout of my docs or help center pages: the header, the page list, th
 - Check four states on my own pages: the top of a page, the middle, the end, and a phone-width window.
 - Show a screenshot of each.
 ```
+
+参考片段：[连续动效片段](../../assets/recipes/wiki-layout.gif)。

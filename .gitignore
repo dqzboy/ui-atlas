@@ -56,11 +56,16 @@ htmlcov/
 /*.tar.gz
 /*.tgz
 graft/
-# Reviewed reference media belongs to the skill; raw footage remains excluded.
+# Default installs carry compact recipe media; other references use verified external cache.
 /assets/*
 !/assets/recipes/
+/assets/recipes/*
+!/assets/recipes/*.jpg
+!/assets/recipes/*.gif
+
+# Reviewed native-size static screenshots included with this edition.
 !/assets/details/
-!/assets/gifs/
-!/assets/filmstrips/
-!/assets/images/
-!/assets/previews/
+/assets/details/*
+!/assets/details/*/
+/assets/details/*/*
+!/assets/details/**/*.webp

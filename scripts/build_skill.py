@@ -7,7 +7,7 @@ import zipfile
 from validate_library import validate
 from media_store import load_manifest, local_media
 from detail_media import load_quality, validate_quality
-from reference_docs import lightweight_document
+from reference_docs import lightweight_document, offline_document
 
 
 def main():
@@ -28,8 +28,8 @@ def main():
         raise SystemExit('Core skill exceeds 2 MiB; inspect unexpected bundled content.')
     bundled = [root / p for p, record in load_manifest(root)['files'].items()
                if record.get('bundled')]
-    if sum(p.stat().st_size for p in bundled) > 8 * 1024 * 1024:
-        raise SystemExit('Bundled recipe media exceeds 8 MiB; reduce previews or clips.')
+    if sum(p.stat().st_size for p in bundled) > 32 * 1024 * 1024:
+        raise SystemExit('Bundled reference media exceeds 32 MiB; review duplicate states and encoding.')
     members = [(path, path.relative_to(root).as_posix()) for path in paths + bundled]
     if args.with_media:
         quality_errors = validate_quality(root, check_files=True)
@@ -43,7 +43,14 @@ def main():
             if path is None:
                 raise SystemExit(f'Missing {value}; run fetch_media.py --all first.')
             members.append((path, value))
-        members.extend((root / value, value) for value in load_quality(root)['files'])
+        quality = load_quality(root)
+        for value in quality['files']:
+            if value in manifest['files']:
+                continue
+            path = local_media(quality, value, root)
+            if path is None:
+                raise SystemExit(f'Missing {value}; run fetch_media.py --all first.')
+            members.append((path, value))
     total = 0
     destination = root / ('dist/ui-atlas-offline.zip' if args.with_media else 'dist/ui-atlas.zip')
     destination.parent.mkdir(exist_ok=True)
@@ -54,8 +61,12 @@ def main():
             info.compress_type = zipfile.ZIP_DEFLATED
             info.external_attr = 0o644 << 16
             payload = path.read_bytes()
-            if not args.with_media and path.suffix == '.md':
-                payload = lightweight_document(payload.decode(), catalog['items'], manifest, quality).encode()
+            if path.suffix == '.md':
+                if args.with_media:
+                    prefix = '../' * (len(Path(relative).parts) - 1)
+                    payload = offline_document(payload.decode(), manifest, quality, prefix).encode()
+                else:
+                    payload = lightweight_document(payload.decode(), catalog['items'], manifest, quality).encode()
             archive.writestr(info, payload)
             total += len(payload)
     print(f'{destination}\n{len(members)} files; {total:,} bytes unpacked; {destination.stat().st_size:,} bytes ZIP')

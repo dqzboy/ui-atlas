@@ -1,22 +1,22 @@
 # 背景特效
 
-六帧图看主要状态，不能证明连续运动和短暂状态。按当前项目需求实现目标组件的交互与动效。
+静态图用于查看构图与可见状态，连续运动和短暂状态需在实际项目验证。按当前项目需求实现目标组件的交互与动效。
 
 ## 目录
 
-- [极光 / Aurora](#aurora)
-- [流动渐变 / Mesh Gradient](#mesh-gradient)
-- [粒子波浪 / Particle Wave](#particle-wave)
-- [点阵地球 / Dotted Globe](#dotted-globe)
-- [流体 / Fluid / Shader](#fluid)
-- [光束 / Beams](#beams)
-- [字符雨 / Matrix Rain](#matrix-rain)
-- [点阵背景 / Dot Grid](#dot-grid)
-- [透视网格 / Retro Grid](#retro-grid)
-- [星空穿梭 / Starfield](#starfield)
-- [噪点颗粒 / Grain](#grain)
-- [渐变背景 / Gradient](#gradient)
-- [可调 ASCII 与有序抖色 / Parametric ASCII and Ordered Dither](#ascii-dither)
+- [极光](#aurora)
+- [流动渐变](#mesh-gradient)
+- [粒子波浪](#particle-wave)
+- [点阵地球](#dotted-globe)
+- [流体](#fluid)
+- [光束](#beams)
+- [字符雨](#matrix-rain)
+- [点阵背景](#dot-grid)
+- [透视网格](#retro-grid)
+- [星空穿梭](#starfield)
+- [噪点颗粒](#grain)
+- [渐变背景](#gradient)
+- [可调 ASCII 与有序抖色](#ascii-dither)
 
 <a id="aurora"></a>
 ## 极光 / Aurora
@@ -24,15 +24,13 @@
 - 标识：`backgrounds/aurora`；类型：组件／效果。
 - 效果要点：彩色光团缓慢漂浮并互相融合，呈现极光氛围；示例用于科技、AI 产品首屏。
 - 指令例句：首屏背景使用缓慢融合的 Aurora 极光，保持标题清晰。
-- 媒体取舍：保留 GIF＋静态图片。光团漂移与融合是效果主体，需保留连续变化。
-- 参考：[GIF 动图](../assets/gifs/backgrounds/aurora.gif) · [六帧对照图](../assets/filmstrips/backgrounds/aurora.jpg)。
+- 媒体取舍：保留静态效果图与实现说明；连续路径、触发顺序、节奏和短暂状态需在项目中实际验证。
 
 <!-- ui-atlas:details backgrounds/aurora -->
-- 原尺寸图片：[01 · 600×900](../assets/details/backgrounds/aurora.png)。
-- 连续效果：[GIF · 600×900](../assets/gifs/backgrounds/aurora.gif)。
-- 清晰度边界：从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。
+- 原尺寸图片：[01 · 1440×1610](../assets/details/backgrounds/aurora-hd-01.webp)。
+- 清晰度边界：从 2160 像素高的原片按原像素裁切，WebP 质量 95，不放大、不锐化、不涂抹；静态帧不能证明完整运动。
 
-![极光：原尺寸独立参考](../assets/details/backgrounds/aurora.png)
+![极光：原尺寸独立参考](../assets/details/backgrounds/aurora-hd-01.webp)
 <!-- /ui-atlas:details -->
 
 <a id="mesh-gradient"></a>
@@ -41,15 +39,13 @@
 - 标识：`backgrounds/mesh-gradient`；类型：组件／效果。
 - 效果要点：多种颜色如丝绸般揉合并缓慢流动；例子为支付、金融网站首屏。
 - 指令例句：用柔和缓慢流动的 Mesh Gradient 作为首屏背景。
-- 媒体取舍：保留 GIF＋静态图片。色块缓慢流动与混合是效果主体，区别于静态渐变。
-- 参考：[GIF 动图](../assets/gifs/backgrounds/mesh-gradient.gif) · [六帧对照图](../assets/filmstrips/backgrounds/mesh-gradient.jpg)。
+- 媒体取舍：保留静态效果图与实现说明；连续路径、触发顺序、节奏和短暂状态需在项目中实际验证。
 
 <!-- ui-atlas:details backgrounds/mesh-gradient -->
-- 原尺寸图片：[01 · 600×900](../assets/details/backgrounds/mesh-gradient.png)。
-- 连续效果：[GIF · 600×900](../assets/gifs/backgrounds/mesh-gradient.gif)。
-- 清晰度边界：从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。
+- 原尺寸图片：[01 · 1440×1610](../assets/details/backgrounds/mesh-gradient-hd-01.webp)。
+- 清晰度边界：从 2160 像素高的原片按原像素裁切，WebP 质量 95，不放大、不锐化、不涂抹；静态帧不能证明完整运动。
 
-![流动渐变：原尺寸独立参考](../assets/details/backgrounds/mesh-gradient.png)
+![流动渐变：原尺寸独立参考](../assets/details/backgrounds/mesh-gradient-hd-01.webp)
 <!-- /ui-atlas:details -->
 
 <a id="particle-wave"></a>
@@ -58,15 +54,13 @@
 - 标识：`backgrounds/particle-wave`；类型：组件／效果。
 - 效果要点：大量小点组成起伏网面，像波浪；鼠标经过时附近粒子被推开。
 - 指令例句：用起伏的粒子网面呈现 Particle Wave，鼠标附近粒子避让。
-- 媒体取舍：保留 GIF＋静态图片。需看粒子网面的起伏及指针附近的避让过程。
-- 参考：[GIF 动图](../assets/gifs/backgrounds/particle-wave.gif) · [六帧对照图](../assets/filmstrips/backgrounds/particle-wave.jpg)。
+- 媒体取舍：保留静态效果图与实现说明；连续路径、触发顺序、节奏和短暂状态需在项目中实际验证。
 
 <!-- ui-atlas:details backgrounds/particle-wave -->
-- 原尺寸图片：[01 · 600×900](../assets/details/backgrounds/particle-wave.png)。
-- 连续效果：[GIF · 600×900](../assets/gifs/backgrounds/particle-wave.gif)。
-- 清晰度边界：从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。
+- 原尺寸图片：[01 · 1440×1610](../assets/details/backgrounds/particle-wave-hd-01.webp)。
+- 清晰度边界：从 2160 像素高的原片按原像素裁切，WebP 质量 95，不放大、不锐化、不涂抹；静态帧不能证明完整运动。
 
-![粒子波浪：原尺寸独立参考](../assets/details/backgrounds/particle-wave.png)
+![粒子波浪：原尺寸独立参考](../assets/details/backgrounds/particle-wave-hd-01.webp)
 <!-- /ui-atlas:details -->
 
 <a id="dotted-globe"></a>
@@ -75,15 +69,13 @@
 - 标识：`backgrounds/dotted-globe`；类型：组件／效果。
 - 效果要点：圆点组成的地球缓慢旋转，发光弧线连接城市；用于全球业务和数据展示。
 - 指令例句：在全球业务区域展示旋转点阵地球与城市连线。
-- 媒体取舍：保留 GIF＋静态图片。需看地球旋转与城市连线变化，图片只显示某一角度。
-- 参考：[GIF 动图](../assets/gifs/backgrounds/dotted-globe.gif) · [六帧对照图](../assets/filmstrips/backgrounds/dotted-globe.jpg)。
+- 媒体取舍：保留静态效果图与实现说明；连续路径、触发顺序、节奏和短暂状态需在项目中实际验证。
 
 <!-- ui-atlas:details backgrounds/dotted-globe -->
-- 原尺寸图片：[01 · 600×900](../assets/details/backgrounds/dotted-globe.png)。
-- 连续效果：[GIF · 600×900](../assets/gifs/backgrounds/dotted-globe.gif)。
-- 清晰度边界：从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。
+- 原尺寸图片：[01 · 1440×1610](../assets/details/backgrounds/dotted-globe-hd-01.webp)。
+- 清晰度边界：从 2160 像素高的原片按原像素裁切，WebP 质量 95，不放大、不锐化、不涂抹；静态帧不能证明完整运动。
 
-![点阵地球：原尺寸独立参考](../assets/details/backgrounds/dotted-globe.png)
+![点阵地球：原尺寸独立参考](../assets/details/backgrounds/dotted-globe-hd-01.webp)
 <!-- /ui-atlas:details -->
 
 <a id="fluid"></a>
@@ -92,15 +84,13 @@
 - 标识：`backgrounds/fluid`；类型：组件／效果。
 - 效果要点：鼠标移动搅动彩色烟雾，随后缓慢消散；这类效果可使用 Shader 实现，具体技术由项目需求决定。
 - 指令例句：添加随鼠标搅动、离开后逐渐消散的 Fluid 背景。
-- 媒体取舍：保留 GIF＋静态图片。需看指针搅动后烟雾生成、扩散与消散的过程。
-- 参考：[GIF 动图](../assets/gifs/backgrounds/fluid.gif) · [六帧对照图](../assets/filmstrips/backgrounds/fluid.jpg)。
+- 媒体取舍：保留静态效果图与实现说明；连续路径、触发顺序、节奏和短暂状态需在项目中实际验证。
 
 <!-- ui-atlas:details backgrounds/fluid -->
-- 原尺寸图片：[01 · 600×900](../assets/details/backgrounds/fluid.png)。
-- 连续效果：[GIF · 600×900](../assets/gifs/backgrounds/fluid.gif)。
-- 清晰度边界：从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。
+- 原尺寸图片：[01 · 1440×1610](../assets/details/backgrounds/fluid-hd-01.webp)。
+- 清晰度边界：从 2160 像素高的原片按原像素裁切，WebP 质量 95，不放大、不锐化、不涂抹；静态帧不能证明完整运动。
 
-![流体：原尺寸独立参考](../assets/details/backgrounds/fluid.png)
+![流体：原尺寸独立参考](../assets/details/backgrounds/fluid-hd-01.webp)
 <!-- /ui-atlas:details -->
 
 <a id="beams"></a>
@@ -109,15 +99,13 @@
 - 标识：`backgrounds/beams`；类型：组件／效果。
 - 效果要点：多道光从上方扫下或向外放射，像舞台追光；适合发布会风格首屏。
 - 指令例句：首屏背景加入有方向性的 Beams 光束扫动。
-- 媒体取舍：保留 GIF＋静态图片。光束扫动的方向、轨迹与循环是参考重点。
-- 参考：[GIF 动图](../assets/gifs/backgrounds/beams.gif) · [六帧对照图](../assets/filmstrips/backgrounds/beams.jpg)。
+- 媒体取舍：保留静态效果图与实现说明；连续路径、触发顺序、节奏和短暂状态需在项目中实际验证。
 
 <!-- ui-atlas:details backgrounds/beams -->
-- 原尺寸图片：[01 · 600×900](../assets/details/backgrounds/beams.png)。
-- 连续效果：[GIF · 600×900](../assets/gifs/backgrounds/beams.gif)。
-- 清晰度边界：从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。
+- 原尺寸图片：[01 · 1440×1610](../assets/details/backgrounds/beams-hd-01.webp)。
+- 清晰度边界：从 2160 像素高的原片按原像素裁切，WebP 质量 95，不放大、不锐化、不涂抹；静态帧不能证明完整运动。
 
-![光束：原尺寸独立参考](../assets/details/backgrounds/beams.png)
+![光束：原尺寸独立参考](../assets/details/backgrounds/beams-hd-01.webp)
 <!-- /ui-atlas:details -->
 
 <a id="matrix-rain"></a>
@@ -126,15 +114,13 @@
 - 标识：`backgrounds/matrix-rain`；类型：组件／效果。
 - 效果要点：绿色字符按竖列向下落，形成黑客帝国式效果；适合编程和安全主题。
 - 指令例句：背景使用竖列绿色字符向下落的 Matrix Rain。
-- 媒体取舍：保留 GIF＋静态图片。字符按竖列下落的方向与节奏依赖连续画面。
-- 参考：[GIF 动图](../assets/gifs/backgrounds/matrix-rain.gif) · [六帧对照图](../assets/filmstrips/backgrounds/matrix-rain.jpg)。
+- 媒体取舍：保留静态效果图与实现说明；连续路径、触发顺序、节奏和短暂状态需在项目中实际验证。
 
 <!-- ui-atlas:details backgrounds/matrix-rain -->
-- 原尺寸图片：[01 · 600×900](../assets/details/backgrounds/matrix-rain.png)。
-- 连续效果：[GIF · 600×900](../assets/gifs/backgrounds/matrix-rain.gif)。
-- 清晰度边界：从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。
+- 原尺寸图片：[01 · 1440×1610](../assets/details/backgrounds/matrix-rain-hd-01.webp)。
+- 清晰度边界：从 2160 像素高的原片按原像素裁切，WebP 质量 95，不放大、不锐化、不涂抹；静态帧不能证明完整运动。
 
-![字符雨：原尺寸独立参考](../assets/details/backgrounds/matrix-rain.png)
+![字符雨：原尺寸独立参考](../assets/details/backgrounds/matrix-rain-hd-01.webp)
 <!-- /ui-atlas:details -->
 
 <a id="dot-grid"></a>
@@ -143,15 +129,13 @@
 - 标识：`backgrounds/dot-grid`；类型：组件／效果。
 - 效果要点：规则小圆点铺满背景，鼠标附近的点变大、发光；整体较克制。
 - 指令例句：用规则 Dot Grid 背景，只有指针附近点轻微放大和提亮。
-- 媒体取舍：保留 GIF＋静态图片。需看局部提亮和放大如何跟随指针移动。
-- 参考：[GIF 动图](../assets/gifs/backgrounds/dot-grid.gif) · [六帧对照图](../assets/filmstrips/backgrounds/dot-grid.jpg)。
+- 媒体取舍：保留静态效果图与实现说明；连续路径、触发顺序、节奏和短暂状态需在项目中实际验证。
 
 <!-- ui-atlas:details backgrounds/dot-grid -->
-- 原尺寸图片：[01 · 600×900](../assets/details/backgrounds/dot-grid.png)。
-- 连续效果：[GIF · 600×900](../assets/gifs/backgrounds/dot-grid.gif)。
-- 清晰度边界：从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。
+- 原尺寸图片：[01 · 1440×1610](../assets/details/backgrounds/dot-grid-hd-01.webp)。
+- 清晰度边界：从 2160 像素高的原片按原像素裁切，WebP 质量 95，不放大、不锐化、不涂抹；静态帧不能证明完整运动。
 
-![点阵背景：原尺寸独立参考](../assets/details/backgrounds/dot-grid.png)
+![点阵背景：原尺寸独立参考](../assets/details/backgrounds/dot-grid-hd-01.webp)
 <!-- /ui-atlas:details -->
 
 <a id="retro-grid"></a>
@@ -160,15 +144,13 @@
 - 标识：`backgrounds/retro-grid`；类型：组件／效果。
 - 效果要点：地面发光网格向地平线延伸，具有复古赛博纵深；例子为音乐、游戏、潮牌页面。
 - 指令例句：加入朝地平线延伸的 Retro Grid 背景。
-- 媒体取舍：保留 GIF＋静态图片。需保留透视网格的流动观感；只参考网格构图时查看 JPG 即可。
-- 参考：[GIF 动图](../assets/gifs/backgrounds/retro-grid.gif) · [六帧对照图](../assets/filmstrips/backgrounds/retro-grid.jpg)。
+- 媒体取舍：保留静态效果图与实现说明；连续路径、触发顺序、节奏和短暂状态需在项目中实际验证。
 
 <!-- ui-atlas:details backgrounds/retro-grid -->
-- 原尺寸图片：[01 · 600×900](../assets/details/backgrounds/retro-grid.png)。
-- 连续效果：[GIF · 600×900](../assets/gifs/backgrounds/retro-grid.gif)。
-- 清晰度边界：从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。
+- 原尺寸图片：[01 · 1440×1610](../assets/details/backgrounds/retro-grid-hd-01.webp)。
+- 清晰度边界：从 2160 像素高的原片按原像素裁切，WebP 质量 95，不放大、不锐化、不涂抹；静态帧不能证明完整运动。
 
-![透视网格：原尺寸独立参考](../assets/details/backgrounds/retro-grid.png)
+![透视网格：原尺寸独立参考](../assets/details/backgrounds/retro-grid-hd-01.webp)
 <!-- /ui-atlas:details -->
 
 <a id="starfield"></a>
@@ -177,15 +159,13 @@
 - 标识：`backgrounds/starfield`；类型：组件／效果。
 - 效果要点：星点朝观察者飞来，形成太空穿越；示例建议用于开场或过渡。
 - 指令例句：过渡区域使用星点朝镜头飞来的 Starfield。
-- 媒体取舍：保留 GIF＋静态图片。星点迎面运动与透视速度差不能由单图表达。
-- 参考：[GIF 动图](../assets/gifs/backgrounds/starfield.gif) · [六帧对照图](../assets/filmstrips/backgrounds/starfield.jpg)。
+- 媒体取舍：保留静态效果图与实现说明；连续路径、触发顺序、节奏和短暂状态需在项目中实际验证。
 
 <!-- ui-atlas:details backgrounds/starfield -->
-- 原尺寸图片：[01 · 600×900](../assets/details/backgrounds/starfield.png)。
-- 连续效果：[GIF · 600×900](../assets/gifs/backgrounds/starfield.gif)。
-- 清晰度边界：从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。
+- 原尺寸图片：[01 · 1440×1610](../assets/details/backgrounds/starfield-hd-01.webp)。
+- 清晰度边界：从 2160 像素高的原片按原像素裁切，WebP 质量 95，不放大、不锐化、不涂抹；静态帧不能证明完整运动。
 
-![星空穿梭：原尺寸独立参考](../assets/details/backgrounds/starfield.png)
+![星空穿梭：原尺寸独立参考](../assets/details/backgrounds/starfield-hd-01.webp)
 <!-- /ui-atlas:details -->
 
 <a id="grain"></a>
@@ -194,14 +174,13 @@
 - 标识：`backgrounds/grain`；类型：组件／效果。
 - 效果要点：铺一层细小颗粒增加老照片质感；建议一页选一种主背景效果，避免堆叠。
 - 指令例句：给背景增加低强度细颗粒，避免与其他强动态背景叠加。
-- 媒体取舍：仅保留静态图片（JPG／PNG）。重点是颗粒纹理的强弱与质感，图片足够，不要求动态噪点。
-- 参考：[六帧对照图](../assets/filmstrips/backgrounds/grain.jpg)。
+- 媒体取舍：重点是颗粒纹理的强弱与质感，图片足够，不要求动态噪点。
 
 <!-- ui-atlas:details backgrounds/grain -->
-- 原尺寸图片：[01 · 600×900](../assets/details/backgrounds/grain.png)。
-- 清晰度边界：从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。
+- 原尺寸图片：[01 · 1440×1610](../assets/details/backgrounds/grain-hd-01.webp)。
+- 清晰度边界：从 2160 像素高的原片按原像素裁切，WebP 质量 95，不放大、不锐化、不涂抹；静态帧不能证明完整运动。
 
-![噪点颗粒：原尺寸独立参考](../assets/details/backgrounds/grain.png)
+![噪点颗粒：原尺寸独立参考](../assets/details/backgrounds/grain-hd-01.webp)
 <!-- /ui-atlas:details -->
 
 <a id="gradient"></a>
@@ -210,14 +189,13 @@
 - 标识：`backgrounds/gradient`；类型：组件／效果。
 - 效果要点：从一种颜色过渡到另一种颜色；基础渐变可保持静态，不要求持续流动。
 - 指令例句：使用干净的基础渐变，不把静态渐变误做成流体。
-- 媒体取舍：仅保留静态图片（JPG／PNG）。基础静态渐变只需颜色与构图参考，不引入持续流动。
-- 参考：[六帧对照图](../assets/filmstrips/backgrounds/gradient.jpg)。
+- 媒体取舍：基础静态渐变只需颜色与构图参考，不引入持续流动。
 
 <!-- ui-atlas:details backgrounds/gradient -->
-- 原尺寸图片：[01 · 600×900](../assets/details/backgrounds/gradient.png)。
-- 清晰度边界：从现存 GIF 解出原尺寸独立帧，避免总览缩图和二次 JPEG 压缩；GIF 的分辨率、色彩与源压缩限制仍在。
+- 原尺寸图片：[01 · 1440×1610](../assets/details/backgrounds/gradient-hd-01.webp)。
+- 清晰度边界：从 2160 像素高的原片按原像素裁切，WebP 质量 95，不放大、不锐化、不涂抹；静态帧不能证明完整运动。
 
-![渐变背景：原尺寸独立参考](../assets/details/backgrounds/gradient.png)
+![渐变背景：原尺寸独立参考](../assets/details/backgrounds/gradient-hd-01.webp)
 <!-- /ui-atlas:details -->
 
 <a id="ascii-dither"></a>

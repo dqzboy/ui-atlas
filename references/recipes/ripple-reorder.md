@@ -1,20 +1,12 @@
 # 拖拽插入线与递减让位 / Ripple Drag Reorder
 
-实现配方附高清演示截图与精选动图片段；参数是可调起点，仍需在目标项目与浏览器中验证。
+实现配方附高清演示截图；参数是可调起点，仍需在目标项目与浏览器中验证。
 
 ## 效果参考
 
 ![拖拽插入线与递减让位：效果参考](../../assets/recipes/ripple-reorder.jpg)
 
-图片对照拖拽中的不同位置；动图展示纵向列表中的拖动与让位，取景聚焦列表主体。
-
-![拖拽插入线与递减让位：交互片段](../../assets/details/mobile-interactions/ripple-reorder.gif)
-
-精简动图帧率见索引，大尺寸版为 15 fps；循环接缝不代表产品行为，也不能据此测定精确时长或缓动。
-
-媒体取舍：需看拖拽中的落点变化与邻项让位，保留未遮挡列表主体的连续片段。
-
-[精简动图](../../assets/recipes/ripple-reorder.gif)用于轻量安装；完整媒体版优先查看上方大尺寸动图。
+静态图用于核对构图、材质与可见状态；触发、连续运动和焦点管理需在实际项目中验证。
 
 ## 适用与边界
 
@@ -57,3 +49,5 @@ rows and docks I name, and reuse any drag helper the project already has.
 Move things with transforms, not layout. Let the keyboard reorder too, and
 with reduced motion keep only the line.
 ```
+
+参考片段：[连续动效片段](../../assets/recipes/ripple-reorder.gif)。

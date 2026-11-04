@@ -4,11 +4,10 @@ import argparse
 import json
 import re
 import shutil
-import struct
 
 from detail_media import load_quality, validate_quality
 from media_store import ROOT, load_manifest, local_media, matches
-from reference_docs import DETAIL_BLOCK
+from reference_docs import DETAIL_BLOCK, lightweight_document
 
 
 def sync(root=ROOT, restore=False):
@@ -24,7 +23,7 @@ def sync(root=ROOT, restore=False):
                 raise FileNotFoundError(f'No verified source for {value}; run fetch_media.py --all')
             target.parent.mkdir(parents=True, exist_ok=True)
             shutil.copyfile(source, target)
-    errors = validate_quality(root, check_files=True, check_links=False)
+    errors = validate_quality(root, check_files=False, check_links=False)
     if errors:
         raise ValueError('\n'.join(errors))
     for category in data['categories']:
@@ -54,39 +53,14 @@ def sync(root=ROOT, restore=False):
                 lines.append('- 原尺寸图片：' + ' · '.join(links) + '。')
                 if len(detail['images']) > 1 and detail.get('image_reason'):
                     lines.append('- 多图用途：' + detail['image_reason'])
-            gif = detail.get('gif') or entry.get('gif')
-            if gif:
-                if gif in quality['files']:
-                    record = quality['files'][gif]
-                    width, height = record['width'], record['height']
-                else:
-                    path = local_media(manifest, gif, root)
-                    if path is None:
-                        raise FileNotFoundError(gif)
-                    with path.open('rb') as media:
-                        width, height = struct.unpack('<HH', media.read(10)[6:10])
-                lines.append(f'- 连续效果：[GIF · {width}×{height}](../{gif})。')
             lines.append('- 清晰度边界：' + detail['limitation'])
             if detail.get('poster'):
                 lines += ['', f'![{entry["name"]}：原尺寸独立参考](../{detail["poster"]})']
             lines.append('<!-- /ui-atlas:details -->')
             body += '\n\n' + '\n'.join(lines) + '\n'
             text = text[:match.start(2)] + body + text[match.end(2):]
-        document.write_text(text.rstrip() + '\n')
+        document.write_text(lightweight_document(text.rstrip() + '\n', data['items'], manifest, quality))
 
-    for entry in data['items']:
-        detail = quality['entries'].get(entry['id'], {})
-        if entry['media_type'] != 'recipe' or not detail.get('gif'):
-            continue
-        path = root / entry['recipe']
-        text = path.read_text()
-        text = re.sub(r'(!\[[^\n]*\]\()\.\./\.\./assets/(?:recipes/[^)]+|details/[^)]+)\.gif\)',
-                      lambda match: match[1] + '../../' + detail['gif'] + ')', text)
-        if '../../' + entry['gif'] not in text:
-            text = text.replace('## 适用与边界',
-                                f'[精简动图](../../{entry["gif"]})用于轻量安装；完整媒体版优先查看上方大尺寸动图。\n\n## 适用与边界', 1)
-        text = re.sub(r'动图以 \d+(?:–\d+)? fps 导出；', '精简动图帧率见索引，大尺寸版为 15 fps；', text)
-        path.write_text(text)
     return len(quality['entries'])
 
 
