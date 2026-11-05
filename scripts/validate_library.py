@@ -98,7 +98,7 @@ def validate(root, check_media=False):
         media_type = entry.get('media_type')
         if not entry.get('media_reason'):
             errors.append(f'{label}: missing per-entry media decision reason')
-        if media_type == 'recipe':
+        if entry.get('recipe') or media_type == 'recipe':
             expected = f'references/recipes/{slug}.md'
             if entry.get('recipe') != expected or not (root / expected).is_file():
                 errors.append(f'{label}: missing or unexpected recipe')
@@ -108,6 +108,8 @@ def validate(root, check_media=False):
                 recipe = (root / expected).read_text()
                 if re.search(r'https?://|Kubai087|枯白|关注我', recipe, re.I):
                     errors.append(f'{label}: source identity or external link in recipe')
+        if media_type == 'recipe':
+            expected = f'references/recipes/{slug}.md'
             if entry.get('evidence') != 'implementation-recipe':
                 errors.append(f'{label}: recipe evidence type missing')
             expected_visual = ('sampled-demo-frames-and-clip' if entry.get('gif')

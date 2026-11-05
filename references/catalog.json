@@ -1531,8 +1531,8 @@
       "slug": "easing",
       "name": "缓动",
       "english": "Easing",
-      "summary": "速度变化决定运动观感；建议进场使用先快后慢的 ease-out，离场比进场更快更轻，协同元素节奏一致；跑马灯另用匀速。",
-      "prompt": "进场采用 ease-out，离场更快更轻，相关元素保持一致节奏。",
+      "summary": "按入场、离场、屏内移动、细小反馈与手势释放选择缓动，统一曲线与时长 token；保持现有动画对象、触发与位移。",
+      "prompt": "使用 011 动画节奏配方的两段提示词：先盘点当前曲线和时长，再按角色统一 motion token；保留动画对象、触发条件和位移，验证减弱动态与连续中断。",
       "kind": "pattern",
       "media_type": "image",
       "evidence": "static-reference",
@@ -1540,7 +1540,29 @@
       "images": [
         "assets/details/motion/easing-hd-01.webp"
       ],
-      "preview": "assets/details/motion/easing-hd-01.webp"
+      "preview": "assets/details/motion/easing-hd-01.webp",
+      "keywords": [
+        "011",
+        "动画节奏",
+        "缓动曲线",
+        "easing",
+        "ease-out",
+        "ease-in",
+        "ease-in-out",
+        "overshoot",
+        "spring",
+        "motion tokens",
+        "时长",
+        "减弱动态",
+        "prefers-reduced-motion",
+        "动画审查"
+      ],
+      "recipe": "references/recipes/easing.md",
+      "related": [
+        "motion/motion-rules",
+        "motion/spring",
+        "motion/stagger"
+      ]
     },
     {
       "id": "motion/motion-rules",

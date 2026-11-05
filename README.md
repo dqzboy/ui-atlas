@@ -48,6 +48,6 @@ npx skills add dqzboy/ui-atlas
 - **基础组件**：按钮、表单、卡片、表格、浮层、加载与错误状态。
 - **交互动效**：滚动、拖拽、磁吸、回弹、错峰、流光、文字与背景效果。
 - **页面布局**：Dashboard、企业工作台、移动服务门户、文档中心，以及官网与演示页面的设计方法。
-- **质感细节**：玻璃材质、圆角、阴影、中英文排版，以及 [10 份实现配方](references/craft-recipes.md)。
+- **质感细节**：玻璃材质、圆角、阴影、中英文排版，以及 [11 份实现配方](references/craft-recipes.md)。
 
 查看 [全部参考](references/index.md) · [技能说明](SKILL.md)

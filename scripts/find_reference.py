@@ -46,8 +46,9 @@ def main():
         print(f"{entry['id']} | {entry['name']} / {entry['english']}")
         print(f"  要点: {entry['summary']}\n  例句: {entry['prompt']}")
         print(f"  说明: {root}/references/{entry['category']}.md#{entry['slug']}")
-        if entry.get('media_type') == 'recipe':
+        if entry.get('recipe'):
             print(f"  配方: {root / entry['recipe']}")
+        if entry.get('media_type') == 'recipe':
             print(f"  效果图: {local_media(manifest, entry['preview'], root) or root / entry['preview']}")
             if entry.get('gif'):
                 print(f"  动图: {local_media(manifest, entry['gif'], root) or root / entry['gif']}")

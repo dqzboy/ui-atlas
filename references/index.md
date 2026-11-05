@@ -1,6 +1,6 @@
 # UI 参考索引
 
-共 **177 条参考、18 个分类**：155 组组件／状态／设计规则、12 组精选页面图集，以及 10 份实现配方。相同效果只保留代表图，必要状态和不同页面才使用多图。
+共 **177 条参考、18 个分类**：155 组组件／状态／设计规则（缓动条目附 011 配方）、12 组精选页面图集，以及 10 组独立配方条目；共提供 11 份完整实现配方。相同效果只保留代表图，必要状态和不同页面才使用多图。
 
 先按名称、意图与关键词筛选，再查看匹配条目的图片和说明。配方参数是实现起点，视觉参考不能替代实际操作验证。
 
@@ -31,10 +31,11 @@
 python3 scripts/find_reference.py "长按确认"
 python3 scripts/find_reference.py "文字镂空"
 python3 scripts/find_reference.py "PPT"
+python3 scripts/find_reference.py "动画节奏"
 python3 scripts/fetch_media.py text-effects/text-mask
 python3 scripts/fetch_media.py loading-errors/loading-button --media images
 ```
 
 - 组件与文字特效的原片截图随包提供，其他页面图片按需下载并校验 SHA-256，重复使用读取缓存。
 - 静态图显示构图与状态；触发、路径、速度、焦点、请求和响应式行为在真实项目中验证。5 份配方另有精选连续片段。
-- [10 份质感配方](craft-recipes.md) · [机器索引](catalog.json) · [图片清晰度](media-quality.md) · [技能说明](../SKILL.md)
+- [11 份质感配方](craft-recipes.md) · [机器索引](catalog.json) · [图片清晰度](media-quality.md) · [技能说明](../SKILL.md)
