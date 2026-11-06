@@ -1,10 +1,11 @@
 # 玻璃材质与背景
 
-按背景、主题与前景可读性调整液态玻璃；折射是需要实测的渐进增强。当前条目提供实现配方、状态对照图和精简动态演示。
+按背景、主题与前景可读性选择液态玻璃或聊天气泡材质；折射和动态行为需在目标项目中实测。
 
 ## 目录
 
 - [自适应液态玻璃材质](#liquid-glass)
+- [消息气泡的材质与动效（探索版）](#message-bubble-materials)
 
 <a id="liquid-glass"></a>
 ## 自适应液态玻璃材质 / Adaptive Liquid Glass
@@ -18,3 +19,22 @@
 - 媒体取舍：需看背景变化与主题切换时玻璃的透射、折射和前景对比，保留播放器主体的连续片段。
 
 - 连续动效：[GIF 片段](../assets/recipes/liquid-glass.gif)。
+
+<a id="message-bubble-materials"></a>
+## 消息气泡的材质与动效（探索版） / Message Bubble Materials and Motion
+
+- 标识：`glass-materials/message-bubble-materials`；类型：组件／效果。
+- 效果要点：Cirrus 薄磨砂、像素网格、Aqua 果冻、全线程共享渐变、拟物和纯色六种气泡材质，配发送、长回复与中间删除的材质专属运动。
+- 实现边界：区分独立演示与现有界面改造；改造默认只调整气泡，保留消息数据、组件接口、加载与流式协议及全部图标。输入区、菜单、背景和思考点阵按用户已授权范围处理。
+- 验证重点：预排版文字不随展开重新换行，消息不重叠；删除后按组补位，连续操作可中断；底部跟随不抢用户上翻位置；减弱动态时保留必要淡入淡出。
+- 指令例句：按已选材质改造聊天气泡，配发送、回复展开与删除动效，保留业务和消息加载机制。
+- [012 完整配方与六种材质参考](recipes/message-bubble-materials.md)。
+- 媒体取舍：六张图片各代表一种材质，不附重复帧、大 GIF 或原视频；连续行为需要实际项目验证。
+
+<!-- ui-atlas:details glass-materials/message-bubble-materials -->
+- 原尺寸图片：[01 · 2160×1390](../assets/details/glass-materials/message-bubble-cirrus.webp) · [02 · 2160×1390](../assets/details/glass-materials/message-bubble-pixel.webp) · [03 · 2160×1390](../assets/details/glass-materials/message-bubble-aqua.webp) · [04 · 2160×1390](../assets/details/glass-materials/message-bubble-gradient.webp) · [05 · 2160×1390](../assets/details/glass-materials/message-bubble-skeuomorphic.webp) · [06 · 2160×1390](../assets/details/glass-materials/message-bubble-solid.webp)。
+- 多图用途：六张原尺寸截图分别展示六种不同材质，不重复存相近状态；完整运动、弹簧、回复与删除行为按配方在项目中验证。
+- 清晰度边界：从 2160×2880 视频按原像素裁出 2160×1390 消息区域，WebP 质量 95；不放大、不锐化、不涂抹。静态图仅证明材质与可见布局，不能证明连续运动。
+
+![消息气泡的材质与动效（探索版）：原尺寸独立参考](../assets/details/glass-materials/message-bubble-cirrus.webp)
+<!-- /ui-atlas:details -->

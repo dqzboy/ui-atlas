@@ -3175,6 +3175,57 @@
       "gif": "assets/recipes/liquid-glass.gif"
     },
     {
+      "id": "glass-materials/message-bubble-materials",
+      "category": "glass-materials",
+      "category_title": "玻璃材质与背景",
+      "slug": "message-bubble-materials",
+      "name": "消息气泡的材质与动效（探索版）",
+      "english": "Message Bubble Materials and Motion",
+      "summary": "Cirrus、像素、Aqua、共享渐变、拟物、纯色六种聊天气泡材质，配发送、长回复展开与中间删除补位；改造默认只影响气泡。",
+      "prompt": "参考 012 消息气泡配方，按已选材质调整现有聊天气泡及发送、回复展开、删除动效，保留消息数据、加载协议、组件接口和图标；输入区、菜单、背景与思考指示器按授权范围处理。",
+      "kind": "pattern",
+      "keywords": [
+        "012",
+        "聊天",
+        "消息气泡",
+        "Agent",
+        "AI chat",
+        "Cirrus",
+        "像素",
+        "Pixel",
+        "Aqua",
+        "果冻",
+        "共享渐变",
+        "Gradient",
+        "Skeuomorphic",
+        "拟物",
+        "Solid",
+        "纯色",
+        "思考点阵",
+        "流式回复",
+        "删除补位",
+        "消息分组"
+      ],
+      "media_type": "image",
+      "evidence": "static-reference",
+      "recipe": "references/recipes/message-bubble-materials.md",
+      "images": [
+        "assets/details/glass-materials/message-bubble-cirrus.webp",
+        "assets/details/glass-materials/message-bubble-pixel.webp",
+        "assets/details/glass-materials/message-bubble-aqua.webp",
+        "assets/details/glass-materials/message-bubble-gradient.webp",
+        "assets/details/glass-materials/message-bubble-skeuomorphic.webp",
+        "assets/details/glass-materials/message-bubble-solid.webp"
+      ],
+      "preview": "assets/details/glass-materials/message-bubble-cirrus.webp",
+      "media_reason": "六张原尺寸截图分别展示六种不同材质，不重复存相近状态；完整运动、弹簧、回复与删除行为按配方在项目中验证。",
+      "related": [
+        "motion/easing",
+        "glass-materials/liquid-glass",
+        "buttons-controls/tactile-button"
+      ]
+    },
+    {
       "id": "buttons-controls/particle-burst",
       "category": "buttons-controls",
       "slug": "particle-burst",

@@ -1466,6 +1466,48 @@
       "width": 1440,
       "height": 1330,
       "bundled": true
+    },
+    "assets/details/glass-materials/message-bubble-cirrus.webp": {
+      "bytes": 134398,
+      "sha256": "4a8e8c3ef01b0521e52691f7f3f861a9bc9baa133f36192c3201bfae85307f1f",
+      "width": 2160,
+      "height": 1390,
+      "bundled": true
+    },
+    "assets/details/glass-materials/message-bubble-pixel.webp": {
+      "bytes": 125406,
+      "sha256": "ec0a2c22eafdcfae4e53ee2ced0d1ceb230b9641b587576c754825004cf127bd",
+      "width": 2160,
+      "height": 1390,
+      "bundled": true
+    },
+    "assets/details/glass-materials/message-bubble-aqua.webp": {
+      "bytes": 130734,
+      "sha256": "b08841d19383e2b897b4553aa09383877c7c32dbf682148d44893e7587139563",
+      "width": 2160,
+      "height": 1390,
+      "bundled": true
+    },
+    "assets/details/glass-materials/message-bubble-gradient.webp": {
+      "bytes": 80878,
+      "sha256": "0ade222e661af26e40058bb53dd473d2fb7420247efe2e9b408789f00c90039e",
+      "width": 2160,
+      "height": 1390,
+      "bundled": true
+    },
+    "assets/details/glass-materials/message-bubble-skeuomorphic.webp": {
+      "bytes": 96328,
+      "sha256": "737253d90a13140fbdd505e41bb3a80e75c500d7ae85701754feebf2d1e79504",
+      "width": 2160,
+      "height": 1390,
+      "bundled": true
+    },
+    "assets/details/glass-materials/message-bubble-solid.webp": {
+      "bytes": 67486,
+      "sha256": "bf84d9fbdbdfa208d7a52ce0a22b7660841df2dfa017d0b914db7da05e953b39",
+      "width": 2160,
+      "height": 1390,
+      "bundled": true
     }
   }
 }
