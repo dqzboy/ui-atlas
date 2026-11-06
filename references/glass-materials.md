@@ -2,10 +2,13 @@
 
 按背景、主题与前景可读性选择液态玻璃或聊天气泡材质；折射和动态行为需在目标项目中实测。
 
+卡片的毛玻璃、全息与金属选型及组合提示词见 [卡片质感指南](card-craft.md)。
+
 ## 目录
 
 - [自适应液态玻璃材质](#liquid-glass)
 - [消息气泡的材质与动效（探索版）](#message-bubble-materials)
+- [拉丝金属卡片](#brushed-metal)
 
 <a id="liquid-glass"></a>
 ## 自适应液态玻璃材质 / Adaptive Liquid Glass
@@ -38,4 +41,20 @@
 - 清晰度边界：从 2160×2880 视频按原像素裁出 2160×1390 消息区域，WebP 质量 95；不放大、不锐化、不涂抹。静态图仅证明材质与可见布局，不能证明连续运动。
 
 ![消息气泡的材质与动效（探索版）：原尺寸独立参考](../assets/details/glass-materials/message-bubble-cirrus.webp)
+<!-- /ui-atlas:details -->
+
+<a id="brushed-metal"></a>
+## 拉丝金属卡片 / Brushed Metal Card
+
+- 标识：`glass-materials/brushed-metal`；类型：组件／效果。
+- 效果要点：低对比的定向细纹叠加金属明暗、高光边和压印细节，适合会员卡或少量实体感卡片。
+- 实现提示词：为选定会员卡加入细密同向拉丝、克制金属渐变和边缘高光；保留真实文字、图标和操作，不把整张卡片内容栅格化。
+- 核对要点：纹理只在装饰层；正文保持足够对比，拉丝不能盖住字符；不把金属低对比压印照搬到关键操作。
+- 媒体取舍：仅保留一张无讲解文字的效果参考；触发、时序、运动路径与减弱动态需在项目中验证。
+
+<!-- ui-atlas:details glass-materials/brushed-metal -->
+- 原尺寸图片：[01 · 1045×700](../assets/details/glass-materials/brushed-metal-effect.webp)。
+- 清晰度边界：1440×2560 视频在播放器接近原尺寸呈现后，仅裁出 UI 效果区域；WebP 质量 98，未放大、未锐化、未涂抹。原画中的材质模糊和光晕属于效果；静态图只核对可见状态，连续运动在项目中验证。
+
+![拉丝金属卡片：原尺寸独立参考](../assets/details/glass-materials/brushed-metal-effect.webp)
 <!-- /ui-atlas:details -->

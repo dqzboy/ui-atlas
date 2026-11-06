@@ -2,6 +2,8 @@
 
 按用户的目标、既有设计系统和实际触发方式选择。示例中的品牌与业务文案只用于说明；参数作为实现起点，连续行为需在项目中验证。
 
+仅保留实现后的效果画面；设计规则和提示词在下面各条目中读取。
+
 ## 目录
 
 - [数据看板的重点与对齐](#dashboard-focus)
@@ -20,11 +22,10 @@
 - 关联条目：`cards-tables/stat-card`、`interface-details/cjk-latin-typesetting`。
 
 <!-- ui-atlas:details design-composition/dashboard-focus -->
-- 原尺寸图片：[01 · 1440×1610](../assets/details/design-composition/dashboard-focus-hd-01.webp) · [02 · 1440×1610](../assets/details/design-composition/dashboard-focus-hd-02.webp)。
-- 多图用途：对照统一堆叠图表与突出关键指标后的看板。
-- 清晰度边界：从 2160 像素高的原片按原像素裁切，WebP 质量 95，不放大、不锐化、不涂抹；静态帧不能证明完整运动。
+- 原尺寸图片：[01 · 1336×836](../assets/details/design-composition/dashboard-focus-effect.webp)。
+- 清晰度边界：从已有原片参考图裁出 1336×836 的完整 UI 区域，未缩放、未锐化、未涂抹，重新编码为 WebP 质量 98；沿用原素材已有细节，不能恢复其本身没有的信息。静态图只核对可见界面。
 
-![数据看板的重点与对齐：原尺寸独立参考](../assets/details/design-composition/dashboard-focus-hd-02.webp)
+![数据看板的重点与对齐：原尺寸独立参考](../assets/details/design-composition/dashboard-focus-effect.webp)
 <!-- /ui-atlas:details -->
 
 <a id="slide-story"></a>
@@ -37,11 +38,10 @@
 - 核对要点：一页内容不能因精简而丢失结论依据；在实际播放尺寸核对小字、图例、页边距和跨页一致性。
 
 <!-- ui-atlas:details design-composition/slide-story -->
-- 原尺寸图片：[01 · 1440×1610](../assets/details/design-composition/slide-story-hd-01.webp) · [02 · 1440×1610](../assets/details/design-composition/slide-story-hd-02.webp)。
-- 多图用途：对照密集单页与按观点拆分后的统一演示版式。
-- 清晰度边界：从 2160 像素高的原片按原像素裁切，WebP 质量 95，不放大、不锐化、不涂抹；静态帧不能证明完整运动。
+- 原尺寸图片：[01 · 668×1245](../assets/details/design-composition/slide-story-effect.webp)。
+- 清晰度边界：从 1440×2160 原片按原像素裁出已实现的界面，WebP 质量 98；未缩放、未锐化、未涂抹。仅展示完成后的版式与层级，交互在项目中验证。
 
-![PPT 单页观点与统一模板：原尺寸独立参考](../assets/details/design-composition/slide-story-hd-02.webp)
+![PPT 单页观点与统一模板：原尺寸独立参考](../assets/details/design-composition/slide-story-effect.webp)
 <!-- /ui-atlas:details -->
 
 <a id="landing-hierarchy"></a>
@@ -55,11 +55,10 @@
 - 关联条目：`interface-details/continuous-corners`、`buttons-controls/button-hierarchy`。
 
 <!-- ui-atlas:details design-composition/landing-hierarchy -->
-- 原尺寸图片：[01 · 1440×1610](../assets/details/design-composition/landing-hierarchy-hd-01.webp) · [02 · 1440×1610](../assets/details/design-composition/landing-hierarchy-hd-02.webp) · [03 · 1440×1330](../assets/details/design-composition/landing-hierarchy-hd-03.webp)。
-- 多图用途：对照原首页与层级调整后的整页，另保留功能网格细节。
-- 清晰度边界：从 2160 像素高的原片按原像素裁切，WebP 质量 95，不放大、不锐化、不涂抹；静态帧不能证明完整运动。
+- 原尺寸图片：[01 · 1334×735](../assets/details/design-composition/landing-hierarchy-effect.webp)。
+- 清晰度边界：从 1440×2160 原片按原像素裁出已实现的界面，WebP 质量 98；未缩放、未锐化、未涂抹。仅展示完成后的版式与层级，交互在项目中验证。
 
-![官网首页的层级与留白：原尺寸独立参考](../assets/details/design-composition/landing-hierarchy-hd-02.webp)
+![官网首页的层级与留白：原尺寸独立参考](../assets/details/design-composition/landing-hierarchy-effect.webp)
 <!-- /ui-atlas:details -->
 
 <a id="design-spec"></a>
@@ -70,10 +69,11 @@
 - 画面要点：将品牌色、排版、间距、圆角、阴影与状态规则记录为项目中的设计清单，后续页面保持一致。
 - 实现提示词：整理当前项目已确认的设计规则到一份设计规范：颜色 token、字号层级、间距、圆角、阴影、组件状态和允许的动效；后续界面引用这份规范，按实际需求更新。
 - 核对要点：只记录项目真实采用的规则，不把示例数值设为全局命令；规范与实际组件保持一致，新增样式需解释差异。
+- 参考用途：复用官网完成界面，观察统一颜色、排版、间距与圆角的落地结果；该图不证明规范文件已生成。
 
 <!-- ui-atlas:details design-composition/design-spec -->
-- 原尺寸图片：[01 · 1440×1610](../assets/details/design-composition/design-spec-hd-01.webp)。
-- 清晰度边界：从 2160 像素高的原片按原像素裁切，WebP 质量 95，不放大、不锐化、不涂抹；静态帧不能证明完整运动。
+- 原尺寸图片：[01 · 1334×735](../assets/details/design-composition/landing-hierarchy-effect.webp)。
+- 清晰度边界：从 1440×2160 原片按原像素裁出已实现的界面，WebP 质量 98；未缩放、未锐化、未涂抹。仅展示完成后的版式与层级，交互在项目中验证。
 
-![把设计规则写成项目规范：原尺寸独立参考](../assets/details/design-composition/design-spec-hd-01.webp)
+![把设计规则写成项目规范：原尺寸独立参考](../assets/details/design-composition/landing-hierarchy-effect.webp)
 <!-- /ui-atlas:details -->

@@ -1,6 +1,8 @@
 # UI 参考索引
 
-共 **178 条参考、18 个分类**：156 组组件／状态／设计规则（缓动与消息气泡条目附 011、012 配方）、12 组精选页面图集，以及 10 组独立配方条目；共提供 12 份完整实现配方。相同效果只保留代表图，必要状态和不同页面才使用多图。
+共 **191 条参考、18 个分类**：169 组组件／状态／设计规则（缓动与消息气泡条目附 011、012 配方）、12 组精选页面图集，以及 10 组独立配方条目；共提供 12 份完整实现配方。相同效果只保留代表图，必要状态和不同页面才使用多图。
+
+新增卡片材质与网页动效：按需读取 [23 项卡片质感指南](card-craft.md) 或 [20 种动效选型](motion-selection.md)，实现说明与效果图分开使用。
 
 先按名称、意图与关键词筛选，再查看匹配条目的图片和说明。配方参数是实现起点，视觉参考不能替代实际操作验证。
 
@@ -11,13 +13,13 @@
 | 背景特效 | 13 | [backgrounds.md](backgrounds.md) |
 | 卡片与表格 | 15 | [cards-tables.md](cards-tables.md) |
 | 表单 | 14 | [forms.md](forms.md) |
-| 常见动效 | 17 | [motion.md](motion.md) |
+| 常见动效 | 26 | [motion.md](motion.md) |
 | 按钮、状态与选项 | 43 | [buttons-controls.md](buttons-controls.md) |
 | Web 微交互 | 10 | [web-interactions.md](web-interactions.md) |
 | 移动端交互 | 1 | [mobile-interactions.md](mobile-interactions.md) |
 | Dashboard 与后台导航 | 4 | [dashboard-navigation.md](dashboard-navigation.md) |
-| 玻璃材质与背景 | 2 | [glass-materials.md](glass-materials.md) |
-| 界面排版与细节 | 2 | [interface-details.md](interface-details.md) |
+| 玻璃材质与背景 | 3 | [glass-materials.md](glass-materials.md) |
+| 界面排版与细节 | 5 | [interface-details.md](interface-details.md) |
 | 企业工作台与业务后台 | 4 | [enterprise-workbenches.md](enterprise-workbenches.md) |
 | 数据可视化与数字孪生 | 6 | [data-visualization.md](data-visualization.md) |
 | 移动端工作台与服务门户 | 3 | [mobile-workbenches.md](mobile-workbenches.md) |

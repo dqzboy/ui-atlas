@@ -558,7 +558,7 @@
       "name": "流动渐变",
       "english": "Mesh Gradient",
       "summary": "多种颜色如丝绸般揉合并缓慢流动；例子为支付、金融网站首屏。",
-      "prompt": "用柔和缓慢流动的 Mesh Gradient 作为首屏背景。",
+      "prompt": "为指定区域设置柔和的网格渐变；先确认静态还是流动，再实现动态调度。",
       "kind": "pattern",
       "media_type": "image",
       "evidence": "static-reference",
@@ -566,7 +566,12 @@
       "images": [
         "assets/details/backgrounds/mesh-gradient-hd-01.webp"
       ],
-      "preview": "assets/details/backgrounds/mesh-gradient-hd-01.webp"
+      "preview": "assets/details/backgrounds/mesh-gradient-hd-01.webp",
+      "implementation": "网格渐变由多个柔和色团相互融合；卡片可使用静态 Mesh，不把流动设为必要条件。",
+      "keywords": [
+        "网格渐变",
+        "Mesh Gradient"
+      ]
     },
     {
       "id": "backgrounds/particle-wave",
@@ -720,7 +725,7 @@
       "name": "噪点颗粒",
       "english": "Grain",
       "summary": "铺一层细小颗粒增加老照片质感；建议一页选一种主背景效果，避免堆叠。",
-      "prompt": "给背景增加低强度细颗粒，避免与其他强动态背景叠加。",
+      "prompt": "给卡片渐变增加低强度静态颗粒，只处理背景装饰，保留文字与图标锐利。",
       "kind": "pattern",
       "media_type": "image",
       "evidence": "static-reference",
@@ -728,7 +733,12 @@
       "images": [
         "assets/details/backgrounds/grain-hd-01.webp"
       ],
-      "preview": "assets/details/backgrounds/grain-hd-01.webp"
+      "preview": "assets/details/backgrounds/grain-hd-01.webp",
+      "implementation": "卡片可在渐变装饰层上叠加低强度静态细噪点；约 5% 仅作强度起点，需按尺寸和主题调整。",
+      "keywords": [
+        "卡片噪点",
+        "细噪点"
+      ]
     },
     {
       "id": "backgrounds/gradient",
@@ -738,7 +748,7 @@
       "name": "渐变背景",
       "english": "Gradient",
       "summary": "从一种颜色过渡到另一种颜色；基础渐变可保持静态，不要求持续流动。",
-      "prompt": "使用干净的基础渐变，不把静态渐变误做成流体。",
+      "prompt": "给选定卡片使用同一品牌色相由浅到深的静态渐变，保持文字对比和现有主题。",
       "kind": "pattern",
       "media_type": "image",
       "evidence": "static-reference",
@@ -746,7 +756,12 @@
       "images": [
         "assets/details/backgrounds/gradient-hd-01.webp"
       ],
-      "preview": "assets/details/backgrounds/gradient-hd-01.webp"
+      "preview": "assets/details/backgrounds/gradient-hd-01.webp",
+      "implementation": "卡片同色渐变使用同一色相的明暗过渡；背景渐变与卡片渐变按作用范围分别设置，不要求持续运动。",
+      "keywords": [
+        "同色渐变",
+        "Tonal Gradient"
+      ]
     },
     {
       "id": "cards-tables/carousel",
@@ -1262,7 +1277,7 @@
       "name": "边缘流光",
       "english": "Border Beam",
       "summary": "光沿卡片边框循环移动，用于突出推荐套餐或新功能；运动路径在边缘，不是扫过整个表面。",
-      "prompt": "只给推荐套餐卡片加沿边框环绕的 Border Beam。",
+      "prompt": "只给推荐卡片加一小段沿边框运行的光带，保持其余边框安静，减弱动态时改为静态高亮。",
       "kind": "pattern",
       "media_type": "image",
       "evidence": "static-reference",
@@ -1270,7 +1285,11 @@
       "images": [
         "assets/details/motion/border-beam-hd-01.webp"
       ],
-      "preview": "assets/details/motion/border-beam-hd-01.webp"
+      "preview": "assets/details/motion/border-beam-hd-01.webp",
+      "implementation": "别名：跑马灯描边。只让一小段亮光沿卡片边缘循环，其他边缘保持较暗；用于单个重点入口。",
+      "keywords": [
+        "跑马灯描边"
+      ]
     },
     {
       "id": "motion/spotlight",
@@ -1572,15 +1591,29 @@
       "name": "动效时长、性能与减弱动态",
       "english": "Motion rules",
       "summary": "常见节奏起点：小动作约 0.1–0.2 秒，弹窗与抽屉约 0.2–0.3 秒；尽量动画化位置、大小和透明度；尊重减弱动态效果设置。",
-      "prompt": "按交互尺度设置时长，优先 transform 和 opacity，开启减弱动态时关闭非必要动画。",
+      "prompt": "按交互尺度设置时长，优先 transform 和 opacity，开启减弱动态时关闭非必要动画。 具体效果先读取 references/motion-selection.md 中的 20 种选型与提示词。",
       "kind": "rule",
       "media_type": "image",
       "evidence": "static-reference",
-      "media_reason": "这是时长、性能与减弱动态的文字规则，拼图讲解静态图足够。",
+      "media_reason": "原有图片仅辅助查看通用节奏；具体 20 种动效按 motion-selection.md 选型，未附图的效果只依据文字，连续运动在项目验证。",
       "images": [
         "assets/details/motion/motion-rules.png"
       ],
-      "preview": "assets/details/motion/motion-rules.png"
+      "preview": "assets/details/motion/motion-rules.png",
+      "implementation": "动效具体选型与 20 种效果的实现提示词见 motion-selection.md。液态扭曲、共享元素转场、无限画廊、物理掉落与页面转场以文字说明为准；不借用其他效果的图片作为视觉证据。",
+      "keywords": [
+        "20种动效",
+        "液态扭曲",
+        "Liquid Distortion",
+        "共享元素转场",
+        "Shared Element Transition",
+        "无限画廊",
+        "Infinite Gallery",
+        "物理掉落",
+        "Physics Drop",
+        "页面转场",
+        "Page Transition"
+      ]
     },
     {
       "id": "buttons-controls/button-hierarchy",
@@ -3904,12 +3937,11 @@
       "category_title": "页面与演示设计",
       "media_type": "image",
       "evidence": "static-reference",
-      "media_reason": "对照统一堆叠图表与突出关键指标后的看板。",
+      "media_reason": "只保留已实现的界面效果；原视频的概念说明、修改前方案与参数标注改为文档文字。",
       "images": [
-        "assets/details/design-composition/dashboard-focus-hd-01.webp",
-        "assets/details/design-composition/dashboard-focus-hd-02.webp"
+        "assets/details/design-composition/dashboard-focus-effect.webp"
       ],
-      "preview": "assets/details/design-composition/dashboard-focus-hd-02.webp"
+      "preview": "assets/details/design-composition/dashboard-focus-effect.webp"
     },
     {
       "id": "design-composition/slide-story",
@@ -3933,12 +3965,11 @@
       "category_title": "页面与演示设计",
       "media_type": "image",
       "evidence": "static-reference",
-      "media_reason": "对照密集单页与按观点拆分后的统一演示版式。",
+      "media_reason": "只保留已实现的界面效果；原视频的概念说明、修改前方案与参数标注改为文档文字。",
       "images": [
-        "assets/details/design-composition/slide-story-hd-01.webp",
-        "assets/details/design-composition/slide-story-hd-02.webp"
+        "assets/details/design-composition/slide-story-effect.webp"
       ],
-      "preview": "assets/details/design-composition/slide-story-hd-02.webp"
+      "preview": "assets/details/design-composition/slide-story-effect.webp"
     },
     {
       "id": "design-composition/landing-hierarchy",
@@ -3963,13 +3994,11 @@
       "category_title": "页面与演示设计",
       "media_type": "image",
       "evidence": "static-reference",
-      "media_reason": "对照原首页与层级调整后的整页，另保留功能网格细节。",
+      "media_reason": "只保留已实现的界面效果；原视频的概念说明、修改前方案与参数标注改为文档文字。",
       "images": [
-        "assets/details/design-composition/landing-hierarchy-hd-01.webp",
-        "assets/details/design-composition/landing-hierarchy-hd-02.webp",
-        "assets/details/design-composition/landing-hierarchy-hd-03.webp"
+        "assets/details/design-composition/landing-hierarchy-effect.webp"
       ],
-      "preview": "assets/details/design-composition/landing-hierarchy-hd-02.webp"
+      "preview": "assets/details/design-composition/landing-hierarchy-effect.webp"
     },
     {
       "id": "design-composition/design-spec",
@@ -3991,11 +4020,341 @@
       "category_title": "页面与演示设计",
       "media_type": "image",
       "evidence": "static-reference",
-      "media_reason": "原片独立截图用于核对具体构图与可见状态；动作路径、时序和实际业务结果在项目中验证。",
+      "media_reason": "复用官网完成后的界面作为规范落地结果示例；规范的颜色、排版、间距与状态清单以文字表达，图片不证明规范文件已生成。",
       "images": [
-        "assets/details/design-composition/design-spec-hd-01.webp"
+        "assets/details/design-composition/landing-hierarchy-effect.webp"
       ],
-      "preview": "assets/details/design-composition/design-spec-hd-01.webp"
+      "preview": "assets/details/design-composition/landing-hierarchy-effect.webp"
+    },
+    {
+      "id": "glass-materials/brushed-metal",
+      "category": "glass-materials",
+      "category_title": "玻璃材质与背景",
+      "slug": "brushed-metal",
+      "name": "拉丝金属卡片",
+      "english": "Brushed Metal Card",
+      "summary": "低对比的定向细纹叠加金属明暗、高光边和压印细节，适合会员卡或少量实体感卡片。",
+      "prompt": "为选定会员卡加入细密同向拉丝、克制金属渐变和边缘高光；保留真实文字、图标和操作，不把整张卡片内容栅格化。",
+      "kind": "pattern",
+      "media_reason": "仅保留一张无讲解文字的效果参考；触发、时序、运动路径与减弱动态需在项目中验证。",
+      "implementation": "纹理只在装饰层；正文保持足够对比，拉丝不能盖住字符；不把金属低对比压印照搬到关键操作。",
+      "keywords": [
+        "拉丝",
+        "金属",
+        "会员卡",
+        "材质"
+      ],
+      "images": [
+        "assets/details/glass-materials/brushed-metal-effect.webp"
+      ],
+      "preview": "assets/details/glass-materials/brushed-metal-effect.webp",
+      "media_type": "image",
+      "evidence": "static-reference"
+    },
+    {
+      "id": "motion/gradient-border",
+      "category": "motion",
+      "category_title": "常见动效",
+      "slug": "gradient-border",
+      "name": "静态渐变描边",
+      "english": "Gradient Border",
+      "summary": "以静态渐变细边强调重要卡片，其他同级卡片保持普通边框。",
+      "prompt": "只给推荐卡片添加静态品牌渐变描边，圆角连续、内外边框同心，保留内容尺寸与主次按钮。",
+      "kind": "pattern",
+      "media_reason": "仅保留一张无讲解文字的效果参考；触发、时序、运动路径与减弱动态需在项目中验证。",
+      "implementation": "使用独立边框层并隔离内容；不自动添加旋转、闪烁或持续流光。",
+      "keywords": [
+        "渐变描边",
+        "静态边框"
+      ],
+      "images": [
+        "assets/details/motion/gradient-border-effect.webp"
+      ],
+      "preview": "assets/details/motion/gradient-border-effect.webp",
+      "media_type": "image",
+      "evidence": "static-reference"
+    },
+    {
+      "id": "motion/flowing-border",
+      "category": "motion",
+      "category_title": "常见动效",
+      "slug": "flowing-border",
+      "name": "环绕流光边框",
+      "english": "Flowing Gradient Border",
+      "summary": "较长的渐变亮带沿卡片周边流动，与短光段的 Border Beam 区分。",
+      "prompt": "为唯一推荐卡片设置沿周边缓慢环绕的渐变边框；只动画装饰层，卡片正文与布局保持稳定。",
+      "kind": "pattern",
+      "media_reason": "仅保留一张无讲解文字的效果参考；触发、时序、运动路径与减弱动态需在项目中验证。",
+      "implementation": "圆角处无断裂、内部不漏光；离屏暂停，减弱动态时保留静态细边。静态帧不能判断绕行速度。",
+      "keywords": [
+        "流光边框",
+        "环绕渐变"
+      ],
+      "images": [
+        "assets/details/motion/flowing-border-effect.webp"
+      ],
+      "preview": "assets/details/motion/flowing-border-effect.webp",
+      "media_type": "image",
+      "evidence": "static-reference"
+    },
+    {
+      "id": "motion/card-glow",
+      "category": "motion",
+      "category_title": "常见动效",
+      "slug": "card-glow",
+      "name": "卡片外部光晕",
+      "english": "Card Glow",
+      "summary": "卡片外围柔和扩散的光晕分离前后层次，适合深色界面的单个重点指标。",
+      "prompt": "在重点卡片外部增加低强度品牌光晕，保持卡片内部文字和图表清晰；其他卡片只用普通边框与阴影。",
+      "kind": "pattern",
+      "media_reason": "仅保留一张无讲解文字的效果参考；触发、时序、运动路径与减弱动态需在项目中验证。",
+      "implementation": "光晕独立于文字层且不截断；控制叠加数量和绘制成本，不改变数据含义。",
+      "keywords": [
+        "光晕",
+        "卡片质感",
+        "外发光"
+      ],
+      "images": [
+        "assets/details/motion/card-glow-effect.webp"
+      ],
+      "preview": "assets/details/motion/card-glow-effect.webp",
+      "media_type": "image",
+      "evidence": "static-reference"
+    },
+    {
+      "id": "interface-details/glowing-divider",
+      "category": "interface-details",
+      "category_title": "界面排版与细节",
+      "slug": "glowing-divider",
+      "name": "发光分割线",
+      "english": "Glowing Divider",
+      "summary": "分割线上中心略亮、两端渐隐，让价格与权益区自然分离。",
+      "prompt": "将目标卡片内分割线改为中间微亮、两侧渐隐的细线，保持上下间距与文字层级。",
+      "kind": "pattern",
+      "media_reason": "仅保留一张无讲解文字的效果参考；该图展示局部细节。触发、时序、运动路径与减弱动态需在项目中验证。",
+      "implementation": "这是卡片内部细线局部参考；不把分割线扩大成霓虹外框，普通分区仍应可辨。",
+      "keywords": [
+        "发光分割线",
+        "中间亮两端渐隐"
+      ],
+      "images": [
+        "assets/details/interface-details/glowing-divider-effect.webp"
+      ],
+      "preview": "assets/details/interface-details/glowing-divider-effect.webp",
+      "media_type": "image",
+      "evidence": "static-reference"
+    },
+    {
+      "id": "interface-details/inner-highlight",
+      "category": "interface-details",
+      "category_title": "界面排版与细节",
+      "slug": "inner-highlight",
+      "name": "卡片内高光",
+      "english": "Inner Highlight",
+      "summary": "沿上缘和内侧保留细微亮边，配合轻阴影形成卡片厚度。",
+      "prompt": "给当前卡片增加克制的内高光，统一光源方向、阴影和圆角，保留文字、线性图标与按钮的清晰轮廓。",
+      "kind": "rule",
+      "media_reason": "仅保留一张无讲解文字的效果参考；触发、时序、运动路径与减弱动态需在项目中验证。",
+      "implementation": "高光使用独立装饰层或 inset 阴影，不给正文加滤镜；在深浅主题与窄屏分别检查。 卡片结构、等高、图标、底座、其他材质与展开交互按 card-craft.md 选型；当前图片只证明图中可见的完成布局。",
+      "keywords": [
+        "内高光",
+        "卡片厚度"
+      ],
+      "images": [
+        "assets/details/interface-details/inner-highlight-effect.webp"
+      ],
+      "preview": "assets/details/interface-details/inner-highlight-effect.webp",
+      "media_type": "image",
+      "evidence": "static-reference"
+    },
+    {
+      "id": "motion/scroll-linked",
+      "category": "motion",
+      "category_title": "常见动效",
+      "slug": "scroll-linked",
+      "name": "滚动进度绑定",
+      "english": "Scroll-linked Animation",
+      "summary": "把滚动进度映射到产品拆解等画面状态，回滚时沿同一进度恢复。",
+      "prompt": "把当前展示区的滚动进度映射到产品拆解的位置与透明度，允许前后滚动，保留正常页面滚动和内容顺序。",
+      "kind": "pattern",
+      "media_reason": "仅保留一张无讲解文字的效果参考；触发、时序、运动路径与减弱动态需在项目中验证。",
+      "implementation": "明确起止区间；布局变化时重新测量；不要改成进入视口后独立播放一次。",
+      "keywords": [
+        "滚动绑定",
+        "滚动进度",
+        "scrub"
+      ],
+      "images": [
+        "assets/details/motion/scroll-linked-effect.webp"
+      ],
+      "preview": "assets/details/motion/scroll-linked-effect.webp",
+      "media_type": "image",
+      "evidence": "static-reference"
+    },
+    {
+      "id": "motion/particle-morph",
+      "category": "motion",
+      "category_title": "常见动效",
+      "slug": "particle-morph",
+      "name": "粒子聚合变形",
+      "english": "Particle Morph",
+      "summary": "粒子分散并聚合成可辨认的形状，形态变化承载首屏视觉叙事。",
+      "prompt": "为指定首屏实现粒子从分散到目标形状的聚合与形态切换；保留前景可读文字和主操作，按设备能力控制粒子数量。",
+      "kind": "pattern",
+      "media_reason": "仅保留一张无讲解文字的效果参考；触发、时序、运动路径与减弱动态需在项目中验证。",
+      "implementation": "实现时可在点集之间插值并保持稳定对应关系；图片只显示聚合外观，不证明粒子数量或连续形变算法。",
+      "keywords": [
+        "粒子聚合",
+        "粒子变形"
+      ],
+      "images": [
+        "assets/details/motion/particle-morph-effect.webp"
+      ],
+      "preview": "assets/details/motion/particle-morph-effect.webp",
+      "media_type": "image",
+      "evidence": "static-reference"
+    },
+    {
+      "id": "motion/mask-reveal",
+      "category": "motion",
+      "category_title": "常见动效",
+      "slug": "mask-reveal",
+      "name": "遮罩揭开",
+      "english": "Mask Reveal",
+      "summary": "用逐步扩大的遮罩窗口显露完整图像，完成态回到无裁切的内容。",
+      "prompt": "为指定图片设计从局部窗口逐步揭开的 Mask Reveal；明确点击或滚动触发，文字保持真实 DOM，完成后图片全幅可见。",
+      "kind": "pattern",
+      "media_reason": "仅保留一张无讲解文字的效果参考；触发、时序、运动路径与减弱动态需在项目中验证。",
+      "implementation": "图为揭开完成后的画面；遮罩形状与中间路径需实现验证。减弱动态时直接显示，避免长期裁切必要内容。",
+      "keywords": [
+        "遮罩揭开",
+        "mask",
+        "clip-path"
+      ],
+      "images": [
+        "assets/details/motion/mask-reveal-effect.webp"
+      ],
+      "preview": "assets/details/motion/mask-reveal-effect.webp",
+      "media_type": "image",
+      "evidence": "static-reference"
+    },
+    {
+      "id": "motion/stacking-cards",
+      "category": "motion",
+      "category_title": "常见动效",
+      "slug": "stacking-cards",
+      "name": "滚动卡片堆叠",
+      "english": "Stacking Cards",
+      "summary": "卡片随滚动逐层覆盖，保留后方露出的卡片边缘与阅读顺序。",
+      "prompt": "让步骤卡片随滚动逐张覆盖前一张，保留顶部层次、清晰文字与退出堆叠区后的正常滚动。",
+      "kind": "pattern",
+      "media_reason": "仅保留一张无讲解文字的效果参考；触发、时序、运动路径与减弱动态需在项目中验证。",
+      "implementation": "根据卡片高度设置粘性区间；窄屏内容不得被固定高度截断；键盘与阅读顺序保持一致。",
+      "keywords": [
+        "卡片堆叠",
+        "滚动卡片栈",
+        "sticky cards"
+      ],
+      "images": [
+        "assets/details/motion/stacking-cards-effect.webp"
+      ],
+      "preview": "assets/details/motion/stacking-cards-effect.webp",
+      "media_type": "image",
+      "evidence": "static-reference"
+    },
+    {
+      "id": "motion/horizontal-scroll",
+      "category": "motion",
+      "category_title": "常见动效",
+      "slug": "horizontal-scroll",
+      "name": "横向滚动展陈",
+      "english": "Horizontal Scroll",
+      "summary": "在有界展示区中随滚动横向浏览展品，并保留进度与上下文。",
+      "prompt": "将选定展陈区实现为横向浏览：明确滚动进度到横向位移的映射、起止位置和离开区间；触摸与键盘仍能到达全部展品。",
+      "kind": "pattern",
+      "media_reason": "仅保留一张无讲解文字的效果参考；触发、时序、运动路径与减弱动态需在项目中验证。",
+      "implementation": "不全站劫持滚轮；响应式重新测量；提供正常列表回退，避免只实现匀速跑马灯。",
+      "keywords": [
+        "横向滚动",
+        "水平滚动",
+        "展陈"
+      ],
+      "images": [
+        "assets/details/motion/horizontal-scroll-effect.webp"
+      ],
+      "preview": "assets/details/motion/horizontal-scroll-effect.webp",
+      "media_type": "image",
+      "evidence": "static-reference"
+    },
+    {
+      "id": "motion/layout-animation",
+      "category": "motion",
+      "category_title": "常见动效",
+      "slug": "layout-animation",
+      "name": "排序筛选布局动画",
+      "english": "Layout Animation",
+      "summary": "同一组元素排序或筛选后，保留身份并平滑移动到新位置。",
+      "prompt": "给已有排序与筛选结果添加布局动画，稳定元素 key，复用当前动画库的布局测量或 FLIP；业务状态立即生效，连续操作从当前视觉位置继续。",
+      "kind": "pattern",
+      "media_reason": "仅保留一张无讲解文字的效果参考；该图展示局部细节。触发、时序、运动路径与减弱动态需在项目中验证。",
+      "implementation": "图仅保留完成后的网格局部；初态、重排与移除过程需实际验证。控制 DOM 测量批次，不为每一帧动画 width 或 top。",
+      "keywords": [
+        "布局动画",
+        "重排",
+        "FLIP"
+      ],
+      "images": [
+        "assets/details/motion/layout-animation-effect.webp"
+      ],
+      "preview": "assets/details/motion/layout-animation-effect.webp",
+      "media_type": "image",
+      "evidence": "static-reference"
+    },
+    {
+      "id": "interface-details/card-craft",
+      "category": "interface-details",
+      "category_title": "界面排版与细节",
+      "slug": "card-craft",
+      "name": "卡片质感与结构选型",
+      "english": "Card Craft and Structure",
+      "summary": "23 项卡片技巧：按需求选择玻璃、全息、金属、边框与光效，再统一结构、等高、图标、底座、渐变、纹理与圆角。",
+      "prompt": "先读取 references/card-craft.md 中 23 项选型与组合提示词，选择一种主材质和少量重点效果；保留现有内容、组件接口与操作，再核对真实项目。",
+      "kind": "rule",
+      "media_type": "image",
+      "evidence": "static-reference",
+      "media_reason": "复用已完成的卡片布局，展示结构、线性图标、底座、同色渐变与浅纹理；其他材质和交互以指南文字为准，该图不证明它们的外观或连续行为。",
+      "images": [
+        "assets/details/interface-details/inner-highlight-effect.webp"
+      ],
+      "preview": "assets/details/interface-details/inner-highlight-effect.webp",
+      "keywords": [
+        "内高光",
+        "卡片厚度",
+        "卡片结构",
+        "等高卡片",
+        "图标库",
+        "图标底座",
+        "Icon Library",
+        "Card Anatomy",
+        "Equal Height",
+        "Icon Container",
+        "纹理图案",
+        "Pattern",
+        "展开卡片",
+        "Expandable Card",
+        "全息卡片",
+        "Holographic Card",
+        "毛玻璃",
+        "Glassmorphism",
+        "23项卡片",
+        "卡片技巧",
+        "卡片选型"
+      ],
+      "related": [
+        "interface-details/inner-highlight",
+        "glass-materials/brushed-metal",
+        "motion/gradient-border"
+      ]
     }
   ],
   "media": {

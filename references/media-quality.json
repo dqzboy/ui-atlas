@@ -746,7 +746,7 @@
         "assets/details/motion/motion-rules.png"
       ],
       "poster": "assets/details/motion/motion-rules.png",
-      "image_reason": "同一结构仅保留一张内容完整的代表图，删除重复讲解帧。"
+      "image_reason": "原有图片仅辅助查看通用节奏；具体 20 种动效按 motion-selection.md 选型，未附图的效果只依据文字，连续运动在项目验证。"
     },
     "buttons-controls/button-hierarchy": {
       "source": "native-video-still",
@@ -1506,44 +1506,40 @@
       "image_reason": "原片独立截图用于核对具体构图与可见状态；动作路径、时序和实际业务结果在项目中验证。"
     },
     "design-composition/dashboard-focus": {
-      "source": "native-video-still",
-      "limitation": "从 2160 像素高的原片按原像素裁切，WebP 质量 95，不放大、不锐化、不涂抹；静态帧不能证明完整运动。",
+      "source": "reviewed-native-still-crop",
+      "limitation": "从已有原片参考图裁出 1336×836 的完整 UI 区域，未缩放、未锐化、未涂抹，重新编码为 WebP 质量 98；沿用原素材已有细节，不能恢复其本身没有的信息。静态图只核对可见界面。",
       "images": [
-        "assets/details/design-composition/dashboard-focus-hd-01.webp",
-        "assets/details/design-composition/dashboard-focus-hd-02.webp"
+        "assets/details/design-composition/dashboard-focus-effect.webp"
       ],
-      "poster": "assets/details/design-composition/dashboard-focus-hd-02.webp",
-      "image_reason": "对照统一堆叠图表与突出关键指标后的看板。"
+      "poster": "assets/details/design-composition/dashboard-focus-effect.webp",
+      "image_reason": "只保留已实现的界面效果；原视频的概念说明、修改前方案与参数标注改为文档文字。"
     },
     "design-composition/slide-story": {
       "source": "native-video-still",
-      "limitation": "从 2160 像素高的原片按原像素裁切，WebP 质量 95，不放大、不锐化、不涂抹；静态帧不能证明完整运动。",
+      "limitation": "从 1440×2160 原片按原像素裁出已实现的界面，WebP 质量 98；未缩放、未锐化、未涂抹。仅展示完成后的版式与层级，交互在项目中验证。",
       "images": [
-        "assets/details/design-composition/slide-story-hd-01.webp",
-        "assets/details/design-composition/slide-story-hd-02.webp"
+        "assets/details/design-composition/slide-story-effect.webp"
       ],
-      "poster": "assets/details/design-composition/slide-story-hd-02.webp",
-      "image_reason": "对照密集单页与按观点拆分后的统一演示版式。"
+      "poster": "assets/details/design-composition/slide-story-effect.webp",
+      "image_reason": "只保留已实现的界面效果；原视频的概念说明、修改前方案与参数标注改为文档文字。"
     },
     "design-composition/landing-hierarchy": {
       "source": "native-video-still",
-      "limitation": "从 2160 像素高的原片按原像素裁切，WebP 质量 95，不放大、不锐化、不涂抹；静态帧不能证明完整运动。",
+      "limitation": "从 1440×2160 原片按原像素裁出已实现的界面，WebP 质量 98；未缩放、未锐化、未涂抹。仅展示完成后的版式与层级，交互在项目中验证。",
       "images": [
-        "assets/details/design-composition/landing-hierarchy-hd-01.webp",
-        "assets/details/design-composition/landing-hierarchy-hd-02.webp",
-        "assets/details/design-composition/landing-hierarchy-hd-03.webp"
+        "assets/details/design-composition/landing-hierarchy-effect.webp"
       ],
-      "poster": "assets/details/design-composition/landing-hierarchy-hd-02.webp",
-      "image_reason": "对照原首页与层级调整后的整页，另保留功能网格细节。"
+      "poster": "assets/details/design-composition/landing-hierarchy-effect.webp",
+      "image_reason": "只保留已实现的界面效果；原视频的概念说明、修改前方案与参数标注改为文档文字。"
     },
     "design-composition/design-spec": {
       "source": "native-video-still",
-      "limitation": "从 2160 像素高的原片按原像素裁切，WebP 质量 95，不放大、不锐化、不涂抹；静态帧不能证明完整运动。",
+      "limitation": "从 1440×2160 原片按原像素裁出已实现的界面，WebP 质量 98；未缩放、未锐化、未涂抹。仅展示完成后的版式与层级，交互在项目中验证。",
       "images": [
-        "assets/details/design-composition/design-spec-hd-01.webp"
+        "assets/details/design-composition/landing-hierarchy-effect.webp"
       ],
-      "poster": "assets/details/design-composition/design-spec-hd-01.webp",
-      "image_reason": "原片独立截图用于核对具体构图与可见状态；动作路径、时序和实际业务结果在项目中验证。"
+      "poster": "assets/details/design-composition/landing-hierarchy-effect.webp",
+      "image_reason": "复用官网完成后的界面作为规范落地结果示例；规范的颜色、排版、间距与状态清单以文字表达，图片不证明规范文件已生成。"
     },
     "glass-materials/message-bubble-materials": {
       "source": "native-video-still",
@@ -1558,6 +1554,123 @@
       ],
       "poster": "assets/details/glass-materials/message-bubble-cirrus.webp",
       "image_reason": "六张原尺寸截图分别展示六种不同材质，不重复存相近状态；完整运动、弹簧、回复与删除行为按配方在项目中验证。"
+    },
+    "glass-materials/brushed-metal": {
+      "source": "near-native-player-capture",
+      "limitation": "1440×2560 视频在播放器接近原尺寸呈现后，仅裁出 UI 效果区域；WebP 质量 98，未放大、未锐化、未涂抹。原画中的材质模糊和光晕属于效果；静态图只核对可见状态，连续运动在项目中验证。",
+      "images": [
+        "assets/details/glass-materials/brushed-metal-effect.webp"
+      ],
+      "poster": "assets/details/glass-materials/brushed-metal-effect.webp",
+      "image_reason": "仅保留一张无讲解文字的效果参考；触发、时序、运动路径与减弱动态需在项目中验证。"
+    },
+    "motion/gradient-border": {
+      "source": "near-native-player-capture",
+      "limitation": "1440×2560 视频在播放器接近原尺寸呈现后，仅裁出 UI 效果区域；WebP 质量 98，未放大、未锐化、未涂抹。原画中的材质模糊和光晕属于效果；静态图只核对可见状态，连续运动在项目中验证。",
+      "images": [
+        "assets/details/motion/gradient-border-effect.webp"
+      ],
+      "poster": "assets/details/motion/gradient-border-effect.webp",
+      "image_reason": "仅保留一张无讲解文字的效果参考；触发、时序、运动路径与减弱动态需在项目中验证。"
+    },
+    "motion/flowing-border": {
+      "source": "near-native-player-capture",
+      "limitation": "1440×2560 视频在播放器接近原尺寸呈现后，仅裁出 UI 效果区域；WebP 质量 98，未放大、未锐化、未涂抹。原画中的材质模糊和光晕属于效果；静态图只核对可见状态，连续运动在项目中验证。",
+      "images": [
+        "assets/details/motion/flowing-border-effect.webp"
+      ],
+      "poster": "assets/details/motion/flowing-border-effect.webp",
+      "image_reason": "仅保留一张无讲解文字的效果参考；触发、时序、运动路径与减弱动态需在项目中验证。"
+    },
+    "motion/card-glow": {
+      "source": "near-native-player-capture",
+      "limitation": "1440×2560 视频在播放器接近原尺寸呈现后，仅裁出 UI 效果区域；WebP 质量 98，未放大、未锐化、未涂抹。原画中的材质模糊和光晕属于效果；静态图只核对可见状态，连续运动在项目中验证。",
+      "images": [
+        "assets/details/motion/card-glow-effect.webp"
+      ],
+      "poster": "assets/details/motion/card-glow-effect.webp",
+      "image_reason": "仅保留一张无讲解文字的效果参考；触发、时序、运动路径与减弱动态需在项目中验证。"
+    },
+    "interface-details/glowing-divider": {
+      "source": "near-native-player-capture",
+      "limitation": "1440×2560 视频在播放器接近原尺寸呈现后，仅裁出 UI 效果区域；WebP 质量 98，未放大、未锐化、未涂抹。原画中的材质模糊和光晕属于效果；静态图只核对可见状态，连续运动在项目中验证。",
+      "images": [
+        "assets/details/interface-details/glowing-divider-effect.webp"
+      ],
+      "poster": "assets/details/interface-details/glowing-divider-effect.webp",
+      "image_reason": "仅保留一张无讲解文字的效果参考；该图展示局部细节。触发、时序、运动路径与减弱动态需在项目中验证。"
+    },
+    "interface-details/inner-highlight": {
+      "source": "near-native-player-capture",
+      "limitation": "1440×2560 视频在播放器接近原尺寸呈现后，仅裁出 UI 效果区域；WebP 质量 98，未放大、未锐化、未涂抹。原画中的材质模糊和光晕属于效果；静态图只核对可见状态，连续运动在项目中验证。",
+      "images": [
+        "assets/details/interface-details/inner-highlight-effect.webp"
+      ],
+      "poster": "assets/details/interface-details/inner-highlight-effect.webp",
+      "image_reason": "仅保留一张无讲解文字的效果参考；触发、时序、运动路径与减弱动态需在项目中验证。"
+    },
+    "motion/scroll-linked": {
+      "source": "near-native-player-capture",
+      "limitation": "1440×2560 视频在播放器接近原尺寸呈现后，仅裁出 UI 效果区域；WebP 质量 98，未放大、未锐化、未涂抹。原画中的材质模糊和光晕属于效果；静态图只核对可见状态，连续运动在项目中验证。",
+      "images": [
+        "assets/details/motion/scroll-linked-effect.webp"
+      ],
+      "poster": "assets/details/motion/scroll-linked-effect.webp",
+      "image_reason": "仅保留一张无讲解文字的效果参考；触发、时序、运动路径与减弱动态需在项目中验证。"
+    },
+    "motion/particle-morph": {
+      "source": "near-native-player-capture",
+      "limitation": "1440×2560 视频在播放器接近原尺寸呈现后，仅裁出 UI 效果区域；WebP 质量 98，未放大、未锐化、未涂抹。原画中的材质模糊和光晕属于效果；静态图只核对可见状态，连续运动在项目中验证。",
+      "images": [
+        "assets/details/motion/particle-morph-effect.webp"
+      ],
+      "poster": "assets/details/motion/particle-morph-effect.webp",
+      "image_reason": "仅保留一张无讲解文字的效果参考；触发、时序、运动路径与减弱动态需在项目中验证。"
+    },
+    "motion/mask-reveal": {
+      "source": "near-native-player-capture",
+      "limitation": "1440×2560 视频在播放器接近原尺寸呈现后，仅裁出 UI 效果区域；WebP 质量 98，未放大、未锐化、未涂抹。原画中的材质模糊和光晕属于效果；静态图只核对可见状态，连续运动在项目中验证。",
+      "images": [
+        "assets/details/motion/mask-reveal-effect.webp"
+      ],
+      "poster": "assets/details/motion/mask-reveal-effect.webp",
+      "image_reason": "仅保留一张无讲解文字的效果参考；触发、时序、运动路径与减弱动态需在项目中验证。"
+    },
+    "motion/stacking-cards": {
+      "source": "near-native-player-capture",
+      "limitation": "1440×2560 视频在播放器接近原尺寸呈现后，仅裁出 UI 效果区域；WebP 质量 98，未放大、未锐化、未涂抹。原画中的材质模糊和光晕属于效果；静态图只核对可见状态，连续运动在项目中验证。",
+      "images": [
+        "assets/details/motion/stacking-cards-effect.webp"
+      ],
+      "poster": "assets/details/motion/stacking-cards-effect.webp",
+      "image_reason": "仅保留一张无讲解文字的效果参考；触发、时序、运动路径与减弱动态需在项目中验证。"
+    },
+    "motion/horizontal-scroll": {
+      "source": "near-native-player-capture",
+      "limitation": "1440×2560 视频在播放器接近原尺寸呈现后，仅裁出 UI 效果区域；WebP 质量 98，未放大、未锐化、未涂抹。原画中的材质模糊和光晕属于效果；静态图只核对可见状态，连续运动在项目中验证。",
+      "images": [
+        "assets/details/motion/horizontal-scroll-effect.webp"
+      ],
+      "poster": "assets/details/motion/horizontal-scroll-effect.webp",
+      "image_reason": "仅保留一张无讲解文字的效果参考；触发、时序、运动路径与减弱动态需在项目中验证。"
+    },
+    "motion/layout-animation": {
+      "source": "near-native-player-capture",
+      "limitation": "1440×2560 视频在播放器接近原尺寸呈现后，仅裁出 UI 效果区域；WebP 质量 98，未放大、未锐化、未涂抹。原画中的材质模糊和光晕属于效果；静态图只核对可见状态，连续运动在项目中验证。",
+      "images": [
+        "assets/details/motion/layout-animation-effect.webp"
+      ],
+      "poster": "assets/details/motion/layout-animation-effect.webp",
+      "image_reason": "仅保留一张无讲解文字的效果参考；该图展示局部细节。触发、时序、运动路径与减弱动态需在项目中验证。"
+    },
+    "interface-details/card-craft": {
+      "source": "near-native-player-capture",
+      "limitation": "1440×2560 视频在播放器接近原尺寸呈现后，仅裁出 UI 效果区域；WebP 质量 98，未放大、未锐化、未涂抹。原画中的材质模糊和光晕属于效果；静态图只核对可见状态，连续运动在项目中验证。",
+      "images": [
+        "assets/details/interface-details/inner-highlight-effect.webp"
+      ],
+      "poster": "assets/details/interface-details/inner-highlight-effect.webp",
+      "image_reason": "复用已完成的卡片布局，展示结构、线性图标、底座、同色渐变与浅纹理；其他材质和交互以指南文字为准，该图不证明它们的外观或连续行为。"
     }
   },
   "files": {
@@ -2880,55 +2993,6 @@
       "height": 1610,
       "bundled": true
     },
-    "assets/details/design-composition/dashboard-focus-hd-01.webp": {
-      "bytes": 107226,
-      "sha256": "d89bb9a4e6ec76c702197e6a6a7e2c1570606bde7193dddd42be9033568edcd8",
-      "width": 1440,
-      "height": 1610,
-      "bundled": true
-    },
-    "assets/details/design-composition/dashboard-focus-hd-02.webp": {
-      "bytes": 114926,
-      "sha256": "bd1129e8c336d39db69a1439f16de77466cc4ac96dd9fbf2719ac24b31775ef7",
-      "width": 1440,
-      "height": 1610,
-      "bundled": true
-    },
-    "assets/details/design-composition/slide-story-hd-01.webp": {
-      "bytes": 138484,
-      "sha256": "19af7c7d7b28bb80e7ee9954233498360be3740b08f93dfbb78c9a0140ee3c4b",
-      "width": 1440,
-      "height": 1610,
-      "bundled": true
-    },
-    "assets/details/design-composition/slide-story-hd-02.webp": {
-      "bytes": 105606,
-      "sha256": "cb3f3263540701564c522759db919972f8eb97369d7197062c30f0d89c960c9e",
-      "width": 1440,
-      "height": 1610,
-      "bundled": true
-    },
-    "assets/details/design-composition/landing-hierarchy-hd-01.webp": {
-      "bytes": 99916,
-      "sha256": "8d19409de3b5258f81509d900682401c37c84914f073fd5ae016458caff4ff3c",
-      "width": 1440,
-      "height": 1610,
-      "bundled": true
-    },
-    "assets/details/design-composition/landing-hierarchy-hd-02.webp": {
-      "bytes": 119182,
-      "sha256": "f6a0ff7c6e402c86d66c2d595f78844327d7c3e67c6a1d0055c2e866842d6acc",
-      "width": 1440,
-      "height": 1610,
-      "bundled": true
-    },
-    "assets/details/design-composition/design-spec-hd-01.webp": {
-      "bytes": 96298,
-      "sha256": "3407e3a69c95193992929c12e2e010d8e200e52b18584e299d76fb6e4e0be729",
-      "width": 1440,
-      "height": 1610,
-      "bundled": true
-    },
     "assets/details/buttons-controls/gooey-button-hd-02.webp": {
       "bytes": 82830,
       "sha256": "552a73e172538c8111dbc702c96fe0720d082ac17f51c8d9f34b84c12945836d",
@@ -2941,13 +3005,6 @@
       "sha256": "33e7c687de45d8a02d926903cd48980adeda59474c83006b8e510b132a8a2326",
       "width": 1440,
       "height": 1610,
-      "bundled": true
-    },
-    "assets/details/design-composition/landing-hierarchy-hd-03.webp": {
-      "bytes": 76994,
-      "sha256": "06d8afb2f7dbd89fc1e938d92f6624841d10e09bee0aaa5b9fdd5fcfd844b918",
-      "width": 1440,
-      "height": 1330,
       "bundled": true
     },
     "assets/details/glass-materials/message-bubble-cirrus.webp": {
@@ -2990,6 +3047,111 @@
       "sha256": "bf84d9fbdbdfa208d7a52ce0a22b7660841df2dfa017d0b914db7da05e953b39",
       "width": 2160,
       "height": 1390,
+      "bundled": true
+    },
+    "assets/details/glass-materials/brushed-metal-effect.webp": {
+      "bytes": 65780,
+      "sha256": "d4a0d0edc8b9e3700390fe4ef9ca915319c7c9cf84f61ee1af250a834cec8333",
+      "width": 1045,
+      "height": 700,
+      "bundled": true
+    },
+    "assets/details/motion/gradient-border-effect.webp": {
+      "bytes": 96366,
+      "sha256": "3950cf4af125d157dade867fad9a89911c8d6c7b94ad73cf7fa6428aef402c1b",
+      "width": 1195,
+      "height": 745,
+      "bundled": true
+    },
+    "assets/details/motion/flowing-border-effect.webp": {
+      "bytes": 95210,
+      "sha256": "f4c2aad936e85e66046709fdc7637a991622c2efaf6ab774db2325057e288a97",
+      "width": 1220,
+      "height": 730,
+      "bundled": true
+    },
+    "assets/details/motion/card-glow-effect.webp": {
+      "bytes": 60392,
+      "sha256": "732f5455b1cad488a5464c5b01151ef7c2c2aaf981bbfba2555824cef72c9100",
+      "width": 1160,
+      "height": 720,
+      "bundled": true
+    },
+    "assets/details/interface-details/glowing-divider-effect.webp": {
+      "bytes": 802,
+      "sha256": "1a26d1582af8e9b05f554aca512d3561d2db5cb6b22fd7629c98d6ce04240be9",
+      "width": 450,
+      "height": 75,
+      "bundled": true
+    },
+    "assets/details/interface-details/inner-highlight-effect.webp": {
+      "bytes": 92088,
+      "sha256": "1b75833f5565451429087c4251ee9dac1f5e4ca7506c0d5d49787896e8b00b77",
+      "width": 1250,
+      "height": 645,
+      "bundled": true
+    },
+    "assets/details/motion/scroll-linked-effect.webp": {
+      "bytes": 119442,
+      "sha256": "7f03c6b8240959ec4dc92e23026703d0202b900d78ada33e466521f769c7f542",
+      "width": 1375,
+      "height": 1340,
+      "bundled": true
+    },
+    "assets/details/motion/particle-morph-effect.webp": {
+      "bytes": 244318,
+      "sha256": "b30baaf1d2ea127bbde58fa2539eb06c1e462e7ec85f7f614340001d1165e2e5",
+      "width": 1375,
+      "height": 1340,
+      "bundled": true
+    },
+    "assets/details/motion/mask-reveal-effect.webp": {
+      "bytes": 234060,
+      "sha256": "a7dd23d7827abba6039fdd9a3631a5ea96361ccd53c36d263aee49960a8f6485",
+      "width": 1375,
+      "height": 1340,
+      "bundled": true
+    },
+    "assets/details/motion/stacking-cards-effect.webp": {
+      "bytes": 219282,
+      "sha256": "d361ba2f78937f4d7127c889307e0befccb42dc159c665a38bae650bb7cf5e8e",
+      "width": 1375,
+      "height": 1340,
+      "bundled": true
+    },
+    "assets/details/motion/horizontal-scroll-effect.webp": {
+      "bytes": 96568,
+      "sha256": "576d43e410813de36635010804caa11da66e28e433571ca7c3150c043bf42289",
+      "width": 1375,
+      "height": 1340,
+      "bundled": true
+    },
+    "assets/details/motion/layout-animation-effect.webp": {
+      "bytes": 67286,
+      "sha256": "ccbca4845feb23a1728d78de5c4b233b947ef6cbdd81070107cc0084d250baaa",
+      "width": 1095,
+      "height": 1060,
+      "bundled": true
+    },
+    "assets/details/design-composition/dashboard-focus-effect.webp": {
+      "bytes": 89748,
+      "sha256": "1163069ea11a28dae439b0a6b77e0a30b979c0c0355d529fb6a6a71b88243efb",
+      "width": 1336,
+      "height": 836,
+      "bundled": true
+    },
+    "assets/details/design-composition/slide-story-effect.webp": {
+      "bytes": 59646,
+      "sha256": "0f63660b1889afa59f43c2e0b805bd177a104b90a7cad46a42b9de8a3cdc6e2b",
+      "width": 668,
+      "height": 1245,
+      "bundled": true
+    },
+    "assets/details/design-composition/landing-hierarchy-effect.webp": {
+      "bytes": 50186,
+      "sha256": "44626cd314515085111bb471af0852ce7615f39873f08ccd438cc7cd26c64876",
+      "width": 1334,
+      "height": 735,
       "bundled": true
     }
   },

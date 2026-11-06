@@ -2,6 +2,8 @@
 
 静态图用于查看构图与可见状态，连续运动和短暂状态需在实际项目验证。按当前项目需求实现目标组件的交互与动效。
 
+按滚动、指针、路由或状态变化选择效果，参见 [20 种动效选型与提示词](motion-selection.md)。卡片材质与装饰层另见 [卡片质感指南](card-craft.md)。
+
 ## 目录
 
 - [边缘流光](#border-beam)
@@ -21,14 +23,27 @@
 - [悬停上浮](#hover-lift)
 - [缓动](#easing)
 - [动效时长、性能与减弱动态](#motion-rules)
+- [静态渐变描边](#gradient-border)
+- [环绕流光边框](#flowing-border)
+- [卡片外部光晕](#card-glow)
+- [滚动进度绑定](#scroll-linked)
+- [粒子聚合变形](#particle-morph)
+- [遮罩揭开](#mask-reveal)
+- [滚动卡片堆叠](#stacking-cards)
+- [横向滚动展陈](#horizontal-scroll)
+- [排序筛选布局动画](#layout-animation)
 
 <a id="border-beam"></a>
 ## 边缘流光 / Border Beam
 
 - 标识：`motion/border-beam`；类型：组件／效果。
 - 效果要点：光沿卡片边框循环移动，用于突出推荐套餐或新功能；运动路径在边缘，不是扫过整个表面。
-- 指令例句：只给推荐套餐卡片加沿边框环绕的 Border Beam。
+- 指令例句：只给推荐卡片加一小段沿边框运行的光带，保持其余边框安静，减弱动态时改为静态高亮。
 - 媒体取舍：保留静态效果图与实现说明；连续路径、触发顺序、节奏和短暂状态需在项目中实际验证。
+
+
+
+- 实现补充：别名：跑马灯描边。只让一小段亮光沿卡片边缘循环，其他边缘保持较暗；用于单个重点入口。
 
 <!-- ui-atlas:details motion/border-beam -->
 - 原尺寸图片：[01 · 1440×1610](../assets/details/motion/border-beam-hd-01.webp)。
@@ -270,13 +285,159 @@
 
 - 标识：`motion/motion-rules`；类型：选型／纠错。
 - 效果要点：常见节奏起点：小动作约 0.1–0.2 秒，弹窗与抽屉约 0.2–0.3 秒；尽量动画化位置、大小和透明度；尊重减弱动态效果设置。
-- 指令例句：按交互尺度设置时长，优先 transform 和 opacity，开启减弱动态时关闭非必要动画。
+- 指令例句：按交互尺度设置时长，优先 transform 和 opacity，开启减弱动态时关闭非必要动画。 具体效果先读取 references/motion-selection.md 中的 20 种选型与提示词。
 - 统一节奏时使用 [011 动画节奏配方](recipes/easing.md) 的细分起点：小型入场 150–250 ms、离场 120–200 ms，中型 250–350 ms，大型 350–500 ms；手势弹簧保留释放速度，性能优化不改变真实布局行为。
 - 媒体取舍：这是时长、性能与减弱动态的文字规则，拼图讲解静态图足够。
+
+- 选型补充：动效具体选型与 20 种效果的实现提示词见 motion-selection.md。液态扭曲、共享元素转场、无限画廊、物理掉落与页面转场以文字说明为准；不借用其他效果的图片作为视觉证据。
 
 <!-- ui-atlas:details motion/motion-rules -->
 - 原尺寸图片：[01 · 600×756](https://raw.githubusercontent.com/dqzboy/ui-atlas/4d61e1224c50685c02acae3ae67ebe9c217fa3b9/assets/details/motion/motion-rules.png)。
 - 清晰度边界：从历史素材提取原尺寸独立帧，避免总览缩图和再次 JPEG 压缩；源素材的分辨率与色彩限制仍在，图片不能证明连续运动。
 
 ![动效时长、性能与减弱动态：原尺寸独立参考](https://raw.githubusercontent.com/dqzboy/ui-atlas/4d61e1224c50685c02acae3ae67ebe9c217fa3b9/assets/details/motion/motion-rules.png)
+<!-- /ui-atlas:details -->
+
+<a id="gradient-border"></a>
+## 静态渐变描边 / Gradient Border
+
+- 标识：`motion/gradient-border`；类型：组件／效果。
+- 效果要点：以静态渐变细边强调重要卡片，其他同级卡片保持普通边框。
+- 实现提示词：只给推荐卡片添加静态品牌渐变描边，圆角连续、内外边框同心，保留内容尺寸与主次按钮。
+- 核对要点：使用独立边框层并隔离内容；不自动添加旋转、闪烁或持续流光。
+- 媒体取舍：仅保留一张无讲解文字的效果参考；触发、时序、运动路径与减弱动态需在项目中验证。
+
+<!-- ui-atlas:details motion/gradient-border -->
+- 原尺寸图片：[01 · 1195×745](../assets/details/motion/gradient-border-effect.webp)。
+- 清晰度边界：1440×2560 视频在播放器接近原尺寸呈现后，仅裁出 UI 效果区域；WebP 质量 98，未放大、未锐化、未涂抹。原画中的材质模糊和光晕属于效果；静态图只核对可见状态，连续运动在项目中验证。
+
+![静态渐变描边：原尺寸独立参考](../assets/details/motion/gradient-border-effect.webp)
+<!-- /ui-atlas:details -->
+
+<a id="flowing-border"></a>
+## 环绕流光边框 / Flowing Gradient Border
+
+- 标识：`motion/flowing-border`；类型：组件／效果。
+- 效果要点：较长的渐变亮带沿卡片周边流动，与短光段的 Border Beam 区分。
+- 实现提示词：为唯一推荐卡片设置沿周边缓慢环绕的渐变边框；只动画装饰层，卡片正文与布局保持稳定。
+- 核对要点：圆角处无断裂、内部不漏光；离屏暂停，减弱动态时保留静态细边。静态帧不能判断绕行速度。
+- 媒体取舍：仅保留一张无讲解文字的效果参考；触发、时序、运动路径与减弱动态需在项目中验证。
+
+<!-- ui-atlas:details motion/flowing-border -->
+- 原尺寸图片：[01 · 1220×730](../assets/details/motion/flowing-border-effect.webp)。
+- 清晰度边界：1440×2560 视频在播放器接近原尺寸呈现后，仅裁出 UI 效果区域；WebP 质量 98，未放大、未锐化、未涂抹。原画中的材质模糊和光晕属于效果；静态图只核对可见状态，连续运动在项目中验证。
+
+![环绕流光边框：原尺寸独立参考](../assets/details/motion/flowing-border-effect.webp)
+<!-- /ui-atlas:details -->
+
+<a id="card-glow"></a>
+## 卡片外部光晕 / Card Glow
+
+- 标识：`motion/card-glow`；类型：组件／效果。
+- 效果要点：卡片外围柔和扩散的光晕分离前后层次，适合深色界面的单个重点指标。
+- 实现提示词：在重点卡片外部增加低强度品牌光晕，保持卡片内部文字和图表清晰；其他卡片只用普通边框与阴影。
+- 核对要点：光晕独立于文字层且不截断；控制叠加数量和绘制成本，不改变数据含义。
+- 媒体取舍：仅保留一张无讲解文字的效果参考；触发、时序、运动路径与减弱动态需在项目中验证。
+
+<!-- ui-atlas:details motion/card-glow -->
+- 原尺寸图片：[01 · 1160×720](../assets/details/motion/card-glow-effect.webp)。
+- 清晰度边界：1440×2560 视频在播放器接近原尺寸呈现后，仅裁出 UI 效果区域；WebP 质量 98，未放大、未锐化、未涂抹。原画中的材质模糊和光晕属于效果；静态图只核对可见状态，连续运动在项目中验证。
+
+![卡片外部光晕：原尺寸独立参考](../assets/details/motion/card-glow-effect.webp)
+<!-- /ui-atlas:details -->
+
+<a id="scroll-linked"></a>
+## 滚动进度绑定 / Scroll-linked Animation
+
+- 标识：`motion/scroll-linked`；类型：组件／效果。
+- 效果要点：把滚动进度映射到产品拆解等画面状态，回滚时沿同一进度恢复。
+- 实现提示词：把当前展示区的滚动进度映射到产品拆解的位置与透明度，允许前后滚动，保留正常页面滚动和内容顺序。
+- 核对要点：明确起止区间；布局变化时重新测量；不要改成进入视口后独立播放一次。
+- 媒体取舍：仅保留一张无讲解文字的效果参考；触发、时序、运动路径与减弱动态需在项目中验证。
+
+<!-- ui-atlas:details motion/scroll-linked -->
+- 原尺寸图片：[01 · 1375×1340](../assets/details/motion/scroll-linked-effect.webp)。
+- 清晰度边界：1440×2560 视频在播放器接近原尺寸呈现后，仅裁出 UI 效果区域；WebP 质量 98，未放大、未锐化、未涂抹。原画中的材质模糊和光晕属于效果；静态图只核对可见状态，连续运动在项目中验证。
+
+![滚动进度绑定：原尺寸独立参考](../assets/details/motion/scroll-linked-effect.webp)
+<!-- /ui-atlas:details -->
+
+<a id="particle-morph"></a>
+## 粒子聚合变形 / Particle Morph
+
+- 标识：`motion/particle-morph`；类型：组件／效果。
+- 效果要点：粒子分散并聚合成可辨认的形状，形态变化承载首屏视觉叙事。
+- 实现提示词：为指定首屏实现粒子从分散到目标形状的聚合与形态切换；保留前景可读文字和主操作，按设备能力控制粒子数量。
+- 核对要点：实现时可在点集之间插值并保持稳定对应关系；图片只显示聚合外观，不证明粒子数量或连续形变算法。
+- 媒体取舍：仅保留一张无讲解文字的效果参考；触发、时序、运动路径与减弱动态需在项目中验证。
+
+<!-- ui-atlas:details motion/particle-morph -->
+- 原尺寸图片：[01 · 1375×1340](../assets/details/motion/particle-morph-effect.webp)。
+- 清晰度边界：1440×2560 视频在播放器接近原尺寸呈现后，仅裁出 UI 效果区域；WebP 质量 98，未放大、未锐化、未涂抹。原画中的材质模糊和光晕属于效果；静态图只核对可见状态，连续运动在项目中验证。
+
+![粒子聚合变形：原尺寸独立参考](../assets/details/motion/particle-morph-effect.webp)
+<!-- /ui-atlas:details -->
+
+<a id="mask-reveal"></a>
+## 遮罩揭开 / Mask Reveal
+
+- 标识：`motion/mask-reveal`；类型：组件／效果。
+- 效果要点：用逐步扩大的遮罩窗口显露完整图像，完成态回到无裁切的内容。
+- 实现提示词：为指定图片设计从局部窗口逐步揭开的 Mask Reveal；明确点击或滚动触发，文字保持真实 DOM，完成后图片全幅可见。
+- 核对要点：图为揭开完成后的画面；遮罩形状与中间路径需实现验证。减弱动态时直接显示，避免长期裁切必要内容。
+- 媒体取舍：仅保留一张无讲解文字的效果参考；触发、时序、运动路径与减弱动态需在项目中验证。
+
+<!-- ui-atlas:details motion/mask-reveal -->
+- 原尺寸图片：[01 · 1375×1340](../assets/details/motion/mask-reveal-effect.webp)。
+- 清晰度边界：1440×2560 视频在播放器接近原尺寸呈现后，仅裁出 UI 效果区域；WebP 质量 98，未放大、未锐化、未涂抹。原画中的材质模糊和光晕属于效果；静态图只核对可见状态，连续运动在项目中验证。
+
+![遮罩揭开：原尺寸独立参考](../assets/details/motion/mask-reveal-effect.webp)
+<!-- /ui-atlas:details -->
+
+<a id="stacking-cards"></a>
+## 滚动卡片堆叠 / Stacking Cards
+
+- 标识：`motion/stacking-cards`；类型：组件／效果。
+- 效果要点：卡片随滚动逐层覆盖，保留后方露出的卡片边缘与阅读顺序。
+- 实现提示词：让步骤卡片随滚动逐张覆盖前一张，保留顶部层次、清晰文字与退出堆叠区后的正常滚动。
+- 核对要点：根据卡片高度设置粘性区间；窄屏内容不得被固定高度截断；键盘与阅读顺序保持一致。
+- 媒体取舍：仅保留一张无讲解文字的效果参考；触发、时序、运动路径与减弱动态需在项目中验证。
+
+<!-- ui-atlas:details motion/stacking-cards -->
+- 原尺寸图片：[01 · 1375×1340](../assets/details/motion/stacking-cards-effect.webp)。
+- 清晰度边界：1440×2560 视频在播放器接近原尺寸呈现后，仅裁出 UI 效果区域；WebP 质量 98，未放大、未锐化、未涂抹。原画中的材质模糊和光晕属于效果；静态图只核对可见状态，连续运动在项目中验证。
+
+![滚动卡片堆叠：原尺寸独立参考](../assets/details/motion/stacking-cards-effect.webp)
+<!-- /ui-atlas:details -->
+
+<a id="horizontal-scroll"></a>
+## 横向滚动展陈 / Horizontal Scroll
+
+- 标识：`motion/horizontal-scroll`；类型：组件／效果。
+- 效果要点：在有界展示区中随滚动横向浏览展品，并保留进度与上下文。
+- 实现提示词：将选定展陈区实现为横向浏览：明确滚动进度到横向位移的映射、起止位置和离开区间；触摸与键盘仍能到达全部展品。
+- 核对要点：不全站劫持滚轮；响应式重新测量；提供正常列表回退，避免只实现匀速跑马灯。
+- 媒体取舍：仅保留一张无讲解文字的效果参考；触发、时序、运动路径与减弱动态需在项目中验证。
+
+<!-- ui-atlas:details motion/horizontal-scroll -->
+- 原尺寸图片：[01 · 1375×1340](../assets/details/motion/horizontal-scroll-effect.webp)。
+- 清晰度边界：1440×2560 视频在播放器接近原尺寸呈现后，仅裁出 UI 效果区域；WebP 质量 98，未放大、未锐化、未涂抹。原画中的材质模糊和光晕属于效果；静态图只核对可见状态，连续运动在项目中验证。
+
+![横向滚动展陈：原尺寸独立参考](../assets/details/motion/horizontal-scroll-effect.webp)
+<!-- /ui-atlas:details -->
+
+<a id="layout-animation"></a>
+## 排序筛选布局动画 / Layout Animation
+
+- 标识：`motion/layout-animation`；类型：组件／效果。
+- 效果要点：同一组元素排序或筛选后，保留身份并平滑移动到新位置。
+- 实现提示词：给已有排序与筛选结果添加布局动画，稳定元素 key，复用当前动画库的布局测量或 FLIP；业务状态立即生效，连续操作从当前视觉位置继续。
+- 核对要点：图仅保留完成后的网格局部；初态、重排与移除过程需实际验证。控制 DOM 测量批次，不为每一帧动画 width 或 top。
+- 媒体取舍：仅保留一张无讲解文字的效果参考；该图展示局部细节。触发、时序、运动路径与减弱动态需在项目中验证。
+
+<!-- ui-atlas:details motion/layout-animation -->
+- 原尺寸图片：[01 · 1095×1060](../assets/details/motion/layout-animation-effect.webp)。
+- 清晰度边界：1440×2560 视频在播放器接近原尺寸呈现后，仅裁出 UI 效果区域；WebP 质量 98，未放大、未锐化、未涂抹。原画中的材质模糊和光晕属于效果；静态图只核对可见状态，连续运动在项目中验证。
+
+![排序筛选布局动画：原尺寸独立参考](../assets/details/motion/layout-animation-effect.webp)
 <!-- /ui-atlas:details -->
