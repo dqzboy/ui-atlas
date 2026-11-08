@@ -1671,6 +1671,16 @@
       ],
       "poster": "assets/details/interface-details/inner-highlight-effect.webp",
       "image_reason": "复用已完成的卡片布局，展示结构、线性图标、底座、同色渐变与浅纹理；其他材质和交互以指南文字为准，该图不证明它们的外观或连续行为。"
+    },
+    "motion/shockwave-halo": {
+      "source": "native-video-still",
+      "limitation": "直接从 2160×2880 视频解码，按原像素裁出无讲解文字、来源标记与光标的深浅主题 UI 局部，WebP 质量 98，不放大、不锐化、不涂抹；图片不是完整页面或连续演示，只覆盖 Aurora 配色。",
+      "images": [
+        "assets/details/motion/shockwave-halo-dark.webp",
+        "assets/details/motion/shockwave-halo-light.webp"
+      ],
+      "poster": "assets/details/motion/shockwave-halo-dark.webp",
+      "image_reason": "仅保留深浅主题各一张 Aurora 效果局部，用于比较加光与染色；连续运动、其他配色与边缘采样按完整配方在项目中验证。"
     }
   },
   "files": {
@@ -3152,6 +3162,20 @@
       "sha256": "44626cd314515085111bb471af0852ce7615f39873f08ccd438cc7cd26c64876",
       "width": 1334,
       "height": 735,
+      "bundled": true
+    },
+    "assets/details/motion/shockwave-halo-dark.webp": {
+      "bytes": 140854,
+      "sha256": "3d1662ea4d1ef3cef5fe18c447e4da49daddf6b717c9ef33c67e360d79123d86",
+      "width": 2016,
+      "height": 790,
+      "bundled": true
+    },
+    "assets/details/motion/shockwave-halo-light.webp": {
+      "bytes": 177228,
+      "sha256": "a7c8e4518181eb4ff50eeef4717b082be3e5781f7d0a89003a949543c989891f",
+      "width": 2016,
+      "height": 1260,
       "bundled": true
     }
   },

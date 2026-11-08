@@ -32,6 +32,7 @@
 - [滚动卡片堆叠](#stacking-cards)
 - [横向滚动展陈](#horizontal-scroll)
 - [排序筛选布局动画](#layout-animation)
+- [有物理质感的冲击波（含扭曲与通道分离）](#shockwave-halo)
 
 <a id="border-beam"></a>
 ## 边缘流光 / Border Beam
@@ -440,4 +441,21 @@
 - 清晰度边界：1440×2560 视频在播放器接近原尺寸呈现后，仅裁出 UI 效果区域；WebP 质量 98，未放大、未锐化、未涂抹。原画中的材质模糊和光晕属于效果；静态图只核对可见状态，连续运动在项目中验证。
 
 ![排序筛选布局动画：原尺寸独立参考](../assets/details/motion/layout-animation-effect.webp)
+<!-- /ui-atlas:details -->
+
+<a id="shockwave-halo"></a>
+## 有物理质感的冲击波（含扭曲与通道分离） / Shockwave Halo
+
+- 标识：`motion/shockwave-halo`；类型：组件／效果。
+- 效果要点：一次触发后，整道透镜光环扫过限定内容区，叠加微弱 RGB 通道分离、四道柔和色环、内容边缘折射与边线反光；结束恢复原画面。
+- 实现提示词：在现有项目内按 [完整冲击波配方](recipes/shockwave-halo.md) 实现，沿用已确定的触发、原点、作用区和主题；页面可读为纹理时启用真实扭曲与通道分离，无可靠快照时回退透明彩环，保留输入与焦点交互。
+- 核对要点：光环作为整体透镜，不拆成多道水波；红／蓝相对绿通道位移为 1.08／0.92 倍，正文全程可读。裁切到内容区，工具栏和窗框稳定，结束无持续帧循环，减弱动态时只保留低强度原地淡入淡出。
+- 媒体取舍：只保留深、浅主题各一张 Aurora 效果局部，展示两种不同的混色方式；其余三组配色用完整参数说明，扩散节奏、连续中断和边缘采样在项目中验证。
+
+<!-- ui-atlas:details motion/shockwave-halo -->
+- 原尺寸图片：[01 · 2016×790](../assets/details/motion/shockwave-halo-dark.webp) · [02 · 2016×1260](../assets/details/motion/shockwave-halo-light.webp)。
+- 多图用途：仅保留深浅主题各一张 Aurora 效果局部，用于比较加光与染色；连续运动、其他配色与边缘采样按完整配方在项目中验证。
+- 清晰度边界：直接从 2160×2880 视频解码，按原像素裁出无讲解文字、来源标记与光标的深浅主题 UI 局部，WebP 质量 98，不放大、不锐化、不涂抹；图片不是完整页面或连续演示，只覆盖 Aurora 配色。
+
+![有物理质感的冲击波（含扭曲与通道分离）：原尺寸独立参考](../assets/details/motion/shockwave-halo-dark.webp)
 <!-- /ui-atlas:details -->

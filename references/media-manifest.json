@@ -1557,6 +1557,20 @@
       "width": 1334,
       "height": 735,
       "bundled": true
+    },
+    "assets/details/motion/shockwave-halo-dark.webp": {
+      "bytes": 140854,
+      "sha256": "3d1662ea4d1ef3cef5fe18c447e4da49daddf6b717c9ef33c67e360d79123d86",
+      "width": 2016,
+      "height": 790,
+      "bundled": true
+    },
+    "assets/details/motion/shockwave-halo-light.webp": {
+      "bytes": 177228,
+      "sha256": "a7c8e4518181eb4ff50eeef4717b082be3e5781f7d0a89003a949543c989891f",
+      "width": 2016,
+      "height": 1260,
+      "bundled": true
     }
   }
 }

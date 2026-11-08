@@ -4311,6 +4311,55 @@
       "evidence": "static-reference"
     },
     {
+      "id": "motion/shockwave-halo",
+      "category": "motion",
+      "category_title": "常见动效",
+      "slug": "shockwave-halo",
+      "name": "有物理质感的冲击波（含扭曲与通道分离）",
+      "english": "Shockwave Halo",
+      "summary": "从指定触发点向内容区扩散整环透镜，叠加微弱 RGB 通道分离、四道色环、边缘折射与边线反光；深浅主题分别染色与加光，静止时无持续动画。",
+      "prompt": "按完整冲击波配方，在现有内容区实现一次触发的透镜光环与轻微通道分离；保持原输入和业务行为，工具栏清晰。无可靠页面纹理时只做透明彩环，减弱动态时原地低强度淡入淡出。",
+      "kind": "pattern",
+      "media_type": "image",
+      "evidence": "static-reference",
+      "media_reason": "仅保留深浅主题各一张 Aurora 效果局部，用于比较加光与染色；连续运动、其他配色与边缘采样按完整配方在项目中验证。",
+      "images": [
+        "assets/details/motion/shockwave-halo-dark.webp",
+        "assets/details/motion/shockwave-halo-light.webp"
+      ],
+      "preview": "assets/details/motion/shockwave-halo-dark.webp",
+      "recipe": "references/recipes/shockwave-halo.md",
+      "keywords": [
+        "冲击波",
+        "光环",
+        "物理质感",
+        "透镜扭曲",
+        "通道分离",
+        "RGB",
+        "色散",
+        "chromatic aberration",
+        "lens distortion",
+        "shockwave",
+        "halo",
+        "页面快照",
+        "边缘折射",
+        "边线反光",
+        "Aurora",
+        "Halo",
+        "Frost",
+        "Spark",
+        "WebGL",
+        "AI input",
+        "减弱动态"
+      ],
+      "related": [
+        "motion/easing",
+        "glass-materials/liquid-glass",
+        "motion/border-beam",
+        "buttons-controls/ripple-button"
+      ]
+    },
+    {
       "id": "interface-details/card-craft",
       "category": "interface-details",
       "category_title": "界面排版与细节",
