@@ -1571,6 +1571,34 @@
       "width": 2016,
       "height": 1260,
       "bundled": true
+    },
+    "assets/details/motion/card-delete-burn.webp": {
+      "bytes": 115634,
+      "sha256": "cbcd1c8a5ac187232a0d1abbf8224342722487227c9a46316a20b9f353f4071f",
+      "width": 940,
+      "height": 1160,
+      "bundled": true
+    },
+    "assets/details/motion/card-delete-plume.webp": {
+      "bytes": 90468,
+      "sha256": "595fd47d21ca1e60a14399e8dae322e0c9b1dde0d0e84cc622a94af7872ad424",
+      "width": 940,
+      "height": 1160,
+      "bundled": true
+    },
+    "assets/details/motion/card-delete-blocks.webp": {
+      "bytes": 131256,
+      "sha256": "96d05c13575641e370b1f675ede4a8c1925ab048b23ac5eea9b78f5d57663422",
+      "width": 940,
+      "height": 1160,
+      "bundled": true
+    },
+    "assets/details/motion/card-delete-peel.webp": {
+      "bytes": 61010,
+      "sha256": "376c9e44f0b54433f61eeb7733d650a78cf787a1c76809027174debc00600b38",
+      "width": 940,
+      "height": 914,
+      "bundled": true
     }
   }
 }

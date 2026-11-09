@@ -33,6 +33,7 @@
 - [横向滚动展陈](#horizontal-scroll)
 - [排序筛选布局动画](#layout-animation)
 - [有物理质感的冲击波（含扭曲与通道分离）](#shockwave-halo)
+- [四种卡片删除效果](#card-delete-effects)
 
 <a id="border-beam"></a>
 ## 边缘流光 / Border Beam
@@ -458,4 +459,21 @@
 - 清晰度边界：直接从 2160×2880 视频解码，按原像素裁出无讲解文字、来源标记与光标的深浅主题 UI 局部，WebP 质量 98，不放大、不锐化、不涂抹；图片不是完整页面或连续演示，只覆盖 Aurora 配色。
 
 ![有物理质感的冲击波（含扭曲与通道分离）：原尺寸独立参考](../assets/details/motion/shockwave-halo-dark.webp)
+<!-- /ui-atlas:details -->
+
+<a id="card-delete-effects"></a>
+## 四种卡片删除效果 / Card Delete Effects
+
+- 标识：`motion/card-delete-effects`；类型：组件／效果。
+- 效果要点：燃烧 Burn、柔焰 Plume、碎块 Blocks、撕贴纸 Peel 四种退出方向，连同邻项受光、热浪／反作用及剩余卡片补位。默认产品选一种，保留真实删除行为和列表静止外观。
+- 实现提示词：按 [014 完整删除效果配方](recipes/card-delete-effects.md)，在既有删除入口上实现已选效果，复用当前列表与渲染能力；快照和装饰层不拖延提交、不拦截输入，补位使用 transform，保留撤销和失败恢复。
+- 核对要点：首帧匹配真实卡片；Burn／Plume 用燃烧场和火焰，Blocks 使用真实纹理切片，Peel 使用能显示前后两层的网格。分别核对邻项反应、指定补位时机、虚拟列表、滚动、并发删除、撤销、减弱动态和资源清理。
+- 媒体取舍：四种效果各一张清晰局部，便于选型与辨认材质；不重复保留近似帧。图片只覆盖浅色过程状态，时序、热浪、碰撞、揭离速度与实际删除流程需在项目验证。
+
+<!-- ui-atlas:details motion/card-delete-effects -->
+- 原尺寸图片：[01 · 940×1160](../assets/details/motion/card-delete-burn.webp) · [02 · 940×1160](../assets/details/motion/card-delete-plume.webp) · [03 · 940×1160](../assets/details/motion/card-delete-blocks.webp) · [04 · 940×914](../assets/details/motion/card-delete-peel.webp)。
+- 多图用途：燃烧、柔焰、碎块和撕贴纸各一张原像素效果局部，不重复保留近似帧；只覆盖浅色过程状态，连续路径、邻项热浪、碰撞和补位按完整配方在项目中验证。
+- 清晰度边界：直接从 2160×2880 视频按原像素裁出四种浅色删除效果局部，WebP 质量 98，不放大、不锐化、不涂抹、不跨帧修补；无讲解面板、外框或署名光标。火焰、热浪与碎块遮挡属于过程效果；静态图不能证明完整路径、深色适配、碰撞、撤销或补位。
+
+![四种卡片删除效果：原尺寸独立参考](../assets/details/motion/card-delete-burn.webp)
 <!-- /ui-atlas:details -->

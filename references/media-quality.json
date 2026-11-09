@@ -1681,6 +1681,18 @@
       ],
       "poster": "assets/details/motion/shockwave-halo-dark.webp",
       "image_reason": "仅保留深浅主题各一张 Aurora 效果局部，用于比较加光与染色；连续运动、其他配色与边缘采样按完整配方在项目中验证。"
+    },
+    "motion/card-delete-effects": {
+      "source": "native-video-still",
+      "limitation": "直接从 2160×2880 视频按原像素裁出四种浅色删除效果局部，WebP 质量 98，不放大、不锐化、不涂抹、不跨帧修补；无讲解面板、外框或署名光标。火焰、热浪与碎块遮挡属于过程效果；静态图不能证明完整路径、深色适配、碰撞、撤销或补位。",
+      "images": [
+        "assets/details/motion/card-delete-burn.webp",
+        "assets/details/motion/card-delete-plume.webp",
+        "assets/details/motion/card-delete-blocks.webp",
+        "assets/details/motion/card-delete-peel.webp"
+      ],
+      "poster": "assets/details/motion/card-delete-burn.webp",
+      "image_reason": "燃烧、柔焰、碎块和撕贴纸各一张原像素效果局部，不重复保留近似帧；只覆盖浅色过程状态，连续路径、邻项热浪、碰撞和补位按完整配方在项目中验证。"
     }
   },
   "files": {
@@ -3176,6 +3188,34 @@
       "sha256": "a7c8e4518181eb4ff50eeef4717b082be3e5781f7d0a89003a949543c989891f",
       "width": 2016,
       "height": 1260,
+      "bundled": true
+    },
+    "assets/details/motion/card-delete-burn.webp": {
+      "bytes": 115634,
+      "sha256": "cbcd1c8a5ac187232a0d1abbf8224342722487227c9a46316a20b9f353f4071f",
+      "width": 940,
+      "height": 1160,
+      "bundled": true
+    },
+    "assets/details/motion/card-delete-plume.webp": {
+      "bytes": 90468,
+      "sha256": "595fd47d21ca1e60a14399e8dae322e0c9b1dde0d0e84cc622a94af7872ad424",
+      "width": 940,
+      "height": 1160,
+      "bundled": true
+    },
+    "assets/details/motion/card-delete-blocks.webp": {
+      "bytes": 131256,
+      "sha256": "96d05c13575641e370b1f675ede4a8c1925ab048b23ac5eea9b78f5d57663422",
+      "width": 940,
+      "height": 1160,
+      "bundled": true
+    },
+    "assets/details/motion/card-delete-peel.webp": {
+      "bytes": 61010,
+      "sha256": "376c9e44f0b54433f61eeb7733d650a78cf787a1c76809027174debc00600b38",
+      "width": 940,
+      "height": 914,
       "bundled": true
     }
   },
