@@ -108,6 +108,13 @@ def validate(root, check_media=False):
                 recipe = (root / expected).read_text()
                 if re.search(r'https?://|Kubai087|枯白|关注我', recipe, re.I):
                     errors.append(f'{label}: source identity or external link in recipe')
+        if entry.get('template'):
+            expected = f'references/templates/{slug}/index.html'
+            if entry['template'] != expected or not (root / expected).is_file():
+                errors.append(f'{label}: missing or unexpected template entry point')
+            recipe_path = root / entry.get('recipe', '')
+            if not recipe_path.is_file() or f'templates/{slug}/index.html' not in recipe_path.read_text():
+                errors.append(f'{label}: missing template link in recipe')
         if media_type == 'recipe':
             expected = f'references/recipes/{slug}.md'
             if entry.get('evidence') != 'implementation-recipe':

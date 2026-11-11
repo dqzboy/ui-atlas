@@ -21,7 +21,9 @@ def main():
     paths = [root / 'SKILL.md', root / 'README.md']
     for folder in ('agents', 'references', 'scripts'):
         paths.extend(p for p in (root / folder).rglob('*')
-                     if p.is_file() and p.suffix in {'.md', '.json', '.py', '.yaml', '.yml'}
+                     if p.is_file() and (p.suffix in {'.md', '.json', '.py', '.yaml', '.yml'}
+                                        or (p.is_relative_to(root / 'references/templates')
+                                            and p.suffix in {'.html', '.css', '.js', '.sh'}))
                      and '__pycache__' not in p.parts)
     total = sum(p.stat().st_size for p in paths)
     if total > 2 * 1024 * 1024:

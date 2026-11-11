@@ -145,6 +145,20 @@ class MediaStoreTests(unittest.TestCase):
         bundled = {p for p, r in manifest['files'].items() if r.get('bundled')}
         self.assertEqual({p.relative_to(installed).as_posix()
                           for p in (installed / 'assets').rglob('*') if p.is_file()}, bundled)
+        # A documented template must survive installation as editable source,
+        # including the HTML entry point and its rendering/encoding helpers.
+        for entry in data['items']:
+            if not entry.get('template'):
+                continue
+            template = Path(entry['template']).parent
+            originals = {p.relative_to(media_store.ROOT)
+                         for p in (media_store.ROOT / template).rglob('*')
+                         if p.is_file() and '__pycache__' not in p.parts}
+            self.assertIn(Path(entry['template']), originals)
+            self.assertTrue(originals)
+            for relative in originals:
+                self.assertEqual((installed / relative).read_bytes(),
+                                 (media_store.ROOT / relative).read_bytes())
 
     def test_detail_selection_requires_every_image_to_be_verified(self):
         first = 'assets/details/motion/example-01.png'

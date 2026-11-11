@@ -1,6 +1,6 @@
 # 产品质感技巧配方
 
-本组包含 14 份实现配方，配有随技能提供、可离线查看的参考图。011 复用已有缓动参考，包含两段连续使用的提示词；012 提供六种消息气泡材质参考；冲击波提供深、浅主题两张效果局部；014 提供四种卡片删除效果。按所需行为选用，再读取对应的完整参数和实现提示词。
+本组包含 16 份实现配方，配有随技能提供、可离线查看的参考图。011 复用已有缓动参考，包含两段连续使用的提示词；012 提供六种消息气泡材质参考；冲击波提供深、浅主题两张效果局部；014 提供四种卡片删除效果；015 提供八类状态连续模式和三张清晰完成态参考；Bento 展示另附可编辑 HTML 与渲染脚本。按所需行为选用，再读取对应的完整参数和实现提示词。
 
 | 编号 | 技巧 | 检索 ID | 完整配方 | 效果参考 |
 |---|---|---|---|---|
@@ -18,5 +18,7 @@
 | 012 | 消息气泡的材质与动效（探索版） | `glass-materials/message-bubble-materials` | [配方](recipes/message-bubble-materials.md) | [六种材质](glass-materials.md#message-bubble-materials) |
 | — | 有物理质感的冲击波（含扭曲与通道分离） | `motion/shockwave-halo` | [配方](recipes/shockwave-halo.md) | [深浅主题](motion.md#shockwave-halo) |
 | 014 | 四种卡片删除效果：燃烧、柔焰、碎块和撕贴纸 | `motion/card-delete-effects` | [配方（完整提示词）](recipes/card-delete-effects.md) | [四种效果](motion.md#card-delete-effects) |
+| 015 | 用好连续性，让产品更丝滑 | `motion/continuous-transitions` | [配方（完整提示词）](recipes/continuous-transitions.md) | [三类完成态](motion.md#continuous-transitions) |
+| — | Bento 组件网格与独立动效 | `design-composition/bento-motion-grid` | [配方与模板](recipes/bento-motion-grid.md) | [完整网格](design-composition.md#bento-motion-grid) |
 
 参数是实现起点，按现有组件、主题、字号与设备调整。浮层选型先遵循产品的真实可逆性和保存语义；玻璃与连续圆角在目标浏览器中验证并保留回退。所有效果都需在项目实际状态中核对。

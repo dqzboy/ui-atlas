@@ -34,6 +34,7 @@
 - [排序筛选布局动画](#layout-animation)
 - [有物理质感的冲击波（含扭曲与通道分离）](#shockwave-halo)
 - [四种卡片删除效果](#card-delete-effects)
+- [用好连续性，让产品更丝滑](#continuous-transitions)
 
 <a id="border-beam"></a>
 ## 边缘流光 / Border Beam
@@ -291,7 +292,7 @@
 - 统一节奏时使用 [011 动画节奏配方](recipes/easing.md) 的细分起点：小型入场 150–250 ms、离场 120–200 ms，中型 250–350 ms，大型 350–500 ms；手势弹簧保留释放速度，性能优化不改变真实布局行为。
 - 媒体取舍：这是时长、性能与减弱动态的文字规则，拼图讲解静态图足够。
 
-- 选型补充：动效具体选型与 20 种效果的实现提示词见 motion-selection.md。液态扭曲、共享元素转场、无限画廊、物理掉落与页面转场以文字说明为准；不借用其他效果的图片作为视觉证据。
+- 选型补充：动效具体选型与 20 种效果的实现提示词见 motion-selection.md；共享元素与状态连续性进一步读取 references/recipes/continuous-transitions.md。液态扭曲、无限画廊、物理掉落与页面转场以文字说明为准；不借用其他效果的图片作为视觉证据。
 
 <!-- ui-atlas:details motion/motion-rules -->
 - 原尺寸图片：[01 · 600×756](https://raw.githubusercontent.com/dqzboy/ui-atlas/4d61e1224c50685c02acae3ae67ebe9c217fa3b9/assets/details/motion/motion-rules.png)。
@@ -476,4 +477,21 @@
 - 清晰度边界：直接从 2160×2880 视频按原像素裁出四种浅色删除效果局部，WebP 质量 98，不放大、不锐化、不涂抹、不跨帧修补；无讲解面板、外框或署名光标。火焰、热浪与碎块遮挡属于过程效果；静态图不能证明完整路径、深色适配、碰撞、撤销或补位。
 
 ![四种卡片删除效果：原尺寸独立参考](../assets/details/motion/card-delete-burn.webp)
+<!-- /ui-atlas:details -->
+
+<a id="continuous-transitions"></a>
+## 用好连续性，让产品更丝滑 / Continuous Transitions
+
+- 标识：`motion/continuous-transitions`；类型：组件／效果。
+- 效果要点：同一元素承接下一状态：行到详情、卡片展开、紧凑条到面板、搜索筛选、摘要到图表、控件到菜单、共享导航指示器与布局重排。保留原有内容、操作、路由和静止布局。
+- 实现提示词：读取 [015 完整连续性配方](recipes/continuous-transitions.md)，先诊断并按价值／成本给出最多 10 项建议，再实施已选项目；复用现有共享元素／FLIP 能力，保持真实数据、可中断输入、返回路径和减弱动态。
+- 核对要点：稳定且唯一的共享身份、真实首尾矩形、文字换行与圆角交接；返回源缺失时正常降级，搜索保留焦点和 IME，手势沿用原取消阈值，临时快照不拦截输入或重复进入读屏。
+- 媒体取舍：播放器、详细图表与锚定菜单各保留一个清晰完成态；静态参考不证明连续路径、速度或焦点行为，按完整配方在项目中验证。
+
+<!-- ui-atlas:details motion/continuous-transitions -->
+- 原尺寸图片：[01 · 800×1670](../assets/details/motion/continuity-player.webp) · [02 · 860×1200](../assets/details/motion/continuity-chart.webp) · [03 · 1100×1350](../assets/details/motion/continuity-menu.webp)。
+- 多图用途：播放器、详细图表与锚定菜单各一张清晰完成态，不堆叠近似帧；用于核对元素层级与最终布局，连续路径、身份映射、手势和深色适配按完整配方在项目中验证。
+- 清晰度边界：直接从 2160×2880 视频解码，按原像素裁出三个浅色 UI 局部，WebP 质量 98，不放大、不锐化、不涂抹、不跨帧修补；不含外框、讲解面板或指示圈。图片只覆盖完成状态，不能证明共享元素路径、缓动、输入命中与返回行为。
+
+![用好连续性，让产品更丝滑：原尺寸独立参考](../assets/details/motion/continuity-player.webp)
 <!-- /ui-atlas:details -->

@@ -1,6 +1,6 @@
 # UI 参考索引
 
-共 **193 条参考、18 个分类**：171 组组件／状态／设计规则（缓动、消息气泡、冲击波与卡片删除条目另附完整配方）、12 组精选页面图集，以及 10 组独立配方条目；共提供 14 份完整实现配方。相同效果只保留代表图，必要状态和不同页面才使用多图。
+共 **195 条参考、18 个分类**：173 组组件／状态／设计规则（缓动、消息气泡、冲击波、卡片删除、连续转场与 Bento 展示条目另附完整配方）、12 组精选页面图集，以及 10 组独立配方条目；共提供 16 份完整实现配方。相同效果只保留代表图，必要状态和不同页面才使用多图。
 
 新增卡片材质与网页动效：按需读取 [23 项卡片质感指南](card-craft.md) 或 [20 种动效选型](motion-selection.md)，实现说明与效果图分开使用。
 
@@ -13,7 +13,7 @@
 | 背景特效 | 13 | [backgrounds.md](backgrounds.md) |
 | 卡片与表格 | 15 | [cards-tables.md](cards-tables.md) |
 | 表单 | 14 | [forms.md](forms.md) |
-| 常见动效 | 28 | [motion.md](motion.md) |
+| 常见动效 | 29 | [motion.md](motion.md) |
 | 按钮、状态与选项 | 43 | [buttons-controls.md](buttons-controls.md) |
 | Web 微交互 | 10 | [web-interactions.md](web-interactions.md) |
 | 移动端交互 | 1 | [mobile-interactions.md](mobile-interactions.md) |
@@ -25,7 +25,7 @@
 | 移动端工作台与服务门户 | 3 | [mobile-workbenches.md](mobile-workbenches.md) |
 | 文档与帮助中心布局 | 1 | [documentation-layouts.md](documentation-layouts.md) |
 | 文字特效 | 12 | [text-effects.md](text-effects.md) |
-| 页面与演示设计 | 4 | [design-composition.md](design-composition.md) |
+| 页面与演示设计 | 5 | [design-composition.md](design-composition.md) |
 
 ## 查找与查看
 
@@ -41,4 +41,4 @@ python3 scripts/fetch_media.py loading-errors/loading-button --media images
 
 - 组件与文字特效的原片截图随包提供，其他页面图片按需下载并校验 SHA-256，重复使用读取缓存。
 - 静态图显示构图与状态；触发、路径、速度、焦点、请求和响应式行为在真实项目中验证。5 份配方另有精选连续片段。
-- [14 份质感配方](craft-recipes.md) · [机器索引](catalog.json) · [图片清晰度](media-quality.md) · [技能说明](../SKILL.md)
+- [16 份质感配方](craft-recipes.md) · [机器索引](catalog.json) · [图片清晰度](media-quality.md) · [技能说明](../SKILL.md)

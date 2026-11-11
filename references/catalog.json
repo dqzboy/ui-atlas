@@ -1600,13 +1600,11 @@
         "assets/details/motion/motion-rules.png"
       ],
       "preview": "assets/details/motion/motion-rules.png",
-      "implementation": "动效具体选型与 20 种效果的实现提示词见 motion-selection.md。液态扭曲、共享元素转场、无限画廊、物理掉落与页面转场以文字说明为准；不借用其他效果的图片作为视觉证据。",
+      "implementation": "动效具体选型与 20 种效果的实现提示词见 motion-selection.md；共享元素与状态连续性进一步读取 references/recipes/continuous-transitions.md。液态扭曲、无限画廊、物理掉落与页面转场以文字说明为准；不借用其他效果的图片作为视觉证据。",
       "keywords": [
         "20种动效",
         "液态扭曲",
         "Liquid Distortion",
-        "共享元素转场",
-        "Shared Element Transition",
         "无限画廊",
         "Infinite Gallery",
         "物理掉落",
@@ -4417,6 +4415,56 @@
       ]
     },
     {
+      "id": "motion/continuous-transitions",
+      "category": "motion",
+      "category_title": "常见动效",
+      "slug": "continuous-transitions",
+      "name": "用好连续性，让产品更丝滑",
+      "english": "Continuous Transitions and Shared Elements",
+      "summary": "015：让行、卡片、播放条、搜索框、指标、菜单、导航指示器与重排项在状态切换中延续身份；先诊断断裂，再实施所选连续转场，保留真实内容、路由和布局。",
+      "prompt": "按 015 完整配方检查现有产品的状态跳变，给出最多 10 项排序建议，再实施用户选中的项目；用共享 ID、FLIP 或现有动画能力连接真实首尾状态，保持输入、返回、手势取消和减弱动态。已有明确选择与授权时直接推进。",
+      "kind": "pattern",
+      "media_type": "image",
+      "evidence": "static-reference",
+      "media_reason": "播放器、详细图表与锚定菜单各一张清晰完成态，不堆叠近似帧；用于核对元素层级与最终布局，连续路径、身份映射、手势和深色适配按完整配方在项目中验证。",
+      "images": [
+        "assets/details/motion/continuity-player.webp",
+        "assets/details/motion/continuity-chart.webp",
+        "assets/details/motion/continuity-menu.webp"
+      ],
+      "preview": "assets/details/motion/continuity-player.webp",
+      "recipe": "references/recipes/continuous-transitions.md",
+      "keywords": [
+        "015",
+        "连续性",
+        "连续转场",
+        "状态切换",
+        "共享元素",
+        "共享元素转场",
+        "Shared Element Transition",
+        "Continuous Transitions",
+        "continuity",
+        "FLIP",
+        "View Transitions",
+        "matched geometry",
+        "卡片展开",
+        "迷你播放器",
+        "mini player",
+        "搜索连续性",
+        "摘要到图表",
+        "菜单展开",
+        "Tab指示器",
+        "布局重排",
+        "手势取消",
+        "返回路径"
+      ],
+      "related": [
+        "motion/layout-animation",
+        "motion/easing",
+        "motion/card-delete-effects"
+      ]
+    },
+    {
       "id": "interface-details/card-craft",
       "category": "interface-details",
       "category_title": "界面排版与细节",
@@ -4460,6 +4508,51 @@
         "interface-details/inner-highlight",
         "glass-materials/brushed-metal",
         "motion/gradient-border"
+      ]
+    },
+    {
+      "id": "design-composition/bento-motion-grid",
+      "category": "design-composition",
+      "category_title": "页面与演示设计",
+      "slug": "bento-motion-grid",
+      "name": "Bento 组件网格与独立动效",
+      "english": "Bento UI Motion Grid",
+      "summary": "用五列 24 个组件组织固定镜头的 Bento 展示，组合滚动数字、独立周期、弹簧入场、列表堆叠和柔和交接；附可编辑 HTML 与逐帧渲染脚本，真实产品按状态接入。",
+      "prompt": "读取 Bento 完整配方，按目标选择卡片、单一主强调色和组件节奏；展示片复制内置模板后以确定的 draw(t) 逐帧渲染，先短片核对再完整输出；实际页面保留真实数据、DOM 身份、焦点与减弱动态。",
+      "kind": "pattern",
+      "media_type": "image",
+      "evidence": "static-reference",
+      "media_reason": "只保留一张 24 组件完整网格，展示排版、层次、圆角、图标和同一时刻的可见状态；不重复拆分局部图。连续节奏、循环边界与真实交互按配方运行验证。",
+      "images": [
+        "assets/details/design-composition/bento-motion-grid.webp"
+      ],
+      "preview": "assets/details/design-composition/bento-motion-grid.webp",
+      "recipe": "references/recipes/bento-motion-grid.md",
+      "template": "references/templates/bento-motion-grid/index.html",
+      "keywords": [
+        "Bento",
+        "bento-ui-motion-grid",
+        "bento motion grid",
+        "便当盒",
+        "组件网格",
+        "组件展示",
+        "设计系统展示",
+        "固定镜头",
+        "独立动效",
+        "滚动数字",
+        "odometer",
+        "draw(t)",
+        "确定时间轴",
+        "120fps",
+        "60fps",
+        "组件作品集",
+        "UI motion showcase"
+      ],
+      "related": [
+        "design-composition/landing-hierarchy",
+        "motion/continuous-transitions",
+        "motion/easing",
+        "motion/count-up"
       ]
     }
   ],

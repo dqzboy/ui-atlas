@@ -10,6 +10,7 @@
 - [PPT 单页观点与统一模板](#slide-story)
 - [官网首页的层级与留白](#landing-hierarchy)
 - [把设计规则写成项目规范](#design-spec)
+- [Bento 组件网格与独立动效](#bento-motion-grid)
 
 <a id="dashboard-focus"></a>
 ## 数据看板的重点与对齐 / Dashboard Focus
@@ -76,4 +77,21 @@
 - 清晰度边界：从 1440×2160 原片按原像素裁出已实现的界面，WebP 质量 98；未缩放、未锐化、未涂抹。仅展示完成后的版式与层级，交互在项目中验证。
 
 ![把设计规则写成项目规范：原尺寸独立参考](../assets/details/design-composition/landing-hierarchy-effect.webp)
+<!-- /ui-atlas:details -->
+
+<a id="bento-motion-grid"></a>
+## Bento 组件网格与独立动效 / Bento UI Motion Grid
+
+- 标识：`design-composition/bento-motion-grid`；类型：组件组合／展示配方。
+- 适用场景：设计系统展示、组件作品集、产品概念短片，以及真实页面的局部布局与动效参考。
+- 画面要点：五列不同大小的托盘组织 24 个组件，统一圆角、排版、阴影和主强调色；固定镜头中各卡独立变化，数字、轨道、列表与内容层次保持连续。
+- 实现提示词：读取 [Bento 完整配方](recipes/bento-motion-grid.md)，复制 [可编辑模板](templates/bento-motion-grid/index.html) 后按目标调整。展示片使用确定的 draw(t) 与逐帧渲染；真实产品选择少量相关细节，由真实状态驱动，保留焦点、输入和减弱动态。
+- 核对要点：数字位数变化、同一值的图文同步、offset 前后与周期交接、卡片裁切和层次；渲染输入与编码帧率一致，60 fps 交付与母版等时长。静态图与短片检查不能证明整段无缝循环。
+- 媒体取舍：仅一张清晰网格图；模板和脚本随包提供，不添加 GIF、重复局部图或原视频。
+
+<!-- ui-atlas:details design-composition/bento-motion-grid -->
+- 原尺寸图片：[01 · 2880×2160](../assets/details/design-composition/bento-motion-grid.webp)。
+- 清晰度边界：直接由本地 HTML／CSS／SVG 在 1024×768 CSS 舞台以 2.8125 设备像素密度渲染为 2880×2160，再以 WebP 质量 98 编码；无低清预览放大、锐化、涂抹或跨帧拼接。单帧包含滚动、裁切和淡化中的局部状态，不能证明完整动画、无缝循环或真实业务功能。
+
+![Bento 组件网格与独立动效：原尺寸独立参考](../assets/details/design-composition/bento-motion-grid.webp)
 <!-- /ui-atlas:details -->

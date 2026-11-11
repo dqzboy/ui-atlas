@@ -1599,6 +1599,34 @@
       "width": 940,
       "height": 914,
       "bundled": true
+    },
+    "assets/details/motion/continuity-player.webp": {
+      "bytes": 275686,
+      "sha256": "9bacc3aa19981112fac1c5f83ca16eebd032666653dac860a91fe49e0bb94ae2",
+      "width": 800,
+      "height": 1670,
+      "bundled": true
+    },
+    "assets/details/motion/continuity-chart.webp": {
+      "bytes": 37104,
+      "sha256": "ed74394cc7af510b64eccd2d17d9bd3d19bcf9a83336f885fca85c77e294e7dd",
+      "width": 860,
+      "height": 1200,
+      "bundled": true
+    },
+    "assets/details/motion/continuity-menu.webp": {
+      "bytes": 292026,
+      "sha256": "137275d488a0cd06dae39c39177cfc87eadb557e19f70deb198dea6968435ab9",
+      "width": 1100,
+      "height": 1350,
+      "bundled": true
+    },
+    "assets/details/design-composition/bento-motion-grid.webp": {
+      "bytes": 272952,
+      "sha256": "4093e22376e092f16f4eafd223f67b4f26a52540f09258a1ca2f33663477a7b2",
+      "width": 2880,
+      "height": 2160,
+      "bundled": true
     }
   }
 }

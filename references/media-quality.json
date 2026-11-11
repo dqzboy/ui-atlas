@@ -1693,6 +1693,26 @@
       ],
       "poster": "assets/details/motion/card-delete-burn.webp",
       "image_reason": "燃烧、柔焰、碎块和撕贴纸各一张原像素效果局部，不重复保留近似帧；只覆盖浅色过程状态，连续路径、邻项热浪、碰撞和补位按完整配方在项目中验证。"
+    },
+    "motion/continuous-transitions": {
+      "source": "native-video-still",
+      "limitation": "直接从 2160×2880 视频解码，按原像素裁出三个浅色 UI 局部，WebP 质量 98，不放大、不锐化、不涂抹、不跨帧修补；不含外框、讲解面板或指示圈。图片只覆盖完成状态，不能证明共享元素路径、缓动、输入命中与返回行为。",
+      "images": [
+        "assets/details/motion/continuity-player.webp",
+        "assets/details/motion/continuity-chart.webp",
+        "assets/details/motion/continuity-menu.webp"
+      ],
+      "poster": "assets/details/motion/continuity-player.webp",
+      "image_reason": "播放器、详细图表与锚定菜单各一张清晰完成态，不堆叠近似帧；用于核对元素层级与最终布局，连续路径、身份映射、手势和深色适配按完整配方在项目中验证。"
+    },
+    "design-composition/bento-motion-grid": {
+      "source": "native-code-render",
+      "limitation": "直接由本地 HTML／CSS／SVG 在 1024×768 CSS 舞台以 2.8125 设备像素密度渲染为 2880×2160，再以 WebP 质量 98 编码；无低清预览放大、锐化、涂抹或跨帧拼接。单帧包含滚动、裁切和淡化中的局部状态，不能证明完整动画、无缝循环或真实业务功能。",
+      "images": [
+        "assets/details/design-composition/bento-motion-grid.webp"
+      ],
+      "poster": "assets/details/design-composition/bento-motion-grid.webp",
+      "image_reason": "只保留一张 24 组件完整网格，展示排版、层次、圆角、图标和同一时刻的可见状态；不重复拆分局部图。连续节奏、循环边界与真实交互按配方运行验证。"
     }
   },
   "files": {
@@ -3216,6 +3236,34 @@
       "sha256": "376c9e44f0b54433f61eeb7733d650a78cf787a1c76809027174debc00600b38",
       "width": 940,
       "height": 914,
+      "bundled": true
+    },
+    "assets/details/motion/continuity-player.webp": {
+      "bytes": 275686,
+      "sha256": "9bacc3aa19981112fac1c5f83ca16eebd032666653dac860a91fe49e0bb94ae2",
+      "width": 800,
+      "height": 1670,
+      "bundled": true
+    },
+    "assets/details/motion/continuity-chart.webp": {
+      "bytes": 37104,
+      "sha256": "ed74394cc7af510b64eccd2d17d9bd3d19bcf9a83336f885fca85c77e294e7dd",
+      "width": 860,
+      "height": 1200,
+      "bundled": true
+    },
+    "assets/details/motion/continuity-menu.webp": {
+      "bytes": 292026,
+      "sha256": "137275d488a0cd06dae39c39177cfc87eadb557e19f70deb198dea6968435ab9",
+      "width": 1100,
+      "height": 1350,
+      "bundled": true
+    },
+    "assets/details/design-composition/bento-motion-grid.webp": {
+      "bytes": 272952,
+      "sha256": "4093e22376e092f16f4eafd223f67b4f26a52540f09258a1ca2f33663477a7b2",
+      "width": 2880,
+      "height": 2160,
       "bundled": true
     }
   },
