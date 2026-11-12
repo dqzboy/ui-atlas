@@ -155,16 +155,16 @@
       "slug": "toast",
       "name": "轻提示",
       "english": "Toast / Snackbar",
-      "summary": "保存成功等简短反馈在上方或下方出现，几秒后自动消失；部分组件库称 Snackbar，可带撤销。",
-      "prompt": "保存成功后使用 Toast，3 秒后自动消失，无需用户再点确定。",
+      "summary": "用户刚完成操作的即时反馈，分为 Status、带真实 Undo 的 Action 与原地更新结果的 Progress；必须修复的失败持续留在条目。",
+      "prompt": "按当前操作选择 Status、Action 或 Progress Toast，保留真实撤销期限，进度与结果原地更新，不让失败自动消失。",
       "kind": "pattern",
       "media_type": "image",
       "evidence": "static-reference",
-      "media_reason": "位置、文案和撤销样式由图片表达；现有素材未完整演示自动消失，不作为计时证据。",
+      "media_reason": "保留一张带 Undo 与倒计时的清晰状态；自动消失、真实撤销和进度原地变化需实际验证。",
       "images": [
-        "assets/details/overlays/toast-hd-01.webp"
+        "assets/details/overlays/feedback-toast-undo.webp"
       ],
-      "preview": "assets/details/overlays/toast-hd-01.webp"
+      "preview": "assets/details/overlays/feedback-toast-undo.webp"
     },
     {
       "id": "overlays/notification",
@@ -173,16 +173,16 @@
       "slug": "notification",
       "name": "通知",
       "english": "Notification",
-      "summary": "通常出现在右上角，比 Toast 大，有标题和正文；停留更久，通常带关闭按钮，如新订单提醒。",
-      "prompt": "用有标题、正文和关闭按钮的通知显示新订单，停留时间长于普通轻提示。",
+      "summary": "他人、系统或先前后台任务带来的消息；标题、正文与最多两个动作，支持堆叠，并在跨页可达的通知历史中保留。",
+      "prompt": "为外部事件使用 Notification，支持真实未读数、堆叠与展开；关闭横幅不等于处理事件，重要消息可在历史中重访。",
       "kind": "pattern",
       "media_type": "image",
       "evidence": "static-reference",
-      "media_reason": "标题、正文、关闭入口和位置是重点，普通出现过程没有独立参考价值。",
+      "media_reason": "保留一张标题、正文、动作与堆叠边缘；展开、关闭、补位和历史需实际验证。",
       "images": [
-        "assets/details/overlays/notification-hd-01.webp"
+        "assets/details/overlays/feedback-notification-stack.webp"
       ],
-      "preview": "assets/details/overlays/notification-hd-01.webp"
+      "preview": "assets/details/overlays/feedback-notification-stack.webp"
     },
     {
       "id": "overlays/toast-vs-notification",
@@ -191,17 +191,32 @@
       "slug": "toast-vs-notification",
       "name": "轻提示与通知选型",
       "english": "Toast vs Notification",
-      "summary": "只需看一眼的反馈用轻提示；希望用户注意并可持续查看的消息用通知。",
-      "prompt": "将简短成功反馈与可持续查看的通知分开处理。",
+      "summary": "016：按事件来源、处理需求、可逆性和错过影响选择三类 Toast、Notification 或行内反馈；先诊断，按所选范围修正类型与动效。",
+      "prompt": "先盘点产品消息并给出类型诊断表；按所选范围实现 Status／Action／Progress Toast、通知堆叠和历史，保留真实 Undo、持久失败与无障碍。",
       "kind": "rule",
       "media_type": "image",
       "evidence": "static-reference",
-      "media_reason": "属于消息语义与样式对比，图片和选型说明足够。",
+      "media_reason": "两图分别展示 Action Toast 与 Notification 堆叠，覆盖不同语义；完整提示词与时序见 016 配方。",
       "images": [
-        "assets/details/overlays/toast-hd-01.webp",
-        "assets/details/overlays/notification-hd-01.webp"
+        "assets/details/overlays/feedback-toast-undo.webp",
+        "assets/details/overlays/feedback-notification-stack.webp"
       ],
-      "preview": "assets/details/overlays/toast-hd-01.webp"
+      "preview": "assets/details/overlays/feedback-toast-undo.webp",
+      "recipe": "references/recipes/toast-vs-notification.md",
+      "keywords": [
+        "016",
+        "Toast 和 Notification 怎么选",
+        "status toast",
+        "action toast",
+        "progress toast",
+        "snackbar",
+        "反馈选型",
+        "通知堆叠",
+        "通知历史",
+        "Undo",
+        "撤销倒计时",
+        "消息诊断"
+      ]
     },
     {
       "id": "overlays/success-toast-correction",

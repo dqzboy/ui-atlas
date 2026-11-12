@@ -40,31 +40,31 @@
     },
     "overlays/toast": {
       "source": "native-video-still",
-      "limitation": "从 2160 像素高的原片按原像素裁切，WebP 质量 95，不放大、不锐化、不涂抹；静态帧不能证明完整运动。",
+      "limitation": "从 2160×2880 视频直接解码，按原像素裁切，WebP 质量 98；不放大、不锐化、不涂抹、不跨帧拼接。静态图不证明计时、撤销或堆叠运动。",
       "images": [
-        "assets/details/overlays/toast-hd-01.webp"
+        "assets/details/overlays/feedback-toast-undo.webp"
       ],
-      "poster": "assets/details/overlays/toast-hd-01.webp",
-      "image_reason": "位置、文案和撤销样式由图片表达；现有素材未完整演示自动消失，不作为计时证据。"
+      "poster": "assets/details/overlays/feedback-toast-undo.webp",
+      "image_reason": "保留一张带 Undo 与倒计时的清晰状态；自动消失、真实撤销和进度原地变化需实际验证。"
     },
     "overlays/notification": {
       "source": "native-video-still",
-      "limitation": "从 2160 像素高的原片按原像素裁切，WebP 质量 95，不放大、不锐化、不涂抹；静态帧不能证明完整运动。",
+      "limitation": "从 2160×2880 视频直接解码，按原像素裁切，WebP 质量 98；不放大、不锐化、不涂抹、不跨帧拼接。静态图不证明计时、撤销或堆叠运动。",
       "images": [
-        "assets/details/overlays/notification-hd-01.webp"
+        "assets/details/overlays/feedback-notification-stack.webp"
       ],
-      "poster": "assets/details/overlays/notification-hd-01.webp",
-      "image_reason": "标题、正文、关闭入口和位置是重点，普通出现过程没有独立参考价值。"
+      "poster": "assets/details/overlays/feedback-notification-stack.webp",
+      "image_reason": "保留一张标题、正文、动作与堆叠边缘；展开、关闭、补位和历史需实际验证。"
     },
     "overlays/toast-vs-notification": {
       "source": "native-video-still",
-      "limitation": "从 2160 像素高的原片按原像素裁切，WebP 质量 95，不放大、不锐化、不涂抹；静态帧不能证明完整运动。",
+      "limitation": "从 2160×2880 视频直接解码，按原像素裁切，WebP 质量 98；不放大、不锐化、不涂抹、不跨帧拼接。静态图不证明计时、撤销或堆叠运动。",
       "images": [
-        "assets/details/overlays/toast-hd-01.webp",
-        "assets/details/overlays/notification-hd-01.webp"
+        "assets/details/overlays/feedback-toast-undo.webp",
+        "assets/details/overlays/feedback-notification-stack.webp"
       ],
-      "poster": "assets/details/overlays/toast-hd-01.webp",
-      "image_reason": "属于消息语义与样式对比，图片和选型说明足够。"
+      "poster": "assets/details/overlays/feedback-toast-undo.webp",
+      "image_reason": "两图分别展示 Action Toast 与 Notification 堆叠，覆盖不同语义；完整提示词与时序见 016 配方。"
     },
     "overlays/success-toast-correction": {
       "source": "native-video-still",
@@ -2020,20 +2020,6 @@
       "height": 1770,
       "bundled": true
     },
-    "assets/details/overlays/toast-hd-01.webp": {
-      "bytes": 110544,
-      "sha256": "7a2f0ea7d92a97326291fc2e89c1d5dcffd19ecdf01a5bf0a2388b2aa53c5fc7",
-      "width": 2880,
-      "height": 1770,
-      "bundled": true
-    },
-    "assets/details/overlays/notification-hd-01.webp": {
-      "bytes": 116156,
-      "sha256": "31163318e920854912ad8a4e1ef98a6b70d54164f6224454bcf7a23398c9d3e3",
-      "width": 2880,
-      "height": 1770,
-      "bundled": true
-    },
     "assets/details/overlays/success-toast-correction-hd-01.webp": {
       "bytes": 114440,
       "sha256": "0fea66f5a56e6cb76042161e582a489aa71872388567d15d598caa73bf8947fd",
@@ -3264,6 +3250,20 @@
       "sha256": "4093e22376e092f16f4eafd223f67b4f26a52540f09258a1ca2f33663477a7b2",
       "width": 2880,
       "height": 2160,
+      "bundled": true
+    },
+    "assets/details/overlays/feedback-toast-undo.webp": {
+      "bytes": 44550,
+      "sha256": "c585f8b5e2ad5b78a7c9951008c712a88bbeb60892617648ad7b4929a01df3fe",
+      "width": 2160,
+      "height": 420,
+      "bundled": true
+    },
+    "assets/details/overlays/feedback-notification-stack.webp": {
+      "bytes": 18128,
+      "sha256": "fc484de404be7a20c015d25d2c7b6afbda1c30ec9a0cf0b5540988bb7bd2a1bd",
+      "width": 750,
+      "height": 340,
       "bundled": true
     }
   },

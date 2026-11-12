@@ -83,46 +83,49 @@
 ## 轻提示 / Toast / Snackbar
 
 - 标识：`overlays/toast`；类型：组件／效果。
-- 效果要点：保存成功等简短反馈在上方或下方出现，几秒后自动消失；部分组件库称 Snackbar，可带撤销。
-- 指令例句：保存成功后使用 Toast，3 秒后自动消失，无需用户再点确定。
-- 媒体取舍：位置、文案和撤销样式由图片表达；现有素材未完整演示自动消失，不作为计时证据。
+- 效果要点：用户刚完成操作的即时反馈，分为 Status、带真实 Undo 的 Action 与原地更新结果的 Progress；必须修复的失败持续留在条目。
+- 指令例句：按当前操作选择 Status、Action 或 Progress Toast，保留真实撤销期限，进度与结果原地更新，不让失败自动消失。
+- 媒体取舍：保留一张带 Undo 与倒计时的清晰状态；自动消失、真实撤销和进度原地变化需实际验证。
+- [016 完整配方与实现提示词](recipes/toast-vs-notification.md)。
 
 <!-- ui-atlas:details overlays/toast -->
-- 原尺寸图片：[01 · 2880×1770](../assets/details/overlays/toast-hd-01.webp)。
-- 清晰度边界：从 2160 像素高的原片按原像素裁切，WebP 质量 95，不放大、不锐化、不涂抹；静态帧不能证明完整运动。
+- 原尺寸图片：[01 · 2160×420](../assets/details/overlays/feedback-toast-undo.webp)。
+- 清晰度边界：从 2160×2880 视频直接解码，按原像素裁切，WebP 质量 98；不放大、不锐化、不涂抹、不跨帧拼接。静态图不证明计时、撤销或堆叠运动。
 
-![轻提示：原尺寸独立参考](../assets/details/overlays/toast-hd-01.webp)
+![轻提示：原尺寸独立参考](../assets/details/overlays/feedback-toast-undo.webp)
 <!-- /ui-atlas:details -->
 
 <a id="notification"></a>
 ## 通知 / Notification
 
 - 标识：`overlays/notification`；类型：组件／效果。
-- 效果要点：通常出现在右上角，比 Toast 大，有标题和正文；停留更久，通常带关闭按钮，如新订单提醒。
-- 指令例句：用有标题、正文和关闭按钮的通知显示新订单，停留时间长于普通轻提示。
-- 媒体取舍：标题、正文、关闭入口和位置是重点，普通出现过程没有独立参考价值。
+- 效果要点：他人、系统或先前后台任务带来的消息；标题、正文与最多两个动作，支持堆叠，并在跨页可达的通知历史中保留。
+- 指令例句：为外部事件使用 Notification，支持真实未读数、堆叠与展开；关闭横幅不等于处理事件，重要消息可在历史中重访。
+- 媒体取舍：保留一张标题、正文、动作与堆叠边缘；展开、关闭、补位和历史需实际验证。
+- [016 完整配方与实现提示词](recipes/toast-vs-notification.md)。
 
 <!-- ui-atlas:details overlays/notification -->
-- 原尺寸图片：[01 · 2880×1770](../assets/details/overlays/notification-hd-01.webp)。
-- 清晰度边界：从 2160 像素高的原片按原像素裁切，WebP 质量 95，不放大、不锐化、不涂抹；静态帧不能证明完整运动。
+- 原尺寸图片：[01 · 750×340](../assets/details/overlays/feedback-notification-stack.webp)。
+- 清晰度边界：从 2160×2880 视频直接解码，按原像素裁切，WebP 质量 98；不放大、不锐化、不涂抹、不跨帧拼接。静态图不证明计时、撤销或堆叠运动。
 
-![通知：原尺寸独立参考](../assets/details/overlays/notification-hd-01.webp)
+![通知：原尺寸独立参考](../assets/details/overlays/feedback-notification-stack.webp)
 <!-- /ui-atlas:details -->
 
 <a id="toast-vs-notification"></a>
 ## 轻提示与通知选型 / Toast vs Notification
 
 - 标识：`overlays/toast-vs-notification`；类型：选型／纠错。
-- 效果要点：只需看一眼的反馈用轻提示；希望用户注意并可持续查看的消息用通知。
-- 指令例句：将简短成功反馈与可持续查看的通知分开处理。
-- 媒体取舍：属于消息语义与样式对比，图片和选型说明足够。
+- 效果要点：016：按事件来源、处理需求、可逆性和错过影响选择三类 Toast、Notification 或行内反馈；先诊断，按所选范围修正类型与动效。
+- 指令例句：先盘点产品消息并给出类型诊断表；按所选范围实现 Status／Action／Progress Toast、通知堆叠和历史，保留真实 Undo、持久失败与无障碍。
+- 媒体取舍：两图分别展示 Action Toast 与 Notification 堆叠，覆盖不同语义；完整提示词与时序见 016 配方。
+- [016 完整配方与实现提示词](recipes/toast-vs-notification.md)。
 
 <!-- ui-atlas:details overlays/toast-vs-notification -->
-- 原尺寸图片：[01 · 2880×1770](../assets/details/overlays/toast-hd-01.webp) · [02 · 2880×1770](../assets/details/overlays/notification-hd-01.webp)。
-- 多图用途：属于消息语义与样式对比，图片和选型说明足够。
-- 清晰度边界：从 2160 像素高的原片按原像素裁切，WebP 质量 95，不放大、不锐化、不涂抹；静态帧不能证明完整运动。
+- 原尺寸图片：[01 · 2160×420](../assets/details/overlays/feedback-toast-undo.webp) · [02 · 750×340](../assets/details/overlays/feedback-notification-stack.webp)。
+- 多图用途：两图分别展示 Action Toast 与 Notification 堆叠，覆盖不同语义；完整提示词与时序见 016 配方。
+- 清晰度边界：从 2160×2880 视频直接解码，按原像素裁切，WebP 质量 98；不放大、不锐化、不涂抹、不跨帧拼接。静态图不证明计时、撤销或堆叠运动。
 
-![轻提示与通知选型：原尺寸独立参考](../assets/details/overlays/toast-hd-01.webp)
+![轻提示与通知选型：原尺寸独立参考](../assets/details/overlays/feedback-toast-undo.webp)
 <!-- /ui-atlas:details -->
 
 <a id="success-toast-correction"></a>
@@ -224,3 +227,4 @@
 - 媒体取舍：保留未遮挡抽屉主体的打开片段，用于观察覆盖层、侧向入场和表单的关系。
 
 - 连续动效：[GIF 片段](../assets/recipes/overlay-decision.gif)。
+- Toast、Notification 与持久反馈的详细选型见 [016 配方](recipes/toast-vs-notification.md)。

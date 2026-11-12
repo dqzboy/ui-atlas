@@ -382,20 +382,6 @@
       "height": 1770,
       "bundled": true
     },
-    "assets/details/overlays/toast-hd-01.webp": {
-      "bytes": 110544,
-      "sha256": "7a2f0ea7d92a97326291fc2e89c1d5dcffd19ecdf01a5bf0a2388b2aa53c5fc7",
-      "width": 2880,
-      "height": 1770,
-      "bundled": true
-    },
-    "assets/details/overlays/notification-hd-01.webp": {
-      "bytes": 116156,
-      "sha256": "31163318e920854912ad8a4e1ef98a6b70d54164f6224454bcf7a23398c9d3e3",
-      "width": 2880,
-      "height": 1770,
-      "bundled": true
-    },
     "assets/details/overlays/success-toast-correction-hd-01.webp": {
       "bytes": 114440,
       "sha256": "0fea66f5a56e6cb76042161e582a489aa71872388567d15d598caa73bf8947fd",
@@ -1626,6 +1612,20 @@
       "sha256": "4093e22376e092f16f4eafd223f67b4f26a52540f09258a1ca2f33663477a7b2",
       "width": 2880,
       "height": 2160,
+      "bundled": true
+    },
+    "assets/details/overlays/feedback-toast-undo.webp": {
+      "bytes": 44550,
+      "sha256": "c585f8b5e2ad5b78a7c9951008c712a88bbeb60892617648ad7b4929a01df3fe",
+      "width": 2160,
+      "height": 420,
+      "bundled": true
+    },
+    "assets/details/overlays/feedback-notification-stack.webp": {
+      "bytes": 18128,
+      "sha256": "fc484de404be7a20c015d25d2c7b6afbda1c30ec9a0cf0b5540988bb7bd2a1bd",
+      "width": 750,
+      "height": 340,
       "bundled": true
     }
   }
