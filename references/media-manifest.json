@@ -53,12 +53,6 @@
       "sha256": "2755dda47db3d08fe93ac163202d769c90a8462527cc958237ea36ea70244d8d",
       "bundled": true
     },
-    "assets/details/loading-errors/spinner.png": {
-      "bytes": 90269,
-      "sha256": "fe9ced2a5bc76d9363eae4e18b184f157260dd76aba2e42a7ab099a91a422818",
-      "width": 600,
-      "height": 900
-    },
     "assets/details/motion/motion-rules.png": {
       "bytes": 220523,
       "sha256": "909cf2e4228adcdd39d59af001ad12a511ddde4bc5569fcbd4ec873ec13044ba",
@@ -872,13 +866,6 @@
       "height": 1500,
       "bundled": true
     },
-    "assets/details/loading-errors/skeleton-hd-01.webp": {
-      "bytes": 43000,
-      "sha256": "5c3908ddd7306fde8a90d8018a480c0b4c0d8e16db71a194ab194ac64424513c",
-      "width": 1440,
-      "height": 1610,
-      "bundled": true
-    },
     "assets/details/loading-errors/blur-up-hd-01.webp": {
       "bytes": 75304,
       "sha256": "11cd90661568501229ca9835a3a9c9e431491b5491dc34443ff421099c4130b1",
@@ -886,23 +873,9 @@
       "height": 1610,
       "bundled": true
     },
-    "assets/details/loading-errors/optimistic-ui-hd-01.webp": {
-      "bytes": 68938,
-      "sha256": "3cc848cf8bd556ad56e3f72616867521cec14e9c251035cf2d61b4d24aa6925a",
-      "width": 1440,
-      "height": 1610,
-      "bundled": true
-    },
     "assets/details/loading-errors/pull-to-refresh-hd-01.webp": {
       "bytes": 85532,
       "sha256": "eba6f7ef93827e1bdd10fce84c0a1e07ba76a791c5bef1ab1432f8aee60fce98",
-      "width": 1440,
-      "height": 1610,
-      "bundled": true
-    },
-    "assets/details/loading-errors/progress-bar-hd-01.webp": {
-      "bytes": 84044,
-      "sha256": "ff7036481dbf70b51aefb04bcd4f98e4b06f674dae78ad9f91591401b77f1b1c",
       "width": 1440,
       "height": 1610,
       "bundled": true
@@ -1626,6 +1599,34 @@
       "sha256": "fc484de404be7a20c015d25d2c7b6afbda1c30ec9a0cf0b5540988bb7bd2a1bd",
       "width": 750,
       "height": 340,
+      "bundled": true
+    },
+    "assets/details/loading-errors/waiting-sync-button.webp": {
+      "bytes": 3276,
+      "sha256": "72b8b0f00d41abfa10be5d24ff21e921629c8756464accae948e1a1046fa50b2",
+      "width": 280,
+      "height": 118,
+      "bundled": true
+    },
+    "assets/details/loading-errors/waiting-skeleton.webp": {
+      "bytes": 4682,
+      "sha256": "bfb105660e9f992dd16ff7a9358fc0d058de9f654cd00ddb346d724349f11b91",
+      "width": 1820,
+      "height": 570,
+      "bundled": true
+    },
+    "assets/details/loading-errors/waiting-progress.webp": {
+      "bytes": 17196,
+      "sha256": "80410fe696eaf70cd4502bb17699ec33b819ac626cf90f07d209ad8503ee5719",
+      "width": 1020,
+      "height": 305,
+      "bundled": true
+    },
+    "assets/details/loading-errors/waiting-rollback.webp": {
+      "bytes": 24008,
+      "sha256": "88244d4b6033e5f5c919203a53fd519fb533d322752d8999e71e92b3ad7101e7",
+      "width": 2045,
+      "height": 100,
       "bundled": true
     }
   }

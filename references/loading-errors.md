@@ -4,6 +4,7 @@
 
 ## 目录
 
+- [等待状态选型（017）](#loading-states)
 - [骨架屏](#skeleton)
 - [模糊渐显](#blur-up)
 - [乐观更新](#optimistic-ui)
@@ -18,19 +19,38 @@
 - [结果页](#result)
 - [加载动画](#spinner)
 
+<a id="loading-states"></a>
+## 巧用等待状态，让产品响应更丝滑 / Loading States
+
+- 标识：`loading-errors/loading-states`；类型：选型／纠错。
+- 效果要点：017：先诊断每项等待，再选择无提示、Spinner、Skeleton、Progress、乐观更新、AI 流式结果或后台状态；保留真实进度、取消、回滚与恢复入口。
+- 实现关注：延迟约 300ms、出现后约 500ms 是视觉起点，不推迟请求结果；初次加载与刷新分开，真实进度与估时不伪造，取消与隐藏任务分开，乐观回滚仅撤回该次改动，流式阶段来自真实工作。
+- 指令例句：先盘点并按类型输出等待诊断表，再实施所选加载策略；延迟指示不延迟结果，进度和阶段真实，失败可恢复，乐观回滚不覆盖后续改动。
+- 媒体取舍：四图分别呈现动作图标、骨架占位、真实进度信息和失败重试行，复用具体条目图片；时序与业务行为按 017 配方验证。
+- [017 完整配方与实现提示词](recipes/loading-states.md)。
+
+<!-- ui-atlas:details loading-errors/loading-states -->
+- 原尺寸图片：[01 · 280×118](../assets/details/loading-errors/waiting-sync-button.webp) · [02 · 1820×570](../assets/details/loading-errors/waiting-skeleton.webp) · [03 · 1020×305](../assets/details/loading-errors/waiting-progress.webp) · [04 · 2045×100](../assets/details/loading-errors/waiting-rollback.webp)。
+- 多图用途：四图分别呈现动作图标、骨架占位、真实进度信息和失败重试行，复用具体条目图片；时序与业务行为按 017 配方验证。
+- 清晰度边界：从 2160×2880 视频直接解码，按原像素裁切，WebP 质量 98；不放大、不锐化、不涂抹、不跨帧修补。静态图不证明真实等待时长、旋转、进度、回滚或取消。
+
+![巧用等待状态，让产品响应更丝滑：原尺寸独立参考](../assets/details/loading-errors/waiting-progress.webp)
+<!-- /ui-atlas:details -->
+
 <a id="skeleton"></a>
 ## 骨架屏 / Skeleton
 
 - 标识：`loading-errors/skeleton`；类型：组件／效果。
-- 效果要点：内容未返回时，用与真实内容同形的灰色块预占位置，并可加扫光；数据到达后在原位置替换，减少布局跳动。
-- 指令例句：列表加载时用与真实内容形状一致的骨架屏，内容到达后原位替换。
-- 媒体取舍：保留内容加载前的骨架占位，不误用已加载内容帧。
+- 效果要点：已知内容结构的首次加载：静态标题、Tab 和表头立即显示，数据区域延迟约 300ms 用真实尺寸骨架占位，原位替换；刷新保留旧数据。
+- 指令例句：内容结构已知时使用真实行高与比例的 Skeleton，保留已知内容，延迟指示减少闪烁并核对到达后布局稳定。
+- 媒体取舍：保留三行无讲解标注的骨架局部；扫光、行高匹配和原位替换需实际验证。
+- [等待状态选型与完整提示词（017）](recipes/loading-states.md)。
 
 <!-- ui-atlas:details loading-errors/skeleton -->
-- 原尺寸图片：[01 · 1440×1610](../assets/details/loading-errors/skeleton-hd-01.webp)。
-- 清晰度边界：从 2160 像素高的原片按原像素裁切，WebP 质量 95，不放大、不锐化、不涂抹；静态帧不能证明完整运动。
+- 原尺寸图片：[01 · 1820×570](../assets/details/loading-errors/waiting-skeleton.webp)。
+- 清晰度边界：从 2160×2880 视频直接解码，按原像素裁切，WebP 质量 98；不放大、不锐化、不涂抹、不跨帧修补。静态图不证明真实等待时长、旋转、进度、回滚或取消。
 
-![骨架屏：原尺寸独立参考](../assets/details/loading-errors/skeleton-hd-01.webp)
+![骨架屏：原尺寸独立参考](../assets/details/loading-errors/waiting-skeleton.webp)
 <!-- /ui-atlas:details -->
 
 <a id="blur-up"></a>
@@ -53,15 +73,16 @@
 ## 乐观更新 / Optimistic UI
 
 - 标识：`loading-errors/optimistic-ui`；类型：组件／效果。
-- 效果要点：点赞、收藏等低风险操作先立即改变界面，再等待服务器；失败时恢复原状态并提示。
-- 指令例句：点赞立即变红，请求失败时回滚并提示失败。
-- 媒体取舍：保留静态效果图与实现说明；连续路径、触发顺序、节奏和短暂状态需在项目中实际验证。
+- 效果要点：业务允许且容易撤回的操作先更新界面与相关计数，再后台保存；失败仅撤回该次改动、保留输入，并在条目上持续说明与 Retry。
+- 指令例句：低风险可逆操作使用乐观更新，真实失败原位回滚并提供 Retry；并发回滚不覆盖后续编辑，不把对外发送提前当作成功。
+- 媒体取舍：保留失败后恢复勾选、说明原因和 Retry 的独立行；完整乐观过程、并发回滚与重试需实际验证。
+- [等待状态选型与完整提示词（017）](recipes/loading-states.md)。
 
 <!-- ui-atlas:details loading-errors/optimistic-ui -->
-- 原尺寸图片：[01 · 1440×1610](../assets/details/loading-errors/optimistic-ui-hd-01.webp)。
-- 清晰度边界：从 2160 像素高的原片按原像素裁切，WebP 质量 95，不放大、不锐化、不涂抹；静态帧不能证明完整运动。
+- 原尺寸图片：[01 · 2045×100](../assets/details/loading-errors/waiting-rollback.webp)。
+- 清晰度边界：从 2160×2880 视频直接解码，按原像素裁切，WebP 质量 98；不放大、不锐化、不涂抹、不跨帧修补。静态图不证明真实等待时长、旋转、进度、回滚或取消。
 
-![乐观更新：原尺寸独立参考](../assets/details/loading-errors/optimistic-ui-hd-01.webp)
+![乐观更新：原尺寸独立参考](../assets/details/loading-errors/waiting-rollback.webp)
 <!-- /ui-atlas:details -->
 
 <a id="pull-to-refresh"></a>
@@ -83,23 +104,25 @@
 ## 进度条 / Progress Bar
 
 - 标识：`loading-errors/progress-bar`；类型：组件／效果。
-- 效果要点：显示已完成比例；通常可按以下原则选择：短于约 1 秒不必额外放加载指示，几秒可用转圈，长任务用进度条并尽可能显示剩余时间。
-- 指令例句：上传大文件显示真实进度、已完成量，并在可估算时显示剩余时间。
-- 媒体取舍：重点是比例、已完成量和时间信息的呈现，多个进度状态加文字足够。
+- 效果要点：可计量的较长任务展示真实数量、比例与可估算的剩余时间；未知总量改用实际阶段，条目内或跨页任务卡呈现结果。
+- 指令例句：显示真实进度与稳定样本估算的剩余时间，区分上传和服务端处理；取消、清屏和完成结果按实际任务语义处理。
+- 媒体取舍：保留一张有任务名、数量、估时与进度条的卡片；数字、完成和取消由真实任务验证。
+- [等待状态选型与完整提示词（017）](recipes/loading-states.md)。
 
 <!-- ui-atlas:details loading-errors/progress-bar -->
-- 原尺寸图片：[01 · 1440×1610](../assets/details/loading-errors/progress-bar-hd-01.webp)。
-- 清晰度边界：从 2160 像素高的原片按原像素裁切，WebP 质量 95，不放大、不锐化、不涂抹；静态帧不能证明完整运动。
+- 原尺寸图片：[01 · 1020×305](../assets/details/loading-errors/waiting-progress.webp)。
+- 清晰度边界：从 2160×2880 视频直接解码，按原像素裁切，WebP 质量 98；不放大、不锐化、不涂抹、不跨帧修补。静态图不证明真实等待时长、旋转、进度、回滚或取消。
 
-![进度条：原尺寸独立参考](../assets/details/loading-errors/progress-bar-hd-01.webp)
+![进度条：原尺寸独立参考](../assets/details/loading-errors/waiting-progress.webp)
 <!-- /ui-atlas:details -->
 
 <a id="loading-button"></a>
 ## 按钮加载状态 / Loading Button
 
 - 标识：`loading-errors/loading-button`；类型：组件／效果。
-- 效果要点：提交后按钮内部出现加载指示，同时阻止重复点击，避免连点导致重复提交。
-- 指令例句：提交按钮显示加载中，直到请求结束前不能重复提交。
+- 效果要点：请求中立即阻止重复提交；独立 Spinner 可延迟约 300ms，保留按钮文案与宽度。视觉最短显示不延迟真实结果或输入恢复。
+- 指令例句：按钮按真实 pending 防重提交并保持文案和宽度；减少加载闪烁，完成或失败立即更新真实状态。
+- [等待状态与按钮时序（017）](recipes/loading-states.md)。
 - 媒体取舍：依次为待提交、提交中、成功，避免用相近的重复帧代替状态对照。
 
 <!-- ui-atlas:details loading-errors/loading-button -->
@@ -205,13 +228,14 @@
 ## 加载动画 / Spinner
 
 - 标识：`loading-errors/spinner`；类型：组件／效果。
-- 效果要点：圆形指示持续旋转，表达正在处理；适合无法提供精确进度的加载状态。
-- 指令例句：无法获知进度的短等待显示 Spinner。
-- 媒体取舍：保留静态效果图与实现说明；连续路径、触发顺序、节奏和短暂状态需在项目中实际验证。
+- 效果要点：短操作且无法计量时就地显示 Spinner；普通指示延迟约 300ms，原本表示同步／刷新的图标可即时旋转，保持按钮宽度与文案。
+- 指令例句：短等待按真实 pending 阻止重复提交，保持页面可用；旋转只控制视觉，不能延迟请求结果或输入恢复。
+- 媒体取舍：保留旋转中的同步按钮局部；静态帧不证明旋转路径、整圈停止或防重提交。
+- [等待状态选型与完整提示词（017）](recipes/loading-states.md)。
 
 <!-- ui-atlas:details loading-errors/spinner -->
-- 原尺寸图片：[01 · 600×900](https://raw.githubusercontent.com/dqzboy/ui-atlas/4d61e1224c50685c02acae3ae67ebe9c217fa3b9/assets/details/loading-errors/spinner.png)。
-- 清晰度边界：从历史素材提取原尺寸独立帧，避免总览缩图和再次 JPEG 压缩；源素材的分辨率与色彩限制仍在，图片不能证明连续运动。
+- 原尺寸图片：[01 · 280×118](../assets/details/loading-errors/waiting-sync-button.webp)。
+- 清晰度边界：从 2160×2880 视频直接解码，按原像素裁切，WebP 质量 98；不放大、不锐化、不涂抹、不跨帧修补。静态图不证明真实等待时长、旋转、进度、回滚或取消。
 
-![加载动画：原尺寸独立参考](https://raw.githubusercontent.com/dqzboy/ui-atlas/4d61e1224c50685c02acae3ae67ebe9c217fa3b9/assets/details/loading-errors/spinner.png)
+![加载动画：原尺寸独立参考](../assets/details/loading-errors/waiting-sync-button.webp)
 <!-- /ui-atlas:details -->

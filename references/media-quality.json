@@ -114,12 +114,12 @@
     },
     "loading-errors/skeleton": {
       "source": "native-video-still",
-      "limitation": "从 2160 像素高的原片按原像素裁切，WebP 质量 95，不放大、不锐化、不涂抹；静态帧不能证明完整运动。",
+      "limitation": "从 2160×2880 视频直接解码，按原像素裁切，WebP 质量 98；不放大、不锐化、不涂抹、不跨帧修补。静态图不证明真实等待时长、旋转、进度、回滚或取消。",
       "images": [
-        "assets/details/loading-errors/skeleton-hd-01.webp"
+        "assets/details/loading-errors/waiting-skeleton.webp"
       ],
-      "poster": "assets/details/loading-errors/skeleton-hd-01.webp",
-      "image_reason": "保留内容加载前的骨架占位，不误用已加载内容帧。"
+      "poster": "assets/details/loading-errors/waiting-skeleton.webp",
+      "image_reason": "保留三行无讲解标注的骨架局部；扫光、行高匹配和原位替换需实际验证。"
     },
     "loading-errors/blur-up": {
       "source": "native-video-still",
@@ -133,12 +133,12 @@
     },
     "loading-errors/optimistic-ui": {
       "source": "native-video-still",
-      "limitation": "从 2160 像素高的原片按原像素裁切，WebP 质量 95，不放大、不锐化、不涂抹；静态帧不能证明完整运动。",
+      "limitation": "从 2160×2880 视频直接解码，按原像素裁切，WebP 质量 98；不放大、不锐化、不涂抹、不跨帧修补。静态图不证明真实等待时长、旋转、进度、回滚或取消。",
       "images": [
-        "assets/details/loading-errors/optimistic-ui-hd-01.webp"
+        "assets/details/loading-errors/waiting-rollback.webp"
       ],
-      "poster": "assets/details/loading-errors/optimistic-ui-hd-01.webp",
-      "image_reason": "保留静态效果图与实现说明；连续路径、触发顺序、节奏和短暂状态需在项目中实际验证。"
+      "poster": "assets/details/loading-errors/waiting-rollback.webp",
+      "image_reason": "保留失败后恢复勾选、说明原因和 Retry 的独立行；完整乐观过程、并发回滚与重试需实际验证。"
     },
     "loading-errors/pull-to-refresh": {
       "source": "native-video-still",
@@ -151,12 +151,12 @@
     },
     "loading-errors/progress-bar": {
       "source": "native-video-still",
-      "limitation": "从 2160 像素高的原片按原像素裁切，WebP 质量 95，不放大、不锐化、不涂抹；静态帧不能证明完整运动。",
+      "limitation": "从 2160×2880 视频直接解码，按原像素裁切，WebP 质量 98；不放大、不锐化、不涂抹、不跨帧修补。静态图不证明真实等待时长、旋转、进度、回滚或取消。",
       "images": [
-        "assets/details/loading-errors/progress-bar-hd-01.webp"
+        "assets/details/loading-errors/waiting-progress.webp"
       ],
-      "poster": "assets/details/loading-errors/progress-bar-hd-01.webp",
-      "image_reason": "重点是比例、已完成量和时间信息的呈现，多个进度状态加文字足够。"
+      "poster": "assets/details/loading-errors/waiting-progress.webp",
+      "image_reason": "保留一张有任务名、数量、估时与进度条的卡片；数字、完成和取消由真实任务验证。"
     },
     "loading-errors/loading-button": {
       "source": "native-video-still",
@@ -225,13 +225,13 @@
       "image_reason": "成功、失败与下一步的对照图足够，不保留装饰性庆祝过程。"
     },
     "loading-errors/spinner": {
-      "source": "retained-gif-frames",
-      "limitation": "从历史素材提取原尺寸独立帧，避免总览缩图和再次 JPEG 压缩；源素材的分辨率与色彩限制仍在，图片不能证明连续运动。",
+      "source": "native-video-still",
+      "limitation": "从 2160×2880 视频直接解码，按原像素裁切，WebP 质量 98；不放大、不锐化、不涂抹、不跨帧修补。静态图不证明真实等待时长、旋转、进度、回滚或取消。",
       "images": [
-        "assets/details/loading-errors/spinner.png"
+        "assets/details/loading-errors/waiting-sync-button.webp"
       ],
-      "poster": "assets/details/loading-errors/spinner.png",
-      "image_reason": "同一效果仅保留一张内容完整的代表图；连续过程需在实际项目验证。"
+      "poster": "assets/details/loading-errors/waiting-sync-button.webp",
+      "image_reason": "保留旋转中的同步按钮局部；静态帧不证明旋转路径、整圈停止或防重提交。"
     },
     "backgrounds/aurora": {
       "source": "native-video-still",
@@ -1713,15 +1713,21 @@
       ],
       "poster": "assets/details/design-composition/bento-motion-grid.webp",
       "image_reason": "只保留一张 24 组件完整网格，展示排版、层次、圆角、图标和同一时刻的可见状态；不重复拆分局部图。连续节奏、循环边界与真实交互按配方运行验证。"
+    },
+    "loading-errors/loading-states": {
+      "source": "native-video-still",
+      "limitation": "从 2160×2880 视频直接解码，按原像素裁切，WebP 质量 98；不放大、不锐化、不涂抹、不跨帧修补。静态图不证明真实等待时长、旋转、进度、回滚或取消。",
+      "images": [
+        "assets/details/loading-errors/waiting-sync-button.webp",
+        "assets/details/loading-errors/waiting-skeleton.webp",
+        "assets/details/loading-errors/waiting-progress.webp",
+        "assets/details/loading-errors/waiting-rollback.webp"
+      ],
+      "poster": "assets/details/loading-errors/waiting-progress.webp",
+      "image_reason": "四图分别呈现动作图标、骨架占位、真实进度信息和失败重试行，复用具体条目图片；时序与业务行为按 017 配方验证。"
     }
   },
   "files": {
-    "assets/details/loading-errors/spinner.png": {
-      "bytes": 90269,
-      "sha256": "fe9ced2a5bc76d9363eae4e18b184f157260dd76aba2e42a7ab099a91a422818",
-      "width": 600,
-      "height": 900
-    },
     "assets/details/motion/motion-rules.png": {
       "bytes": 220523,
       "sha256": "909cf2e4228adcdd39d59af001ad12a511ddde4bc5569fcbd4ec873ec13044ba",
@@ -2510,13 +2516,6 @@
       "height": 1500,
       "bundled": true
     },
-    "assets/details/loading-errors/skeleton-hd-01.webp": {
-      "bytes": 43000,
-      "sha256": "5c3908ddd7306fde8a90d8018a480c0b4c0d8e16db71a194ab194ac64424513c",
-      "width": 1440,
-      "height": 1610,
-      "bundled": true
-    },
     "assets/details/loading-errors/blur-up-hd-01.webp": {
       "bytes": 75304,
       "sha256": "11cd90661568501229ca9835a3a9c9e431491b5491dc34443ff421099c4130b1",
@@ -2524,23 +2523,9 @@
       "height": 1610,
       "bundled": true
     },
-    "assets/details/loading-errors/optimistic-ui-hd-01.webp": {
-      "bytes": 68938,
-      "sha256": "3cc848cf8bd556ad56e3f72616867521cec14e9c251035cf2d61b4d24aa6925a",
-      "width": 1440,
-      "height": 1610,
-      "bundled": true
-    },
     "assets/details/loading-errors/pull-to-refresh-hd-01.webp": {
       "bytes": 85532,
       "sha256": "eba6f7ef93827e1bdd10fce84c0a1e07ba76a791c5bef1ab1432f8aee60fce98",
-      "width": 1440,
-      "height": 1610,
-      "bundled": true
-    },
-    "assets/details/loading-errors/progress-bar-hd-01.webp": {
-      "bytes": 84044,
-      "sha256": "ff7036481dbf70b51aefb04bcd4f98e4b06f674dae78ad9f91591401b77f1b1c",
       "width": 1440,
       "height": 1610,
       "bundled": true
@@ -3264,6 +3249,34 @@
       "sha256": "fc484de404be7a20c015d25d2c7b6afbda1c30ec9a0cf0b5540988bb7bd2a1bd",
       "width": 750,
       "height": 340,
+      "bundled": true
+    },
+    "assets/details/loading-errors/waiting-sync-button.webp": {
+      "bytes": 3276,
+      "sha256": "72b8b0f00d41abfa10be5d24ff21e921629c8756464accae948e1a1046fa50b2",
+      "width": 280,
+      "height": 118,
+      "bundled": true
+    },
+    "assets/details/loading-errors/waiting-skeleton.webp": {
+      "bytes": 4682,
+      "sha256": "bfb105660e9f992dd16ff7a9358fc0d058de9f654cd00ddb346d724349f11b91",
+      "width": 1820,
+      "height": 570,
+      "bundled": true
+    },
+    "assets/details/loading-errors/waiting-progress.webp": {
+      "bytes": 17196,
+      "sha256": "80410fe696eaf70cd4502bb17699ec33b819ac626cf90f07d209ad8503ee5719",
+      "width": 1020,
+      "height": 305,
+      "bundled": true
+    },
+    "assets/details/loading-errors/waiting-rollback.webp": {
+      "bytes": 24008,
+      "sha256": "88244d4b6033e5f5c919203a53fd519fb533d322752d8999e71e92b3ad7101e7",
+      "width": 2045,
+      "height": 100,
       "bundled": true
     }
   },

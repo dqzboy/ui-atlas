@@ -153,4 +153,4 @@ For each one I pick, show me a short before and after (values and motion), in my
 - 通知关闭、清屏、已读、处理及计数分别正确；必须处理的问题可重访，系统通知按真实权限与平台能力验证。
 - 手机／桌面、浅深色、减弱动态、键盘／触摸与读屏分别核对；静态图不代替行为验证。
 
-关联配方：[009 浮层与确认选型](overlay-decision.md)、[011 动画节奏](easing.md)、[015 连续转场](continuous-transitions.md)。
+关联配方：[017 等待状态选型](loading-states.md)、[009 浮层与确认选型](overlay-decision.md)、[011 动画节奏](easing.md)、[015 连续转场](continuous-transitions.md)。
