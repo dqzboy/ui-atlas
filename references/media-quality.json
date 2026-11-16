@@ -1725,6 +1725,20 @@
       ],
       "poster": "assets/details/loading-errors/waiting-progress.webp",
       "image_reason": "四图分别呈现动作图标、骨架占位、真实进度信息和失败重试行，复用具体条目图片；时序与业务行为按 017 配方验证。"
+    },
+    "cards-tables/holographic-card": {
+      "source": "native-video-still",
+      "limitation": "从 2160×2880 视频直接解码，按原像素裁成 1120×1380，WebP 质量 98；不放大、不锐化、不涂抹、不跨帧修补。六图只覆盖不同材质的正面状态，不证明连续倾斜、回弹、视差、翻面厚度、流体或传感器行为。",
+      "images": [
+        "assets/details/cards-tables/holographic-prism.webp",
+        "assets/details/cards-tables/holographic-rainbow.webp",
+        "assets/details/cards-tables/holographic-pearl.webp",
+        "assets/details/cards-tables/holographic-sparkle.webp",
+        "assets/details/cards-tables/holographic-chrome.webp",
+        "assets/details/cards-tables/holographic-etched.webp"
+      ],
+      "poster": "assets/details/cards-tables/holographic-prism.webp",
+      "image_reason": "六种不同材质各保留一张清晰正面，不重复近似帧；图片用于辨认材质、文字与亮边，倾斜、回弹、视差、翻面厚度与可选背景按 018 配方在项目中验证。"
     }
   },
   "files": {
@@ -3277,6 +3291,48 @@
       "sha256": "88244d4b6033e5f5c919203a53fd519fb533d322752d8999e71e92b3ad7101e7",
       "width": 2045,
       "height": 100,
+      "bundled": true
+    },
+    "assets/details/cards-tables/holographic-prism.webp": {
+      "bytes": 101814,
+      "sha256": "6c546e3260fdb547c7c89b3a1feefcf86c33a2b5fdf3d8dedb4993ff1c066d51",
+      "width": 1120,
+      "height": 1380,
+      "bundled": true
+    },
+    "assets/details/cards-tables/holographic-rainbow.webp": {
+      "bytes": 110196,
+      "sha256": "d912cc00081d15e5b97aad10a9572dfbd444aaf33c9b2022c6c40eced2f8f21a",
+      "width": 1120,
+      "height": 1380,
+      "bundled": true
+    },
+    "assets/details/cards-tables/holographic-pearl.webp": {
+      "bytes": 92346,
+      "sha256": "bcd183fb0fb2a865a44151db2e2c1d2b3f70887ad2b590439a729b9ec231c7a5",
+      "width": 1120,
+      "height": 1380,
+      "bundled": true
+    },
+    "assets/details/cards-tables/holographic-sparkle.webp": {
+      "bytes": 127810,
+      "sha256": "41318dc781029f172cee5b7aa25b0824c7783fa94f368f64c3222593ce21bda7",
+      "width": 1120,
+      "height": 1380,
+      "bundled": true
+    },
+    "assets/details/cards-tables/holographic-chrome.webp": {
+      "bytes": 102190,
+      "sha256": "08300d54b900f0320aa32b85fd3e0a306442167b1e21c7e4c21566459f9db8e5",
+      "width": 1120,
+      "height": 1380,
+      "bundled": true
+    },
+    "assets/details/cards-tables/holographic-etched.webp": {
+      "bytes": 131062,
+      "sha256": "c03737ab984f704f5e2346bd6bdba17028dc4df2def15620cc8e0c08218b167f",
+      "width": 1120,
+      "height": 1380,
       "bundled": true
     }
   },

@@ -879,7 +879,10 @@
       "images": [
         "assets/details/cards-tables/flip-card-hd-01.webp"
       ],
-      "preview": "assets/details/cards-tables/flip-card-hd-01.webp"
+      "preview": "assets/details/cards-tables/flip-card-hd-01.webp",
+      "related": [
+        "cards-tables/holographic-card"
+      ]
     },
     {
       "id": "cards-tables/stat-card",
@@ -1389,7 +1392,10 @@
       "images": [
         "assets/details/motion/tilt-hd-01.webp"
       ],
-      "preview": "assets/details/motion/tilt-hd-01.webp"
+      "preview": "assets/details/motion/tilt-hd-01.webp",
+      "related": [
+        "cards-tables/holographic-card"
+      ]
     },
     {
       "id": "motion/scroll-storytelling",
@@ -3142,6 +3148,65 @@
       "gif": "assets/recipes/book-open-card.gif"
     },
     {
+      "id": "cards-tables/holographic-card",
+      "category": "cards-tables",
+      "category_title": "卡片与表格",
+      "slug": "holographic-card",
+      "name": "会倾斜、能翻转的 3D 镭射卡片",
+      "english": "Holographic Card / Foil Finishes",
+      "summary": "018：Prism、Rainbow、Pearl、Sparkle、Chrome、Etched 六种镭射材质，结合指针倾斜、随光高光与亮边、画作视差、可选微晃和有厚度翻面；保持原卡片内容与操作。",
+      "prompt": "读取 references/recipes/holographic-card.md，按现有目标卡片与已选材质、手感和交互实现镭射效果；六种预设或品牌色可选，翻面、传感器和流体背景仅在选择后启用，保留触摸滚动、键盘和减弱动态。",
+      "kind": "pattern",
+      "media_type": "image",
+      "evidence": "static-reference",
+      "recipe": "references/recipes/holographic-card.md",
+      "images": [
+        "assets/details/cards-tables/holographic-prism.webp",
+        "assets/details/cards-tables/holographic-rainbow.webp",
+        "assets/details/cards-tables/holographic-pearl.webp",
+        "assets/details/cards-tables/holographic-sparkle.webp",
+        "assets/details/cards-tables/holographic-chrome.webp",
+        "assets/details/cards-tables/holographic-etched.webp"
+      ],
+      "preview": "assets/details/cards-tables/holographic-prism.webp",
+      "media_reason": "六种不同材质各保留一张清晰正面，不重复近似帧；图片用于辨认材质、文字与亮边，倾斜、回弹、视差、翻面厚度与可选背景按 018 配方在项目中验证。",
+      "keywords": [
+        "018",
+        "全息卡片",
+        "镭射卡片",
+        "激光卡",
+        "holographic",
+        "foil",
+        "iridescent",
+        "Prism",
+        "Rainbow",
+        "Pearl",
+        "Sparkle",
+        "Chrome",
+        "Etched",
+        "珠光",
+        "银镜",
+        "细闪",
+        "蚀刻",
+        "会员卡",
+        "门票",
+        "收藏卡",
+        "3D tilt",
+        "指针倾斜",
+        "glare",
+        "rim",
+        "parallax",
+        "翻面厚度",
+        "idle sway"
+      ],
+      "related": [
+        "motion/tilt",
+        "cards-tables/flip-card",
+        "interface-details/card-craft",
+        "motion/easing"
+      ]
+    },
+    {
       "id": "interface-details/cjk-latin-typesetting",
       "category": "interface-details",
       "category_title": "界面排版与细节",
@@ -4571,7 +4636,8 @@
       "related": [
         "interface-details/inner-highlight",
         "glass-materials/brushed-metal",
-        "motion/gradient-border"
+        "motion/gradient-border",
+        "cards-tables/holographic-card"
       ]
     },
     {

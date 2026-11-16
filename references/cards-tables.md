@@ -21,6 +21,7 @@
 - [斑马纹](#zebra-stripes)
 - [卡片和列表](#card-list)
 - [像书一样翻开的卡片](#book-open-card)
+- [3D 镭射卡片与六种材质](#holographic-card)
 
 <a id="carousel"></a>
 ## 轮播 / Carousel
@@ -57,7 +58,7 @@
 
 - 标识：`cards-tables/flip-card`；类型：组件／效果。
 - 效果要点：鼠标进入时卡片像翻牌一样转到背面，展示更多说明；适合正面图片、背面权益说明。
-- 指令例句：会员卡正面展示图片，交互后翻到背面展示权益说明。
+- 指令例句：会员卡正面展示图片，交互后翻到背面展示权益说明。需要六种镭射表面、画作视差和厚度时，读 [018 配方](recipes/holographic-card.md)；保留当前悬停或点击触发语义。
 - 媒体取舍：保留静态效果图与实现说明；连续路径、触发顺序、节奏和短暂状态需在项目中实际验证。
 
 <!-- ui-atlas:details cards-tables/flip-card -->
@@ -244,3 +245,20 @@
 - 媒体取舍：保留指针离开后的清晰合拢片段，以观察书页轮廓与收拢过程；不将该片段当作完整展开演示。
 
 - 连续动效：[GIF 片段](../assets/recipes/book-open-card.gif)。
+
+<a id="holographic-card"></a>
+## 会倾斜、能翻转的 3D 镭射卡片 / Holographic Card
+
+- 标识：`cards-tables/holographic-card`；类型：组件／效果。
+- 效果要点：Prism、Rainbow、Pearl、Sparkle、Chrome、Etched 六种表面，配指针倾斜、随光高光与亮边、画作视差，以及可选微晃、带厚度翻面；适合少量身份与权益卡片。
+- 实现提示词：读取 [018 完整镭射卡片配方](recipes/holographic-card.md)，复用已选目标、材质与手感；保持真实内容和操作，背景、翻面与传感器按已选范围启用。
+- 核对要点：四角与中心文字清晰，亮边局部显现；快速翻面不中断原操作，触摸滚动、键盘、隐藏面焦点和减弱动态正确。普通倾斜不强制叠加镭射或翻面。
+- 媒体取舍：六种不同材质各一张原像素正面，不保留近似重复帧；连续路径、回弹、厚度与可选功能按配方实测。
+
+<!-- ui-atlas:details cards-tables/holographic-card -->
+- 原尺寸图片：[01 · 1120×1380](../assets/details/cards-tables/holographic-prism.webp) · [02 · 1120×1380](../assets/details/cards-tables/holographic-rainbow.webp) · [03 · 1120×1380](../assets/details/cards-tables/holographic-pearl.webp) · [04 · 1120×1380](../assets/details/cards-tables/holographic-sparkle.webp) · [05 · 1120×1380](../assets/details/cards-tables/holographic-chrome.webp) · [06 · 1120×1380](../assets/details/cards-tables/holographic-etched.webp)。
+- 多图用途：六种不同材质各保留一张清晰正面，不重复近似帧；图片用于辨认材质、文字与亮边，倾斜、回弹、视差、翻面厚度与可选背景按 018 配方在项目中验证。
+- 清晰度边界：从 2160×2880 视频直接解码，按原像素裁成 1120×1380，WebP 质量 98；不放大、不锐化、不涂抹、不跨帧修补。六图只覆盖不同材质的正面状态，不证明连续倾斜、回弹、视差、翻面厚度、流体或传感器行为。
+
+![会倾斜、能翻转的 3D 镭射卡片：原尺寸独立参考](../assets/details/cards-tables/holographic-prism.webp)
+<!-- /ui-atlas:details -->
