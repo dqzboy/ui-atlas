@@ -1637,22 +1637,22 @@
       "image_reason": "仅保留一张无讲解文字的效果参考；触发、时序、运动路径与减弱动态需在项目中验证。"
     },
     "motion/stacking-cards": {
-      "source": "near-native-player-capture",
-      "limitation": "1440×2560 视频在播放器接近原尺寸呈现后，仅裁出 UI 效果区域；WebP 质量 98，未放大、未锐化、未涂抹。原画中的材质模糊和光晕属于效果；静态图只核对可见状态，连续运动在项目中验证。",
+      "source": "native-video-still",
+      "limitation": "从 2160×2880 视频直接解码，按原像素裁切，WebP 质量 98，不放大、不锐化、不涂抹、不跨帧修补；去掉窗框、讲解面板、署名光标和进度标注。图片只覆盖五种模式的局部状态，原画颗粒、像素画和虚焦属于内容风格；连续行为与适配按 019 配方在项目中验证。",
       "images": [
-        "assets/details/motion/stacking-cards-effect.webp"
+        "assets/details/motion/scroll-cards-stack.webp"
       ],
-      "poster": "assets/details/motion/stacking-cards-effect.webp",
-      "image_reason": "仅保留一张无讲解文字的效果参考；触发、时序、运动路径与减弱动态需在项目中验证。"
+      "poster": "assets/details/motion/scroll-cards-stack.webp",
+      "image_reason": "复用 019 的清晰效果局部，替换旧同类图，不重复保存；连续滚动、吸附与短屏回退按完整配方验证。"
     },
     "motion/horizontal-scroll": {
-      "source": "near-native-player-capture",
-      "limitation": "1440×2560 视频在播放器接近原尺寸呈现后，仅裁出 UI 效果区域；WebP 质量 98，未放大、未锐化、未涂抹。原画中的材质模糊和光晕属于效果；静态图只核对可见状态，连续运动在项目中验证。",
+      "source": "native-video-still",
+      "limitation": "从 2160×2880 视频直接解码，按原像素裁切，WebP 质量 98，不放大、不锐化、不涂抹、不跨帧修补；去掉窗框、讲解面板、署名光标和进度标注。图片只覆盖五种模式的局部状态，原画颗粒、像素画和虚焦属于内容风格；连续行为与适配按 019 配方在项目中验证。",
       "images": [
-        "assets/details/motion/horizontal-scroll-effect.webp"
+        "assets/details/motion/scroll-cards-gallery.webp"
       ],
-      "poster": "assets/details/motion/horizontal-scroll-effect.webp",
-      "image_reason": "仅保留一张无讲解文字的效果参考；触发、时序、运动路径与减弱动态需在项目中验证。"
+      "poster": "assets/details/motion/scroll-cards-gallery.webp",
+      "image_reason": "复用 019 的清晰效果局部，替换旧同类图，不重复保存；连续滚动、吸附与短屏回退按完整配方验证。"
     },
     "motion/layout-animation": {
       "source": "near-native-player-capture",
@@ -1739,6 +1739,19 @@
       ],
       "poster": "assets/details/cards-tables/holographic-prism.webp",
       "image_reason": "六种不同材质各保留一张清晰正面，不重复近似帧；图片用于辨认材质、文字与亮边，倾斜、回弹、视差、翻面厚度与可选背景按 018 配方在项目中验证。"
+    },
+    "motion/scroll-card-interactions": {
+      "source": "native-video-still",
+      "limitation": "从 2160×2880 视频直接解码，按原像素裁切，WebP 质量 98，不放大、不锐化、不涂抹、不跨帧修补；去掉窗框、讲解面板、署名光标和进度标注。图片只覆盖五种模式的局部状态，原画颗粒、像素画和虚焦属于内容风格；连续行为与适配按 019 配方在项目中验证。",
+      "images": [
+        "assets/details/motion/scroll-cards-stack.webp",
+        "assets/details/motion/scroll-cards-deck.webp",
+        "assets/details/motion/scroll-cards-gallery.webp",
+        "assets/details/motion/scroll-cards-cover.webp",
+        "assets/details/motion/scroll-cards-expand.webp"
+      ],
+      "poster": "assets/details/motion/scroll-cards-stack.webp",
+      "image_reason": "五种不同模式各一张清晰 UI 局部，不保留近似帧；层叠与横向条目复用同一素材。静态图用于识别布局、卡边、透视和遮挡，不证明连续滚动、抛出路径、吸附距离或移动端降级。"
     }
   },
   "files": {
@@ -3139,20 +3152,6 @@
       "height": 1340,
       "bundled": true
     },
-    "assets/details/motion/stacking-cards-effect.webp": {
-      "bytes": 219282,
-      "sha256": "d361ba2f78937f4d7127c889307e0befccb42dc159c665a38bae650bb7cf5e8e",
-      "width": 1375,
-      "height": 1340,
-      "bundled": true
-    },
-    "assets/details/motion/horizontal-scroll-effect.webp": {
-      "bytes": 96568,
-      "sha256": "576d43e410813de36635010804caa11da66e28e433571ca7c3150c043bf42289",
-      "width": 1375,
-      "height": 1340,
-      "bundled": true
-    },
     "assets/details/motion/layout-animation-effect.webp": {
       "bytes": 67286,
       "sha256": "ccbca4845feb23a1728d78de5c4b233b947ef6cbdd81070107cc0084d250baaa",
@@ -3333,6 +3332,41 @@
       "sha256": "c03737ab984f704f5e2346bd6bdba17028dc4df2def15620cc8e0c08218b167f",
       "width": 1120,
       "height": 1380,
+      "bundled": true
+    },
+    "assets/details/motion/scroll-cards-stack.webp": {
+      "bytes": 291476,
+      "sha256": "c92a9eced8d5ab300dc66d6434f2d1ce2c5767189fe9404c2b824ece30201879",
+      "width": 1885,
+      "height": 1270,
+      "bundled": true
+    },
+    "assets/details/motion/scroll-cards-deck.webp": {
+      "bytes": 97542,
+      "sha256": "91c5eb424b83a30251a0e140616c3750e600cb9ea1501f42e174a38627e150a0",
+      "width": 725,
+      "height": 1060,
+      "bundled": true
+    },
+    "assets/details/motion/scroll-cards-gallery.webp": {
+      "bytes": 150350,
+      "sha256": "8d44c9246a560222f0d959b7dcdf7687cfa3b7ef6793ace7377f764382c87735",
+      "width": 1260,
+      "height": 1390,
+      "bundled": true
+    },
+    "assets/details/motion/scroll-cards-cover.webp": {
+      "bytes": 425956,
+      "sha256": "fadd4d1f073ee1baedd043d3996fbdb937db912628e6b3d7f335cebb4b59a7cc",
+      "width": 1960,
+      "height": 885,
+      "bundled": true
+    },
+    "assets/details/motion/scroll-cards-expand.webp": {
+      "bytes": 563854,
+      "sha256": "ec205f339c884ecdce5037aae63eebcf2ffd1a549902ae5cbf60aa1a2e279f2d",
+      "width": 1980,
+      "height": 1290,
       "bundled": true
     }
   },

@@ -11,9 +11,11 @@
 | 03 遮罩揭开 / Mask Reveal | 以逐步变化的遮罩显露图片或区域，明确点击、进视口或滚动进度触发；完成后完整显示。 | [揭开完成态](motion.md#mask-reveal)，检查中间路径、圆角与减弱动态。 |
 | 04 液态扭曲 / Liquid Distortion | 让指针附近的图片产生局部波纹与 UV 位移，离开后逐步平复；前景文字与控件保持独立。 | 用受控图片的 Canvas／WebGL 装饰层实现时检查跨域与设备能力；失败时展示静态图片。不要扭曲整页 DOM 或正文。 |
 | 05 滚动叙事 / Scroll Storytelling | 在限定的固定展示区中，按滚动阶段切换产品视角、文字或场景，结束后回到正常文档流。 | 复用 [滚动叙事](motion.md#scroll-storytelling)，先设计内容顺序，再分配滚动区间。 |
-| 06 卡片堆叠 / Stacking Cards | 让步骤卡逐层覆盖，保留后方卡片边缘、阅读顺序和退出区间。 | [卡片堆叠](motion.md#stacking-cards)，窄屏长内容不能被固定高度遮挡。 |
-| 10 横向滚动 / Horizontal Scroll | 将限定展陈区的滚动进度映射为横向位移，展示时间线或展品。 | [横向展陈](motion.md#horizontal-scroll)，触摸与键盘可达，不全站拦截滚轮。 |
+| 06 卡片堆叠 / Stacking Cards | 让步骤卡逐层覆盖，保留后方卡片边缘、阅读顺序和退出区间。 | 直接读取 [019 完整配方](recipes/scroll-card-interactions.md) 的层叠参数与适配，复用 [同一参考](motion.md#stacking-cards)，窄屏长内容不能被固定高度遮挡。 |
+| 10 横向滚动 / Horizontal Scroll | 将限定展陈区的滚动进度映射为横向位移，展示时间线或展品。 | 直接读取 [019 完整配方](recipes/scroll-card-interactions.md) 的 Pinned gallery 参数与适配，复用 [同一参考](motion.md#horizontal-scroll)；手机默认原生横向行，不全站拦截滚轮。 |
 | 14 视差滚动 / Parallax | 让背景、中景、前景以不同幅度随滚动移动，保留空间层次。 | 复用 [视差](motion.md#parallax)，深度层的正文仍清晰，减弱动态时静止。 |
+
+层叠、卡组飞出、横向展廊、封面轮播与图片展开统一读 [019 五种卡片滚动配方](recipes/scroll-card-interactions.md)，含完整提示词、五种清晰局部与手机／短屏／减弱动态回退；不把 Cover flow 默认改成自动播放的 Carousel。
 
 ## 导航、浏览与指针
 

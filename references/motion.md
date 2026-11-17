@@ -35,6 +35,7 @@
 - [有物理质感的冲击波（含扭曲与通道分离）](#shockwave-halo)
 - [四种卡片删除效果](#card-delete-effects)
 - [用好连续性，让产品更丝滑](#continuous-transitions)
+- [五种卡片滚动交互](#scroll-card-interactions)
 
 <a id="border-beam"></a>
 ## 边缘流光 / Border Beam
@@ -402,15 +403,15 @@
 
 - 标识：`motion/stacking-cards`；类型：组件／效果。
 - 效果要点：卡片随滚动逐层覆盖，保留后方露出的卡片边缘与阅读顺序。
-- 实现提示词：让步骤卡片随滚动逐张覆盖前一张，保留顶部层次、清晰文字与退出堆叠区后的正常滚动。
+- 实现提示词：让步骤卡片随滚动逐张覆盖前一张，旧卡缩小变暗，保留顶部层次、清晰文字与退出堆叠区后的正常滚动。参数与实现读取 [019 完整配方](recipes/scroll-card-interactions.md)。
 - 核对要点：根据卡片高度设置粘性区间；窄屏内容不得被固定高度截断；键盘与阅读顺序保持一致。
 - 媒体取舍：仅保留一张无讲解文字的效果参考；触发、时序、运动路径与减弱动态需在项目中验证。
 
 <!-- ui-atlas:details motion/stacking-cards -->
-- 原尺寸图片：[01 · 1375×1340](../assets/details/motion/stacking-cards-effect.webp)。
-- 清晰度边界：1440×2560 视频在播放器接近原尺寸呈现后，仅裁出 UI 效果区域；WebP 质量 98，未放大、未锐化、未涂抹。原画中的材质模糊和光晕属于效果；静态图只核对可见状态，连续运动在项目中验证。
+- 原尺寸图片：[01 · 1885×1270](../assets/details/motion/scroll-cards-stack.webp)。
+- 清晰度边界：从 2160×2880 视频直接解码，按原像素裁切，WebP 质量 98，不放大、不锐化、不涂抹、不跨帧修补；去掉窗框、讲解面板、署名光标和进度标注。图片只覆盖五种模式的局部状态，原画颗粒、像素画和虚焦属于内容风格；连续行为与适配按 019 配方在项目中验证。
 
-![滚动卡片堆叠：原尺寸独立参考](../assets/details/motion/stacking-cards-effect.webp)
+![滚动卡片堆叠：原尺寸独立参考](../assets/details/motion/scroll-cards-stack.webp)
 <!-- /ui-atlas:details -->
 
 <a id="horizontal-scroll"></a>
@@ -418,15 +419,15 @@
 
 - 标识：`motion/horizontal-scroll`；类型：组件／效果。
 - 效果要点：在有界展示区中随滚动横向浏览展品，并保留进度与上下文。
-- 实现提示词：将选定展陈区实现为横向浏览：明确滚动进度到横向位移的映射、起止位置和离开区间；触摸与键盘仍能到达全部展品。
+- 实现提示词：将选定展陈区实现为横向浏览：明确滚动进度到横向位移的映射、起止位置和离开区间；触摸与键盘仍能到达全部展品。按 [019 完整配方](recipes/scroll-card-interactions.md) 测量真实溢出，手机默认用原生横向行。
 - 核对要点：不全站劫持滚轮；响应式重新测量；提供正常列表回退，避免只实现匀速跑马灯。
 - 媒体取舍：仅保留一张无讲解文字的效果参考；触发、时序、运动路径与减弱动态需在项目中验证。
 
 <!-- ui-atlas:details motion/horizontal-scroll -->
-- 原尺寸图片：[01 · 1375×1340](../assets/details/motion/horizontal-scroll-effect.webp)。
-- 清晰度边界：1440×2560 视频在播放器接近原尺寸呈现后，仅裁出 UI 效果区域；WebP 质量 98，未放大、未锐化、未涂抹。原画中的材质模糊和光晕属于效果；静态图只核对可见状态，连续运动在项目中验证。
+- 原尺寸图片：[01 · 1260×1390](../assets/details/motion/scroll-cards-gallery.webp)。
+- 清晰度边界：从 2160×2880 视频直接解码，按原像素裁切，WebP 质量 98，不放大、不锐化、不涂抹、不跨帧修补；去掉窗框、讲解面板、署名光标和进度标注。图片只覆盖五种模式的局部状态，原画颗粒、像素画和虚焦属于内容风格；连续行为与适配按 019 配方在项目中验证。
 
-![横向滚动展陈：原尺寸独立参考](../assets/details/motion/horizontal-scroll-effect.webp)
+![横向滚动展陈：原尺寸独立参考](../assets/details/motion/scroll-cards-gallery.webp)
 <!-- /ui-atlas:details -->
 
 <a id="layout-animation"></a>
@@ -494,4 +495,21 @@
 - 清晰度边界：直接从 2160×2880 视频解码，按原像素裁出三个浅色 UI 局部，WebP 质量 98，不放大、不锐化、不涂抹、不跨帧修补；不含外框、讲解面板或指示圈。图片只覆盖完成状态，不能证明共享元素路径、缓动、输入命中与返回行为。
 
 ![用好连续性，让产品更丝滑：原尺寸独立参考](../assets/details/motion/continuity-player.webp)
+<!-- /ui-atlas:details -->
+
+<a id="scroll-card-interactions"></a>
+## 五种经典的卡片滚动交互 / Scroll-driven Cards
+
+- 标识：`motion/scroll-card-interactions`；类型：组件／效果。
+- 效果要点：层叠卡片、卡组飞出、横向展廊、封面轮播和图片展开；由滚动位置直接驱动，停止即停、回滚即逆向，不替换真实内容与操作。
+- 实现提示词：读取 [019 完整配方](recipes/scroll-card-interactions.md)，按已选段落、模式、长度和设备策略实现，保留原生滚动、固定页头、安全区与键盘入口。
+- 核对要点：卡片和滚动距离随真实布局测量；手机展廊／封面默认原生横向行，短屏与减弱动态回到普通内容。已有明确选择与授权时直接推进。
+- 媒体取舍：五种模式各一张原像素 UI 局部，复用于层叠和横向入口，不重复保留同类图；连续路径、吸附、反向恢复和适配需实测。
+
+<!-- ui-atlas:details motion/scroll-card-interactions -->
+- 原尺寸图片：[01 · 1885×1270](../assets/details/motion/scroll-cards-stack.webp) · [02 · 725×1060](../assets/details/motion/scroll-cards-deck.webp) · [03 · 1260×1390](../assets/details/motion/scroll-cards-gallery.webp) · [04 · 1960×885](../assets/details/motion/scroll-cards-cover.webp) · [05 · 1980×1290](../assets/details/motion/scroll-cards-expand.webp)。
+- 多图用途：五种不同模式各一张清晰 UI 局部，不保留近似帧；层叠与横向条目复用同一素材。静态图用于识别布局、卡边、透视和遮挡，不证明连续滚动、抛出路径、吸附距离或移动端降级。
+- 清晰度边界：从 2160×2880 视频直接解码，按原像素裁切，WebP 质量 98，不放大、不锐化、不涂抹、不跨帧修补；去掉窗框、讲解面板、署名光标和进度标注。图片只覆盖五种模式的局部状态，原画颗粒、像素画和虚焦属于内容风格；连续行为与适配按 019 配方在项目中验证。
+
+![五种经典的卡片滚动交互：原尺寸独立参考](../assets/details/motion/scroll-cards-stack.webp)
 <!-- /ui-atlas:details -->

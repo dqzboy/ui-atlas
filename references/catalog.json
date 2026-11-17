@@ -843,7 +843,10 @@
       "images": [
         "assets/details/cards-tables/carousel-hd-01.webp"
       ],
-      "preview": "assets/details/cards-tables/carousel-hd-01.webp"
+      "preview": "assets/details/cards-tables/carousel-hd-01.webp",
+      "related": [
+        "motion/scroll-card-interactions"
+      ]
     },
     {
       "id": "cards-tables/masonry",
@@ -1413,7 +1416,10 @@
       "images": [
         "assets/details/motion/scroll-storytelling-hd-01.webp"
       ],
-      "preview": "assets/details/motion/scroll-storytelling-hd-01.webp"
+      "preview": "assets/details/motion/scroll-storytelling-hd-01.webp",
+      "related": [
+        "motion/scroll-card-interactions"
+      ]
     },
     {
       "id": "motion/scramble-text",
@@ -1449,7 +1455,10 @@
       "images": [
         "assets/details/motion/parallax-hd-01.webp"
       ],
-      "preview": "assets/details/motion/parallax-hd-01.webp"
+      "preview": "assets/details/motion/parallax-hd-01.webp",
+      "related": [
+        "motion/scroll-card-interactions"
+      ]
     },
     {
       "id": "motion/magnetic",
@@ -4316,7 +4325,10 @@
       ],
       "preview": "assets/details/motion/scroll-linked-effect.webp",
       "media_type": "image",
-      "evidence": "static-reference"
+      "evidence": "static-reference",
+      "related": [
+        "motion/scroll-card-interactions"
+      ]
     },
     {
       "id": "motion/particle-morph",
@@ -4375,19 +4387,22 @@
       "summary": "卡片随滚动逐层覆盖，保留后方露出的卡片边缘与阅读顺序。",
       "prompt": "让步骤卡片随滚动逐张覆盖前一张，保留顶部层次、清晰文字与退出堆叠区后的正常滚动。",
       "kind": "pattern",
-      "media_reason": "仅保留一张无讲解文字的效果参考；触发、时序、运动路径与减弱动态需在项目中验证。",
-      "implementation": "根据卡片高度设置粘性区间；窄屏内容不得被固定高度截断；键盘与阅读顺序保持一致。",
+      "media_reason": "复用 019 的清晰效果局部，替换旧同类图，不重复保存；连续滚动、吸附与短屏回退按完整配方验证。",
+      "implementation": "根据卡片高度设置粘性区间；窄屏内容不得被固定高度截断；键盘与阅读顺序保持一致。 参数、设备适配与完整提示词读取 references/recipes/scroll-card-interactions.md。",
       "keywords": [
         "卡片堆叠",
         "滚动卡片栈",
         "sticky cards"
       ],
       "images": [
-        "assets/details/motion/stacking-cards-effect.webp"
+        "assets/details/motion/scroll-cards-stack.webp"
       ],
-      "preview": "assets/details/motion/stacking-cards-effect.webp",
+      "preview": "assets/details/motion/scroll-cards-stack.webp",
       "media_type": "image",
-      "evidence": "static-reference"
+      "evidence": "static-reference",
+      "related": [
+        "motion/scroll-card-interactions"
+      ]
     },
     {
       "id": "motion/horizontal-scroll",
@@ -4399,19 +4414,22 @@
       "summary": "在有界展示区中随滚动横向浏览展品，并保留进度与上下文。",
       "prompt": "将选定展陈区实现为横向浏览：明确滚动进度到横向位移的映射、起止位置和离开区间；触摸与键盘仍能到达全部展品。",
       "kind": "pattern",
-      "media_reason": "仅保留一张无讲解文字的效果参考；触发、时序、运动路径与减弱动态需在项目中验证。",
-      "implementation": "不全站劫持滚轮；响应式重新测量；提供正常列表回退，避免只实现匀速跑马灯。",
+      "media_reason": "复用 019 的清晰效果局部，替换旧同类图，不重复保存；连续滚动、吸附与短屏回退按完整配方验证。",
+      "implementation": "不全站劫持滚轮；响应式重新测量；提供正常列表回退，避免只实现匀速跑马灯。 参数、设备适配与完整提示词读取 references/recipes/scroll-card-interactions.md。",
       "keywords": [
         "横向滚动",
         "水平滚动",
         "展陈"
       ],
       "images": [
-        "assets/details/motion/horizontal-scroll-effect.webp"
+        "assets/details/motion/scroll-cards-gallery.webp"
       ],
-      "preview": "assets/details/motion/horizontal-scroll-effect.webp",
+      "preview": "assets/details/motion/scroll-cards-gallery.webp",
       "media_type": "image",
-      "evidence": "static-reference"
+      "evidence": "static-reference",
+      "related": [
+        "motion/scroll-card-interactions"
+      ]
     },
     {
       "id": "motion/layout-animation",
@@ -4591,6 +4609,64 @@
         "motion/layout-animation",
         "motion/easing",
         "motion/card-delete-effects"
+      ]
+    },
+    {
+      "id": "motion/scroll-card-interactions",
+      "category": "motion",
+      "category_title": "常见动效",
+      "slug": "scroll-card-interactions",
+      "name": "五种经典的卡片滚动交互",
+      "english": "Scroll-driven Cards / Stacked Cards / Card Deck / Pinned Gallery / Cover Flow / Image Expand",
+      "summary": "019：在已有长页面选择层叠卡片、卡组飞出、横向展廊、封面轮播或图片展开；滚动位置直接驱动，可停可逆，保留真实内容、普通段落与手机、短屏和减弱动态回退。",
+      "prompt": "读取 references/recipes/scroll-card-interactions.md，按已选段落、模式、长度和设备策略改造现有长页面；以滚动进度推导状态，复用现有引擎，保留内容、键盘与原生滚动，不引入滚动劫持。",
+      "kind": "pattern",
+      "media_type": "image",
+      "evidence": "static-reference",
+      "recipe": "references/recipes/scroll-card-interactions.md",
+      "images": [
+        "assets/details/motion/scroll-cards-stack.webp",
+        "assets/details/motion/scroll-cards-deck.webp",
+        "assets/details/motion/scroll-cards-gallery.webp",
+        "assets/details/motion/scroll-cards-cover.webp",
+        "assets/details/motion/scroll-cards-expand.webp"
+      ],
+      "preview": "assets/details/motion/scroll-cards-stack.webp",
+      "media_reason": "五种不同模式各一张清晰 UI 局部，不保留近似帧；层叠与横向条目复用同一素材。静态图用于识别布局、卡边、透视和遮挡，不证明连续滚动、抛出路径、吸附距离或移动端降级。",
+      "keywords": [
+        "019",
+        "卡片滚动",
+        "滚动卡片",
+        "scroll-driven",
+        "scroll cards",
+        "stacked cards",
+        "stacking cards",
+        "层叠卡片",
+        "卡组飞出",
+        "card deck",
+        "pinned gallery",
+        "横向展廊",
+        "cover flow",
+        "封面轮播",
+        "image expand",
+        "图片展开",
+        "sticky",
+        "scrub",
+        "view timeline",
+        "scroll timeline",
+        "svh",
+        "短屏",
+        "560px",
+        "滚动可逆",
+        "手机降级"
+      ],
+      "related": [
+        "motion/stacking-cards",
+        "motion/horizontal-scroll",
+        "motion/scroll-linked",
+        "motion/scroll-storytelling",
+        "motion/parallax",
+        "cards-tables/carousel"
       ]
     },
     {
