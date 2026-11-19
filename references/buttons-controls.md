@@ -32,7 +32,7 @@
 - [切换按钮](#toggle-button)
 - [可选标签](#chip)
 - [计数器](#stepper)
-- [开关和选项选型](#control-selection)
+- [选择控件选型](#control-selection)
 - [有点击手感的拟物按钮](#tactile-button)
 - [粒子爆开按钮](#particle-burst)
 - [液态展开按钮](#gooey-button)
@@ -472,18 +472,18 @@
 <!-- /ui-atlas:details -->
 
 <a id="control-selection"></a>
-## 开关和选项选型 / Control selection
+## 选择控件选型 / Choice Controls
 
 - 标识：`buttons-controls/control-selection`；类型：选型／纠错。
-- 效果要点：一个二元设置且立即生效用开关；可选多个用复选框；多选一时按选项数量和空间选分段控制器或单选框。
-- 指令例句：按即时生效、多选或单选的语义选择控件。
+- 效果要点：020：按生效时机、值或动作、选项数量和单多选语义诊断选择控件，先报告，再实施所选范围。
+- 指令例句：盘点 Switch、Checkbox、Radio、Segmented Control、Select 与 Dropdown Menu，说明建议与行为变化，保留已保存值；读取 [020 完整配方与提示词](recipes/control-selection.md)。
 - 媒体取舍：属于开关、多选和单选的语义选型，图片和规则足够。
 
 <!-- ui-atlas:details buttons-controls/control-selection -->
 - 原尺寸图片：[01 · 2880×1770](../assets/details/buttons-controls/control-selection-hd-01.webp)。
 - 清晰度边界：从 2160 像素高的原片按原像素裁切，WebP 质量 95，不放大、不锐化、不涂抹；静态帧不能证明完整运动。
 
-![开关和选项选型：原尺寸独立参考](../assets/details/buttons-controls/control-selection-hd-01.webp)
+![选择控件选型：原尺寸独立参考](../assets/details/buttons-controls/control-selection-hd-01.webp)
 <!-- /ui-atlas:details -->
 
 <a id="tactile-button"></a>

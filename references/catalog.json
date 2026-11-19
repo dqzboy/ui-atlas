@@ -307,7 +307,10 @@
       "images": [
         "assets/details/overlays/dropdown-menu-hd-01.webp"
       ],
-      "preview": "assets/details/overlays/dropdown-menu-hd-01.webp"
+      "preview": "assets/details/overlays/dropdown-menu-hd-01.webp",
+      "related": [
+        "buttons-controls/control-selection"
+      ]
     },
     {
       "id": "loading-errors/loading-states",
@@ -1256,8 +1259,8 @@
       "slug": "select",
       "name": "下拉选择",
       "english": "Select",
-      "summary": "列表中选一项；通常可按以下原则选择：少量选项直接用单选展示，较多用下拉，多到要搜索则用自动补全。",
-      "prompt": "按选项数量和比较需求选择 Radio、Select 或 Autocomplete。",
+      "summary": "保存当前选中值；少量短选项可用分段，少量长选项可用 Radio，较多或动态选项用 Select，大量选项可搜索；与执行命令的菜单区分。",
+      "prompt": "按选项数量、标签长度和单多选需求选值控件；Select 收起后显示当前值，命令放操作菜单；完整诊断读取 references/recipes/control-selection.md。",
       "kind": "pattern",
       "media_type": "image",
       "evidence": "static-reference",
@@ -1265,7 +1268,10 @@
       "images": [
         "assets/details/forms/select-hd-01.webp"
       ],
-      "preview": "assets/details/forms/select-hd-01.webp"
+      "preview": "assets/details/forms/select-hd-01.webp",
+      "related": [
+        "buttons-controls/control-selection"
+      ]
     },
     {
       "id": "forms/validation",
@@ -1888,7 +1894,10 @@
       "images": [
         "assets/details/buttons-controls/split-button-hd-01.webp"
       ],
-      "preview": "assets/details/buttons-controls/split-button-hd-01.webp"
+      "preview": "assets/details/buttons-controls/split-button-hd-01.webp",
+      "related": [
+        "buttons-controls/control-selection"
+      ]
     },
     {
       "id": "buttons-controls/fab",
@@ -2071,7 +2080,10 @@
         "assets/details/buttons-controls/switch-hd-01.webp",
         "assets/details/buttons-controls/switch-hd-02.webp"
       ],
-      "preview": "assets/details/buttons-controls/switch-hd-01.webp"
+      "preview": "assets/details/buttons-controls/switch-hd-01.webp",
+      "related": [
+        "buttons-controls/control-selection"
+      ]
     },
     {
       "id": "buttons-controls/checkbox",
@@ -2089,7 +2101,10 @@
       "images": [
         "assets/details/buttons-controls/checkbox-hd-01.webp"
       ],
-      "preview": "assets/details/buttons-controls/checkbox-hd-01.webp"
+      "preview": "assets/details/buttons-controls/checkbox-hd-01.webp",
+      "related": [
+        "buttons-controls/control-selection"
+      ]
     },
     {
       "id": "buttons-controls/indeterminate",
@@ -2125,7 +2140,10 @@
       "images": [
         "assets/details/buttons-controls/radio-hd-01.webp"
       ],
-      "preview": "assets/details/buttons-controls/radio-hd-01.webp"
+      "preview": "assets/details/buttons-controls/radio-hd-01.webp",
+      "related": [
+        "buttons-controls/control-selection"
+      ]
     },
     {
       "id": "buttons-controls/segmented-control",
@@ -2143,7 +2161,10 @@
       "images": [
         "assets/details/buttons-controls/segmented-control-hd-01.webp"
       ],
-      "preview": "assets/details/buttons-controls/segmented-control-hd-01.webp"
+      "preview": "assets/details/buttons-controls/segmented-control-hd-01.webp",
+      "related": [
+        "buttons-controls/control-selection"
+      ]
     },
     {
       "id": "buttons-controls/toggle-button",
@@ -2204,10 +2225,10 @@
       "category": "buttons-controls",
       "category_title": "按钮、状态与选项",
       "slug": "control-selection",
-      "name": "开关和选项选型",
-      "english": "Control selection",
-      "summary": "一个二元设置且立即生效用开关；可选多个用复选框；多选一时按选项数量和空间选分段控制器或单选框。",
-      "prompt": "按即时生效、多选或单选的语义选择控件。",
+      "name": "选择控件选型",
+      "english": "Choice Controls / Control Selection",
+      "summary": "020：按生效时机、值或动作、选项数量和单多选语义诊断 Switch、Checkbox、Radio、Segmented Control、Select 与 Dropdown Menu；先报告，再实施所选范围，保留已保存值。",
+      "prompt": "读取 references/recipes/control-selection.md，盘点每个选择控件设置的值或执行的动作、选项数、可选数量和生效时机；输出诊断表，按已批准范围修改现有组件，不新增依赖。",
       "kind": "rule",
       "media_type": "image",
       "evidence": "static-reference",
@@ -2215,7 +2236,39 @@
       "images": [
         "assets/details/buttons-controls/control-selection-hd-01.webp"
       ],
-      "preview": "assets/details/buttons-controls/control-selection-hd-01.webp"
+      "preview": "assets/details/buttons-controls/control-selection-hd-01.webp",
+      "recipe": "references/recipes/control-selection.md",
+      "implementation": "区分即时生效与提交、值与命令、单选与多选；数量阈值作为起点，保留数据、空值规则、键盘与读屏；已有明确选择和授权时直接推进。",
+      "keywords": [
+        "020",
+        "选择控件",
+        "控件选型",
+        "开关和选项选型",
+        "choice controls",
+        "switch",
+        "checkbox",
+        "radio",
+        "segmented control",
+        "select",
+        "dropdown menu",
+        "split button",
+        "tabs",
+        "即时生效",
+        "保存",
+        "单选",
+        "多选",
+        "值与动作",
+        "诊断表"
+      ],
+      "related": [
+        "buttons-controls/switch",
+        "buttons-controls/checkbox",
+        "buttons-controls/radio",
+        "buttons-controls/segmented-control",
+        "forms/select",
+        "overlays/dropdown-menu",
+        "buttons-controls/split-button"
+      ]
     },
     {
       "id": "web-interactions/sticky-product-story",

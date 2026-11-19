@@ -194,7 +194,7 @@
 
 - 标识：`overlays/dropdown-menu`；类型：组件／效果。
 - 效果要点：点击后向下展开一串操作选项，如头像菜单中的设置、退出登录。
-- 指令例句：点击头像展开 Dropdown Menu，包含设置和退出登录。
+- 指令例句：点击头像展开 Dropdown Menu，包含设置和退出登录。菜单执行动作，触发按钮保持入口名称；与保存值的 Select 区分，先读 [020 控件选型](recipes/control-selection.md)。
 - 媒体取舍：重点是操作列表及触发入口，普通展开无需单独保留 GIF。
 
 <!-- ui-atlas:details overlays/dropdown-menu -->
