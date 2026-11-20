@@ -1691,6 +1691,20 @@
       "width": 1980,
       "height": 1290,
       "bundled": true
+    },
+    "assets/details/cards-tables/card-ring-inside.webp": {
+      "bytes": 96328,
+      "sha256": "a9e812386021590af95b24ff8098b07304a6712bd90def58898bba065cf42ca4",
+      "width": 1900,
+      "height": 890,
+      "bundled": true
+    },
+    "assets/details/cards-tables/card-ring-outside.webp": {
+      "bytes": 159650,
+      "sha256": "3bce9b58a52c049684c7ac8e2c670127b12e5bb01013ddc1345f945c1ddbb48d",
+      "width": 1900,
+      "height": 700,
+      "bundled": true
     }
   }
 }

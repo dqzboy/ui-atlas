@@ -1752,6 +1752,16 @@
       ],
       "poster": "assets/details/motion/scroll-cards-stack.webp",
       "image_reason": "五种不同模式各一张清晰 UI 局部，不保留近似帧；层叠与横向条目复用同一素材。静态图用于识别布局、卡边、透视和遮挡，不证明连续滚动、抛出路径、吸附距离或移动端降级。"
+    },
+    "cards-tables/depth-card-ring": {
+      "source": "native-video-still",
+      "limitation": "从 2160×2880 视频直接解码，原像素裁切，WebP 质量 98，无放大、锐化、涂抹或跨帧修补；环内 1900×890、环外 1900×700，均裁去右端光标与参数说明。渐变柔和与边缘景深为原效果；静态局部不证明完整闭环、连续路径和性能。",
+      "images": [
+        "assets/details/cards-tables/card-ring-inside.webp",
+        "assets/details/cards-tables/card-ring-outside.webp"
+      ],
+      "poster": "assets/details/cards-tables/card-ring-inside.webp",
+      "image_reason": "环内与环外各一张原像素局部，不保留近似帧；右端裁切以避开光标。图片用于识别曲率、渐变、中心清晰与景深层次，连续翻面、采样、吸附和性能需实际验证。"
     }
   },
   "files": {
@@ -3367,6 +3377,20 @@
       "sha256": "ec205f339c884ecdce5037aae63eebcf2ffd1a549902ae5cbf60aa1a2e279f2d",
       "width": 1980,
       "height": 1290,
+      "bundled": true
+    },
+    "assets/details/cards-tables/card-ring-inside.webp": {
+      "bytes": 96328,
+      "sha256": "a9e812386021590af95b24ff8098b07304a6712bd90def58898bba065cf42ca4",
+      "width": 1900,
+      "height": 890,
+      "bundled": true
+    },
+    "assets/details/cards-tables/card-ring-outside.webp": {
+      "bytes": 159650,
+      "sha256": "3bce9b58a52c049684c7ac8e2c670127b12e5bb01013ddc1345f945c1ddbb48d",
+      "width": 1900,
+      "height": 700,
       "bundled": true
     }
   },

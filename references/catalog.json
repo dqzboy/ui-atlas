@@ -848,7 +848,8 @@
       ],
       "preview": "assets/details/cards-tables/carousel-hd-01.webp",
       "related": [
-        "motion/scroll-card-interactions"
+        "motion/scroll-card-interactions",
+        "cards-tables/depth-card-ring"
       ]
     },
     {
@@ -887,7 +888,8 @@
       ],
       "preview": "assets/details/cards-tables/flip-card-hd-01.webp",
       "related": [
-        "cards-tables/holographic-card"
+        "cards-tables/holographic-card",
+        "cards-tables/depth-card-ring"
       ]
     },
     {
@@ -3265,7 +3267,56 @@
         "motion/tilt",
         "cards-tables/flip-card",
         "interface-details/card-craft",
-        "motion/easing"
+        "motion/easing",
+        "cards-tables/depth-card-ring"
+      ]
+    },
+    {
+      "id": "cards-tables/depth-card-ring",
+      "category": "cards-tables",
+      "category_title": "卡片与表格",
+      "slug": "depth-card-ring",
+      "name": "景深环形卡片与流体渐变",
+      "english": "Depth Card Ring / Inside Outside / Fluid Gradient",
+      "summary": "021：同一环形卡组在环内与环外切换，结合流体渐变、玻璃边缘色散、景深和依次翻面；拖拽跟手、惯性吸附，滑块实时调参。",
+      "prompt": "读取 references/recipes/depth-card-ring.md，按已选位置、内容、视角与面板范围实现卡片环；保留真实素材和业务操作，核对曲率、色散、景深、翻面、拖拽与减弱动态。",
+      "kind": "pattern",
+      "media_type": "image",
+      "evidence": "static-reference",
+      "recipe": "references/recipes/depth-card-ring.md",
+      "images": [
+        "assets/details/cards-tables/card-ring-inside.webp",
+        "assets/details/cards-tables/card-ring-outside.webp"
+      ],
+      "preview": "assets/details/cards-tables/card-ring-inside.webp",
+      "media_reason": "环内与环外各一张原像素局部，不保留近似帧；右端裁切以避开光标。图片用于识别曲率、渐变、中心清晰与景深层次，连续翻面、采样、吸附和性能需实际验证。",
+      "keywords": [
+        "021",
+        "景深",
+        "环形卡片",
+        "卡片环",
+        "流体渐变",
+        "环内",
+        "环外",
+        "depth card ring",
+        "card ring",
+        "inside",
+        "outside",
+        "depth of field",
+        "dispersion",
+        "玻璃边缘",
+        "色散",
+        "fBm",
+        "WebGL",
+        "翻面",
+        "惯性吸附",
+        "参数滑块"
+      ],
+      "related": [
+        "cards-tables/carousel",
+        "cards-tables/flip-card",
+        "cards-tables/holographic-card",
+        "motion/scroll-card-interactions"
       ]
     },
     {
@@ -4719,7 +4770,8 @@
         "motion/scroll-linked",
         "motion/scroll-storytelling",
         "motion/parallax",
-        "cards-tables/carousel"
+        "cards-tables/carousel",
+        "cards-tables/depth-card-ring"
       ]
     },
     {

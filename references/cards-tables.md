@@ -22,13 +22,14 @@
 - [卡片和列表](#card-list)
 - [像书一样翻开的卡片](#book-open-card)
 - [3D 镭射卡片与六种材质](#holographic-card)
+- [景深环形卡片与流体渐变](#depth-card-ring)
 
 <a id="carousel"></a>
 ## 轮播 / Carousel
 
 - 标识：`cards-tables/carousel`；类型：组件／效果。
 - 效果要点：多张图或卡片左右切换；自动切换不宜过快，悬停暂停，保留左右箭头和指示圆点供手动切换。
-- 指令例句：轮播支持手动箭头和圆点，自动播放克制，悬停暂停。若需求是随页面滚动推进的 3D 封面，改读 [019 Cover flow 配方](recipes/scroll-card-interactions.md)，保留触发差异。
+- 指令例句：轮播支持手动箭头和圆点，自动播放克制，悬停暂停。若需求是随页面滚动推进的 3D 封面，改读 [019 Cover flow 配方](recipes/scroll-card-interactions.md)，保留触发差异。需要可拖拽的环内／环外卡片环时，读取 [021 配方](recipes/depth-card-ring.md)。
 - 媒体取舍：保留静态效果图与实现说明；连续路径、触发顺序、节奏和短暂状态需在项目中实际验证。
 
 <!-- ui-atlas:details cards-tables/carousel -->
@@ -261,4 +262,21 @@
 - 清晰度边界：从 2160×2880 视频直接解码，按原像素裁成 1120×1380，WebP 质量 98；不放大、不锐化、不涂抹、不跨帧修补。六图只覆盖不同材质的正面状态，不证明连续倾斜、回弹、视差、翻面厚度、流体或传感器行为。
 
 ![会倾斜、能翻转的 3D 镭射卡片：原尺寸独立参考](../assets/details/cards-tables/holographic-prism.webp)
+<!-- /ui-atlas:details -->
+
+<a id="depth-card-ring"></a>
+## 景深环形卡片与流体渐变 / Depth Card Ring
+
+- 标识：`cards-tables/depth-card-ring`；类型：组件／效果。
+- 效果要点：021：环内近大远小并经过玻璃边缘色散；环外中央清晰、侧面与远侧虚化，切换时渐变卡逐张翻为图片。
+- 实现提示词：读取 [021 完整配方与提示词](recipes/depth-card-ring.md)，确认位置、内容、视角与面板范围后，沿用当前渲染栈实现拖拽、惯性吸附与实时调参。
+- 核对要点：曲率过零、近眼裁切、环绕、采样无折叠、翻面方向、输入打断与主题正确；手机滚动、键盘、减弱动态和无 GPU 回退可用。
+- 媒体取舍：环内与环外各一张原像素局部，连续行为与性能按配方在真实项目验证。
+
+<!-- ui-atlas:details cards-tables/depth-card-ring -->
+- 原尺寸图片：[01 · 1900×890](../assets/details/cards-tables/card-ring-inside.webp) · [02 · 1900×700](../assets/details/cards-tables/card-ring-outside.webp)。
+- 多图用途：环内与环外各一张原像素局部，不保留近似帧；右端裁切以避开光标。图片用于识别曲率、渐变、中心清晰与景深层次，连续翻面、采样、吸附和性能需实际验证。
+- 清晰度边界：从 2160×2880 视频直接解码，原像素裁切，WebP 质量 98，无放大、锐化、涂抹或跨帧修补；环内 1900×890、环外 1900×700，均裁去右端光标与参数说明。渐变柔和与边缘景深为原效果；静态局部不证明完整闭环、连续路径和性能。
+
+![景深环形卡片与流体渐变：原尺寸独立参考](../assets/details/cards-tables/card-ring-inside.webp)
 <!-- /ui-atlas:details -->
