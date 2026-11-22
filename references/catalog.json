@@ -216,6 +216,9 @@
         "Undo",
         "撤销倒计时",
         "消息诊断"
+      ],
+      "related": [
+        "loading-errors/empty-state"
       ]
     },
     {
@@ -358,7 +361,8 @@
         "loading-errors/progress-bar",
         "loading-errors/optimistic-ui",
         "loading-errors/loading-button",
-        "overlays/toast-vs-notification"
+        "overlays/toast-vs-notification",
+        "loading-errors/empty-state"
       ]
     },
     {
@@ -377,7 +381,10 @@
       "images": [
         "assets/details/loading-errors/waiting-skeleton.webp"
       ],
-      "preview": "assets/details/loading-errors/waiting-skeleton.webp"
+      "preview": "assets/details/loading-errors/waiting-skeleton.webp",
+      "related": [
+        "loading-errors/empty-state"
+      ]
     },
     {
       "id": "loading-errors/blur-up",
@@ -477,19 +484,59 @@
       "category": "loading-errors",
       "category_title": "加载与错误页",
       "slug": "empty-state",
-      "name": "空状态",
-      "english": "Empty State",
-      "summary": "列表没有内容时，给出插图、为空的原因和下一步按钮；例子为还没有订单、去逛逛。",
-      "prompt": "订单为空时显示原因说明和去逛逛入口。",
+      "name": "空状态的三种画法",
+      "english": "Empty States / Wireframe / Two-tone Icon / Mini",
+      "summary": "022：先按首次使用、无结果、全部处理完、失败／离线、无权限或无需空态诊断，再按 Page、Card、Row、Menu 选择线框、图标、迷你横排或纯文字，保留真实状态与操作。",
+      "prompt": "读取 references/recipes/empty-state.md，按位置报告为空原因、尺寸、图示、标题、说明与动作；沿用现有状态逻辑和组件，按已批准范围修改，保留搜索筛选与失败恢复。",
       "kind": "pattern",
       "media_type": "image",
       "evidence": "static-reference",
-      "media_reason": "插图、原因与下一步入口属于静态结构。",
+      "media_reason": "线框、双色图标与迷你横排各一张清晰 UI 局部，替换旧同类两图，不保存近似帧；状态判断、布局替换、真实操作和可访问性按 022 完整配方验证。",
       "images": [
-        "assets/details/loading-errors/empty-state-hd-01.webp",
-        "assets/details/loading-errors/empty-state-hd-02.webp"
+        "assets/details/loading-errors/empty-wireframe.webp",
+        "assets/details/loading-errors/empty-icon.webp",
+        "assets/details/loading-errors/empty-mini.webp"
       ],
-      "preview": "assets/details/loading-errors/empty-state-hd-01.webp"
+      "preview": "assets/details/loading-errors/empty-wireframe.webp",
+      "recipe": "references/recipes/empty-state.md",
+      "implementation": "先识别真实请求、筛选与权限状态，再选择结构；复用现有图标和 EmptyState，未知保障不承诺，申请权限和重试按真实能力处理。",
+      "keywords": [
+        "022",
+        "空状态",
+        "空状态选型",
+        "空状态的三种画法",
+        "empty state",
+        "empty states",
+        "wireframe",
+        "线框",
+        "双色图标",
+        "two-tone",
+        "mini",
+        "迷你版",
+        "首次使用",
+        "first use",
+        "无匹配",
+        "无结果",
+        "no results",
+        "全部处理完",
+        "all done",
+        "局部失败",
+        "no access",
+        "page",
+        "card",
+        "row",
+        "menu"
+      ],
+      "related": [
+        "loading-errors/loading-states",
+        "loading-errors/skeleton",
+        "loading-errors/error-page",
+        "loading-errors/offline",
+        "loading-errors/no-permission",
+        "loading-errors/not-found",
+        "overlays/toast-vs-notification",
+        "buttons-controls/control-selection"
+      ]
     },
     {
       "id": "loading-errors/not-found",
@@ -507,7 +554,10 @@
       "images": [
         "assets/details/loading-errors/not-found-hd-01.webp"
       ],
-      "preview": "assets/details/loading-errors/not-found-hd-01.webp"
+      "preview": "assets/details/loading-errors/not-found-hd-01.webp",
+      "related": [
+        "loading-errors/empty-state"
+      ]
     },
     {
       "id": "loading-errors/error-page",
@@ -525,7 +575,10 @@
       "images": [
         "assets/details/loading-errors/error-page-hd-01.webp"
       ],
-      "preview": "assets/details/loading-errors/error-page-hd-01.webp"
+      "preview": "assets/details/loading-errors/error-page-hd-01.webp",
+      "related": [
+        "loading-errors/empty-state"
+      ]
     },
     {
       "id": "loading-errors/offline",
@@ -543,7 +596,10 @@
       "images": [
         "assets/details/loading-errors/offline-hd-01.webp"
       ],
-      "preview": "assets/details/loading-errors/offline-hd-01.webp"
+      "preview": "assets/details/loading-errors/offline-hd-01.webp",
+      "related": [
+        "loading-errors/empty-state"
+      ]
     },
     {
       "id": "loading-errors/no-permission",
@@ -561,7 +617,10 @@
       "images": [
         "assets/details/loading-errors/no-permission-hd-01.webp"
       ],
-      "preview": "assets/details/loading-errors/no-permission-hd-01.webp"
+      "preview": "assets/details/loading-errors/no-permission-hd-01.webp",
+      "related": [
+        "loading-errors/empty-state"
+      ]
     },
     {
       "id": "loading-errors/result",
@@ -2269,7 +2328,8 @@
         "buttons-controls/segmented-control",
         "forms/select",
         "overlays/dropdown-menu",
-        "buttons-controls/split-button"
+        "buttons-controls/split-button",
+        "loading-errors/empty-state"
       ]
     },
     {

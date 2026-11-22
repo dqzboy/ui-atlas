@@ -901,20 +901,6 @@
       "height": 1610,
       "bundled": true
     },
-    "assets/details/loading-errors/empty-state-hd-01.webp": {
-      "bytes": 48356,
-      "sha256": "9e9738e4c52315f0cdb11e1822f11eb55e626c481d4a4e05832013458b2903fd",
-      "width": 1440,
-      "height": 1610,
-      "bundled": true
-    },
-    "assets/details/loading-errors/empty-state-hd-02.webp": {
-      "bytes": 73334,
-      "sha256": "b4e76c7157b19519ba329c6ebec5b006b97b18fde9ddae0b84167d763d43dec3",
-      "width": 1440,
-      "height": 1610,
-      "bundled": true
-    },
     "assets/details/loading-errors/not-found-hd-01.webp": {
       "bytes": 73516,
       "sha256": "14d10d880be387389f1f346a782f4c99dac88f44d6a5b7aeb8655305370b1508",
@@ -1704,6 +1690,27 @@
       "sha256": "3bce9b58a52c049684c7ac8e2c670127b12e5bb01013ddc1345f945c1ddbb48d",
       "width": 1900,
       "height": 700,
+      "bundled": true
+    },
+    "assets/details/loading-errors/empty-wireframe.webp": {
+      "bytes": 22302,
+      "sha256": "590fb0ad812ce55d1c22fb92509e0ea0b2b374ff69b3d13430d3a5001719efd1",
+      "width": 740,
+      "height": 650,
+      "bundled": true
+    },
+    "assets/details/loading-errors/empty-icon.webp": {
+      "bytes": 20924,
+      "sha256": "eb1b8f5980a7659edcf7ddb03db71c7208f95296670d4ac03d2bbdcac639fb65",
+      "width": 640,
+      "height": 615,
+      "bundled": true
+    },
+    "assets/details/loading-errors/empty-mini.webp": {
+      "bytes": 5498,
+      "sha256": "20d9b62e97a586f547b875d00a5414dc58d878d030b889e2ffd74c21d58611a7",
+      "width": 820,
+      "height": 155,
       "bundled": true
     }
   }

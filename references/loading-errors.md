@@ -11,7 +11,7 @@
 - [下拉刷新](#pull-to-refresh)
 - [进度条](#progress-bar)
 - [按钮加载状态](#loading-button)
-- [空状态](#empty-state)
+- [空状态的三种画法](#empty-state)
 - [404 页面](#not-found)
 - [错误页](#error-page)
 - [断网提示](#offline)
@@ -134,19 +134,20 @@
 <!-- /ui-atlas:details -->
 
 <a id="empty-state"></a>
-## 空状态 / Empty State
+## 空状态的三种画法 / Empty States
 
-- 标识：`loading-errors/empty-state`；类型：组件／效果。
-- 效果要点：列表没有内容时，给出插图、为空的原因和下一步按钮；例子为还没有订单、去逛逛。
-- 指令例句：订单为空时显示原因说明和去逛逛入口。
-- 媒体取舍：插图、原因与下一步入口属于静态结构。
+- 标识：`loading-errors/empty-state`；类型：组件／选型。
+- 效果要点：022：先区分首次使用、无结果、全部处理完、失败／离线、无权限或无需空态；再按空间选择线框、图标、迷你横排或纯文字。
+- 实现提示词：读取 [022 完整空状态配方与提示词](recipes/empty-state.md)，报告类型、尺寸、图示与具体文案，只实施所选位置；保留搜索、筛选、真实状态和恢复入口。
+- 核对要点：Page／Card／Row／Menu 独立于类型；未知保障不承诺，零值和未加载不误判为空，重试与申请权限依赖真实能力。
+- 媒体取舍：三种不同结构各一张清晰局部，替换旧同类两图；连续替换、数据与可访问性按实际产品验证。
 
 <!-- ui-atlas:details loading-errors/empty-state -->
-- 原尺寸图片：[01 · 1440×1610](../assets/details/loading-errors/empty-state-hd-01.webp) · [02 · 1440×1610](../assets/details/loading-errors/empty-state-hd-02.webp)。
-- 多图用途：插图、原因与下一步入口属于静态结构。
-- 清晰度边界：从 2160 像素高的原片按原像素裁切，WebP 质量 95，不放大、不锐化、不涂抹；静态帧不能证明完整运动。
+- 原尺寸图片：[01 · 740×650](../assets/details/loading-errors/empty-wireframe.webp) · [02 · 640×615](../assets/details/loading-errors/empty-icon.webp) · [03 · 820×155](../assets/details/loading-errors/empty-mini.webp)。
+- 多图用途：线框、双色图标与迷你横排各一张清晰 UI 局部，替换旧同类两图，不保存近似帧；状态判断、布局替换、真实操作和可访问性按 022 完整配方验证。
+- 清晰度边界：从 2160×2880 视频直接解码，原像素裁切、WebP 质量 98；线框 740×650、图标 640×615、迷你 820×155，无放大、锐化、涂抹或跨帧修补；不含讲解面板、教学标注、指针和署名。三图只展示不同结构局部，实际状态、创建、重试与权限请求需在产品验证。
 
-![空状态：原尺寸独立参考](../assets/details/loading-errors/empty-state-hd-01.webp)
+![空状态的三种画法：原尺寸独立参考](../assets/details/loading-errors/empty-wireframe.webp)
 <!-- /ui-atlas:details -->
 
 <a id="not-found"></a>
@@ -169,7 +170,7 @@
 
 - 标识：`loading-errors/error-page`；类型：组件／效果。
 - 效果要点：服务器故障如 500；解释发生了什么，避免责怪用户，提供重试。
-- 指令例句：服务暂时出错时显示清楚的说明和重新试试按钮。
+- 指令例句：服务暂时出错时显示清楚的说明和重新试试按钮。局部状态、尺寸与文案先读 [022 配方](recipes/empty-state.md)。
 - 媒体取舍：原因文案与重试入口属于静态内容结构。
 
 <!-- ui-atlas:details loading-errors/error-page -->
@@ -184,7 +185,7 @@
 
 - 标识：`loading-errors/offline`；类型：组件／效果。
 - 效果要点：断网时顶部滑出网络已断开提示；恢复后变成已重新连接，然后收起。
-- 指令例句：监听网络状态，断网显示横幅，恢复连接后更新提示再收起。
+- 指令例句：监听网络状态，断网显示横幅，恢复连接后更新提示再收起。内容区域因断网无法加载时，按 [022 配方](recipes/empty-state.md) 保留缓存与局部恢复；不自动承诺离线同步。
 - 媒体取舍：保留静态效果图与实现说明；连续路径、触发顺序、节奏和短暂状态需在项目中实际验证。
 
 <!-- ui-atlas:details loading-errors/offline -->
@@ -199,7 +200,7 @@
 
 - 标识：`loading-errors/no-permission`；类型：组件／效果。
 - 效果要点：资源存在但无权访问，示例为 403；告知联系谁，并提供申请权限入口。
-- 指令例句：无权限时说明资源需要授权，提供联系管理员或申请权限入口。
+- 指令例句：无权限时说明资源需要授权，提供联系管理员或申请权限入口。局部状态、尺寸与文案先读 [022 配方](recipes/empty-state.md)。
 - 媒体取舍：无权限说明与申请入口属于静态内容结构。
 
 <!-- ui-atlas:details loading-errors/no-permission -->

@@ -171,13 +171,14 @@
     },
     "loading-errors/empty-state": {
       "source": "native-video-still",
-      "limitation": "从 2160 像素高的原片按原像素裁切，WebP 质量 95，不放大、不锐化、不涂抹；静态帧不能证明完整运动。",
+      "limitation": "从 2160×2880 视频直接解码，原像素裁切、WebP 质量 98；线框 740×650、图标 640×615、迷你 820×155，无放大、锐化、涂抹或跨帧修补；不含讲解面板、教学标注、指针和署名。三图只展示不同结构局部，实际状态、创建、重试与权限请求需在产品验证。",
       "images": [
-        "assets/details/loading-errors/empty-state-hd-01.webp",
-        "assets/details/loading-errors/empty-state-hd-02.webp"
+        "assets/details/loading-errors/empty-wireframe.webp",
+        "assets/details/loading-errors/empty-icon.webp",
+        "assets/details/loading-errors/empty-mini.webp"
       ],
-      "poster": "assets/details/loading-errors/empty-state-hd-01.webp",
-      "image_reason": "插图、原因与下一步入口属于静态结构。"
+      "poster": "assets/details/loading-errors/empty-wireframe.webp",
+      "image_reason": "线框、双色图标与迷你横排各一张清晰 UI 局部，替换旧同类两图，不保存近似帧；状态判断、布局替换、真实操作和可访问性按 022 完整配方验证。"
     },
     "loading-errors/not-found": {
       "source": "native-video-still",
@@ -2588,20 +2589,6 @@
       "height": 1610,
       "bundled": true
     },
-    "assets/details/loading-errors/empty-state-hd-01.webp": {
-      "bytes": 48356,
-      "sha256": "9e9738e4c52315f0cdb11e1822f11eb55e626c481d4a4e05832013458b2903fd",
-      "width": 1440,
-      "height": 1610,
-      "bundled": true
-    },
-    "assets/details/loading-errors/empty-state-hd-02.webp": {
-      "bytes": 73334,
-      "sha256": "b4e76c7157b19519ba329c6ebec5b006b97b18fde9ddae0b84167d763d43dec3",
-      "width": 1440,
-      "height": 1610,
-      "bundled": true
-    },
     "assets/details/loading-errors/not-found-hd-01.webp": {
       "bytes": 73516,
       "sha256": "14d10d880be387389f1f346a782f4c99dac88f44d6a5b7aeb8655305370b1508",
@@ -3391,6 +3378,27 @@
       "sha256": "3bce9b58a52c049684c7ac8e2c670127b12e5bb01013ddc1345f945c1ddbb48d",
       "width": 1900,
       "height": 700,
+      "bundled": true
+    },
+    "assets/details/loading-errors/empty-wireframe.webp": {
+      "bytes": 22302,
+      "sha256": "590fb0ad812ce55d1c22fb92509e0ea0b2b374ff69b3d13430d3a5001719efd1",
+      "width": 740,
+      "height": 650,
+      "bundled": true
+    },
+    "assets/details/loading-errors/empty-icon.webp": {
+      "bytes": 20924,
+      "sha256": "eb1b8f5980a7659edcf7ddb03db71c7208f95296670d4ac03d2bbdcac639fb65",
+      "width": 640,
+      "height": 615,
+      "bundled": true
+    },
+    "assets/details/loading-errors/empty-mini.webp": {
+      "bytes": 5498,
+      "sha256": "20d9b62e97a586f547b875d00a5414dc58d878d030b889e2ffd74c21d58611a7",
+      "width": 820,
+      "height": 155,
       "bundled": true
     }
   },
