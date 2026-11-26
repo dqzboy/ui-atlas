@@ -69,3 +69,4 @@ graft/
 !/assets/details/*/
 /assets/details/*/*
 !/assets/details/**/*.webp
+/tests/
