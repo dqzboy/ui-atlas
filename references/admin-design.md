@@ -1,6 +1,16 @@
 # 清爽蓝白后台：布局、主题和组件规范
 
-本规范用于创建具有相同视觉语言的后台。与 [完整配方](recipes/clean-admin.md) 和 [动效说明](admin-motion.md) 配套；只将相关代码片段移植到目标项目，不需要在 skill 中附带前端工程。
+本规范用于创建具有相同视觉语言的后台。与 [完整配方](recipes/clean-admin.md)、[逐页提示词](admin-pages.md)、[组件与按钮状态](admin-components.md) 和 [动效说明](admin-motion.md) 配套；只将相关代码片段移植到目标项目，不需要在 skill 中附带前端工程。
+
+## 样式执行优先级与稳定项
+
+选择本风格后，不能再把它视为“蓝白色灵感”。用户明确指定的设计与可访问性需求优先；除此之外依次采用本文件的token／壳层、组件规范的尺寸与状态、逐页规范的组合、参考图的可见细节。参数未覆盖的情况从同职责组件扩展，并明确是补充默认值，不伪装为原图测量值。
+
+必须保持：浅蓝画布；独立悬浮白色侧栏与顶栏；蓝色渐变选中菜单和主按钮；明确的紧凑字号；四色摘要及其装饰；低阴影白色业务面板；浅蓝／淡紫信息子面；专用箭头展开按钮及动效。它们不能只保留一两项便称为相同风格。
+
+允许调整：目标品牌、菜单名称、字段、数据、指标数量、业务动作、长内容自然高度及按职责扩展的页面。缺少某业务区块可以省略；保留区块的尺寸与层级不随意改。
+
+基础尺寸单位为CSS px、border-box、浏览器100%缩放。图像DPR2只增加参考像素，不增加UI逻辑尺寸。不要使用zoom、整页transform scale或所有字号乘1.25来迎合参考图。不同字体存在字宽差异，允许自然换行与轻微光学调整，不能覆盖核心比例。
 
 ## 视觉基线与主题
 
@@ -22,7 +32,7 @@
   --workspace-card-shadow: 0 3px 18px rgba(57,106,188,.035);
   --shadow-sm: 0 1px 2px rgba(0,0,0,.04);
 }
-:root[data-theme="light"] {
+:root, :root[data-theme="light"] {
   color-scheme: light;
   --bg:#f3f7ff; --panel:#fff; --panel-muted:#f5f8ff; --panel-strong:#edf3ff;
   --text:#202020; --text-soft:#525252; --muted:#686868; --faint:#757575;
@@ -35,6 +45,7 @@
   --workspace-blue-surface:linear-gradient(125deg,#eef5ff,#f5f9ff);
   --workspace-lilac-surface:linear-gradient(125deg,#f3eeff,#f9f6ff);
   --chart-license:#1769ff; --chart-activation:#27c9d5;
+  --chart-mint:#31cfa1; --chart-orange:#ff964b; --chart-purple:#ba68e3; --chart-pink:#f4789d;
 }
 :root[data-theme="dark"] {
   color-scheme:dark;
@@ -49,11 +60,14 @@
   --workspace-blue-surface:linear-gradient(125deg,#1c293c,#202b3e);
   --workspace-lilac-surface:linear-gradient(125deg,#2b233c,#29263a);
   --chart-license:#70a3ff; --chart-activation:#53d7df;
+  --chart-mint:#5bd8ac; --chart-orange:#ffb075; --chart-purple:#cf93f0; --chart-pink:#f6a2bb;
   --workspace-card-shadow:0 3px 18px rgba(0,0,0,.08);
 }
 ```
 
 字体使用系统回退，不下载商业字体；不同操作系统的字形和占宽会有差异。字体基准为正文 14px、标签 13px、说明 12px；此套紧凑控件有 10–12px 辅助信息，不把小号辅助字当作所有正文的尺寸。大标题一般 26px／1.3、650，概览标题 30px；KPI 38px／1.2、650，tabular-nums；标题字距约 -.035em 到 -.04em。
+
+未设置data-theme时默认浅色；需要深色时在首屏绘制前按目标项目已有主题机制设置dark。四色摘要在两种主题下使用同一渐变，不因深色模式给整张卡叠黑色蒙层或降低brightness。普通主按钮继续用蓝色渐变白字，专用箭头展开按钮才使用自身accent／accent-ink，不将两种variant的前景色混用。
 
 ## 壳层的几何
 
@@ -63,8 +77,8 @@
 | 侧栏 | fixed，距左／上／下 12px；宽 232px；内边距 12px；圆角 20px；蓝色细边 | 展开宽 min(280px,视口−32px)，背景不可交互；关闭后恢复焦点 |
 | 折叠侧栏 | 外层第一列 88px，实际侧栏宽 64px；标签／计数隐藏，保留可访问名称 | 抽屉始终显示完整标签，不沿用图标折叠态 |
 | 侧栏品牌 | 68px 起始区域，下边距与分隔线；标记 34px，标题 20px | 品牌可替换，不复制原用户标记 |
-| 菜单项 | 最小高 42px，内边距 8px 10px，间距 10px，圆角 11px；图标底座 24px／7px | 命中区须能触摸操作，图标有文字或 aria-label |
-| 顶栏 | 独立白色面板；margin 12px 28px 0 16px；圆角18px；内容高68px；横向内边距18px | ≤960px 横向20px；≤600px margin 8px 12px、圆角14px、内容高60px |
+| 菜单项 | 最小高42px，内边距8px 10px，图文gap10px，组内gap5px，圆角11px；彩色图标底座24px／7px、内部SVG17px；组前4×10px彩色短竖线 | 命中区须能触摸操作，图标有文字或aria-label；分组配色和状态见组件规范侧栏合同 |
+| 顶栏 | 独立白色面板；margin 12px 28px 0 16px；圆角18px；内容高68px；横向内边距18px | ≤1280px右margin24px；≤960px margin 12px 20px 0、内边距20px；≤600px margin 8px 12px 0、圆角14px、内容高60px、内边距10px |
 | 顶栏控件 | 图标按钮36px／10px；搜索宽clamp(170px,20vw,260px)、高36px；头像26px／8px | 手机搜索缩为36px图标按钮，隐藏搜索文案、连接状态与用户名，保留入口 |
 | 正文 | max-width 1620px；padding 26px 28px 48px 16px；子项min-width:0 | ≤1280px 24px 24px 40px 16px；≤960px 24px 20px 32px；≤600px 20px 12px 28px |
 | 页标题 | 分组标记 + h1 + 说明 + 右侧主次操作；min-height约94px，底部14px与细线，之后24px | 手机上下排列，操作区可占整行 |
@@ -73,26 +87,62 @@
 顶栏在普通文档流中，不默认 sticky；长内容收起时，固定顶栏与浏览器滚动锚定混用可能造成“顶栏突然掉下来”。侧栏导航区域独立滚动，品牌、搜索、底部帮助与用户区不随菜单滚走。
 
 ```css
-.app-shell { display:grid; grid-template-columns:256px minmax(0,1fr); min-height:100dvh; }
+/* 合并到目标项目的reset；结构为.app-shell > .sidebar + .workspace。 */
+*, *::before, *::after { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font:400 14px/1.5 var(--sans); }
+.app-shell { --sidebar-panel-width:232px; display:grid;
+  grid-template-columns:var(--sidebar-width) minmax(0,1fr); min-height:100dvh; }
+.app-shell[data-sidebar-collapsed="true"] { --sidebar-width:88px; --sidebar-panel-width:64px; }
+.workspace { grid-column:2; }
 .workspace,.content,.panel { min-inline-size:0; }
-.sidebar { position:fixed; inset:12px auto 12px 12px; inline-size:232px;
+.sidebar { position:fixed; inset:12px auto 12px 12px; inline-size:var(--sidebar-panel-width);
   display:flex; flex-direction:column; padding:12px; border:1px solid var(--workspace-blue-line);
-  border-radius:20px; background:var(--panel); }
+  border-radius:20px; background:linear-gradient(180deg,color-mix(in srgb,var(--accent) 3%,var(--panel)),var(--panel) 42%);
+  box-shadow:0 4px 20px rgba(57,106,188,.04); }
 .sidebar nav { flex:1; min-block-size:0; overflow-y:auto; overscroll-behavior:contain; }
 .console-masthead { margin:12px 28px 0 16px; border:1px solid var(--workspace-blue-line);
   border-radius:18px; background:var(--panel); }
 .topbar { display:flex; align-items:center; gap:16px; block-size:68px; padding-inline:18px; }
 .content { inline-size:100%; max-inline-size:1620px; margin-inline:auto; padding:26px 28px 48px 16px; }
-@media(max-width:960px) { .app-shell { grid-template-columns:minmax(0,1fr); } }
+@media(max-width:1280px) {
+  .console-masthead { margin-inline-end:24px; }
+  .content { padding:24px 24px 40px 16px; }
+}
+@media(max-width:960px) {
+  .app-shell { grid-template-columns:minmax(0,1fr); }
+  .workspace { grid-column:1; }
+  .app-shell > .sidebar { display:none; }
+  .console-masthead { margin:12px 20px 0; }
+  .topbar { padding-inline:20px; }
+  .content { padding:24px 20px 32px; }
+}
+@media(max-width:600px) {
+  .console-masthead { margin:8px 12px 0; border-radius:14px; }
+  .topbar { block-size:60px; padding-inline:10px; }
+  .content { padding:20px 12px 28px; }
+}
 ```
+
+fixed侧栏不占Grid轨道，所以工作区必须显式放第二列；窄屏恢复第一列，否则仍可能生成额外隐式列。上例只定义壳层几何：≤960时隐藏的是桌面侧栏实例，顶栏菜单按钮必须打开目标项目的模态导航抽屉，复用同一份导航数据；不能只隐藏侧栏而丢掉导航。折叠属性只控制桌面宽度，标签显隐与可访问名称按组件状态一并处理。
+
+### 统一响应式断点
+
+以下是本风格的默认视口断点，与逐页规范共用，等于断点时进入较窄档。卡片和表单在实际容器放不下时可以提前换列，保持字号与控件档位，不缩放整页；页面里的局部重排不能另改全局侧栏阈值。
+
+| CSS视口宽度 | 壳层与正文 | 主要内容重排 |
+|---|---|---|
+| >1280 | 256／232侧栏、68顶栏、正文26 28 48 16 | 概览KPI四列、图表1.55:1，资源卡三列 |
+| 961–1280 | 保留桌面侧栏；正文24 24 40 16 | 主图表单列、资源卡两列；事实／说明栏可下移 |
+| 601–960 | 单列壳层＋模态导航；正文24 20 32 | KPI两列，登录与主要业务分栏改单列，文档目录可展开 |
+| ≤600 | 顶栏60高；正文20 12 28 | 资源卡与表单单列；KPI优先两列、164起高、数值30，内容放不下可单列；保留右上跳转入口 |
 
 ## 按钮、输入、浮层
 
-- 主按钮：180deg，`#3589ff → #1669f3`；边框 `#2478f8`，白字；高光 `inset 0 1px 0 rgba(255,255,255,.25)` 与轻微外阴影。hover 改 `#237bfa → #0f5ce6`。普通按钮高34px、左右13px、12px／500；页标题主次操作高38px、圆角约10–11px。
+- 主按钮：180deg，`#3589ff → #1669f3`；边框 `#2478f8`，白字；高光 `inset 0 1px 0 rgba(255,255,255,.25)` 与轻微外阴影。hover 改 `#237bfa → #0f5ce6`。普通按钮高34px、左右13px、圆角8px、12px／500；页标题主次操作高38px、圆角10px，专用箭头按钮圆角11px。
 - 次按钮：panel 或透明表面、text-soft、细边；弹窗页脚改为7%蓝色混入panel与22%蓝色边框，hover增到12%／42%，避免白面板上消失。危险操作用red，不能只用红色无动作文字。
-- 图标与文字：inline-flex居中，间距6–9px；按钮图标16px、独立图标按钮约36px；SVG display:block、flex-shrink:0，不用字体基线硬推 margin-top。触屏可扩大实际命中区到44px。
+- 图标与文字：inline-flex居中，紧凑按钮间距7px、页头按钮8px；按钮图标16px、顶栏独立图标按钮36px；SVG display:block、flex-shrink:0，不用字体基线硬推 margin-top。触屏可扩大实际命中区到44px。
 - 纯箭头按钮是特殊组件，不能用普通主按钮替换；蓝块、三点和文字覆盖关系见动效说明。
-- 表单：可见标签、输入高度约38–42px、圆角8–10px；白色输入面、line边框、focus accent边与轻微环；输入前后图标对齐。数量+单位并排分配，禁用时仍可读。
+- 表单：可见标签、普通输入高38px、登录输入42px、圆角10px；白色输入面、line边框、focus accent边与轻微环；输入前后图标对齐。数量+单位并排分配，禁用时仍可读。
 - 输入、Select、Dropdown、弹窗与Tooltip的背景／边框跟随全局主题。浮层小三角用与面板同色的双层填充，边框约1px，12×7px（左右方向7×12px），不能露出异色旋转方块。
 - Tooltip保持窄小文本面，max-width:min(360px,100vw−24px)，可断长字。内容含交互时改用合适浮层并保留焦点语义。
 
@@ -110,6 +160,8 @@
 }
 ```
 
+各类按钮、表单和浮层的精确档位及状态按 [组件规范](admin-components.md) 执行；普通输入默认38、登录42，不在每页任选38–42。
+
 真实依赖库的 Success/Warning/Danger、禁用态和全部主色层级同样要映射；上面只列相关起点，不将复制片段当作库完整主题文件。
 
 ## 页面结构
@@ -118,12 +170,12 @@
 |---|---|---|
 | 登录 | 桌面双栏minmax(0,1.2fr) + minmax(430px,.8fr)；左品牌／大标题／说明／三块功能，右440px登录卡；卡padding 24–36px、圆角16px，主题切换右上 | 标签、用户名、密码显隐、可选验证码、错误信息、忙碌主操作；手机改单栏且表单不被遮挡 |
 | 登录验证 | 居中352px面板、圆角20px、6px背景模糊；场景320:180，圆角11px；轨道50px、滑块48px、胶囊圆角 | 拼图实际尺寸由挑战返回；图像ready、失败、刷新、拖动、验证、错误、通过分别呈现；键盘可调 |
-| 概览 | 四列KPI、18px左右间距；下方36px进度条；主图表区1.55:1双列；白色图表与快捷入口 | 数字、单位、比例、图例口径一致，空数据不画假趋势；≤1280px主图改单列，≤960pxKPI两列 |
+| 概览 | 四列KPI、18px间距；36px进度条；主图表1.55:1双列；下一排三进度环／对象对比1.3:1；图标快捷卡与最近活动 | 按工作台规范映射数据，不能因只看首屏而漏掉下方模块；≤1280px两排图表单列，≤960pxKPI两列 |
 | 摘要卡 | 115deg四色渐变；大KPI min-height192px、24px圆角、padding24px 24px 18px；普通摘要142px高、20px圆角 | 右下大线框图标、左下半透明环、星芒是装饰；标签和数值在前层，hint为小深色面 |
 | 产品目录 | 四摘要→目录标题→搜索／分段筛选→类别标题／折叠→三列卡片；产品卡圆角18px | 3px顶部短色条、图标与状态、稳定ID、标题说明、浅蓝能力面、淡紫数量面、页脚动作；筛选状态真实 |
 | 业务列表 | 头部摘要、工具栏、白色表格、底部计数与分页；hover轻蓝，选中行更深 | 横向滚动局限于表格区域；数字对齐、状态徽标、代码复制、行操作、选择操作栏不能遮挡记录 |
 | 文档中心 | 操作面板→文档说明→横向特征条→左目录与正文；圆角16px白色面，浅蓝引用与元信息 | 搜索仅筛目录，标题滚动与当前项同步；复制／下载同一内容，长代码和表格独立滚动 |
-| 用户中心 | 左身份栏约228–250px、紫色210px hero与头像，状态／子导航；右区表单+250px事实栏 | 表单按登录身份、联系外观分区，动作底栏；只替换展示数据，业务更改语义仍由目标项目决定 |
+| 用户中心 | 左身份栏228px、紫色210px hero与头像，状态／子导航；右区表单+250px事实栏 | 表单按登录身份、联系外观分区，动作底栏；只替换展示数据，业务更改语义仍由目标项目决定 |
 | 系统配置 | 命令栏→三色摘要→主设置区+约250px说明栏；设置组圆角16px，成对数值字段浅蓝背景 | 未改禁用保存、dirty提示、保存中、成功和失败可区分；不能把演示安全配置当成目标项目策略 |
 | 备份／发布／排查等扩展页 | 沿用同壳层、分组列表、运行状态、说明栏和同套按钮／浮层 | 复用动作状态样式；不要复制原仓库地址、签名参数、凭据、运行日志或服务端实现 |
 
@@ -137,3 +189,39 @@
 - 浅深模式同时更新页面、组件库、浮层、图表、图例和代码区。图表绘图区显式采用透明背景，防止库的深色默认灰底盖住面板。不要让portal到body的弹层漏掉主题。
 - 登录界面只提供输入与反馈外观。真实验证结果、权限、会话、设备与安全策略由目标服务确定；不能把演示滑块、前端布尔值或路由作为认证。
 - 参考图由虚构数据重新截取，字体跟随截图环境。实现后对照1920桌面、1280中等宽度、768平板、390手机检查，且允许用户浏览器缩放。
+
+## 视觉核对流程与验收表
+
+把规范真正用于实现，需要在目标项目运行后比较画面。至少先完成壳层+一个实际需要的代表页，直接核对并修正后再批量铺其他页面；这不是要求用户审批，也不阻断已授权任务。代码结构正确、测试通过或使用同色不能替代视觉一致性。
+
+| 检查层 | 实际核对内容 | 偏离时先修什么 |
+|---|---|---|
+| 尺寸口径 | 1920×1080 CSS、100%缩放、DPR记录；图片以相同比例查看 | 先排除参考图像素当CSS、未设置border-box、重复容器padding；不要通过全页缩放补救 |
+| 壳层 | 侧栏12外留白、232实宽、顶栏68高、正文1620上限与padding；短屏导航仍可达 | 全局布局与容器，不能每页单独偏移 |
+| 页面结构 | 区块顺序、主次列比例、卡数与高度、标题／操作关系 | 先主布局与业务映射，别先纠结小图标阴影 |
+| 密度 | 页面26／30、说明12、控件34／38／42档、表格44／56／64档 | 共享字级／尺寸，不能一页修一批随机数 |
+| 表面 | bg／panel／line、圆角按职责、轻阴影、主按钮渐变 | token与组件variant；不得加巨型hero、大片玻璃或高饱和蓝面替代 |
+| 组件细节 | 侧栏各组彩色短竖线、彩色线框图标与浅色底座，分隔线、ID复制、徽标、字段标签／help／后缀、普通摘要与大KPI差别 | 当前共享组件，不给每实例写补丁；检查default／hover／active时分组色与白色选中态不混用 |
+| 装饰 | KPI线框图标、背景环、星芒、短色条、浅蓝能力面／淡紫数量面 | 装饰层与前景层分开，装饰不盖字、不抢点击 |
+| 指标卡颜色与入口 | 四色115deg的两端值及实际computed background；右上圆箭头默认、悬停、键盘与点击目标 | 排除旧主题覆盖、整卡黑蒙层／brightness与错用tone名称；恢复圆形跳转入口及200ms旋转，不能只画装饰箭头 |
+| 状态 | hover／press／focus／disabled／busy／success／error、选中与只读 | 用同一动作实际操作，截必要状态，确认尺寸不跳动 |
+| 动画 | 箭头铺底、三点、数字、共享滑块、折叠反向、循环停止、卸载清理 | 逐项按动效规范检查；不从单帧推断正确时序 |
+| 内容压力 | 长菜单／字段／文件名、四位数、空数据、错误、超长帮助 | 换行、min-width、局部滚动与状态语义，不裁切关键字段 |
+| 响应式 | 1280／768／390宽与短屏、浏览器缩放、浮层和手机导航 | 使用同套响应式规则，不能仅桌面截图“看起来对” |
+| 主题 | 深色页面、body portal浮层、图表、禁用字与焦点 | 所有库主题映射和实际对比，不只改body背景 |
+
+参考可见区块的高宽、边距和字号有明确值时按数值核对；长真实内容可以自然增高。字体抗锯齿与业务文案不同，不要求整屏像素哈希相同，也不能用“文案不同”掩盖固定控件尺寸、导航结构与背景材质变化。自动视觉差异只能辅助定位，仍要实际打开截图判断。
+
+在任务结果里简要列出本次页面及状态，使用“匹配／有意调整／待修正／未验证”。有意调整写业务或设备原因；能修的偏差直接继续修，不把明显偏离留作建议。不能启动项目或没有拿到截图时，明确“规范已接入，实际画面未验证”；不得声称“完全复刻”。比较与调试图用外部临时目录，保留仅在用户需要交付时。
+
+### 常见偏差与纠正提示词
+
+```text
+当前结果只匹配蓝白颜色，尚未匹配这套后台。先停止增加装饰或业务组件，
+读取admin-design、当前admin-pages章节和admin-components，打开对应高清图。
+检查是不是把DPR2当CSS尺寸、给正文重复加padding、套用组件库大号默认，
+或把所有panel圆角都设24。按壳层→页面区块→密度→控件状态→装饰→动效
+顺序修正目标项目的共享实现，再回到同视口截图比较。
+保持真实业务内容与功能，不复制演示数字，不为匹配截图固定文本高度。
+把每项剩余差异和证据说明清楚；没实际看过运行截图不能说已复刻。
+```

@@ -1,6 +1,6 @@
 # 清爽蓝白后台：组件动效与状态实现
 
-这是 [后台风格配方](recipes/clean-admin.md) 的动效部分。目标是将同一套动画写进实际项目的可复用组件；参数和触发语义必须同时保留。按页面使用相关行，不能因为清单完整就让页面同时播放所有效果。
+这是 [后台风格配方](recipes/clean-admin.md) 的动效部分，几何与状态见 [组件规范](admin-components.md)，页面组合见 [逐页提示词](admin-pages.md)。目标是将同一套动画写进实际项目的可复用组件；参数和触发语义必须同时保留。按页面使用相关行，不能因为清单完整就让页面同时播放所有效果。
 
 ## 运行基线
 
@@ -22,7 +22,7 @@
 | 数字滚动 | 旧数字向上85%淡出，新数字从下85%进入 | 每段180ms spring，opacity180ms ease | 按位Transition out-in；从右侧稳定key，分隔符不占等宽数位 |
 | 状态徽标 | 同一位置图标缩小旋出、下一个放大归位；文案同步 | 图标／opacity每段140ms ease | out-in；scale(.5)、进-40deg／退40deg；loading图标900ms linear转圈 |
 | 大KPI | hover上移3px并增加阴影 | transform／shadow180ms ease | 入场动画结束须释放transform，或用外层做入场 |
-| KPI圆形箭头 | 指向右上，hover／focus转为右向 | rotate(-40deg→0)200ms ease | 外层32px，箭头15px；不移动数值或hint |
+| KPI圆形箭头 | 始终可见；入口hover／focus-visible由右上转右向，圆面变亮；离开复原 | rotate(-40deg→0)200ms ease | 外层32px、箭头15px；点击直达该指标真实页面，非菜单或Toast；不移动数值或hint |
 | 普通摘要卡 | hover上移2px，轻边界变化 | transform180ms ease、边界160ms | 四色是装饰分类，不替代业务状态 |
 | 快捷操作卡 | hover图标rotate(-7deg) scale(1.08)，右箭头右移3px | 图标260ms spring；右箭头220ms spring；颜色160–180ms | 卡片外层轻上移2px；focus也须有可见反馈 |
 | 产品卡 | hover上移3px、蓝边、阴影加深 | transform220ms spring；border／shadow180ms | 三列布局稳定，菜单开合不让卡片抖动 |
@@ -50,6 +50,14 @@
 | 静态加载骨架 | 等会话／数据时保留壳层与块状占位 | 无循环动效 | 不把静态原型误补成shimmer或重复入场 |
 
 原样式中旧版本的 `view-in`、`console-view-in` 和历史滑块 `.04s left` 还可能存在，但最终页面已由后层规则与当前组件覆盖；不要把这些历史规则再次叠加。上表按职责归并同类效果，库内置的Select、Switch、Checkbox、Dialog、Drawer等保留库自己的可访问行为和实际过渡，不重造一套隐含时序。
+
+## KPI圆形跳转入口
+
+概览大KPI右上角使用独立圆形导航入口，完整结构、颜色和CSS见 [组件规范的大KPI合同](admin-components.md#clean-admin-metric-contract)。默认黑15%圆面、白28%边、箭头−40deg；入口hover／focus-visible时白24%圆面、箭头0deg，200ms ease；离开或失焦恢复。桌面32×32，≤600时40×40。父卡上移3px与此旋转分属不同层；初次入场结束不能继续占用父卡transform。
+
+点击或键盘Enter直接进入真实业务路由；动画不延迟跳转，不自动另开窗口。鼠标只停在卡片其他区域时是卡片抬升，停到圆入口才触发箭头旋转；键盘聚焦入口也得到完整反馈。减弱动态下直接切换箭头终态，取消位移和过渡。导航链接不套提交按钮的loading、成功或disabled状态。
+
+此圆形入口与下方的蓝块铺满／三点按钮属于两个不同组件：圆形入口没有三点、展开底色或文字推移，不能相互替换。验收必须检查默认、旋转中间态、悬停终态、离开、键盘聚焦、真实跳转及返回后状态。
 
 ## 箭头展开按钮：结构、状态与样式
 
@@ -110,6 +118,8 @@
 蓝块是局部绝对层，动画width不参与周围布局。若目标项目统一要求仅transform，可将蓝色装饰面分离并对它scaleX；箭头与小点必须另放不缩放层，并复测视觉，不能直接把上面整个蓝块scaleX导致图标变形。较长按钮文案先留足箭头和三个点的固定区域；禁用组件不因hover误展开。
 
 ## 分段滑块与页面页签
+
+分段筛选的完整结构、默认／选中／hover／focus／disabled、计数、窄屏与键盘实现见 [菜单与筛选规范](admin-navigation.md#clean-admin-segmented)。不能仅执行下面的动画摘要而沿用另一套按钮外观。
 
 分段选择用一个共享indicator，不在各项分别淡入蓝底。容器padding4px、圆角11px、高38px起；内部indicator从left4px、top/bottom4px开始，宽`(100%−8px)/N`，圆角7px，蓝色渐变`#3484ff → #1764e7`。以自身宽度为基准`translateX(index×100%)`，280ms spring移动；indicator不接收指针。
 
