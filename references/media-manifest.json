@@ -1754,6 +1754,61 @@
       "width": 1300,
       "height": 1325,
       "bundled": true
+    },
+    "assets/details/enterprise-workbenches/clean-admin-login.webp": {
+      "bytes": 115996,
+      "sha256": "a29f368b0d0f8a55069f425a91127a4572164a8e104acbec25153143d77b0882",
+      "bundled": true
+    },
+    "assets/details/enterprise-workbenches/clean-admin-login-puzzle.webp": {
+      "bytes": 64828,
+      "sha256": "25b22450c227b2117389a14fc1fa89c97aec0e7f2adb4d4d253d2c8fbf69cb08",
+      "bundled": true
+    },
+    "assets/details/enterprise-workbenches/clean-admin-overview.webp": {
+      "bytes": 656106,
+      "sha256": "e2a2130fdb15c246f44fcfa1879b9dcc7254dfe8b61ebaa03287c948fd05ead6",
+      "bundled": true
+    },
+    "assets/details/enterprise-workbenches/clean-admin-overview-dark.webp": {
+      "bytes": 645970,
+      "sha256": "88889d3b2da4db10e0ccfbe2da47a46f31554328ff2e4e358332256de9ccf0ff",
+      "bundled": true
+    },
+    "assets/details/enterprise-workbenches/clean-admin-products.webp": {
+      "bytes": 717390,
+      "sha256": "5f743d7aaf175629e68c0138f9c934d169538f5f725e17831abac231fc80d638",
+      "bundled": true
+    },
+    "assets/details/enterprise-workbenches/clean-admin-docs.webp": {
+      "bytes": 273766,
+      "sha256": "a95ffe2538e3484319fdb7497fc199077501b765f7d9d3c5fd38893a11f70ba4",
+      "bundled": true
+    },
+    "assets/details/enterprise-workbenches/clean-admin-account.webp": {
+      "bytes": 286386,
+      "sha256": "b273800ff99acf05e979414d357f7c1840affdcce30594b47b694b8cc582b4a3",
+      "bundled": true
+    },
+    "assets/details/enterprise-workbenches/clean-admin-settings.webp": {
+      "bytes": 572090,
+      "sha256": "3f8317496dae8df4e6f5a12046be0c90d4482f9715f4655d905799417e5a18d9",
+      "bundled": true
+    },
+    "assets/details/enterprise-workbenches/clean-admin-components.webp": {
+      "bytes": 210318,
+      "sha256": "901f1425e6bed1bb32667b9ec3faef68dd014bc0857e0b730f806dea1ce3f5f9",
+      "bundled": true
+    },
+    "assets/details/enterprise-workbenches/clean-admin-arrow-default.webp": {
+      "bytes": 2650,
+      "sha256": "1d1239cbb6780b84b53fabcc6acfaf9322c6e24b525d9edb527c5c7cd185712c",
+      "bundled": true
+    },
+    "assets/details/enterprise-workbenches/clean-admin-arrow-expanded.webp": {
+      "bytes": 2746,
+      "sha256": "e059b31f5d7d9875501ed9a9fb7f5cef4185ed69db06599decf677148de23e16",
+      "bundled": true
     }
   }
 }

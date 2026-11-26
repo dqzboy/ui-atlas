@@ -1785,6 +1785,24 @@
       ],
       "poster": "assets/details/overlays/hover-card.webp",
       "image_reason": "含操作的资料卡与文档预览各一张清晰局部，Label 复用已有 Tooltip 图片，不重复存图；静态图不证明延时、热启动、指针速度、连接热区和连续切换。"
+    },
+    "enterprise-workbenches/clean-admin": {
+      "source": "在项目外的本地演示环境复用后台样式与通用组件，以虚构品牌、账号和业务数据重新渲染；1920×1080 CSS视口、2倍设备像素密度截图，局部按原设备像素裁取，WebP无损编码。",
+      "limitation": "不同页面与状态的静态参考，不是整段动画记录；字体来自截图系统，业务流程、账号验证与图表数据为虚构。箭头两态不单独证明运动时序；动画在目标项目运行验证。",
+      "poster": "assets/details/enterprise-workbenches/clean-admin-overview.webp",
+      "images": [
+        "assets/details/enterprise-workbenches/clean-admin-login.webp",
+        "assets/details/enterprise-workbenches/clean-admin-login-puzzle.webp",
+        "assets/details/enterprise-workbenches/clean-admin-overview.webp",
+        "assets/details/enterprise-workbenches/clean-admin-overview-dark.webp",
+        "assets/details/enterprise-workbenches/clean-admin-products.webp",
+        "assets/details/enterprise-workbenches/clean-admin-docs.webp",
+        "assets/details/enterprise-workbenches/clean-admin-account.webp",
+        "assets/details/enterprise-workbenches/clean-admin-settings.webp",
+        "assets/details/enterprise-workbenches/clean-admin-components.webp",
+        "assets/details/enterprise-workbenches/clean-admin-arrow-default.webp",
+        "assets/details/enterprise-workbenches/clean-admin-arrow-expanded.webp"
+      ]
     }
   },
   "files": {
@@ -3463,6 +3481,83 @@
       "sha256": "8ec2b6b54dfbb88e87aeef306c752142e0cbeb502510cae59788cdeefef242ac",
       "width": 1300,
       "height": 1325,
+      "bundled": true
+    },
+    "assets/details/enterprise-workbenches/clean-admin-login.webp": {
+      "bytes": 115996,
+      "sha256": "a29f368b0d0f8a55069f425a91127a4572164a8e104acbec25153143d77b0882",
+      "width": 3840,
+      "height": 2160,
+      "bundled": true
+    },
+    "assets/details/enterprise-workbenches/clean-admin-login-puzzle.webp": {
+      "bytes": 64828,
+      "sha256": "25b22450c227b2117389a14fc1fa89c97aec0e7f2adb4d4d253d2c8fbf69cb08",
+      "width": 704,
+      "height": 652,
+      "bundled": true
+    },
+    "assets/details/enterprise-workbenches/clean-admin-overview.webp": {
+      "bytes": 656106,
+      "sha256": "e2a2130fdb15c246f44fcfa1879b9dcc7254dfe8b61ebaa03287c948fd05ead6",
+      "width": 3840,
+      "height": 2160,
+      "bundled": true
+    },
+    "assets/details/enterprise-workbenches/clean-admin-overview-dark.webp": {
+      "bytes": 645970,
+      "sha256": "88889d3b2da4db10e0ccfbe2da47a46f31554328ff2e4e358332256de9ccf0ff",
+      "width": 3840,
+      "height": 2160,
+      "bundled": true
+    },
+    "assets/details/enterprise-workbenches/clean-admin-products.webp": {
+      "bytes": 717390,
+      "sha256": "5f743d7aaf175629e68c0138f9c934d169538f5f725e17831abac231fc80d638",
+      "width": 3840,
+      "height": 2160,
+      "bundled": true
+    },
+    "assets/details/enterprise-workbenches/clean-admin-docs.webp": {
+      "bytes": 273766,
+      "sha256": "a95ffe2538e3484319fdb7497fc199077501b765f7d9d3c5fd38893a11f70ba4",
+      "width": 3840,
+      "height": 2160,
+      "bundled": true
+    },
+    "assets/details/enterprise-workbenches/clean-admin-account.webp": {
+      "bytes": 286386,
+      "sha256": "b273800ff99acf05e979414d357f7c1840affdcce30594b47b694b8cc582b4a3",
+      "width": 3840,
+      "height": 2160,
+      "bundled": true
+    },
+    "assets/details/enterprise-workbenches/clean-admin-settings.webp": {
+      "bytes": 572090,
+      "sha256": "3f8317496dae8df4e6f5a12046be0c90d4482f9715f4655d905799417e5a18d9",
+      "width": 3840,
+      "height": 2160,
+      "bundled": true
+    },
+    "assets/details/enterprise-workbenches/clean-admin-components.webp": {
+      "bytes": 210318,
+      "sha256": "901f1425e6bed1bb32667b9ec3faef68dd014bc0857e0b730f806dea1ce3f5f9",
+      "width": 3840,
+      "height": 2160,
+      "bundled": true
+    },
+    "assets/details/enterprise-workbenches/clean-admin-arrow-default.webp": {
+      "bytes": 2650,
+      "sha256": "1d1239cbb6780b84b53fabcc6acfaf9322c6e24b525d9edb527c5c7cd185712c",
+      "width": 290,
+      "height": 78,
+      "bundled": true
+    },
+    "assets/details/enterprise-workbenches/clean-admin-arrow-expanded.webp": {
+      "bytes": 2746,
+      "sha256": "e059b31f5d7d9875501ed9a9fb7f5cef4185ed69db06599decf677148de23e16",
+      "width": 290,
+      "height": 78,
       "bundled": true
     }
   },

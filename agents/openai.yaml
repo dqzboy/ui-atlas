@@ -1,4 +1,4 @@
 interface:
   display_name: "UI Atlas"
-  short_description: "225 条 UI、交互与质感配方参考，覆盖企业工作台和数字孪生，媒体按需获取"
-  default_prompt: "使用 $ui-atlas 筛选相关条目并按需查看参考，按其触发、状态和运动特征修改 UI，验证项目实际效果并汇报结果。"
+  short_description: "202 条 UI、交互与质感参考，新建后台默认清爽蓝白风格，含登录与组件动效，媒体按需获取"
+  default_prompt: "使用 $ui-atlas 实现并验证界面；新建后台管理系统未指定风格时默认采用清爽蓝白后台，读取其布局、主题与动效规范，其他需求按需筛选参考。"

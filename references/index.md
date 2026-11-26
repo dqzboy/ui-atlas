@@ -1,6 +1,8 @@
 # UI 参考索引
 
-共 **201 条参考、18 个分类**：179 组组件／状态／设计规则（缓动、消息气泡、冲击波、卡片删除、连续转场、消息反馈选型、等待状态、镭射卡片、卡片滚动、选择控件选型、景深卡片环、空状态选型、点阵生图入场、悬停延时与 Bento 展示条目另附完整配方）、12 组精选页面图集，以及 10 组独立配方条目；共提供 25 份完整实现配方。相同效果只保留代表图，必要状态和不同页面才使用多图。
+共 **202 条参考、18 个分类**：179 组组件／状态／设计规则（缓动、消息气泡、冲击波、卡片删除、连续转场、消息反馈选型、等待状态、镭射卡片、卡片滚动、选择控件选型、景深卡片环、空状态选型、点阵生图入场、悬停延时与 Bento 展示条目另附完整配方）、13 组精选页面图集，以及 10 组独立配方条目；共提供 26 份完整实现配方。相同效果只保留代表图，必要状态和不同页面才使用多图。
+
+新建后台未指定风格时默认采用清爽蓝白后台，完整后台与登录规范见 [清爽蓝白后台配方](recipes/clean-admin.md)，包括布局、主题、组件和动画规则。
 
 新增卡片材质与网页动效：按需读取 [23 项卡片质感指南](card-craft.md) 或 [20 种动效选型](motion-selection.md)，实现说明与效果图分开使用。
 
@@ -20,7 +22,7 @@
 | Dashboard 与后台导航 | 4 | [dashboard-navigation.md](dashboard-navigation.md) |
 | 玻璃材质与背景 | 3 | [glass-materials.md](glass-materials.md) |
 | 界面排版与细节 | 5 | [interface-details.md](interface-details.md) |
-| 企业工作台与业务后台 | 4 | [enterprise-workbenches.md](enterprise-workbenches.md) |
+| 企业工作台与业务后台 | 5 | [enterprise-workbenches.md](enterprise-workbenches.md) |
 | 数据可视化与数字孪生 | 6 | [data-visualization.md](data-visualization.md) |
 | 移动端工作台与服务门户 | 3 | [mobile-workbenches.md](mobile-workbenches.md) |
 | 文档与帮助中心布局 | 1 | [documentation-layouts.md](documentation-layouts.md) |
@@ -41,4 +43,4 @@ python3 scripts/fetch_media.py loading-errors/loading-button --media images
 
 - 组件与文字特效的原片截图随包提供，其他页面图片按需下载并校验 SHA-256，重复使用读取缓存。
 - 静态图显示构图与状态；触发、路径、速度、焦点、请求和响应式行为在真实项目中验证。5 份配方另有精选连续片段。
-- [25 份质感配方](craft-recipes.md) · [机器索引](catalog.json) · [图片清晰度](media-quality.md) · [技能说明](../SKILL.md)
+- [26 份质感配方](craft-recipes.md) · [机器索引](catalog.json) · [图片清晰度](media-quality.md) · [技能说明](../SKILL.md)
