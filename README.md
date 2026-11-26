@@ -6,6 +6,19 @@
 
 新建后台管理系统且未指定风格时，默认采用[清爽蓝白后台](references/recipes/clean-admin.md)，包含登录、布局、按钮与组件动效。
 
+<table>
+  <tr>
+    <td width="50%" align="center">
+      <a href="assets/details/enterprise-workbenches/clean-admin-overview.webp"><img src="assets/details/enterprise-workbenches/clean-admin-overview.webp" alt="浅色后台：侧栏、顶部栏、四色指标卡与工作台" width="100%" /></a>
+      <br /><sub>浅色模式</sub>
+    </td>
+    <td width="50%" align="center">
+      <a href="assets/details/enterprise-workbenches/clean-admin-overview-dark.webp"><img src="assets/details/enterprise-workbenches/clean-admin-overview-dark.webp" alt="深色后台：侧栏、顶部栏、四色指标卡与工作台" width="100%" /></a>
+      <br /><sub>深色模式</sub>
+    </td>
+  </tr>
+</table>
+
 ## 安装
 
 直接告诉你的 AI 编程助手：

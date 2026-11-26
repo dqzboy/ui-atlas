@@ -81,6 +81,8 @@
 
 选中样式以蓝色渐变底、白色标签为准，浅色与深色主题一致。指针移入当前项、按下和键盘聚焦都不能把文字变蓝；未选项才应用蓝色文字的hover规则。不要给整组直接套普通文字按钮的hover变蓝样式。接入组件库时同时检查内部label、图标与计数的实际computed color，移除冲突的子元素颜色或在该组件作用域中覆盖，让标签和图标继承当前项颜色；保留focus-visible焦点环。不能只把选中规则放在hover后面：还要检查选择器优先级、样式层和库的状态类，避免高优先级hover再次盖住白字。
 
+**选中底色不能因hover消失：**轨道背景在底层，共享indicator为z-index:0，透明按钮及文字为z-index:1；indicator不使用负层级。按钮的default／hover／active／focus-visible都保持透明，不继承普通次按钮、文字按钮或组件库的白色／浅灰hover底，不用整项opacity、filter或遮罩把蓝底洗淡。库的::before／::after若提供额外hover覆层，在该分段组件内移除或改为不遮挡滑块的反馈；不要全局删除按钮伪元素。只有indicator绘制蓝色选中底，切换中及终态都保持可见。选中项移入后出现“浅底白字”、移出又恢复蓝底属于错误，不能以文字仍为白色判定通过。复制到组件库时检查实际绘制与层叠优先级，修正冲突规则，不用全局!important补丁。
+
 ```html
 <div class="admin-segment-scroll">
   <div class="admin-segmented" role="radiogroup" aria-label="记录范围" style="--segment-count:3;--segment-index:0">
@@ -98,16 +100,17 @@
   grid-template-columns:repeat(var(--segment-count),minmax(0,1fr)); inline-size:max-content;
   min-block-size:38px; padding:4px; border:1px solid var(--workspace-blue-line); border-radius:11px;
   background:color-mix(in srgb,var(--accent) 7%,var(--panel)); }
-.admin-segmented__indicator { position:absolute; z-index:-1; left:4px; top:4px; bottom:4px;
+.admin-segmented__indicator { position:absolute; z-index:0; left:4px; top:4px; bottom:4px;
   inline-size:calc((100% - 8px) / var(--segment-count));
   transform:translateX(calc(var(--segment-index) * 100%)); border:1px solid #2675ef; border-radius:7px;
   background:linear-gradient(180deg,#3484ff,#1764e7);
   box-shadow:0 2px 6px rgb(31 101 225 / .2),inset 0 1px 0 rgb(255 255 255 / .2);
   transition:transform 280ms cubic-bezier(.2,.75,.25,1); pointer-events:none; }
-.admin-segmented > button { display:inline-flex; align-items:center; justify-content:center; gap:6px;
+.admin-segmented > button { position:relative; z-index:1; display:inline-flex; align-items:center; justify-content:center; gap:6px;
   min-inline-size:0; min-block-size:28px; padding:0 12px; border:0; border-radius:7px;
   background:transparent; color:var(--accent-link); white-space:nowrap; font:500 11px var(--sans);
   transition:color 160ms ease; }
+.admin-segmented > button:is(:hover,:active,:focus-visible) { background:transparent; }
 .admin-segmented > button[aria-checked="false"]:hover:not(:disabled) { color:var(--accent-strong); }
 .admin-segmented > button[aria-checked="true"],
 .admin-segmented > button[aria-checked="true"]:is(:hover,:active,:focus-visible) { color:#fff; }
@@ -156,10 +159,14 @@ function resolveSegment(options, value, key, direction = 'ltr') {
 记录范围与状态筛选使用浅蓝圆角轨道+蓝色渐变共享滑块，38高/4padding/
 11外圆角/7内圆角/11字，选中白字、未选蓝字，280ms指定曲线。当前项hover、
 按下、键盘聚焦都保持白色标签/图标/计数；hover蓝字只用于未选项，排查库的
-内部label与通用button:hover覆盖，浅深主题均实测。不要用下划线
-Tabs、每项独立蓝边或四个不同色块替代。完整实现点击、方向键/Home/End、
+内部label与通用button:hover覆盖，浅深主题均实测。
+选中项hover不能出现白色/浅灰底；所有按钮表面保持透明，共享蓝色滑块z=0、
+按钮文字z=1，排查组件库hover背景及伪元素覆层，不能遮住滑块或洗淡整组。
+不要用下划线Tabs、每项独立蓝边或四个不同色块替代。完整实现点击、方向键/Home/End、
 单Tab入口、禁用跳过、计数、无效初始值与动态选项，视觉和实际value一致。
 筛选改变真实数据与分页；保持搜索、范围与状态的组合，不仅移动蓝色背景。
 ```
 
 验收时实际操作带计数与不带计数的分段组：选中→鼠标移入→按住→移出，以及Tab聚焦、方向键切换。在浅色／深色下核对选中按钮及内部标签、图标、计数均为白色，未选项仍为蓝字；切换后旧项恢复未选色、新项保持白字。禁用项不响应hover，减弱动态下状态仍立即更新。图中蓝底蓝字属于错误状态，不能作为风格变体保留。
+
+背景验收与文字验收分开：在上述状态下实际截图查看选中区是否仍为指定蓝色渐变，同时检查按钮computed background为透明、indicator有非零尺寸且未被隐藏或覆盖。不能只查indicator的background-image属性：即使属性正确，上层浅色按钮面仍可能盖住它。逐帧查看快速来回切换，确认蓝色滑块持续可见、没有在hover时变白、文字无淡出；滑块移动经过未选标签时，也检查可读性，不能只验动画结束的一帧。

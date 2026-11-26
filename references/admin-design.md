@@ -125,6 +125,66 @@ body { margin:0; background:var(--bg); color:var(--text); font:400 14px/1.5 var(
 
 fixed侧栏不占Grid轨道，所以工作区必须显式放第二列；窄屏恢复第一列，否则仍可能生成额外隐式列。上例只定义壳层几何：≤960时隐藏的是桌面侧栏实例，顶栏菜单按钮必须打开目标项目的模态导航抽屉，复用同一份导航数据；不能只隐藏侧栏而丢掉导航。折叠属性只控制桌面宽度，标签显隐与可访问名称按组件状态一并处理。
 
+<a id="clean-admin-scrollbars"></a>
+
+### 滚动条与滚动容器
+
+滚动条是页面视觉的一部分。侧栏、表格、代码区、长列表、Dialog／Drawer正文及页面主滚动采用同一套主题规则；必须作用于真正产生滚动的元素，不能只给外层卡片设颜色。优先保留原生滚动和项目已有可靠滚动组件，不为换色新增滚动库、模拟拖动条或全局劫持滚轮。
+
+| 项目 | 本风格要求 |
+|---|---|
+| 粗细与形状 | 桌面原生scrollbar-width:thin，具体宽度与圆角由浏览器／系统决定；旧WebKit回退槽宽10px、两侧透明边2px形成约6px圆角滑块。不得把所有平台强制成同一像素宽；触摸、高对比度优先系统可操作尺寸 |
+| 颜色 | 浅色滑块#7b8ba3、深色#687b96；轨道transparent，融入panel／页面背景，不画贯穿整张白卡的浅蓝粗轨道、亮蓝长线、外框或发光阴影。滑块相对实际背景至少3:1，彩色子面另核对 |
+| 布局稳定 | 会动态增减内容且需要稳定列宽的侧栏／表格使用scrollbar-gutter:stable；不要给所有卡片强留槽或使用both-edges制造双侧空白，不强制overflow:scroll常驻空轨道 |
+| 容器边界 | 侧栏导航位于品牌／搜索和底部帮助／账号之间，flex子项min-block-size:0；滚动条不得越过该区域、侧栏外边界或卡片圆角。卡片头、尾、分页留在滚动体之外；滚动体与卡片边缘通常保留8–12px，按原有padding合并，不能重复叠加 |
+| 滚动职责 | 页面默认一个主竖向滚动；侧栏可独立滚动。普通表格随页面增高、仅必要时局部横滚；业务明确要求固定表高／虚拟列表时才限制高度并启用内部竖滚，避免父子容器争抢同一内容的竖向滚动 |
+| 交互与可读性 | 不隐藏唯一滚动入口、不用scrollbar-width:none或负margin把条移出容器；滑块不压住文字、行操作和最后一列。无内部可聚焦元素的独立滚动区提供tabindex=0、region与名称；焦点环在可见范围内 |
+
+标准属性优先；只有不支持scrollbar-color时启用旧WebKit伪元素，并把该分支的scrollbar-width重置auto，避免两套方案互相禁用。滚动条不使用transition:all，也不对scrollbar-color做动画或主题淡变，避免滚动时闪烁。尊重系统覆盖式滚动条的自动显隐；不把macOS不滚动时隐藏原生条误判为丢失。
+
+给实际滚动视口添加admin-scroll类；页面根滚动需明确给html添加该类，组件库则把类／变量映射到其实际viewport。下面只设置样式与布局收缩能力，overflow和高度按用途单独配置，不让每个面板自动变成滚动盒。
+
+```css
+:root {
+  --admin-scroll-thumb:#7b8ba3;
+  --admin-scroll-track:transparent;
+}
+:root[data-theme="dark"] { --admin-scroll-thumb:#687b96; }
+.admin-scroll {
+  min-inline-size:0; min-block-size:0;
+  scrollbar-width:thin;
+  scrollbar-color:var(--admin-scroll-thumb) var(--admin-scroll-track);
+}
+.admin-scroll--stable { scrollbar-gutter:stable; }
+.sidebar nav.admin-scroll { overflow-y:auto; overscroll-behavior-y:contain; }
+.admin-table-scroll { max-inline-size:100%; overflow:auto; }
+.admin-scroll:focus-visible { outline:2px solid var(--accent-link); outline-offset:2px; }
+@supports not (scrollbar-color:auto) {
+  .admin-scroll { scrollbar-width:auto; }
+  .admin-scroll::-webkit-scrollbar { width:10px; height:10px; }
+  .admin-scroll::-webkit-scrollbar-thumb {
+    background:var(--admin-scroll-thumb); background-clip:padding-box;
+    border:2px solid transparent; border-radius:999px;
+  }
+  .admin-scroll::-webkit-scrollbar-track,
+  .admin-scroll::-webkit-scrollbar-corner { background:var(--admin-scroll-track); }
+}
+@media(pointer:coarse) { .admin-scroll { scrollbar-width:auto; } }
+@media(prefers-contrast:more) {
+  .admin-scroll {
+    --admin-scroll-thumb:CanvasText; --admin-scroll-track:Canvas;
+    scrollbar-width:auto;
+  }
+}
+@media(forced-colors:active) {
+  .admin-scroll { scrollbar-color:auto; scrollbar-width:auto; }
+}
+```
+
+滚动容器嵌入圆角卡片时，先用内边距和布局把viewport放在边界内；确需外壳裁切时只裁切该卡片的圆角装饰范围，并给内部可聚焦内容留至少4px安全空间。Select／Tooltip等浮层沿用可靠portal，不被overflow裁掉；不能在body或整页使用overflow:hidden掩盖越界。自定义滚动库若已有轨道和滑块，按相同token适配，并关闭重复的原生可见轨道，实际滚动仍只有一个viewport；不能给库的外壳再加overflow:auto生成第二根条。
+
+验收侧栏长菜单、短屏、展开表格、长代码、Dialog／Drawer和横纵同时溢出场景：浅深主题、1920／1280／768／390宽、200%缩放、系统常驻／覆盖式滚动条分别核对；滚到首尾能访问全部内容，键盘与触摸可操作，滚动条始终位于所属容器内，圆角、最后一行／列、分页和焦点环不被覆盖。内容增减与展开收起不让整页横跳，无无溢出却常驻的空轨道、无意的整页横滚或重复竖条。检查实际系统绘制截图，不仅检查computed scrollbar-color；未运行的浏览器／系统状态明确记录未验证。
+
 ### 统一响应式断点
 
 以下是本风格的默认视口断点，与逐页规范共用，等于断点时进入较窄档。卡片和表单在实际容器放不下时可以提前换列，保持字号与控件档位，不缩放整页；页面里的局部重排不能另改全局侧栏阈值。
@@ -209,7 +269,9 @@ fixed侧栏不占Grid轨道，所以工作区必须显式放第二列；窄屏�
 | 动画 | 箭头铺底、三点、数字、共享滑块、折叠反向、循环停止、卸载清理 | 逐项按动效规范检查；不从单帧推断正确时序 |
 | 内容压力 | 长菜单／字段／文件名、四位数、空数据、错误、超长帮助 | 换行、min-width、局部滚动与状态语义，不裁切关键字段 |
 | 响应式 | 1280／768／390宽与短屏、浏览器缩放、浮层和手机导航 | 使用同套响应式规则，不能仅桌面截图“看起来对” |
+| 滚动条 | 页面／侧栏／表格／浮层的粗细、配色、边界、横纵滚动与首尾可达性 | 按滚动条规范检查实际viewport，轨道融入表面、不越过圆角、不遮挡操作、不制造重复滚动；高对比度尊重系统 |
 | 主题 | 深色页面、body portal浮层、图表、禁用字与焦点 | 所有库主题映射和实际对比，不只改body背景 |
+| 图表提示 | 数据点／日期对应的数值提示框、系列标记、单位、边缘避让、键盘／触摸等价入口 | 同一数据源与图例／摘要同步，提示不裁切、不跳布局、不只依赖颜色或鼠标 |
 
 参考可见区块的高宽、边距和字号有明确值时按数值核对；长真实内容可以自然增高。字体抗锯齿与业务文案不同，不要求整屏像素哈希相同，也不能用“文案不同”掩盖固定控件尺寸、导航结构与背景材质变化。自动视觉差异只能辅助定位，仍要实际打开截图判断。
 

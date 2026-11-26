@@ -203,7 +203,7 @@ hover浅蓝整行且保留分组图标色；当前路由才是蓝色渐变整行
 | Switch | 40×20左右胶囊起点，thumb16、两侧2；开accent、关中性灰，必要时短“开／关”文字 | 保留项目库可访问实现；指示位置+名称表达值；saving时pending、失败回滚；表单保存型不伪称即时生效 |
 | Checkbox | 可见框16，圆角4，选中accent白Check，框与标签gap8 | unchecked／checked／indeterminate／disabled／focus俱全；大命中区wrapper；半选不是另一项真实值 |
 | Radio | 圆16，外边line、选中accent外环和中心圆点，标签gap8 | 单组选一，方向键；选中后不直接清空，允许无选择时提供明确选项；Select单选内部不用Radio圈 |
-| Segmented | 高38、padding4、外11内7圆角，共享蓝渐变indicator，单项字11–12 | 同组等分短文案，默认值有效；选中标签／图标／计数在hover、按下和focus-visible时仍为白色，未选蓝字；键盘可达；280ms移动；完整状态CSS见admin-navigation |
+| Segmented | 高38、padding4、外11内7圆角，共享蓝渐变indicator，单项字11–12 | 同组等分短文案，默认值有效；选中标签／图标／计数在hover、按下和focus-visible时仍为白色，蓝底不能被白色hover面覆盖，按钮保持透明；未选蓝字；键盘可达；280ms移动；完整状态CSS见admin-navigation |
 | Toggle／Chip | 28–32高紧凑标签、左右8–10、圆角7，未选浅面／选中浅蓝蓝字 | 多选和单选通过实际语义表达；删除chip有独立按钮名称，不因hover才让触屏用户看到删除 |
 
 长说明选项使用纵向Radio或选择卡，每项边框面与标题说明成组，间距10–12、padding12，不强塞窄分段控件。选择卡属于同风格扩展，不使用四色统计卡表达选项状态。
@@ -401,7 +401,7 @@ overflow仅裁切有意越界的装饰，不用于掩盖文本；长标题允许
 请逐项实现表格头、每列密度、编号复制、数值对齐、状态、选择框、行hover、
 选中面、更多菜单、空结果、失败重试与分页。使用本文件固定行高与字体，
 让业务主字段容易扫读；不要通过大行距和超大圆角制造空旷感。表格横向
-滚动只发生在table容器；批量操作栏不遮挡最后一条记录或分页。
+表格的横向滚动局限于table容器；竖向默认随页面增高，明确需要固定高度时才启用表内竖滚。按[滚动条与容器规范](admin-design.md#clean-admin-scrollbars)统一细度、主题和边界，滚动体留在圆角面板内；批量操作栏不遮挡最后一条记录或分页。
 ```
 
 ## Dialog、Drawer、Dropdown、Tooltip与反馈

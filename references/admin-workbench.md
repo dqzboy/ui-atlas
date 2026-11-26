@@ -23,6 +23,53 @@
 
 默认用于最近一段时间的两条事件量趋势。横轴是真实日期、纵轴从0起且单位明确；窗口按产品确定，不能把“近14天”与周／月数据混用。第一系列蓝色4px实线，可有由44%到2%淡出的浅面积；第二系列青色3px虚线、dash5、不填面积。深色首段面积透明度可降到38%。无须绘制全部常驻点；hover显对应日期、两个系列的值和单位，不能靠颜色识别系列。
 
+<a id="clean-admin-chart-tooltips"></a>
+
+### 图表数值提示框：悬停、聚焦与触摸都能读到
+
+趋势图、柱图、环图和有明确数据点的面积图都必须提供对应的数值提示。鼠标移到数据点、柱体或同一日期的绘图区时，以最近的有效数据点／共享横轴索引为准，同时显示该日期或分类、所有可见系列的名称、颜色标记、数值和单位；不能只显示鼠标最近的一条线，也不能只靠图例和纵轴让用户自己估算。趋势图可显示一条与x索引对齐的细竖向引导线，并对当前点加小圆点或轻微高亮，不能改变数据本身。
+
+提示框沿用页面面板主题：白色主题使用panel面、line-soft边、12px圆角和轻阴影；深色使用同一组件token映射到深色panel、line和text。标题日期14px／650，行高26左右；每行是7–8px系列色标、系列名12px和右对齐13px／650数值，单位跟在数值后且不依赖颜色。小三角指向当前x位置，提示框优先放在点的上方或侧上方；靠近图表边缘时翻转或限制在绘图区内，不能被panel的padding、圆角或页面边界裁切。提示框不参与图表布局，不造成页面跳动，不遮住当前点；interactive tooltip若包含链接才允许pointer-events:auto，否则保持none并由图表事件控制。
+
+```html
+<div class="admin-chart" data-chart-id="storage-publish-trend">
+  <div class="admin-chart__plot" role="img"
+    aria-label="内容保存与发布趋势，2026年11月27日草稿保存1次、内容发布1次">
+    <!-- 图表库或SVG/canvas绘图区 -->
+  </div>
+  <div class="admin-chart-tooltip" role="status" aria-live="polite" hidden>
+    <strong class="admin-chart-tooltip__title">2026-11-27</strong>
+    <div class="admin-chart-tooltip__row"><i data-tone="blue"></i><span>草稿保存</span><b>1 <small>次</small></b></div>
+    <div class="admin-chart-tooltip__row"><i data-tone="cyan"></i><span>内容发布</span><b>1 <small>次</small></b></div>
+  </div>
+</div>
+```
+
+```css
+.admin-chart { position:relative; min-inline-size:0; }
+.admin-chart__plot { position:relative; min-block-size:232px; }
+.admin-chart-tooltip { position:absolute; z-index:3; inline-size:max-content; max-inline-size:min(240px,calc(100% - 16px));
+  padding:10px 12px; border:1px solid var(--line-soft); border-radius:12px; background:var(--panel);
+  color:var(--text); box-shadow:0 8px 24px rgb(38 73 126 / .14); pointer-events:none; }
+.admin-chart-tooltip::after { content:""; position:absolute; inset-block-end:-6px; inset-inline-start:var(--tooltip-arrow,50%);
+  inline-size:10px; block-size:10px; border-inline-end:1px solid var(--line-soft); border-block-end:1px solid var(--line-soft);
+  background:var(--panel); transform:translateX(-50%) rotate(45deg); }
+.admin-chart-tooltip[data-placement="bottom"]::after { inset-block-end:auto; inset-block-start:-6px; transform:translateX(-50%) rotate(225deg); }
+.admin-chart-tooltip__title { display:block; margin-block-end:4px; font:650 14px/1.35 var(--sans); font-variant-numeric:tabular-nums; }
+.admin-chart-tooltip__row { display:grid; grid-template-columns:8px minmax(0,1fr) auto; align-items:center; gap:7px; min-block-size:26px;
+  font:400 12px/1.4 var(--sans); }
+.admin-chart-tooltip__row i { inline-size:7px; block-size:7px; border-radius:50%; background:var(--tooltip-tone,var(--accent)); }
+.admin-chart-tooltip__row i[data-tone="blue"] { --tooltip-tone:var(--chart-license); }
+.admin-chart-tooltip__row i[data-tone="cyan"] { --tooltip-tone:var(--chart-activation); border-radius:1px; }
+.admin-chart-tooltip__row b { font:650 13px/1.4 var(--sans); font-variant-numeric:tabular-nums; white-space:nowrap; }
+.admin-chart-tooltip__row small { color:var(--muted); font:400 11px/1.4 var(--sans); }
+@media(prefers-reduced-motion:reduce) { .admin-chart-tooltip { transition:none; } }
+```
+
+提示框由真实图表状态驱动：进入数据点后立即更新内容，离开绘图区隐藏，快速移动时取消上一点的延迟／定位任务；不使用定时器伪造数值，不在数据尚未到达时显示0。图表库若提供axis／index tooltip，优先使用它并映射上述token；自绘SVG或canvas需要维护x索引到日期和系列的稳定映射。提示框内容必须与图下摘要、图例和无障碍文本使用同一数据源，格式化后保留真实精度和单位。
+
+键盘不能依赖鼠标：给图表提供可聚焦的数据点／日期列表、等价文本表格或图表库已有键盘导航；左右键切换日期并更新同一提示框，Home／End跳到首尾，Escape关闭。触摸设备第一次点按数据区域显示并锁定提示框，第二次点按其他点更新，点击空白处或关闭按钮收起；没有可操作点时至少提供“查看数据表”入口。提示框的`aria-live`不要在指针移动每一帧重复播报，键盘或锁定后的数据变化才礼貌更新；`role=img`的静态摘要仍需包含图表结论。
+
 面板右上独立小图例：第一系列8px空心圆、第二系列8px空心圆角方块、文字10–12。绘图区桌面高246、左右18内边距，手机高232、左右6；日期文字10、最多约4档整数纵轴，避免密集交叉标签。趋势图可采用浅竖网格；柱图采用浅水平虚线网格，不把所有图强行设成同一网格。
 
 底部min-height46、padding0 22 12：两个期间汇总，分别带蓝／青小标记、说明10与数值16／600；末尾有实际更新时间或同步状态。自动刷新间隔来自目标产品，不复制截图中的固定秒数；失败保留旧图、说明失败和更新时间。趋势为空时保留标题和底部真实汇总，用约28px线框图标、短标题、两行以内说明及38px有效下一步操作替换绘图区，不能凭空画平滑曲线。
@@ -105,7 +152,7 @@
 
 图表挂载前容器必须有非零宽高；主题、容器尺寸、筛选及数据更新后同步更新图表，路由离开销毁实例和观察器。首次运营数据优先直接展示，不补长时间绘制／轮播；刷新保留旧图而非闪空。提示框随主题，触屏和键盘能获得数值，另提供文本摘要或等价数据表。不要只保留canvas图形而丢掉统计值。
 
-交付前核对：两排图表及最近活动是否因只看首屏被漏掉；趋势／状态分布／三个比例／分类对比是否各自使用正确数据；汇总能否核对；0与未知是否区分；图例形状、系列颜色、快捷入口图标和有效动作是否齐全；390宽度、深色、空／错／刷新及reduced-motion是否可用。没有运行图表时注明未验证，不用静态SVG预览冒充真实数据联动验证。
+交付前核对：两排图表及最近活动是否因只看首屏被漏掉；趋势／状态分布／三个比例／分类对比是否各自使用正确数据；汇总能否核对；0与未知是否区分；鼠标悬停／键盘左右键／触摸点按是否显示同一日期或分类的完整数值提示，提示框是否避让边缘、随主题、无裁切、无布局跳动；图例形状、系列颜色、快捷入口图标和有效动作是否齐全；390宽度、深色、空／错／刷新及reduced-motion是否可用。没有运行图表时注明未验证，不用静态SVG预览冒充真实数据联动验证。
 
 ## 可直接执行的工作台提示词
 
@@ -122,6 +169,6 @@
 都按职责保留。最近活动使用淡紫摘要+真实事件列表，时间小胶囊浅蓝蓝字。
 数据映射到我的业务，不复制参考的授权字段、个人信息、地址或日志。缺少
 业务关系时说明取舍；有实际数据的模块不能无声删除。复用已有图表库，
-处理非零尺寸挂载、主题/resize/数据更新、失败保留旧图与路由清理。
+处理非零尺寸挂载、主题/resize/数据更新、提示框定位与隐藏、失败保留旧图与路由清理；提示框不可被卡片或portal边界裁掉，数据点、图例、数据表与提示共用同一真实数据源。
 实际截图与操作检查完整页面、图表值、空错态和手机布局，报告未验证部分。
 ```
