@@ -58,6 +58,8 @@ disabled；异步动作再处理loading、success、error。只有适用的状�
 
 状态：default无整行底色；hover未选行变tint-blue，图标保留本组颜色；当前路由行使用180deg #3589ff→#1669f3、#267aff边、白字、内白25%高光与轻阴影，图标底座白18%、图标白色，计数白20%底／白字。focus-visible保留2px可见焦点环；hover不能盖掉active背景，active仅由真实路由／视图驱动。未选计数一律蓝字浅蓝底，不随组变紫／橙；未知不显示，真实0不误隐藏。
 
+**切换时文字不闪动：**当前项的渐变背景与标签、图标、计数的前景色在同一次状态更新中切换，不对这些文字或图标的color／opacity做补间。渐变background-image在这份实现中直接切换；若文字仍单独做120ms过渡，旧项移除蓝底后会短暂白字配浅底，新项也会短暂深字配蓝底，产生闪淡。悬停背景与阴影可继续轻过渡。标签使用同一个稳定DOM节点，路由切换不重挂载整个侧栏，不给标签按当前路由设key或套out-in／淡入淡出；选中态按真实路由在同一提交中替换，不先清空全部选中再用定时器或下一帧补回。库自带的label／icon／count过渡也需要在当前导航组件内映射或取消，不能只修改外层。
+
 下面是单个分组的结构，目标项目按实际菜单复制数据；每组标题ID必须唯一，图标按业务换为同体系SVG，href映射真实页面。已有可靠菜单组件时保留其导航与焦点行为，仅映射这些样式。
 
 ```html
@@ -90,13 +92,13 @@ disabled；异步动作再处理loading、success、error。只有适用的状�
 .admin-nav__item { display:flex; align-items:center; gap:10px; min-inline-size:0; min-block-size:42px;
   padding:8px 10px; border:1px solid transparent; border-radius:11px; text-decoration:none;
   background:transparent; color:var(--text-soft); text-align:start;
-  transition:color 120ms ease,background-color 120ms ease,box-shadow 160ms ease; }
+  transition:background-color 120ms ease,box-shadow 160ms ease; }
 .admin-nav__icon { display:grid; place-items:center; flex:0 0 24px; inline-size:24px; block-size:24px;
-  border-radius:7px; background:var(--nav-tint); color:var(--nav-ink); }
+  border-radius:7px; background:var(--nav-tint); color:var(--nav-ink); transition:none; }
 .admin-nav__icon svg { display:block; inline-size:17px; block-size:17px; }
-.admin-nav__copy { min-inline-size:0; font:550 12px/1.5 var(--sans); }
+.admin-nav__copy { min-inline-size:0; color:inherit; font:550 12px/1.5 var(--sans); transition:none; }
 .admin-nav__count { margin-inline-start:auto; padding:1px 5px; border-radius:4px;
-  color:var(--accent-link); background:var(--tint-blue); font:400 10px/1.5 var(--sans); }
+  color:var(--accent-link); background:var(--tint-blue); font:400 10px/1.5 var(--sans); transition:none; }
 .admin-nav__item:hover:not([aria-current="page"]) { background:var(--tint-blue); }
 .admin-nav__item[aria-current="page"] { background:linear-gradient(180deg,#3589ff,#1669f3);
   color:#fff; border-color:#267aff; box-shadow:inset 0 1px 0 rgb(255 255 255 / .25),0 1px 2px rgb(15 70 170 / .2); }
@@ -112,6 +114,8 @@ disabled；异步动作再处理loading、success、error。只有适用的状�
 @media(prefers-reduced-motion:reduce) { .admin-nav__item { transition:none; } }
 ```
 
+验收连续来回点击同组与跨组菜单、快速点击尚在悬停中的旧项，并用键盘导航／浏览器返回重复切换；在浅深主题下逐帧核对新旧两项标签、图标和计数。旧项离开蓝底时立即恢复未选前景，新项进入蓝底时立即白字；不出现白字配浅底、深字配蓝底、文字消失再出现或字重／宽度跳变。侧栏节点与导航滚动位置保持稳定，主题和正文入场不影响菜单文字。正文另按页面规则更新，不为消除菜单闪动而关闭所有组件动画。
+
 桌面折叠为64px实际侧栏时，保留24px彩色底座和当前蓝色菜单；隐藏标签／计数前给每个入口设置完整aria-label，并提供聚焦可见的名称提示。手机抽屉显示完整标题、竖线、菜单文字与计数，不沿用折叠隐藏规则。深色底座引用相应tint主题，彩色竖线和图标不能丢失；按实际对比度需要适配色值时保留组间区别并注明调整。
 
 **侧栏纠偏提示词：**
@@ -122,6 +126,8 @@ disabled；异步动作再处理loading、success、error。只有适用的状�
 每个未选菜单有24×24浅色底座、7圆角和17px彩色线框图标，文字12/550。
 hover浅蓝整行且保留分组图标色；当前路由才是蓝色渐变整行、白字白图标、
 白18%图标底座与白20%计数底。active不被hover覆盖，不出现全灰菜单或长竖线。
+来回切换时选中背景与标签/图标/计数同步换色，取消前景color/opacity补间，
+保留悬停背景和阴影反馈；菜单节点稳定，不随路由重挂载或让文字淡出再淡入。
 折叠仍保留彩色图标与名称入口，手机完整展示分组；不复制业务菜单或假计数。
 ```
 
@@ -197,7 +203,7 @@ hover浅蓝整行且保留分组图标色；当前路由才是蓝色渐变整行
 | Switch | 40×20左右胶囊起点，thumb16、两侧2；开accent、关中性灰，必要时短“开／关”文字 | 保留项目库可访问实现；指示位置+名称表达值；saving时pending、失败回滚；表单保存型不伪称即时生效 |
 | Checkbox | 可见框16，圆角4，选中accent白Check，框与标签gap8 | unchecked／checked／indeterminate／disabled／focus俱全；大命中区wrapper；半选不是另一项真实值 |
 | Radio | 圆16，外边line、选中accent外环和中心圆点，标签gap8 | 单组选一，方向键；选中后不直接清空，允许无选择时提供明确选项；Select单选内部不用Radio圈 |
-| Segmented | 高38、padding4、外11内7圆角，共享蓝渐变indicator，单项字11–12 | 同组等分短文案，默认值有效；键盘可达；280ms移动；不要三项分别淡入背景假装滑块 |
+| Segmented | 高38、padding4、外11内7圆角，共享蓝渐变indicator，单项字11–12 | 同组等分短文案，默认值有效；选中标签／图标／计数在hover、按下和focus-visible时仍为白色，未选蓝字；键盘可达；280ms移动；完整状态CSS见admin-navigation |
 | Toggle／Chip | 28–32高紧凑标签、左右8–10、圆角7，未选浅面／选中浅蓝蓝字 | 多选和单选通过实际语义表达；删除chip有独立按钮名称，不因hover才让触屏用户看到删除 |
 
 长说明选项使用纵向Radio或选择卡，每项边框面与标题说明成组，间距10–12、padding12，不强塞窄分段控件。选择卡属于同风格扩展，不使用四色统计卡表达选项状态。

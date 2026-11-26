@@ -71,13 +71,15 @@
 | 外轨道 | inline Grid等宽N列、padding4、1px workspace-blue-line边、圆角11、min-height38、背景accent 7%混panel |
 | 单项 | min-height28、左右padding12、gap6、无边无单独背景、圆角7、11px／500、未选accent-link；手机左右8 |
 | 共享滑块 | 仅一个、left/top/bottom4、宽(轨道padding box−8)/N、圆角7、1px #2675ef边、180deg #3484ff→#1764e7；外影0 2 6 rgba(31,101,225,.2)、内白20%高光 |
-| 选中 | 白字，hover仍白；滑块以自身宽度translateX(index×100%)，280ms cubic-bezier(.2,.75,.25,1)，文字160ms ease |
+| 选中 | 标签、图标与计数白色，hover／按下／focus-visible仍白；滑块以自身宽度translateX(index×100%)，280ms cubic-bezier(.2,.75,.25,1)，文字160ms ease |
 | 聚焦 | 当前选项2px accent outline、offset2；每组只有一项tabindex0，焦点与选中视觉是两个状态 |
 | 计数 | 可选10px、padding1 4、圆角4；默认text6%混透明，选中白字／白18%底；未知不显示，0保留 |
 | 不可用 | 该选项disabled、禁选、跳过键盘循环、.5透明度；整组不可用时没有假选中且显示原因 |
 | 减弱动态 | 保留真实选中值，滑块和文字无过渡，点击不等待动画 |
 
 筛选组在工具栏内与38px搜索、主次操作垂直居中、gap12–16。不同组可独立占一行；窄屏先让工具栏换行，单组仍放不下时在自己的横向滚动容器中滚动，不让radio在两行间换位而滑块仍按单行计算。不改变相邻搜索框高度，不能给每个选项都加独立蓝边或把默认项做成白底Tab。
+
+选中样式以蓝色渐变底、白色标签为准，浅色与深色主题一致。指针移入当前项、按下和键盘聚焦都不能把文字变蓝；未选项才应用蓝色文字的hover规则。不要给整组直接套普通文字按钮的hover变蓝样式。接入组件库时同时检查内部label、图标与计数的实际computed color，移除冲突的子元素颜色或在该组件作用域中覆盖，让标签和图标继承当前项颜色；保留focus-visible焦点环。不能只把选中规则放在hover后面：还要检查选择器优先级、样式层和库的状态类，避免高优先级hover再次盖住白字。
 
 ```html
 <div class="admin-segment-scroll">
@@ -106,8 +108,10 @@
   min-inline-size:0; min-block-size:28px; padding:0 12px; border:0; border-radius:7px;
   background:transparent; color:var(--accent-link); white-space:nowrap; font:500 11px var(--sans);
   transition:color 160ms ease; }
-.admin-segmented > button:hover:not(:disabled) { color:var(--accent-strong); }
-.admin-segmented > button[aria-checked="true"] { color:#fff; }
+.admin-segmented > button[aria-checked="false"]:hover:not(:disabled) { color:var(--accent-strong); }
+.admin-segmented > button[aria-checked="true"],
+.admin-segmented > button[aria-checked="true"]:is(:hover,:active,:focus-visible) { color:#fff; }
+.admin-segmented > button :is(.admin-segmented__label,svg) { color:inherit; }
 .admin-segmented > button:focus-visible { outline:2px solid var(--accent); outline-offset:2px; }
 .admin-segmented > button:disabled { opacity:.5; cursor:not-allowed; }
 .admin-segmented small { padding:1px 4px; border-radius:4px; background:color-mix(in srgb,var(--text) 6%,transparent); font-size:10px; }
@@ -150,8 +154,12 @@ function resolveSegment(options, value, key, direction = 'ltr') {
 竖线有对应色，不能只给主侧栏上色、页内全部灰色。按本文件处理hover、
 当前项、focus、禁用和小屏导航，保持真实页面／锚点／面板切换语义。
 记录范围与状态筛选使用浅蓝圆角轨道+蓝色渐变共享滑块，38高/4padding/
-11外圆角/7内圆角/11字，选中白字、未选蓝字，280ms指定曲线。不要用下划线
+11外圆角/7内圆角/11字，选中白字、未选蓝字，280ms指定曲线。当前项hover、
+按下、键盘聚焦都保持白色标签/图标/计数；hover蓝字只用于未选项，排查库的
+内部label与通用button:hover覆盖，浅深主题均实测。不要用下划线
 Tabs、每项独立蓝边或四个不同色块替代。完整实现点击、方向键/Home/End、
 单Tab入口、禁用跳过、计数、无效初始值与动态选项，视觉和实际value一致。
 筛选改变真实数据与分页；保持搜索、范围与状态的组合，不仅移动蓝色背景。
 ```
+
+验收时实际操作带计数与不带计数的分段组：选中→鼠标移入→按住→移出，以及Tab聚焦、方向键切换。在浅色／深色下核对选中按钮及内部标签、图标、计数均为白色，未选项仍为蓝字；切换后旧项恢复未选色、新项保持白字。禁用项不响应hover，减弱动态下状态仍立即更新。图中蓝底蓝字属于错误状态，不能作为风格变体保留。
