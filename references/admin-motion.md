@@ -8,6 +8,8 @@
 
 状态动画由实际交互或请求驱动；等待完成不依赖动效结束。鼠标离开、快速切换、Escape、路由离开和卸载都须清理对应任务。循环只在busy时运行；静态会话骨架没有shimmer、logo飞入或假的加载进度。减弱动态见末尾规则。
 
+顶部栏完整结构及图标见 [顶部栏规范](admin-topbar.md)。刷新图标普通hover转35deg／450ms cubic-bezier(.4,0,.2,1)，busy时按下表旋转与波纹；减少动态同时取消hover旋转及busy循环，不能只关transition却留下更高优先级的busy animation。搜索、主题与账户弹层沿用目标项目可靠组件，不额外叠一层入场。
+
 ## 动效覆盖清单
 
 | 组件／场景 | 触发 → 可见变化 | 时间与曲线 | 实现与终态约束 |
@@ -22,7 +24,7 @@
 | 数字滚动 | 旧数字向上85%淡出，新数字从下85%进入 | 每段180ms spring，opacity180ms ease | 按位Transition out-in；从右侧稳定key，分隔符不占等宽数位 |
 | 状态徽标 | 同一位置图标缩小旋出、下一个放大归位；文案同步 | 图标／opacity每段140ms ease | out-in；scale(.5)、进-40deg／退40deg；loading图标900ms linear转圈 |
 | 大KPI | hover上移3px并增加阴影 | transform／shadow180ms ease | 入场动画结束须释放transform，或用外层做入场 |
-| KPI圆形箭头 | 始终可见；入口hover／focus-visible由右上转右向，圆面变亮；离开复原 | rotate(-40deg→0)200ms ease | 外层32px、箭头15px；点击直达该指标真实页面，非菜单或Toast；不移动数值或hint |
+| KPI圆形箭头 | 无箭杆细chevron常显；入口hover／focus-visible由右上折角转为右尖括号，圆面变亮；离开复原 | rotate(-40deg→0)200ms ease | 外层32px、基准SVG15px；不能用完整↗替代；点击直达真实页面，不移动数值或hint |
 | 普通摘要卡 | hover上移2px，轻边界变化 | transform180ms ease、边界160ms | 四色是装饰分类，不替代业务状态 |
 | 快捷操作卡 | hover图标rotate(-7deg) scale(1.08)，右箭头右移3px | 图标260ms spring；右箭头220ms spring；颜色160–180ms | 卡片外层轻上移2px；focus也须有可见反馈 |
 | 产品卡 | hover上移3px、蓝边、阴影加深 | transform220ms spring；border／shadow180ms | 三列布局稳定，菜单开合不让卡片抖动 |
@@ -54,6 +56,8 @@
 ## KPI圆形跳转入口
 
 概览大KPI右上角使用独立圆形导航入口，完整结构、颜色和CSS见 [组件规范的大KPI合同](admin-components.md#clean-admin-metric-contract)。默认黑15%圆面、白28%边、箭头−40deg；入口hover／focus-visible时白24%圆面、箭头0deg，200ms ease；离开或失焦恢复。桌面32×32，≤600时40×40。父卡上移3px与此旋转分属不同层；初次入场结束不能继续占用父卡transform。
+
+入口内固定使用组件规范的15px无箭杆细chevron路径，fill=currentColor、stroke=none；默认旋转后是折角，悬停终态是细右尖括号。不能仅因方向相近而换成完整ArrowUpRight／↗、ExternalLink或Bold图标，也不能再描边加粗。默认、悬停与复原都沿用同一路径，不在两个不同图标之间切换。
 
 点击或键盘Enter直接进入真实业务路由；动画不延迟跳转，不自动另开窗口。鼠标只停在卡片其他区域时是卡片抬升，停到圆入口才触发箭头旋转；键盘聚焦入口也得到完整反馈。减弱动态下直接切换箭头终态，取消位移和过渡。导航链接不套提交按钮的loading、成功或disabled状态。
 

@@ -5074,7 +5074,7 @@
       "name": "清爽蓝白后台、登录与组件动效",
       "english": "Clean Blue Admin Design System and Motion",
       "summary": "新建后台管理系统未指定风格时的默认方案。浅蓝工作区、悬浮圆角侧栏顶栏、蓝色渐变按钮、四色摘要卡；涵盖登录、产品目录、记录列表、文档、用户中心、设置，以及箭头铺底、按压、数字滚动、分段滑块、折叠与反馈动效。",
-      "prompt": "读取 references/recipes/clean-admin.md 的完整提示词，按 admin-design.md 固定token与壳层、admin-pages.md 的对应页面结构、admin-components.md 的控件尺寸与全部状态、admin-motion.md 的时序实施；侧栏保留蓝／紫／珊瑚／青分组短竖线、对应彩色线框图标与浅色底座，当前项统一蓝色渐变白字白图标。概览大KPI严格使用四色115deg渐变，每卡保留业务线框大图标、双层环、星芒和空心点；右上圆入口常显，箭头悬停／聚焦200ms转正，点击直达真实对应页，不用普通摘要替代。工作台同时读取admin-workbench.md，按业务补齐趋势／生命周期、三个进度环／对象对比、图标快捷卡及最近活动，不只做首屏统计。页内设置菜单与分段筛选读取admin-navigation.md，保留不同职责彩色图标／浅底及浅蓝轨道／蓝色共享滑块。先看高清图，运行一页代表页面并逐项截图比较修正，再复用到其余页。品牌与业务按目标项目，skill内不创建前端工程。",
+      "prompt": "读取 references/recipes/clean-admin.md 的完整提示词，按 admin-design.md 固定token与壳层、admin-pages.md 的对应页面结构、admin-components.md 的控件尺寸与全部状态、admin-motion.md 的时序实施；侧栏保留蓝／紫／珊瑚／青分组短竖线、对应彩色线框图标与浅色底座，当前项统一蓝色渐变白字白图标。概览大KPI严格使用四色115deg渐变，每卡保留业务线框大图标、双层环、星芒和空心点；右上圆入口常显，内部固定15px无箭杆细chevron基准SVG，不能用完整↗或加粗箭头；默认−40deg，悬停／聚焦200ms转正，点击直达真实对应页，不用普通摘要替代。工作台同时读取admin-workbench.md，按业务补齐趋势／生命周期、三个进度环／对象对比、图标快捷卡及最近活动，不只做首屏统计。页内设置菜单与分段筛选读取admin-navigation.md，保留不同职责彩色图标／浅底及浅蓝轨道／蓝色共享滑块。壳层必读admin-topbar.md，保留浅蓝折叠按钮、紧凑面包屑、搜索快捷键、状态徽标、主题／刷新及头像账户的完整结构与真实动作。先看高清图，运行一页代表页面并逐项截图比较修正，再复用到其余页。品牌与业务按目标项目，skill内不创建前端工程。",
       "kind": "pattern",
       "media_type": "gallery",
       "evidence": "static-reference",
@@ -5151,7 +5151,13 @@
         "分段筛选",
         "记录范围",
         "状态筛选",
-        "共享滑块"
+        "共享滑块",
+        "顶部栏",
+        "顶部菜单",
+        "面包屑",
+        "搜索快捷键",
+        "主题按钮",
+        "账户头像"
       ],
       "related": [
         "dashboard-navigation/icon-text-sidebar",

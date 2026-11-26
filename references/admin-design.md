@@ -1,6 +1,6 @@
 # 清爽蓝白后台：布局、主题和组件规范
 
-本规范用于创建具有相同视觉语言的后台。与 [完整配方](recipes/clean-admin.md)、[逐页提示词](admin-pages.md)、[组件与按钮状态](admin-components.md) 和 [动效说明](admin-motion.md) 配套；只将相关代码片段移植到目标项目，不需要在 skill 中附带前端工程。
+本规范用于创建具有相同视觉语言的后台。与 [完整配方](recipes/clean-admin.md)、[逐页提示词](admin-pages.md)、[组件与按钮状态](admin-components.md)、[完整顶部栏](admin-topbar.md) 和 [动效说明](admin-motion.md) 配套；只将相关代码片段移植到目标项目，不需要在 skill 中附带前端工程。
 
 ## 样式执行优先级与稳定项
 
@@ -84,7 +84,7 @@
 | 页标题 | 分组标记 + h1 + 说明 + 右侧主次操作；min-height约94px，底部14px与细线，之后24px | 手机上下排列，操作区可占整行 |
 | 面板 | 白色、边界line-soft、圆角16px、workspace-card-shadow；面板间20px | 在容器内重排，不能靠隐藏溢出解决碰撞 |
 
-顶栏在普通文档流中，不默认 sticky；长内容收起时，固定顶栏与浏览器滚动锚定混用可能造成“顶栏突然掉下来”。侧栏导航区域独立滚动，品牌、搜索、底部帮助与用户区不随菜单滚走。
+顶栏在普通文档流中，不默认 sticky；长内容收起时，固定顶栏与浏览器滚动锚定混用可能造成“顶栏突然掉下来”。侧栏导航区域独立滚动，品牌、搜索、底部帮助与用户区不随菜单滚走。下方壳层CSS只提供几何，顶部栏内部必须按 [完整顶部栏规范](admin-topbar.md) 的结构、基准图标、底座、搜索胶囊、状态、主题、刷新及头像账户实现，不能把空白header当作已完成。
 
 ```css
 /* 合并到目标项目的reset；结构为.app-shell > .sidebar + .workspace。 */
@@ -101,7 +101,7 @@ body { margin:0; background:var(--bg); color:var(--text); font:400 14px/1.5 var(
   box-shadow:0 4px 20px rgba(57,106,188,.04); }
 .sidebar nav { flex:1; min-block-size:0; overflow-y:auto; overscroll-behavior:contain; }
 .console-masthead { margin:12px 28px 0 16px; border:1px solid var(--workspace-blue-line);
-  border-radius:18px; background:var(--panel); }
+  border-radius:18px; background:var(--panel); box-shadow:0 4px 20px rgba(57,106,188,.04); }
 .topbar { display:flex; align-items:center; gap:16px; block-size:68px; padding-inline:18px; }
 .content { inline-size:100%; max-inline-size:1620px; margin-inline:auto; padding:26px 28px 48px 16px; }
 @media(max-width:1280px) {
@@ -198,6 +198,7 @@ fixed侧栏不占Grid轨道，所以工作区必须显式放第二列；窄屏�
 |---|---|---|
 | 尺寸口径 | 1920×1080 CSS、100%缩放、DPR记录；图片以相同比例查看 | 先排除参考图像素当CSS、未设置border-box、重复容器padding；不要通过全页缩放补救 |
 | 壳层 | 侧栏12外留白、232实宽、顶栏68高、正文1620上限与padding；短屏导航仍可达 | 全局布局与容器，不能每页单独偏移 |
+| 顶部控件 | 浅蓝折叠底座、紧凑面包屑、搜索及快捷键、状态胶囊、主题／刷新、头像用户名的顺序、尺寸、间距和实际动作 | 按admin-topbar修共享结构，不能只保留白色容器、裸折叠图标与账号文本；数据状态不能被身份认证文案替代 |
 | 页面结构 | 区块顺序、主次列比例、卡数与高度、标题／操作关系 | 先主布局与业务映射，别先纠结小图标阴影 |
 | 密度 | 页面26／30、说明12、控件34／38／42档、表格44／56／64档 | 共享字级／尺寸，不能一页修一批随机数 |
 | 表面 | bg／panel／line、圆角按职责、轻阴影、主按钮渐变 | token与组件variant；不得加巨型hero、大片玻璃或高饱和蓝面替代 |

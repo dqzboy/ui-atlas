@@ -2,7 +2,7 @@
 
 配合 [设计基线](admin-design.md)、[页面组合](admin-pages.md) 和 [动效规范](admin-motion.md) 使用。此文件把原先的尺寸范围收敛为同风格的实现档位：已有明确参考值沿用；参考未精确规定的控件采用下方统一默认值，这些是落地约定而非逐像素原稿测量。用户的可访问性、明确风格或现有设计系统要求优先。
 
-页内配置目录／子导航与记录范围／状态分段筛选，额外读取 [页内彩色菜单与分段筛选](admin-navigation.md)，其中有逐项配色、完整CSS、键盘算法和真实筛选约束。主侧栏仍按本文件的精确组色实现，不把两种选中态混用。
+后台顶部栏的折叠、搜索／快捷键、状态徽标、主题／刷新与头像账户组合，必读 [完整顶部栏](admin-topbar.md)，使用其中的结构、准确SVG和共享状态。页内配置目录／子导航与记录范围／状态分段筛选，额外读取 [页内彩色菜单与分段筛选](admin-navigation.md)，其中有逐项配色、完整CSS、键盘算法和真实筛选约束。主侧栏仍按本文件的精确组色实现，不把两种选中态混用。
 
 ## 组件实现合同
 
@@ -229,7 +229,9 @@ hover浅蓝整行且保留分组图标色；当前路由才是蓝色渐变整行
 
 CSS定义复用admin-design的token，表中端点用于核对，不能再选“接近的紫／红／青”。不要对整卡使用filter:brightness、opacity、黑色蒙层、multiply混合，或用主题深色变量替代这些渐变；黑色半透明面仅用于局部hint与圆按钮。实测computed background-image，排查旧类名、组件库variant、行内样式与dark规则覆盖；不能只看到变量定义正确就认定最终卡面正确。tone用上述视觉名称，不用success／warning等业务状态推断颜色，也不沿用其他组件里含义不同的旧tone别名。
 
-每张可导航的大KPI都有**始终可见**的右上圆入口，标题与入口在同一header行，不能换成标题左侧的图标方块。圆按钮桌面32×32、1px白28%边、黑15%面、白色15px箭头；与顶部和右边均隔24px。默认右向SVG旋转−40deg；仅入口hover／focus-visible时旋回0deg、面变白24%；离开或失焦反向恢复。圆入口旋转200ms ease，卡片hover上移3px／180ms ease，二者独立，不移动数字与hint。≤600时圆入口40×40、header内margin-block:-6px，为触屏保留入口。
+每张可导航的大KPI都有**始终可见**的右上圆入口，标题与入口在同一header行，不能换成标题左侧的图标方块。圆按钮桌面32×32、1px白28%边、黑15%面；与顶部和右边均隔24px。内部15×15图标是**无箭杆的细右尖括号形chevron**，使用下方基准SVG路径：未旋转时只有构成右尖括号的两条细边，默认旋转−40deg后呈右上折角。不能用完整的ArrowUpRight／带箭杆Right、外链图标、字符↗或加粗箭头替代，不能给基准填充路径额外描边。
+
+四卡共用同一基准图标，不按业务更换右上入口形状；按业务变化的是右下背景图标。基准viewBox为0 0 1024 1024，fill=currentColor、stroke=none，不把1024坐标路径塞进24的viewBox，也不加stroke-width来模拟粗细。仅入口hover／focus-visible时旋回0deg，终态是细右尖括号，面变白24%；离开或失焦反向恢复。圆入口旋转200ms ease，卡片hover上移3px／180ms ease，二者独立，不移动数字与hint。≤600时圆入口40×40，内部图标仍为15×15，header内margin-block:-6px，为触屏保留入口。
 
 这是**导航链接**：接入目标页面的真实href或路由Link，保留键盘Enter、可访问名称与当前产品的导航机制；原项目使用视图切换时接同等动作。点击直接进入该指标对应的列表／详情，不弹提示、不打开菜单、不仅播放动画。各卡可以指向同页不同筛选；目标从业务对象与现有路由确定，不能照抄参考品牌或假造href="#"。只有箭头负责跳转，不把整卡包进链接或给外层添加与内部交互冲突的click。没有目标的纯统计采用明确的普通摘要variant，不生成看似可点却无行为的箭头。
 
@@ -257,8 +259,8 @@ CSS定义复用admin-design的token，表中端点用于核对，不能再选“
   <header class="admin-kpi__header">
     <span>任务总量</span>
     <a class="admin-kpi__open" href="/tasks" aria-label="查看任务明细">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
-        <path d="M5 12h14m-6-6 6 6-6 6" />
+      <svg viewBox="0 0 1024 1024" fill="currentColor" stroke="none" aria-hidden="true" focusable="false">
+        <path d="M340.864 149.312a30.59 30.59 0 0 0 0 42.752L652.736 512 340.864 831.872a30.59 30.59 0 0 0 0 42.752 29.12 29.12 0 0 0 41.728 0L714.24 534.336a32 32 0 0 0 0-44.672L382.592 149.376a29.12 29.12 0 0 0-41.728 0z" />
       </svg>
     </a>
   </header>
@@ -284,7 +286,9 @@ CSS定义复用admin-design的token，表中端点用于核对，不能再选“
   padding:0; border:1px solid rgb(255 255 255 / .28); border-radius:50%;
   background:rgb(0 0 0 / .15); color:#fff; text-decoration:none; }
 .admin-kpi__open svg { display:block; inline-size:15px; block-size:15px;
+  fill:currentColor; stroke:none; transform-origin:50% 50%;
   transform:rotate(-40deg); transition:transform 200ms ease; }
+.admin-kpi__open svg path { fill:currentColor; stroke:none; }
 .admin-kpi__open:is(:hover,:focus-visible) { background:rgb(255 255 255 / .24); }
 .admin-kpi__open:is(:hover,:focus-visible) svg { transform:rotate(0deg); }
 .admin-kpi__open:focus-visible { outline:2px solid #fff; outline-offset:3px; }
@@ -348,8 +352,9 @@ overflow仅裁切有意越界的装饰，不用于掩盖文本；长标题允许
 保留24圆角、192起高、38数值；每卡均有不同业务的右下半透明线框图标、左下
 双层环、星芒、小空心点与左下hint，按tone配置位置，不只画统一大圆环。
 背景aria-hidden且不接收点击，前景内容不被盖住，不改成普通142摘要。
-每张卡右上始终显示32px圆形链接，白15px箭头默认-40deg，hover/focus-visible
-200ms转到0deg并亮面；离开复原，卡片独立180ms上移3px。点击链接直接跳到
+每张卡右上始终显示32px圆形链接，内部15px的无箭杆细chevron用本节基准SVG，
+不是完整↗、ArrowUpRight或加粗箭头。默认-40deg，hover/focus-visible时200ms
+转到0deg成为细右尖括号并亮面；离开复原，卡片独立180ms上移3px。点击直接跳到
 该指标的真实页面或带对应筛选的列表，保留键盘操作；不要换成三点菜单、
 左侧图标块、蓝底铺满按钮或仅Toast。记录每张卡的目标路由并实际点击验证。
 ```
