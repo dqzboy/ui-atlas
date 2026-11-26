@@ -248,7 +248,7 @@
       "name": "气泡提示",
       "english": "Tooltip",
       "summary": "悬停时出现一句解释，移开消失，如导出图标说明；手机没有鼠标悬停，重要信息不能仅藏在这里。",
-      "prompt": "给导出图标添加 Tooltip；关键说明同时保留可见或触摸可访问入口。",
+      "prompt": "给导出图标添加 Tooltip；关键说明同时保留可见或触摸可访问入口。 分组延时、热启动和可停留区域读取 references/recipes/hover-intent.md；不把含操作的卡片当 Tooltip。",
       "kind": "pattern",
       "media_type": "image",
       "evidence": "static-reference",
@@ -256,7 +256,10 @@
       "images": [
         "assets/details/overlays/tooltip-hd-01.webp"
       ],
-      "preview": "assets/details/overlays/tooltip-hd-01.webp"
+      "preview": "assets/details/overlays/tooltip-hd-01.webp",
+      "related": [
+        "overlays/hover-intent"
+      ]
     },
     {
       "id": "overlays/popover",
@@ -274,7 +277,10 @@
       "images": [
         "assets/details/overlays/popover-hd-01.webp"
       ],
-      "preview": "assets/details/overlays/popover-hd-01.webp"
+      "preview": "assets/details/overlays/popover-hd-01.webp",
+      "related": [
+        "overlays/hover-intent"
+      ]
     },
     {
       "id": "overlays/popconfirm",
@@ -312,7 +318,8 @@
       ],
       "preview": "assets/details/overlays/dropdown-menu-hd-01.webp",
       "related": [
-        "buttons-controls/control-selection"
+        "buttons-controls/control-selection",
+        "overlays/hover-intent"
       ]
     },
     {
@@ -362,7 +369,70 @@
         "loading-errors/optimistic-ui",
         "loading-errors/loading-button",
         "overlays/toast-vs-notification",
-        "loading-errors/empty-state"
+        "loading-errors/empty-state",
+        "loading-errors/generated-image-reveal"
+      ]
+    },
+    {
+      "id": "loading-errors/generated-image-reveal",
+      "category": "loading-errors",
+      "category_title": "加载与错误页",
+      "slug": "generated-image-reveal",
+      "name": "程序化生成点阵与图片入场",
+      "english": "Generated Image Reveal / Procedural Dot Loading",
+      "summary": "024：九种程序化点阵等待与九种图片揭开可任意搭配，解码后从放大柔和过渡到清晰，按需使用边缘采样、色散与冲击波；保留真实生成状态与每模式调参。",
+      "prompt": "读取 references/recipes/generated-image-reveal.md，沿用已选位置、点阵与入场组合、面板范围，实现解码后的图片入场；不伪造阶段、不扣住已完成结果，验证终态原图、失败恢复和无 GPU 回退。",
+      "kind": "pattern",
+      "media_type": "image",
+      "evidence": "static-reference",
+      "recipe": "references/recipes/generated-image-reveal.md",
+      "images": [
+        "assets/details/loading-errors/generated-dots-ripple.webp",
+        "assets/details/loading-errors/generated-dots-snow.webp",
+        "assets/details/loading-errors/generated-reveal-lens.webp",
+        "assets/details/loading-errors/generated-reveal-sharp.webp"
+      ],
+      "preview": "assets/details/loading-errors/generated-dots-ripple.webp",
+      "media_reason": "两种不同点阵结构、鱼眼入场过程与同图完成态各一张原像素局部，不重复九套画面；柔光与过程软化属于效果。其余模式、解码时机、连续路径与性能按 024 配方验证。",
+      "keywords": [
+        "024",
+        "程序化生成点阵",
+        "图片生成",
+        "生成等待",
+        "点阵加载",
+        "图片入场",
+        "generated image",
+        "dot loading",
+        "fBm breath",
+        "Ripple",
+        "Double helix",
+        "Static grain",
+        "Spiral arms",
+        "Domain warp",
+        "Sine plasma",
+        "Light band",
+        "Snowflakes",
+        "Fisheye lens",
+        "Halftone grow",
+        "Unzip",
+        "Denoise",
+        "Spiral wipe",
+        "Noise dissolve",
+        "Interference wipe",
+        "Top-down stream",
+        "Cell bloom",
+        "解码",
+        "image decode",
+        "色散",
+        "边缘扭曲",
+        "冲击波"
+      ],
+      "related": [
+        "loading-errors/loading-states",
+        "loading-errors/blur-up",
+        "loading-errors/empty-state",
+        "motion/shockwave-halo",
+        "motion/easing"
       ]
     },
     {
@@ -394,7 +464,7 @@
       "name": "模糊渐显",
       "english": "Blur-up",
       "summary": "先显示低清模糊小图，高清图下载完成后逐渐变清楚；适合相册和商品图片列表。",
-      "prompt": "图片先展示低清占位图，高清加载完成后使用 Blur-up 渐显。",
+      "prompt": "图片先展示低清占位图，高清加载完成后使用 Blur-up 渐显。 若为真实生图等待与程序化点阵入场，读取 references/recipes/generated-image-reveal.md；不把普通图片下载自动改成生成动画。",
       "kind": "pattern",
       "media_type": "image",
       "evidence": "static-reference",
@@ -403,7 +473,10 @@
         "assets/details/loading-errors/blur-up-hd-01.webp",
         "assets/details/loading-errors/blur-up-hd-02.webp"
       ],
-      "preview": "assets/details/loading-errors/blur-up-hd-02.webp"
+      "preview": "assets/details/loading-errors/blur-up-hd-02.webp",
+      "related": [
+        "loading-errors/generated-image-reveal"
+      ]
     },
     {
       "id": "loading-errors/optimistic-ui",
@@ -535,7 +608,8 @@
         "loading-errors/no-permission",
         "loading-errors/not-found",
         "overlays/toast-vs-notification",
-        "buttons-controls/control-selection"
+        "buttons-controls/control-selection",
+        "loading-errors/generated-image-reveal"
       ]
     },
     {
@@ -1726,7 +1800,9 @@
       "related": [
         "motion/motion-rules",
         "motion/spring",
-        "motion/stagger"
+        "motion/stagger",
+        "loading-errors/generated-image-reveal",
+        "overlays/hover-intent"
       ]
     },
     {
@@ -2556,7 +2632,7 @@
       "name": "列表悬停预览图",
       "english": "Hover Image Preview",
       "summary": "文字列表保持整齐，悬停不同条目时在附近显示相应图片，非当前条目弱化。",
-      "prompt": "案例列表悬停或聚焦时预览对应图片，列表本身不跳动。",
+      "prompt": "案例列表悬停或聚焦时预览对应图片，列表本身不跳动。 较大预览的延时、穿越列表与停稳切换读取 references/recipes/hover-intent.md，保留现有触发与焦点语义。",
       "kind": "pattern",
       "keywords": [
         "图片",
@@ -2572,7 +2648,10 @@
       "images": [
         "assets/details/web-interactions/hover-image-preview.png"
       ],
-      "preview": "assets/details/web-interactions/hover-image-preview.png"
+      "preview": "assets/details/web-interactions/hover-image-preview.png",
+      "related": [
+        "overlays/hover-intent"
+      ]
     },
     {
       "id": "web-interactions/circular-theme-reveal",
@@ -3152,7 +3231,10 @@
       "evidence": "implementation-recipe",
       "media_reason": "高清图片用于观察父子菜单的层级与间距；安全区的指针轨迹和延时仍需在项目中验证。",
       "preview": "assets/recipes/safe-cascade-menu.jpg",
-      "visual_evidence": "sampled-demo-frames"
+      "visual_evidence": "sampled-demo-frames",
+      "related": [
+        "overlays/hover-intent"
+      ]
     },
     {
       "id": "backgrounds/ascii-dither",
@@ -3473,7 +3555,64 @@
       "preview": "assets/recipes/overlay-decision.jpg",
       "visual_evidence": "sampled-demo-frames-and-clip",
       "gif_fps": 10,
-      "gif": "assets/recipes/overlay-decision.gif"
+      "gif": "assets/recipes/overlay-decision.gif",
+      "related": [
+        "overlays/hover-intent"
+      ]
+    },
+    {
+      "id": "overlays/hover-intent",
+      "category": "overlays",
+      "category_title": "弹窗与浮层",
+      "slug": "hover-intent",
+      "name": "悬停延时与切换意图",
+      "english": "Hover Intent / Hover Delay / Warm Switching",
+      "summary": "025：按 Label、Card、Preview 或 Click 诊断悬停浮层；500／700／900ms 打开起点，组内热启动、300／400ms 容错、停稳切换与安全区，保留点击、触摸和键盘语义。",
+      "prompt": "读取 references/recipes/hover-intent.md，先报告每处浮层类型、现有延时、间隙与切换问题，再按已选范围配置现有组件库和共享意图状态；避免 timer 竞争、路过误切、焦点抢回与关闭后重开。",
+      "kind": "rule",
+      "media_type": "image",
+      "evidence": "static-reference",
+      "recipe": "references/recipes/hover-intent.md",
+      "images": [
+        "assets/details/overlays/hover-card.webp",
+        "assets/details/overlays/hover-preview.webp"
+      ],
+      "preview": "assets/details/overlays/hover-card.webp",
+      "media_reason": "含操作的资料卡与文档预览各一张清晰局部，Label 复用已有 Tooltip 图片，不重复存图；静态图不证明延时、热启动、指针速度、连接热区和连续切换。",
+      "keywords": [
+        "025",
+        "悬停延时",
+        "悬停意图",
+        "热启动",
+        "hover intent",
+        "hover delay",
+        "warm start",
+        "Tooltip",
+        "HoverCard",
+        "Preview",
+        "label",
+        "500ms",
+        "700ms",
+        "900ms",
+        "400ms",
+        "300ms",
+        "grace",
+        "安全区",
+        "safe triangle",
+        "safePolygon",
+        "指针速度",
+        "组内切换",
+        "延时选型"
+      ],
+      "related": [
+        "overlays/tooltip",
+        "overlays/popover",
+        "overlays/overlay-decision",
+        "overlays/safe-cascade-menu",
+        "overlays/dropdown-menu",
+        "web-interactions/hover-image-preview",
+        "motion/easing"
+      ]
     },
     {
       "id": "glass-materials/liquid-glass",
@@ -4665,7 +4804,8 @@
         "motion/easing",
         "glass-materials/liquid-glass",
         "motion/border-beam",
-        "buttons-controls/ripple-button"
+        "buttons-controls/ripple-button",
+        "loading-errors/generated-image-reveal"
       ]
     },
     {

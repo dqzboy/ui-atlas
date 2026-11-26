@@ -1712,6 +1712,48 @@
       "width": 820,
       "height": 155,
       "bundled": true
+    },
+    "assets/details/loading-errors/generated-dots-ripple.webp": {
+      "bytes": 101046,
+      "sha256": "048cedb815d05dbd4bd1bde5fefe3137726dc53d4bf44cea9093e8b9821c169f",
+      "width": 1205,
+      "height": 1555,
+      "bundled": true
+    },
+    "assets/details/loading-errors/generated-dots-snow.webp": {
+      "bytes": 134876,
+      "sha256": "efbb214c67e3021b1ff58a999de7202dfbb26629ab3b4241263c092f61587a40",
+      "width": 1205,
+      "height": 1555,
+      "bundled": true
+    },
+    "assets/details/loading-errors/generated-reveal-lens.webp": {
+      "bytes": 218282,
+      "sha256": "5fa465007fbb899b70136b0310a92f02e08afe82b6fa790cc938921d59e8e17e",
+      "width": 1205,
+      "height": 1555,
+      "bundled": true
+    },
+    "assets/details/loading-errors/generated-reveal-sharp.webp": {
+      "bytes": 489226,
+      "sha256": "37b10431289af7e55fe80d90bfd441c1e93644faa9d0a3077580f8b1f00346e5",
+      "width": 1205,
+      "height": 1555,
+      "bundled": true
+    },
+    "assets/details/overlays/hover-card.webp": {
+      "bytes": 40578,
+      "sha256": "58c27fe1bf294bd3da003dffcca23ba1a956754980fb83f1726ca1ae26fd6a03",
+      "width": 945,
+      "height": 510,
+      "bundled": true
+    },
+    "assets/details/overlays/hover-preview.webp": {
+      "bytes": 67754,
+      "sha256": "8ec2b6b54dfbb88e87aeef306c752142e0cbeb502510cae59788cdeefef242ac",
+      "width": 1300,
+      "height": 1325,
+      "bundled": true
     }
   }
 }

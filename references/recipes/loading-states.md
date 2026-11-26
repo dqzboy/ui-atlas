@@ -159,4 +159,4 @@ These are suggestions; check them against my stack and its versions, and prefer 
 - 进度和阶段真实；取消确认、离页返回、完成结果与恢复入口可达，无孤立 loader 或过时响应。
 - 流式内容处理截断、分块、停止与异常；焦点、手动滚动、减弱动态、浅深主题和读屏分别验证。
 
-关联配方：[022 空状态选型](empty-state.md)、[016 消息反馈选型](toast-vs-notification.md)、[011 动画节奏](easing.md)、[015 连续转场](continuous-transitions.md)。具体组件见 [加载与错误页](../loading-errors.md)。
+关联配方：[024 点阵生图等待与入场](generated-image-reveal.md)、[022 空状态选型](empty-state.md)、[016 消息反馈选型](toast-vs-notification.md)、[011 动画节奏](easing.md)、[015 连续转场](continuous-transitions.md)。具体组件见 [加载与错误页](../loading-errors.md)。

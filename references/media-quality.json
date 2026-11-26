@@ -1763,6 +1763,28 @@
       ],
       "poster": "assets/details/cards-tables/card-ring-inside.webp",
       "image_reason": "环内与环外各一张原像素局部，不保留近似帧；右端裁切以避开光标。图片用于识别曲率、渐变、中心清晰与景深层次，连续翻面、采样、吸附和性能需实际验证。"
+    },
+    "loading-errors/generated-image-reveal": {
+      "source": "native-video-still",
+      "limitation": "从 2160×2880 视频直接解码，原像素裁切为 1205×1555，WebP 质量 98，无放大、锐化、涂抹或跨帧拼接；去掉模式选择器、参数面板、演示公式与署名。只覆盖 Ripple、Snowflakes、Fisheye 过程及完成态，不证明其余模式或真实生成生命周期。",
+      "images": [
+        "assets/details/loading-errors/generated-dots-ripple.webp",
+        "assets/details/loading-errors/generated-dots-snow.webp",
+        "assets/details/loading-errors/generated-reveal-lens.webp",
+        "assets/details/loading-errors/generated-reveal-sharp.webp"
+      ],
+      "poster": "assets/details/loading-errors/generated-dots-ripple.webp",
+      "image_reason": "两种不同点阵结构、鱼眼入场过程与同图完成态各一张原像素局部，不重复九套画面；柔光与过程软化属于效果。其余模式、解码时机、连续路径与性能按 024 配方验证。"
+    },
+    "overlays/hover-intent": {
+      "source": "native-video-still",
+      "limitation": "从 2160×2880 视频直接解码，原像素裁切为资料卡 945×510、预览 1300×1325，WebP 质量 98，无放大、锐化、涂抹或跨帧修补；避开计时标签、署名光标和底部讲解。未包含完整触发器和连接路径，时序与键盘需实际验证。",
+      "images": [
+        "assets/details/overlays/hover-card.webp",
+        "assets/details/overlays/hover-preview.webp"
+      ],
+      "poster": "assets/details/overlays/hover-card.webp",
+      "image_reason": "含操作的资料卡与文档预览各一张清晰局部，Label 复用已有 Tooltip 图片，不重复存图；静态图不证明延时、热启动、指针速度、连接热区和连续切换。"
     }
   },
   "files": {
@@ -3399,6 +3421,48 @@
       "sha256": "20d9b62e97a586f547b875d00a5414dc58d878d030b889e2ffd74c21d58611a7",
       "width": 820,
       "height": 155,
+      "bundled": true
+    },
+    "assets/details/loading-errors/generated-dots-ripple.webp": {
+      "bytes": 101046,
+      "sha256": "048cedb815d05dbd4bd1bde5fefe3137726dc53d4bf44cea9093e8b9821c169f",
+      "width": 1205,
+      "height": 1555,
+      "bundled": true
+    },
+    "assets/details/loading-errors/generated-dots-snow.webp": {
+      "bytes": 134876,
+      "sha256": "efbb214c67e3021b1ff58a999de7202dfbb26629ab3b4241263c092f61587a40",
+      "width": 1205,
+      "height": 1555,
+      "bundled": true
+    },
+    "assets/details/loading-errors/generated-reveal-lens.webp": {
+      "bytes": 218282,
+      "sha256": "5fa465007fbb899b70136b0310a92f02e08afe82b6fa790cc938921d59e8e17e",
+      "width": 1205,
+      "height": 1555,
+      "bundled": true
+    },
+    "assets/details/loading-errors/generated-reveal-sharp.webp": {
+      "bytes": 489226,
+      "sha256": "37b10431289af7e55fe80d90bfd441c1e93644faa9d0a3077580f8b1f00346e5",
+      "width": 1205,
+      "height": 1555,
+      "bundled": true
+    },
+    "assets/details/overlays/hover-card.webp": {
+      "bytes": 40578,
+      "sha256": "58c27fe1bf294bd3da003dffcca23ba1a956754980fb83f1726ca1ae26fd6a03",
+      "width": 945,
+      "height": 510,
+      "bundled": true
+    },
+    "assets/details/overlays/hover-preview.webp": {
+      "bytes": 67754,
+      "sha256": "8ec2b6b54dfbb88e87aeef306c752142e0cbeb502510cae59788cdeefef242ac",
+      "width": 1300,
+      "height": 1325,
       "bundled": true
     }
   },

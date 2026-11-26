@@ -5,6 +5,7 @@
 ## 目录
 
 - [等待状态选型（017）](#loading-states)
+- [程序化生成点阵与图片入场](#generated-image-reveal)
 - [骨架屏](#skeleton)
 - [模糊渐显](#blur-up)
 - [乐观更新](#optimistic-ui)
@@ -37,6 +38,23 @@
 ![巧用等待状态，让产品响应更丝滑：原尺寸独立参考](../assets/details/loading-errors/waiting-progress.webp)
 <!-- /ui-atlas:details -->
 
+<a id="generated-image-reveal"></a>
+## 程序化生成点阵与图片入场 / Generated Image Reveal
+
+- 标识：`loading-errors/generated-image-reveal`；类型：组件／效果。
+- 效果要点：024：九种程序化点阵与九种入场可任意配对，解码就绪后从放大柔和过渡到清晰，按需采样扭曲、色散和冲击波；参数按模式独立保存。
+- 实现提示词：读取 [024 完整配方与提示词](recipes/generated-image-reveal.md)，沿用已选目标与面板范围，保留真实阶段、部分结果、失败恢复和图片终态；不延迟已完成结果。
+- 核对要点：快图跳过点阵，decode 失败可恢复，各遮罩首尾正确，Halftone 无格角空洞；完成停绘，离屏与无 GPU 有回退。
+- 媒体取舍：两种点阵、鱼眼过程与完成态共四张，不重复九套画面；其余模式和连续行为按配方验证。
+
+<!-- ui-atlas:details loading-errors/generated-image-reveal -->
+- 原尺寸图片：[01 · 1205×1555](../assets/details/loading-errors/generated-dots-ripple.webp) · [02 · 1205×1555](../assets/details/loading-errors/generated-dots-snow.webp) · [03 · 1205×1555](../assets/details/loading-errors/generated-reveal-lens.webp) · [04 · 1205×1555](../assets/details/loading-errors/generated-reveal-sharp.webp)。
+- 多图用途：两种不同点阵结构、鱼眼入场过程与同图完成态各一张原像素局部，不重复九套画面；柔光与过程软化属于效果。其余模式、解码时机、连续路径与性能按 024 配方验证。
+- 清晰度边界：从 2160×2880 视频直接解码，原像素裁切为 1205×1555，WebP 质量 98，无放大、锐化、涂抹或跨帧拼接；去掉模式选择器、参数面板、演示公式与署名。只覆盖 Ripple、Snowflakes、Fisheye 过程及完成态，不证明其余模式或真实生成生命周期。
+
+![程序化生成点阵与图片入场：原尺寸独立参考](../assets/details/loading-errors/generated-dots-ripple.webp)
+<!-- /ui-atlas:details -->
+
 <a id="skeleton"></a>
 ## 骨架屏 / Skeleton
 
@@ -58,7 +76,7 @@
 
 - 标识：`loading-errors/blur-up`；类型：组件／效果。
 - 效果要点：先显示低清模糊小图，高清图下载完成后逐渐变清楚；适合相册和商品图片列表。
-- 指令例句：图片先展示低清占位图，高清加载完成后使用 Blur-up 渐显。
+- 指令例句：图片先展示低清占位图，高清加载完成后使用 Blur-up 渐显。真实生图等待与程序化点阵入场另读 [024 配方](recipes/generated-image-reveal.md)，不自动替换普通图片下载。
 - 媒体取舍：对照有意模糊的占位图和清晰完成态，标题文字始终清晰。
 
 <!-- ui-atlas:details loading-errors/blur-up -->

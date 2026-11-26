@@ -18,6 +18,7 @@
 - [下拉菜单](#dropdown-menu)
 - [带安全三角区的级联菜单](#safe-cascade-menu)
 - [提示、跟随气泡与浮层决策](#overlay-decision)
+- [悬停延时与切换意图](#hover-intent)
 
 <a id="modal"></a>
 ## 弹窗 / Modal
@@ -149,7 +150,7 @@
 
 - 标识：`overlays/tooltip`；类型：组件／效果。
 - 效果要点：悬停时出现一句解释，移开消失，如导出图标说明；手机没有鼠标悬停，重要信息不能仅藏在这里。
-- 指令例句：给导出图标添加 Tooltip；关键说明同时保留可见或触摸可访问入口。
+- 指令例句：给导出图标添加 Tooltip；关键说明同时保留可见或触摸可访问入口。分组延时与热启动读取 [025 配方](recipes/hover-intent.md)，需要停留阅读时保留浮层可悬停区域。
 - 媒体取舍：锚点位置与简短解释由图片表达，悬停与离开规则由文字描述。
 
 <!-- ui-atlas:details overlays/tooltip -->
@@ -212,6 +213,7 @@
 - 实现关注：保存最近两个 pointermove 坐标，以较早坐标作三角顶点。指针向子菜单移动时忽略路过行的高亮与打开；每 80ms 重查，离开保护区或达到 1200ms 后切换。拖过文件夹时用 420ms 打开。右侧不足时左翻，三角区改接子菜单右边；离开再返回取消关闭计时。行高亮由状态驱动，不能依赖 CSS :hover。
 - 验证重点：检查缓慢斜移、停在保护区、快速往返、左右翻转、独立滚动、触摸和方向键；Esc 关闭并归还焦点。
 - 指令例句：参考 overlays/safe-cascade-menu，用上一指针位置和子菜单近侧两角构造安全三角区，保护斜向移动；220ms 打开、360ms 关闭、1200ms 保护上限。
+- 通用悬停意图另读 [025 配方](recipes/hover-intent.md)，不无条件覆盖本菜单已选时序与键盘规则。
 - [完整配方与效果参考](recipes/safe-cascade-menu.md) · [效果图](../assets/recipes/safe-cascade-menu.jpg)。
 - 媒体取舍：高清图片用于观察父子菜单的层级与间距；安全区的指针轨迹和延时仍需在项目中验证。
 
@@ -228,3 +230,20 @@
 
 - 连续动效：[GIF 片段](../assets/recipes/overlay-decision.gif)。
 - Toast、Notification 与持久反馈的详细选型见 [016 配方](recipes/toast-vs-notification.md)。
+
+<a id="hover-intent"></a>
+## 悬停延时与切换意图 / Hover Intent
+
+- 标识：`overlays/hover-intent`；类型：选型／纠错。
+- 效果要点：025：Label／Card／Preview 的初次延时、热启动、离开容错与停稳切换；主职为动作、输入或决策的浮层优先显式入口。
+- 实现提示词：读取 [025 完整配方与提示词](recipes/hover-intent.md)，先输出每处诊断，再配置现有库与必要共享意图状态；保留点击、键盘和触摸语义。
+- 核对要点：穿越间隙、斜向路过其他行、快速返回与 Escape 不闪关或误切；已有焦点不被指针抢走，同组热启动局部隔离，关闭不重开。
+- 媒体取舍：资料卡和大预览各一张清晰局部，Label 复用已有 Tooltip，不重复素材；时序、路径和热区在产品中验证。
+
+<!-- ui-atlas:details overlays/hover-intent -->
+- 原尺寸图片：[01 · 945×510](../assets/details/overlays/hover-card.webp) · [02 · 1300×1325](../assets/details/overlays/hover-preview.webp)。
+- 多图用途：含操作的资料卡与文档预览各一张清晰局部，Label 复用已有 Tooltip 图片，不重复存图；静态图不证明延时、热启动、指针速度、连接热区和连续切换。
+- 清晰度边界：从 2160×2880 视频直接解码，原像素裁切为资料卡 945×510、预览 1300×1325，WebP 质量 98，无放大、锐化、涂抹或跨帧修补；避开计时标签、署名光标和底部讲解。未包含完整触发器和连接路径，时序与键盘需实际验证。
+
+![悬停延时与切换意图：原尺寸独立参考](../assets/details/overlays/hover-card.webp)
+<!-- /ui-atlas:details -->
