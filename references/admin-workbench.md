@@ -29,7 +29,19 @@
 
 趋势图、柱图、环图和有明确数据点的面积图都必须提供对应的数值提示。鼠标移到数据点、柱体或同一日期的绘图区时，以最近的有效数据点／共享横轴索引为准，同时显示该日期或分类、所有可见系列的名称、颜色标记、数值和单位；不能只显示鼠标最近的一条线，也不能只靠图例和纵轴让用户自己估算。趋势图可显示一条与x索引对齐的细竖向引导线，并对当前点加小圆点或轻微高亮，不能改变数据本身。
 
-提示框沿用页面面板主题：白色主题使用panel面、line-soft边、12px圆角和轻阴影；深色使用同一组件token映射到深色panel、line和text。标题日期14px／650，行高26左右；每行是7–8px系列色标、系列名12px和右对齐13px／650数值，单位跟在数值后且不依赖颜色。小三角指向当前x位置，提示框优先放在点的上方或侧上方；靠近图表边缘时翻转或限制在绘图区内，不能被panel的padding、圆角或页面边界裁切。提示框不参与图表布局，不造成页面跳动，不遮住当前点；interactive tooltip若包含链接才允许pointer-events:auto，否则保持none并由图表事件控制。
+提示框沿用页面面板主题：白色主题使用panel面、line-soft边、12px圆角和轻阴影；深色使用同一组件token映射到深色panel、line和text。标题日期14px／650，行高26左右；每行是7–8px系列色标、系列名12px和右对齐13px／650数值，单位跟在数值后且不依赖颜色。小三角指向当前真实数据锚点，提示框优先放在点的上方或侧上方；按下方尖端间距合同定位，不能按图表外壳或额外顶留白定位。靠近边缘时翻转或在可见边界内平移，箭头同步回指锚点；不能被panel的padding、圆角或页面边界裁切。提示框不参与图表布局，不造成页面跳动，不遮住当前点；interactive tooltip若包含链接才允许pointer-events:auto，否则保持none并由图表事件控制。
+
+#### 尖端与可见图形之间的距离
+
+分布环图、细进度环、折线点和柱体提示均适用：**箭头尖端到实际可见图形边缘默认6px，正常允许4–8px**，单位为CSS px。不是提示框正文底边到图形6px，也不是箭头到整个SVG／canvas／卡片边缘6px；阴影不计入间距。不能让箭头与圆环之间出现数十像素空档，不能把面板padding、库内置offset和额外translateY重复相加。
+
+- 环图／进度环的整体汇总放在上方时，锚点取可见圆环最上缘，即中心cy减实际外半径（SVG描边圆为r加stroke-width/2）；不取圆心、容器顶部或中心数字。扇区专属提示指向该扇区真实外弧锚点，随扇区方向选择侧边或上／下方，不为了统一居中而指向另一段弧；hover偏移和放大需计入实际外缘。
+- 折线以当前点的可见标记边缘为准；柱图以当前柱顶／柱边为准。共享横轴提示保留同日期完整系列，其锚点与引导线及当前点一致，不锚到面板标题或图例。
+- 提示内容更新后先测量实际宽高，再定位。上置正文top = 锚点y − 6 − 箭头突出高度 − 提示框实测高度；下置正文top = 锚点y + 6 + 箭头突出高度。本节三角突出高度为7px，不能又在CSS margin或库offset里再扣一次；库offset若从正文边界计算则传入13px，若从箭头尖端计算则传入6px，按该库实际定义核对。
+- 统一坐标系：SVG数据点经getScreenCTM转为视口CSS坐标，canvas坐标按绘制区域与client rect比例转换；portal到body按视口／页面定位策略转换，局部absolute再减实际定位父级原点。DPR、页面滚动和缩放只换算一次，不把设备像素直接当CSS px。
+- 上方放不下就翻到下方或侧边，不能把框留在原处、只移动箭头。左右平移避边时重新计算箭头位置，避开12px圆角并指向原锚点；四向placement与箭头方向同一状态驱动。沿用可靠图表／浮层库的offset、flip、shift、arrow能力，不叠第二套定位；CSS anchor的方向查询只在支持时使用，不支持时由宿主最终placement同步箭头，无法可靠回指时隐藏装饰箭头而保留可读提示。不得回退成居中悬空提示框。
+
+实际渲染验收时测量**三角尖端到圆环／柱体／点标记可见边缘**，不能只检查offset配置。分布环和细环分别检查粗细、尺寸变化、非100%扇区、上／下／侧向避让、长内容、浅深主题、滚动、resize、390宽和200%缩放；定位后不遮挡当前数据和键盘焦点、不裁切，提示框不改变图表布局。只有截图和操作验证过的场景才标为已验证。
 
 ```html
 <div class="admin-chart" data-chart-id="storage-publish-trend">
@@ -51,10 +63,33 @@
 .admin-chart-tooltip { position:absolute; z-index:3; inline-size:max-content; max-inline-size:min(240px,calc(100% - 16px));
   padding:10px 12px; border:1px solid var(--line-soft); border-radius:12px; background:var(--panel);
   color:var(--text); box-shadow:0 8px 24px rgb(38 73 126 / .14); pointer-events:none; }
-.admin-chart-tooltip::after { content:""; position:absolute; inset-block-end:-6px; inset-inline-start:var(--tooltip-arrow,50%);
-  inline-size:10px; block-size:10px; border-inline-end:1px solid var(--line-soft); border-block-end:1px solid var(--line-soft);
-  background:var(--panel); transform:translateX(-50%) rotate(45deg); }
-.admin-chart-tooltip[data-placement="bottom"]::after { inset-block-end:auto; inset-block-start:-6px; transform:translateX(-50%) rotate(225deg); }
+.admin-chart-tooltip { --tooltip-gap:6px; --tooltip-arrow-height:7px; --tooltip-arrow-base:12px; }
+.admin-chart-tooltip::before,.admin-chart-tooltip::after { content:""; position:absolute; pointer-events:none;
+  inset-block-start:calc(100% + 1px); inset-inline-start:var(--tooltip-arrow,50%);
+  inline-size:var(--tooltip-arrow-base); block-size:var(--tooltip-arrow-height);
+  clip-path:polygon(0 0,100% 0,50% 100%); transform:translateX(-50%); background:var(--line-soft); }
+.admin-chart-tooltip::after { inset-block-start:100%;
+  inline-size:calc(var(--tooltip-arrow-base) - 2px); background:var(--panel); }
+.admin-chart-tooltip[data-placement="bottom"]::before,
+.admin-chart-tooltip[data-placement="bottom"]::after { inset-block-start:auto; inset-block-end:calc(100% + 1px);
+  clip-path:polygon(50% 0,100% 100%,0 100%); }
+.admin-chart-tooltip[data-placement="bottom"]::after { inset-block-end:100%; }
+.admin-chart-tooltip:is([data-placement="left"],[data-placement="right"])::before,
+.admin-chart-tooltip:is([data-placement="left"],[data-placement="right"])::after {
+  inset-block-start:var(--tooltip-arrow-y,50%); inset-block-end:auto;
+  inline-size:var(--tooltip-arrow-height); block-size:var(--tooltip-arrow-base); transform:translateY(-50%); }
+.admin-chart-tooltip[data-placement="left"]::before,
+.admin-chart-tooltip[data-placement="left"]::after { inset-inline-start:calc(100% + 1px); inset-inline-end:auto;
+  clip-path:polygon(0 0,100% 50%,0 100%); }
+.admin-chart-tooltip[data-placement="left"]::after { inset-inline-start:100%;
+  block-size:calc(var(--tooltip-arrow-base) - 2px); }
+.admin-chart-tooltip[data-placement="right"]::before,
+.admin-chart-tooltip[data-placement="right"]::after { inset-inline-start:auto; inset-inline-end:calc(100% + 1px);
+  clip-path:polygon(100% 0,100% 100%,0 50%); }
+.admin-chart-tooltip[data-placement="right"]::after { inset-inline-end:100%;
+  block-size:calc(var(--tooltip-arrow-base) - 2px); }
+.admin-chart-tooltip[data-arrow="hidden"]::before,
+.admin-chart-tooltip[data-arrow="hidden"]::after { content:none; }
 .admin-chart-tooltip__title { display:block; margin-block-end:4px; font:650 14px/1.35 var(--sans); font-variant-numeric:tabular-nums; }
 .admin-chart-tooltip__row { display:grid; grid-template-columns:8px minmax(0,1fr) auto; align-items:center; gap:7px; min-block-size:26px;
   font:400 12px/1.4 var(--sans); }
@@ -152,7 +187,7 @@
 
 图表挂载前容器必须有非零宽高；主题、容器尺寸、筛选及数据更新后同步更新图表，路由离开销毁实例和观察器。首次运营数据优先直接展示，不补长时间绘制／轮播；刷新保留旧图而非闪空。提示框随主题，触屏和键盘能获得数值，另提供文本摘要或等价数据表。不要只保留canvas图形而丢掉统计值。
 
-交付前核对：两排图表及最近活动是否因只看首屏被漏掉；趋势／状态分布／三个比例／分类对比是否各自使用正确数据；汇总能否核对；0与未知是否区分；鼠标悬停／键盘左右键／触摸点按是否显示同一日期或分类的完整数值提示，提示框是否避让边缘、随主题、无裁切、无布局跳动；图例形状、系列颜色、快捷入口图标和有效动作是否齐全；390宽度、深色、空／错／刷新及reduced-motion是否可用。没有运行图表时注明未验证，不用静态SVG预览冒充真实数据联动验证。
+交付前核对：两排图表及最近活动是否因只看首屏被漏掉；趋势／状态分布／三个比例／分类对比是否各自使用正确数据；汇总能否核对；0与未知是否区分；鼠标悬停／键盘左右键／触摸点按是否显示同一日期或分类的完整数值提示，提示框是否避让边缘、随主题、无裁切、无布局跳动，分布环与细进度环箭头尖端到实际外缘是否为4–8px且默认6px、翻转后是否仍回指锚点；图例形状、系列颜色、快捷入口图标和有效动作是否齐全；390宽度、深色、空／错／刷新及reduced-motion是否可用。没有运行图表时注明未验证，不用静态SVG预览冒充真实数据联动验证。
 
 ## 可直接执行的工作台提示词
 
@@ -170,5 +205,8 @@
 数据映射到我的业务，不复制参考的授权字段、个人信息、地址或日志。缺少
 业务关系时说明取舍；有实际数据的模块不能无声删除。复用已有图表库，
 处理非零尺寸挂载、主题/resize/数据更新、提示框定位与隐藏、失败保留旧图与路由清理；提示框不可被卡片或portal边界裁掉，数据点、图例、数据表与提示共用同一真实数据源。
+提示箭头尖端到实际图形边缘默认6px、正常4–8px；分布环与细进度环锚定可见外缘，
+不按容器顶边或圆心定位。正文定位计入7px箭头高度，offset不重复累加；空间不足
+翻转并同步箭头，不能通过拉远提示框避让。实际测量尖端距离，核对滚动/resize/缩放。
 实际截图与操作检查完整页面、图表值、空错态和手机布局，报告未验证部分。
 ```
