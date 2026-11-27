@@ -136,7 +136,7 @@ fixed侧栏不占Grid轨道，所以工作区必须显式放第二列；窄屏�
 | 项目 | 本风格要求 |
 |---|---|
 | 粗细与形状 | 桌面原生scrollbar-width:thin，具体宽度与圆角由浏览器／系统决定；旧WebKit回退槽宽10px、两侧透明边2px形成约6px圆角滑块。不得把所有平台强制成同一像素宽；触摸、高对比度优先系统可操作尺寸 |
-| 颜色 | 浅色滑块#7b8ba3、深色#687b96；轨道transparent，融入panel／页面背景，不画贯穿整张白卡的浅蓝粗轨道、亮蓝长线、外框或发光阴影。滑块相对实际背景至少3:1，彩色子面另核对 |
+| 颜色 | 浅色滑块#c8c8c8、深色#777777，均为R=G=B的中性灰，不能带蓝色；轨道transparent，融入panel／页面背景。浅色默认保持浅灰的轻量外观，不改回深灰蓝长条；不画粗轨道、外框或发光阴影。该浅灰默认不声明达到3:1；有明确非文字对比需求时使用更清楚的中性灰#888888，并保留下方高对比／系统颜色适配 |
 | 布局稳定 | 会动态增减内容且需要稳定列宽的侧栏／表格使用scrollbar-gutter:stable；不要给所有卡片强留槽或使用both-edges制造双侧空白，不强制overflow:scroll常驻空轨道 |
 | 容器边界 | 侧栏导航位于品牌／搜索和底部帮助／账号之间，flex子项min-block-size:0；滚动条不得越过该区域、侧栏外边界或卡片圆角。卡片头、尾、分页留在滚动体之外；滚动体与卡片边缘通常保留8–12px，按原有padding合并，不能重复叠加 |
 | 滚动职责 | 页面默认一个主竖向滚动；侧栏可独立滚动。普通表格随页面增高、仅必要时局部横滚；业务明确要求固定表高／虚拟列表时才限制高度并启用内部竖滚，避免父子容器争抢同一内容的竖向滚动 |
@@ -148,10 +148,10 @@ fixed侧栏不占Grid轨道，所以工作区必须显式放第二列；窄屏�
 
 ```css
 :root {
-  --admin-scroll-thumb:#7b8ba3;
+  --admin-scroll-thumb:#c8c8c8;
   --admin-scroll-track:transparent;
 }
-:root[data-theme="dark"] { --admin-scroll-thumb:#687b96; }
+:root[data-theme="dark"] { --admin-scroll-thumb:#777777; }
 .admin-scroll {
   min-inline-size:0; min-block-size:0;
   scrollbar-width:thin;

@@ -255,6 +255,10 @@ hover浅蓝整行且保留分组图标色；当前路由才是蓝色渐变整行
 
 接入组件库时检查实际wrapper、inner input、prefix／suffix容器、clear按钮以及::before／::after的background、border和box-shadow，修正当前字段组件的主题映射与规则优先级。不要只把input涂白，留下外壳两端原有灰底；不要靠overflow:hidden裁掉内层或全局input／button重置掩盖问题。搜索为空时不显示占位灰块，有值时清除按钮仍与输入面融合；内侧左右留白统一12px，图标16px、间距6–8，长文本可编辑且不盖住后缀。
 
+**填写内容不改变字段底色。**手动输入、粘贴、浏览器自动填充、密码管理器回填、失焦再聚焦后，浅色可编辑字段始终是连续白面，深色始终是连续深色panel；不得按非空值、:valid、:placeholder-shown或库的filled状态给文字区增加灰蓝色背景。hover、focus、error、readonly也不另铺文字区色块。搜索左右的wrapper、prefix、suffix和清空按钮在这些状态下都必须与文字区连成一面，不能仅默认空值截图正常。
+
+自动填充需单独适配：保留正确autocomplete，不用关闭自动填充、数小时background过渡或定时重置value绕开浏览器。浏览器可能用UA重要规则绘制底色，单写background:transparent不够；在字段内部用不透明panel色的inset填充覆盖该底色，显式同步文字与caret颜色。该填充只负责表面，唯一焦点边界仍由外壳绘制。保留可访问的回填状态，例如字段下固定说明位显示“已自动填充，可直接修改”，不要用对比突兀的蓝底表达。强制颜色模式撤销自定义覆盖并交回系统；未支持的回填选择器保留原生行为，不添加JS填色补丁。
+
 **聚焦也只能有一圈完整字段边界。**有包装层的输入由包装层统一绘制边框，内部input在focus／focus-visible时无独立border、outline、box-shadow或圆角框；包装层聚焦只把原边界变为accent-link，并在同一边界向内增加1px强调，不加有间隙的外圈、3px扩散环或第二个套框。独立input没有包装层时由input自己承担这唯一边界；不能外壳和input同时画。保留清晰键盘焦点，不用全局outline:none取消其他组件焦点；清除／显隐等独立按钮聚焦时允许其自身的小范围标识，但不能产生覆盖文字区的第二个大矩形。库wrapper的is-focus、内部input:focus和全局input规则、浏览器默认搜索框样式都要实际检查，并在字段作用域解决冲突。
 
 下方为无组件库时的最小表面实现；已有可靠库时映射到其结构，保留输入、搜索和清除行为。不额外创建前端工程。
@@ -278,6 +282,14 @@ hover浅蓝整行且保留分组图标色；当前路由才是蓝色渐变整行
 .admin-input:hover:not(:has(input:disabled)) { border-color:var(--text-soft); }
 .admin-input:focus-within { border-color:var(--input-focus); box-shadow:inset 0 0 0 1px var(--input-focus); }
 .admin-input > input:focus { border:0; outline:none; box-shadow:none; } /* 同一外壳边界提供可见焦点 */
+.admin-input > input:is(:autofill, :-webkit-autofill) {
+  box-shadow:inset 0 0 0 100vmax var(--panel);
+  -webkit-text-fill-color:var(--text); caret-color:var(--text);
+} /* 放在内部focus重置之后；panel必须是不透明的纯色 */
+.admin-input:has(input:disabled) > input:is(:autofill, :-webkit-autofill) {
+  box-shadow:inset 0 0 0 100vmax var(--panel-muted);
+  -webkit-text-fill-color:var(--muted);
+}
 .admin-input .admin-input__action:focus-visible { outline:2px solid var(--accent-link); outline-offset:1px; }
 .admin-input:has(input[aria-invalid="true"]) { --input-focus:var(--red); border-color:var(--red); }
 .admin-input:has(input:disabled) { background:var(--panel-muted); color:var(--muted); cursor:not-allowed; }
@@ -290,12 +302,18 @@ hover浅蓝整行且保留分组图标色；当前路由才是蓝色渐变整行
 @media(forced-colors:active) {
   .admin-input { border-color:CanvasText; }
   .admin-input:focus-within { outline:2px solid Highlight; outline-offset:-2px; }
+  .admin-input > input:is(:autofill, :-webkit-autofill) {
+    box-shadow:none; -webkit-text-fill-color:FieldText; caret-color:auto;
+  }
+  .admin-input:has(input:disabled) > input:is(:autofill, :-webkit-autofill) {
+    box-shadow:none; -webkit-text-fill-color:GrayText;
+  }
 }
 ```
 
-disabled可让**整框**使用panel-muted，不能只让两端变灰；同时禁用清除／显隐按钮。readonly仍可聚焦、选择和复制；error保留真实错误说明，不只改红边。loading只替换后缀图标，不另加灰底、不改变高度；原生自动填充和密码管理器不可被禁用，若浏览器施加内部填充色，实际检查整个字段的协调性与文字对比。单位Select、步进器、明确的prepend／append操作属于有意分区，沿用对应组件合同，不强行移除必要边界。
+disabled可让**整框**使用panel-muted，不能只让两端变灰；同时禁用清除／显隐按钮。readonly仍可聚焦、选择和复制；error保留真实错误说明，不只改红边。loading只替换后缀图标，不另加灰底、不改变高度。上述CSS面向直接子input，组件库嵌套结构必须映射到真实节点，不能假定选择器已命中。单位Select、步进器、明确的prepend／append操作属于有意分区，沿用对应组件合同，不强行移除必要边界。
 
-验收时在浅色／深色下实际查看空值、有值、长值、hover、输入聚焦、清除按钮聚焦、清空、disabled、readonly、error和loading。分别检查左图标区、文字区、右后缀区及四个圆角的实际绘制；不能仅检查input的computed background。确认全框底色连续、聚焦前后都只有一圈完整字段边界、焦点清楚、无灰色端盖／双圆角／内外套框／裁切，清除后焦点仍在输入，禁用动作不执行，390宽与浏览器缩放不挤出边界。
+验收时在浅色／深色下实际查看空值、有值、长值、hover、输入聚焦、清除按钮聚焦、清空、disabled、readonly、error和loading。登录账号与密码分别验证手动输入、粘贴、浏览器自动填充及回填后编辑；搜索验证空值／有值／聚焦／失焦时两端。分别检查左图标区、文字区、右后缀区及四个圆角的实际绘制；不能仅检查input的computed background，自动填充需看实际绘制与caret。确认全框底色连续、聚焦前后都只有一圈完整字段边界、焦点清楚、无灰蓝文字底／灰色端盖／双圆角／内外套框／裁切，清除后焦点仍在输入，禁用动作不执行，390宽与浏览器缩放不挤出边界。伪状态强制只能验证CSS，不能冒充实际密码管理器回填测试；未运行状态须说明。
 
 **表单提示词：**
 
@@ -306,6 +324,8 @@ disabled可让**整框**使用panel-muted，不能只让两端变灰；同时禁
 手机单列；不要用placeholder代替标签或让红色校验文字遮住下一个字段。
 普通输入和搜索按一体式输入面合同：外壳统一底色/边框/圆角/单层焦点强调，内部input、
 图标前后缀及清除按钮透明，不出现两端灰色块或白色内胆；禁用整框统一变色。
+填写、粘贴、自动填充、readonly及重新聚焦不改变文字区底色；按本节覆盖UA
+自动填充底色并同步文字/caret，保留autocomplete、可访问回填说明和单层焦点。
 ```
 
 ## Switch、Checkbox、Radio与Segmented
