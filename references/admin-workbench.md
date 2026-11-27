@@ -31,6 +31,14 @@
 
 提示框沿用页面面板主题：白色主题使用panel面、line-soft边、12px圆角和轻阴影；深色使用同一组件token映射到深色panel、line和text。标题日期14px／650，行高26左右；每行是7–8px系列色标、系列名12px和右对齐13px／650数值，单位跟在数值后且不依赖颜色。小三角指向当前真实数据锚点，提示框优先放在点的上方或侧上方；按下方尖端间距合同定位，不能按图表外壳或额外顶留白定位。靠近边缘时翻转或在可见边界内平移，箭头同步回指锚点；不能被panel的padding、圆角或页面边界裁切。提示框不参与图表布局，不造成页面跳动，不遮住当前点；interactive tooltip若包含链接才允许pointer-events:auto，否则保持none并由图表事件控制。
 
+#### 箭头根部与正文无接缝
+
+小三角与提示框必须是一整块气泡：同一panel底色连续相接，**根部不允许有提示框横向／纵向边框线穿过**，不出现三角形底边、白缝、双描边或独立贴上的小菱形。提示框外框与箭头两条外斜边可保留同色1px细轮廓；禁止的是箭头与正文之间的内部隔线，不是要求去掉整圈外轮廓。
+
+下方示例用外层三角延续轮廓，内层三角向正文内重叠2px并保留一小段平直填充，覆盖穿过根部的那段正文边框；四个方向翻转时遮盖段也必须同步转向。不能只把三角放到框外相邻位置，不能靠移除整条底边／顶边掩盖，也不要用固定白色补丁盖深色气泡。已有组件库优先调整其arrow内层／伪元素和背景变量，不叠加第二个箭头。
+
+浅深主题、上下左右方向、非整数位置、DPR1／2和浏览器缩放时实际放大核对连接处：内部底色连续，根部无穿线；外斜边自然接上正文边框，仍保持7px突出高度和到图形默认6px的间距。箭头无接缝与动态锚点、近图定位须同时满足。
+
 #### 尖端与可见图形之间的距离
 
 分布环图、细进度环、折线点和柱体提示均适用：**箭头尖端到实际可见图形边缘默认6px，正常允许4–8px**，单位为CSS px。不是提示框正文底边到图形6px，也不是箭头到整个SVG／canvas／卡片边缘6px；阴影不计入间距。不能让箭头与圆环之间出现数十像素空档，不能把面板padding、库内置offset和额外translateY重复相加。
@@ -85,12 +93,14 @@
   inset-block-start:calc(100% + 1px); inset-inline-start:var(--tooltip-arrow,50%);
   inline-size:var(--tooltip-arrow-base); block-size:var(--tooltip-arrow-height);
   clip-path:polygon(0 0,100% 0,50% 100%); transform:translateX(-50%); background:var(--line-soft); }
-.admin-chart-tooltip::after { inset-block-start:100%;
-  inline-size:calc(var(--tooltip-arrow-base) - 2px); background:var(--panel); }
+.admin-chart-tooltip::after { inset-block-start:calc(100% - 1px);
+  inline-size:calc(var(--tooltip-arrow-base) - 2px); block-size:calc(var(--tooltip-arrow-height) + 1px);
+  clip-path:polygon(0 0,100% 0,100% 2px,50% 100%,0 2px); background:var(--panel); } /* 平直填充跨过1px边框，不留根部横线 */
 .admin-chart-tooltip[data-placement="bottom"]::before,
 .admin-chart-tooltip[data-placement="bottom"]::after { inset-block-start:auto; inset-block-end:calc(100% + 1px);
   clip-path:polygon(50% 0,100% 100%,0 100%); }
-.admin-chart-tooltip[data-placement="bottom"]::after { inset-block-end:100%; }
+.admin-chart-tooltip[data-placement="bottom"]::after { inset-block-end:calc(100% - 1px);
+  clip-path:polygon(50% 0,100% calc(100% - 2px),100% 100%,0 100%,0 calc(100% - 2px)); }
 .admin-chart-tooltip:is([data-placement="left"],[data-placement="right"])::before,
 .admin-chart-tooltip:is([data-placement="left"],[data-placement="right"])::after {
   inset-block-start:var(--tooltip-arrow-y,50%); inset-block-end:auto;
@@ -98,13 +108,15 @@
 .admin-chart-tooltip[data-placement="left"]::before,
 .admin-chart-tooltip[data-placement="left"]::after { inset-inline-start:calc(100% + 1px); inset-inline-end:auto;
   clip-path:polygon(0 0,100% 50%,0 100%); }
-.admin-chart-tooltip[data-placement="left"]::after { inset-inline-start:100%;
-  block-size:calc(var(--tooltip-arrow-base) - 2px); }
+.admin-chart-tooltip[data-placement="left"]::after { inset-inline-start:calc(100% - 1px);
+  inline-size:calc(var(--tooltip-arrow-height) + 1px); block-size:calc(var(--tooltip-arrow-base) - 2px);
+  clip-path:polygon(0 0,2px 0,100% 50%,2px 100%,0 100%); }
 .admin-chart-tooltip[data-placement="right"]::before,
 .admin-chart-tooltip[data-placement="right"]::after { inset-inline-start:auto; inset-inline-end:calc(100% + 1px);
   clip-path:polygon(100% 0,100% 100%,0 50%); }
-.admin-chart-tooltip[data-placement="right"]::after { inset-inline-end:100%;
-  block-size:calc(var(--tooltip-arrow-base) - 2px); }
+.admin-chart-tooltip[data-placement="right"]::after { inset-inline-end:calc(100% - 1px);
+  inline-size:calc(var(--tooltip-arrow-height) + 1px); block-size:calc(var(--tooltip-arrow-base) - 2px);
+  clip-path:polygon(0 50%,calc(100% - 2px) 0,100% 0,100% 100%,calc(100% - 2px) 100%); }
 .admin-chart-tooltip[data-arrow="hidden"]::before,
 .admin-chart-tooltip[data-arrow="hidden"]::after { content:none; }
 .admin-chart-tooltip__title { display:block; margin-block-end:4px; font:650 14px/1.35 var(--sans); font-variant-numeric:tabular-nums; }
@@ -224,7 +236,9 @@
 处理非零尺寸挂载、主题/resize/数据更新、提示框定位与隐藏、失败保留旧图与路由清理；提示框不可被卡片或portal边界裁掉，数据点、图例、数据表与提示共用同一真实数据源。
 提示箭头尖端到实际图形边缘默认6px、正常4–8px；分布环与细进度环锚定可见外缘，
 不按容器顶边或圆心定位。正文定位计入7px箭头高度，offset不重复累加；空间不足
-翻转并同步箭头，不能通过拉远提示框避让。实际测量尖端距离，核对滚动/resize/缩放。
+翻转并同步箭头，不能通过拉远提示框避让。箭头根部覆盖正文边框，内部无穿过的
+横线/竖线、白缝或独立底边，外轮廓细边可保留；浅深主题都与正文同色连成一体。
+实际测量尖端距离，核对滚动/resize/缩放。
 柱图/折线提示同时跟随当前索引的x和y，正值分组柱按当前分类可见柱顶定位，
 不按全图最高柱或固定top；高柱→矮柱切换时框与箭头同步下移。数据、图例、
 轴范围、resize变化重新映射锚点，实际操作验证而非仅截图某一分类。
