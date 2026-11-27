@@ -20,7 +20,7 @@
 | 状态徽标 | min-height24、padding3 8、999圆角、11px／500、gap5、12px图标；语义色24%边、7%混panel底 | 绿色成功／蓝色同步中／琥珀失败／中性等待由真实数据驱动；使用带图标的完整胶囊，不只放裸绿点 |
 | 主题入口 | 36×36、10圆角、tint-blue底、line-soft边、15px蓝色太阳／月亮 | 点击打开下文内容自适应的紧凑主题菜单；无对勾，无大弹窗；图标反映最终主题，可访问名称说明当前偏好，不能只画静态太阳 |
 | 刷新入口 | 36×36、10圆角、tint-blue底、line-soft边、14px蓝色顺时针刷新图标 | 实际刷新当前约定的数据范围；hover图标转35deg，busy旋转与波纹按动效规范；请求结束立即恢复，禁重复请求 |
-| 账户入口 | 高36、padding4 10 4 4、gap9、10圆角、workspace-blue-surface、workspace-blue-line边；用户名11px、最大100宽 | 左侧26×26头像、圆角8、浅蓝底蓝字／真实头像；右侧用户名。不能只用盾牌或纯文本operator替代头像结构；点击打开实际账户菜单 |
+| 账户入口 | 高36、padding4 10 4 4、gap9、10圆角、workspace-blue-surface、workspace-blue-line边；用户名11px、最大100宽 | 左侧26×26头像、圆角8、浅蓝底蓝字／真实头像；右侧用户名。不能只用盾牌或纯文本operator替代头像结构；点击打开下文内容自适应的紧凑账户菜单，不能继承入口宽度 |
 
 图标统一使用下方基准SVG，按指定尺寸显示，fill=currentColor、stroke=none；不引入新的图标依赖，也不混用实心彩色图、emoji和不同笔画粗细。头像与账号文字可替换，按钮底座不随品牌变成黑色线框按钮。
 
@@ -51,29 +51,53 @@
 ```
 
 ```css
-.admin-theme-menu { box-sizing:border-box; inline-size:max-content; min-inline-size:0; max-inline-size:calc(100vw - 16px);
+:is(.admin-theme-menu,.admin-account-menu) { box-sizing:border-box; inline-size:max-content; min-inline-size:0; max-inline-size:calc(100vw - 16px);
   padding:4px; border:1px solid var(--line-soft); border-radius:10px; margin:0;
   background:var(--panel); color:var(--text); box-shadow:0 6px 20px rgb(0 0 0 / .08); }
-.admin-theme-menu > [role="menuitemradio"] { box-sizing:border-box; display:grid;
+:is(.admin-theme-menu,.admin-account-menu) > :is([role="menuitemradio"],[role="menuitem"]) { box-sizing:border-box; display:grid;
   grid-template-columns:16px minmax(0,1fr); align-items:center; column-gap:8px;
   inline-size:100%; min-inline-size:0; block-size:32px; margin:0; padding:0 8px; border:0; border-radius:6px;
-  background:transparent; color:var(--text-soft); text-align:start;
+  background:transparent; color:var(--text-soft); text-align:start; text-decoration:none;
   font:400 13px/20px var(--sans); cursor:pointer; }
-.admin-theme-menu > [role="menuitemradio"] > svg { display:block; inline-size:16px; block-size:16px;
+:is(.admin-theme-menu,.admin-account-menu) > :is([role="menuitemradio"],[role="menuitem"]) > svg { display:block; inline-size:16px; block-size:16px;
   fill:currentColor; stroke:none; }
-.admin-theme-menu > [role="menuitemradio"]::before,
-.admin-theme-menu > [role="menuitemradio"]::after { content:none; } /* 仅本主题菜单不画对勾 */
-.admin-theme-menu > [role="menuitemradio"]:hover { background:var(--panel-muted); }
-.admin-theme-menu > [role="menuitemradio"][aria-checked="true"] {
+:is(.admin-theme-menu,.admin-account-menu) > :is([role="menuitemradio"],[role="menuitem"])::before,
+:is(.admin-theme-menu,.admin-account-menu) > :is([role="menuitemradio"],[role="menuitem"])::after { content:none; } /* 这两个紧凑菜单不预留勾选列 */
+:is(.admin-theme-menu,.admin-account-menu) > :is([role="menuitemradio"],[role="menuitem"]):hover { background:var(--panel-muted); }
+:is(.admin-theme-menu,.admin-account-menu) > :is([role="menuitemradio"],[role="menuitem"])[aria-checked="true"] {
   background:var(--tint-blue); color:var(--accent-link); font-weight:600; }
-.admin-theme-menu > [role="menuitemradio"]:focus-visible {
+:is(.admin-theme-menu,.admin-account-menu) > :is([role="menuitemradio"],[role="menuitem"]):focus-visible {
   outline:2px solid var(--accent-link); outline-offset:-2px; }
-@media(pointer:coarse) { .admin-theme-menu > [role="menuitemradio"] { block-size:44px; } }
+@media(pointer:coarse) { :is(.admin-theme-menu,.admin-account-menu) > :is([role="menuitemradio"],[role="menuitem"]) { block-size:44px; } }
+.admin-account-menu > [role="menuitem"][data-tone="danger"] { color:var(--red); }
+.admin-account-menu > [role="menuitem"][data-tone="danger"]:hover {
+  background:color-mix(in srgb,var(--red) 7%,var(--panel)); }
+.admin-account-menu > [role="menuitem"] > svg {
+  fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
 ```
 
 键盘Tab到入口不自动打开；Enter／Space打开，ArrowDown打开并进入，Up／Down、Home／End移动，Enter／Space选中，Esc关闭并回到入口，Tab离开且关闭，不困住焦点。鼠标点击入口切换开合，点击外部关闭，点击选项应用并关闭；aria-expanded跟随实际开合。保存用户偏好，系统偏好变化仅在选择跟随系统时生效。
 
 验收三个选中态、hover、键盘焦点、开关与主题切换：菜单按内容收宽、桌面高106px（无额外行gap），同列图标／文字起点一致；实际测量图标前与最长文字后至菜单边缘的距离各约13px、差值≤2px，无Check及占位，入口按钮与刷新按钮垂直中心一致。实际打开截图核对锚点和视口边界；深色面、浅蓝当前行与图标仍属于同一主题。主题菜单不得沿用搜索弹窗的宽度、遮罩和布局。
+
+## 紧凑账户菜单：不继承触发器宽度
+
+顶部头像／用户名下的账户菜单复用上方紧凑菜单CSS与定位／焦点规则，容器使用admin-account-menu类。宽度只由最长菜单项的图标＋文字＋对称内边距决定，不能绑定头像用户名按钮的宽度、anchor-size、min-width:100%或库默认160／180px；用户名长短只影响入口本身，不改变菜单宽度。不预留无内容的箭头、快捷键或勾选列，不用space-between拉开图标与文字。
+
+“用户中心／退出登录”两个四字选项沿用16px图标、8px间隔、13px文字、32px行高、4px外壳padding和左右8px行padding，当前中文自然宽约102px、高74px；所有行起点对齐。普通项text-soft，退出项图标与文字统一red，hover仅使用轻语义底色，不整行铺浓红。不存在真实账户页时不画假链接；示例路径替换为目标路由，退出绑定真实会话动作，不用href="#"占位。只列产品已有能力，不为了参考凑出用户中心或其他业务。
+
+```html
+<div class="admin-account-menu" role="menu" aria-label="账户操作">
+  <a href="/account" role="menuitem" tabindex="-1">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="7" r="3" /><path d="M3 21v-3a6 6 0 0 1 12 0v3M16 4a3 3 0 0 1 0 6M18 14a5 5 0 0 1 3 4v3" /></svg><span>用户中心</span>
+  </a>
+  <button type="button" role="menuitem" tabindex="-1" data-action="sign-out" data-tone="danger">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4H4v16h5M10 12h11m-4-4 4 4-4 4" /></svg><span>退出登录</span>
+  </button>
+</div>
+```
+
+验收时实际测量“菜单左边到图标左边”与“最长文字右边到菜单右边”，均约13px且差值≤2px；只设置padding相等不算通过。分别以短名、长用户名打开菜单，菜单宽度不被入口撑开；浅深主题、两项hover／focus、窄屏边界均核对。账户与主题菜单打开时互相关闭；Esc返回对应入口，方向键按共享菜单规则，用户中心真实导航，只有激活退出项才触发会话退出。支持的额外菜单项若有实际快捷键／子菜单箭头，可为该真实内容留列，并重新按最长完整行计算宽度，不为不存在的内容留槽。
 
 ## 可移植结构
 
@@ -292,7 +316,7 @@
 - 状态：真实请求驱动等待／同步／就绪／失败，图标和文案一起更新；详细错误就地保留或有恢复入口。状态变化可礼貌播报，不在每次轮询反复打断读屏。
 - 主题：按本文件紧凑主题菜单合同实现；按最长内容自适应宽、清除库min-width、32px行、实际首尾留白对称、两列对齐，无可见对勾和占位。浅色／深色／跟随系统由目标项目的主题机制持久化，按钮图标反映解析后的主题；弹层、图表和所有body下浮层同步。沿用可靠菜单组件的焦点和关闭行为。
 - 刷新：真实Promise驱动busy与禁重复，保留旧数据；结束或失败后停止旋转与波纹，显示实际反馈。波纹900ms等细节沿用动效规范，不叠加两套spinner。
-- 账户：头像与用户名来自同一用户模型；打开真实账户菜单。菜单只包含实际支持的账户／退出等动作，不用点击账户图标直接退出；完整用户名可通过可访问名称或提示读取。
+- 账户：头像与用户名来自同一用户模型；打开上方紧凑账户菜单，按最长选项max-content收宽并清除库min-width，不能匹配入口宽度；图标前与最长文字后留白各约13px。菜单只包含实际支持的账户／退出等动作，不用点击账户图标直接退出；完整用户名可通过可访问名称或提示读取。
 - 核对：1920／1280／768／390宽、长面包屑与长用户名、浅深主题、键盘Tab及菜单开关、刷新失败和减弱动态。各尺寸对应的控件职责、顺序、浅蓝图标底座、搜索快捷键与头像结构逐项齐全；桌面侧栏内控制／窄屏顶栏入口不重复、不缺失，在运行截图中发现缺项先修共享壳层，不逐页补丁。
 
 上面的HTML／CSS负责视觉结构，动作必须在目标项目接入，不能把示例渲染成功称为数据刷新、登录状态或菜单交互已完成。示例与验证文件仅在项目外临时环境使用，skill不附带前端工程。
@@ -309,5 +333,7 @@
 绿色裸点和盾牌账户名。状态文案映射真实数据，不把身份验证替代数据同步状态。
 手机按规范收起面包屑、搜索文案、状态与用户名，保留打开导航/搜索/主题/刷新/头像。
 绑定真实导航开合、统一命令搜索与快捷键、搜索模态弹窗、主题菜单、请求刷新和账户菜单，
+主题和账户菜单按最长选项max-content收宽，不继承触发器宽度或库默认min-width；
+图标前与最长文字后各约13px，实测差值≤2px，不能残留空的对勾/快捷键列。
 逐项验证键盘、busy、失败、焦点返回、长内容和浅深主题；不要只画一条白色容器。
 ```

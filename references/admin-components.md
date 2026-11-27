@@ -560,7 +560,7 @@ overflow仅裁切有意越界的装饰，不用于掩盖文本；长标题允许
 | 普通表单Dialog | 默认520宽、最大calc(100vw−32px)、16圆角、panel面；头20 24、体20 24、脚16 24 | 标题18、说明13，关闭32；字段38；页脚取消在左、主操作在右、gap8；长内容体滚动，头脚不被裁掉 |
 | 危险确认 | 默认440宽、20圆角；小图标底座36、标题16、正文13 | 说清对象／数量／后果；取消次按钮+red确认；点遮罩不可执行确认；不要输入不存在的恢复承诺 |
 | 详情Drawer | 默认520、最大100vw、左侧圆角16；body浅底padding20、子面14圆角 | header标题20，独立关闭；内容分组小蓝条，ID／状态／事实项有层级；手机全宽可用 |
-| Dropdown Menu | panel面、细边、10圆角、padding6、item32高、左右10、图标16／文字12–13 | hover浅蓝，危险red，disabled muted；键盘上下／Esc，触发器保持名字；大段输入不放菜单 |
+| Dropdown Menu | panel面、细边、10圆角、padding6、item32高、左右10、图标16／文字12–13 | hover浅蓝，危险red，disabled muted；键盘上下／Esc，触发器保持名字；主题／账户入口菜单优先按[顶部栏紧凑菜单](admin-topbar.md)的4px外壳padding、8px行padding及max-content收宽，不继承入口宽度；大段输入不放菜单 |
 | Tooltip | panel混2%蓝、20%蓝边、圆角8、padding6 10、12字、max360宽 | show180／hide100／offset8，hover及focus；无交互简短解释，箭头同色；触屏入口不能依赖hover |
 | Popover | 12圆角、padding16、标题14、正文13、细边轻阴影 | 有交互则能移入与聚焦；依据职责关闭，不从timer误关内部焦点 |
 | Toast | 自适应宽、max360、圆角10、padding12 16、图标16与13文字、轻阴影 | 成功短时反馈，失败持久行内为主，不堆重复通知；文案变长可换行；不固定显示截图里的偶然Toast |
