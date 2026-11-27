@@ -18,7 +18,7 @@
 | 快捷键胶囊 | 9px文字、padding3 5、圆角5、panel面、workspace-blue-line细边、accent-link | 展示⌘ / Ctrl K或匹配平台的同等快捷键；点击搜索与快捷键打开同一个搜索界面 |
 | 右侧操作组 | flex且不缩小、gap8，无额外粗分割线 | 依次状态、主题、刷新、账户；不能平均分布到整条顶栏 |
 | 状态徽标 | min-height24、padding3 8、999圆角、11px／500、gap5、12px图标；语义色24%边、7%混panel底 | 绿色成功／蓝色同步中／琥珀失败／中性等待由真实数据驱动；使用带图标的完整胶囊，不只放裸绿点 |
-| 主题入口 | 36×36、10圆角、tint-blue底、line-soft边、15px蓝色太阳／月亮 | 点击打开下文152px紧凑主题菜单；无对勾，无大弹窗；图标反映最终主题，可访问名称说明当前偏好，不能只画静态太阳 |
+| 主题入口 | 36×36、10圆角、tint-blue底、line-soft边、15px蓝色太阳／月亮 | 点击打开下文内容自适应的紧凑主题菜单；无对勾，无大弹窗；图标反映最终主题，可访问名称说明当前偏好，不能只画静态太阳 |
 | 刷新入口 | 36×36、10圆角、tint-blue底、line-soft边、14px蓝色顺时针刷新图标 | 实际刷新当前约定的数据范围；hover图标转35deg，busy旋转与波纹按动效规范；请求结束立即恢复，禁重复请求 |
 | 账户入口 | 高36、padding4 10 4 4、gap9、10圆角、workspace-blue-surface、workspace-blue-line边；用户名11px、最大100宽 | 左侧26×26头像、圆角8、浅蓝底蓝字／真实头像；右侧用户名。不能只用盾牌或纯文本operator替代头像结构；点击打开实际账户菜单 |
 
@@ -26,7 +26,7 @@
 
 ## 紧凑主题菜单：尺寸、留白与对齐
 
-主题选择是按钮旁的小型非模态菜单，不是居中Dialog；不加遮罩、标题、说明段、分组标题或底部按钮。默认宽152px（含边框），外壳padding4px、圆角10px、1px line-soft边、panel面和轻阴影；只有“浅色模式／深色模式／跟随系统”三行，每行高32px、圆角6px，左右padding同为8px。每行统一为16px图标列＋8px间距＋文字列，13px文字、20px行高，图标与文字垂直居中。不得用space-between、每行居中或不同缩进使短文字行漂移；不能保留组件库默认的左勾选槽、右勾选槽或空白快捷键列。菜单padding不是零，禁止的是不对称和过大的空列。
+主题选择是按钮旁的小型非模态菜单，不是居中Dialog；不加遮罩、标题、说明段、分组标题或底部按钮。宽度由最长选项的图标＋间距＋文字＋左右内边距自然撑开，使用inline-size:max-content并清除库默认min-width；当前四字中文在13px字体下约102px（含边框），不固定成152px或库默认160／180px。外壳padding4px、圆角10px、1px line-soft边、panel面和轻阴影；只有“浅色模式／深色模式／跟随系统”三行，每行高32px、圆角6px，左右padding同为8px。每行统一为16px图标列＋8px间距＋文字列，13px文字、20px行高，图标与文字垂直居中。不得用space-between、每行居中或不同缩进使短文字行漂移；不能保留组件库默认的左勾选槽、右勾选槽或空白快捷键列。菜单padding不是零，禁止的是不对称和过大的空列。以最长文字的实际末端核对：菜单左边到图标左边、最长文字右边到菜单右边应各约13px（1px边＋4px外壳padding＋8px行padding），两者差值不超过2px；不能只看声明了相同padding却忽略文字列剩余宽度。
 
 **不绘制对勾。**当前偏好通过整行轻tint-blue底、accent-link文字和600字重表达，保留role=menuitemradio及aria-checked的单选语义；不靠新增Check图标或伪元素。跟随系统选中时只标记“跟随系统”，顶栏按钮显示解析后的太阳／月亮，不同时把解析主题那一行也设为选中。所有行都占相同网格，改变选择不改变宽度和对齐。
 
@@ -51,12 +51,12 @@
 ```
 
 ```css
-.admin-theme-menu { box-sizing:border-box; inline-size:152px; max-inline-size:calc(100vw - 16px);
+.admin-theme-menu { box-sizing:border-box; inline-size:max-content; min-inline-size:0; max-inline-size:calc(100vw - 16px);
   padding:4px; border:1px solid var(--line-soft); border-radius:10px; margin:0;
   background:var(--panel); color:var(--text); box-shadow:0 6px 20px rgb(0 0 0 / .08); }
 .admin-theme-menu > [role="menuitemradio"] { box-sizing:border-box; display:grid;
   grid-template-columns:16px minmax(0,1fr); align-items:center; column-gap:8px;
-  inline-size:100%; block-size:32px; margin:0; padding:0 8px; border:0; border-radius:6px;
+  inline-size:100%; min-inline-size:0; block-size:32px; margin:0; padding:0 8px; border:0; border-radius:6px;
   background:transparent; color:var(--text-soft); text-align:start;
   font:400 13px/20px var(--sans); cursor:pointer; }
 .admin-theme-menu > [role="menuitemradio"] > svg { display:block; inline-size:16px; block-size:16px;
@@ -73,7 +73,7 @@
 
 键盘Tab到入口不自动打开；Enter／Space打开，ArrowDown打开并进入，Up／Down、Home／End移动，Enter／Space选中，Esc关闭并回到入口，Tab离开且关闭，不困住焦点。鼠标点击入口切换开合，点击外部关闭，点击选项应用并关闭；aria-expanded跟随实际开合。保存用户偏好，系统偏好变化仅在选择跟随系统时生效。
 
-验收三个选中态、hover、键盘焦点、开关与主题切换：菜单宽152、高106px（桌面无额外行gap），同列图标／文字起点一致，左右行内padding相等，无Check及占位，入口按钮与刷新按钮垂直中心一致。实际打开截图核对锚点和视口边界；深色面、浅蓝当前行与图标仍属于同一主题。主题菜单不得沿用搜索弹窗的宽度、遮罩和布局。
+验收三个选中态、hover、键盘焦点、开关与主题切换：菜单按内容收宽、桌面高106px（无额外行gap），同列图标／文字起点一致；实际测量图标前与最长文字后至菜单边缘的距离各约13px、差值≤2px，无Check及占位，入口按钮与刷新按钮垂直中心一致。实际打开截图核对锚点和视口边界；深色面、浅蓝当前行与图标仍属于同一主题。主题菜单不得沿用搜索弹窗的宽度、遮罩和布局。
 
 ## 可移植结构
 
@@ -290,7 +290,7 @@
 - 导航控制：桌面仅侧栏内部按钮切换侧栏实宽与Grid轨道，aria-expanded及Fold／Expand同步；顶部栏不放桌面折叠按钮。≤960px顶部入口打开独立模态导航，Escape、关闭和焦点返回由已有组件处理；跨断点关闭遗留抽屉与遮罩，保留桌面折叠偏好但不把它当作手机开关。
 - 搜索：按钮、侧栏搜索、⌘／Ctrl+K必须打开同一个居中的模态搜索弹窗，按本文件的标题栏、输入区、结果列表、空态和尺寸层级实现；不能改成下拉菜单、内嵌假输入或无层次的大白框。搜索真实可访问页面，空结果有说明；上下键选择、Enter真正导航，Esc／关闭按钮／允许的遮罩点击关闭，关闭后焦点回到触发入口。模态期间底层不可点击且不滚动，结果区可独立滚动；监听器只在应用挂载时注册并在卸载清理，不拦截普通输入与IME组合。
 - 状态：真实请求驱动等待／同步／就绪／失败，图标和文案一起更新；详细错误就地保留或有恢复入口。状态变化可礼貌播报，不在每次轮询反复打断读屏。
-- 主题：按本文件紧凑主题菜单合同实现；152px宽、32px行、对称留白、两列对齐，无可见对勾和占位。浅色／深色／跟随系统由目标项目的主题机制持久化，按钮图标反映解析后的主题；弹层、图表和所有body下浮层同步。沿用可靠菜单组件的焦点和关闭行为。
+- 主题：按本文件紧凑主题菜单合同实现；按最长内容自适应宽、清除库min-width、32px行、实际首尾留白对称、两列对齐，无可见对勾和占位。浅色／深色／跟随系统由目标项目的主题机制持久化，按钮图标反映解析后的主题；弹层、图表和所有body下浮层同步。沿用可靠菜单组件的焦点和关闭行为。
 - 刷新：真实Promise驱动busy与禁重复，保留旧数据；结束或失败后停止旋转与波纹，显示实际反馈。波纹900ms等细节沿用动效规范，不叠加两套spinner。
 - 账户：头像与用户名来自同一用户模型；打开真实账户菜单。菜单只包含实际支持的账户／退出等动作，不用点击账户图标直接退出；完整用户名可通过可访问名称或提示读取。
 - 核对：1920／1280／768／390宽、长面包屑与长用户名、浅深主题、键盘Tab及菜单开关、刷新失败和减弱动态。各尺寸对应的控件职责、顺序、浅蓝图标底座、搜索快捷键与头像结构逐项齐全；桌面侧栏内控制／窄屏顶栏入口不重复、不缺失，在运行截图中发现缺项先修共享壳层，不逐页补丁。
