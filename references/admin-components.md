@@ -187,6 +187,53 @@ hover浅蓝整行且保留分组图标色；当前路由才是蓝色渐变整行
 
 输入前缀／后缀SVG为block且flex-shrink0，gap6–8；文字行中图标不能上浮半个字。输入的边框与焦点建议通过同一层shadow／border绘制，避免同时两层库边框叠粗。全局主题需覆盖append-to-body的选择面板，不能只在页面容器设变量。
 
+<a id="clean-admin-input-surface"></a>
+
+### 一体式输入面：前后缀不能出现灰色拼接块
+
+普通输入、搜索、密码、日期与可输入Select的内部图标区，应与文字区使用连续的一张表面。浅色是统一panel面，深色引用深色panel；外壳统一负责背景、1px边框、10px圆角和焦点环，内部input、prefix、suffix、清除／显隐按钮的常态背景透明，无第二层边框、内阴影或独立胶囊。不能出现“灰色搜索图标底＋白色输入区＋灰色右端”、双圆角白色小内胆或两端月牙状色块；图标用muted／text-soft，不加独立浅灰方形底座。
+
+接入组件库时检查实际wrapper、inner input、prefix／suffix容器、clear按钮以及::before／::after的background、border和box-shadow，修正当前字段组件的主题映射与规则优先级。不要只把input涂白，留下外壳两端原有灰底；不要靠overflow:hidden裁掉内层或全局input／button重置掩盖问题。搜索为空时不显示占位灰块，有值时清除按钮仍与输入面融合；内侧左右留白统一12px，图标16px、间距6–8，长文本可编辑且不盖住后缀。
+
+下方为无组件库时的最小表面实现；已有可靠库时映射到其结构，保留输入、搜索和清除行为。不额外创建前端工程。
+
+```css
+.admin-input { display:flex; align-items:center; gap:8px; min-inline-size:0;
+  min-block-size:38px; padding:0 12px; border:1px solid var(--line); border-radius:10px;
+  background:var(--panel); color:var(--text); }
+.admin-input > input { flex:1; min-inline-size:0; inline-size:100%; min-block-size:36px;
+  margin:0; padding:0; border:0; border-radius:0; background:transparent; box-shadow:none;
+  color:inherit; font:400 13px/1.5 var(--sans); }
+.admin-input > input::placeholder { color:var(--faint); opacity:1; }
+.admin-input > :is(.admin-input__prefix,.admin-input__suffix) {
+  display:inline-flex; align-items:center; flex:0 0 auto; color:var(--muted);
+  background:transparent; border:0; box-shadow:none; }
+.admin-input svg { display:block; inline-size:16px; block-size:16px; flex-shrink:0; }
+.admin-input .admin-input__action { display:grid; place-items:center; inline-size:24px; block-size:24px;
+  padding:0; border:0; border-radius:5px; background:transparent; color:var(--muted); box-shadow:none; }
+.admin-input .admin-input__action:hover:not(:disabled) { background:transparent; color:var(--accent-link); }
+.admin-input:hover:not(:has(input:disabled)) { border-color:var(--text-soft); }
+.admin-input:focus-within { border-color:var(--accent-link); outline:2px solid var(--accent-link); outline-offset:2px; }
+.admin-input > input:focus-visible { outline:none; } /* 可见焦点由上行外壳绘制 */
+.admin-input .admin-input__action:focus-visible { outline:2px solid var(--accent-link); outline-offset:1px; }
+.admin-input:has(input[aria-invalid="true"]) { border-color:var(--red); }
+.admin-input:has(input:disabled) { background:var(--panel-muted); color:var(--muted); cursor:not-allowed; }
+.admin-input > input:disabled { color:inherit; opacity:1; cursor:not-allowed; }
+@media(pointer:coarse) {
+  .admin-input { min-block-size:44px; }
+  .admin-input > input { min-block-size:42px; font-size:16px; }
+  .admin-input .admin-input__action { inline-size:44px; block-size:44px; }
+}
+@media(forced-colors:active) {
+  .admin-input { border-color:CanvasText; }
+  .admin-input:focus-within { outline-color:Highlight; }
+}
+```
+
+disabled可让**整框**使用panel-muted，不能只让两端变灰；同时禁用清除／显隐按钮。readonly仍可聚焦、选择和复制；error保留真实错误说明，不只改红边。loading只替换后缀图标，不另加灰底、不改变高度；原生自动填充和密码管理器不可被禁用，若浏览器施加内部填充色，实际检查整个字段的协调性与文字对比。单位Select、步进器、明确的prepend／append操作属于有意分区，沿用对应组件合同，不强行移除必要边界。
+
+验收时在浅色／深色下实际查看空值、有值、长值、hover、输入聚焦、清除按钮聚焦、清空、disabled、readonly、error和loading。分别检查左图标区、文字区、右后缀区及四个圆角的实际绘制；不能仅检查input的computed background。确认全框底色连续、只有一圈外边框、焦点清楚、无灰色端盖／双圆角／裁切，清除后焦点仍在输入，禁用动作不执行，390宽与浏览器缩放不挤出边界。
+
 **表单提示词：**
 
 ```text
@@ -194,6 +241,8 @@ hover浅蓝整行且保留分组图标色；当前路由才是蓝色渐变整行
 帮助12。前后缀16px并预留空间；focus用accent边与淡环，错误用红边和字段下
 说明，disabled只读和loading各有真实区别。双列表单每列min-width:0、gap20，
 手机单列；不要用placeholder代替标签或让红色校验文字遮住下一个字段。
+普通输入和搜索按一体式输入面合同：外壳统一底色/边框/圆角/焦点环，内部input、
+图标前后缀及清除按钮透明，不出现两端灰色块或白色内胆；禁用整框统一变色。
 ```
 
 ## Switch、Checkbox、Radio与Segmented

@@ -109,6 +109,8 @@ Primary/Secondary/危险/文字/图标/箭头展开按钮有不同外观和职�
 每个可操作组件都检查default、hover、active、focus-visible、disabled；
 异步再加loading/success/error。图标16与文字居中，padding和边框不变粗，
 状态变化不改变控件宽度；标签、帮助、校验、长值、清空与单位逐项处理。
+搜索与普通输入使用一体式输入面，外壳统一背景/边框/圆角/焦点；前后缀与内部
+input透明，不能两端灰底、中间白底或双圆角，浅深主题及禁用整框同步核对。
 Switch、Checkbox、Radio、Select、Menu、Segmented按真实选值或动作语义使用。
 
 六、动效必须接入实际交互
