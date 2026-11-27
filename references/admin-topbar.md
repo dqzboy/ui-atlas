@@ -4,7 +4,7 @@
 
 ## 固定组合与可替换内容
 
-桌面从左到右依次为：**浅蓝方形折叠按钮 → 紧凑面包屑 → 弹性留白 → 搜索入口与快捷键胶囊 → 状态徽标 → 主题按钮 → 刷新按钮 → 头像与账户名**。控件顺序、浅蓝底座、密度与独立圆角面板是默认风格的一部分，不能只做一个左侧标题加右侧账号的白条。普通文档／帮助链接按业务放到已有帮助入口或明确的附加位置，不能拿它替代搜索、主题或刷新。
+桌面从左到右依次为：**紧凑面包屑 → 弹性留白 → 搜索入口与快捷键胶囊 → 状态徽标 → 主题按钮 → 刷新按钮 → 头像与账户名**。控件顺序、浅蓝底座、密度与独立圆角面板是默认风格的一部分，不能只做一个左侧标题加右侧账号的白条。普通文档／帮助链接按业务放到已有帮助入口或明确的附加位置，不能拿它替代搜索、主题或刷新。桌面折叠按钮属于侧栏内部控制行，顶部栏不重复显示；≤960px顶部保留导航抽屉入口。参考图用于整体配色与密度，品牌居中与按钮位置按当前文字合同执行。
 
 “工作空间／工作台”、面包屑层级、用户名、头像首字与状态文案来自目标项目。图中的“演示数据”只代表演示环境，线上真实就绪可写“数据已连接”；不能因为用户已登录就把同步状态写成“身份已验证”，二者职责不同。没有接口时呈现中性“未接入数据／等待同步”，不能伪造已连接。确实不具备某能力时明确说明取舍，不能留一个可点却无响应的按钮。
 
@@ -12,7 +12,7 @@
 |---|---|---|
 | 悬浮外框 | 独立panel面、1px workspace-blue-line、18圆角、0 4px 20px rgba(57,106,188,.04)轻影；桌面margin12 28 0 16 | 跟随工作区宽度，不与侧栏或页面头合并；普通文档流，不默认sticky |
 | 内部一行 | 内容高68、左右padding18、gap16、align-items:center；68不包含外框上下各1px边 | 每项保持垂直居中，不做第二个大页面标题；DOM顺序与视觉顺序相同 |
-| 折叠入口 | 36×36、圆角10、1px line-soft边、tint-blue底、accent-link图标14 | 使用Fold／Expand对应的基准图形；桌面控制256／88壳层，手机打开完整导航抽屉；aria-controls／aria-expanded同步 |
+| 窄屏导航入口 | 36×36、圆角10、1px line-soft边、tint-blue底、accent-link图标14 | 仅≤960px显示，打开完整模态导航抽屉；aria-controls指向实际抽屉ID、aria-expanded同步。桌面折叠改由侧栏内控制，不混用这两个状态 |
 | 面包屑 | 12px、muted文字、gap9、10px细chevron分隔；当前业务页text／650 | 概览可用“工作空间 › 工作台”两层，业务页按真实分组加当前页；祖先可导航，当前项aria-current=page；不加独立大号品牌图标 |
 | 页面搜索入口 | 36高、宽clamp(170px,20vw,260px)、左右padding10、gap7、10圆角、workspace-blue-line边、workspace-blue-surface渐变 | 它是打开命令搜索的button，不是不能输入的假input；前11px搜索图标、中间11px提示、右侧快捷键；margin-inline-start:auto把整组推向右边 |
 | 快捷键胶囊 | 9px文字、padding3 5、圆角5、panel面、workspace-blue-line细边、accent-link | 展示⌘ / Ctrl K或匹配平台的同等快捷键；点击搜索与快捷键打开同一个搜索界面 |
@@ -45,7 +45,7 @@
 <div class="console-masthead">
   <header class="topbar admin-topbar">
     <button class="admin-topbar__icon admin-topbar__toggle" type="button"
-      aria-label="折叠导航" aria-controls="console-sidebar" aria-expanded="true">
+      aria-label="打开导航" aria-controls="console-mobile-navigation" aria-expanded="false">
       <svg viewBox="0 0 1024 1024" aria-hidden="true" focusable="false"><use href="#atlas-topbar-fold" /></svg>
     </button>
     <nav class="admin-topbar__breadcrumb" aria-label="当前位置">
@@ -89,6 +89,7 @@
   color:var(--accent-link); box-shadow:none; transition:background-color 160ms ease,border-color 160ms ease,transform 120ms ease; }
 .admin-topbar__icon > svg { inline-size:14px; block-size:14px; }
 .admin-topbar__theme > svg { inline-size:15px; block-size:15px; }
+.admin-topbar__toggle { display:none; }
 .admin-topbar__breadcrumb { display:flex; align-items:center; gap:9px; min-inline-size:0;
   color:var(--muted); font:400 12px/1.5 var(--sans); white-space:nowrap; }
 .admin-topbar__breadcrumb a { color:inherit; text-decoration:none; }
@@ -138,6 +139,7 @@
 }
 @media(min-width:961px) and (max-width:1100px) { .admin-topbar__status { display:none; } }
 @media(max-width:960px) {
+  .admin-topbar__toggle { display:grid; }
   .console-masthead .admin-topbar { padding-inline:20px; gap:12px; }
   .admin-topbar__breadcrumb { display:none; }
   .admin-topbar__search { inline-size:clamp(150px,26vw,200px); margin-inline-start:0; }
@@ -168,7 +170,7 @@
 | 遮罩 | `rgba(25,42,70,.28–.38)`的柔和遮罩；必要时轻微背景模糊；不让后台消失或变成纯黑 | 没有遮罩、遮罩过黑、背景仍可点击／滚动 |
 | 弹窗外框 | 桌面宽 `min(760px, calc(100vw - 48px))`，最大高 `min(680px, calc(100dvh - 48px))`；panel面、1px line-soft边、20px圆角、`0 18px 50px`轻阴影；垂直位置约视口上方12–16%，不要贴顶 | 宽度随内容无限增长、贴边、占满整屏、白色大空框或圆角与后台不一致 |
 | 标题栏 | 高72左右、左右24；左侧44×44浅蓝图标底座与搜索图标，旁边18px标题“快捷搜索”，可有一行12px说明；右侧36×36关闭按钮 | 只放一个巨大搜索图标、标题与输入提示重复、关闭按钮漂在弹窗外 |
-| 输入区 | 标题栏下方保持16–20间距；输入高48–52、圆角12、1px accent边或focus ring；placeholder只说明搜索范围，例如“输入页面名称、设置或命令…”；输入获得初始焦点 | 把“查找管理页面”当作重复的大标题和placeholder同时堆叠、输入框过高、文字过淡或没有焦点 |
+| 输入区 | 标题栏下方保持16–20间距；输入高48–52、圆角12，唯一字段边界聚焦时变为accent并向内强调，不叠外圈；placeholder只说明搜索范围，例如“输入页面名称、设置或命令…”；输入获得初始焦点 | 把“查找管理页面”当作重复的大标题和placeholder同时堆叠、内外两圈边框、输入框过高、文字过淡或没有焦点 |
 | 结果区 | 与输入框保持12–16间距；结果列表在弹窗内部独立滚动，行高64–76、左右12–16、图标36×36、标题14–16／650、说明12–13、右侧细chevron；hover/focus使用浅蓝面，当前键盘项使用清晰蓝色强调面与白字 | 结果行过高导致只看到一两项、图标和标题不对齐、结果溢出弹窗、整行无键盘选中态 |
 | 空／无结果 | 保留输入内容，居中显示线框搜索图标、短说明和清除／查看全部等真实操作；不能显示一大片空白或虚构结果 | 无结果时弹窗塌陷、显示“暂无数据”但没有原因或恢复动作 |
 | 底部提示 | 可选一行12px键盘提示，使用小胶囊展示 `↑↓`、`Enter`、`Esc`；与结果区留12px间距 | 把快捷键说明做成大标题、重复顶栏胶囊或遮住最后一条结果 |
@@ -213,8 +215,8 @@
 .admin-search-dialog__close:hover { background:var(--tint-blue); color:var(--accent-link); }
 .admin-search-dialog__field { display:block; margin:0 20px 14px; }
 .admin-search-dialog__field input { inline-size:100%; block-size:50px; padding:0 14px; border:1px solid var(--accent);
-  border-radius:12px; background:var(--panel); color:var(--text); font:400 14px var(--sans); outline:0;
-  box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 12%,transparent); }
+  border-radius:12px; background:var(--panel); color:var(--text); font:400 14px var(--sans); box-shadow:none; }
+.admin-search-dialog__field input:focus { outline:none; border-color:var(--accent-link); box-shadow:inset 0 0 0 1px var(--accent-link); }
 .admin-search-dialog__results { min-block-size:0; overflow:auto; padding:0 12px 8px; }
 .admin-search-dialog__hint { padding:10px 20px 14px; color:var(--muted); font:400 11px/1.4 var(--sans); }
 .admin-search-dialog__hint kbd { padding:2px 5px; border:1px solid var(--line-soft); border-radius:5px; background:var(--panel-muted); color:var(--accent-link); }
@@ -234,13 +236,13 @@
 
 ## 必须绑定的交互与验收
 
-- 折叠：桌面切换侧栏实宽与Grid轨道，aria-expanded及Fold／Expand同步；手机同一入口打开模态导航，Escape与焦点返回由已有组件处理，不能隐藏侧栏后没有入口。
+- 导航控制：桌面仅侧栏内部按钮切换侧栏实宽与Grid轨道，aria-expanded及Fold／Expand同步；顶部栏不放桌面折叠按钮。≤960px顶部入口打开独立模态导航，Escape、关闭和焦点返回由已有组件处理；跨断点关闭遗留抽屉与遮罩，保留桌面折叠偏好但不把它当作手机开关。
 - 搜索：按钮、侧栏搜索、⌘／Ctrl+K必须打开同一个居中的模态搜索弹窗，按本文件的标题栏、输入区、结果列表、空态和尺寸层级实现；不能改成下拉菜单、内嵌假输入或无层次的大白框。搜索真实可访问页面，空结果有说明；上下键选择、Enter真正导航，Esc／关闭按钮／允许的遮罩点击关闭，关闭后焦点回到触发入口。模态期间底层不可点击且不滚动，结果区可独立滚动；监听器只在应用挂载时注册并在卸载清理，不拦截普通输入与IME组合。
 - 状态：真实请求驱动等待／同步／就绪／失败，图标和文案一起更新；详细错误就地保留或有恢复入口。状态变化可礼貌播报，不在每次轮询反复打断读屏。
 - 主题：浅色／深色／跟随系统由目标项目的主题机制持久化，按钮图标反映解析后的主题；弹层、图表和所有body下浮层同步。沿用可靠菜单组件的焦点和关闭行为。
 - 刷新：真实Promise驱动busy与禁重复，保留旧数据；结束或失败后停止旋转与波纹，显示实际反馈。波纹900ms等细节沿用动效规范，不叠加两套spinner。
 - 账户：头像与用户名来自同一用户模型；打开真实账户菜单。菜单只包含实际支持的账户／退出等动作，不用点击账户图标直接退出；完整用户名可通过可访问名称或提示读取。
-- 核对：1920／1280／768／390宽、长面包屑与长用户名、浅深主题、键盘Tab及菜单开关、刷新失败和减弱动态。桌面七个职责、控件顺序、浅蓝图标底座、搜索快捷键与头像结构逐项齐全；在运行截图中发现缺项先修共享顶栏，不逐页补丁。
+- 核对：1920／1280／768／390宽、长面包屑与长用户名、浅深主题、键盘Tab及菜单开关、刷新失败和减弱动态。各尺寸对应的控件职责、顺序、浅蓝图标底座、搜索快捷键与头像结构逐项齐全；桌面侧栏内控制／窄屏顶栏入口不重复、不缺失，在运行截图中发现缺项先修共享壳层，不逐页补丁。
 
 上面的HTML／CSS负责视觉结构，动作必须在目标项目接入，不能把示例渲染成功称为数据刷新、登录状态或菜单交互已完成。示例与验证文件仅在项目外临时环境使用，skill不附带前端工程。
 
@@ -249,12 +251,12 @@
 ```text
 按ui-atlas的admin-topbar规范修正所有登录后页面共用的顶部栏，以概览参考图为准。
 保留18圆角白色悬浮外框、细浅蓝边和轻影、68内容高/18横向padding/gap16。
-左侧36×36浅蓝圆角Fold/Expand按钮，再接12px紧凑面包屑与10px细chevron。
+桌面左侧直接显示12px紧凑面包屑与10px细chevron，折叠按钮在侧栏内部底部控制行。
 右侧依次是36高浅蓝渐变搜索入口及9px快捷键胶囊、带图标的语义色状态胶囊、
 36×36浅蓝太阳/月亮按钮、同尺寸顺时针刷新按钮、26头像+11px用户名的账户入口。
 按本文件基准SVG与CSS实现，不能简化成裸黑色折叠图标、接入文档链接、一个
 绿色裸点和盾牌账户名。状态文案映射真实数据，不把身份验证替代数据同步状态。
-手机按规范收起面包屑、搜索文案、状态与用户名，保留折叠/搜索/主题/刷新/头像。
+手机按规范收起面包屑、搜索文案、状态与用户名，保留打开导航/搜索/主题/刷新/头像。
 绑定真实导航开合、统一命令搜索与快捷键、搜索模态弹窗、主题菜单、请求刷新和账户菜单，
 逐项验证键盘、busy、失败、焦点返回、长内容和浅深主题；不要只画一条白色容器。
 ```

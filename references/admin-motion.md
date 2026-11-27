@@ -18,7 +18,7 @@
 | 箭头蓝底展开按钮 | hover或focus-visible：左蓝块铺满、三点出现、白字；离开收回 | width300ms spring；文字／三点180ms ease；按压150ms | 下方有完整片段，外层宽度不变化 |
 | 图标／表格操作按钮 | hover显背景与边界，按下轻移或缩放 | 160–200ms ease；表格按下translateY(1px) | 不能改变整行布局，保留操作名称 |
 | 侧栏项 | hover浅蓝，选中蓝色渐变，标签／图标／计数与背景同步换色 | hover背景120ms ease、阴影160ms；选中前景不补间 | active由当前路由驱动；按组件规范防闪动，不给菜单文字叠加淡入淡出或重挂载 |
-| 侧栏折叠／手机导航 | 桌面64px窄栏与完整栏互换；手机从左进入 | width／transform260ms spring | 桌面壳层88px／256px；手机背景不可交互、焦点返回 |
+| 侧栏折叠／手机导航 | 桌面64px窄栏与完整栏互换；手机从左进入 | width／transform260ms spring | 桌面由侧栏内部按钮控制88px／256px壳层；窄屏由顶栏入口打开模态导航，背景不可交互、焦点返回 |
 | 打开的页面页签 | 标记移动到当前页签的位置并匹配宽度 | transform／width300ms spring，文字160ms | ResizeObserver与rAF测量；不滚动整个文档、不夺焦点 |
 | 分段选择 | 同一蓝色背景滑到选中项、白字切换 | transform280ms spring；文字160ms | radiogroup、单一Tab入口、方向键／Home／End；默认值需有效 |
 | 数字滚动 | 旧数字向上85%淡出，新数字从下85%进入 | 每段180ms spring，opacity180ms ease | 按位Transition out-in；从右侧稳定key，分隔符不占等宽数位 |

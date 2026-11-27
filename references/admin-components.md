@@ -2,7 +2,7 @@
 
 配合 [设计基线](admin-design.md)、[页面组合](admin-pages.md) 和 [动效规范](admin-motion.md) 使用。此文件把原先的尺寸范围收敛为同风格的实现档位：已有明确参考值沿用；参考未精确规定的控件采用下方统一默认值，这些是落地约定而非逐像素原稿测量。用户的可访问性、明确风格或现有设计系统要求优先。
 
-后台顶部栏的折叠、搜索／快捷键、状态徽标、主题／刷新与头像账户组合，必读 [完整顶部栏](admin-topbar.md)，使用其中的结构、准确SVG和共享状态。页内配置目录／子导航与记录范围／状态分段筛选，额外读取 [页内彩色菜单与分段筛选](admin-navigation.md)，其中有逐项配色、完整CSS、键盘算法和真实筛选约束。主侧栏仍按本文件的精确组色实现，不把两种选中态混用。
+后台顶部栏的窄屏导航入口、搜索／快捷键、状态徽标、主题／刷新与头像账户组合，必读 [完整顶部栏](admin-topbar.md)，使用其中的结构、准确SVG和共享状态。页内配置目录／子导航与记录范围／状态分段筛选，额外读取 [页内彩色菜单与分段筛选](admin-navigation.md)，其中有逐项配色、完整CSS、键盘算法和真实筛选约束。主侧栏仍按本文件的精确组色实现，不把两种选中态混用。
 
 ## 组件实现合同
 
@@ -118,6 +118,64 @@ disabled；异步动作再处理loading、success、error。只有适用的状�
 
 桌面折叠为64px实际侧栏时，保留24px彩色底座和当前蓝色菜单；隐藏标签／计数前给每个入口设置完整aria-label，并提供聚焦可见的名称提示。手机抽屉显示完整标题、竖线、菜单文字与计数，不沿用折叠隐藏规则。深色底座引用相应tint主题，彩色竖线和图标不能丢失；按实际对比度需要适配色值时保留组间区别并注明调整。
 
+### 品牌居中与侧栏内部折叠控制
+
+品牌区内Logo和文字横向排列，Logo与“标题＋副标题”这一整体垂直居中；整组按实际内容宽度在侧栏内水平居中。不能只让标题文字居中却把Logo留在左边，也不能用justify-content:space-between把两者拉开；标题与副标题在文字列内左对齐。图标34×34、gap11、名称20／700、副标题10；副标题可选，只有标题时仍居中。品牌外区min-height68、左右沿用侧栏12px内边距；在100%缩放下，整组包围盒中心与侧栏内容区中心误差不超过1px。长名在可用宽度内截断并提供完整名称，不靠放大侧栏或任意缩小字号补救。Logo等比contain；素材本身有透明留白时检查可见图形的光学中心，不能靠不对称padding把整组推偏。
+
+桌面折叠／展开按钮放在侧栏内部：默认位于滚动导航之后、帮助和账户区域之前的固定控制行，36高、图标16，浅蓝面与侧栏协调。它不随菜单长列表滚走，不占品牌区宽度，也不悬浮到正文或卡片上。展开时显示图标＋“收起侧栏”；折叠到64px后保持36×36的“展开侧栏”图标按钮可见、居中、可聚焦，不能把唯一展开入口一起隐藏。aria-label、aria-expanded、图标方向与实际折叠状态在同一次更新中同步；aria-controls指向实际侧栏，点击不触发路由或清空表单。≤960px隐藏桌面折叠控制，由顶栏入口打开完整模态导航；抽屉内部有独立关闭按钮，不沿用窄栏状态。
+
+```html
+<!-- 品牌区在侧栏顶部；菜单nav由同一个侧栏实例提供。 -->
+<div class="admin-sidebar-brandbar">
+  <a class="admin-sidebar-brand" href="/" aria-label="示例管理平台首页">
+    <svg class="admin-sidebar-brand__logo" viewBox="0 0 34 34" aria-hidden="true">
+      <rect x="2" y="2" width="30" height="30" rx="9" fill="currentColor" />
+      <path d="M11 11h12v12H11z" fill="var(--panel)" />
+    </svg>
+    <span class="admin-sidebar-brand__copy"><strong>示例管理平台</strong><small>MANAGEMENT CONSOLE</small></span>
+  </a>
+</div>
+<!-- 放在nav之后、帮助和账号区之前；控制实际.app-shell状态。 -->
+<div class="admin-sidebar-control">
+  <button class="admin-sidebar-toggle" type="button" aria-label="收起侧栏"
+    aria-controls="console-sidebar" aria-expanded="true">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m14 6-6 6 6 6" /></svg>
+    <span>收起侧栏</span>
+  </button>
+</div>
+```
+
+```css
+.admin-sidebar-brandbar { display:flex; align-items:center; justify-content:center; flex:0 0 auto;
+  min-block-size:68px; min-inline-size:0; padding-block:12px; border-block-end:1px solid var(--line-soft); }
+.admin-sidebar-brand { display:flex; align-items:center; gap:11px; inline-size:max-content; max-inline-size:100%;
+  min-inline-size:0; margin-inline:auto; color:var(--text); text-decoration:none; }
+.admin-sidebar-brand__logo { display:block; flex:0 0 34px; inline-size:34px; block-size:34px;
+  color:var(--accent-link); object-fit:contain; }
+.admin-sidebar-brand__copy { display:flex; flex-direction:column; min-inline-size:0; gap:3px; text-align:start; }
+.admin-sidebar-brand__copy strong { display:block; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;
+  font:700 20px/1.3 var(--sans); }
+.admin-sidebar-brand__copy small { display:block; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;
+  color:var(--muted); font:400 10px/1.4 var(--sans); }
+.admin-sidebar-control { flex:0 0 auto; padding-block:8px; }
+.admin-sidebar-toggle { display:flex; align-items:center; justify-content:center; gap:8px; inline-size:100%;
+  min-block-size:36px; padding:6px; border:1px solid var(--line-soft); border-radius:10px;
+  background:var(--tint-blue); color:var(--accent-link); font:500 12px/1.5 var(--sans); cursor:pointer; }
+.admin-sidebar-toggle svg { display:block; flex:0 0 16px; inline-size:16px; block-size:16px; }
+.admin-sidebar-toggle:hover { background:var(--panel-strong); }
+.admin-sidebar-brand:focus-visible,.admin-sidebar-toggle:focus-visible { outline:2px solid var(--accent-link); outline-offset:2px; }
+@media(min-width:961px) {
+  .app-shell[data-sidebar-collapsed="true"] .admin-sidebar-brand__copy,
+  .app-shell[data-sidebar-collapsed="true"] .admin-sidebar-toggle > span { display:none; }
+  .app-shell[data-sidebar-collapsed="true"] .admin-sidebar-brand { gap:0; }
+  .app-shell[data-sidebar-collapsed="true"] .admin-sidebar-toggle { inline-size:36px; margin-inline:auto; }
+  .app-shell[data-sidebar-collapsed="true"] .admin-sidebar-toggle svg { transform:rotate(180deg); }
+}
+@media(max-width:960px) { .admin-sidebar-control { display:none; } }
+```
+
+真实事件由项目组件接入：用同一布尔状态更新app-shell、按钮label与expanded，品牌／菜单的显隐使用该状态；不通过点击后重建侧栏实现折叠。检查展开、折叠、快速反向、键盘、长品牌、无副标题、短屏和跨960px断点；折叠前后品牌的可见Logo保持居中，帮助／账户缩成可用入口且不撑出64px。宽度／容器变化后图表与正文重新适配，顶部栏桌面不能残留第二个折叠按钮。旧参考图若仍显示顶栏折叠位置，按本节最新归属要求实现，参考素材不因本次规则调整而重制。
+
 **侧栏纠偏提示词：**
 
 ```text
@@ -129,6 +187,8 @@ hover浅蓝整行且保留分组图标色；当前路由才是蓝色渐变整行
 来回切换时选中背景与标签/图标/计数同步换色，取消前景color/opacity补间，
 保留悬停背景和阴影反馈；菜单节点稳定，不随路由重挂载或让文字淡出再淡入。
 折叠仍保留彩色图标与名称入口，手机完整展示分组；不复制业务菜单或假计数。
+品牌Logo与双行标题横排垂直居中，整组水平居中；桌面折叠按钮在侧栏内部底部
+固定控制行，收起后保留展开入口，窄屏才在顶栏显示模态导航入口。
 ```
 
 ## 按钮：样式、位置与状态矩阵
@@ -174,7 +234,7 @@ hover浅蓝整行且保留分组图标色；当前路由才是蓝色渐变整行
 | 组件 | 默认结构／视觉 | 交互和状态细节 |
 |---|---|---|
 | FormField | 可见label13在上，距输入8；必填红星在标签前；字段下help12／1.5，距6 | label关联input，错误文字替换或接在help下，保留布局空间；aria-describedby指向有效说明 |
-| TextInput | panel、1px line、38高、10圆角，文字13、padding12，placeholder faint | hover边更清楚；focus accent边+3px淡蓝环；error红边+错误句；disabled panel-muted、muted；readonly保持可选择复制 |
+| TextInput | panel、1px line、38高、10圆角，文字13、padding12，placeholder faint | hover边更清楚；focus同一外壳边界加深并向内强调，不叠第二框；error红边+错误句；disabled panel-muted、muted；readonly保持可选择复制 |
 | SearchField | 16放大镜+输入+有值时清空；38高，padding12；工具栏320–460宽 | 文案说明搜什么；清空恢复焦点；Enter查询或输入查询沿用产品模式；异步防竞态；不能只画一个看似可输入div |
 | Password | 与输入同尺寸，左Lock，右显隐按钮，密码文字预留后缀区域 | 切type不清值、不自动提交；眼睛有“显示／隐藏密码”名称；正确autocomplete；禁用仍对齐 |
 | Textarea | 最低96高、padding10 12、13px／1.6、10圆角；垂直扩展 | 长文本换行；高度由任务决定，错误不截断；无理由不禁止resize；禁用／只读与输入一致 |
@@ -191,14 +251,17 @@ hover浅蓝整行且保留分组图标色；当前路由才是蓝色渐变整行
 
 ### 一体式输入面：前后缀不能出现灰色拼接块
 
-普通输入、搜索、密码、日期与可输入Select的内部图标区，应与文字区使用连续的一张表面。浅色是统一panel面，深色引用深色panel；外壳统一负责背景、1px边框、10px圆角和焦点环，内部input、prefix、suffix、清除／显隐按钮的常态背景透明，无第二层边框、内阴影或独立胶囊。不能出现“灰色搜索图标底＋白色输入区＋灰色右端”、双圆角白色小内胆或两端月牙状色块；图标用muted／text-soft，不加独立浅灰方形底座。
+普通输入、搜索、密码、日期与可输入Select的内部图标区，应与文字区使用连续的一张表面。浅色是统一panel面，深色引用深色panel；外壳统一负责背景、1px边框、10px圆角和焦点强调，内部input、prefix、suffix、清除／显隐按钮的常态背景透明，无第二层边框、内阴影或独立胶囊。不能出现“灰色搜索图标底＋白色输入区＋灰色右端”、双圆角白色小内胆或两端月牙状色块；图标用muted／text-soft，不加独立浅灰方形底座。
 
 接入组件库时检查实际wrapper、inner input、prefix／suffix容器、clear按钮以及::before／::after的background、border和box-shadow，修正当前字段组件的主题映射与规则优先级。不要只把input涂白，留下外壳两端原有灰底；不要靠overflow:hidden裁掉内层或全局input／button重置掩盖问题。搜索为空时不显示占位灰块，有值时清除按钮仍与输入面融合；内侧左右留白统一12px，图标16px、间距6–8，长文本可编辑且不盖住后缀。
+
+**聚焦也只能有一圈完整字段边界。**有包装层的输入由包装层统一绘制边框，内部input在focus／focus-visible时无独立border、outline、box-shadow或圆角框；包装层聚焦只把原边界变为accent-link，并在同一边界向内增加1px强调，不加有间隙的外圈、3px扩散环或第二个套框。独立input没有包装层时由input自己承担这唯一边界；不能外壳和input同时画。保留清晰键盘焦点，不用全局outline:none取消其他组件焦点；清除／显隐等独立按钮聚焦时允许其自身的小范围标识，但不能产生覆盖文字区的第二个大矩形。库wrapper的is-focus、内部input:focus和全局input规则、浏览器默认搜索框样式都要实际检查，并在字段作用域解决冲突。
 
 下方为无组件库时的最小表面实现；已有可靠库时映射到其结构，保留输入、搜索和清除行为。不额外创建前端工程。
 
 ```css
 .admin-input { display:flex; align-items:center; gap:8px; min-inline-size:0;
+  --input-focus:var(--accent-link);
   min-block-size:38px; padding:0 12px; border:1px solid var(--line); border-radius:10px;
   background:var(--panel); color:var(--text); }
 .admin-input > input { flex:1; min-inline-size:0; inline-size:100%; min-block-size:36px;
@@ -213,10 +276,10 @@ hover浅蓝整行且保留分组图标色；当前路由才是蓝色渐变整行
   padding:0; border:0; border-radius:5px; background:transparent; color:var(--muted); box-shadow:none; }
 .admin-input .admin-input__action:hover:not(:disabled) { background:transparent; color:var(--accent-link); }
 .admin-input:hover:not(:has(input:disabled)) { border-color:var(--text-soft); }
-.admin-input:focus-within { border-color:var(--accent-link); outline:2px solid var(--accent-link); outline-offset:2px; }
-.admin-input > input:focus-visible { outline:none; } /* 可见焦点由上行外壳绘制 */
+.admin-input:focus-within { border-color:var(--input-focus); box-shadow:inset 0 0 0 1px var(--input-focus); }
+.admin-input > input:focus { border:0; outline:none; box-shadow:none; } /* 同一外壳边界提供可见焦点 */
 .admin-input .admin-input__action:focus-visible { outline:2px solid var(--accent-link); outline-offset:1px; }
-.admin-input:has(input[aria-invalid="true"]) { border-color:var(--red); }
+.admin-input:has(input[aria-invalid="true"]) { --input-focus:var(--red); border-color:var(--red); }
 .admin-input:has(input:disabled) { background:var(--panel-muted); color:var(--muted); cursor:not-allowed; }
 .admin-input > input:disabled { color:inherit; opacity:1; cursor:not-allowed; }
 @media(pointer:coarse) {
@@ -226,22 +289,22 @@ hover浅蓝整行且保留分组图标色；当前路由才是蓝色渐变整行
 }
 @media(forced-colors:active) {
   .admin-input { border-color:CanvasText; }
-  .admin-input:focus-within { outline-color:Highlight; }
+  .admin-input:focus-within { outline:2px solid Highlight; outline-offset:-2px; }
 }
 ```
 
 disabled可让**整框**使用panel-muted，不能只让两端变灰；同时禁用清除／显隐按钮。readonly仍可聚焦、选择和复制；error保留真实错误说明，不只改红边。loading只替换后缀图标，不另加灰底、不改变高度；原生自动填充和密码管理器不可被禁用，若浏览器施加内部填充色，实际检查整个字段的协调性与文字对比。单位Select、步进器、明确的prepend／append操作属于有意分区，沿用对应组件合同，不强行移除必要边界。
 
-验收时在浅色／深色下实际查看空值、有值、长值、hover、输入聚焦、清除按钮聚焦、清空、disabled、readonly、error和loading。分别检查左图标区、文字区、右后缀区及四个圆角的实际绘制；不能仅检查input的computed background。确认全框底色连续、只有一圈外边框、焦点清楚、无灰色端盖／双圆角／裁切，清除后焦点仍在输入，禁用动作不执行，390宽与浏览器缩放不挤出边界。
+验收时在浅色／深色下实际查看空值、有值、长值、hover、输入聚焦、清除按钮聚焦、清空、disabled、readonly、error和loading。分别检查左图标区、文字区、右后缀区及四个圆角的实际绘制；不能仅检查input的computed background。确认全框底色连续、聚焦前后都只有一圈完整字段边界、焦点清楚、无灰色端盖／双圆角／内外套框／裁切，清除后焦点仍在输入，禁用动作不执行，390宽与浏览器缩放不挤出边界。
 
 **表单提示词：**
 
 ```text
 统一38px普通字段和42px登录字段，10px圆角，白面细灰边，标签13、正文13、
-帮助12。前后缀16px并预留空间；focus用accent边与淡环，错误用红边和字段下
+帮助12。前后缀16px并预留空间；focus在同一外边界用accent色向内强调，不叠外框，错误用红边和字段下
 说明，disabled只读和loading各有真实区别。双列表单每列min-width:0、gap20，
 手机单列；不要用placeholder代替标签或让红色校验文字遮住下一个字段。
-普通输入和搜索按一体式输入面合同：外壳统一底色/边框/圆角/焦点环，内部input、
+普通输入和搜索按一体式输入面合同：外壳统一底色/边框/圆角/单层焦点强调，内部input、
 图标前后缀及清除按钮透明，不出现两端灰色块或白色内胆；禁用整框统一变色。
 ```
 
@@ -262,6 +325,23 @@ disabled可让**整框**使用panel-muted，不能只让两端变灰；同时禁
 ### 业务 Panel
 
 主面panel、line-soft 1px边、圆角16、workspace-card-shadow；header左右20、上下18–20，标题16／600，右侧小计或次动作。body通常20，header/body分隔只在需要独立工具区时出现。嵌套信息用圆角12浅蓝／淡紫子面，不再包一张同样阴影的主卡；最多让业务层级清楚，避免“卡片套卡片套卡片”。
+
+### 独立面板之间保留区块间距
+
+有各自背景、边框或圆角的相邻区块，按独立面板排列，外边界之间必须有清楚的间距；面板内部padding不能代替面板之间的gap。普通页面卡片默认20px，元信息／说明面等同属一组的紧凑区块16px；≤600px分别14px和12px。例如文档顶部“适用范围／接入标识／服务地址”信息面板与下面“API基地址／版本”条是两个面板，使用紧凑16px间距，不把下方条贴在上方圆角或边框上。
+
+同一父布局使用Grid／Flex的gap统一管理，不逐项叠加margin；不使用负margin、绝对定位或translateY消掉间隙，也不要全局给所有带border的元素加margin。一个面板内部的标题／正文／页脚可以共用边界、用细线分隔；有意的按钮组、输入组合不按独立面板处理。
+
+```css
+.admin-panel-stack { display:grid; min-inline-size:0; gap:20px; }
+.admin-panel-stack--compact { gap:16px; }
+@media(max-width:600px) {
+  .admin-panel-stack { gap:14px; }
+  .admin-panel-stack--compact { gap:12px; }
+}
+```
+
+实际测量相邻面板的border box距离，而非只检查gap声明：排除子项margin、负偏移或transform使可见边框仍接触。检查长内容换行、展开收起、窄屏改列、错误说明增高和主题切换，边框／圆角始终分离，阴影低调、不因间距叠加形成大空洞；内容自然增高不覆盖下一面板。
 
 ### 大KPI与普通摘要
 
