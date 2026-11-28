@@ -275,18 +275,26 @@ hover浅蓝整行且保留分组图标色；当前路由才是蓝色渐变整行
 
 自动填充需单独适配：保留正确autocomplete，不用关闭自动填充、数小时background过渡或定时重置value绕开浏览器。浏览器可能用UA重要规则绘制底色，单写background:transparent不够；在字段内部用不透明panel色的inset填充覆盖该底色，显式同步文字与caret颜色。该填充只负责表面，唯一焦点边界仍由外壳绘制。保留可访问的回填状态，例如字段下固定说明位显示“已自动填充，可直接修改”，不要用对比突兀的蓝底表达。强制颜色模式撤销自定义覆盖并交回系统；未支持的回填选择器保留原生行为，不添加JS填色补丁。
 
-**聚焦也只能有一圈完整字段边界。**有包装层的输入由包装层统一绘制边框，内部input在focus／focus-visible时无独立border、outline、box-shadow或圆角框；包装层聚焦只把原边界变为accent-link，并在同一边界向内增加1px强调，不加有间隙的外圈、3px扩散环或第二个套框。独立input没有包装层时由input自己承担这唯一边界；不能外壳和input同时画。保留清晰键盘焦点，不用全局outline:none取消其他组件焦点；清除／显隐等独立按钮聚焦时允许其自身的小范围标识，但不能产生覆盖文字区的第二个大矩形。库wrapper的is-focus、内部input:focus和全局input规则、浏览器默认搜索框样式都要实际检查，并在字段作用域解决冲突。
+**再次点击不能闪蓝底：瞬态与终态同样验收。**登录账号／密码和页面内输入、搜索在pointerdown、active、focus／focus-visible、失焦再进入、自动填充候选预览／确认／取消及回填后编辑时，文字区与整框都不能先闪蓝／灰蓝再恢复。字段外壳仅允许原边界的颜色变化，背景不补间；内部input的背景、background-image、填色用box-shadow及文字颜色不参与transition／animation，不用transition:all。特别排查库的is-focus／filled／active类、全局input:focus和自动填充阴影重置，避免遮盖层从none插值到不透明，或聚焦那一帧被移除。下方最小实现将同主题的不透明内填充在普通及回填状态持续保留，且不做过渡；prefix／suffix仍透明，不因修复重现两端拼接块。
+
+点击只放置光标，不由业务脚本额外执行select()／setSelectionRange全选来制造整块蓝底。用户主动拖选、双击、键盘选择／全选时，正常文本选区高亮必须保留；不能用透明::selection、user-select:none、隐藏caret或强制blur消掉表面问题。原生密码管理器候选面板与页面输入底色是两回事：保留候选和正确autocomplete，不伪造／隐藏系统候选，不以禁用粘贴、回填或替换密码管理器解决闪色。仅凭录屏不能断定具体规则，修目标项目时需结合实际DOM／样式与浏览器回填检查。
+
+**文字字重也必须稳定。**普通输入、已填写值、聚焦、自动填充、候选确认／取消、密码显隐和失焦再进入均沿用正文输入字重（默认400）与同一字体、字号、行高、字间距；不能因为非空／filled／focus／autofill给文字加粗、套系统粗体或改变字宽。需要强调字段状态时只改外壳边界，不改输入文字。真实产品若业务明确要求粗体，必须由该字段的设计合同单独说明，不能由浏览器或组件库状态隐式触发。
+
+**聚焦也只能有一圈完整字段边界。**有包装层的输入由包装层统一绘制边框，内部input在focus／focus-visible时不另绘border、outline、焦点box-shadow或圆角框；同色内填充阴影持续保留；包装层聚焦只把原边界变为accent-link，并在同一边界向内增加1px强调，不加有间隙的外圈、3px扩散环或第二个套框。独立input没有包装层时由input自己承担这唯一边界；不能外壳和input同时画。保留清晰键盘焦点，不用全局outline:none取消其他组件焦点；清除／显隐等独立按钮聚焦时允许其自身的小范围标识，但不能产生覆盖文字区的第二个大矩形。库wrapper的is-focus、内部input:focus和全局input规则、浏览器默认搜索框样式都要实际检查，并在字段作用域解决冲突。
 
 下方为无组件库时的最小表面实现；已有可靠库时映射到其结构，保留输入、搜索和清除行为。不额外创建前端工程。
 
 ```css
 .admin-input { display:flex; align-items:center; gap:8px; min-inline-size:0;
-  --input-focus:var(--accent-link);
+  --input-focus:var(--accent-link); --input-surface:var(--panel);
   min-block-size:38px; padding:0 12px; border:1px solid var(--line); border-radius:10px;
-  background:var(--panel); color:var(--text); }
+  background:var(--input-surface); color:var(--text); transition:border-color 160ms ease; }
 .admin-input > input { flex:1; min-inline-size:0; inline-size:100%; min-block-size:36px;
-  margin:0; padding:0; border:0; border-radius:0; background:transparent; box-shadow:none;
-  color:inherit; font:400 13px/1.5 var(--sans); }
+  margin:0; padding:0; border:0; border-radius:0; background:transparent;
+  box-shadow:inset 0 0 0 100vmax var(--input-surface); transition:none; animation:none;
+  color:inherit; caret-color:var(--text); font:400 13px/1.5 var(--sans);
+  font-weight:400; font-synthesis:none; font-variation-settings:normal; letter-spacing:normal; }
 .admin-input > input::placeholder { color:var(--faint); opacity:1; }
 .admin-input > :is(.admin-input__prefix,.admin-input__suffix) {
   display:inline-flex; align-items:center; flex:0 0 auto; color:var(--muted);
@@ -297,18 +305,24 @@ hover浅蓝整行且保留分组图标色；当前路由才是蓝色渐变整行
 .admin-input .admin-input__action:hover:not(:disabled) { background:transparent; color:var(--accent-link); }
 .admin-input:hover:not(:has(input:disabled)) { border-color:var(--text-soft); }
 .admin-input:focus-within { border-color:var(--input-focus); box-shadow:inset 0 0 0 1px var(--input-focus); }
-.admin-input > input:focus { border:0; outline:none; box-shadow:none; } /* 同一外壳边界提供可见焦点 */
+.admin-input > input:is(:hover,:active,:focus,:focus-visible) {
+  background:transparent; background-image:none;
+  box-shadow:inset 0 0 0 100vmax var(--input-surface); transition:none; animation:none;
+  font-weight:400; font-synthesis:none; font-variation-settings:normal; letter-spacing:normal;
+}
+.admin-input > input:focus { border:0; outline:none; } /* 外壳提供唯一可见焦点，内填充不移除 */
 .admin-input > input:is(:autofill, :-webkit-autofill) {
-  box-shadow:inset 0 0 0 100vmax var(--panel);
-  -webkit-text-fill-color:var(--text); caret-color:var(--text);
-} /* 放在内部focus重置之后；panel必须是不透明的纯色 */
+  box-shadow:inset 0 0 0 100vmax var(--input-surface); transition:none; animation:none;
+  -webkit-text-fill-color:var(--text); caret-color:var(--text); font-weight:400;
+  font-synthesis:none; font-variation-settings:normal; letter-spacing:normal;
+} /* 回填与非回填同一不透明填充，无进入／离开补间；panel必须为纯色 */
 .admin-input:has(input:disabled) > input:is(:autofill, :-webkit-autofill) {
-  box-shadow:inset 0 0 0 100vmax var(--panel-muted);
+  box-shadow:inset 0 0 0 100vmax var(--input-surface);
   -webkit-text-fill-color:var(--muted);
 }
 .admin-input .admin-input__action:focus-visible { outline:2px solid var(--accent-link); outline-offset:1px; }
 .admin-input:has(input[aria-invalid="true"]) { --input-focus:var(--red); border-color:var(--red); }
-.admin-input:has(input:disabled) { background:var(--panel-muted); color:var(--muted); cursor:not-allowed; }
+.admin-input:has(input:disabled) { --input-surface:var(--panel-muted); color:var(--muted); cursor:not-allowed; }
 .admin-input > input:disabled { color:inherit; opacity:1; cursor:not-allowed; }
 @media(pointer:coarse) {
   .admin-input { min-block-size:44px; }
@@ -318,6 +332,9 @@ hover浅蓝整行且保留分组图标色；当前路由才是蓝色渐变整行
 @media(forced-colors:active) {
   .admin-input { border-color:CanvasText; }
   .admin-input:focus-within { outline:2px solid Highlight; outline-offset:-2px; }
+  .admin-input > input,.admin-input > input:is(:hover,:active,:focus,:focus-visible) {
+    box-shadow:none; caret-color:auto;
+  }
   .admin-input > input:is(:autofill, :-webkit-autofill) {
     box-shadow:none; -webkit-text-fill-color:FieldText; caret-color:auto;
   }
@@ -329,7 +346,11 @@ hover浅蓝整行且保留分组图标色；当前路由才是蓝色渐变整行
 
 disabled可让**整框**使用panel-muted，不能只让两端变灰；同时禁用清除／显隐按钮。readonly仍可聚焦、选择和复制；error保留真实错误说明，不只改红边。loading只替换后缀图标，不另加灰底、不改变高度。上述CSS面向直接子input，组件库嵌套结构必须映射到真实节点，不能假定选择器已命中。单位Select、步进器、明确的prepend／append操作属于有意分区，沿用对应组件合同，不强行移除必要边界。
 
+最小实现中内部input的inset只负责持续遮盖UA填色，不是第二层焦点阴影；与外壳共用同一个input-surface，正常、聚焦、回填／退出回填均不可被库shadow重置清空。已有库使用其对应主题／样式入口，在该字段作用域检查最终优先级，不靠延时追加样式让首帧先露出蓝底。强制颜色模式交回系统绘制，不能为了截图强制抹除用户系统颜色。
+
 验收时在浅色／深色下实际查看空值、有值、长值、hover、输入聚焦、清除按钮聚焦、清空、disabled、readonly、error和loading。登录账号与密码分别验证手动输入、粘贴、浏览器自动填充及回填后编辑；搜索验证空值／有值／聚焦／失焦时两端。分别检查左图标区、文字区、右后缀区及四个圆角的实际绘制；不能仅检查input的computed background，自动填充需看实际绘制与caret。确认全框底色连续、聚焦前后都只有一圈完整字段边界、焦点清楚、无灰蓝文字底／灰色端盖／双圆角／内外套框／裁切，清除后焦点仍在输入，禁用动作不执行，390宽与浏览器缩放不挤出边界。伪状态强制只能验证CSS，不能冒充实际密码管理器回填测试；未运行状态须说明。
+
+再执行“已有值→点空白失焦→再次点击账号→切密码→重复点击／Tab切换”，包括候选列表出现、选择、取消、回填后增删一字、密码显隐；录屏逐帧核对pointerdown起的首帧及随后约300ms，而非只截稳定后的画面。无主动选区时，文字之外的整块字段面在各帧持续保持当前主题底色；正常拖选、全选、caret、输入值与密码管理器仍可用。对比填写前、聚焦、候选打开、回填后和再次点击时的computed font-family／font-size／font-weight／line-height／letter-spacing，字重必须保持400且不能被filled／autofill规则改粗。浏览器可强制伪状态验证CSS覆盖，但真实候选预览与系统密码管理器必须单独实测并记录，不能据此承诺所有浏览器都已验证。
 
 **表单提示词：**
 
@@ -342,6 +363,9 @@ disabled可让**整框**使用panel-muted，不能只让两端变灰；同时禁
 图标前后缀及清除按钮透明，不出现两端灰色块或白色内胆；禁用整框统一变色。
 填写、粘贴、自动填充、readonly及重新聚焦不改变文字区底色；按本节覆盖UA
 自动填充底色并同步文字/caret，保留autocomplete、可访问回填说明和单层焦点。
+再次点击、切换账号/密码及候选预览/取消时也不能先闪蓝再恢复；外壳只过渡边框，
+内部填色不补间且不因focus被移除，不用transition:all或延时重置样式。逐帧检查
+点击首帧到稳定态；输入字重保持400，不因filled/autofill/focus加粗；正常文本选区高亮、caret、密码管理器和粘贴保留。
 ```
 
 ## Switch、Checkbox、Radio与Segmented
