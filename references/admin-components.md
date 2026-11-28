@@ -120,15 +120,50 @@ disabled；异步动作再处理loading、success、error。只有适用的状�
 .admin-nav__item[aria-current="page"] .admin-nav__count { color:#fff; background:rgb(255 255 255 / .2); }
 .admin-nav__item:focus-visible { outline:2px solid var(--accent-link); outline-offset:2px; }
 @media(min-width:961px) {
+  .app-shell[data-sidebar-collapsed="true"] .sidebar { padding-inline:3px; }
+  .app-shell[data-sidebar-collapsed="true"] .sidebar .admin-nav {
+    padding-inline:4px; scrollbar-width:thin; scrollbar-gutter:stable both-edges;
+    scrollbar-color:var(--admin-scroll-thumb,#d8d8d8) transparent; }
   .app-shell[data-sidebar-collapsed="true"] .sidebar .admin-nav__label,
   .app-shell[data-sidebar-collapsed="true"] .sidebar .admin-nav__copy,
   .app-shell[data-sidebar-collapsed="true"] .sidebar .admin-nav__count { display:none; }
-  .app-shell[data-sidebar-collapsed="true"] .sidebar .admin-nav__item { justify-content:center; padding-inline:0; }
+  .app-shell[data-sidebar-collapsed="true"] .sidebar .admin-nav { min-inline-size:0; }
+  .app-shell[data-sidebar-collapsed="true"] .sidebar .admin-nav__group { padding-inline:0; min-inline-size:0; }
+  .app-shell[data-sidebar-collapsed="true"] .sidebar .admin-nav__item {
+    display:flex; align-items:center; justify-content:center; box-sizing:border-box;
+    inline-size:100%; margin-inline:0; padding-inline:0; gap:0; text-indent:0; }
+  .app-shell[data-sidebar-collapsed="true"] .sidebar .admin-nav__icon { flex:0 0 24px; margin-inline:0; }
+  .app-shell[data-sidebar-collapsed="true"] .sidebar .admin-nav__icon svg { margin:0; }
+  .app-shell[data-sidebar-collapsed="true"] .sidebar .admin-nav__item:focus-visible { outline-offset:-2px; }
+  @supports not (scrollbar-color:auto) {
+    .app-shell[data-sidebar-collapsed="true"] .sidebar .admin-nav { scrollbar-width:auto; }
+    .app-shell[data-sidebar-collapsed="true"] .sidebar .admin-nav::-webkit-scrollbar { width:7px; height:7px; }
+    .app-shell[data-sidebar-collapsed="true"] .sidebar .admin-nav::-webkit-scrollbar-thumb {
+      background:var(--admin-scroll-thumb,#d8d8d8); background-clip:padding-box;
+      border:2px solid transparent; border-radius:999px; }
+    .app-shell[data-sidebar-collapsed="true"] .sidebar .admin-nav::-webkit-scrollbar-track { background:transparent; }
+  }
+}
+@media(min-width:961px) and (forced-colors:active), (min-width:961px) and (prefers-contrast:more), (min-width:961px) and (pointer:coarse) {
+  .app-shell[data-sidebar-collapsed="true"] .sidebar .admin-nav { padding-inline:0; scrollbar-color:auto; scrollbar-width:auto; }
+  .app-shell[data-sidebar-collapsed="true"] .sidebar .admin-nav::-webkit-scrollbar { width:revert; height:revert; }
+  .app-shell[data-sidebar-collapsed="true"] .sidebar .admin-nav::-webkit-scrollbar-thumb {
+    background:revert; border:revert; border-radius:revert; }
 }
 @media(prefers-reduced-motion:reduce) { .admin-nav__item { transition:none; } }
 ```
 
 验收连续来回点击同组与跨组菜单、快速点击尚在悬停中的旧项，并用键盘导航／浏览器返回重复切换；在浅深主题下逐帧核对新旧两项标签、图标和计数。旧项离开蓝底时立即恢复未选前景，新项进入蓝底时立即白字；不出现白字配浅底、深字配蓝底、文字消失再出现或字重／宽度跳变。侧栏节点与导航滚动位置保持稳定，主题和正文入场不影响菜单文字。正文另按页面规则更新，不为消除菜单闪动而关闭所有组件动画。
+
+**折叠菜单左右等距。**每个按钮的可见外框在侧栏可用宽度内水平居中，左右留白相等；24px图标底座在按钮内部居中，SVG再在底座内居中。所有入口共用同一条垂直中心线，default／hover／active／focus都不移动、不改变按钮宽度，不能只有选中蓝色块偏左或图标继续沿用展开态的左起点。隐藏文字、计数、分组标题及无用子菜单箭头后，同时清掉它们的grid列、gap、padding、margin、text-indent、子层级缩进和伪元素占位；不能只隐藏文字却保留空白列，也不能用逐项translateX或不对称padding补偿。
+
+复用组件库时检查实际menu-item、submenu-title、icon wrapper与SVG上的展开态间距，并映射上面的折叠规则。Logo、搜索、菜单及底部控制按同一侧栏中心轴核对；职责不同的按钮尺寸可不同，但各自左右留白须对称。滚动viewport、右侧滚动条槽与库内边距也要计入：下例仅在折叠导航viewport使用thin滚动条与stable both-edges对称留槽，侧栏折叠时左右padding3px，让滚动条靠近内侧边缘；导航viewport内再左右padding4px，给按钮焦点留出空间；不要让一侧常驻空槽把整列推偏。已有库使用自定义滚动viewport时，把对称处理映射到真实层，不在外壳重复留槽；核对有／无溢出，不靠隐藏滚动能力或裁掉焦点修复。自定义图标素材若viewBox自带不对称空白，修正可见图形在图标框内的位置，不移动整列。
+
+**折叠侧栏的窄滚动条。**收起后不能直接套用展开态导航的宽滚动槽和右侧8–12px外留白；真实viewport的右边缘距侧栏内侧边缘以2–4px为起点（示例3px），不要在滑块右侧再叠一层padding／空轨道。滚动条只覆盖中部导航区域，不延伸到Logo、搜索或底部控制。轨道透明、无边框／阴影；滑块浅色#d8d8d8、深色#777777，中性灰不带蓝色。原生使用thin，实际宽度由浏览器／系统决定；旧WebKit回退为7px槽＋两侧2px透明边，约3px可见滑块。已有可靠自定义滚动组件的可见滑块默认2–3px、悬停／拖动最多4px，命中轨道可保留6–8px，不另造滚动组件。
+
+窄轨道与菜单居中需一起落实：原生对称留槽只放在实际viewport；自定义组件的absolute轨道靠右内缘，内容仍以完整侧栏中心轴对齐，不能重复套用原生gutter。不得靠负margin把条推到侧栏外、隐藏唯一滚动条、去掉滚动能力或让滑块压住图标。触屏／高对比度交回系统可操作尺寸，不强制2px。验收长菜单滚到首尾、展开收起、hover／拖动、浅深主题、常驻与覆盖式滚动条，检查实际绘制宽度、右侧间距和菜单中心轴；只检查scrollbar-width的computed值不算通过。
+
+验收展开→折叠→切换不同菜单→hover／键盘聚焦→再展开，在浅深主题、长菜单滚动、各层级和浏览器缩放下测量：按钮外框距侧栏内侧两边的留白差≤1 CSS px，图标底座中心与按钮中心、所有菜单入口中心轴偏差≤1 CSS px。展开态文字间距不被折叠样式污染，收起后仍有完整可访问名称与自定义Tooltip。
 
 桌面折叠为64px实际侧栏时，保留24px彩色底座和当前蓝色菜单；隐藏标签／计数前给每个入口设置完整aria-label，并提供聚焦可见的名称提示。手机抽屉显示完整标题、竖线、菜单文字与计数，不沿用折叠隐藏规则。深色底座引用相应tint主题，彩色竖线和图标不能丢失；按实际对比度需要适配色值时保留组间区别并注明调整。
 
@@ -190,6 +225,36 @@ disabled；异步动作再处理loading、success、error。只有适用的状�
 
 真实事件由项目组件接入：用同一布尔状态更新app-shell、按钮label与expanded，品牌／菜单的显隐使用该状态；不通过点击后重建侧栏实现折叠。检查展开、折叠、快速反向、键盘、长品牌、无副标题、短屏和跨960px断点；折叠前后品牌的可见Logo保持居中，帮助／账户缩成可用入口且不撑出64px。宽度／容器变化后图表与正文重新适配，顶部栏桌面不能残留第二个折叠按钮。旧参考图若仍显示顶栏折叠位置，按本节最新归属要求实现，参考素材不因本次规则调整而重制。
 
+<a id="clean-admin-sidebar-persistence"></a>
+
+### 记住用户的展开／收起状态
+
+桌面侧栏的展开／收起是持久偏好：**用户手动收起后，普通刷新、强制刷新、直接进入其他后台路由均保持收起；只有用户再次手动展开才改为展开**，展开后的刷新也保持展开。优先复用项目已有持久设置；没有时使用带产品命名空间的localStorage键，如admin:sidebar:collapsed:v1。不能只保存在组件useState／ref、非持久store或sessionStorage，也不能在路由挂载、登录后初始化、resize、数据刷新或接口返回时无条件重置为展开。若产品已有按账户隔离设置的约定，沿用其键作用域。
+
+首次渲染前读取并应用偏好；共享状态同时决定壳层列宽、侧栏实宽、标签／计数、图标与aria-expanded／按钮名称，不能先按展开态绘制，再在effect／mounted／定时器里补收起而闪宽。CSR使用组件首轮状态初始化；SSR使用现有服务端可读偏好，或在首屏布局前注入引导状态并让客户端初始化读取同一值，保证hydration一致。不要用整页隐藏、加载遮罩或先禁用交互掩盖闪动。无保存值时才使用产品默认状态；字符串false必须读为false，不能Boolean("false")误判。读写异常不能阻断页面或阻止当次手动切换，无法持久化时不得宣称刷新保持已验证。
+
+以下只提供读写助手；在现有共享壳层首轮初始化中调用读取，用户手动切换时先同步UI再保存，不另建前端工程。框架负责事件与卸载，不重复注册监听器。
+
+```js
+const sidebarPreferenceKey = 'admin:sidebar:collapsed:v1'; // 按目标产品命名空间替换
+function readSidebarCollapsed(defaultValue = false) {
+  if (typeof window === 'undefined') return defaultValue;
+  try {
+    const saved = window.localStorage.getItem(sidebarPreferenceKey);
+    return saved === 'true' ? true : saved === 'false' ? false : defaultValue;
+  } catch { return defaultValue; }
+}
+function saveSidebarCollapsed(collapsed) {
+  try {
+    if (typeof window === 'undefined') return false;
+    window.localStorage.setItem(sidebarPreferenceKey, String(collapsed === true));
+    return true;
+  } catch { return false; }
+}
+```
+
+≤960px的导航抽屉开关是独立临时状态：打开／关闭抽屉不写入桌面collapsed偏好，刷新不自动打开抽屉；恢复桌面宽度后继续使用原来的桌面偏好。不能为了适配窄屏把保存的收起值改为false。验收“手动收起→刷新／强制刷新／直接访问另一后台路由→仍收起→手动展开→刷新→仍展开”，再查来回跨断点、无保存值、保存false、无效值及存储拒绝。记录首个可见帧的侧栏宽度、正文位置、按钮名称与aria-expanded，确认没有展开→收起的瞬态；只验证点击或只看刷新后的最终截图不算通过。
+
 **侧栏纠偏提示词：**
 
 ```text
@@ -200,9 +265,13 @@ hover浅蓝整行且保留分组图标色；当前路由才是蓝色渐变整行
 白18%图标底座与白20%计数底。active不被hover覆盖，不出现全灰菜单或长竖线。
 来回切换时选中背景与标签/图标/计数同步换色，取消前景color/opacity补间，
 保留悬停背景和阴影反馈；菜单节点稳定，不随路由重挂载或让文字淡出再淡入。
-折叠仍保留彩色图标与名称入口，手机完整展示分组；不复制业务菜单或假计数。
+折叠仍保留彩色图标与名称入口；菜单按钮左右留白相等、图标座居中且整列共轴，
+隐藏文字/计数后清除列宽/gap/缩进/空占位，hover与选中不偏移；检查实际滚动层。
+手机完整展示分组；不复制业务菜单或假计数。
 品牌Logo与双行标题横排垂直居中，整组水平居中；桌面折叠按钮在侧栏内部底部
 固定控制行，收起后保留展开入口，窄屏才在顶栏显示模态导航入口。
+桌面收起/展开偏好持久保存并在首轮渲染应用，刷新/强刷/换路由不重置，
+仅用户手动切换才更新；无首屏闪宽，移动抽屉开关不覆盖桌面偏好。
 ```
 
 ## 按钮：样式、位置与状态矩阵
@@ -250,7 +319,7 @@ hover浅蓝整行且保留分组图标色；当前路由才是蓝色渐变整行
 | 组件 | 默认结构／视觉 | 交互和状态细节 |
 |---|---|---|
 | FormField | 可见label13在上，距输入8；必填红星在标签前；字段下help12／1.5，距6 | label关联input，错误文字替换或接在help下，保留布局空间；aria-describedby指向有效说明 |
-| TextInput | panel、1px line、38高、10圆角，文字13、padding12，placeholder faint | hover边更清楚；focus同一外壳边界加深并向内强调，不叠第二框；error红边+错误句；disabled panel-muted、muted；readonly保持可选择复制 |
+| TextInput | panel、1px line、38高、10圆角，文字13、padding12，placeholder faint | hover边更清楚；focus只改变原外壳边框颜色，保持1px，不加粗、不叠第二框；error红边+错误句；disabled panel-muted、muted；readonly保持可选择复制 |
 | SearchField | 16放大镜+输入+有值时清空；38高，padding12；工具栏320–460宽 | 文案说明搜什么；清空恢复焦点；Enter查询或输入查询沿用产品模式；异步防竞态；不能只画一个看似可输入div |
 | Password | 与输入同尺寸，左Lock，右显隐按钮，密码文字预留后缀区域 | 切type不清值、不自动提交；眼睛有“显示／隐藏密码”名称；正确autocomplete；禁用仍对齐 |
 | Textarea | 最低96高、padding10 12、13px／1.6、10圆角；垂直扩展 | 长文本换行；高度由任务决定，错误不截断；无理由不禁止resize；禁用／只读与输入一致 |
@@ -261,7 +330,19 @@ hover浅蓝整行且保留分组图标色；当前路由才是蓝色渐变整行
 | Upload | 小型边框区域、图标+动作+文件限制说明；已上传文件行 | 文件名可读、上传百分比真实、失败单项重试、移除明确；缩略图等比，不能先假成功再发请求 |
 | Color／Avatar | 色块输入与34px头像预览+等宽色值成组 | 修改色值同步头像，合法色值校验，不能仅颜色表达账号身份；状态颜色不跟用户头像色任意改变 |
 
-输入前缀／后缀SVG为block且flex-shrink0，gap6–8；文字行中图标不能上浮半个字。输入的边框与焦点建议通过同一层shadow／border绘制，避免同时两层库边框叠粗。全局主题需覆盖append-to-body的选择面板，不能只在页面容器设变量。
+输入前缀／后缀SVG为block且flex-shrink0，gap6–8；文字行中图标不能上浮半个字。输入边框与焦点由同一个外壳的1px border绘制，聚焦只变色，不用shadow另画线框。全局主题需覆盖append-to-body的选择面板，不能只在页面容器设变量。
+
+<a id="clean-admin-control-row"></a>
+
+### 同一行字段：同高、同顶边、同底边
+
+同一表单行或筛选工具行内的输入、搜索、带框选项、Select／Combobox、日期、数字步进器及单位选择器，**外部可见边框高度必须一致，顶边和底边对齐**。该行统一选一个尺寸档：普通38px、紧凑34px、登录／宽松42px；既有页面另有明确高度时沿用该行实际档位，不混入组件库默认高度。不得出现普通输入38px、数字框46px、单位下拉40px的混排，也不能只对齐中心线而保留上下参差。
+
+在行容器定义共享高度token（下例为--row-control-height），各控件外壳和真实wrapper读取同一个值并使用border-box；内部输入／值容器按外高减去边框与实际padding计算，不允许内层min-height、重复padding或step按钮把外壳撑高。左右加减式数字步进器的按钮、数值区和外壳共用内高，数值区无独立圆角边框；上下堆叠按钮的总高等于同一内高。普通按钮与字段并排组成同一操作行时也使用该行尺寸，不能混用34px按钮与38px字段；图标／checkbox／radio本体保留各自尺寸，命中区域和文字在该行居中，不把小图形拉成整框高度。
+
+有字段标签与帮助／校验文字时按“标签区／控件区／说明区”对齐：同一行标签换行需为该行共享足够的标签区高度，帮助文字放在控件下方，不能通过拉高某一个输入框或整列垂直居中来对齐。多选标签／多行内容确需增长时，让整行控件同步增高，或将该字段换到独立行，不能裁掉内容或让单个框悄悄变高。手机换行后每个实际行继续使用一致档位。
+
+验收一行混排“文本输入＋数字步进器＋单位Select＋带框选项／查询按钮”，测量真实绘制边框的高度、top、bottom，而非只看size属性或CSS声明。空值、有值、focus、disabled、error、loading、长标签／帮助及浅深主题都检查；同一行边框高度与上下边位置误差不超过1 CSS px，聚焦不得改变尺寸或产生外扩轮廓。缩放和窄屏换行后复核。
 
 <a id="clean-admin-field-alignment"></a>
 
@@ -295,13 +376,17 @@ Select／Combobox同时检查实际value、placeholder、selection-item、select
 
 **文字字重也必须稳定。**普通输入、已填写值、聚焦、自动填充、候选确认／取消、密码显隐和失焦再进入均沿用正文输入字重（默认400）与同一字体、字号、行高、字间距；不能因为非空／filled／focus／autofill给文字加粗、套系统粗体或改变字宽。需要强调字段状态时只改外壳边界，不改输入文字。真实产品若业务明确要求粗体，必须由该字段的设计合同单独说明，不能由浏览器或组件库状态隐式触发。
 
-**聚焦也只能有一圈完整字段边界。**有包装层的输入由包装层统一绘制边框，内部input在focus／focus-visible时不另绘border、outline、焦点box-shadow或圆角框；同色内填充阴影持续保留；包装层聚焦只把原边界变为accent-link，并在同一边界向内增加1px强调，不加有间隙的外圈、3px扩散环或第二个套框。独立input没有包装层时由input自己承担这唯一边界；不能外壳和input同时画。保留清晰键盘焦点，不用全局outline:none取消其他组件焦点；清除／显隐等独立按钮聚焦时允许其自身的小范围标识，但不能产生覆盖文字区的第二个大矩形。库wrapper的is-focus、内部input:focus和全局input规则、浏览器默认搜索框样式都要实际检查，并在字段作用域解决冲突。
+**明确禁止点击后出现内外两圈线框。**搜索／输入／Select／数字框在点击、按下、键盘聚焦和已有值再次点击时，不得出现“外壳一圈圆角线＋内部文字区又一圈圆角线”、嵌套蓝框、双focus ring或延迟消失的内框。整框唯一边界由一个指定外壳绘制，内部input及库wrapper不能同时承担边框。检查:active、:focus、:focus-visible、:focus-within、is-focus／data状态、ring变量、::before／::after；在实际字段作用域清除重复border／outline／焦点box-shadow及伪元素描边，不用裁切、遮挡或强制失焦隐藏。保留同色自动填充遮盖与可辨认的唯一键盘焦点。
+
+有包装层的字段由外壳统一绘制1px border，聚焦仅将这条边变为可辨认的accent-link，厚度、圆角、位置与尺寸不变；内部input无边框／圆角框／outline／焦点shadow，同色自动填充遮盖持续保留。数字步进器只由整体外壳变色，数值区不得再套蓝色圆角框，加减按钮分区线也不得包围数值区。独立input没有包装层时自己承担唯一边界。清除／显隐等独立按钮可保留小范围键盘焦点，但不能覆盖文字区或给整框增加轮廓；不使用全局outline:none影响其他组件。
+
+同一行可在已有布局容器设置如--row-control-height:38px，并将该变量映射到Select／InputNumber／选项框的真实外壳；下方输入示例已读取此变量，不能只修改input而遗漏相邻控件。
 
 下方为无组件库时的最小表面实现；已有可靠库时映射到其结构，保留输入、搜索和清除行为。不额外创建前端工程。
 
 ```css
 .admin-input { display:flex; align-items:center; gap:8px; min-inline-size:0;
-  --input-focus:var(--accent-link); --input-surface:var(--panel); --field-height:38px;
+  --input-focus:var(--accent-link); --input-surface:var(--panel); --field-height:var(--row-control-height,38px);
   box-sizing:border-box; min-block-size:var(--field-height); padding:0 12px; border:1px solid var(--line); border-radius:10px;
   background:var(--input-surface); color:var(--text); transition:border-color 160ms ease; }
 .admin-input > input { flex:1; min-inline-size:0; inline-size:100%; box-sizing:border-box;
@@ -311,7 +396,7 @@ Select／Combobox同时检查实际value、placeholder、selection-item、select
   color:inherit; caret-color:var(--text); font:400 13px/1.5 var(--sans);
   font-weight:400; font-synthesis:none; font-variation-settings:normal; letter-spacing:normal; }
 .admin-input > input::placeholder { color:var(--faint); opacity:1; font:inherit; letter-spacing:inherit; }
-.admin-input[data-size="login"] { --field-height:42px; }
+.admin-input[data-size="login"] { --field-height:var(--row-control-height,42px); }
 .admin-input > :is(.admin-input__prefix,.admin-input__suffix) {
   display:inline-flex; align-items:center; flex:0 0 auto; color:var(--muted);
   background:transparent; border:0; box-shadow:none; }
@@ -319,14 +404,14 @@ Select／Combobox同时检查实际value、placeholder、selection-item、select
 .admin-input .admin-input__action { display:grid; place-items:center; inline-size:24px; block-size:24px;
   padding:0; border:0; border-radius:5px; background:transparent; color:var(--muted); box-shadow:none; }
 .admin-input .admin-input__action:hover:not(:disabled) { background:transparent; color:var(--accent-link); }
-.admin-input:hover:not(:has(input:disabled)) { border-color:var(--text-soft); }
-.admin-input:focus-within { border-color:var(--input-focus); box-shadow:inset 0 0 0 1px var(--input-focus); }
+.admin-input:hover:not(:focus-within):not(:has(input:disabled)) { border-color:var(--text-soft); }
+.admin-input:focus-within { border-color:var(--input-focus); outline:none; box-shadow:none; }
 .admin-input > input:is(:hover,:active,:focus,:focus-visible) {
   background:transparent; background-image:none;
   box-shadow:inset 0 0 0 100vmax var(--input-surface); transition:none; animation:none;
   font-weight:400; font-synthesis:none; font-variation-settings:normal; letter-spacing:normal;
 }
-.admin-input > input:focus { border:0; outline:none; } /* 外壳提供唯一可见焦点，内填充不移除 */
+.admin-input > input:is(:focus,:focus-visible) { border:0; border-radius:0; outline:none; } /* 外壳提供唯一可见焦点，内填充不移除 */
 .admin-input > input:is(:autofill, :-webkit-autofill) {
   box-shadow:inset 0 0 0 100vmax var(--input-surface); transition:none; animation:none;
   -webkit-text-fill-color:var(--text); caret-color:var(--text); font-weight:400;
@@ -341,9 +426,9 @@ Select／Combobox同时检查实际value、placeholder、selection-item、select
 .admin-input:has(input:disabled) { --input-surface:var(--panel-muted); color:var(--muted); cursor:not-allowed; }
 .admin-input > input:disabled { color:inherit; opacity:1; cursor:not-allowed; }
 @media(pointer:coarse) {
-  .admin-input { --field-height:44px; min-block-size:44px; }
-  .admin-input > input { block-size:42px; font-size:16px; }
-  .admin-input .admin-input__action { inline-size:44px; block-size:44px; }
+  .admin-input,.admin-input[data-size="login"] { --field-height:max(44px,var(--row-control-height,44px)); min-block-size:var(--field-height); }
+  .admin-input > input { block-size:calc(var(--field-height) - 2px); font-size:16px; }
+  .admin-input .admin-input__action { inline-size:44px; block-size:calc(var(--field-height) - 2px); }
 }
 @media(forced-colors:active) {
   .admin-input { border-color:CanvasText; }
@@ -364,7 +449,7 @@ disabled可让**整框**使用panel-muted，不能只让两端变灰；同时禁
 
 最小实现中内部input的inset只负责持续遮盖UA填色，不是第二层焦点阴影；与外壳共用同一个input-surface，正常、聚焦、回填／退出回填均不可被库shadow重置清空。已有库使用其对应主题／样式入口，在该字段作用域检查最终优先级，不靠延时追加样式让首帧先露出蓝底。强制颜色模式交回系统绘制，不能为了截图强制抹除用户系统颜色。
 
-验收时在浅色／深色下实际查看空值、有值、长值、hover、输入聚焦、清除按钮聚焦、清空、disabled、readonly、error和loading。登录账号与密码分别验证手动输入、粘贴、浏览器自动填充及回填后编辑；搜索验证空值／有值／聚焦／失焦时两端。分别检查左图标区、文字区、右后缀区及四个圆角的实际绘制；不能仅检查input的computed background，自动填充需看实际绘制与caret。确认全框底色连续、聚焦前后都只有一圈完整字段边界、焦点清楚、无灰蓝文字底／灰色端盖／双圆角／内外套框／裁切，清除后焦点仍在输入，禁用动作不执行，390宽与浏览器缩放不挤出边界。伪状态强制只能验证CSS，不能冒充实际密码管理器回填测试；未运行状态须说明。
+验收时在浅色／深色下实际查看空值、有值、长值、hover、输入聚焦、清除按钮聚焦、清空、disabled、readonly、error和loading。登录账号与密码分别验证手动输入、粘贴、浏览器自动填充及回填后编辑；搜索验证空值／有值／聚焦／失焦时两端。分别检查左图标区、文字区、右后缀区及四个圆角的实际绘制；不能仅检查input的computed background，自动填充需看实际绘制与caret。确认全框底色连续、点击首帧、按住、稳定聚焦、键盘Tab及已有值再次点击都只有原有一圈字段边界，内部文字区无第二个圆角框、焦点清楚、无灰蓝文字底／灰色端盖／双圆角／内外套框／裁切，清除后焦点仍在输入，禁用动作不执行，390宽与浏览器缩放不挤出边界。伪状态强制只能验证CSS，不能冒充实际密码管理器回填测试；未运行状态须说明。
 
 再执行“已有值→点空白失焦→再次点击账号→切密码→重复点击／Tab切换”，包括候选列表出现、选择、取消、回填后增删一字、密码显隐；录屏逐帧核对pointerdown起的首帧及随后约300ms，而非只截稳定后的画面。无主动选区时，文字之外的整块字段面在各帧持续保持当前主题底色；正常拖选、全选、caret、输入值与密码管理器仍可用。对比填写前、聚焦、候选打开、回填后和再次点击时的computed font-family／font-size／font-weight／line-height／letter-spacing，字重必须保持400且不能被filled／autofill规则改粗。浏览器可强制伪状态验证CSS覆盖，但真实候选预览与系统密码管理器必须单独实测并记录，不能据此承诺所有浏览器都已验证。
 
@@ -372,7 +457,9 @@ disabled可让**整框**使用panel-muted，不能只让两端变灰；同时禁
 
 ```text
 统一38px普通字段和42px登录字段，10px圆角，白面细灰边，标签13、正文13、
-帮助12。前后缀16px并预留空间；focus在同一外边界用accent色向内强调，不叠外框，错误用红边和字段下
+帮助12。同一行输入、选项框、数字步进器、下拉及单位框按同一个高度token实现，
+可见边框同高、顶底对齐；内层输入与step按钮不能撑高外壳，标签/help不挤偏控件。
+前后缀16px并预留空间；focus只改变原有1px边框颜色，不向内加粗、不画ring或内外套框，错误用红边和字段下
 说明，disabled只读和loading各有真实区别。双列表单每列min-width:0、gap20，
 手机单列；不要用placeholder代替标签或让红色校验文字遮住下一个字段。
 按单行字段对齐合同，让框内placeholder、已填值、前后缀与下拉箭头垂直居中、文字左对齐；

@@ -245,7 +245,7 @@
 | 遮罩 | `rgba(25,42,70,.28–.38)`的柔和遮罩；必要时轻微背景模糊；不让后台消失或变成纯黑 | 没有遮罩、遮罩过黑、背景仍可点击／滚动 |
 | 弹窗外框 | 桌面宽 `min(760px, calc(100vw - 48px))`，最大高 `min(680px, calc(100dvh - 48px))`；panel面、1px line-soft边、20px圆角、`0 18px 50px`轻阴影；垂直位置约视口上方12–16%，不要贴顶 | 宽度随内容无限增长、贴边、占满整屏、白色大空框或圆角与后台不一致 |
 | 标题栏 | 高72左右、左右24；左侧44×44浅蓝图标底座与搜索图标，旁边18px标题“快捷搜索”，可有一行12px说明；右侧36×36关闭按钮 | 只放一个巨大搜索图标、标题与输入提示重复、关闭按钮漂在弹窗外 |
-| 输入区 | 标题栏下方保持16–20间距；输入高48–52、圆角12，唯一字段边界聚焦时变为accent并向内强调，不叠外圈；placeholder只说明搜索范围，例如“输入页面名称、设置或命令…”；输入获得初始焦点 | 把“查找管理页面”当作重复的大标题和placeholder同时堆叠、内外两圈边框、输入框过高、文字过淡或没有焦点 |
+| 输入区 | 标题栏下方保持16–20间距；输入高48–52、圆角12，原有1px字段边界聚焦时只变为accent，不加粗、不叠内外圈；placeholder只说明搜索范围，例如“输入页面名称、设置或命令…”；输入获得初始焦点 | 把“查找管理页面”当作重复的大标题和placeholder同时堆叠、内外两圈边框、输入框过高、文字过淡或没有焦点 |
 | 结果区 | 与输入框保持12–16间距；结果列表在弹窗内部独立滚动，行高64–76、左右12–16、图标36×36、标题14–16／650、说明12–13、右侧细chevron；hover/focus使用浅蓝面，当前键盘项使用清晰蓝色强调面与白字 | 结果行过高导致只看到一两项、图标和标题不对齐、结果溢出弹窗、整行无键盘选中态 |
 | 空／无结果 | 保留输入内容，居中显示线框搜索图标、短说明和清除／查看全部等真实操作；不能显示一大片空白或虚构结果 | 无结果时弹窗塌陷、显示“暂无数据”但没有原因或恢复动作 |
 | 底部提示 | 可选一行12px键盘提示，使用小胶囊展示 `↑↓`、`Enter`、`Esc`；与结果区留12px间距 | 把快捷键说明做成大标题、重复顶栏胶囊或遮住最后一条结果 |
@@ -292,7 +292,7 @@
 .admin-search-dialog__field input { box-sizing:border-box; inline-size:100%; block-size:50px; margin:0; padding:0 14px; border:1px solid var(--accent);
   border-radius:12px; background:var(--panel); color:var(--text); font:400 14px/1.5 var(--sans); box-shadow:none; }
 .admin-search-dialog__field input::placeholder { font:inherit; letter-spacing:inherit; color:var(--faint); opacity:1; }
-.admin-search-dialog__field input:focus { outline:none; border-color:var(--accent-link); box-shadow:inset 0 0 0 1px var(--accent-link); }
+.admin-search-dialog__field input:focus { outline:none; border-color:var(--accent-link); box-shadow:none; }
 .admin-search-dialog__results { min-block-size:0; overflow:auto; padding:0 12px 8px; }
 .admin-search-dialog__hint { padding:10px 20px 14px; color:var(--muted); font:400 11px/1.4 var(--sans); }
 .admin-search-dialog__hint kbd { padding:2px 5px; border:1px solid var(--line-soft); border-radius:5px; background:var(--panel-muted); color:var(--accent-link); }
