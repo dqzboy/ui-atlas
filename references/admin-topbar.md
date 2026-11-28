@@ -289,8 +289,9 @@
   background:transparent; color:var(--text-soft); font-size:28px; line-height:1; cursor:pointer; }
 .admin-search-dialog__close:hover { background:var(--tint-blue); color:var(--accent-link); }
 .admin-search-dialog__field { display:block; margin:0 20px 14px; }
-.admin-search-dialog__field input { inline-size:100%; block-size:50px; padding:0 14px; border:1px solid var(--accent);
-  border-radius:12px; background:var(--panel); color:var(--text); font:400 14px var(--sans); box-shadow:none; }
+.admin-search-dialog__field input { box-sizing:border-box; inline-size:100%; block-size:50px; margin:0; padding:0 14px; border:1px solid var(--accent);
+  border-radius:12px; background:var(--panel); color:var(--text); font:400 14px/1.5 var(--sans); box-shadow:none; }
+.admin-search-dialog__field input::placeholder { font:inherit; letter-spacing:inherit; color:var(--faint); opacity:1; }
 .admin-search-dialog__field input:focus { outline:none; border-color:var(--accent-link); box-shadow:inset 0 0 0 1px var(--accent-link); }
 .admin-search-dialog__results { min-block-size:0; overflow:auto; padding:0 12px 8px; }
 .admin-search-dialog__hint { padding:10px 20px 14px; color:var(--muted); font:400 11px/1.4 var(--sans); }
@@ -305,7 +306,7 @@
 
 打开时把焦点放到搜索输入，输入变化只更新真实结果列表，不重建弹窗外框或清空正在编辑的查询。上下方向键移动唯一的 `aria-selected` 结果，Enter 导航到真实页面，Esc、关闭按钮和允许的遮罩点击关闭；关闭后焦点回到原搜索入口。模态打开期间底层页面不可点击，背景不滚动；弹窗结果区可以独立滚动且滚动到首尾不会把页面带动。优先使用目标项目已有可靠 Dialog 组件或原生 `<dialog>` 的模态能力，不能额外叠加手写焦点陷阱和第二套遮罩。主题、滚动条、空态和错误态都必须从同一套后台 token 读取。
 
-验收浅色／深色、1920／1280／768／390宽、长页面名、长说明、无结果、结果很多、键盘快速切换和关闭后焦点返回。重点排除：标题与placeholder重复、弹窗过宽或过高、结果列表挤压、滚动条越界、浅色主题弹窗套深色默认样式、背景仍可滚动、选中结果没有明显对比度，以及搜索入口和快捷键打开了两套不同的搜索界面。
+搜索字段的占位提示、输入值与可选前后缀按[单行字段对齐合同](admin-components.md#clean-admin-field-alignment)垂直居中；50px字段不能保留38px版本的内部高度，也不能只偏移placeholder。验收浅色／深色、1920／1280／768／390宽、长页面名、长说明、无结果、结果很多、键盘快速切换和关闭后焦点返回。重点排除：标题与placeholder重复、弹窗过宽或过高、结果列表挤压、滚动条越界、浅色主题弹窗套深色默认样式、背景仍可滚动、选中结果没有明显对比度，以及搜索入口和快捷键打开了两套不同的搜索界面。
 
 容器≤640px时先隐藏辅助状态并收紧搜索与用户名；这是组件自身的空间规则，不改变全局侧栏断点。≤960视口的搜索宽在150–200px间适配，≤600仍固定36px图标入口。若面包屑或账户名称增长造成真实碰撞，应先将中间面包屑收为有名称的上级入口、缩短搜索提示、按本文件切换搜索图标形态；保留当前页的可访问名称和关键控件。不用整页缩放、隐藏body横向溢出或挤小按钮。验收不仅检查body横向滚动，也检查最右按钮是否仍在顶栏的内容边界内；不能只因按钮没重叠就忽略它挤出面板留白。
 

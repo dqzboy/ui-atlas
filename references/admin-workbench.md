@@ -35,9 +35,9 @@
 
 小三角与提示框必须是一整块气泡：同一panel底色连续相接，**根部不允许有提示框横向／纵向边框线穿过**，不出现三角形底边、白缝、双描边或独立贴上的小菱形。提示框外框与箭头两条外斜边可保留同色1px细轮廓；禁止的是箭头与正文之间的内部隔线，不是要求去掉整圈外轮廓。
 
-下方示例用外层三角延续轮廓，内层三角向正文内重叠2px并保留一小段平直填充，覆盖穿过根部的那段正文边框；四个方向翻转时遮盖段也必须同步转向。不能只把三角放到框外相邻位置，不能靠移除整条底边／顶边掩盖，也不要用固定白色补丁盖深色气泡。已有组件库优先调整其arrow内层／伪元素和背景变量，不叠加第二个箭头。
+下方示例用外层三角延续轮廓，内层填充向正文内重叠2px，**与箭头根部等宽，先以平直段跨过完整的1px正文边框，再向尖端收窄**；不能只盖住中心而在根部两肩留下横线。内层明确绘制在正文边框、正文阴影和外层三角之上，两层共用不透明panel与line-soft，不给内层另加border、outline、inset-shadow、filter或半透明opacity。四个方向翻转时遮盖段与层叠同步转向，箭头不被overflow裁切。不能只把三角放到框外相邻位置，不能靠移除整条底边／顶边掩盖，也不要用固定白色补丁盖深色气泡。已有组件库优先调整其arrow内层／伪元素和背景变量，排查库生成的独立三角底边／SVG闭合描边，不叠加第二个箭头。
 
-浅深主题、上下左右方向、非整数位置、DPR1／2和浏览器缩放时实际放大核对连接处：内部底色连续，根部无穿线；外斜边自然接上正文边框，仍保持7px突出高度和到图形默认6px的间距。箭头无接缝与动态锚点、近图定位须同时满足。
+浅深主题、上下左右方向、非整数位置、DPR1／2和浏览器缩放时实际放大核对整个根部宽度，包含中心与两肩：内部底色连续，不得残留横线／竖线、深色短划、白缝或阴影接缝；不能只采样中心一点或以“border颜色很淡”为通过。可临时加深外框色辅助暴露穿线，验收后恢复主题色。外斜边自然接上正文边框，仍保持7px突出高度和到图形默认6px的间距。箭头无接缝与动态锚点、近图定位须同时满足。
 
 #### 尖端与可见图形之间的距离
 
@@ -87,15 +87,16 @@
 .admin-chart__plot { position:relative; min-block-size:232px; }
 .admin-chart-tooltip { position:absolute; z-index:3; inline-size:max-content; max-inline-size:min(240px,calc(100% - 16px));
   padding:10px 12px; border:1px solid var(--line-soft); border-radius:12px; background:var(--panel);
-  color:var(--text); box-shadow:0 8px 24px rgb(38 73 126 / .14); pointer-events:none; }
+  color:var(--text); box-shadow:0 8px 24px rgb(38 73 126 / .14); pointer-events:none; isolation:isolate; overflow:visible; }
 .admin-chart-tooltip { --tooltip-gap:6px; --tooltip-arrow-height:7px; --tooltip-arrow-base:12px; }
 .admin-chart-tooltip::before,.admin-chart-tooltip::after { content:""; position:absolute; pointer-events:none;
+  box-sizing:border-box; z-index:1; margin:0; padding:0; border:0; outline:0; box-shadow:none; filter:none; opacity:1;
   inset-block-start:calc(100% + 1px); inset-inline-start:var(--tooltip-arrow,50%);
   inline-size:var(--tooltip-arrow-base); block-size:var(--tooltip-arrow-height);
   clip-path:polygon(0 0,100% 0,50% 100%); transform:translateX(-50%); background:var(--line-soft); }
-.admin-chart-tooltip::after { inset-block-start:calc(100% - 1px);
-  inline-size:calc(var(--tooltip-arrow-base) - 2px); block-size:calc(var(--tooltip-arrow-height) + 1px);
-  clip-path:polygon(0 0,100% 0,100% 2px,50% 100%,0 2px); background:var(--panel); } /* 平直填充跨过1px边框，不留根部横线 */
+.admin-chart-tooltip::after { z-index:2; inset-block-start:calc(100% - 1px);
+  inline-size:var(--tooltip-arrow-base); block-size:calc(var(--tooltip-arrow-height) + 1px);
+  clip-path:polygon(0 0,100% 0,100% 2px,50% 100%,0 2px); background:var(--panel); } /* 等宽平直段跨完整根部，随后才收尖 */
 .admin-chart-tooltip[data-placement="bottom"]::before,
 .admin-chart-tooltip[data-placement="bottom"]::after { inset-block-start:auto; inset-block-end:calc(100% + 1px);
   clip-path:polygon(50% 0,100% 100%,0 100%); }
@@ -109,13 +110,13 @@
 .admin-chart-tooltip[data-placement="left"]::after { inset-inline-start:calc(100% + 1px); inset-inline-end:auto;
   clip-path:polygon(0 0,100% 50%,0 100%); }
 .admin-chart-tooltip[data-placement="left"]::after { inset-inline-start:calc(100% - 1px);
-  inline-size:calc(var(--tooltip-arrow-height) + 1px); block-size:calc(var(--tooltip-arrow-base) - 2px);
+  inline-size:calc(var(--tooltip-arrow-height) + 1px); block-size:var(--tooltip-arrow-base);
   clip-path:polygon(0 0,2px 0,100% 50%,2px 100%,0 100%); }
 .admin-chart-tooltip[data-placement="right"]::before,
 .admin-chart-tooltip[data-placement="right"]::after { inset-inline-start:auto; inset-inline-end:calc(100% + 1px);
   clip-path:polygon(100% 0,100% 100%,0 50%); }
 .admin-chart-tooltip[data-placement="right"]::after { inset-inline-end:calc(100% - 1px);
-  inline-size:calc(var(--tooltip-arrow-height) + 1px); block-size:calc(var(--tooltip-arrow-base) - 2px);
+  inline-size:calc(var(--tooltip-arrow-height) + 1px); block-size:var(--tooltip-arrow-base);
   clip-path:polygon(0 50%,calc(100% - 2px) 0,100% 0,100% 100%,calc(100% - 2px) 100%); }
 .admin-chart-tooltip[data-arrow="hidden"]::before,
 .admin-chart-tooltip[data-arrow="hidden"]::after { content:none; }

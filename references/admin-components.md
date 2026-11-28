@@ -263,6 +263,20 @@ hover浅蓝整行且保留分组图标色；当前路由才是蓝色渐变整行
 
 输入前缀／后缀SVG为block且flex-shrink0，gap6–8；文字行中图标不能上浮半个字。输入的边框与焦点建议通过同一层shadow／border绘制，避免同时两层库边框叠粗。全局主题需覆盖append-to-body的选择面板，不能只在页面容器设变量。
 
+<a id="clean-admin-field-alignment"></a>
+
+### 单行字段：提示文字、输入值与图标垂直居中
+
+搜索、普通输入、账号／密码、日期、数字、单选Select／Combobox的**框内占位提示小字、已填值、前缀图标、清除按钮和下拉箭头共用字段可用内高的垂直中心线**。文字保持左对齐；“垂直居中”不表示水平居中。空值显示placeholder、输入后显示值、清空恢复placeholder时不能上下跳动；placeholder沿用输入的字体、字号、400字重与行高，只区分提示色，不单独缩小加粗或增加上下padding。
+
+外壳采用flex／grid居中；内部原生单行input使用明确内高、border-box、对称的上下padding（本节示例为0）和统一行高，不能仅给外壳align-items:center便认定文字已对齐。默认38px字段的内高36px，42px登录字段内高40px；34px紧凑档、搜索弹窗50px字段也按各自外高减去上下边框计算。通过同一个高度变量传递给内部节点，避免外壳增高而输入／选择值仍固定旧高度。清空／显隐／loading图标切换不改变中心线或字段高度。
+
+Select／Combobox同时检查实际value、placeholder、selection-item、selection-search-input与suffix节点；自定义显示文字容器用flex居中，并重置库自带的margin、重复padding或不匹配line-height，原生select保持语义和键盘操作。多选chips按行居中、允许按内容增高；多行Textarea沿用顶部padding与正常阅读行距，不强制整段居中。框外label、help与错误文字仍在原来的上下位置，placeholder不能替代可见标签。
+
+禁止靠单独translateY／top、负margin、空格、绝对定位的假placeholder或把line-height直接写成整个字段高度凑位置。对自定义Select的独立显示文字span，如需精修字体内置留白，可在支持时使用text-box:trim-both cap alphabetic；仅作用于该文字节点，并检查中文、英文含下伸字母和数字，不强行用于原生input／placeholder或多行内容。不支持时保留正常行高与flex布局，不能裁字。
+
+验收普通38px、登录42px及实际使用的紧凑／弹窗档：用“搜索来源 IP、尝试用户或事件类型”“请选择状态”“Agjp 0123”分别比较空值、填写、清空、聚焦与失焦，以及前后缀、禁用、只读、loading、浅深主题和100%／125%／200%缩放。测量文字行盒与图标盒中心，并放大检查可见字形的上下留白；行盒几何中心偏差应不超过1 CSS px，字形不得明显偏上／偏下或裁切。只证明input元素居中或只看英文空值不算通过；输入后与placeholder切换也须实测。
+
 <a id="clean-admin-input-surface"></a>
 
 ### 一体式输入面：前后缀不能出现灰色拼接块
@@ -287,15 +301,17 @@ hover浅蓝整行且保留分组图标色；当前路由才是蓝色渐变整行
 
 ```css
 .admin-input { display:flex; align-items:center; gap:8px; min-inline-size:0;
-  --input-focus:var(--accent-link); --input-surface:var(--panel);
-  min-block-size:38px; padding:0 12px; border:1px solid var(--line); border-radius:10px;
+  --input-focus:var(--accent-link); --input-surface:var(--panel); --field-height:38px;
+  box-sizing:border-box; min-block-size:var(--field-height); padding:0 12px; border:1px solid var(--line); border-radius:10px;
   background:var(--input-surface); color:var(--text); transition:border-color 160ms ease; }
-.admin-input > input { flex:1; min-inline-size:0; inline-size:100%; min-block-size:36px;
+.admin-input > input { flex:1; min-inline-size:0; inline-size:100%; box-sizing:border-box;
+  block-size:calc(var(--field-height) - 2px); min-block-size:0;
   margin:0; padding:0; border:0; border-radius:0; background:transparent;
   box-shadow:inset 0 0 0 100vmax var(--input-surface); transition:none; animation:none;
   color:inherit; caret-color:var(--text); font:400 13px/1.5 var(--sans);
   font-weight:400; font-synthesis:none; font-variation-settings:normal; letter-spacing:normal; }
-.admin-input > input::placeholder { color:var(--faint); opacity:1; }
+.admin-input > input::placeholder { color:var(--faint); opacity:1; font:inherit; letter-spacing:inherit; }
+.admin-input[data-size="login"] { --field-height:42px; }
 .admin-input > :is(.admin-input__prefix,.admin-input__suffix) {
   display:inline-flex; align-items:center; flex:0 0 auto; color:var(--muted);
   background:transparent; border:0; box-shadow:none; }
@@ -325,8 +341,8 @@ hover浅蓝整行且保留分组图标色；当前路由才是蓝色渐变整行
 .admin-input:has(input:disabled) { --input-surface:var(--panel-muted); color:var(--muted); cursor:not-allowed; }
 .admin-input > input:disabled { color:inherit; opacity:1; cursor:not-allowed; }
 @media(pointer:coarse) {
-  .admin-input { min-block-size:44px; }
-  .admin-input > input { min-block-size:42px; font-size:16px; }
+  .admin-input { --field-height:44px; min-block-size:44px; }
+  .admin-input > input { block-size:42px; font-size:16px; }
   .admin-input .admin-input__action { inline-size:44px; block-size:44px; }
 }
 @media(forced-colors:active) {
@@ -359,6 +375,9 @@ disabled可让**整框**使用panel-muted，不能只让两端变灰；同时禁
 帮助12。前后缀16px并预留空间；focus在同一外边界用accent色向内强调，不叠外框，错误用红边和字段下
 说明，disabled只读和loading各有真实区别。双列表单每列min-width:0、gap20，
 手机单列；不要用placeholder代替标签或让红色校验文字遮住下一个字段。
+按单行字段对齐合同，让框内placeholder、已填值、前后缀与下拉箭头垂直居中、文字左对齐；
+占位和填写共用字体/字号/400字重/行高，外高与内高联动。核对输入、清空与各尺寸、缩放，
+不能靠只调placeholder偏移或加粗凑齐；Textarea仍从顶部开始，多选按行居中。
 普通输入和搜索按一体式输入面合同：外壳统一底色/边框/圆角/单层焦点强调，内部input、
 图标前后缀及清除按钮透明，不出现两端灰色块或白色内胆；禁用整框统一变色。
 填写、粘贴、自动填充、readonly及重新聚焦不改变文字区底色；按本节覆盖UA
