@@ -81,13 +81,13 @@
 
 关键是外层按钮宽度稳定，左蓝块绝对定位且在文字下方展开；箭头与三点属于蓝块内部。不是让一个普通蓝色按钮增长，也不是“hover时把文字往右推”。三点只是静态小圆点淡入，没有跳动循环。
 
-以下片段在目标项目内可直接改为其组件；箭头可替换为项目自己的SVG图标。外层保留真正button、type及业务click；默认最低高38px、圆角11px、左文字留白56px、右15px。focus-visible与hover同态。
+以下片段在目标项目内可直接改为其组件；箭头使用带横杆的完整右箭头（ArrowRight），项目图标必须与该轮廓一致，不得替换为只有折角的chevron、KPI无箭杆入口或↗。外层保留真正button、type及业务click；默认最低高38px、圆角11px、左文字留白56px、右15px。focus-visible与hover同态。
 
 ```html
 <button type="button" class="console-arrow-button">
   <span class="arrow-expansion" aria-hidden="true">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-      <path d="m9 5 7 7-7 7" />
+      <path d="M5 12h14m-6-6 6 6-6 6" />
     </svg>
     <i></i><i></i><i></i>
   </span>
@@ -97,7 +97,8 @@
 
 ```css
 .console-arrow-button {
-  position:relative; isolation:isolate; display:inline-flex; align-items:center;
+  --arrow-reveal-fill:linear-gradient(180deg,#3589ff,#1669f3); --arrow-reveal-ink:#fff;
+  position:relative; isolation:isolate; display:inline-flex; align-items:center; box-sizing:border-box;
   min-height:38px; padding:0 15px 0 56px; overflow:hidden;
   border:1px solid var(--line); border-radius:11px;
   background:var(--panel); color:var(--text); box-shadow:var(--shadow-sm);
@@ -105,20 +106,21 @@
   transition:transform 150ms ease,border-color 180ms ease;
 }
 .arrow-expansion {
-  position:absolute; z-index:-1; top:4px; bottom:4px; left:4px; width:28px;
+  position:absolute; z-index:0; box-sizing:border-box; pointer-events:none;
+  top:4px; bottom:4px; left:4px; width:28px;
   display:flex; align-items:center; gap:5px; padding:0 7px; border-radius:7px;
-  background:var(--accent); color:var(--accent-ink);
+  background:var(--arrow-reveal-fill); color:var(--arrow-reveal-ink);
   transition:width 300ms cubic-bezier(.2,.75,.25,1);
 }
-.arrow-expansion svg { flex:0 0 14px; width:14px; height:14px; display:block; }
+.arrow-expansion svg { flex:0 0 14px; width:14px; height:14px; display:block; color:var(--arrow-reveal-ink); }
 .arrow-expansion i {
   flex-shrink:0; width:2px; height:2px; border-radius:50%;
   background:currentColor; opacity:0; transition:opacity 180ms ease;
 }
-.arrow-button-label { transition:color 180ms ease; }
+.arrow-button-label { position:relative; z-index:1; color:var(--text); white-space:nowrap; transition:color 180ms ease; }
 .console-arrow-button:is(:hover,:focus-visible):not(:disabled) { border-color:var(--accent); }
 .console-arrow-button:is(:hover,:focus-visible):not(:disabled) .arrow-expansion { width:calc(100% - 8px); }
-.console-arrow-button:is(:hover,:focus-visible):not(:disabled) .arrow-button-label { color:var(--accent-ink); }
+.console-arrow-button:is(:hover,:focus-visible):not(:disabled) .arrow-button-label { color:var(--arrow-reveal-ink); }
 .console-arrow-button:is(:hover,:focus-visible):not(:disabled) .arrow-expansion i { opacity:.7; }
 .console-arrow-button:active:not(:disabled) { transform:scale(.975); }
 .console-arrow-button:focus-visible { outline:2px solid var(--accent); outline-offset:3px; }
@@ -128,6 +130,12 @@
   .console-arrow-button:active:not(:disabled) { transform:none; }
 }
 ```
+
+**按完整状态验收，不能只实现蓝底铺开。**默认是左侧紧凑蓝块＋白色完整右箭头，文字在固定起点显示正文色、三点opacity0；hover／focus-visible后，同一个蓝块沿左边固定起点向右铺到两侧各4px内边距，箭头坐标和尺寸保持不变，三个2px小点同时淡入至.7，标签180ms转为白色并位于蓝块上层。离开则从当前位置连续收回28px，三点淡出、文字恢复；快速反向不重置起点或闪回默认帧。三点不能漏掉、跳动、跑马或被窄蓝块的overflow裁掉；箭头／点／标签都不被width动画拉伸，按钮外框和相邻操作不位移。
+
+蓝底前景使用独立--arrow-reveal-ink:#fff，蓝底使用上述共享variant渐变，两种主题保持白箭头／白点／展开白字；不要直接引用深色主题会变为深色的accent-ink，也不要让库的button span、hover文字规则覆盖标签。背景扩展层与前景明确分层；不能让蓝色层盖住标签，不能让文字在展开终态仍为深灰／蓝色。KPI右上角的无箭杆chevron规范只适用于KPI，不得套到这个带横杆箭头上。
+
+实际录屏核对“默认→移入约80／160／300ms→持续停留→离开→尚未收完再次进入”，以及键盘focus-visible、禁用与减弱动态。完整展开时白字、三个白点和完整右箭头必须同时可见，蓝底距左右边缘均4px；测量外框／文字／箭头的包围盒保持稳定，disabled不展开、不触发动作，reduced-motion直接呈现对应状态但保留反馈。动画本身是验证目标，不能只交默认／终态两张图就宣称时序一致。
 
 蓝块是局部绝对层，动画width不参与周围布局。若目标项目统一要求仅transform，可将蓝色装饰面分离并对它scaleX；箭头与小点必须另放不缩放层，并复测视觉，不能直接把上面整个蓝块scaleX导致图标变形。较长按钮文案先留足箭头和三个点的固定区域；禁用组件不因hover误展开。
 
@@ -178,8 +186,8 @@
 
 ## 登录、浮层与任务反馈
 
-- 登录页品牌标记可响应hover，输入focus光环与密码显隐不丢值。提交只有真实状态`idle → validating → challenge / error → authenticating → success / error`，忙碌时重复提交被抑制；失败保留用户名，密码处理服从目标安全逻辑，不将凭据写入日志、截图、localStorage或示例文档。
-- 拼图的piece与thumb跟随输入，不加拖尾easing；滑块用range保留左右键和aria-valuetext。挑战图加载完成才可操作；验证中禁拖动并转圈，拒绝时显示原因与重试。图内拼图、透明块和背景必须来自同一次挑战；本配方图片只展示虚构拼图，不提供认证算法。
+- 登录页品牌标记可响应hover，输入仅原有边框变色、密码显隐不丢值。登录统一按[滑动拼图合同](admin-pages.md#clean-admin-login-slider)实现，提交只有真实状态`idle → validating → challenge / error → authenticating → success / error`，忙碌时重复提交被抑制；失败保留用户名，密码处理服从目标安全逻辑，不将凭据写入日志、截图、localStorage或示例文档。
+- 拼图的piece与thumb跟随输入，不加拖尾easing；滑块用range保留左右键和aria-valuetext。挑战图加载完成才可操作；轨道与图像行程按同一进度映射，释放后向真实接口提交；键盘确认不因每次input重复验证。验证中禁拖动并转圈，拒绝时显示原因与重试，成功勾选／文案后继续同次认证；刷新／关闭取消旧挑战，晚到响应不得放行。图内拼图、透明块和背景必须来自同一次挑战；本配方图片只展示虚构拼图，不提供认证算法。
 - 文字提示复用库的hover/focus和180/100ms时序。菜单点击展开；Dialog、Drawer按其职责处理focus trap、关闭、Esc和return-focus。手机导航要可关闭、背景inert，桌面常驻侧栏不误标为模态对话框。
 - 账号提醒和重认证弹窗的入场是面板级200ms动画；只保留一个负责scale／translate的层，库遮罩可淡入。对于库已自带相同面板动画的目标，合并替换相应过渡，不能嵌套双重缩放。
 - 刷新与任务反馈的spinner仅在busy时出现。成功切绿面、错误保留能重试的说明。备份、校验和签名相关内容只取视觉状态，不复制原服务行为、安全策略或实际运行日志。

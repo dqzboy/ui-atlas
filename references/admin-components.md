@@ -57,7 +57,7 @@ disabled；异步动作再处理loading、success、error。只有适用的状�
 
 ## 侧栏：分组竖线、彩色图标与菜单状态
 
-以概览参考图中的完整侧栏为准。组标题文字使用text-soft，彩色短竖线位于文字前；不是把整段标题染色，也不是选中菜单左侧另加一条长线。未选菜单保留分组对应的彩色线框图标和浅色底座，选中菜单才统一蓝色渐变、白字白图标。分组颜色通过稳定的group tone绑定，不能用nth-child决定颜色而在隐藏菜单或调整顺序后串色。
+以概览参考图中的完整侧栏为准。**分组标题及其彩色短竖线只在展开侧栏／完整移动抽屉中显示，桌面收起时一起隐藏且不占位。**组标题文字使用text-soft，彩色短竖线位于文字前；不是把整段标题染色，也不是选中菜单左侧另加一条长线。未选菜单保留分组对应的彩色线框图标和浅色底座，选中菜单才统一蓝色渐变、白字白图标。分组颜色通过稳定的group tone绑定，不能用nth-child决定颜色而在隐藏菜单或调整顺序后串色。
 
 | 分组示例／tone | 组标题短竖线（opacity .6） | 未选图标线条 | 24×24图标底座 |
 |---|---|---|---|
@@ -124,14 +124,21 @@ disabled；异步动作再处理loading、success、error。只有适用的状�
   .app-shell[data-sidebar-collapsed="true"] .sidebar .admin-nav {
     padding-inline:4px; scrollbar-width:thin; scrollbar-gutter:stable both-edges;
     scrollbar-color:var(--admin-scroll-thumb,#d8d8d8) transparent; }
+  .app-shell[data-sidebar-collapsed="true"] .sidebar .admin-nav__mark,
   .app-shell[data-sidebar-collapsed="true"] .sidebar .admin-nav__label,
   .app-shell[data-sidebar-collapsed="true"] .sidebar .admin-nav__copy,
   .app-shell[data-sidebar-collapsed="true"] .sidebar .admin-nav__count { display:none; }
+  .app-shell[data-sidebar-collapsed="true"] .sidebar .admin-nav__label::before,
+  .app-shell[data-sidebar-collapsed="true"] .sidebar .admin-nav__label::after,
+  .app-shell[data-sidebar-collapsed="true"] .sidebar .admin-nav__mark::before,
+  .app-shell[data-sidebar-collapsed="true"] .sidebar .admin-nav__mark::after { content:none; display:none; }
   .app-shell[data-sidebar-collapsed="true"] .sidebar .admin-nav { min-inline-size:0; }
   .app-shell[data-sidebar-collapsed="true"] .sidebar .admin-nav__group { padding-inline:0; min-inline-size:0; }
   .app-shell[data-sidebar-collapsed="true"] .sidebar .admin-nav__item {
     display:flex; align-items:center; justify-content:center; box-sizing:border-box;
-    inline-size:100%; margin-inline:0; padding-inline:0; gap:0; text-indent:0; }
+    inline-size:min(36px,100%); block-size:auto; aspect-ratio:1 / 1;
+    min-block-size:0; max-inline-size:100%; flex:none; align-self:start; justify-self:center;
+    margin-inline:auto; padding:0; gap:0; text-indent:0; }
   .app-shell[data-sidebar-collapsed="true"] .sidebar .admin-nav__icon { flex:0 0 24px; margin-inline:0; }
   .app-shell[data-sidebar-collapsed="true"] .sidebar .admin-nav__icon svg { margin:0; }
   .app-shell[data-sidebar-collapsed="true"] .sidebar .admin-nav__item:focus-visible { outline-offset:-2px; }
@@ -155,6 +162,10 @@ disabled；异步动作再处理loading、success、error。只有适用的状�
 
 验收连续来回点击同组与跨组菜单、快速点击尚在悬停中的旧项，并用键盘导航／浏览器返回重复切换；在浅深主题下逐帧核对新旧两项标签、图标和计数。旧项离开蓝底时立即恢复未选前景，新项进入蓝底时立即白字；不出现白字配浅底、深字配蓝底、文字消失再出现或字重／宽度跳变。侧栏节点与导航滚动位置保持稳定，主题和正文入场不影响菜单文字。正文另按页面规则更新，不为消除菜单闪动而关闭所有组件动画。
 
+**收起时不留标题竖线。**隐藏的是整个分组标题区域，包括独立mark元素、标题／分组wrapper的::before／::after、左border和背景渐变绘制的装饰；只隐藏标题文字span或设opacity:0不合格。同步移除标题行高度、padding、margin与空grid行，不得在图标之间留下蓝／紫／珊瑚／青短竖线或空标题行。已有库将标记画在父级时，在折叠作用域只撤销该装饰，不删除分组的tone映射；菜单图标仍保留组色。再次展开完整恢复标题和竖线，不能全局删除。
+
+**收起时图标按钮保持圆角正方形。**菜单选中蓝色背景、未选／悬停背景和点击容器共用同一个1:1外框；默认以36px为目标，窄滚动视口放不下时宽高等比缩小且保留24px图标座。必须重置展开态min-height42、上下padding8、width:100%、flex/grid拉伸及库的active-only高度，不能只设宽度或只给内部图标座加aspect-ratio。测量的是整个蓝色背景外框，不是SVG或内部24px浅色底座；禁止窄高胶囊、横向长条及选中才变高。底部账户、帮助、展开／退出等图标入口也默认36×36、圆角10、水平居中；收起后隐藏名称／角色／箭头及空列，取消账户卡的整行铺底，头像可保留原尺寸。不同业务明确指定其他尺寸时仍须宽高相等，不能继承展开态整行卡片尺寸。触屏命中面积可按既有规范扩展但不互相重叠，不能为扩大命中区把可见背景拉成长条。
+
 **折叠菜单左右等距。**每个按钮的可见外框在侧栏可用宽度内水平居中，左右留白相等；24px图标底座在按钮内部居中，SVG再在底座内居中。所有入口共用同一条垂直中心线，default／hover／active／focus都不移动、不改变按钮宽度，不能只有选中蓝色块偏左或图标继续沿用展开态的左起点。隐藏文字、计数、分组标题及无用子菜单箭头后，同时清掉它们的grid列、gap、padding、margin、text-indent、子层级缩进和伪元素占位；不能只隐藏文字却保留空白列，也不能用逐项translateX或不对称padding补偿。
 
 复用组件库时检查实际menu-item、submenu-title、icon wrapper与SVG上的展开态间距，并映射上面的折叠规则。Logo、搜索、菜单及底部控制按同一侧栏中心轴核对；职责不同的按钮尺寸可不同，但各自左右留白须对称。滚动viewport、右侧滚动条槽与库内边距也要计入：下例仅在折叠导航viewport使用thin滚动条与stable both-edges对称留槽，侧栏折叠时左右padding3px，让滚动条靠近内侧边缘；导航viewport内再左右padding4px，给按钮焦点留出空间；不要让一侧常驻空槽把整列推偏。已有库使用自定义滚动viewport时，把对称处理映射到真实层，不在外壳重复留槽；核对有／无溢出，不靠隐藏滚动能力或裁掉焦点修复。自定义图标素材若viewBox自带不对称空白，修正可见图形在图标框内的位置，不移动整列。
@@ -163,9 +174,9 @@ disabled；异步动作再处理loading、success、error。只有适用的状�
 
 窄轨道与菜单居中需一起落实：原生对称留槽只放在实际viewport；自定义组件的absolute轨道靠右内缘，内容仍以完整侧栏中心轴对齐，不能重复套用原生gutter。不得靠负margin把条推到侧栏外、隐藏唯一滚动条、去掉滚动能力或让滑块压住图标。触屏／高对比度交回系统可操作尺寸，不强制2px。验收长菜单滚到首尾、展开收起、hover／拖动、浅深主题、常驻与覆盖式滚动条，检查实际绘制宽度、右侧间距和菜单中心轴；只检查scrollbar-width的computed值不算通过。
 
-验收展开→折叠→切换不同菜单→hover／键盘聚焦→再展开，在浅深主题、长菜单滚动、各层级和浏览器缩放下测量：按钮外框距侧栏内侧两边的留白差≤1 CSS px，图标底座中心与按钮中心、所有菜单入口中心轴偏差≤1 CSS px。展开态文字间距不被折叠样式污染，收起后仍有完整可访问名称与自定义Tooltip。
+验收展开→折叠→切换不同菜单→hover／键盘聚焦→再展开，在浅深主题、长菜单滚动、各层级和浏览器缩放下测量：按钮外框距侧栏内侧两边的留白差≤1 CSS px，图标底座中心与按钮中心、所有菜单入口中心轴偏差≤1 CSS px。同时逐项测量菜单与底部入口的完整可见背景，宽高差≤1 CSS px，各状态不拉伸；所有组标题／独立竖线及伪元素无绘制、无空标题行。展开态文字间距不被折叠样式污染，标题与短竖线恢复；收起后仍有完整可访问名称与自定义Tooltip。
 
-桌面折叠为64px实际侧栏时，保留24px彩色底座和当前蓝色菜单；隐藏标签／计数前给每个入口设置完整aria-label，并提供聚焦可见的名称提示。手机抽屉显示完整标题、竖线、菜单文字与计数，不沿用折叠隐藏规则。深色底座引用相应tint主题，彩色竖线和图标不能丢失；按实际对比度需要适配色值时保留组间区别并注明调整。
+桌面折叠为64px实际侧栏时，保留24px彩色底座和当前蓝色菜单；隐藏标签／计数前给每个入口设置完整aria-label，并提供聚焦可见的名称提示。手机抽屉显示完整标题、竖线、菜单文字与计数，不沿用折叠隐藏规则。深色底座引用相应tint主题；展开态的彩色竖线与两态菜单彩色图标都须保留，折叠态不显示标题竖线；按实际对比度需要适配色值时保留组间区别并注明调整。
 
 ### 品牌居中与侧栏内部折叠控制
 
@@ -217,11 +228,18 @@ disabled；异步动作再处理loading、success、error。只有适用的状�
   .app-shell[data-sidebar-collapsed="true"] .admin-sidebar-brand__copy,
   .app-shell[data-sidebar-collapsed="true"] .admin-sidebar-toggle > span { display:none; }
   .app-shell[data-sidebar-collapsed="true"] .admin-sidebar-brand { gap:0; }
-  .app-shell[data-sidebar-collapsed="true"] .admin-sidebar-toggle { inline-size:36px; margin-inline:auto; }
+  .app-shell[data-sidebar-collapsed="true"] .admin-sidebar-toggle,
+  .app-shell[data-sidebar-collapsed="true"] .admin-sidebar-icon-action {
+    box-sizing:border-box; display:flex; align-items:center; justify-content:center;
+    inline-size:36px; block-size:36px; min-inline-size:0; min-block-size:0;
+    aspect-ratio:1 / 1; flex:none; padding:0; gap:0; margin-inline:auto; border-radius:10px; }
+  .app-shell[data-sidebar-collapsed="true"] .admin-sidebar-icon-action__copy { display:none; }
   .app-shell[data-sidebar-collapsed="true"] .admin-sidebar-toggle svg { transform:rotate(180deg); }
 }
 @media(max-width:960px) { .admin-sidebar-control { display:none; } }
 ```
+
+底部账户／帮助／退出按钮将admin-sidebar-icon-action映射到其实际可点击外壳，名称／角色包装层映射为admin-sidebar-icon-action__copy；不能只改头像节点而仍保留外围长条背景。
 
 真实事件由项目组件接入：用同一布尔状态更新app-shell、按钮label与expanded，品牌／菜单的显隐使用该状态；不通过点击后重建侧栏实现折叠。检查展开、折叠、快速反向、键盘、长品牌、无副标题、短屏和跨960px断点；折叠前后品牌的可见Logo保持居中，帮助／账户缩成可用入口且不撑出64px。宽度／容器变化后图表与正文重新适配，顶部栏桌面不能残留第二个折叠按钮。旧参考图若仍显示顶栏折叠位置，按本节最新归属要求实现，参考素材不因本次规则调整而重制。
 
@@ -265,7 +283,10 @@ hover浅蓝整行且保留分组图标色；当前路由才是蓝色渐变整行
 白18%图标底座与白20%计数底。active不被hover覆盖，不出现全灰菜单或长竖线。
 来回切换时选中背景与标签/图标/计数同步换色，取消前景color/opacity补间，
 保留悬停背景和阴影反馈；菜单节点稳定，不随路由重挂载或让文字淡出再淡入。
-折叠仍保留彩色图标与名称入口；菜单按钮左右留白相等、图标座居中且整列共轴，
+折叠保留彩色图标与可访问名称，标题/短竖线/伪元素/空标题行一起移除，展开恢复；
+菜单完整背景为1:1圆角正方形，默认36px，窄位等比适配；取消展开态min-height与padding。
+底部账户/帮助/展开等图标入口也36×36居中，不保留整行铺底或文字空列。
+菜单按钮左右留白相等、图标座居中且整列共轴，
 隐藏文字/计数后清除列宽/gap/缩进/空占位，hover与选中不偏移；检查实际滚动层。
 手机完整展示分组；不复制业务菜单或假计数。
 品牌Logo与双行标题横排垂直居中，整组水平居中；桌面折叠按钮在侧栏内部底部
@@ -287,7 +308,7 @@ hover浅蓝整行且保留分组图标色；当前路由才是蓝色渐变整行
 - 禁用：opacity .5、去外阴影、cursor not-allowed，保留宽高和文案；不能执行、不能press缩放。
 - 加载：原图标位换16px旋转图标、文案“保存中…”等，按钮宽度至少维持进入loading前宽度，aria-busy；业务不允许时阻止重复提交，不锁住其他无关输入。
 - 成功：需按钮内反馈时短时green表面、Check与结果文字；否则保留按钮并用合适Toast。失败恢复可再次执行且错误就地显示；不能一直停在loading。
-- 深色：主操作仍保留蓝色渐变和白字；不要无条件套accent-ink导致暗字压在深蓝按钮上。专用箭头组件使用自身主题token，是不同variant。
+- 深色：主操作仍保留蓝色渐变和白字；不要无条件套accent-ink导致暗字压在深蓝按钮上。专用箭头展开组件使用自身蓝色渐变／白色前景token，不复用深色accent-ink。
 
 **提示词：**
 
@@ -312,7 +333,7 @@ hover浅蓝整行且保留分组图标色；当前路由才是蓝色渐变整行
 
 ### Arrow Reveal 箭头展开按钮
 
-使用 [动效规范的完整片段](admin-motion.md)，不能自行简化成hover变蓝。外层白面、11圆角、38高、稳定宽度；内部left4／top4／bottom4、28宽蓝块、7圆角、14箭头。hover和focus-visible时内部宽到`100%−8px`，300ms指定curve；三个2px圆点以5px间隔、180ms淡至.7；文字180ms转accent-ink；离开收回。文字不移动，小点不弹跳，箭头不挤压，禁用不展开。长标签留足前部箭头／三点固定区域，不能被装饰遮住。
+使用 [动效规范的完整片段](admin-motion.md)，不能自行简化成hover变蓝。外层白面、11圆角、38高、稳定宽度；内部left4／top4／bottom4、28宽蓝色渐变块、7圆角、14px带横杆完整右箭头，不能套KPI无箭杆chevron。hover和focus-visible时内部宽到`100%−8px`，300ms指定curve；三个2px圆点以5px间隔、180ms淡至.7；文字180ms转独立arrow-reveal-ink白色（浅深主题一致）；离开收回。文字不移动，三个白点必须可见且不弹跳，箭头坐标固定、不挤压，禁用不展开。不得只铺蓝底却保持深色字、漏掉三点或把蓝底盖在文字上。长标签留足前部箭头／三点固定区域，不能被装饰遮住。
 
 ## 输入、搜索与字段容器
 

@@ -67,7 +67,7 @@
 
 字体使用系统回退，不下载商业字体；不同操作系统的字形和占宽会有差异。字体基准为正文 14px、标签 13px、说明 12px；此套紧凑控件有 10–12px 辅助信息，不把小号辅助字当作所有正文的尺寸。大标题一般 26px／1.3、650，概览标题 30px；KPI 38px／1.2、650，tabular-nums；标题字距约 -.035em 到 -.04em。
 
-未设置data-theme时默认浅色；需要深色时在首屏绘制前按目标项目已有主题机制设置dark。四色摘要在两种主题下使用同一渐变，不因深色模式给整张卡叠黑色蒙层或降低brightness。普通主按钮继续用蓝色渐变白字，专用箭头展开按钮才使用自身accent／accent-ink，不将两种variant的前景色混用。
+未设置data-theme时默认浅色；需要深色时在首屏绘制前按目标项目已有主题机制设置dark。四色摘要在两种主题下使用同一渐变，不因深色模式给整张卡叠黑色蒙层或降低brightness。普通主按钮继续用蓝色渐变白字；专用箭头展开按钮使用自身arrow-reveal-fill／arrow-reveal-ink，展开白字、白箭头和白三点，浅深主题一致，不误用深色accent-ink。
 
 ## 信息层级、分组与表面
 
@@ -87,13 +87,13 @@
 |---|---|---|
 | 外层 | Grid：256px + minmax(0,1fr)，最小高度 100dvh | ≤960px 改单列，导航改抽屉 |
 | 侧栏 | fixed，距左／上／下 12px；宽 232px；内边距 12px；圆角 20px；蓝色细边 | 展开宽 min(280px,视口−32px)，背景不可交互；关闭后恢复焦点 |
-| 折叠侧栏 | 外层第一列88px、实际侧栏64px、左右padding3px；标签／计数隐藏并清除占位与缩进，按钮左右等距、图标座居中、整列共轴 | 按组件规范实测左右留白与中心轴，误差≤1 CSS px；default／hover／active／focus及有无滚动都核对；抽屉仍显示完整标签，保留可访问名称 |
+| 折叠侧栏 | 外层第一列88px、实际侧栏64px、左右padding3px；标题／短竖线／标签／计数隐藏并清除占位与缩进，菜单及底部图标入口1:1圆角正方形，按钮左右等距、图标座居中、整列共轴 | 按组件规范实测左右留白与中心轴，误差≤1 CSS px；default／hover／active／focus及有无滚动都核对；抽屉仍显示完整标签，保留可访问名称 |
 | 侧栏品牌 | min-height68，标记34px与双行标题横排、垂直居中；整组在侧栏可用宽度内水平居中，左右留白对称；标题20px | 长名可截断并提供完整可访问名；折叠只保留居中Logo；按组件规范品牌合同 |
-| 菜单项 | 最小高42px，内边距8px 10px，图文gap10px，组内gap5px，圆角11px；彩色图标底座24px／7px、内部SVG17px；组前4×10px彩色短竖线 | 命中区须能触摸操作，图标有文字或aria-label；分组配色和状态见组件规范侧栏合同 |
-| 顶栏 | 独立白色面板；margin 12px 28px 0 16px；圆角18px；内容高68px；横向内边距18px | ≤1280px右margin24px；≤960px margin 12px 20px 0、内边距20px；≤600px margin 8px 12px 0、圆角14px、内容高60px、内边距10px |
+| 菜单项 | 展开态最小高42px、内边距8px 10px、图文gap10px；收起态按组件规范36px目标正方形，清除展开态最小高与padding；组内gap5px、圆角11px；彩色图标底座24px／7px、内部SVG17px；组前4×10px彩色短竖线 | 命中区须能触摸操作，图标有文字或aria-label；分组配色和状态见组件规范侧栏合同 |
+| 顶栏 | 独立白色面板；上margin12px，水平由workspace共用gutter管理；圆角18px；内容高68px；内部横padding18px | 水平宽度与正文共同响应；≤960px内部padding20px；≤600px上margin8px、圆角14px、内容高60px、内部padding10px |
 | 顶栏控件 | 图标按钮36px／10px；搜索宽clamp(170px,20vw,260px)、高36px；头像26px／8px | 手机搜索缩为36px图标按钮，隐藏搜索文案、连接状态与用户名，保留入口 |
-| 正文 | max-width 1620px；padding 26px 28px 48px 16px；子项min-width:0 | ≤1280px 24px 24px 40px 16px；≤960px 24px 20px 32px；≤600px 20px 12px 28px |
-| 页标题 | 分组标记 + h1 + 说明 + 右侧主次操作；min-height约94px，底部14px与细线，之后24px | 手机上下排列，操作区可占整行 |
+| 顶栏与正文共宽 | 两者共用1620px上限、工作区左右留白16／28px；正文不再叠水平padding；页标题、筛选及主面板外边缘与顶栏外边缘齐平 | ≤1280px左右16／24；≤960px左右20；≤600px左右12；顶栏底到页头首行桌面24px、手机16px，只由一层管理 |
+| 页标题 | 分组标记 + h1 + 说明 + 右侧主次操作；按内容自然高度，底部14px与细线，之后20px | 手机上下排列，操作区可占整行 |
 | 面板 | 白色、边界line-soft、圆角16px、workspace-card-shadow；面板间20px | 在容器内重排，不能靠隐藏溢出解决碰撞 |
 
 独立面板外边界间距默认20px，同组紧凑信息面板16px；≤600px分别14px／12px。容器统一用gap，不能让两张卡的圆角或边框贴在一起；详情见组件规范的面板间距合同。品牌与折叠按钮遵守组件规范的新归属：品牌整组居中，桌面控制在侧栏内，窄屏顶栏只负责打开完整导航。
@@ -107,37 +107,54 @@ body { margin:0; background:var(--bg); color:var(--text); font:400 14px/1.5 var(
 .app-shell { --sidebar-panel-width:232px; display:grid;
   grid-template-columns:var(--sidebar-width) minmax(0,1fr); min-height:100dvh; }
 .app-shell[data-sidebar-collapsed="true"] { --sidebar-width:88px; --sidebar-panel-width:64px; }
-.workspace { grid-column:2; }
+.workspace { grid-column:2; --workspace-gutter-start:16px; --workspace-gutter-end:28px;
+  --workspace-frame-max:1620px; --page-top-gap:24px;
+  padding-inline:var(--workspace-gutter-start) var(--workspace-gutter-end); }
 .workspace,.content,.panel { min-inline-size:0; }
 .sidebar { position:fixed; inset:12px auto 12px 12px; inline-size:var(--sidebar-panel-width);
   display:flex; flex-direction:column; padding:12px; border:1px solid var(--workspace-blue-line);
   border-radius:20px; background:linear-gradient(180deg,color-mix(in srgb,var(--accent) 3%,var(--panel)),var(--panel) 42%);
   box-shadow:0 4px 20px rgba(57,106,188,.04); }
 .sidebar nav { flex:1; min-block-size:0; overflow-y:auto; overscroll-behavior:contain; }
-.console-masthead { margin:12px 28px 0 16px; border:1px solid var(--workspace-blue-line);
+.console-masthead,.content { inline-size:100%; max-inline-size:var(--workspace-frame-max); margin-inline:auto; }
+.console-masthead { margin-block:12px 0; border:1px solid var(--workspace-blue-line);
   border-radius:18px; background:var(--panel); box-shadow:0 4px 20px rgba(57,106,188,.04); }
 .topbar { display:flex; align-items:center; gap:16px; block-size:68px; padding-inline:18px; }
-.content { inline-size:100%; max-inline-size:1620px; margin-inline:auto; padding:26px 28px 48px 16px; }
+.content { padding:var(--page-top-gap) 0 48px; }
+.content > :first-child { margin-block-start:0; }
 @media(max-width:1280px) {
-  .console-masthead { margin-inline-end:24px; }
-  .content { padding:24px 24px 40px 16px; }
+  .workspace { --workspace-gutter-end:24px; }
+  .content { padding-block-end:40px; }
 }
 @media(max-width:960px) {
   .app-shell { grid-template-columns:minmax(0,1fr); }
-  .workspace { grid-column:1; }
+  .workspace { grid-column:1; --workspace-gutter-start:20px; --workspace-gutter-end:20px; }
   .app-shell > .sidebar { display:none; }
-  .console-masthead { margin:12px 20px 0; }
+  .console-masthead { margin-block-start:12px; }
   .topbar { padding-inline:20px; }
-  .content { padding:24px 20px 32px; }
+  .content { padding-block-end:32px; }
 }
 @media(max-width:600px) {
-  .console-masthead { margin:8px 12px 0; border-radius:14px; }
+  .workspace { --workspace-gutter-start:12px; --workspace-gutter-end:12px; --page-top-gap:16px; }
+  .console-masthead { margin-block-start:8px; border-radius:14px; }
   .topbar { block-size:60px; padding-inline:10px; }
-  .content { padding:20px 12px 28px; }
+  .content { padding-block-end:28px; }
 }
 ```
 
 fixed侧栏不占Grid轨道，所以工作区必须显式放第二列；窄屏恢复第一列，否则仍可能生成额外隐式列。上例只定义壳层几何：≤960时隐藏的是桌面侧栏实例，顶栏菜单按钮必须打开目标项目的模态导航抽屉，复用同一份导航数据；不能只隐藏侧栏而丢掉导航。折叠属性只控制桌面宽度，标签显隐与可访问名称按组件状态一并处理。
+
+<a id="clean-admin-workspace-frame"></a>
+
+### 顶栏与正文共用外边界，顶部不留重复空档
+
+顶栏面板外框、页标题／分隔线、筛选面板和主列表／表格／卡片网格的**整体外边界左右齐平、宽度一致**。同一workspace只定义一组左右gutter与max-width，上例将1620px作为顶栏和正文共同上限：大屏需要居中时两者一起居中，不能顶栏撑满而正文单独max-width收窄。路由页不再增加第二层max-width、水平padding、container margin或固定百分比宽度。卡片内部padding、顶栏内部控件padding按各自规范保留；多列页面比较整个网格外缘，不要求每张子卡与顶栏同宽，阅读正文可在同宽外框内限制行长。
+
+顶栏底边到页头第一个可见分组／标题行的总距离默认桌面24px（正常20–28px）、≤600px为16px（正常14–20px），只由content的一层padding-block-start负责。页头没有额外margin-top／padding-top；h1与说明的浏览器默认margin需按组件重置。禁止workspace padding-top＋content padding-top＋路由main margin-top三重叠加，也不留已取消fixed／sticky顶栏的高度占位、空hero、spacer或按视口高度计算的min-height。顶栏处于正常文档流时不能再给正文补一次68px顶栏高度。
+
+页头内分组→标题间距8px、标题→说明7px、页头底padding14px；底分隔线→下一独立面板默认20px，紧凑组16px，手机14／12px。页头高度由真实内容决定，不为凑固定94px额外塞空白；标签换行、无说明或操作行换行时自然增长。面板间距沿用现有合同，不因收紧顶部而将卡片挤到一起。
+
+验收1920／1280／768／390及超宽视口、侧栏展开／收起与记忆恢复、长短页面标题、空数据及页面滚动条有无：实际测量顶栏和正文各主区块的left／right／width，边界误差≤1 CSS px；测量顶栏bottom到页头首个可见行top的总间距，不能只看某个padding声明。先查共享壳层、布局库容器和路由外壳的最终box model，修复重复约束；不用负margin／translate或隐藏overflow凑齐。不运行实际页面时注明只验证了示例。
 
 <a id="clean-admin-scrollbars"></a>
 
@@ -205,10 +222,10 @@ fixed侧栏不占Grid轨道，所以工作区必须显式放第二列；窄屏�
 
 | CSS视口宽度 | 壳层与正文 | 主要内容重排 |
 |---|---|---|
-| >1280 | 256／232侧栏、68顶栏、正文26 28 48 16 | 概览KPI四列、图表1.55:1，资源卡三列 |
-| 961–1280 | 保留桌面侧栏；正文24 24 40 16 | 主图表单列、资源卡两列；事实／说明栏可下移 |
-| 601–960 | 单列壳层＋模态导航；正文24 20 32 | KPI两列，登录与主要业务分栏改单列，文档目录可展开 |
-| ≤600 | 顶栏60高；正文20 12 28 | 资源卡与表单单列；KPI优先两列、164起高、数值30，内容放不下可单列；保留右上跳转入口 |
+| >1280 | 256／232侧栏、68顶栏、共用左右gutter16／28、正文上下24／48 | 概览KPI四列、图表1.55:1，资源卡三列 |
+| 961–1280 | 保留桌面侧栏；共用左右gutter16／24、正文上下24／40 | 主图表单列、资源卡两列；事实／说明栏可下移 |
+| 601–960 | 单列壳层＋模态导航；共用左右gutter20、正文上下24／32 | KPI两列，登录与主要业务分栏改单列，文档目录可展开 |
+| ≤600 | 顶栏60高；共用左右gutter12、正文上下16／28 | 资源卡与表单单列；KPI优先两列、164起高、数值30，内容放不下可单列；保留右上跳转入口 |
 
 ## 按钮、输入、浮层
 
@@ -272,15 +289,16 @@ fixed侧栏不占Grid轨道，所以工作区必须显式放第二列；窄屏�
 | 检查层 | 实际核对内容 | 偏离时先修什么 |
 |---|---|---|
 | 尺寸口径 | 1920×1080 CSS、100%缩放、DPR记录；图片以相同比例查看 | 先排除参考图像素当CSS、未设置border-box、重复容器padding；不要通过全页缩放补救 |
-| 壳层 | 侧栏12外留白、232实宽、顶栏68高、正文1620上限与padding；短屏导航仍可达 | 全局布局与容器，不能每页单独偏移 |
+| 壳层 | 侧栏12外留白、232实宽、顶栏68高、顶栏／正文共同1620上限与左右gutter；顶部间距桌面24／手机16；短屏导航仍可达 | 全局布局与容器，不能每页单独偏移 |
 | 顶部控件 | 桌面侧栏内折叠入口／窄屏顶栏导航入口、紧凑面包屑、搜索及快捷键、状态胶囊、主题／刷新、头像用户名的顺序、尺寸、间距和实际动作 | 按admin-topbar修共享结构，不能只保留白色容器、裸折叠图标与账号文本；数据状态不能被身份认证文案替代 |
 | 页面结构 | 区块顺序、主次列比例、卡数与高度、标题／操作关系 | 先主布局与业务映射，别先纠结小图标阴影 |
 | 密度 | 页面26／30、说明12、控件34／38／42档、表格44／56／64档 | 共享字级／尺寸，不能一页修一批随机数 |
 | 信息对齐与长内容 | 详情键值起点、数字单位基线、文件首尾识别、同排同类卡片操作底线 | 按组件排版合同核对长短内容、完整值入口和复制值；不得靠空格、固定正文高度或截断关键后缀凑齐 |
 | 内容分组与层次 | 标签归属、组内外间距、细线／子面／嵌套圆角、低频条件摘要 | 不重复套主卡；高级条件收起后有启用摘要，错误所在分区可见；明确尺寸不被通用词汇覆盖 |
-| 品牌与导航控制 | Logo与标题横排垂直居中、品牌组左右留白对称；桌面折叠按钮在侧栏内且折叠后可展开 | 长名／无副标题／窄栏／断点都核对；折叠菜单按钮左右等距、图标座与整列共轴，清掉隐藏文字的列／gap／缩进；桌面顶栏不重复放折叠按钮，窄屏保留导航入口 |
+| 品牌与导航控制 | Logo与标题横排垂直居中、品牌组左右留白对称；桌面折叠按钮在侧栏内且折叠后可展开 | 长名／无副标题／窄栏／断点都核对；折叠时标题和竖线一并消失且无占位；菜单蓝色背景及底部图标入口宽高相等、左右等距、整列共轴，清掉隐藏文字的列／gap／缩进；桌面顶栏不重复放折叠按钮，窄屏保留导航入口 |
 | 输入焦点与面板间距 | 输入聚焦只改原1px边框颜色，不加粗或新增轮廓；相邻独立卡片20／16间距、手机14／12 | 排除内外套框、双焦点环、负margin和相邻圆角贴边；保留可见键盘焦点 |
 | 侧栏状态记忆 | 手动收起／展开持久保存，刷新／强刷／直接进入后台路由保持原状态，首屏即应用 | 按[状态记忆合同](admin-components.md#clean-admin-sidebar-persistence)核对首帧宽度与aria-expanded；移动抽屉独立，不覆盖桌面偏好；检查false／无效值与存储异常 |
+| 登录滑动验证 | 账号密码格式通过后弹滑动拼图，352px面板、320:180清晰图、50px轨道与48px滑块，图／轨道同宽、无外扩蓝环 | 按[完整登录合同](admin-pages.md#clean-admin-login-slider)核对真实挑战→验证凭证→登录、鼠标／触屏／键盘、失败／过期／关闭／晚到响应；不以拖到底或动画判定通过 |
 | 同行控件等高 | 输入／搜索／数字步进器／下拉／带框选项与同行操作按钮使用同一高度档，真实外框顶底对齐 | 按[同行合同](admin-components.md#clean-admin-control-row)检查实际wrapper、内层min-height、重复padding及step按钮；标签／help不挤偏控件，focus／error不改变尺寸 |
 | 字段内垂直对齐 | 单行搜索／输入／Select的placeholder、已填值与前后缀、清除及箭头共用垂直中心线，文字左对齐 | 按[字段对齐合同](admin-components.md#clean-admin-field-alignment)检查中文／英文／数字、空值→输入→清空、各尺寸及缩放；不单独偏移占位字，不将Textarea与框外帮助强制居中 |
 | 表面 | bg／panel／line、圆角按职责、轻阴影、主按钮渐变 | token与组件variant；不得加巨型hero、大片玻璃或高饱和蓝面替代 |

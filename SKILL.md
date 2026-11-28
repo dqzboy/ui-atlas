@@ -11,7 +11,7 @@ description: 使用内置 UI 参考库，为网页或应用选择、实现、纠
 
 用户提出“做一个后台管理系统”“创建管理后台”“搭建后台控制台”“admin dashboard”等新建后台需求，且没有指定其他视觉风格、设计稿或项目设计系统时，**默认采用清爽蓝白后台**（`enterprise-workbenches/clean-admin`），直接推进，无需让用户再次选择风格。
 
-先读取 [后台完整配方](references/recipes/clean-admin.md) 和 [基础设计与视觉核对](references/admin-design.md)，再读取 [组件与按钮状态](references/admin-components.md)、[逐页实现提示词](references/admin-pages.md) 的相关章节及 [动效规范](references/admin-motion.md)，打开对应高清图后实现。默认落实浅蓝工作区、白色圆角侧栏和顶栏、蓝色渐变主按钮、四色摘要卡，以及配套按钮与组件动效；用户需要登录时沿用同套登录样式。不要只套背景色或把动效留作后续建议。
+先读取 [后台完整配方](references/recipes/clean-admin.md) 和 [基础设计与视觉核对](references/admin-design.md)，再读取 [组件与按钮状态](references/admin-components.md)、[逐页实现提示词](references/admin-pages.md) 的相关章节及 [动效规范](references/admin-motion.md)，打开对应高清图后实现。默认落实浅蓝工作区、白色圆角侧栏和顶栏、蓝色渐变主按钮、四色摘要卡，以及配套按钮与组件动效；用户需要登录时沿用同套登录样式，并按逐页规范统一使用滑动拼图验证弹窗，保留既有认证与MFA／SSO契约。不要只套背景色或把动效留作后续建议。
 
 创建后台壳层时必读 [完整顶部栏](references/admin-topbar.md)：桌面从紧凑面包屑开始，再组合搜索与快捷键胶囊、数据状态徽标、主题、刷新、头像用户名；桌面折叠控制放侧栏内部，≤960px顶部才显示打开导航抽屉的按钮；使用准确图标、尺寸和实际动作，不能简化成一条白底加文字账号。状态和品牌内容按业务替换，视觉结构沿用参考。
 
