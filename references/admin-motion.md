@@ -49,7 +49,7 @@
 | 概览活动卡 | 从下8px淡入；活动行hover轻亮 | 入420ms ease；行背景160ms | 只对首次内容呈现用；同卡不要叠两条transform动画 |
 | 进度环 | 实际占比改变时环线补到新位置 | stroke-dashoffset400ms spring | r51、周长2π×51、线宽6；0总量显示暂无数据，不伪造百分比 |
 | 刷新按钮 | busy时转圈+外框向外淡出的波纹 | spin720ms linear循环；pulse900ms ease-out | pulse从opacity .42/scale .76到0/1.08，75%完成；busy结束停循环 |
-| Tooltip／菜单／Popover | hover或聚焦后浮出、离开收回；菜单点击展开 | 此风格Tooltip show-after180ms、hide-after100ms、offset8px；库自身过渡 | 使用同主题面与三角；别给库过渡再套一层随机动画 |
+| Tooltip／菜单／Popover | hover或聚焦后浮出、离开收回；菜单点击展开 | 此风格Tooltip指针show-after180ms、联合区域hide-after100ms、offset8px；键盘聚焦可立即显示；库自身过渡 | 按组件规范自定义气泡，不用HTML title；鼠标完全静止也能打开，移入正文可停留，Esc抑制原地重开；别给库过渡再套一层随机动画 |
 | 弹窗／详情抽屉／消息 | 按现有库的进入退出与遮罩呈现 | 保留库实际主题过渡值，不另猜一个固定时长 | 关闭阶段结束才卸载；焦点、Escape、遮罩规则按职责 |
 | 账号提醒弹窗 | 从下6px、scale .985、透明进入 | 200ms cubic-bezier(.2,.8,.2,1) | 退出沿用弹窗库；不要两个层同时缩放同一面板 |
 | 重认证提示 | 从下7px、scale .985、透明进入 | 200ms cubic-bezier(.2,.8,.2,1) | 倒计时由真实会话策略确定，不把动画当注销条件 |

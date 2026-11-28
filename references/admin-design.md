@@ -219,7 +219,7 @@ fixed侧栏不占Grid轨道，所以工作区必须显式放第二列；窄屏�
 - 表单：可见标签、普通输入高38px、登录输入42px、圆角10px；白色输入面、line边框、focus只在同一边界加深／向内强调，不加第二圈外框；输入前后图标对齐。数量+单位并排分配，禁用时仍可读。
 - 普通输入与搜索保持一体式表面：背景、边框、圆角由外壳统一绘制，图标前后缀与文字区无灰色端盖、双圆角或异色拼接；禁用统一整框换色，详见[输入面合同](admin-components.md#clean-admin-input-surface)。
 - 输入、Select、Dropdown、弹窗与Tooltip的背景／边框跟随全局主题。浮层小三角用与面板同色的双层填充，边框约1px，12×7px（左右方向7×12px），不能露出异色旋转方块。箭头根部须覆盖相接处的正文边框，内部不得有横线／竖线穿过、白缝或双描边，外轮廓细边可保留；图表箭头按[无接缝合同](admin-workbench.md#clean-admin-chart-tooltips)执行。
-- Tooltip保持窄小文本面，max-width:min(360px,100vw−24px)，可断长字。内容含交互时改用合适浮层并保留焦点语义。
+- 后台日期／截断值／图标说明使用[共享自定义Tooltip](admin-components.md#clean-admin-custom-tooltips)，禁止依赖HTML title产生浏览器默认灰色提示；检查组件透传和父子title，保留正确可访问名称。气泡保持窄小文本面，max-width:min(360px,100vw−24px)，可断长字；内容含交互时改用合适浮层并保留焦点语义。
 
 ```css
 :root {
